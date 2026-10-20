@@ -77,7 +77,7 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
       form.querySelector('[name="paintingPrice"]').value=price;
       form.classList.add('purchase-mode');
       form.querySelectorAll('.commission-only').forEach(element=>{element.hidden=true;});
-      const summary=form.querySelector('.purchase-summary');summary.hidden=false;
+      const summary=form.querySelector('.purchase-summary');summary.hidden=false;const submitButton=form.querySelector('button[type="submit"]');if(submitButton)submitButton.textContent='Send purchase inquiry';
       summary.querySelector('.purchase-title').textContent=product.title;
       summary.querySelector('.purchase-price').textContent=price;
       if(message)message.value='Hello, I’m interested in purchasing '+product.title+' for '+price+'.\n\n';
