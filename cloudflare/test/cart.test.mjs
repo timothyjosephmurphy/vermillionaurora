@@ -145,6 +145,8 @@ it('quotes separate parcels and one tax calculation with all items, without rese
   expect(q.shipments).toHaveLength(2);expect(q.shipping).toBe('12.00');
   const taxable=Math.round(Number(q.base)*100)+1200;expect(q.salesTax.taxable).toBe((taxable/100).toFixed(2));expect(q.tax).toBe((Math.floor((taxable*105500+500000)/1e6)/100).toFixed(2));
   expect(calls.filter(c=>isDor(c.url))).toHaveLength(1);expect(q.items.map(i=>i.id)).toContain('el-zonte-at-sunrise');
+  // Paintings and prints still need a delivery address (only commission deposits skip it).
+  await expect(priceCart({...env,...config},items,undefined,'buyer@example.test')).rejects.toThrow(/address/i);
   for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('available');expect(paypalOrders.size).toBe(0);
 });
 it('reserves every original against competing carts and legacy checkout, with conditional cleanup',async()=>{
@@ -329,9 +331,17 @@ it('checks out a 50% commission deposit alone: no shipping, stock or labels; lin
   await runInDurableObject(order,i=>{i.env={...i.env,...on};});
   const items=[{id:'deposit-small-landscape-12x15',quantity:1,requestId}];
   expect((await cartCheckout(request('hold',{holdId:id,key,items}),on)).status).toBe(200);
+  // TJ (Oct 20 2026): a deposit takes no delivery address and no WA sales tax; the exact deposit amount is charged.
+  const withAddress=await priceCart(on,cartItems(items),address,'buyer@example.test');
+  expect(withAddress).toMatchObject({address:{city:'Seattle',state:'WA'},shipments:[],base:'125.00',shipping:'0.00',tax:'0.00',total:'125.00'});expect(withAddress.salesTax).toBeUndefined();
+  expect(await priceCart(on,cartItems(items),{name:'',street1:'',city:'',state:'',zip:''},'buyer@example.test')).toMatchObject({address:null,tax:'0.00',total:'125.00'});
+  const bare=await cartCheckout(request('quote',{items,email:'buyer@example.test',catalogVersion}),on);expect(bare.status).toBe(200);
+  expect((await bare.json()).quote).toMatchObject({shipping:'0.00',base:'125.00',tax:'0.00',total:'125.00'});
+  // PayPal is a test-only fixture here (production deposits offer Bitcoin and Square), so this flow still sends an address.
   const quoted=await cartCheckout(request('quote',{items,address,email:'buyer@example.test',catalogVersion,holdId:id,key}),on);expect(quoted.status).toBe(200);
-  const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('125.00');
+  const q=await quoted.json();expect(q.quote).toMatchObject({shipping:'0.00',base:'125.00',tax:'0.00',total:'125.00'});expect(q.quote.taxRate).toBeUndefined();
   expect(calls.some(c=>c.url.includes('goshippo')||c.url.endsWith('/shipments/'))).toBe(false);
+  expect(calls.some(c=>isDor(c.url))).toBe(false);
   expect((await (await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),on)).json()).status).toBe('pending');
   approve();await order.capture();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
   const d=await read(order);expect(d.jobs).toEqual([]);expect(d.printJob).toBeUndefined();expect(d.depositSellerMail.status).toBe('sent');expect(d.customerMail.status).toBe('sent');
@@ -356,8 +366,10 @@ it('checks out a commission balance alone, like the deposit, with nothing left o
   await runInDurableObject(order,i=>{i.env={...i.env,...on};});
   const items=[{id:'balance-small-landscape-12x15',quantity:1,requestId}];
   expect((await cartCheckout(request('hold',{holdId:id,key,items}),on)).status).toBe(200);
+  // The balance is the final payment: it still needs the delivery address and charges WA sales tax.
+  await expect(priceCart(on,cartItems(items),undefined,'buyer@example.test')).rejects.toThrow(/address/i);
   const quoted=await cartCheckout(request('quote',{items,address,email:'buyer@example.test',catalogVersion,holdId:id,key}),on);expect(quoted.status).toBe(200);
-  const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('125.00');
+  const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('125.00');expect(Number(q.quote.tax)).toBeGreaterThan(0);
   expect((await (await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),on)).json()).status).toBe('pending');
   approve();await order.capture();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
   const d=await read(order);expect(d.jobs).toEqual([]);expect(d.depositSellerMail.status).toBe('sent');expect(d.customerMail.status).toBe('sent');

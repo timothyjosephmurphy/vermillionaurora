@@ -61,7 +61,16 @@ export async function priceOrder(env,slug,input) {
   const shipment=await priceShipment(env,slug,input);
   return {...shipment,catalogVersion,...await calculateTax([{id:slug,amount:shipment.base}],shipment.address,cents(shipment.shipping))};
 }
+// A commission deposit (first 50%) is a service payment: no delivery address, no shipping and no WA sales tax.
+// The address and tax are handled on the final payment (the balance), which keeps the full address and tax quote.
+export const isDepositOnly=items=>Array.isArray(items)&&items.length>0&&items.every(i=>i.type==='deposit'&&i.commission?.stage!=='balance');
 export async function priceCart(env,items,input,email,code=null) {
+  if(isDepositOnly(items)){
+    const base=items.reduce((sum,item)=>sum+cents(item.amount)*(item.quantity||1),0);
+    // An address is never required or taxed here; one the buyer happened to send is kept only for the record.
+    let address=null;try{address=cleanAddress(input);}catch{}
+    return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments:[],base:dollars(base),shipping:'0.00',tax:'0.00',total:dollars(base)};
+  }
   const address=cleanAddress(input),shipments=[];
   // Each original is packed separately. No speculative combined-parcel dimensions.
   for(const item of items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))shipments.push(await priceShipment(env,item.id,address));
