@@ -1,7 +1,8 @@
 ---
 // Trust copy from Writer, approved for studio-tracker #93 (verbatim). "What you get" is for originals for sale only;
+// Exhibited strip (studio-tracker #99) on TJ's own product pages only, not featured artists'.
 // prints get "About this print" (no signature, certificate or studio-shipping claim). kind: original | print | all | cart.
-const {kind='all'}=Astro.props;
+const {kind='all',exhibited=false}=Astro.props;
 const showOriginal=kind==='original'||kind==='all',showPrint=kind==='print'||kind==='all';
 ---
 <aside class="purchase-reassurance" aria-label="Shipping and returns information">
@@ -18,6 +19,7 @@ const showOriginal=kind==='original'||kind==='all',showPrint=kind==='print'||kin
   <li>Made to order, so change-of-mind returns close once production starts.</li>
   <li>If it arrives damaged or wrong, I cover the fix.</li>
 </ul><p><a href="/shipping-returns/">Shipping &amp; returns →</a></p></section>}
+{exhibited&&<p class="trust-exhibited">Exhibited in Cape Town, Warsaw, El Salvador and Seattle. Featured in the documentary <a href="/film/">Coined in Watercolor</a>. <a href="/exhibitions/">Exhibitions →</a></p>}
 {kind==='cart'&&<p class="trust-cart-line">Originals are signed and come with a certificate of authenticity and 14-day returns, and I cover any damage in transit.</p>}
 <p><a href="/shipping-returns/">Shipping &amp; returns</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:tj@tjm.art?subject=Order%20help">Ask TJ</a></p>
 </aside>
