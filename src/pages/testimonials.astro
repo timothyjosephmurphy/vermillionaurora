@@ -18,9 +18,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
   <title>Collector Testimonials | Seattle watercolor artist TJ Murphy</title>
   <meta name="description" content="Words, photos and videos from people who live with paintings by Seattle watercolor artist TJ Murphy, and a form to share your own." />
   <link rel="canonical" href="https://tjm.art/testimonials/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="/fonts/fonts.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/site-header.css" />
   {reviews.length > 0 && <script type="application/ld+json" set:html={ld({'@context':'https://schema.org','@graph':reviews})} />}
