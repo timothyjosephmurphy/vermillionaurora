@@ -1,0 +1,161 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#000000"><link rel="manifest" href="/play/manifest.webmanifest">
+<link rel="icon" href="data:,"><title>TJM Gallery · Guggenheim New York (preview)</title>
+<meta name="description" content="A playable 3D art gallery: wander 200+ original paintings by TJ Murphy, flip through his art books, meet the machine elves and buy originals straight off the walls. Works on phone and desktop.">
+<link rel="canonical" href="https://tjm.art/play/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="TJ Murphy">
+<meta property="og:title" content="TJM Gallery: walk through TJ Murphy's paintings"><meta property="og:description" content="A playable 3D art gallery: wander 200+ original paintings by TJ Murphy, flip through his art books, meet the machine elves and buy originals straight off the walls. Works on phone and desktop.">
+<meta property="og:url" content="https://tjm.art/play/">
+<meta property="og:image" content="https://img.tjm.art/play/share.jpg"><meta property="og:image:secure_url" content="https://img.tjm.art/play/share.jpg"><meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Inside TJM Gallery: a torch-lit 3D hall of TJ Murphy paintings with a hologram of TJ playing guitar">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TJM Gallery: walk through TJ Murphy's paintings"><meta name="twitter:description" content="A playable 3D art gallery: wander 200+ original paintings by TJ Murphy, flip through his art books, meet the machine elves and buy originals straight off the walls. Works on phone and desktop.">
+<meta name="twitter:image" content="https://img.tjm.art/play/share.jpg"><meta name="twitter:image:alt" content="Inside TJM Gallery: a torch-lit 3D hall of TJ Murphy paintings with a hologram of TJ playing guitar"><script>
+/* Black-screen watchdog: if the 3D view never draws (or stops, or the WebGL context is lost) while it should be running,
+   show "open in your browser" + "Copy link" instead of a silent black screen. Independent of the game bundle. */
+(function () {
+  var url = 'https://tjm.art/play/', shown = 0;
+  window.__playFallback = function (why) {
+    if (shown) return; shown = 1; window.__fallback = why || 'stall';
+    try {
+      var ua = navigator.userAgent, android = /Android/i.test(ua), d = document.createElement('div');
+      d.id = 'openbrowser'; d.setAttribute('role', 'alert'); document.body.classList.add('openbrowser');
+      var head = why === 'inapp' ? 'Open TJM Gallery in your browser' : why === 'lost' ? 'The 3D view ran out of memory here' : 'The 3D view could not start here';
+      d.innerHTML = '<div class=ob-box><div class=ob-title>TJM GALLERY</div><b class=ob-h>' + head + '</b>' +
+        '<p class=ob-p>' + (why === 'inapp' ? 'The game needs a full browser. ' : 'For the full game, open it in your browser. ') +
+        (android ? 'Tap <b>Open in Chrome</b>, or tap <b>&#8942;</b> then <b>Open in browser</b>.' : 'Tap <b>&#8942;</b> below, then <b>Open in Safari</b> / <b>Open in browser</b>.') + '</p>' +
+        '<div class=ob-btns>' + (android ? '<a class=ob-go href="intent://tjm.art/play/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(url) + ';end">Open in Chrome</a>' : '') +
+        '<button type=button class=ob-copy>Copy link</button></div><p class=ob-url>tjm.art/play</p></div>' +
+        '<div class=ob-arrow aria-hidden=true><span>Tap &#8942; here</span><i>&#8595;</i></div>';
+      ['touchstart', 'touchend', 'touchmove', 'mousedown', 'click', 'pointerdown', 'keydown'].forEach(function (ev) { d.addEventListener(ev, function (e) { e.stopPropagation(); }); });
+      d.querySelector('.ob-copy').onclick = function () { var b = this, done = function (ok) { b.textContent = ok ? 'Link copied \u2713' : url; };
+        try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(function () { done(1); }, function () { done(fb()); }); return; } } catch (e) {}
+        done(fb()); };
+      function fb() { try { var i = document.createElement('input'); i.value = url; i.setAttribute('readonly', ''); i.style.cssText = 'position:fixed;top:0;opacity:0'; document.body.appendChild(i); i.select(); i.setSelectionRange(0, 99); var ok = document.execCommand('copy'); i.remove(); return ok; } catch (e) { return false; } }
+      document.body.appendChild(d);
+    } catch (e) {}
+  };
+  var last = -1, still = 0;
+  setInterval(function () {
+    if (shown || document.hidden || window.__paused || !window.__mainLoaded) { still = 0; return; } // only judge once the game code has loaded
+    var f = window.__frames || 0;
+    if (f === last) still++; else still = 0; last = f;
+    if (still >= 6) window.__playFallback(f ? 'stall' : 'nostart'); // ~6 s with no first frame after load, or frozen for ~6 s
+  }, 1000);
+  addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
+})();
+</script>  <script type="module" crossorigin src="/play/assets/index-DQN6y1gq.js"></script>
+  <link rel="stylesheet" crossorigin href="/play/assets/index-B2I-67Mw.css">
+</head><body>
+<!-- museum-gates:arrive -->
+<script>(function(){
+function tunnel(o) {
+  o = o || {}; var dir = o.dir || 'in', ms = o.ms || 1900, d = document, cv = d.createElement('canvas'), x = cv.getContext('2d'), DPR = Math.min(2, window.devicePixelRatio || 1);
+  cv.id = 'gates-tunnel'; cv.style.cssText = 'position:fixed;inset:0;width:100vw;height:100vh;z-index:2147483000;pointer-events:none;opacity:' + (dir === 'in' ? 0 : 1) + ';transition:opacity .35s';
+  var cap = d.createElement('div'); cap.style.cssText = 'position:fixed;left:0;right:0;bottom:16vh;z-index:2147483001;pointer-events:none;text-align:center;font:700 clamp(15px,2.4vw,24px) Georgia,serif;letter-spacing:3px;color:#fff;text-shadow:0 0 14px #9a6bff,0 0 3px #000;opacity:0;transition:opacity .4s';
+  cap.textContent = o.text || ''; (d.body || d.documentElement).appendChild(cv); (d.body || d.documentElement).appendChild(cap);
+  var W, H, N = innerWidth < 700 ? 260 : 520, S = [], i, t0 = performance.now(), alive = true, fadeAt = 0, fadeMs = 900, res;
+  function size() { W = cv.width = Math.round(innerWidth * DPR); H = cv.height = Math.round(innerHeight * DPR); } size(); addEventListener('resize', size);
+  function star(s) { s.a = Math.random() * 6.2832; s.r = Math.random() * 0.9 + 0.02; s.v = 0.25 + Math.random() * 0.9; s.h = 250 + Math.random() * 70; s.w = 0.5 + Math.random() * 1.6; return s; }
+  for (i = 0; i < N; i++) S.push(star({}));
+  var done = new Promise(function (r) { res = r; });
+  function speed(k) { return dir === 'in' ? 0.04 + 2.6 * k * k * k : 2.6 * Math.pow(1 - Math.min(1, k), 2) + 0.05; }
+  var last = t0;
+  function frame(now) {
+    if (!alive) return; var dt = Math.min(0.05, (now - last) / 1000); last = now; var k = Math.min(1, (now - t0) / ms), sp = speed(k), cx = W / 2, cy = H / 2, R = Math.hypot(cx, cy);
+    x.globalCompositeOperation = 'source-over'; x.fillStyle = 'rgba(6,2,18,' + (0.35 + 0.4 * (1 - Math.min(1, sp))) + ')'; x.fillRect(0, 0, W, H);
+    var g = x.createRadialGradient(cx, cy, 0, cx, cy, R * (0.25 + 0.25 * Math.min(1, sp))); g.addColorStop(0, 'rgba(235,220,255,' + (0.25 + 0.5 * Math.min(1, sp / 2)) + ')'); g.addColorStop(0.35, 'rgba(120,70,230,0.22)'); g.addColorStop(1, 'rgba(20,0,60,0)');
+    x.fillStyle = g; x.fillRect(0, 0, W, H); x.globalCompositeOperation = 'lighter';
+    var tw = (now - t0) / 1000 * (dir === 'in' ? 0.6 : -0.4);
+    for (i = 0; i < N; i++) { var s = S[i], r0 = s.r; s.r += s.v * sp * dt * (0.4 + s.r * 1.6); if (s.r > 1.2) { star(s); s.r = 0.02 + Math.random() * 0.1; continue; }
+      var a = s.a + tw * (1 - s.r), len = Math.max(0.004, s.r - r0) * (4 + 10 * Math.min(1, sp)), r1 = Math.max(0, s.r - len);
+      x.strokeStyle = 'hsla(' + s.h + ',90%,' + (60 + 30 * s.r) + '%,' + Math.min(1, 0.25 + s.r) + ')'; x.lineWidth = s.w * DPR * (0.6 + s.r * 1.8);
+      x.beginPath(); x.moveTo(cx + Math.cos(a) * r1 * R, cy + Math.sin(a) * r1 * R); x.lineTo(cx + Math.cos(a) * s.r * R, cy + Math.sin(a) * s.r * R); x.stroke(); }
+    if (dir === 'in' && k > 0.82) { x.globalCompositeOperation = 'source-over'; x.fillStyle = 'rgba(245,238,255,' + Math.pow((k - 0.82) / 0.18, 2) + ')'; x.fillRect(0, 0, W, H); }
+    if (dir === 'out' && k < 0.12) { x.globalCompositeOperation = 'source-over'; x.fillStyle = 'rgba(245,238,255,' + (1 - k / 0.12) + ')'; x.fillRect(0, 0, W, H); }
+    if (k >= 1 && dir === 'in') res();
+    if (fadeAt && now - fadeAt > fadeMs + 50) { kill(); return; }
+    requestAnimationFrame(frame);
+  }
+  function kill() { alive = false; removeEventListener('resize', size); cv.remove(); cap.remove(); res(); }
+  requestAnimationFrame(function () { cv.style.opacity = '1'; cap.style.opacity = '1'; requestAnimationFrame(frame); });
+  return { el: cv, done: done, kill: kill, fade: function (m) { fadeMs = m || 900; fadeAt = performance.now(); cv.style.transition = cap.style.transition = 'opacity ' + fadeMs + 'ms ease'; cv.style.opacity = '0'; cap.style.opacity = '0'; return new Promise(function (r) { setTimeout(r, fadeMs); }); } };
+}
+
+(function () {
+  var coarse = matchMedia('(pointer:coarse)').matches;
+  function startEl() { return document.getElementById('start') || document.getElementById('overlay') || document.getElementById('intro'); }
+  function startVisible() { var s = startEl(); return !!s && getComputedStyle(s).display !== 'none'; }
+  var hint = null, armed = false, held = false;
+  function showHint() { if (coarse || !armed || paused || document.pointerLockElement || startVisible() || window.__reading || window.__gateLeft) { if (hint) hint.style.display = 'none'; return; }
+    if (!hint) { hint = document.createElement('div'); hint.id = 'gates-lookhint'; hint.textContent = 'Click to look around';
+      hint.style.cssText = 'position:fixed;left:50%;top:58%;transform:translateX(-50%);z-index:50;padding:8px 16px;border-radius:18px;background:rgba(10,6,24,.72);color:#f1dfa8;font:600 15px Georgia,serif;letter-spacing:1px;pointer-events:none'; document.body.appendChild(hint); }
+    hint.style.display = ''; }
+  function relock() { try { var p = document.body.requestPointerLock(); if (p && p.catch) p.catch(function () { setTimeout(showHint, 0); }); } catch (x) { setTimeout(showHint, 0); } }
+  window.__gatesRelock = relock;
+  function mc() { return window.__museumCart || null; } function cnt() { var c = mc(); try { return c ? c.count() : 0; } catch (e) { return 0; } }
+  function goCart() { var c = mc(); if (!c) return; if (panel) panel.style.display = 'none'; paused = false; try { c.go(); } catch (e) {} }
+  var css = 'font:600 14px Georgia,serif;letter-spacing:.5px;border-radius:16px;cursor:pointer;';
+  var cb = null; function cartBtn() { if (cb || !document.body) return; cb = document.createElement('button'); cb.type = 'button'; cb.id = 'museum-cartbtn'; cb.setAttribute('aria-label', 'Exit to cart');
+    cb.style.cssText = css + 'position:fixed;top:calc(8px + var(--sa-top, env(safe-area-inset-top)));left:calc(168px + var(--sa-left, env(safe-area-inset-left)));z-index:40;padding:6px 12px;border:1px solid rgba(241,223,168,.45);background:rgba(10,6,24,.62);color:#f1dfa8;font-size:13px';
+    ['mousedown', 'touchstart'].forEach(function (ev) { cb.addEventListener(ev, function (e) { e.stopPropagation(); }, { passive: true }); });
+    cb.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); if (!cnt()) { cb.__empty = true; cb.textContent = 'Cart is empty'; setTimeout(function () { cb.__empty = false; upd(); }, 1400); return; } goCart(); }); document.body.appendChild(cb); upd(); }
+  function upd() { if (cb && !cb.__empty) cb.textContent = 'Cart (' + cnt() + ')'; if (panel && paused) fillPanel(); }
+  setInterval(function () { if (mc()) { cartBtn(); upd(); } }, 700);
+  var panel = null, paused = false, primary = null;
+  function fillPanel() { var n = cnt(), go = panel.querySelector('[data-go]'), rs = panel.querySelector('[data-resume]'), msg = panel.querySelector('[data-msg]');
+    if (n) { go.style.display = 'block'; go.textContent = 'Exit to cart (' + n + ')'; msg.textContent = ''; primary = go; rs.style.background = 'transparent'; }
+    else { go.style.display = 'none'; msg.textContent = 'Cart is empty'; primary = rs; rs.style.background = '#f1dfa8'; }
+    rs.style.color = n ? '#f1dfa8' : '#160c28'; }
+  function showPanel() { if (coarse || !mc() || mc().leaving || window.__gateLeft || window.__reading) return false;
+    if (!panel) { panel = document.createElement('div'); panel.id = 'museum-pause';
+      panel.style.cssText = 'position:fixed;inset:0;z-index:2147482000;display:none;place-items:center;background:rgba(6,3,14,.38)';
+      panel.innerHTML = '<div role="dialog" aria-label="Paused" style="min-width:250px;padding:18px 22px;border-radius:14px;background:rgba(14,8,30,.92);border:1px solid rgba(241,223,168,.4);text-align:center;color:#f1dfa8;font:600 15px Georgia,serif">' +
+        '<div style="letter-spacing:3px;font-size:13px;opacity:.75;margin-bottom:10px">PAUSED</div><div data-msg style="margin-bottom:10px"></div>' +
+        '<button type="button" data-go style="' + css + 'display:block;width:100%;padding:10px 14px;margin:0 0 8px;border:0;background:#f1dfa8;color:#160c28;font-size:16px"></button>' +
+        '<button type="button" data-resume style="' + css + 'display:block;width:100%;padding:8px 14px;border:1px solid rgba(241,223,168,.5)">Back to the gallery</button></div>';
+      document.body.appendChild(panel);
+      panel.addEventListener('mousedown', function (e) { e.stopPropagation(); }, true);
+      panel.querySelector('[data-go]').addEventListener('click', function (e) { e.stopPropagation(); goCart(); });
+      panel.querySelector('[data-resume]').addEventListener('click', function (e) { e.stopPropagation(); hidePanel(); relock(); });
+      panel.addEventListener('click', function (e) { if (e.target === panel) { hidePanel(); relock(); } });
+      panel.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); (primary || panel.querySelector('[data-resume]')).click(); } }); }
+    var s = startEl(); if (s) s.style.display = 'none'; // the pause panel stands in for the game's CLICK TO ENTER screen
+    fillPanel(); panel.style.display = 'grid'; paused = true; if (hint) hint.style.display = 'none'; setTimeout(function () { try { primary.focus(); } catch (e) {} }, 0); return true; }
+  function hidePanel() { if (panel) panel.style.display = 'none'; paused = false; }
+  window.__museumPause = { show: showPanel, hide: hidePanel, get open() { return paused; } };
+  if (!coarse) {
+    addEventListener('mousedown', function (e) { if (!armed || paused || document.pointerLockElement || e.button !== 0 || startVisible() || window.__reading || window.__gateLeft) return;
+      var t = e.target; if (!(t && (t.tagName === 'CANVAS' || t === document.body || t === document.documentElement || t.id === 'gates-tunnel'))) return; // UI (cart, menus, links) keeps its clicks
+      e.stopImmediatePropagation(); e.preventDefault(); relock(); }, true);
+    document.addEventListener('pointerlockchange', function () { var el = document.pointerLockElement;
+      if (el && el !== document.body) { try { document.exitPointerLock(); } catch (x) {} setTimeout(relock, 0); return; } // wrong element: the controls would ignore it
+      if (el) { if (hint) hint.style.display = 'none'; hidePanel(); armed = true; held = true; } else setTimeout(function () { if (!(held && showPanel())) showHint(); held = false; }, 60); }); // after the game's own unlock handler
+    document.addEventListener('pointerlockerror', function () { setTimeout(showHint, 0); });
+    addEventListener('blur', function () { setTimeout(showHint, 60); });
+  }
+  var q = new URLSearchParams(location.search), via = q.get('via');
+  if (!via || !/^[a-z-]{2,12}$/.test(via)) { armed = true; return; } // normal load: the start screen handles the first click; the guard covers later losses
+  var NAMES = { play: 'TJM Gallery', orsay: "Musée d'Orsay", bilbao: 'Guggenheim Bilbao', uffizi: 'Uffizi', 'gugg-ny': 'Guggenheim New York', montreal: 'Montreal — Chase Toole' };
+  q.delete('via'); try { history.replaceState(history.state, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash); } catch (e) {}
+  window.__gatesVia = via; var tn = tunnel({ dir: 'out', ms: 450, text: 'from ' + (NAMES[via] || via) });
+  var t0 = performance.now(); window.__gatesArriveT0 = t0;
+  function hideStart(s) { s.__gatesPrev = s.style.display; s.style.display = 'none'; }
+  var s0 = null, guard = setInterval(function () { var s = startEl(); if (s && !s0) { s0 = s; hideStart(s); } }, 30);
+  function ready() { var g = window.game; return g && (g.nPaintings > 0 || (g.paintings && g.paintings.length > 0)); }
+  var tick = setInterval(function () { var el = performance.now() - t0; if (!(ready() || el > 15000)) return; clearInterval(tick); requestAnimationFrame(finish); }, 16);
+  function audioOk() { try { if (navigator.getAutoplayPolicy) return navigator.getAutoplayPolicy('audiocontext') === 'allowed'; var C = window.AudioContext || window.webkitAudioContext, a = new C(), ok = a.state === 'running'; a.close(); return ok; } catch (e) { return false; } }
+  function finish() { window.__gatesSceneReadyMs = Math.round(performance.now() - t0); tn.fade(300).then(function () { tn.kill(); clearInterval(guard); window.__gatesArriveMs = Math.round(performance.now() - t0); var s = s0 || startEl();
+    armed = true; if (s && !audioOk()) { s.style.display = s.__gatesPrev || ''; window.__gatesArrival = 'start-shown'; return; }
+    window.__gatesArrival = 'skipped-start'; showHint(); }); }
+})();
+
+})();</script>
+<!-- /museum-gates:arrive -->
+<canvas id="c"></canvas>
+<div id="title">TJM GALLERY</div>
+<div id="cross">+</div>
+<div id="hud"><button class="wpn" data-w="1" type="button"><b>1</b> Buy Scanner</button><button class="wpn" data-w="0" type="button"><b>2</b> Soup Thermos</button><button class="wpn" data-w="2" type="button"><b>3</b> Gravity Gun</button><span class="cell"><span id="hitn">0</span>/3 omens</span><span class="cell" id="cartcell" role="button" tabindex="0"><span id="cartn">0</span> in cart</span><span class="cell" id="qcell" role="button" tabindex="0">HQ</span></div>
+<div id="labels"></div><div id="rotate" aria-live="polite"><div class="ph"></div><p>Turn your phone sideways</p><small>The dungeon plays in landscape</small></div><div id="msg"></div>
+<div id="cart"><b>CART</b><ul id="cartlist"><li>empty</li></ul><small>Walk through the gold CHECKOUT gate to buy on tjm.art.</small></div>
+<div id="start"><h1>TJM GALLERY</h1><p style="letter-spacing:.2em;font-size:13px;margin-top:-6px">GUGGENHEIM NEW YORK · PREVIEW</p><p>CLICK TO ENTER</p><select id="goto" aria-label="Go to a painting"></select><a id="homelink" href="https://tjm.art/">← Back to tjm.art</a><p class="ui-help">WASD move · mouse look · Shift to run</p></div>
+<div id="touch"><div id="tmove"></div><button id="tfire">THROW</button><button id="tswap" type="button">TOOL</button><button id="tlaunch" type="button" hidden>LAUNCH</button></div><div id="iosHint" hidden>For full screen: Share → Add to Home Screen <button type="button">×</button></div></body></html>
