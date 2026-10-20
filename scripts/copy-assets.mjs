@@ -51,10 +51,12 @@ function addMobileMenu(html) {
   if(!/<nav class="main-nav"/.test(html)||!html.includes('<div class="header-actions">'))return html;
   // Older pages still carry the pre-#208 "TJM.art by Vermillion Aurora Productions" brand,
   // which wraps to three lines on phones; use the shared TJ Murphy brand block instead.
+  const nav=astro.match(/<nav class="main-nav"[^]*?<\/nav>/)[0];
   const brand=astro.match(/<div class="brand-block">[^]*?<\/div>/)[0];
   return html
     .replace(/<div class="brand-block">[^]*?<\/div>/,brand)
-    .replace(/<nav class="main-nav"(?![^>]*\bid=)/,'<nav class="main-nav" id="site-menu"')
+    // Same nav links as SiteHeader.astro (Blog, Play, cart), so legacy pages don't drift (studio-tracker #218).
+    .replace(/<nav class="main-nav"[^>]*>[^]*?<\/nav>/,()=>nav)
     .replace(/(<div class="header-actions">)([^]*?)(<\/div>)/,(m,open,body,close)=>`${open}${cart}${body}${tail}${close}`);
 }
 async function addCartAssets(dir) {
