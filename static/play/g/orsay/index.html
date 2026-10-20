@@ -19,18 +19,19 @@
     try {
       var ua = navigator.userAgent, android = /Android/i.test(ua), d = document.createElement('div');
       d.id = 'openbrowser'; d.setAttribute('role', 'alert'); document.body.classList.add('openbrowser');
-      var head = why === 'inapp' ? 'Open TJM Gallery in your browser' : why === 'lost' ? 'The 3D view ran out of memory here' : 'The 3D view could not start here';
+      var head = why === 'nogl2' ? 'Needs iOS 15 or a newer browser' : why === 'inapp' ? 'Open TJM Gallery in your browser' : why === 'lost' ? 'The 3D view ran out of memory here' : 'The 3D view could not start here';
       d.innerHTML = '<div class=ob-box><div class=ob-title>TJM GALLERY</div><b class=ob-h>' + head + '</b>' +
-        '<p class=ob-p>' + (why === 'inapp' ? 'The game needs a full browser. ' : 'For the full game, open it in your browser. ') +
+        '<p class=ob-p>' + (why === 'nogl2' ? 'This phone or browser does not support WebGL 2, which the 3D gallery needs. Update to iOS 15 or later, or use a current Chrome, Safari or Firefox. ' : why === 'inapp' ? 'The game needs a full browser. ' : 'For the full game, open it in your browser. ') +
         (android ? 'Tap <b>Open in Chrome</b>, or tap <b>&#8942;</b> then <b>Open in browser</b>.' : 'Tap <b>&#8942;</b> below, then <b>Open in Safari</b> / <b>Open in browser</b>.') + '</p>' +
         '<div class=ob-btns>' + (android ? '<a class=ob-go href="intent://tjm.art/play/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(url) + ';end">Open in Chrome</a>' : '') +
-        '<button type=button class=ob-copy>Copy link</button></div><p class=ob-url>tjm.art/play</p></div>' +
+        '<button type=button class=ob-copy>Copy link</button>' + (why === 'inapp' ? '<button type=button class=ob-try>Try anyway</button>' : '') + '</div><p class=ob-url>tjm.art/play</p></div>' +
         '<div class=ob-arrow aria-hidden=true><span>Tap &#8942; here</span><i>&#8595;</i></div>';
       ['touchstart', 'touchend', 'touchmove', 'mousedown', 'click', 'pointerdown', 'keydown'].forEach(function (ev) { d.addEventListener(ev, function (e) { e.stopPropagation(); }); });
       d.querySelector('.ob-copy').onclick = function () { var b = this, done = function (ok) { b.textContent = ok ? 'Link copied \u2713' : url; };
         try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(function () { done(1); }, function () { done(fb()); }); return; } } catch (e) {}
         done(fb()); };
       function fb() { try { var i = document.createElement('input'); i.value = url; i.setAttribute('readonly', ''); i.style.cssText = 'position:fixed;top:0;opacity:0'; document.body.appendChild(i); i.select(); i.setSelectionRange(0, 99); var ok = document.execCommand('copy'); i.remove(); return ok; } catch (e) { return false; } }
+      var tr = d.querySelector('.ob-try'); if (tr) tr.onclick = function () { d.remove(); document.body.classList.remove('openbrowser'); shown = 0; window.__fallback = ''; if (window.__playAnyway) window.__playAnyway(); };
       document.body.appendChild(d);
     } catch (e) {}
   };
@@ -43,8 +44,8 @@
   }, 1000);
   addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
 })();
-</script>  <script type="module" crossorigin src="/play/assets/index-DRWrwiFF.js"></script>
-  <link rel="stylesheet" crossorigin href="/play/assets/index-DWyN-1Qw.css">
+</script>  <script type="module" crossorigin src="/play/assets/index-CZxOKQGK.js"></script>
+  <link rel="stylesheet" crossorigin href="/play/assets/index-AjsI_omb.css">
 </head><body>
 <!-- museum-gates:arrive -->
 <script>(function(){
