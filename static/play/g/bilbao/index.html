@@ -43,7 +43,7 @@
   }, 1000);
   addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
 })();
-</script>  <script type="module" crossorigin src="/play/assets/index-CPpat0pQ.js"></script>
+</script>  <script type="module" crossorigin src="/play/assets/index-CnAYHSVX.js"></script>
   <link rel="stylesheet" crossorigin href="/play/assets/index-DWyN-1Qw.css">
 </head><body>
 <!-- museum-gates:arrive -->
@@ -135,7 +135,7 @@ function tunnel(o) {
   }
   var q = new URLSearchParams(location.search), via = q.get('via');
   if (!via || !/^[a-z-]{2,12}$/.test(via)) { armed = true; return; } // normal load: the start screen handles the first click; the guard covers later losses
-  var NAMES = { play: 'TJM Gallery', orsay: "Musée d'Orsay", bilbao: 'Guggenheim Bilbao', uffizi: 'Uffizi', 'gugg-ny': 'Guggenheim New York', montreal: 'Montreal — Chase Toole' };
+  var NAMES = { play: 'TJM Gallery', orsay: "Musée d'Orsay", bilbao: 'Guggenheim Bilbao', uffizi: 'Uffizi', 'gugg-ny': 'Guggenheim New York', montreal: 'Montreal — Chase Toole', home: "TJ's Living Room" };
   q.delete('via'); try { history.replaceState(history.state, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash); } catch (e) {}
   window.__gatesVia = via; var tn = tunnel({ dir: 'out', ms: 450, text: 'from ' + (NAMES[via] || via) });
   var t0 = performance.now(); window.__gatesArriveT0 = t0;
