@@ -6003,5 +6003,292 @@
       "height": 40,
       "unit": "in"
     }
+  },
+  {
+    "id": "meditating-at-denny-blaine-on-solstice-2015",
+    "slug": "meditating-at-denny-blaine-on-solstice-2015",
+    "type": "painting",
+    "title": "Meditating at Denny Blaine on Solstice 2015",
+    "description": "Meditating at Denny Blaine on Solstice 2015 by TJ Murphy. Watercolor.",
+    "eyebrow": "Self Portraits",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "1000.00",
+        "currency": "USD"
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 24,
+      "height": 45,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/?buy=meditating-at-denny-blaine-on-solstice-2015#form",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/bab6791e6223d24b9fbd.webp",
+      "alt": "Meditating at Denny Blaine on Solstice 2015",
+      "width": 420,
+      "height": 729,
+      "caption": "Meditating at Denny Blaine on Solstice 2015"
+    },
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 24,
+        "width": 4,
+        "height": 4,
+        "weight": 1.5625,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
+    },
+    "inquiry": {
+      "label": "Inquire about this painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-portraits-self-portraits/",
+      "label": "← Back to Self Portraits"
+    }
+  },
+  {
+    "id": "sunrise-on-tahoma-from-denny-blaine",
+    "slug": "sunrise-on-tahoma-from-denny-blaine",
+    "type": "painting",
+    "title": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait",
+    "description": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific Northwest",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "1000.00",
+        "currency": "USD"
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 45,
+      "height": 15,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/?buy=sunrise-on-tahoma-from-denny-blaine#form",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e6068e265bfdc379526c.webp",
+      "alt": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait",
+      "width": 3667,
+      "height": 917,
+      "caption": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait"
+    },
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 15,
+        "width": 4,
+        "height": 4,
+        "weight": 1.1875,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
+    },
+    "inquiry": {
+      "label": "Inquire about this painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific Northwest"
+    }
+  },
+  {
+    "id": "sunrise-on-rainier-from-denny-blaine",
+    "slug": "sunrise-on-rainier-from-denny-blaine",
+    "type": "painting",
+    "title": "Sunrise on Rainier from Denny Blaine",
+    "description": "Sunrise on Rainier from Denny Blaine by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific Northwest",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "3000.00",
+        "currency": "USD"
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 72,
+      "height": 45,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/?buy=sunrise-on-rainier-from-denny-blaine#form",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 45,
+        "width": 4,
+        "height": 4,
+        "weight": 4.125,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
+    },
+    "inquiry": {
+      "label": "Inquire about this painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific Northwest"
+    }
+  },
+  {
+    "id": "lisa-climbing-tahoma-at-sunrise-from-denny-blaine",
+    "slug": "lisa-climbing-tahoma-at-sunrise-from-denny-blaine",
+    "type": "painting",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine",
+    "description": "Lisa Climbing Tahoma at Sunrise from Denny Blaine by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific Northwest",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale",
+      "price": null
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 72,
+      "height": 45,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2a670ca4f87a8cbd8b02.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine",
+      "width": 1024,
+      "height": 768,
+      "caption": "Lisa Climbing Tahoma at Sunrise from Denny Blaine"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Contact the artist",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific North West"
+    }
+  },
+  {
+    "id": "lake-in-the-north-cascades",
+    "slug": "lake-in-the-north-cascades",
+    "type": "painting",
+    "title": "Lake in the North Cascades",
+    "description": "Lake in the North Cascades by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific Northwest",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "400.00",
+        "currency": "USD"
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 15,
+      "height": 24,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/?buy=lake-in-the-north-cascades#form",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7a3ad7bacdb71faac1b8.webp",
+      "alt": "Lake in the North Cascades",
+      "width": 357,
+      "height": 635,
+      "caption": "Lake in the North Cascades"
+    },
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 15,
+        "width": 4,
+        "height": 4,
+        "weight": 0.875,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
+    },
+    "inquiry": {
+      "label": "Inquire about this painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific Northwest"
+    }
   }
 ]

@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="843f5fd545881d340b91";
+export const printVersion="3116613f6e664847b5a1";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -44777,6 +44777,552 @@ export default {
       "size": {
         "width": 14.55,
         "height": 10.78,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-full": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Large print",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M9S15.53X5.95",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.53,
+      "height": 5.95,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.53,
+      "height": 6.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6444c1102f78970fe8e9e56be4d84b08af5e2d0def2b104eed7de36231e7f5e7.jpg",
+    "assetSha256": "6444c1102f78970fe8e9e56be4d84b08af5e2d0def2b104eed7de36231e7f5e7",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.53,
+      "height": 5.95,
+      "unit": "in"
+    }
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-full-frame-black": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Large print — Black frame",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD79X6DD21F1S18DD79X9DD21J1S15DD79X6DD21G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.5367,
+      "height": 5.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.79,
+      "height": 6.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
+    "assetSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.79,
+        "height": 9.21,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.79,
+        "height": 6.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.79X6.21",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.79,
+        "height": 9.21,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-full-frame-white": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Large print — White frame",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD79X6DD21F2S18DD79X9DD21J1S15DD79X6DD21G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.5367,
+      "height": 5.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.79,
+      "height": 6.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
+    "assetSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.79,
+        "height": 9.21,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.79,
+        "height": 6.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.79X6.21",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.79,
+        "height": 9.21,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-full-frame-natural": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "122.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD79X6DD21F7S18DD79X9DD21J1S15DD79X6DD21G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.5367,
+      "height": 5.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.79,
+      "height": 6.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
+    "assetSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.79,
+        "height": 9.21,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.79,
+        "height": 6.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.79X6.21",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.79,
+        "height": 9.21,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-medium": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Medium print",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M9S11.65X4.46",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.65,
+      "height": 4.46,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.65,
+      "height": 5.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b576814691e6d001d63b32719627a894e6a71b29a1ca803f5687bb354ada41b8.jpg",
+    "assetSha256": "b576814691e6d001d63b32719627a894e6a71b29a1ca803f5687bb354ada41b8",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.65,
+      "height": 4.46,
+      "unit": "in"
+    }
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-medium-frame-black": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Medium print — Black frame",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD91X4DD72F1S15DD19X8J1S11DD91X4DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.65,
+      "height": 4.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.91,
+      "height": 4.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
+    "assetSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.19,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.91,
+        "height": 4.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.91X4.72",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.19,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-medium-frame-white": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Medium print — White frame",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD91X4DD72F2S15DD19X8J1S11DD91X4DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.65,
+      "height": 4.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.91,
+      "height": 4.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
+    "assetSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.19,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.91,
+        "height": 4.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.91X4.72",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.19,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-sunrise-on-rainier-from-denny-blaine-medium-frame-natural": {
+    "id": "print-sunrise-on-rainier-from-denny-blaine-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-on-rainier-from-denny-blaine",
+    "title": "Sunrise on Rainier from Denny Blaine — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise on Rainier from Denny Blaine",
+    "amount": "93.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD91X4DD72F7S15DD19X8J1S11DD91X4DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.65,
+      "height": 4.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.91,
+      "height": 4.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
+    "assetSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Sunrise on Rainier from Denny Blaine",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Sunrise on Rainier from Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.19,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.91,
+        "height": 4.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.91X4.72",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.19,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {

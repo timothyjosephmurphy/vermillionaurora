@@ -3,6 +3,12 @@
 // A scan whose book product was removed (El Zonte) is listed in book-galleries.json by its canonical id;
 // the mapping here keeps its book-page source attached.
 export const canonicalArtwork = {
+  // Oct 2026 shop prep (draft): book-only paintings promoted to shop listings.
+  'book-art-bab6791e6223d24b9fbd': 'meditating-at-denny-blaine-on-solstice-2015',
+  'book-art-e6068e265bfdc379526c': 'sunrise-on-tahoma-from-denny-blaine',
+  'book-art-9ae261289a3bce952c6f': 'sunrise-on-rainier-from-denny-blaine',
+  'book-art-2a670ca4f87a8cbd8b02': 'lisa-climbing-tahoma-at-sunrise-from-denny-blaine',
+  'book-art-7a3ad7bacdb71faac1b8': 'lake-in-the-north-cascades',
   'book-art-1be48d404e2dbf547794': 'painting-shoreline-at-dusk', // Sunrise in El Zonte -> El Zonte at Dawn
   'book-art-ccff23f1e469654faa05': 'painting-portrait-in-green', // Chase Toole
   'book-art-2136f2260225dd8ef20a': 'painting-portrait-in-gold',  // Dorian Nakamoto

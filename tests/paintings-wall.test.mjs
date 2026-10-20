@@ -19,7 +19,7 @@ test('the TJ wall draws every TJ work with a size or a print; Paul\'s wall every
   const drawnTJ=new Set(tjWall.artworks.map(a=>a.id)),listed=new Set(notToScale.map(i=>i.id));
   assert(tjWorks.every(p=>drawnTJ.has(p.id)!==listed.has(p.id)),'each TJ work is drawn or listed, never both');
   assert(tjWall.artworks.length>=204); // 205 before the Oct 15 2026 twin merge (archived-painting-412 = painting-studio-figure)
-  assert(tjWall.artworks.filter(a=>a.scaleBasis==='actual').length>=130&&tjWall.artworks.filter(a=>a.scaleBasis==='print').length>=74);
+  assert(tjWall.artworks.filter(a=>a.scaleBasis==='actual').length>=130&&tjWall.artworks.filter(a=>a.scaleBasis==='print').length>=73); // Oct 20 2026: Sunrise on Rainier moved from print-scaled to actual size (#641)
   const paulExpected=products.filter(p=>p.type==='painting'&&!p.bookGallery&&p.artist==='Paul Murphy'&&p.dimensions?.width>0&&p.dimensions?.height>0);
   assert.deepEqual(paulWall.artworks.map(a=>a.id).sort(),paulExpected.map(p=>p.id).sort());
   for(const [artist,wall] of walls){assert.equal(new Set(wall.artworks.map(a=>a.id)).size,wall.artworks.length);assert(wall.artworks.every(a=>a.artist===artist));}

@@ -337,26 +337,90 @@
    }
   ]
  },
- "book-art-9ae261289a3bce952c6f": {
-  "sha256": "171a8c8818",
-  "width": 4664,
-  "height": 1788,
+ "meditating-at-denny-blaine-on-solstice-2015": {
+  "sha256": "2d06d37ee7",
+  "width": 420,
+  "height": 729,
   "sources": [
    {
     "width": 320,
-    "src": "/wall-paintings/book-art-9ae261289a3bce952c6f-171a8c8818-320.webp"
+    "src": "/wall-paintings/meditating-at-denny-blaine-on-solstice-2015-2d06d37ee7-320.webp"
+   },
+   {
+    "width": 420,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/bab6791e6223d24b9fbd.webp"
+   }
+  ]
+ },
+ "sunrise-on-tahoma-from-denny-blaine": {
+  "sha256": "7c079074ec",
+  "width": 1000,
+  "height": 250,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/sunrise-on-tahoma-from-denny-blaine-7c079074ec-320.webp"
    },
    {
     "width": 960,
-    "src": "/wall-paintings/book-art-9ae261289a3bce952c6f-171a8c8818-960.webp"
+    "src": "/wall-paintings/sunrise-on-tahoma-from-denny-blaine-7c079074ec-960.webp"
    },
    {
-    "width": 1920,
-    "src": "/wall-paintings/book-art-9ae261289a3bce952c6f-171a8c8818-1920.webp"
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e6068e265bfdc379526c.webp"
+   }
+  ]
+ },
+ "sunrise-on-rainier-from-denny-blaine": {
+  "sha256": "c02294e976",
+  "width": 1000,
+  "height": 383,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/sunrise-on-rainier-from-denny-blaine-c02294e976-320.webp"
    },
    {
-    "width": 2880,
-    "src": "/wall-paintings/book-art-9ae261289a3bce952c6f-171a8c8818-2880.webp"
+    "width": 960,
+    "src": "/wall-paintings/sunrise-on-rainier-from-denny-blaine-c02294e976-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp"
+   }
+  ]
+ },
+ "lisa-climbing-tahoma-at-sunrise-from-denny-blaine": {
+  "sha256": "612ecfb758",
+  "width": 1000,
+  "height": 750,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/lisa-climbing-tahoma-at-sunrise-from-denny-blaine-612ecfb758-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/lisa-climbing-tahoma-at-sunrise-from-denny-blaine-612ecfb758-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2a670ca4f87a8cbd8b02.webp"
+   }
+  ]
+ },
+ "lake-in-the-north-cascades": {
+  "sha256": "55c13ca96d",
+  "width": 357,
+  "height": 635,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/lake-in-the-north-cascades-55c13ca96d-320.webp"
+   },
+   {
+    "width": 357,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7a3ad7bacdb71faac1b8.webp"
    }
   ]
  },

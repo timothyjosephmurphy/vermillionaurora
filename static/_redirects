@@ -132,3 +132,15 @@
 /products/archived-painting-412 /products/painting-studio-figure/ 301
 # Display images moved to the tjm-images R2 bucket (PR #529); static/display/ removed (studio-tracker#55).
 /display/* https://img.tjm.art/display/:splat 301
+/products/book-art-bab6791e6223d24b9fbd/ /products/meditating-at-denny-blaine-on-solstice-2015/ 301
+/products/book-art-bab6791e6223d24b9fbd /products/meditating-at-denny-blaine-on-solstice-2015/ 301
+/products/book-art-e6068e265bfdc379526c/ /products/sunrise-on-tahoma-from-denny-blaine/ 301
+/products/book-art-e6068e265bfdc379526c /products/sunrise-on-tahoma-from-denny-blaine/ 301
+/products/book-art-9ae261289a3bce952c6f/ /products/sunrise-on-rainier-from-denny-blaine/ 301
+/products/book-art-9ae261289a3bce952c6f /products/sunrise-on-rainier-from-denny-blaine/ 301
+/products/book-art-2a670ca4f87a8cbd8b02/ /products/lisa-climbing-tahoma-at-sunrise-from-denny-blaine/ 301
+/products/book-art-2a670ca4f87a8cbd8b02 /products/lisa-climbing-tahoma-at-sunrise-from-denny-blaine/ 301
+/products/book-art-7a3ad7bacdb71faac1b8/ /products/lake-in-the-north-cascades/ 301
+/products/book-art-7a3ad7bacdb71faac1b8 /products/lake-in-the-north-cascades/ 301
+/products/lisa-climbing-tahoma-at-sunrise-prototype/ /products/sunrise-on-rainier-from-denny-blaine/ 301
+/products/lisa-climbing-tahoma-at-sunrise-prototype /products/sunrise-on-rainier-from-denny-blaine/ 301
