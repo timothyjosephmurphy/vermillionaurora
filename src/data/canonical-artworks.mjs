@@ -6,7 +6,7 @@ export const canonicalArtwork = {
   // Oct 2026 shop prep (draft): book-only paintings promoted to shop listings.
   'book-art-bab6791e6223d24b9fbd': 'meditating-at-denny-blaine-on-solstice-2015',
   'book-art-e6068e265bfdc379526c': 'sunrise-on-tahoma-from-denny-blaine',
-  'book-art-9ae261289a3bce952c6f': 'lisa-climbing-tahoma-at-sunrise-prototype',
+  'book-art-9ae261289a3bce952c6f': 'sunrise-on-rainier-from-denny-blaine',
   'book-art-2a670ca4f87a8cbd8b02': 'lisa-climbing-tahoma-at-sunrise-from-denny-blaine',
   'book-art-7a3ad7bacdb71faac1b8': 'lake-in-the-north-cascades',
   'book-art-1be48d404e2dbf547794': 'painting-shoreline-at-dusk', // Sunrise in El Zonte -> El Zonte at Dawn
