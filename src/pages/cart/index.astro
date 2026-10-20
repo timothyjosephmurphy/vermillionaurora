@@ -12,7 +12,7 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 </head><body><div class="page-shell"><SiteHeader/>
 <main class="container cart-page" data-cart-page>
-  <div class="cart-heading"><div><h1 tabindex="-1">Your cart</h1></div><a href="/gallery/" class="cart-text-link">Continue exploring the gallery ↗</a></div><a class="back-to-dungeon" href="/play/?resume=1" hidden>← Back to the Dungeon</a><script is:inline>(()=>{let p=0;try{p=new URLSearchParams(location.search).get('from')==='play'||!!sessionStorage.getItem('tjmPlayState')}catch(e){}if(p)document.querySelector('.back-to-dungeon').hidden=false})()</script><style>.back-to-dungeon{display:inline-block;margin:0 0 14px;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none}.back-to-dungeon[hidden]{display:none}</style>
+  <div class="cart-heading"><div><h1 tabindex="-1">Your cart</h1></div><a href="/gallery/" class="cart-text-link">Continue exploring the gallery ↗</a></div><a class="back-to-dungeon" href="/play/?resume=1" hidden>← Back to the Dungeon</a><script is:inline>(()=>{let p=0;try{p=new URLSearchParams(location.search).get('from')==='play'||!!sessionStorage.getItem('tjmPlayState')}catch(e){}if(p)document.querySelector('.back-to-dungeon').hidden=false})()</script><style>.back-to-dungeon{display:inline-block;margin:0 0 14px;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none}.back-to-dungeon[hidden]{display:none}[data-cart-form] [hidden]{display:none!important}</style>
   <p class="cart-notice" data-cart-notice role="status" aria-live="polite">Loading your cart…</p>
   <noscript><p>Please enable JavaScript to use the cart, or <a href="/#contact">contact TJ to arrange a purchase</a>.</p></noscript>
   <section data-order-panel hidden aria-labelledby="order-title" class="cart-order-panel">
@@ -25,16 +25,16 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
     <aside class="cart-checkout" aria-labelledby="checkout-title"><p class="eyebrow dark">Art for your space</p><h2 id="checkout-title">Order summary</h2>
       <dl class="cart-totals"><div><dt>Artwork subtotal</dt><dd data-cart-subtotal>—</dd></div><div><dt>Shipping</dt><dd data-cart-shipping>Calculated below</dd></div><div><dt>Tax</dt><dd data-cart-tax>Calculated below</dd></div><div class="cart-total"><dt>Total <small>USD</small></dt><dd data-cart-total>—</dd></div></dl>
       <form data-cart-form>
-        <fieldset><legend>Contact &amp; delivery</legend>
+        <fieldset><legend data-cart-legend>Contact &amp; delivery</legend><p class="cart-footnote" data-cart-deposit-note hidden>Commission deposits need only your email: no delivery address and no sales tax. The address and any tax are handled with the final payment.</p>
           <label>Email<input type="email" name="email" autocomplete="email" maxlength="254" required/></label>
-          <label>Full name<input name="name" autocomplete="shipping name" maxlength="100" required/></label>
-          <label>Street address<input name="street1" autocomplete="shipping address-line1" maxlength="100" required/></label>
-          <label>Apartment, suite, etc. <span>(optional)</span><input name="street2" autocomplete="shipping address-line2" maxlength="100"/></label>
-          <label>City<input name="city" autocomplete="shipping address-level2" maxlength="100" required/></label>
-          <div class="cart-address-row"><label>State<input name="state" autocomplete="shipping address-level1" pattern="[A-Za-z]{2}" maxlength="2" placeholder="WA" required/></label><label>ZIP code<input name="zip" autocomplete="shipping postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required/></label></div>
-          <details class="cart-code-toggle"><summary>Have a code?</summary><label>Discount code<input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label></details>
+          <label data-cart-address>Full name<input name="name" autocomplete="shipping name" maxlength="100" required/></label>
+          <label data-cart-address>Street address<input name="street1" autocomplete="shipping address-line1" maxlength="100" required/></label>
+          <label data-cart-address>Apartment, suite, etc. <span>(optional)</span><input name="street2" autocomplete="shipping address-line2" maxlength="100"/></label>
+          <label data-cart-address>City<input name="city" autocomplete="shipping address-level2" maxlength="100" required/></label>
+          <div data-cart-address class="cart-address-row"><label>State<input name="state" autocomplete="shipping address-level1" pattern="[A-Za-z]{2}" maxlength="2" placeholder="WA" required/></label><label>ZIP code<input name="zip" autocomplete="shipping postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required/></label></div>
+          <details data-cart-address class="cart-code-toggle"><summary>Have a code?</summary><label>Discount code<input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label></details>
           <p class="cart-footnote" data-cart-code-note hidden></p>
-          <p class="cart-footnote">United States delivery. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order.</p>
+          <p data-cart-address class="cart-footnote">United States delivery. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order.</p>
         </fieldset>
         <p class="cart-footnote">Your details are used to quote and fulfill this order. <a href="/privacy/">How your information is handled</a>.</p>
         <button class="button button-solid cart-wide" type="submit" data-cart-quote>Calculate shipping &amp; tax</button>
