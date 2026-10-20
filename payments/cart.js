@@ -112,6 +112,20 @@
   });
   let root,notice,layout,orderPanel,form,quoteFeedback,orderFeedback,pendingOrder=null;
   function announce(text){notice.textContent=text;}
+  // A commission deposit on its own needs only an email: no address, no shipping, no sales tax. The card form shows at once
+  // with the exact deposit total; the server quote runs when the buyer chooses a payment method.
+  let quoteNow=null;
+  const depositOnly=()=>cart.length===1&&/^deposit-/.test(cart[0].id);
+  function depositAmount(){const id=cart[0]?.id,live=capabilities?.products.find(p=>p.id===id);return live?.amount||meta[id]?.amount;}
+  function applyDepositMode(){
+    if(!form)return false;const on=depositOnly()&&!!capabilities?.enabled&&!!eligible(cart[0].id);
+    form.querySelectorAll('[data-cart-address]').forEach(el=>{el.hidden=on;el.querySelectorAll('input').forEach(input=>{if(input.dataset.wasRequired===undefined)input.dataset.wasRequired=input.required?'1':'';input.required=on?false:input.dataset.wasRequired==='1';});});
+    const legend=form.querySelector('[data-cart-legend]');if(legend)legend.textContent=on?'Contact':'Contact & delivery';
+    const note=form.querySelector('[data-cart-deposit-note]');if(note)note.hidden=!on;
+    const quoteButton=form.querySelector('[data-cart-quote]');if(quoteButton)quoteButton.hidden=on;
+    if(on&&!quoted){const amount=depositAmount();root.querySelector('[data-cart-shipping]').textContent='None';root.querySelector('[data-cart-tax]').textContent=money(0);if(amount)root.querySelector('[data-cart-total]').textContent=money(amount);updatePaymentControls(true);}
+    return on;
+  }
   function quoteAllowed(){
     // Keep submit available so native validation can explain missing details.
     // Browser autofill does not always emit input/change events.
@@ -126,6 +140,7 @@
   }
   function invalidate(){
     quoted=null;
+    if(applyDepositMode())return;
     updateQuoteButton();
     updatePaymentControls(false);
     root.querySelector('[data-cart-shipping]').textContent='Calculated below';root.querySelector('[data-cart-tax]').textContent='Calculated below';root.querySelector('[data-cart-total]').textContent='—';
@@ -174,7 +189,7 @@
     }
     box.hidden=!methods.length;
     const help=box.querySelector('[data-cart-payment-help]');
-    if(help)help.textContent=enabled?'Your total is ready. Choose how you would like to pay.':'Calculate shipping and tax to enable payment.';
+    if(help)help.textContent=enabled&&depositOnly()&&!quoted?'Pay the deposit by card or Bitcoin. No address or sales tax.':enabled?'Your total is ready. Choose how you would like to pay.':'Calculate shipping and tax to enable payment.';
   }
   let squareCard=null,squareCardReady=null,squarePaymentsReady=null;
   // One Square Web Payments instance serves the card form and the Apple Pay / Google Pay buttons.
@@ -280,7 +295,7 @@
     const active=!!current&&(pending(current)||current.status==='paid');
     layout.hidden=!cart.length||active;root.querySelector('[data-cart-empty]').hidden=!!cart.length||active;
     updateQuoteButton();
-    updatePaymentControls(false);
+    if(!applyDepositMode())updatePaymentControls(false);
     if(!active){announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');}
   }
   function showQuote(q){
@@ -296,6 +311,7 @@
   const credentials=()=>({orderId:current.orderId,key:current.key});
   function remember(q){const value={orderId:q.orderId,key:q.key};if(!write(ATTEMPT,value))throw Error('Your browser could not save this checkout. Enable site storage before continuing.');}
   async function startPayment(method,walletToken){
+    if(!quoted&&depositOnly()&&!busy){if(!form.reportValidity())return;await quoteNow?.();if(!quoted)return;}
     if(busy||!quoted)return;busy=true;setDisabled(true);announce('Checking your items and preparing payment…');
     try{
       let sourceId;
@@ -377,8 +393,10 @@
     const addressChanged=()=>{if(quoted)invalidate();else updateQuoteButton();};
     form.addEventListener('input',addressChanged);form.addEventListener('change',addressChanged);
     form.addEventListener('invalid',()=>{const message='Check the highlighted delivery field. Enter your email, name, street, city, two-letter state and ZIP code.';announce(message);quoteFeedback.textContent=message;},true);
-    form.addEventListener('submit',async event=>{
-      event.preventDefault();if(busy)return;if(!form.reportValidity())return;busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');quoteFeedback.textContent='Checking your cart and calculating shipping and tax…';
+    form.addEventListener('submit',async event=>{event.preventDefault();if(busy)return;if(!form.reportValidity())return;await runQuote();});
+    quoteNow=runQuote;
+    async function runQuote(){
+      busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');quoteFeedback.textContent='Checking your cart and calculating shipping and tax…';
       const values=Object.fromEntries(new FormData(form));
       // FormData omits disabled controls; collect from named elements explicitly.
       for(const input of form.querySelectorAll('input[name]'))values[input.name]=input.value.trim();
@@ -401,7 +419,7 @@
       }
       catch(error){announce(error.message);invalidate();quoteFeedback.textContent=error.message;}
       finally{busy=false;setDisabled(false);updateQuoteButton();}
-    });
+    }
     root.querySelector('[data-order-check]').addEventListener('click',()=>updateOrder());root.querySelector('[data-order-cancel]').addEventListener('click',()=>updateOrder('cancel'));
     root.querySelector('[data-order-print]').addEventListener('click',()=>window.print());
     root.querySelector('[data-order-back]').addEventListener('click',async()=>{

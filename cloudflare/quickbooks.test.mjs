@@ -226,3 +226,15 @@ test('a commission balance posts as its own line to the same income account as d
   assert.deepEqual(p.Line.map(l => [l.SalesItemLineDetail.ItemRef.value, l.Amount]), [['7', 125]]);
   assert.match(p.Line[0].Description, /^Commission balance — Landscape 12 × 15/);
 });
+
+test('a commission deposit records with no tax line and no ship-to address (TJ, Oct 20 2026)', () => {
+  const r = { kind: 'sale', status: 'COMPLETED', provider: 'square', currency: 'USD', orderId: 'cart:dep-1', transactionId: 'sq-1', paidAt: '2026-10-20T17:00:00Z',
+    buyerEmail: 'client@example.test', shippingAddress: null, items: [{ id: 'deposit-single-portrait-7-5x12-1f', type: 'deposit', title: 'Commission deposit', amount: '50.00', quantity: 1, commission: { packageTitle: 'Portrait 1 face, 7.5 × 12 in' } }],
+    shipping: '0.00', tax: '0.00', gross: '50.00' };
+  const p = salesReceiptPayload(r, refs);
+  assert.equal(p.Line.length, 1);
+  assert.equal(p.Line[0].Amount, 50);
+  assert.equal(p.Line[0].SalesItemLineDetail.ItemRef.value, refs.items.deposit);
+  assert.ok(!p.Line.some(l => l.SalesItemLineDetail.ItemRef.value === refs.items.tax));
+  assert.equal(p.ShipAddr, undefined);
+});
