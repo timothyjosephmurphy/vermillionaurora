@@ -102,7 +102,7 @@ export class BitcoinOrder extends DurableObject {
     data={...data,invoiceId:invoice.id,url:checkoutUrl(this.env,invoice.checkoutLink),invoiceStatus:invoice.status,
       additionalStatus:invoice.additionalStatus,paidAmount:invoice.paidAmount,payments,checkedAt:Date.now(),monitoringExpiration:invoice.monitoringExpiration};
     if(invoice.status==='Settled' && invoice.additionalStatus==='None' && payments.length>0 && payments.every(p=>p.currency==='BTC')) {
-      const details={provider:'btcpay',invoiceId:invoice.id,bitcoinPayments:payments,buyerName:data.quote.address.name};
+      const details={provider:'btcpay',invoiceId:invoice.id,bitcoinPayments:payments,buyerName:data.quote.address?.name||''};
       // The stock object's order identity prevents a late invoice from selling
       // an original that has since been reserved or sold through another attempt.
       if(await this.stock(data).complete(`btcpay:${data.id}`,`btcpay:${invoice.id}`,details)) {
