@@ -130,3 +130,5 @@
 /products/archived-painting-412 /products/painting-studio-figure/ 301
 # Display images moved to the tjm-images R2 bucket (PR #529); static/display/ removed (studio-tracker#55).
 /display/* https://img.tjm.art/display/:splat 301
+/gallery/room/ /play/ 301
+/gallery/room /play/ 301

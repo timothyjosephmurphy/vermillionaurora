@@ -46,7 +46,7 @@ try {
     assert(s.wall > 200 && Math.abs(s.y - s.wall) <= 2, `${name}: lands below the wall (${s.y} vs ${s.wall})`);
     assert(s.heroTop >= 0 && s.heroTop < 140, `${name}: hero right under the header (${s.heroTop})`);
     assert.equal(s.wallImg, null, `${name}: wall image waits until the visitor scrolls up`);
-    assert.equal(s.room, '/gallery/room/');
+    assert.equal(s.room, '/play/');
     assert.equal(s.transition, 'opacity', `${name}: crossfade is opacity only`);
     await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(300);
     assert(await page.evaluate(() => !!document.querySelector('#painting-wall-peek img').getAttribute('src')), `${name}: wall image loads when revealed`);
