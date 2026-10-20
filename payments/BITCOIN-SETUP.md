@@ -26,7 +26,7 @@ the store. The invoice requires full payment and one on-chain confirmation
 
    Select all invoice events (or all events) and enable automatic redelivery.
    Copy the generated secret into Cloudflare as `BTCPAY_WEBHOOK_SECRET`.
-5. The checked-in `BTCPAY_URL` is `https://btcpay884215.lndyn.com`.
+5. The checked-in `BTCPAY_URL` is `https://pay.tjm.art`.
    Bitcoin is offered for every available original and print, including mixed
    carts (studio-tracker #120). There is no per-painting allowlist any more;
    `BTCPAY_CHECKOUT_SLUGS` is ignored by checkout.

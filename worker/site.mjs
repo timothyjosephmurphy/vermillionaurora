@@ -95,6 +95,26 @@ export function nostrJson() {
   });
 }
 
+// Lightning address tj@tjm.art, backed by TJ's BTCPay Server (Store > Lightning > Lightning Address 'tj').
+// BTCPay's payRequest JSON is passed through unchanged; its callback issues the invoices.
+export const LNURLP_PREFIX = '/.well-known/lnurlp/';
+export const LNURLP_NAMES = { tj: 'https://pay.tjm.art/.well-known/lnurlp/tj' };
+const LNURLP_HEADERS = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=300' };
+export async function lnurlp(name, fetcher = fetch) {
+  const json = (obj, status) => new Response(JSON.stringify(obj), { status, headers: { ...LNURLP_HEADERS, 'Cache-Control': 'no-store' } });
+  const upstream = Object.hasOwn(LNURLP_NAMES, name) ? LNURLP_NAMES[name] : null;
+  if (!upstream) return json({ status: 'ERROR', reason: 'Unknown Lightning address' }, 404);
+  try {
+    const r = await fetcher(upstream, { headers: { Accept: 'application/json' }, cf: { cacheTtl: 300, cacheEverything: true }, signal: AbortSignal.timeout(5000) });
+    const body = r.ok ? await r.text() : '';
+    const data = body ? JSON.parse(body) : null;
+    if (data?.tag !== 'payRequest' || !data.callback) throw Error('bad upstream');
+    return new Response(body, { headers: LNURLP_HEADERS });
+  } catch {
+    return json({ status: 'ERROR', reason: 'Lightning address temporarily unavailable' }, 502);
+  }
+}
+
 export default {
   async fetch(request, env, ctx) {
     const redirect = hostRedirect(request, env);
@@ -113,6 +133,7 @@ export default {
     if (SHOP_REDIRECTS[url.pathname]) return moved(new URL(SHOP_REDIRECTS[url.pathname] + url.search, url).href);
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
     if (url.pathname === NOSTR_JSON_PATH) return nostrJson();
+    if (url.pathname.startsWith(LNURLP_PREFIX)) return lnurlp(url.pathname.slice(LNURLP_PREFIX.length));
     // One painting wall: the older framed print wall moved to the all-paintings wall.
     // The old 3D gallery room is retired; the play gallery replaces it (studio-tracker #154).
     if (/^\/gallery\/room\/?$/.test(url.pathname)) return Response.redirect(new URL('/play/' + url.search, url).href, 301);

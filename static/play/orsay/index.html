@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><link rel="manifest" href="/play/manifest.webmanifest"><link rel="icon" href="data:,"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#000000"><title>TJM Gallery</title><meta name="description" content="A playable 3D art gallery: wander 200+ original paintings by TJ Murphy, flip through his art books, meet the machine elves and buy originals straight off the walls. Works on phone and desktop."><link rel="canonical" href="https://tjm.art/play/orsay/"><meta property="og:type" content="website"><meta property="og:site_name" content="TJ Murphy"><meta property="og:title" content="TJM Gallery: walk through TJ Murphy's paintings"><meta property="og:description" content="A playable 3D art gallery: wander 200+ original paintings by TJ Murphy, flip through his art books, meet the machine elves and buy originals straight off the walls. Works on phone and desktop."><meta property="og:url" content="https://tjm.art/play/orsay/"><meta property="og:image" content="https://img.tjm.art/play/share.jpg"><meta property="og:image:secure_url" content="https://img.tjm.art/play/share.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Inside TJM Gallery: a torch-lit 3D hall of TJ Murphy paintings with a hologram of TJ playing guitar"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TJM Gallery: walk through TJ Murphy's paintings"><meta name="twitter:description" content="A playable 3D art gallery: wander 200+ original paintings by TJ Murphy, flip through his art books, meet the machine elves and buy originals straight off the walls. Works on phone and desktop."><meta name="twitter:image" content="https://img.tjm.art/play/share.jpg"><meta name="twitter:image:alt" content="Inside TJM Gallery: a torch-lit 3D hall of TJ Murphy paintings with a hologram of TJ playing guitar"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000;touch-action:none;overscroll-behavior:none}iframe.g{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;border:0;display:block;background:#000;transition:opacity .3s}iframe.g.next{opacity:0;pointer-events:none;z-index:-1}#sa{position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}</style><link rel="prefetch" href="/play/g/orsay/"></head><body><div id="sa"></div><script>// /play/ shell (#24, #172): one page for all of TJ's galleries. Each gallery runs in a frame (/play/g/<id>/) so the shell can
+// load the next one in the background, swap with a fade (no page reload), and drop the old frame (its WebGL context and GPU
+// memory go with it). Deep links: /play/ (TJM Gallery), /play/orsay/, /play/bilbao/, /play/uffizi/, /play/gugg-ny/.
+(function () {
+  var IDS = { play: '/play/', orsay: '/play/orsay/', bilbao: '/play/bilbao/', uffizi: '/play/uffizi/', 'gugg-ny': '/play/gugg-ny/' };
+  var RX = /^\/play\/(orsay|bilbao|uffizi|gugg-ny)(\/|\/index\.html)?$/, cur = null, busy = false, stats = { swaps: 0, loads: [], reloads: 0 };
+  function idOf(path) { var m = RX.exec(path); return m ? m[1] : (/^\/play(\/|\/index\.html)?$/.test(path) ? 'play' : null); }
+  function clean(search) { var q = new URLSearchParams(search); q.delete('via'); var s = q.toString(); return s ? '?' + s : ''; }
+  var probe = document.getElementById('sa');
+  function insets(f) { try { var cs = getComputedStyle(probe), st = f.contentDocument.documentElement.style;
+    ['top', 'right', 'bottom', 'left'].forEach(function (k) { st.setProperty('--sa-' + k, cs.getPropertyValue('padding-' + k)); }); } catch (e) {} }
+  function mk(id, search, hash) { var f = document.createElement('iframe'); f.className = 'g'; f.dataset.g = id; f.title = 'Gallery';
+    f.allow = 'fullscreen; autoplay; gamepad; xr-spatial-tracking; clipboard-write'; f.src = '/play/g/' + id + '/' + (search || '') + (hash || '');
+    f.addEventListener('load', function () { insets(f); try { var d = f.contentDocument; if (f === cur && d.title) document.title = d.title;
+      if (!/^\/play\/g\//.test(f.contentWindow.location.pathname) && f.contentWindow.location.href !== 'about:blank') location.replace(f.contentWindow.location.href); } catch (e) {} });
+    document.body.appendChild(f); return f; }
+  function ready(f, ms) { return new Promise(function (res) { var t0 = performance.now(); (function poll() { var ok = false;
+    try { var g = f.contentWindow.game; ok = !!(g && g.nPaintings > 0); } catch (e) {}
+    if (ok || performance.now() - t0 > ms) return requestAnimationFrame(function () { requestAnimationFrame(function () { res(ok); }); }); setTimeout(poll, 120); })(); }); }
+  function go(u, from, opt) { opt = opt || {}; var url; try { url = new URL(u, location.href); } catch (e) { return; }
+    var id = url.origin === location.origin ? idOf(url.pathname) : null;
+    if (!id) { location.assign(url.href); return; } // other sites (Chase's Montreal) and other tjm.art pages: a normal page move
+    if (busy) return; busy = true; var old = cur, t0 = performance.now(), nf = mk(id, url.search, url.hash); nf.classList.add('next');
+    ready(nf, 20000).then(function (ok) { stats.loads.push({ id: id, ms: Math.round(performance.now() - t0), ok: ok });
+      if (opt.push !== false) history.pushState({ g: id }, '', IDS[id] + clean(url.search) + url.hash);
+      cur = nf; nf.classList.remove('next'); try { document.title = nf.contentDocument.title || document.title; nf.contentWindow.focus(); } catch (e) {}
+      stats.swaps++; setTimeout(function () { if (old) { try { old.contentWindow.__shellUnload && old.contentWindow.__shellUnload(); } catch (e) {} try { old.src = 'about:blank'; } catch (e) {} old.remove(); } busy = false; }, 350); }); }
+  window.__playShell = { go: go, get current() { return cur && cur.dataset.g; }, get frame() { return cur; }, stats: stats };
+  addEventListener('popstate', function () { var id = idOf(location.pathname); if (id && (!cur || id !== cur.dataset.g)) go(location.href, null, { push: false }); });
+  addEventListener('resize', function () { if (cur) insets(cur); });
+  ['gesturestart', 'gesturechange'].forEach(function (ev) { document.addEventListener(ev, function (e) { e.preventDefault(); }, { passive: false }); });
+  var id0 = idOf(location.pathname) || 'play'; cur = mk(id0, location.search, location.hash);
+  if (performance.getEntriesByType && (performance.getEntriesByType('navigation')[0] || {}).type === 'reload') stats.reloads++;
+})();
+</script></body></html>
