@@ -133,7 +133,8 @@ test('original purchase buttons say "Buy"; paintings without online checkout sti
  const html=[];
  const walk=dir=>{for(const e of fs.readdirSync(dir,{withFileTypes:true})){const path=`${dir}/${e.name}`;if(e.isDirectory())walk(path);else if(e.name.endsWith('.html'))html.push(path);}};
  walk('dist');
- for(const path of html)assert(!/inquire to buy/i.test(fs.readFileSync(path,'utf8')),`${path} still says "Inquire to buy"`);
+ // Blog articles are dated prose and may quote the old label (site-update-oct-4-16-2026), so skip dist/blog/.
+ for(const path of html.filter(p=>!p.startsWith('dist/blog/')))assert(!/inquire to buy/i.test(fs.readFileSync(path,'utf8')),`${path} still says "Inquire to buy"`);
  for(const p of products.filter(p=>p.type==='painting'&&p.listing.status==='available')){
   const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
   const link=$('[data-original-purchase] [data-purchase-inquiry]');
