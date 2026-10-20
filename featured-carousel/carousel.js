@@ -17,8 +17,11 @@
     const price = product.querySelector('[data-card-price]');
     return ((price && price.parentElement) || product.querySelector('.product-info p')).textContent.trim();
   }
-  let items = products.map(itemFor);
-  let index = Math.max(0, items.findIndex(item => item.href === card.querySelector('a').href));
+  // Live availability first (studio-tracker #100): priced works, then by inquiry, then the rest, keeping the build order within each.
+  const rank = item => /\$\d/.test(item.detail) ? 0 : /inquiry/i.test(item.detail) ? 1 : 2;
+  const ordered = list => list.map((item, i) => [item, i]).sort((a, b) => rank(a[0]) - rank(b[0]) || a[1] - b[1]).map(([item]) => item);
+  let items = ordered(products.map(itemFor));
+  let index = 0;
   let busy = false;
   let pendingSync = false;
   let paused = motion.matches;
@@ -189,7 +192,7 @@
   document.addEventListener('catalog:availability',()=>{
     const currentId=items[index]?.id;
     products=[...document.querySelectorAll('.sp-hero-source .product-card')];
-    items=products.map(itemFor);
+    items=ordered(products.map(itemFor));
     card.hidden=items.length===0;
     index=Math.max(0,items.findIndex(item=>item.id===currentId));
     if(busy)pendingSync=true;

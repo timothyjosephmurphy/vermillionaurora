@@ -16,6 +16,13 @@ import { person, ld } from '../../data/structured-data.mjs';
 const anchors = { 'small-landscape': 'landscape', 'single-portrait': 'portrait' };
 const headings = { 'small-landscape': 'Landscape commissions', 'single-portrait': 'Portrait commissions · 1–4 faces' };
 const order = ['small-landscape', 'single-portrait'];
+// More commissions (studio-tracker #105, TJ Oct 18 2026): pet portraits cost the same as people portraits, Bitcoin art is
+// priced like a one-face portrait at each size, murals are $50 per square foot. Prices come from the portrait package.
+const portraitOptions = byId['single-portrait']?.options || [];
+const petOptions = portraitOptions.map(o => ({ id: `pet-portrait-${o.id}`, label: `Pet portrait ${o.label.replace(/(\d+) faces?/, (_, n) => `${n} ${n === '1' ? 'pet' : 'pets'}`)}`, size: o.size, amount: o.amount }));
+const bitcoinOptions = portraitOptions.filter(o => /^1 face/.test(o.label)).map(o => ({ id: `bitcoin-art-${o.id.replace(/-1f$/, '')}`, label: `Bitcoin art ${o.size}`, size: o.size, amount: o.amount }));
+const fromPrice = list => Math.min(...list.map(o => Number(o.amount))).toLocaleString('en-US');
+const MURAL_RATE = 50;
 packages.sort((a, b) => (order.indexOf(a.slug) + 1 || 99) - (order.indexOf(b.slug) + 1 || 99));
 const service = { '@context':'https://schema.org', '@type':'Service', name:'Watercolor portrait and landscape commissions', serviceType:'Commissioned watercolor pastel artwork',
   provider:{ '@type':'Person', '@id':person['@id'], name:person.name }, areaServed:'Worldwide', url:'https://tjm.art/commissions/',
@@ -38,6 +45,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
   <link rel="stylesheet" href="/portrait-preview.css" />
   <style is:global>
     .commission-package{scroll-margin-top:110px}
+    .more-commission-price{font-weight:600;margin:12px 0}
     .commission-package-heading{font:600 1.5rem/1.2 "Cormorant Garamond",serif;margin:0 0 12px}
     .service-grid.commission-packages{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;max-width:960px;margin-inline:auto}
     @media(max-width:760px){.service-grid.commission-packages{grid-template-columns:1fr}}
@@ -107,6 +115,34 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
         </div>
       </section>
 
+      <section id="more-commissions" class="section section-light" aria-labelledby="more-commissions-heading">
+        <div class="container">
+          <div class="section-heading narrow">
+            <h2 id="more-commissions-heading">Pets, Bitcoin art and murals</h2>
+          </div>
+          <div class="service-grid commission-packages more-commissions">
+            <div id="pet-portrait" class="commission-package">
+              <h3 class="commission-package-heading">Pet Portraits</h3>
+              <p>I'll paint your dog, cat, or any animal you love from your photos. They're priced the same as my people portraits.</p>
+              <p class="more-commission-price">From ${fromPrice(petOptions)} · Same prices as portraits</p>
+              <a class="button button-solid" href="?package=pet-portrait#form">Start a pet portrait</a>
+            </div>
+            <div id="bitcoin-art" class="commission-package">
+              <h3 class="commission-package-heading">Bitcoin Art</h3>
+              <p>Original paintings about Bitcoin and what it stands for, from a moment in its history to an idea you care about. Tell me what it means to you and I'll paint it.</p>
+              <p class="more-commission-price">From ${fromPrice(bitcoinOptions)} · Priced like portraits</p>
+              <a class="button button-solid" href="?package=bitcoin-art#form">Start a Bitcoin painting</a>
+            </div>
+            <div id="mural" class="commission-package">
+              <h3 class="commission-package-heading">Murals</h3>
+              <p>I paint murals for homes, businesses, and public walls. Send me the wall size and location, and I'll put together a design and quote.</p>
+              <p class="more-commission-price">${MURAL_RATE} per square foot</p>
+              <a class="button button-solid" href="?package=mural#form">Ask about a mural</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section section-light">
         <div class="container process-embed">
           <CommissionProcess />
@@ -146,7 +182,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
             </details>
             <details>
               <summary>What about murals or custom sizes?</summary>
-              <p>The packages above are watercolor starting points. For murals, larger formats, or something outside these sizes, use the form and describe the space or idea—we’ll price and schedule that separately.</p>
+              <p>Murals are ${MURAL_RATE} per square foot. Send me the wall size and location with the form and I'll put together a design and quote. For larger formats or something outside these sizes, describe the idea and we'll price and schedule it separately.</p>
             </details>
           </div>
           {/* Shown only once at least one testimonial exists: hand-curated ones at build time, approved form submissions
@@ -211,7 +247,10 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
                 {packages.flatMap(product => product.options?.length
                   ? product.options.map(o => <option value={`${product.slug}-${o.id}`} data-size={o.size||o.label}>{product.title} {o.label} — ${Number(o.amount).toLocaleString('en-US')}</option>)
                   : [<option value={product.slug}>{product.title} — {product.listing?.price?.from ? 'from ' : ''}${Number(product.listing?.price?.amount || 0).toFixed(0)}</option>])}
-                <option value="custom">Custom / mural / other</option>
+                {petOptions.map(o => <option value={o.id} data-size={o.size}>{o.label} — ${Number(o.amount).toLocaleString('en-US')}</option>)}
+                {bitcoinOptions.map(o => <option value={o.id} data-size={o.size}>{o.label} — ${Number(o.amount).toLocaleString('en-US')}</option>)}
+                <option value="mural">Mural — ${MURAL_RATE} per square foot</option>
+                <option value="custom">Custom / other</option>
               </select>
             </label>
 

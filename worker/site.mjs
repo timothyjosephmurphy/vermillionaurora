@@ -135,6 +135,8 @@ export default {
     if (url.pathname === NOSTR_JSON_PATH) return nostrJson();
     if (url.pathname.startsWith(LNURLP_PREFIX)) return lnurlp(url.pathname.slice(LNURLP_PREFIX.length));
     // One painting wall: the older framed print wall moved to the all-paintings wall.
+    // The old 3D gallery room is retired; the play gallery replaces it (studio-tracker #154).
+    if (/^\/gallery\/room\/?$/.test(url.pathname)) return Response.redirect(new URL('/play/' + url.search, url).href, 301);
     if (/^\/gallery\/wall\/?$/.test(url.pathname)) return Response.redirect(new URL('/gallery/wall/all/' + url.search, url).href, 301);
     // Live catalog (tjm-catalog D1): owner admin, and catalog pages patched at request time (built page on any D1 error).
     if (/^\/catalog-admin(?:\/|$)/.test(url.pathname)) return catalogAdmin(request, env, ctx);

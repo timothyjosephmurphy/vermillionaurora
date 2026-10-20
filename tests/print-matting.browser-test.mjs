@@ -32,8 +32,7 @@ try{
   await page.locator('input[value$="-small"]').check();
   const options=JSON.parse(await page.locator('[data-print-options]').getAttribute('data-options'));
   const variant=options.find(o=>o.id==='print-painting-portrait-in-green-small').matOptions[0];assert((await page.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+variant.mat.outer.width+' × '+variant.mat.outer.height));
-  assert.equal(await frames.locator('.frame-link').count(),1);
-  assert.match(await frames.locator('.frame-fit').textContent(),/Fits the selected mat/);
+  assert.equal(await frames.locator('.frame-link').count(),0,'No Amazon frame links on product pages (studio-tracker #127)');
   assert(await page.locator('[data-print-add]').isDisabled());
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   await page.locator('[data-print-options]').screenshot({path:`/tmp/matting-${width}.png`});

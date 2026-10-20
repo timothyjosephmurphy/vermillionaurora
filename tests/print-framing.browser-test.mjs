@@ -46,7 +46,7 @@ try{
     await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);
     assert.equal(await selector.locator('[data-print-total]').textContent(),'Framed print: $'+prints['print-painting-portrait-in-green-small-frame-black'].amount);
     assert.match(await selector.locator('[data-print-inclusions]').textContent(),/print, frame, white mat and glazing/);
-    assert(await selector.locator('[data-print-own-frame]').isHidden());
+    assert.equal(await selector.locator('[data-print-own-frame]').count(),0);
     assert(await selector.locator('[data-print-sheet]').evaluate(el=>el.classList.contains('is-framed')));
     const smallShape=await selector.locator('[data-print-sheet]').boundingBox();
     await selector.locator('input[value$="-medium"]').check();
@@ -67,7 +67,7 @@ try{
     await selector.screenshot({path:`/tmp/framed-print-${width}.png`,style:'.site-header{visibility:hidden!important}'});
     await selector.locator('[data-print-finish]').selectOption('none');
     assert.equal(await selector.locator('[data-print-total]').textContent(),'Print: $'+prints['print-painting-portrait-in-green-full'].amount);
-    assert(await selector.locator('[data-print-own-frame]').isVisible());
+    assert.equal(await selector.locator('[data-print-own-frame]').count(),0);
   }
   await page.locator('[data-print-finish]').selectOption('frame-black');
   await page.locator('input[value$="-small"]').check();
