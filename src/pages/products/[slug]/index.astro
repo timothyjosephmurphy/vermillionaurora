@@ -100,6 +100,7 @@ const facts=painting ? [
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.href?<a href={f.href}>{f.value}</a>:f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
       {painting && referenceMedia[p.id] && <ReferencePhoto media={referenceMedia[p.id]} />}
+      {painting && (p.listing.status==='available' || availablePrints.length>0) && <p class="product-pay-line">Pay with Bitcoin / Lightning (BTCPay) or card.</p>}
       {painting && (p.listing.status==='available' || availablePrints.length>0) && <PurchaseReassurance kind={p.listing.status==='available'?'original':'print'}/>}
       {painting && <ProductShare product={p}/>}
       {p.type==='commission' && <CommissionProcess />}
