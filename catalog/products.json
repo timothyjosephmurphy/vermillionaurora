@@ -6003,5 +6003,388 @@
       "height": 40,
       "unit": "in"
     }
+  },
+  {
+    "id": "meditating-at-denny-blaine-on-solstice-2015",
+    "slug": "meditating-at-denny-blaine-on-solstice-2015",
+    "type": "painting",
+    "title": "Meditating at Denny Blaine on Solstice 2015",
+    "description": "Meditating at Denny Blaine on Solstice 2015 by TJ Murphy. Watercolor.",
+    "eyebrow": "Self Portraits",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale",
+      "price": null
+    },
+    "shopPrep": {
+      "draft": true,
+      "note": "PREP ONLY — not buyable. Prices/formats await TJ review.",
+      "originalDimensionsUnitNote": "Book caption gives no unit; inches assumed (archive calibration shows book captions are inches).",
+      "imagePx": {
+        "width": 420,
+        "height": 729
+      },
+      "maxPrintIn300dpi": {
+        "width": 1.4,
+        "height": 2.43
+      },
+      "proposal": {
+        "original": {
+          "status": "proposed",
+          "amount": "1000.00",
+          "comparables": [
+            "el-zonte-at-sunrise 24x48in $1000",
+            "painting-insect-garden 24x48in $1000",
+            "painting-emergence 24x48in $1000"
+          ]
+        },
+        "prints": {
+          "status": "none",
+          "reason": "image 420x729 px = 1.4x2.43 in max at 300 dpi; needs higher-res master"
+        }
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 24,
+      "height": 45,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/bab6791e6223d24b9fbd.webp",
+      "alt": "Meditating at Denny Blaine on Solstice 2015",
+      "width": 420,
+      "height": 729,
+      "caption": "Meditating at Denny Blaine on Solstice 2015"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Contact the artist",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-portraits-self-portraits/",
+      "label": "← Back to Self Portraits"
+    }
+  },
+  {
+    "id": "sunrise-on-tahoma-from-denny-blaine",
+    "slug": "sunrise-on-tahoma-from-denny-blaine",
+    "type": "painting",
+    "title": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait",
+    "description": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific Northwest",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale",
+      "price": null
+    },
+    "shopPrep": {
+      "draft": true,
+      "note": "PREP ONLY — not buyable. Prices/formats await TJ review.",
+      "originalDimensionsUnitNote": "Book caption gives no unit; inches assumed (archive calibration shows book captions are inches).",
+      "imagePx": {
+        "width": 3667,
+        "height": 917
+      },
+      "maxPrintIn300dpi": {
+        "width": 12.22,
+        "height": 3.06
+      },
+      "proposal": {
+        "original": {
+          "status": "proposed",
+          "amount": "1000.00",
+          "comparables": [
+            "painting-red-horizon 23x44in $1000",
+            "hope-the-vermillion-aurora 44x22in $2000"
+          ],
+          "note": "no close-size comparable (45x15 in); tentative"
+        },
+        "prints": {
+          "status": "proposed",
+          "maxIn": "12.2x3.06",
+          "options": [
+            {
+              "size": "12x3 in (full)",
+              "amount": "40.00",
+              "basis": "small tier of painting-red-horizon (6.2x11.8 $40) / hope-the-vermillion-aurora (11.2x5.6 $40)"
+            }
+          ],
+          "note": "needs FinerWorks quote + layout approval"
+        }
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 45,
+      "height": 15,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e6068e265bfdc379526c.webp",
+      "alt": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait",
+      "width": 3667,
+      "height": 917,
+      "caption": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Contact the artist",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific Northwest"
+    }
+  },
+  {
+    "id": "lisa-climbing-tahoma-at-sunrise-prototype",
+    "slug": "lisa-climbing-tahoma-at-sunrise-prototype",
+    "type": "painting",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+    "description": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific Northwest",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale",
+      "price": null
+    },
+    "shopPrep": {
+      "draft": true,
+      "note": "PREP ONLY — not buyable. Prices/formats await TJ review.",
+      "originalDimensionsUnitNote": "Book caption gives no unit; inches assumed (archive calibration shows book captions are inches).",
+      "imagePx": {
+        "width": 4664,
+        "height": 1788
+      },
+      "maxPrintIn300dpi": {
+        "width": 15.55,
+        "height": 5.96
+      },
+      "proposal": {
+        "original": {
+          "status": "unpriced",
+          "reason": "72x45 in is larger than every shop original (largest 36x48in $2000); no comparable"
+        },
+        "prints": {
+          "status": "existing",
+          "options": [
+            {
+              "size": "15.5x6 in (full)",
+              "amount": "55.00"
+            },
+            {
+              "size": "11.7x4.5 in (medium)",
+              "amount": "40.00"
+            }
+          ],
+          "note": "already approved in catalog/book-prints.json under book-art-9ae261289a3bce952c6f"
+        }
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 72,
+      "height": 45,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+      "width": 4664,
+      "height": 1788,
+      "caption": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Contact the artist",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific Northwest"
+    }
+  },
+  {
+    "id": "lisa-climbing-tahoma-at-sunrise-from-denny-blaine",
+    "slug": "lisa-climbing-tahoma-at-sunrise-from-denny-blaine",
+    "type": "painting",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine",
+    "description": "Lisa Climbing Tahoma at Sunrise from Denny Blaine by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific North West",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale",
+      "price": null
+    },
+    "shopPrep": {
+      "draft": true,
+      "note": "PREP ONLY — not buyable. Prices/formats await TJ review.",
+      "originalDimensionsUnitNote": "Book caption gives no unit; inches assumed (archive calibration shows book captions are inches).",
+      "imagePx": {
+        "width": 1024,
+        "height": 768
+      },
+      "maxPrintIn300dpi": {
+        "width": 3.41,
+        "height": 2.56
+      },
+      "proposal": {
+        "original": {
+          "status": "not-for-sale",
+          "reason": "privately owned"
+        },
+        "prints": {
+          "status": "blocked",
+          "reason": "image 1024x768 px = 3.41x2.56 in max at 300 dpi, below smallest shop print (3.5x6.5 in); needs higher-res master"
+        }
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 72,
+      "height": 45,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2a670ca4f87a8cbd8b02.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine",
+      "width": 1024,
+      "height": 768,
+      "caption": "Lisa Climbing Tahoma at Sunrise from Denny Blaine"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Contact the artist",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific North West"
+    }
+  },
+  {
+    "id": "lake-in-the-north-cascades",
+    "slug": "lake-in-the-north-cascades",
+    "type": "painting",
+    "title": "Lake in the North Cascades",
+    "description": "Lake in the North Cascades by TJ Murphy. Watercolor.",
+    "eyebrow": "Pacific Northwest",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale",
+      "price": null
+    },
+    "shopPrep": {
+      "draft": true,
+      "note": "PREP ONLY — not buyable. Prices/formats await TJ review.",
+      "originalDimensionsUnitNote": "Book caption gives no unit; inches assumed (archive calibration shows book captions are inches).",
+      "imagePx": {
+        "width": 357,
+        "height": 635
+      },
+      "maxPrintIn300dpi": {
+        "width": 1.19,
+        "height": 2.12
+      },
+      "proposal": {
+        "original": {
+          "status": "proposed",
+          "amount": "400.00",
+          "comparables": [
+            "painting-chef-in-white 15x24in $400",
+            "painting-studio-figure 15x24in $400",
+            "painting-portrait-with-cheese 15x24in $400"
+          ]
+        },
+        "prints": {
+          "status": "none",
+          "reason": "image 357x635 px = 1.19x2.12 in max at 300 dpi; comparables have no prints"
+        }
+      }
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 15,
+      "height": 24,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [],
+    "storyHeading": "The story",
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "height-width",
+    "image": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7a3ad7bacdb71faac1b8.webp",
+      "alt": "Lake in the North Cascades",
+      "width": 357,
+      "height": 635,
+      "caption": "Lake in the North Cascades"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Contact the artist",
+      "note": ""
+    },
+    "back": {
+      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
+      "label": "← Back to Pacific Northwest"
+    }
   }
 ]
