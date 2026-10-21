@@ -225,3 +225,6 @@ body.full .site-header{display:none}
 /* No horizontal scroll with the Play link: compact nav and CTA up to 1360px; let it wrap below 1060px (studio-tracker #218). */
 @media(min-width:980.01px) and (max-width:1059.98px){.site-header .main-nav{flex-wrap:wrap}}
 @media(min-width:980.01px) and (max-width:1360px){.site-header .header-cta-lead{display:none}.site-header .main-nav{gap:12px;letter-spacing:.05em}}
+
+/* #92: the full business name may wrap onto two short lines instead of widening the header. */
+.site-header .brand small{white-space:normal;display:inline-block;max-width:10.5em;line-height:1.25}

@@ -116,7 +116,7 @@ export async function sendShippingEmail(token, sale, job, env = {}) {
   const boundary = 'shipping_' + crypto.randomUUID().replaceAll('-', '');
   // Encode both subject and body so buyer-entered address text cannot inject MIME headers/parts.
   const parts = [
-    `From: Vermilion Aurora Shipping <${seller}>`, `To: ${seller}`,
+    `From: Vermillion Aurora Productions Shipping <${seller}>`, `To: ${seller}`,
     `Subject: =?UTF-8?B?${utf8(subject)}?=`,
     `Message-ID: <shippo-${sale.capture_id.replace(/[^a-zA-Z0-9]/g,'')}-${sale.slug}-${job.status}@${senderDomain(env)}>`,
     'MIME-Version: 1.0', `Content-Type: multipart/mixed; boundary="${boundary}"`, '',

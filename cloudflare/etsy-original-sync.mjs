@@ -67,7 +67,7 @@ export async function alertOriginalSync(env, subject, text, state) {
     const token = await sellerMailToken(env);
     const owner = 'tj@vermillionaurora.com';
     const encode = value => { let s = ''; for (const b of new TextEncoder().encode(value)) s += String.fromCharCode(b); return btoa(s); };
-    const mime = [`From: Vermillion Aurora <${owner}>`, `To: ${owner}`, `Subject: =?UTF-8?B?${encode(subject)}?=`, 'MIME-Version: 1.0',
+    const mime = [`From: Vermillion Aurora Productions <${owner}>`, `To: ${owner}`, `Subject: =?UTF-8?B?${encode(subject)}?=`, 'MIME-Version: 1.0',
       'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: base64', '', encode(text)].join('\r\n');
     const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {method: 'POST', signal: AbortSignal.timeout(20000),
       headers: {Authorization: `Bearer ${token}`, 'Content-Type': 'application/json'}, body: JSON.stringify({raw: encode(mime).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')})});

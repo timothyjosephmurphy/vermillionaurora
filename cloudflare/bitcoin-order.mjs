@@ -136,7 +136,7 @@ export class BitcoinOrder extends DurableObject {
     const token=await sellerMailToken(this.env);
     const encode=value=>{let out='';for(const byte of new TextEncoder().encode(value))out+=String.fromCharCode(byte);return btoa(out);};
     const body=`Bitcoin payment needs review\n\nPainting: ${data.quote.title}\nOrder: ${data.id}\nInvoice: ${data.invoiceId||'Unknown — search by order ID'}\nExpected total: $${data.quote.total} USD\n${data.reason}\n\nReview this order in BTCPay. Do not ship or issue another charge until resolved.`;
-    const mime=['From: Vermillion Aurora <tj@vermillionaurora.com>','To: tj@vermillionaurora.com',
+    const mime=['From: Vermillion Aurora Productions <tj@vermillionaurora.com>','To: tj@vermillionaurora.com',
       'Subject: Bitcoin payment needs review','MIME-Version: 1.0','Content-Type: text/plain; charset=UTF-8','Content-Transfer-Encoding: base64','',encode(body)].join('\r\n');
     const response=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{method:'POST',signal:AbortSignal.timeout(20_000),
       headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify({raw:encode(mime).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'')})});

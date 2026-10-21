@@ -76,7 +76,7 @@ it('purchases the saved rate, emails its PDF, and survives duplicate captures, a
   expect(JSON.parse(purchases()[0].body)).toEqual({rate:'RATE1',async:false,label_file_type:'PDF',metadata:'paypal-CAPTURE1'});
   expect(emails()).toHaveLength(1);
   expect(emailMime()).toContain('To: tj@tjm.art');
-  expect(emailMime()).toContain('From: Vermilion Aurora Shipping <tj@tjm.art>');
+  expect(emailMime()).toContain('From: Vermillion Aurora Productions Shipping <tj@tjm.art>');
   expect(emailMime()).toMatch(/Message-ID: <shippo-[^>]+@tjm\.art>/);
   expect(emailMime()).toContain('filename="shipping-label.pdf"');
   expect((await readJob(stub)).emailId).toBe('EMAIL1');

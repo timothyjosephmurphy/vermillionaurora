@@ -17,7 +17,7 @@ export const person = {
   url: `${SITE}/about/`,
   image: `${SITE}/about/images/tj-murphy-portrait.jpg`,
   homeLocation: { '@type': 'Place', name: 'Seattle, Washington' },
-  brand: { '@type': 'Brand', name: 'Vermillion Aurora' },
+  brand: { '@type': 'Brand', name: 'Vermillion Aurora Productions' },
   sameAs
 };
 // Site name for search results: TJM.art (alternate: TJ Murphy).

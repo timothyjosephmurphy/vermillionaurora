@@ -123,7 +123,7 @@ export async function commissionForm(request,env) {
       // This avoids relying on a runtime address variable for MIME parsing.
       const senderAddress = "tj@vermillionaurora.com";
       const mimeParts = [
-        `From: Vermillion Aurora Website <${senderAddress}>`,
+        `From: Vermillion Aurora Productions Website <${senderAddress}>`,
         `To: ${notifyAddress(env)}`,
         `Reply-To: ${email}`,
         `Subject: ${mimeHeader(isPurchase ? `Painting Purchase Inquiry — ${paintingTitle} (${reference})` : `New Commission Request — ${name} (${reference})`)}`,
