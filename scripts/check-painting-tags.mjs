@@ -1,12 +1,12 @@
 // Validates catalog/painting-tags.json (studio-tracker #248). Run: node scripts/check-painting-tags.mjs
 import data from '../catalog/painting-tags.json' with { type: 'json' };
 import { products, byId } from '../catalog/catalog.mjs';
-import { relatedWorks, twinGroups, RELATED_LIMIT } from '../catalog/related-works.mjs';
+import { relatedWorks, twinGroups, RELATED_LIMIT, resolveId, tagAssignments } from '../catalog/related-works.mjs';
 const errors = [];
 const kinds = new Set(['place', 'series', 'subject']);
 for (const [k, t] of Object.entries(data.tags)) if (!t.label || !kinds.has(t.kind)) errors.push(`tag ${k}: needs label and kind place|series|subject`);
 for (const [id, tags] of Object.entries(data.assignments)) {
-  const p = byId[id];
+  const p = byId[resolveId(id)];
   if (!p) { errors.push(`assignment ${id}: no such product`); continue; }
   if (p.artist === 'Paul Murphy') errors.push(`assignment ${id}: Paul Murphy works must not be tagged`);
   if (p.type !== 'painting') errors.push(`assignment ${id}: not a painting`);
@@ -15,8 +15,8 @@ for (const [id, tags] of Object.entries(data.assignments)) {
 }
 const group = twinGroups(products);
 for (const g of data.twins) {
-  for (const id of g) if (!byId[id]) errors.push(`twins: no such product ${id}`);
-  const sets = g.map(id => JSON.stringify([...(data.assignments[id] || [])].sort()));
+  for (const id of g) if (!byId[resolveId(id)]) errors.push(`twins: no such product ${id}`);
+  const sets = g.map(id => JSON.stringify([...(tagAssignments[resolveId(id)] || [])].sort()));
   if (new Set(sets).size > 1) errors.push(`twins ${g.join(',')}: must share the same tags`);
 }
 for (const p of products) {

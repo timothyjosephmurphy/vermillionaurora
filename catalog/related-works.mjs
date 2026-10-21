@@ -1,19 +1,27 @@
 // Related works for TJ Murphy painting pages (studio-tracker #248).
 // Tags live in catalog/painting-tags.json, keyed by product id. Paul Murphy's works are never tagged or shown.
 import data from './painting-tags.json' with { type: 'json' };
-import { products as allProducts } from './catalog.mjs';
+import { products as allProducts, byId } from './catalog.mjs';
+import { PRODUCT_RENAMES } from '../worker/product-renames.mjs';
 
 export const RELATED_LIMIT = 6;
 const WEIGHT = { series: 3, place: 2, subject: 1 };
 export const tagDefs = data.tags;
-export const tagAssignments = data.assignments;
+// Follow product renames so a key keeps working when a painting's id/slug changes (e.g. the Yelapa rename).
+export function resolveId(id) {
+  const seen = new Set();
+  while (!byId[id] && PRODUCT_RENAMES[id] && !seen.has(id)) { seen.add(id); id = PRODUCT_RENAMES[id]; }
+  return id;
+}
+export const tagAssignments = Object.fromEntries(Object.entries(data.assignments).map(([id, tags]) => [resolveId(id), tags]));
+const twinList = (data.twins || []).map(g => g.map(resolveId));
 
 const norm = t => String(t || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 const eligible = p => p && p.type === 'painting' && p.artist !== 'Paul Murphy';
 
 // Group pages that show the same physical painting: explicit twins, book-gallery
 // originalProductId pairs, and pages with the same normalized title.
-export function twinGroups(products = allProducts, twins = data.twins) {
+export function twinGroups(products = allProducts, twins = twinList) {
   const parent = new Map();
   const find = x => { while (parent.get(x) !== x) { parent.set(x, parent.get(parent.get(x))); x = parent.get(x); } return x; };
   const union = (a, b) => { if (parent.has(a) && parent.has(b)) parent.set(find(a), find(b)); };
