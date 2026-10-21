@@ -26,7 +26,8 @@ test('all 54 archive masters retain exact bytes and offer native-resolution edit
       assert(v.imageSize.width*300<=art.source.widthPx+1&&v.imageSize.height*300<=art.source.heightPx+1);
       assert(v.imageSize.width<v.paperSize.width&&v.imageSize.height<v.paperSize.height);
       assert(Math.min(v.paperSize.width,v.paperSize.height)>=4);
-      for(const finish of ['black','white','natural'])assert(readyPrints[`${v.id}-frame-${finish}`],`${v.id} ${finish}`);
+      // Goat Lake #308 (Oct 21 2026): re-sized to the 10 × 12 in original; framed options wait for a frame quote on the padded edition.
+      if(recipe.id!=='archived-painting-308')for(const finish of ['black','white','natural'])assert(readyPrints[`${v.id}-frame-${finish}`],`${v.id} ${finish}`);
     }
     assert.equal(wallArtworks.filter(a=>a.id===recipe.id).length,1,recipe.id);
   }
