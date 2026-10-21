@@ -45,6 +45,8 @@ export const canonicalArtwork = {
   'book-art-fb5eaeb2078ebf9c75f0': 'older-work-beach-sunsets-original-3', // Miami (book) = TJ Beach Sunset 309
   'book-art-b50262c37f44843487ae': 'archived-painting-301', // Catherine (book) = Catherine #1
   'book-art-a6a2c048812a41cee4e4': 'archived-painting-371', // Benny and Kermit… portrait 4 (book) = Painting #371
+  // Oct 21 2026 (TJ approved): book scan retired; the archive photo page survives as Self Portrait on Goat Lake (10 × 12 in).
+  'book-art-50a7984f819bec72d1c7': 'archived-painting-308', // Myself Painting on Mt Baker near Goat Lake (book p.69)
   'archived-painting-412': 'painting-studio-figure', // Brekkie Hoisting Orange Calcite B (archive photo) = the catalog page
 };
 // Extra works shown in a book-gallery section (catalog ids or book-art ids).

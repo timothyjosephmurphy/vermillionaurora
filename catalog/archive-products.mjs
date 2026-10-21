@@ -18,13 +18,15 @@ export default archivePaintings.map(p => {
   }
   return {
     id:p.id,slug:p.id,type:'painting',title:archiveTitle(p),artist:'TJ Murphy',
-    description:`${archiveTitle(p)} by TJ Murphy, from Archived Paintings.${p.index!==null&&p.inscription&&p.inscription!==archiveTitle(p)?` ${p.inscription}.`:''}`,
+    description:p.description||`${archiveTitle(p)} by TJ Murphy, from Archived Paintings.${p.index!==null&&p.inscription&&p.inscription!==archiveTitle(p)?` ${p.inscription}.`:''}`,
     eyebrow:'Archived Paintings',listing:{status:price?'available':'not-for-sale',price},
     medium:p.medium||null,year:p.year||null,dimensions,
     facts:[
       ...(p.index===null?[]:[{label:'Archive index',value:`#${p.index}`}]),
       ...(p.dimensionsInscription?[{label:'Size noted on reverse',value:`${p.dimensionsInscription.text} in`}]:[]),
-      ...(p.estimatedDimensions?[{label:'Approximate paper size',value:`About ${p.estimatedDimensions.width} × ${p.estimatedDimensions.height} in (W × H), estimated from photographs; allow roughly 10% variation.`}]:[]),
+      ...(recorded?.source==='artist'?[{label:'Size',value:`${recorded.width} × ${recorded.height} ${recorded.unit} (W × H)`}]:[]),
+      ...(p.bookReference?[{label:'Book reference',value:`${p.bookReference.book}, page ${p.bookReference.page}: “${p.bookReference.caption}”`}]:[]),
+      ...(p.estimatedDimensions&&recorded?.source!=='artist'?[{label:'Approximate paper size',value:`About ${p.estimatedDimensions.width} × ${p.estimatedDimensions.height} in (W × H), estimated from photographs; allow roughly 10% variation.`}]:[]),
       ...(p.cataloguedDimensions?[{label:'Previously catalogued size',value:`${p.cataloguedDimensions.width} × ${p.cataloguedDimensions.height} ${p.cataloguedDimensions.unit} (W × H)`}]:[])
     ],
     story:p.inscription&&p.index!==null?[`Inscribed on the reverse: “${p.inscription}”.`]:[],

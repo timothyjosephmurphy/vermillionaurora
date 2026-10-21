@@ -7435,54 +7435,6 @@
     ]
   },
   {
-    "id": "book-art-50a7984f819bec72d1c7",
-    "slug": "book-art-50a7984f819bec72d1c7",
-    "title": "Myself Painting on Mt Baker near Goat Lake",
-    "type": "painting",
-    "artist": "TJ Murphy",
-    "bookGallery": true,
-    "eyebrow": "Self Portraits",
-    "description": "Myself Painting on Mt Baker near Goat Lake from TJ Murphy’s watercolor art books.",
-    "image": {
-      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
-      "alt": "Myself Painting on Mt Baker near Goat Lake",
-      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
-    },
-    "listing": {
-      "status": "not-for-sale"
-    },
-    "facts": [
-      {
-        "label": "Book measurements",
-        "value": "12 × 15 — unit not specified in book"
-      }
-    ],
-    "story": [],
-    "back": {
-      "href": "/book-galleries/watercolor-portraits-self-portraits/",
-      "label": "← Back to Self Portraits"
-    },
-    "inquiry": {
-      "label": "Contact the artist",
-      "note": ""
-    },
-    "bookSources": [
-      {
-        "book": "watercolor-portraits",
-        "pages": [
-          69
-        ],
-        "xref": 1071,
-        "captions": [
-          "Myself Painting on Mt Baker near Goat Lake 12 x 15"
-        ],
-        "measurements": [
-          "12 x 15"
-        ]
-      }
-    ]
-  },
-  {
     "id": "book-art-4c6fb3817fed4e5a6195",
     "slug": "book-art-4c6fb3817fed4e5a6195",
     "title": "Painting in Black Rock City",

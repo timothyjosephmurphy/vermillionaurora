@@ -1253,29 +1253,6 @@
    }
   ]
  },
- "book-art-50a7984f819bec72d1c7": {
-  "sha256": "ee47c2147c",
-  "width": 2280,
-  "height": 3031,
-  "sources": [
-   {
-    "width": 320,
-    "src": "/wall-paintings/book-art-50a7984f819bec72d1c7-ee47c2147c-320.webp"
-   },
-   {
-    "width": 960,
-    "src": "/wall-paintings/book-art-50a7984f819bec72d1c7-ee47c2147c-960.webp"
-   },
-   {
-    "width": 1920,
-    "src": "/wall-paintings/book-art-50a7984f819bec72d1c7-ee47c2147c-1920.webp"
-   },
-   {
-    "width": 2280,
-    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
-   }
-  ]
- },
  "book-art-4c6fb3817fed4e5a6195": {
   "sha256": "10579f595b",
   "width": 2418,

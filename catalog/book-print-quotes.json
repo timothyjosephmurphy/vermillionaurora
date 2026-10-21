@@ -835,30 +835,6 @@
       "quotedAt": "2026-10-01T23:38:47.417Z"
     },
     {
-      "productId": "book-art-50a7984f819bec72d1c7",
-      "key": "full",
-      "sku": "5M144M8S7.85X10.35",
-      "amount": "35.00",
-      "pricingRule": "finerworks-3.5x-v1",
-      "quotedAt": "2026-10-01T23:38:47.417Z"
-    },
-    {
-      "productId": "book-art-50a7984f819bec72d1c7",
-      "key": "medium",
-      "sku": "5M144M8S5.95X7.82",
-      "amount": "25.00",
-      "pricingRule": "finerworks-3.5x-v1",
-      "quotedAt": "2026-10-01T23:38:47.417Z"
-    },
-    {
-      "productId": "book-art-50a7984f819bec72d1c7",
-      "key": "small",
-      "sku": "5M144M8S4.05X5.3",
-      "amount": "25.00",
-      "pricingRule": "finerworks-3.5x-v1",
-      "quotedAt": "2026-10-01T23:38:47.417Z"
-    },
-    {
       "productId": "book-art-4c6fb3817fed4e5a6195",
       "key": "full",
       "sku": "5M144M8S8.31X7.28",
