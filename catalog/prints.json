@@ -20474,7 +20474,7 @@
               }
             }
           },
-          "amount": "50.00",
+          "amount": "55.00",
           "pricingRule": "finerworks-3.5x-v1",
           "quotedAt": "2026-10-21T19:08:44.859Z",
           "bordered": {
@@ -20516,6 +20516,10 @@
                   "height": 3594
                 }
               }
+            },
+            "priceOverride": {
+              "amount": "55.00",
+              "reason": "Framed large uses a $15 FinerWorks base sheet (10.08 x 12.98 in, quoted 2026-10-21); the frame-at-cost rule needs the artwork price >= 3.5 x $15 = $55. Unframed bordered cost is $13 (3.5x = $50)."
             }
           }
         },
