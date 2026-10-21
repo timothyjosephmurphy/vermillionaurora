@@ -1,3 +1,6 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +8,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Neural Dance Mural | TJ Murphy</title>
 <meta name="description" content="Explore Neural Dance, a participatory mural in development about human agency, shared rhythm, and connection. Try the interactive network prototype." />
-<style>
+<style is:inline>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#07080c;color:#f4f6fb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{padding:16px}.app{width:min(1500px,100%);margin:auto}h1{margin:0;font-size:clamp(22px,3vw,34px)}.sub{margin:4px 0 12px;color:#9da5b8}.controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px 14px;padding:12px;background:#10121a;border:1px solid rgba(255,255,255,.12);border-radius:14px;margin-bottom:12px}.controls label{display:grid;gap:4px;min-width:115px;color:#aab0c0;font-size:12px}.controls input[type=range]{width:125px}.controls output{color:#fff;font-variant-numeric:tabular-nums}.controls button,.controls select{border:1px solid rgba(255,255,255,.13);background:#171a24;color:#fff;border-radius:9px;padding:9px 12px;font:inherit;cursor:pointer}.controls button.primary{background:#3158b8;border-color:#527af0}.stage{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 18px 60px rgba(0,0,0,.35)}canvas{display:block;width:100%;height:auto;background:#05060a;cursor:crosshair}.status{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:9px;color:#9da5b8;font-size:13px}.back{display:inline-block;margin-bottom:1em;color:#7b8ab6;font-size:14px;text-decoration:none}.back:hover{color:#b0bcdd}body.full{padding:0;overflow:hidden}body.full h1,body.full .sub,body.full .controls,body.full .status,body.full .back{display:none}body.full .app,body.full .stage{width:100vw;height:100vh;max-width:none;margin:0;border:0;border-radius:0}body.full canvas{width:100vw;height:100vh;object-fit:contain}
 
 .project-story{max-width:1100px;margin:24px auto 16px;padding:12px 0 0;font-size:16px;line-height:1.75;color:#c2c8d7}
@@ -33,32 +36,7 @@ body.full #original-simulation .prototype-note{display:none}
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-<header class="site-header">
-        <div class="container header-inner">
-          <div class="brand-block">
-            <a href="/#top" class="brand" aria-label="TJM.art by Vermillion Aurora Productions home">
-              <img class="brand-mark" src="/brand/tj-murphy-logo-52.webp" srcset="/brand/tj-murphy-logo-104.webp 2x, /brand/tj-murphy-logo-156.webp 3x" width="52" height="60" alt="TJ Murphy" decoding="async">
-              <span>TJM.art<br /><small>by Vermillion Aurora Productions</small></span>
-            </a>
-          </div>
-
-          <nav class="main-nav" aria-label="Main navigation">
-            <a href="/gallery/">Gallery</a>
-            <a href="/exhibitions/">Exhibitions</a>
-            <a href="/murals/">Murals</a>
-            <a href="/#books">Books</a>
-            <a href="/#services">Commissions</a>
-            <a href="/testimonials/">Testimonials</a>
-            <a href="/#film">Film</a>
-            <a href="/about/">About</a>
-            <a href="/#contact">Contact</a>
-          </nav>
-
-          <div class="header-actions">
-            <a href="/#contact" class="button button-solid header-cta"><span class="header-cta-lead">Book a&nbsp;</span>commission</a>
-          </div>
-        </div>
-      </header>
+<SiteHeader />
 <div class="app" id="main-content" role="main" tabindex="-1">
   <a href="/" class="back">← Back to portfolio</a>
   <h1>Neural Dance Mural</h1>
@@ -68,7 +46,7 @@ body.full #original-simulation .prototype-note{display:none}
     <h2 id="project-purpose">Showing up and moving, together.</h2>
     <p class="project-intro">Neural Dance is a participatory mural that turns individual acts of presence into a shared, living constellation. Dance, music, and projected light make each person’s contribution visible—and let it ripple through the people around them.</p>
 
-    <p class="project-credit">A project by Timothy Joseph Murphy · Vermillion Aurora Productions</p>
+    <p class="project-credit">A project by Timothy Joseph Murphy · Vermillion Aurora</p>
   </section>
 
 <section id="nd-mural-mapped" aria-labelledby="mural-simulation-title">
@@ -84,7 +62,7 @@ body.full #original-simulation .prototype-note{display:none}
   <div class="viz-row text-small"><span data-legend="0">● Kick</span><span data-legend="1">◆ Bass</span><span data-legend="2">■ Mid</span><span data-legend="3">▲ Treble</span><span data-status role="status" aria-live="polite">Ready · 28 dancers</span></div>
   <img data-mural src="/neural-dance/mural-with-silhouettes.jpeg" hidden alt="Shipping container mural with dancer silhouettes">
 </section>
-<style>
+<style is:inline>
 #nd-mural-mapped{--background:#07080c;--foreground:#f4f6fb;--viz-series-1:#ff927d;--viz-series-2:#eb92f5;--viz-series-3:#7fe8b3;--viz-series-4:#81b7fc;margin:48px 0 24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
 #nd-mural-mapped .viz-row,#nd-mural-mapped .viz-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
 #nd-mural-mapped h2{font-size:clamp(22px,3vw,32px);margin:0 auto 0 0}
@@ -102,7 +80,7 @@ body.full #nd-mural-mapped{display:none}
 #nd-mural-mapped .viz-row{justify-content:flex-start}
 #nd-mural-mapped h2{margin-right:auto}
 </style>
-<script>
+<script is:inline>
 (()=>{
 const root=document.getElementById('nd-mural-mapped');
 const canvas=root.querySelector('[data-stage]'),ctx=canvas.getContext('2d'),photo=root.querySelector('[data-mural]');
@@ -243,7 +221,7 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
   </section>
 
 </div>
-<script>
+<script is:inline>
 (()=>{
 "use strict";
 const c=document.getElementById('canvas'),ctx=c.getContext('2d');
@@ -429,4 +407,3 @@ reset();draw();showNotice(notice);
 </script>
 </body>
 </html>
-
