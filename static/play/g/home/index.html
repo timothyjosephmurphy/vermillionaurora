@@ -42,7 +42,7 @@
   }, 1000);
   addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
 })();
-</script>  <script type="module" crossorigin src="/play/assets/index-BAPckBWl.js"></script>
+</script>  <script type="module" crossorigin src="/play/assets/index-BAPckBWl-r239.js"></script>
   <link rel="stylesheet" crossorigin href="/play/assets/index-AjsI_omb.css">
 </head><body>
 <!-- museum-gates:arrive -->
@@ -158,4 +158,6 @@ function tunnel(o) {
 <div id="labels"></div><div id="rotate" aria-live="polite"><div class="ph"></div><p>Turn your phone sideways</p><small>The dungeon plays in landscape</small></div><div id="msg"></div>
 <div id="cart"><b>CART</b><ul id="cartlist"><li>empty</li></ul><small>Walk through the gold CHECKOUT gate to buy on tjm.art.</small></div>
 <div id="start"><h1>TJM GALLERY</h1><p style="letter-spacing:.2em;font-size:13px;margin-top:-6px">THE STUDIO · PRIVATE PREVIEW</p><p>CLICK TO ENTER</p><select id="goto" aria-label="Go to a painting"></select><p class="ui-help">WASD move · mouse look · Shift to run</p></div>
-<div id="touch"><div id="tmove"></div><button id="tfire">THROW</button><button id="tswap" type="button" aria-label="Next tool" title="Next tool"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h15M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button id="tlaunch" type="button" hidden>LAUNCH</button></div><div id="iosHint" hidden>For full screen: Share → Add to Home Screen <button type="button">×</button></div></body></html>
+<div id="touch"><div id="tmove"></div><button id="tfire">THROW</button><button id="tswap" type="button" aria-label="Next tool" title="Next tool"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h15M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button id="tlaunch" type="button" hidden>LAUNCH</button></div><div id="iosHint" hidden>For full screen: Share → Add to Home Screen <button type="button">×</button></div><style id="hudtool">@media (pointer:coarse){#hud #tswap{position:static!important;left:auto!important;right:auto!important;bottom:auto!important;top:auto!important;width:34px!important;height:26px!important;min-width:0!important;border-radius:8px!important;margin:0 4px 0 0!important;padding:0!important;display:inline-flex!important;align-items:center;justify-content:center;vertical-align:middle;flex:0 0 auto;box-shadow:none!important}#hud #tswap svg{width:70%!important;height:70%!important}}</style>
+<script>/* #238: the tool-switch arrow sits in the HUD right after the Buy Scanner button */(function(){function mv(){var t=document.getElementById('tswap'),h=document.getElementById('hud');if(!t||!h)return;var w=h.querySelector('.wpn');if(t.parentNode===h&&(!w||t.previousElementSibling===w))return;if(w)w.insertAdjacentElement('afterend',t);else h.insertBefore(t,h.firstChild);}setInterval(mv,800);if(document.readyState==='loading')addEventListener('DOMContentLoaded',mv);else mv();})();</script>
+</body></html>
