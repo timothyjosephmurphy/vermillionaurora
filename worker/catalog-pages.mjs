@@ -133,17 +133,22 @@ export function addCards(html, diff, live) {
   const i = html.indexOf('<li class="painting-list-row');
   return i < 0 ? html : html.slice(0, i) + cards + html.slice(i);
 }
-// Full page for a painting added in the admin: the /about/ page shell with a product <main> and JSON-LD.
+// Full page for a painting added in the admin: the Astro product shell with a product <main> and JSON-LD.
 export async function renderAdded(env, p, live) {
-  const shell = await (await env.ASSETS.fetch(new Request('https://tjm.art/about/'))).text();
+  // The Astro-built shell (src/pages/catalog-shell/product/); the /about/ page is the fallback during a deploy skew.
+  let res = await env.ASSETS.fetch(new Request('https://tjm.art/catalog-shell/product/'));
+  if (!res.ok) res = await env.ASSETS.fetch(new Request('https://tjm.art/about/'));
+  const shell = await res.text();
   const img = displaySet(live, p.id), status = live.status.get(p.id)?.status || 'available', url = `https://tjm.art/products/${p.slug}/`;
   const desc = p.description || `${p.title} by ${p.artist || 'TJ Murphy'}.`;
   const ld = { '@context': 'https://schema.org', '@type': 'VisualArtwork', name: p.title, url, creator: { '@type': 'Person', name: p.artist || 'TJ Murphy' }, description: desc,
     ...(img ? { image: img.full } : {}), ...(p.medium ? { artMedium: p.medium } : {}), ...(p.year ? { dateCreated: String(p.year) } : {}),
     ...(p.width ? { width: { '@type': 'Distance', name: `${p.width} ${p.unit}` }, height: { '@type': 'Distance', name: `${p.height} ${p.unit}` } } : {}),
     ...(p.price_amount ? { offers: { '@type': 'Offer', price: p.price_amount, priceCurrency: p.currency || 'USD', url, availability: status === 'available' ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut' } } : {}) };
-  const main = `<main class="product-page"><section class="product-detail" data-product-id="${esc(p.id)}"><figure class="product-figure">${img ? `<a class="painting-image-trigger" href="${img.full}"><img src="${img.src}" srcset="${img.srcset}" sizes="(max-width: 980px) calc(100vw - 48px), 560px" alt="${esc(p.title)} by ${esc(p.artist || 'TJ Murphy')}" fetchpriority="high"></a>` : ''}</figure><div class="product-info"><h1>${esc(p.title)}</h1>${p.medium ? `<p>${esc(p.medium)}${p.year ? `, ${p.year}` : ''}</p>` : ''}${p.width ? `<p>${esc(dimsLabel(p.width, p.height, p.unit))} (W × H)</p>` : ''}<p class="product-detail-price">${esc(p.price_amount ? money(p.price_amount) : statusText[status] || '')}</p><p>${esc(desc)}</p><p><a class="button" href="/commissions/">Ask about this painting</a></p></div></section><script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script></main>`;
-  return shell.replace(/<title>[^<]*<\/title>/, `<title>${esc(p.title)} — TJ Murphy</title>`)
+  const main = `<main class="container product-detail" data-product-id="${esc(p.id)}"><nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a></nav><article class="product-layout"><div class="product-media"><figure class="product-figure">${img ? `<a class="painting-image-trigger" href="${img.full}"><img src="${img.src}" srcset="${img.srcset}" sizes="(max-width: 980px) calc(100vw - 48px), 560px" alt="${esc(p.title)} by ${esc(p.artist || 'TJ Murphy')}" fetchpriority="high"></a>` : ''}</figure></div><div class="product-summary"><p class="eyebrow dark">Original painting</p><h1>${esc(p.title)}</h1>${p.medium ? `<p>${esc(p.medium)}${p.year ? `, ${p.year}` : ''}</p>` : ''}${p.width ? `<p>${esc(dimsLabel(p.width, p.height, p.unit))} (W × H)</p>` : ''}<p class="product-detail-price">${esc(p.price_amount ? money(p.price_amount) : statusText[status] || '')}</p><p>${esc(desc)}</p><p><a class="button button-solid" href="/commissions/">Ask about this painting</a></p></div></article><script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script></main>`;
+  return shell.replace(/<meta name="robots" content="noindex"[^>]*>/, '')
+    .replace(/<meta (?:property|name)="(?:og|twitter):image" content=""[^>]*>/g, img ? '$&' : '')
+    .replace(/<title>[^<]*<\/title>/, `<title>${esc(p.title)} — TJ Murphy</title>`)
     .replace(/(<meta name="description" content=")[^"]*"/, `$1${esc(desc)}"`)
     .replace(/(<link rel="canonical" href=")[^"]*"/, `$1${url}"`)
     .replace(/(<meta property="og:(?:url)" content=")[^"]*"/g, `$1${url}"`)
