@@ -42,7 +42,7 @@
   }, 1000);
   addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
 })();
-</script>  <script type="module" crossorigin src="/play/assets/index-BB5z5PYS.js"></script>
+</script>  <script type="module" crossorigin src="/play/assets/index-BB5z5PYS-r232.js"></script>
   <link rel="stylesheet" crossorigin href="/play/assets/index-AjsI_omb.css">
 </head><body>
 <!-- museum-gates:arrive -->
@@ -97,7 +97,8 @@ function tunnel(o) {
   var cb = null; function cartBtn() { if (cb || !document.body) return; cb = document.createElement('button'); cb.type = 'button'; cb.id = 'museum-cartbtn'; cb.setAttribute('aria-label', 'Exit to cart');
     cb.style.cssText = css + 'position:fixed;top:calc(8px + var(--sa-top, env(safe-area-inset-top)));left:calc(168px + var(--sa-left, env(safe-area-inset-left)));z-index:40;padding:6px 12px;border:1px solid rgba(241,223,168,.45);background:rgba(10,6,24,.62);color:#f1dfa8;font-size:13px';
     ['mousedown', 'touchstart'].forEach(function (ev) { cb.addEventListener(ev, function (e) { e.stopPropagation(); }, { passive: true }); });
-    cb.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); if (!cnt()) { cb.__empty = true; cb.textContent = 'Cart is empty'; setTimeout(function () { cb.__empty = false; upd(); }, 1400); return; } goCart(); }); document.body.appendChild(cb); upd(); }
+    cb.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); if (!cnt()) { cb.__empty = true; cb.textContent = 'Cart is empty'; setTimeout(function () { cb.__empty = false; upd(); }, 1400); return; } goCart(); }); document.body.appendChild(cb); upd(); place(); [300, 1000, 2500].forEach(function (t) { setTimeout(place, t); }); addEventListener('resize', place); }
+  function place() { /* #232: sit just right of the Home button, never under it */ try { var h = document.getElementById('homebtn'); if (!cb || !h) return; var r = h.getBoundingClientRect(); if (!r.width) return; cb.style.left = Math.round(r.right + 8) + 'px'; cb.style.top = Math.round(r.top + (r.height - cb.offsetHeight) / 2) + 'px'; } catch (e) {} }
   function upd() { if (cb && !cb.__empty) cb.textContent = 'Cart (' + cnt() + ')'; if (panel && paused) fillPanel(); }
   setInterval(function () { if (mc()) { cartBtn(); upd(); } }, 700);
   var panel = null, paused = false, primary = null;
