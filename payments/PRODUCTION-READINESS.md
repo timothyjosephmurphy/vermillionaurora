@@ -30,21 +30,21 @@ The parcel override is saved in `catalog/products.json` in the product’s `chec
 - The catalog rebuild matches all 57 product titles, prices, availability, and recorded dimensions.
 - A real sandbox buyer completed the Honeybadger purchase. Its isolated stock is sold.
 - PayPal's actual capture event was resent through the registered sandbox webhook. The Worker verified it and recorded receipt. The test tax record is stored.
-- Cloudflare's production settings contain `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `PAYPAL_MERCHANT_ID`, `PAYPAL_WEBHOOK_ID`, `GITHUB_TOKEN`, `SHIPPO_TOKEN`, and `SHIP_FROM_STREET`. Secret values were not retrieved. Presence alone does not validate the live credentials.
+- Cloudflare's production settings contain `GITHUB_TOKEN`, `SHIPPO_TOKEN`, and `SHIP_FROM_STREET`. Secret values were not retrieved. Presence alone does not validate the live credentials. PayPal credentials were deleted in October 2026 (#133).
 - The live webhook was previously configured by the owner; it must be checked against the live app again during deployment verification.
 
 Evidence: https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/36537716207
 
 ## Deployment sequence and remaining launch work
 
-1. **Complete:** PR #3 is merged and deployed to `vermillion-commissions` with `CHECKOUT_MODE=live`, `PAYPAL_CHECKOUT_ENABLED=false`, and the `PAINTING_STOCK` binding.
+1. **Complete:** PR #3 is merged and deployed to `vermillion-commissions` with `CHECKOUT_MODE=live`, and the `PAINTING_STOCK` binding.
 2. **Connection verification complete:** live provider credentials and webhook registration passed the diagnostic. Tax-calculation and transaction-write access remain to be exercised. Live webhook URL: `https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/webhook`; event: `PAYMENT.CAPTURE.COMPLETED`.
 3. Finish shipping and insurance setup before accepting live orders. Chase Toole has owner-confirmed envelope dimensions and owner-authorized weight/thickness estimates in the override above. Other current quotes estimate 2 lb per package, with a 4-inch tube for works whose longer side exceeds 12 inches and flat packages for smaller works. Tube length currently equals the rounded-up shorter painting dimension; allow for end caps and padding when measuring the real package. Chase Toole is configured for insurance through the shipping integration; other paintings retain their existing settings.
-4. Set `PAYPAL_CHECKOUT_SLUGS` to one chosen product slug for a controlled live purchase, then set `PAYPAL_CHECKOUT_ENABLED=true`. The optional comma-separated slug list restricts new checkout to selected paintings; blank or absent allows the whole catalog. These runtime values should be set in the release configuration before deployment because Wrangler explicitly manages the enable flag.
+4. (Retired) The PayPal controlled-purchase step no longer applies; PayPal was removed in October 2026 (#133).
 5. Verify the paid order, immediate sold state, GitHub inventory/page commit, public site update, webhook, and stored sales tax details. This live inventory write was deliberately not performed by the sandbox test.
-6. Keep `PAYPAL_CHECKOUT_SLUGS=painting-portrait-in-green` after the controlled purchase. A broader public rollout requires separate authorization and completion of the remaining tax/shipping setup.
+6. (Retired) PayPal slug allowlist; PayPal was removed in October 2026 (#133).
 
-To pause new purchases, set `PAYPAL_CHECKOUT_ENABLED=false`. Existing capture/cancel requests and signed webhooks continue to work while credentials remain configured. Preserve the Durable Object namespace and its state. Do not clear a capturing or sold record as a rollback step.
+To pause new purchases, turn off the Square, Bitcoin, or cart enable flags in `cloudflare/wrangler.jsonc`. Preserve the Durable Object namespace and its state. Do not clear a capturing or sold record as a rollback step.
 
 ## Sandbox verification
 
@@ -56,7 +56,7 @@ Shippo label purchase and seller email are implemented behind the separate, defa
 
 The owner asked to run a live test without waiting for the business tax ID, acknowledged the risk, and authorized setup. The pilot is restricted to Chase Toole at $20 with the existing flat-envelope estimates and $20 Shippo insurance. UPS is the only eligible carrier for this pilot: the insured USPS sandbox label returned `sender_info_missing`, while UPS label generation was verified earlier. Sales tax was calculated normally, with no fabricated registration.
 
-Release preparation sets `SHIPPO_AUTO_LABEL_ENABLED=true` and `PAYPAL_CHECKOUT_SLUGS=painting-portrait-in-green`, while keeping checkout disabled until the insured UPS sandbox test and production Gmail/insured-quote checks pass. Then only `PAYPAL_CHECKOUT_ENABLED` changes to true. The owner's purchase is the remaining real payment action; no automatic diagnostic creates a live PayPal order, purchases postage, or records a fabricated sale.
+Release preparation sets `SHIPPO_AUTO_LABEL_ENABLED=true`. No automatic diagnostic takes a payment, purchases postage, or records a fabricated sale.
 
 Production health reports `CHECKOUT_RELEASE` so deployment verification waits for the intended code/configuration rather than accepting an old healthy Worker. The protected readiness route verifies the live Gmail refresh, selected painting availability, a live insured UPS rate, and the Washington Department of Revenue rate lookup. It only quotes to the configured origin address and exposes no address or secret values.
 

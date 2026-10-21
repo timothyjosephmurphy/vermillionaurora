@@ -26,6 +26,13 @@ it('verifies legacy IPN receipts from the ledger without sending transaction IDs
   expect((await stub.archiveNow()).archived).toBe(true);
   expect(await stub.hasRecordedIpnSale('MISSING')).toBe(false);
 });
+it('archives a stored PayPal Orders receipt without calling PayPal (#133)',async()=>{
+  const fetch=vi.fn(()=>{throw Error('No provider call is permitted');});vi.stubGlobal('fetch',fetch);
+  const archiveSale=vi.fn(async()=>({recorded:true,period:'2026-09'}));
+  const stock={getByName:()=>({order:async()=>({state:'sold',captureId:'CAP1',orderId:'ORD1'}),archiveSale})};
+  expect(await backfillCheckoutSale({...env,CHECKOUT_MODE:'live',PAINTING_STOCK:stock},'paypal-work')).toEqual({recorded:true,period:'2026-09'});
+  expect(archiveSale).toHaveBeenCalledOnce();expect(fetch).not.toHaveBeenCalled();
+});
 it('keeps one financial receipt across retries and eviction, with retained fulfillment history',async()=>{
   const stub=ledger();await stub.record(receipt());await stub.record(receipt());
   expect((await stub.summary()).records).toBe(1);
