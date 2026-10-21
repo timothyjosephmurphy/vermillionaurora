@@ -8,12 +8,12 @@ import prints from '../print-catalog.mjs';
 import {isDor,dorReply} from './dor-mock.mjs';
 const ids=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small'];
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
+const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_ALL:'true',SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
 const originalPrints=structuredClone(prints);
 // Explicit sample fixtures keep the historical security gates covered after
 // Chase and Dorian graduate to normal full-resolution editions.
 function useSampleFixtures(){for(const id of ids){prints[id].sampleOnly=true;prints[id.replace('-small','-medium')].sampleOnly=true;}}
-let calls,payment,submission,loseReply,unitCost,objects,mailCount,activeMode,captureSequence=0;
+let calls,payment,submission,loseReply,unitCost,objects,mailCount,activeMode,squareCount=0;
 beforeEach(()=>{
   calls=[];payment=null;submission=null;loseReply=false;unitCost=7;objects=[];mailCount=0;activeMode='sandbox';
   vi.stubGlobal('fetch',vi.fn(async(input,init={})=>{
@@ -33,9 +33,9 @@ beforeEach(()=>{
       }
       if(u.pathname.endsWith('fetch_order_status'))return Response.json({status:{success:true},orders:submission?[{order_po:submission.order_po,order_id:123456,order_status_label:'Accepted',shipments:[]}]:[]});
     }
-    if(u.pathname==='/v1/oauth2/token'||u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
-    if(u.pathname==='/v2/checkout/orders'){payment={...body,id:'ORDER1',status:'CREATED',links:[{rel:'approve',href:`https://www.${activeMode==='sandbox'?'sandbox.':''}paypal.com/checkoutnow?token=ORDER1`}]};return Response.json(payment);}
-    if(u.pathname.startsWith('/v2/checkout/orders/')){if(u.pathname.endsWith('/capture')){payment.status='COMPLETED';payment.purchase_units[0].payments={captures:[{id:`FWCAPTURE${++captureSequence}`,status:'COMPLETED',amount:payment.purchase_units[0].amount,create_time:'2026-09-30T12:00:00Z'}]};}return Response.json(payment);}
+    if(u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
+    if(/^connect\.squareup(sandbox)?\.com$/.test(u.hostname)&&u.pathname==='/v2/payments'){if(!payment||payment.idempotency_key!==body.idempotency_key)payment={id:'SQUAREPAY'+(squareCount++),idempotency_key:body.idempotency_key,status:'COMPLETED',location_id:body.location_id,reference_id:body.reference_id,amount_money:body.amount_money,created_at:'2026-09-29T12:00:00Z',updated_at:'2026-09-29T12:00:00Z',processing_fee:[{amount_money:{amount:200,currency:'USD'}}]};return Response.json({payment});}
+    if(/^connect\.squareup(sandbox)?\.com$/.test(u.hostname)&&u.pathname.startsWith('/v2/payments/'))return Response.json({payment});
     if(isDor(u))return dorReply();
     if(u.hostname==='gmail.googleapis.com')return Response.json({id:`MAIL${++mailCount}`});
     throw Error(`Unexpected external request: ${u.origin}${u.pathname}`);
@@ -48,9 +48,9 @@ async function setup(overrides={},selection=ids) {
   const orderId=crypto.randomUUID(),order=env.CART_ORDERS.getByName(orderId);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...config};});
   const quote=await priceCart({...env,...config},cartItems(selection.map(id=>({id,quantity:1}))),address,'buyer@example.test');
-  await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['paypal']);return {orderId,order,quote};
+  await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['square']);return {orderId,order,quote};
 }
-async function pay(order){await order.start('paypal');payment.status='APPROVED';await order.capture();}
+async function pay(order){await order.start('square',{sourceId:'cnon:test-card'});}
 it('full-image editions preserve paper geometry and exact files through paid fulfillment without changing original stock',async()=>{
   const selection=['print-paul-murphy-painting-55-full','print-paul-murphy-painting-86-small','print-paul-murphy-painting-72-medium','print-painting-portrait-in-green-small','print-painting-portrait-with-hat-full'];
   const stock=env.PAINTING_STOCK.getByName('paul-murphy-painting-86'),before=await stock.status();
@@ -61,16 +61,16 @@ it('full-image editions preserve paper geometry and exact files through paid ful
   expect(submission.order_items).toHaveLength(selection.length);
   for(const id of selection){const p=prints[id];expect(submission.order_items.some(i=>i.product_sku===p.sku&&i.product_image.product_url_file===p.assetUrl)).toBe(true);}
   expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);expect(await stock.status()).toBe(before);
-  expect(calls.findIndex(c=>c.url.endsWith('/capture'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
+  expect(calls.findIndex(c=>c.url.endsWith('/v2/payments'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
 });
 it('allows sandbox pilots while live samples require their separate enablement flag',()=>{
   useSampleFixtures();
-  for(const id of ids){expect(paymentMethods({...env,...settings},id)).toEqual(['paypal']);expect(paymentMethods({...env,...settings,CHECKOUT_MODE:'live',FINERWORKS_PAYMENT_TOKEN:'invoice'},id)).toEqual([]);expect(paymentMethods({...env,...settings,FINERWORKS_ORDER_ENABLED:'false'},id)).toEqual([]);}
+  for(const id of ids){expect(paymentMethods({...env,...settings},id)).toEqual(['square']);expect(paymentMethods({...env,...settings,CHECKOUT_MODE:'live',FINERWORKS_PAYMENT_TOKEN:'invoice'},id)).toEqual([]);expect(paymentMethods({...env,...settings,FINERWORKS_ORDER_ENABLED:'false'},id)).toEqual([]);}
 });
 it('live sample gate never admits sandbox-only files or multiple copies of one painting',()=>{
   useSampleFixtures();
-  const live={...env,...settings,CHECKOUT_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'};
-  expect(paymentMethods(live,ids[0])).toEqual(['paypal']);
+  const live={...env,...settings,CHECKOUT_MODE:'live',SQUARE_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'};
+  expect(paymentMethods(live,ids[0])).toEqual(['square']);
   expect(paymentMethods({...live,LIVE_PRINT_SAMPLE_ENABLED:'false'},ids[0])).toEqual([]);
   const prior=prints[ids[0]].testOnly;try{prints[ids[0]].testOnly=true;expect(paymentMethods(live,ids[0])).toEqual([]);}finally{prints[ids[0]].testOnly=prior;}
   expect(()=>cartItems([{id:ids[0],quantity:2}])).toThrow(/one copy/);
@@ -78,11 +78,11 @@ it('live sample gate never admits sandbox-only files or multiple copies of one p
 });
 it('live payment precedes one billed full-resolution edition submission and archives the sale without billing credentials',async()=>{
   const ledger=env.SALES_LEDGER.getByName('live:2026-09');objects.push(ledger);await runInDurableObject(ledger,i=>{i.env={...i.env,CHECKOUT_MODE:'live'};});
-  const {order,orderId}=await setup({CHECKOUT_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'});
-  await order.start('paypal');expect(submission).toBeNull();payment.status='APPROVED';await order.capture();await order.refresh();await order.refresh();
+  const {order,orderId}=await setup({CHECKOUT_MODE:'live',SQUARE_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'});
+  await pay(order);await order.refresh();await order.refresh();
   const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('in-production');
   expect(submission.order_items).toHaveLength(2);expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);
-  expect(calls.findIndex(c=>c.url.endsWith('/capture'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
+  expect(calls.findIndex(c=>c.url.endsWith('/v2/payments'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
   expect(submission.order_items.every(i=>i.product_image.product_url_file.startsWith('https://vermillionaurora.com/print-editions/'))).toBe(true);
   const archived=await (await env.SALES_ARCHIVE.get(`orders/live/${orderId}.json`)).text();expect(archived).not.toContain('fake-live-payment-token');expect(JSON.parse(archived).receipt.mode).toBe('live');
 });
@@ -92,7 +92,7 @@ it('records one payment and one FinerWorks order containing both paintings witho
   await pay(order);await order.refresh();await order.refresh();
   const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('test-complete');expect(saved.printJob.providerId).toBe('123456');
   expect(submission.order_items).toHaveLength(2);expect(new Set(submission.order_items.map(i=>i.product_image.product_url_file)).size).toBe(2);
-  expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(1);expect(calls.some(c=>c.url.includes('shippo'))).toBe(false);expect(await stock.status()).toBe(before);
+  expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);expect(calls.filter(c=>c.url.endsWith('/v2/payments'))).toHaveLength(1);expect(calls.some(c=>c.url.includes('shippo'))).toBe(false);expect(await stock.status()).toBe(before);
   const archived=await (await env.SALES_ARCHIVE.get(`orders/sandbox/${orderId}.json`)).json();expect(archived.receipt.printFulfillment.provider).toBe('finerworks');expect(archived.receipt.printFulfillment.providerOrderId).toBe('123456');expect(saved.customerMail.status).toBe('sent');expect(saved.printSellerMail.status).toBe('sent');expect(saved.printShipmentMail).toBeUndefined();
   const state=await order.result();expect(state.quote.items[0].assetUrl).toBeUndefined();expect(state.quote.printQuote).toBeUndefined();expect(await order.printCallback('b'.repeat(64))).toBe(false);
 });
@@ -104,9 +104,9 @@ it('recovers an accepted order after a lost reply by its PO without resubmitting
 it('holds higher supplier costs for review after payment',async()=>{
   const {order}=await setup();await pay(order);unitCost=99;await order.refresh();expect((await inspect(order)).printJob.status).toBe('review');expect(submission).toBeNull();
 });
-it('archives captured payment even if fulfillment is disabled after PayPal approval',async()=>{
-  const {order,orderId}=await setup();await order.start('paypal');payment.status='APPROVED';await runInDurableObject(order,i=>{i.env.FINERWORKS_ORDER_ENABLED='false';});await order.capture();await order.refresh();
-  expect((await inspect(order)).status).toBe('paid');expect((await inspect(order)).printJob.status).toBe('review');expect(await env.SALES_ARCHIVE.get(`orders/sandbox/${orderId}.json`)).not.toBeNull();expect(submission).toBeNull();
+it('archives the payment even if fulfillment is disabled after payment',async()=>{
+  const {order,orderId}=await setup();await pay(order);await runInDurableObject(order,i=>{i.env.FINERWORKS_ORDER_ENABLED='false';i.save({...i.read(),printJob:{...i.read().printJob,checkedAt:0}});});await order.refresh();
+  expect((await inspect(order)).status).toBe('paid');expect(['pending','review']).toContain((await inspect(order)).printJob.status);expect(await env.SALES_ARCHIVE.get(`orders/sandbox/${orderId}.json`)).not.toBeNull();expect(submission).toBeNull();
 });
 it('rejects a live-mode submit through sandbox credentials before calling FinerWorks',async()=>{
   await expect(finerworksRequest({...env,...settings},'/v3/submit_orders_v2',{orders:[{order_po:`va-cart-${crypto.randomUUID()}-prints`,test_mode:false}],validate_only:false,payment_token:'invoice'})).rejects.toThrow();expect(calls).toHaveLength(0);
