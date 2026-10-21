@@ -8,12 +8,12 @@ import {resolveCode,applyCode,printCodesApi,codeHash,OWNER_CODE_HASH} from '../p
 import {isDor,dorReply} from './dor-mock.mjs';
 const ids=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small'];
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
+const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_ALL:'true',SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
 const originalPrints=structuredClone(prints);
 // Explicit sample fixtures keep the historical security gates covered after
 // Chase and Dorian graduate to normal full-resolution editions.
 function useSampleFixtures(){for(const id of ids){prints[id].sampleOnly=true;prints[id.replace('-small','-medium')].sampleOnly=true;}}
-let calls,payment,submission,loseReply,unitCost,objects,mailCount,activeMode,captureSequence=0;
+let calls,payment,submission,loseReply,unitCost,objects,mailCount,activeMode,squareCount=0;
 beforeEach(()=>{
   calls=[];payment=null;submission=null;loseReply=false;unitCost=7;objects=[];mailCount=0;activeMode='sandbox';
   vi.stubGlobal('fetch',vi.fn(async(input,init={})=>{
@@ -33,9 +33,9 @@ beforeEach(()=>{
       }
       if(u.pathname.endsWith('fetch_order_status'))return Response.json({status:{success:true},orders:submission?[{order_po:submission.order_po,order_id:123456,order_status_label:'Accepted',shipments:[]}]:[]});
     }
-    if(u.pathname==='/v1/oauth2/token'||u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
-    if(u.pathname==='/v2/checkout/orders'){payment={...body,id:'ORDER1',status:'CREATED',links:[{rel:'approve',href:`https://www.${activeMode==='sandbox'?'sandbox.':''}paypal.com/checkoutnow?token=ORDER1`}]};return Response.json(payment);}
-    if(u.pathname.startsWith('/v2/checkout/orders/')){if(u.pathname.endsWith('/capture')){payment.status='COMPLETED';payment.purchase_units[0].payments={captures:[{id:`FWCAPTURE${++captureSequence}`,status:'COMPLETED',amount:payment.purchase_units[0].amount,create_time:'2026-09-30T12:00:00Z'}]};}return Response.json(payment);}
+    if(u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
+    if(/^connect\.squareup(sandbox)?\.com$/.test(u.hostname)&&u.pathname==='/v2/payments'){if(!payment||payment.idempotency_key!==body.idempotency_key)payment={id:'SQUAREPAY'+(squareCount++),idempotency_key:body.idempotency_key,status:'COMPLETED',location_id:body.location_id,reference_id:body.reference_id,amount_money:body.amount_money,created_at:'2026-09-29T12:00:00Z',updated_at:'2026-09-29T12:00:00Z',processing_fee:[{amount_money:{amount:200,currency:'USD'}}]};return Response.json({payment});}
+    if(/^connect\.squareup(sandbox)?\.com$/.test(u.hostname)&&u.pathname.startsWith('/v2/payments/'))return Response.json({payment});
     if(isDor(u))return dorReply();
     if(u.hostname==='gmail.googleapis.com')return Response.json({id:`MAIL${++mailCount}`});
     throw Error(`Unexpected external request: ${u.origin}${u.pathname}`);
@@ -50,7 +50,7 @@ async function quoteWith(code,selection=ids){
   const items=cartItems(selection.map(id=>({id,quantity:1})));
   const resolved=await resolveCode({...env,...config},code,items);
   const quote=await priceCart({...env,...config},items,address,'buyer@example.test',resolved);
-  await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['paypal']);return {orderId,order,quote};
+  await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['square']);return {orderId,order,quote};
 }
 async function issue(token='manager-test-token'){
   const r=await printCodesApi(new Request('https://w.test/checkout/print-codes/issue',{method:'POST',headers:{Authorization:`Bearer ${token}`},body:JSON.stringify({name:'Jane Collector',email:'jane@example.test'})}),{...env,COMMISSION_MANAGER_TOKEN:'manager-test-token',CHECKOUT_MODE:'sandbox'});
@@ -60,7 +60,7 @@ it('issuing requires the existing manager token and returns a code once',async()
   expect((await issue('wrong')).status).toBe(404);
   const {status,data}=await issue();expect(status).toBe(200);expect(data.code).toMatch(/^VA-[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/);
 });
-it('collector code prices prints at provider cost and is single use: claim at start, release on cancel, redeem on payment',async()=>{
+it('collector code prices prints at provider cost and is single use: claim at start and redeem on payment',async()=>{
   unitCost=7;const {data:{code}}=await issue();
   const first=await quoteWith(code);
   expect(first.quote.items.every(i=>i.amount==='7.00'&&i.listAmount===prints[i.id].amount&&i.priceCode==='collector')).toBe(true);
@@ -68,12 +68,10 @@ it('collector code prices prints at provider cost and is single use: claim at st
   // Only the last group is kept, for a masked bookkeeping reference; never the full code.
   expect(first.quote.printCode.suffix).toBe(code.slice(-4));expect(JSON.stringify(first.quote).includes(code.replace(/-/g,''))).toBe(false);expect(JSON.stringify(first.quote).includes(code)).toBe(false);
   const second=await quoteWith(code);
-  await first.order.start('paypal');
-  expect((await second.order.start('paypal')).codeError).toBe('That discount code has already been used.');expect((await inspect(second.order)).status).toBe('quoted');
-  await first.order.cancel();
-  const third=await quoteWith(code);
-  await third.order.start('paypal');payment.status='APPROVED';await third.order.capture();await third.order.refresh();
-  const saved=await inspect(third.order);expect(saved.status).toBe('paid');expect(saved.codeRedeemed).toBe(true);expect(saved.codeConflict).toBeUndefined();
+  await first.order.start('square',{sourceId:'cnon:test-card'});
+  expect((await second.order.start('square',{sourceId:'cnon:test-card'})).codeError).toBe('That discount code has already been used.');expect((await inspect(second.order)).status).toBe('quoted');
+  await first.order.refresh();
+  const saved=await inspect(first.order);expect(saved.status).toBe('paid');expect(saved.codeRedeemed).toBe(true);expect(saved.codeConflict).toBeUndefined();
   // The print lab order is checked against listed retail, so fulfillment is not sent to review.
   expect(saved.printJob.items.every(i=>i.amount===prints[i.id].amount&&!i.listAmount)).toBe(true);
   expect(saved.printJob.status).not.toBe('review');
