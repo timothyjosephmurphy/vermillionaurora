@@ -76,7 +76,6 @@ npm --prefix cloudflare/test ci
 npm --prefix cloudflare/test test
 node --test cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
 node payments/build-checkout-catalog.mjs
-node payments/bitcoin-checkout.browser-test.cjs
 ```
 
 Browser tests require Playwright and Chromium. `CHROMIUM_EXECUTABLE` optionally
