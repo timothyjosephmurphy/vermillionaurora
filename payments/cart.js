@@ -274,6 +274,24 @@
   }
   // Print sizes display to one decimal place (the catalog keeps exact values).
   function inches(value){const n=Number(value);return Number.isFinite(n)?String(Math.round(n*10)/10):String(value);}
+  // #235: change a print's size and presentation in the cart, from the real shop variants only (catalog prints, live availability).
+  function printChoices(info,line){
+    const all=Object.values(meta).filter(p=>p.type==='print'),cur=meta[line.id];if(!cur)return;
+    const buyable=id=>!!meta[id]&&(!capabilities||capabilities.products?.some(p=>p.id===id&&p.status==='available'));
+    const sizes=all.filter(p=>p.productId===cur.productId&&!p.frame&&!p.mat&&buyable(p.id)).sort((a,b)=>a.paperSize.width*a.paperSize.height-b.paperSize.width*b.paperSize.height);
+    const base=sizes.find(b=>line.id===b.id||line.id.startsWith(b.id+'-'));if(!base||sizes.length<1)return;
+    const finishOf=id=>id===base.id?'none':id.slice(base.id.length+1);
+    const finishes=b=>[{key:'none',id:b.id,label:'Unframed print'},...all.filter(p=>p.id.startsWith(b.id+'-')&&buyable(p.id)).map(p=>({key:p.id.slice(b.id.length+1),id:p.id,label:p.frame?`${p.frame.name} frame + white mat`:p.mat?'Print with white conservation mat':p.title}))];
+    const wrap=node('div',undefined,'cart-print-choices'),sizeL=node('label','Size '),size=node('select'),finL=node('label','Presentation '),fin=node('select');
+    size.dataset.cartPrintSize='';fin.dataset.cartPrintFinish='';
+    for(const b of sizes){const o=node('option',`${b.title.split(' — ').pop()} · ${inches(b.paperSize.width)} × ${inches(b.paperSize.height)} in`);o.value=b.id;o.selected=b.id===base.id;size.append(o);}
+    const fill=b=>{fin.replaceChildren();const want=finishOf(line.id);for(const f of finishes(b)){const o=node('option',`${f.label} · ${money(Number(meta[f.id].amount))}`);o.value=f.key;o.selected=f.key===want;fin.append(o);}};
+    fill(base);
+    const apply=id=>{if(!id||id===line.id||!buyable(id))return;const other=cart.find(i=>i.id===id);if(other){other.quantity=Math.min(10,other.quantity+line.quantity);cart=cart.filter(i=>i!==line);}else line.id=id;saveCart().catch(error=>announce(error.message));invalidate();render();announce('Print updated.');};
+    size.addEventListener('change',()=>{const b=sizes.find(x=>x.id===size.value),key=fin.value,f=finishes(b).find(x=>x.key===key)||finishes(b)[0];apply(f.id);});
+    fin.addEventListener('change',()=>{const f=finishes(base).find(x=>x.key===fin.value);apply(f&&f.id);});
+    sizeL.append(size);finL.append(fin);wrap.append(sizeL,finL);info.append(wrap);
+  }
   function render(){
     const list=root.querySelector('[data-cart-items]');list.replaceChildren();
     let subtotal=0,invalid=false;
@@ -286,7 +304,7 @@
       if(isPrint&&details.frame)info.append(node('p',`${details.frame.name} frame · ${details.frame.glazing.name} acrylic · Assembled by FinerWorks`,'cart-frame-description'));
       if(!eligible(line.id)){invalid=true;info.append(node('p',live?.status==='sold'?'Sold':live?.status==='reserved'?'Temporarily reserved':'Checkout unavailable — please inquire','cart-line-unavailable'));}
       if(details?.sampleOnly)info.append(node('p','Low-resolution sample · Real printed order · One copy','cart-footnote'));
-      if(isPrint&&!details.sampleOnly){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart().catch(error=>announce(error.message));invalidate();render();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart().catch(error=>announce(`The item was removed here, but its reservation could not be updated yet: ${error.message}`));invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
+      if(isPrint&&!details.sampleOnly)printChoices(info,line);if(isPrint&&!details.sampleOnly){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart().catch(error=>announce(error.message));invalidate();render();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart().catch(error=>announce(`The item was removed here, but its reservation could not be updated yet: ${error.message}`));invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
     }
     root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
     // The 15-minute hold applies to originals only; prints and deposits are not held.
