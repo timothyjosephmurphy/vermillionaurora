@@ -11,25 +11,16 @@ import {bitcoinWebhook} from '../bitcoin-checkout.mjs';
 import {isDor,dorReply} from './dor-mock.mjs';
 const ids=['honeybadger-and-cub-with-genesis-block','painting-portrait-in-green'].sort();
 const address={name:'Test Buyer',street1:'123 Main St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const config={CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CHECKOUT_SLUGS:ids.join(','),PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://shop.example.test',SHIPPO_AUTO_LABEL_ENABLED:'false'};
-let paypalOrders,invoices,squarePayments,calls,failCreate,failCapture,failRelease,failInvoiceRead,objects,shipCount,mailCount;
+const squareSandbox={SQUARE_CHECKOUT_ENABLED:'true',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_SLUGS:ids.join(','),SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook'};
+const config={CART_CHECKOUT_ENABLED:'true',...squareSandbox,SANDBOX_RETURN_ORIGIN:'https://shop.example.test',SHIPPO_AUTO_LABEL_ENABLED:'false'};
+let invoices,squarePayments,calls,failCreate,failRelease,failInvoiceRead,objects,shipCount,mailCount;
 function quote(){const items=ids.map(id=>({id,type:'original',quantity:1,title:catalog[id].title,amount:catalog[id].amount})),base=items.reduce((s,i)=>s+Number(i.amount),0).toFixed(2);return {catalogVersion,items,base,shipping:'12.00',tax:'5.00',total:(Number(base)+17).toFixed(2),email:'buyer@example.test',address,quotedAt:Date.now(),shipments:items.map((i,n)=>({slug:i.id,title:i.title,base:i.amount,shipping:'6.00',parcel:{length:16,width:12,height:1,weight:1},packaging:'flat',address,carrier:'UPS',service:'Ground',rateId:`RATE${n}`,quotedAt:Date.now()}))};}
 beforeEach(async()=>{
-  paypalOrders=new Map();invoices=[];squarePayments=new Map();calls=[];objects=[];failCreate=failCapture=failRelease=failInvoiceRead=false;shipCount=mailCount=0;
+  invoices=[];squarePayments=new Map();calls=[];objects=[];failCreate=failRelease=failInvoiceRead=false;shipCount=mailCount=0;
   for(const id of ids){const stock=env.PAINTING_STOCK.getByName(id);objects.push(stock);await runInDurableObject(stock,(_,ctx)=>{ctx.storage.sql.exec('DELETE FROM stock');ctx.storage.sql.exec('DELETE FROM shipping_job');ctx.storage.sql.exec('DELETE FROM sale_receipt');return ctx.storage.deleteAlarm();});}
   vi.stubGlobal('fetch',vi.fn(async(input,init={})=>{
     const url=new URL(input),body=typeof init.body==='string'&&init.body.startsWith('{')?JSON.parse(init.body):init.body;
     calls.push({url:url.href,method:init.method||'GET',body,headers:init.headers});
-    if(url.pathname==='/v1/notifications/verify-webhook-signature')return Response.json({verification_status:'SUCCESS'});
-    if(url.pathname==='/v1/oauth2/token')return Response.json({access_token:'FAKE'});
-    if(url.pathname==='/v2/checkout/orders'){
-      const key=init.headers['PayPal-Request-Id'];if(!paypalOrders.has(key))paypalOrders.set(key,{...body,id:'ORDER'+paypalOrders.size,status:'CREATED',links:[{rel:'payer-action',href:'https://www.sandbox.paypal.com/checkoutnow?token=ORDER0'}]});
-      if(failCreate)throw Error('Response lost after create');return Response.json(paypalOrders.get(key));
-    }
-    if(url.pathname.startsWith('/v2/checkout/orders/')){
-      const order=[...paypalOrders.values()].find(o=>o.id===url.pathname.split('/')[4]);if(!order)throw Error('Unknown test PayPal order');
-      if(url.pathname.endsWith('/capture')){order.status='COMPLETED';order.purchase_units[0].payments={captures:[{id:'CAPTURE1',status:'COMPLETED',amount:order.purchase_units[0].amount,create_time:'2026-09-29T12:00:00Z',seller_receivable_breakdown:{paypal_fee:{value:'2.00',currency_code:'USD'},net_amount:{value:(Number(order.purchase_units[0].amount.value)-2).toFixed(2),currency_code:'USD'}}}]};if(failCapture)throw Error('Response lost after capture');}return Response.json(order);
-    }
     if(url.hostname==='connect.squareupsandbox.com'&&url.pathname==='/v2/payments'){
       const key=body.idempotency_key;
       if(!squarePayments.has(key))squarePayments.set(key,{id:'SQUAREPAY'+squarePayments.size,status:'COMPLETED',location_id:body.location_id,reference_id:body.reference_id,
@@ -55,7 +46,7 @@ beforeEach(async()=>{
   }));
 });
 afterEach(async()=>{for(const stub of objects)await runInDurableObject(stub,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();});
-async function setup(method='paypal',overrides={}) {
+async function setup(method='square',overrides={}) {
   const id=crypto.randomUUID(),order=env.CART_ORDERS.getByName(id);objects.push(order);
   const settings={...config,...(method==='bitcoin'?{CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true',BTCPAY_CHECKOUT_SLUGS:ids.join(',')}:{}),
     ...(method==='square'?{SQUARE_CHECKOUT_ENABLED:'true',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_SLUGS:ids.join(','),SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook'}:{}),...overrides};
@@ -63,17 +54,17 @@ async function setup(method='paypal',overrides={}) {
   await order.createQuote(id,await keyHash('a'.repeat(64)),quote(),[method]);return {id,order,settings};
 }
 const read=order=>runInDurableObject(order,instance=>instance.read());
-const approve=()=>{[...paypalOrders.values()][0].status='APPROVED';};
+const pay=order=>order.start('square',{sourceId:'cnon:test-card'});
 const request=(action,body)=>new Request(`https://worker/checkout/cart/${action}`,{method:'POST',headers:{Origin:'https://shop.example.test','Content-Type':'application/json'},body:JSON.stringify(body)});
-it('keeps PayPal available independently and requires an explicit Square item allowlist',()=>{
+it('requires an explicit Square item allowlist',()=>{
   const square={SQUARE_CHECKOUT_ENABLED:'true',SQUARE_MODE:'sandbox',SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook'};
-  const withoutAllowlist={...env,...config,...square};
-  expect(paymentMethods(withoutAllowlist,ids[0])).toContain('paypal');expect(paymentMethods(withoutAllowlist,ids[0])).not.toContain('square');
+  const withoutAllowlist={...env,...config,...square,SQUARE_CHECKOUT_SLUGS:''};
+  expect(paymentMethods(withoutAllowlist,ids[0])).not.toContain('square');
   const withAllowlist={...withoutAllowlist,SQUARE_CHECKOUT_SLUGS:ids[0]};
-  expect(paymentMethods(withAllowlist,ids[0])).toContain('paypal');expect(paymentMethods(withAllowlist,ids[0])).toContain('square');
+  expect(paymentMethods(withAllowlist,ids[0])).toContain('square');
 });
 
-it('offers production Square across eligible originals and prints, preserving PayPal and fulfillment gates',()=>{
+it('offers production Square across eligible originals and prints, preserving fulfillment gates',()=>{
   const square={...env,...config,CHECKOUT_MODE:'live',SQUARE_MODE:'live',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ALL:'true',
     SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'sq0idp-APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',
     SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook',
@@ -81,11 +72,10 @@ it('offers production Square across eligible originals and prints, preserving Pa
     FINERWORKS_WEB_API_KEY:'fake',FINERWORKS_APP_KEY:'fake',FINERWORKS_PAYMENT_TOKEN:'billing-token'};
   const print=Object.values(prints).find(p=>p.provider==='finerworks'&&!p.testOnly&&!p.sampleOnly);
   expect(print).toBeDefined();
-  for(const id of [...ids,print.id])expect(paymentMethods(square,id)).toEqual(expect.arrayContaining(['paypal','square']));
+  for(const id of [...ids,print.id])expect(paymentMethods(square,id)).toEqual(expect.arrayContaining(['square']));
   for(const id of ['not-a-product','__proto__','toString'])expect(paymentMethods(square,id)).toEqual([]);
   for(const key of ['SQUARE_ACCESS_TOKEN','SQUARE_APPLICATION_ID','SQUARE_LOCATION_ID','SQUARE_WEBHOOK_SIGNATURE_KEY','SQUARE_WEBHOOK_URL']){
     expect(paymentMethods({...square,[key]:''},ids[0])).not.toContain('square');
-    expect(paymentMethods({...square,[key]:''},ids[0])).toContain('paypal');
   }
   expect(paymentMethods({...square,SQUARE_CHECKOUT_ENABLED:'false'},ids[0])).not.toContain('square');
   expect(paymentMethods({...square,SQUARE_MODE:'sandbox'},ids[0])).not.toContain('square');
@@ -130,14 +120,6 @@ it('reserves originals when added, reuses the hold for a quote, releases removal
   await runInDurableObject(abandonedOrder,i=>i.save({...i.read(),expiresAt:0}));await abandonedOrder.refresh();
   expect((await runInDurableObject(abandonedOrder,i=>i.read())).status).toBe('expired');expect(await env.PAINTING_STOCK.getByName(ids[1]).status()).toBe('available');
 });
-it('keeps the cart hold through payment setup and releases it when PayPal checkout is cancelled',async()=>{
-  const id=crypto.randomUUID(),key='f'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
-  await runInDurableObject(order,i=>{i.env={...i.env,...config};});
-  await cartCheckout(request('hold',{holdId:id,key,items:[{id:ids[0],quantity:1}]}),{...env,...config});
-  const quoted=await cartCheckout(request('quote',{items:[{id:ids[0],quantity:1}],address,email:'buyer@example.test',catalogVersion,holdId:id,key}),{...env,...config});expect(quoted.status).toBe(200);
-  const started=await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),{...env,...config});expect((await started.json()).status).toBe('pending');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
-  const cancelled=await cartCheckout(request('cancel',{orderId:id,key}),{...env,...config});expect((await cancelled.json()).status).toBe('cancelled');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('available');
-});
 it('quotes separate parcels and one tax calculation with all items, without reserving or charging',async()=>{
   const items=quote().items.filter(i=>i.id!== 'painting-portrait-in-green'); // The pilot has insured shipping, tested separately by insurance tests.
   items.push({...items[0],id:'el-zonte-at-sunrise',amount:catalog['el-zonte-at-sunrise'].amount});
@@ -147,29 +129,22 @@ it('quotes separate parcels and one tax calculation with all items, without rese
   expect(calls.filter(c=>isDor(c.url))).toHaveLength(1);expect(q.items.map(i=>i.id)).toContain('el-zonte-at-sunrise');
   // Paintings and prints still need a delivery address (only commission deposits skip it).
   await expect(priceCart({...env,...config},items,undefined,'buyer@example.test')).rejects.toThrow(/address/i);
-  for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('available');expect(paypalOrders.size).toBe(0);
+  for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('available');expect(squarePayments.size).toBe(0);
 });
 it('reserves every original against competing carts and legacy checkout, with conditional cleanup',async()=>{
   const a=await setup(),b=await setup();
-  const results=await Promise.all([a.order.start('paypal'),b.order.start('paypal')]);
-  expect(results.map(r=>r.status).sort()).toEqual(['pending','unavailable']);expect(paypalOrders.size).toBe(1);
+  const results=await Promise.all([pay(a.order),pay(b.order)]);
+  expect(results.map(r=>r.status).sort()).toEqual(['paid','unavailable']);expect(squarePayments.size).toBe(1);
   for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).reserve('legacy')).toBe(false);
-  const winner=results[0].status==='pending'?a:b;await winner.order.cancel();
-  for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('available');
 });
 it('releases earlier locks when a later original is sold before checkout',async()=>{
   const {order}=await setup();const unavailable=env.PAINTING_STOCK.getByName(ids[1]);await unavailable.recordExternalSale('EXTERNAL');
-  expect((await order.start('paypal')).status).toBe('unavailable');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('available');expect(await unavailable.status()).toBe('sold');expect(paypalOrders.size).toBe(0);
+  expect((await pay(order)).status).toBe('unavailable');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('available');expect(await unavailable.status()).toBe('sold');expect(squarePayments.size).toBe(0);
 });
 it('recovers an interrupted reservation by releasing all possible locks',async()=>{
   const {id,order}=await setup();await env.PAINTING_STOCK.getByName(ids[0]).reserveCart(id);
-  await runInDurableObject(order,i=>i.save({...i.read(),status:'reserving',method:'paypal'}));await order.refresh();
-  expect((await read(order)).status).toBe('cancelled');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('available');expect(paypalOrders.size).toBe(0);
-});
-it('recovers a lost PayPal create reply using the same idempotency key and refuses payment-method switching',async()=>{
-  const {order}=await setup();failCreate=true;expect((await order.start('paypal')).status).toBe('creating');
-  failCreate=false;await order.refresh();expect((await read(order)).status).toBe('pending');expect(paypalOrders.size).toBe(1);
-  expect((await order.start('bitcoin')).method).toBe('paypal');expect(invoices.length).toBe(0);
+  await runInDurableObject(order,i=>i.save({...i.read(),status:'reserving',method:'square'}));await order.refresh();
+  expect((await read(order)).status).toBe('cancelled');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('available');expect(squarePayments.size).toBe(0);
 });
 it('recovers a lost Square create reply with the same token and idempotency key, then settles once',async()=>{
   const {order}=await setup('square');failCreate=true;
@@ -182,31 +157,19 @@ it('recovers a lost Square create reply with the same token and idempotency key,
   const receipt=await runInDurableObject(ledger,(_,ctx)=>JSON.parse(ctx.storage.sql.exec('SELECT data FROM sales WHERE id=?','payment:square:SQUAREPAY0').one().data));
   expect(receipt.provider).toBe('square');expect(receipt.gross).toBe(quote().total);expect(receipt.providerFee).toBe('2.00');
 });
-it('keeps locks after a lost capture response, settles once, records one sale/tax and sends one buyer receipt',async()=>{
-  const {id,order}=await setup();await order.start('paypal');approve();failCapture=true;
-  expect((await order.capture()).status).toBe('capturing');for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).reserve('other')).toBe(false);
-  failCapture=false;
+it('keeps locks after a lost payment response, settles once, records one sale/tax and sends one buyer receipt',async()=>{
+  const {id,order}=await setup();failCreate=true;
+  expect((await pay(order)).status).toBe('creating');for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).reserve('other')).toBe(false);
+  failCreate=false;
   await order.refresh();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
-  expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(1);expect(calls.filter(c=>isDor(c.url))).toHaveLength(0);expect(mailCount).toBe(1);
+  expect(squarePayments.size).toBe(1);expect(calls.filter(c=>isDor(c.url))).toHaveLength(0);expect(mailCount).toBe(1);
   const d=await read(order);expect(d.taxRecorded).toBe(true);expect(d.customerMail.status).toBe('sent');
   for(const slug of ids){expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('sold');expect(await runInDurableObject(env.PAINTING_STOCK.getByName(slug),(_,ctx)=>ctx.storage.sql.exec('SELECT count(*) AS n FROM sale_receipt').one().n)).toBe(0);}
   const ledger=env.SALES_LEDGER.getByName(`sandbox:${d.paidAt.slice(0,7)}`);objects.push(ledger);
-  const receipt=await runInDurableObject(ledger,(_,ctx)=>JSON.parse(ctx.storage.sql.exec('SELECT data FROM sales WHERE id=?','payment:CAPTURE1').one().data));
-  expect(receipt.items).toHaveLength(2);expect(receipt.gross).toBe(quote().total);expect(receipt.paypalFee).toBe('2.00');
+  const receipt=await runInDurableObject(ledger,(_,ctx)=>JSON.parse(ctx.storage.sql.exec('SELECT data FROM sales WHERE id=?','payment:square:SQUAREPAY0').one().data));
+  expect(receipt.items).toHaveLength(2);expect(receipt.gross).toBe(quote().total);expect(receipt.providerFee).toBe('2.00');
   expect((await backfillCheckoutSale(env,ids[0])).recorded).toBe(true);
   await evictDurableObject(order);expect((await order.publicStatus()).status).toBe('paid');
-});
-it('does not capture after cancellation or an expired unpaid checkout',async()=>{
-  const {order}=await setup();await order.start('paypal');approve();await order.cancel();expect((await order.capture()).status).toBe('cancelled');
-  expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(0);
-  const b=await setup();await b.order.start('paypal');await runInDurableObject(b.order,i=>i.save({...i.read(),expiresAt:0}));await b.order.refresh();expect((await read(b.order)).status).toBe('expired');
-});
-it('rejects mismatched merchant, amount, address and items without capturing',async()=>{
-  const {order}=await setup();await order.start('paypal');approve();const unit=[...paypalOrders.values()][0].purchase_units[0];
-  for(const [object,key,bad] of [[unit.payee,'merchant_id','OTHER'],[unit.amount,'value','0.01'],[unit.shipping.address,'postal_code','10001'],[unit.items[0],'quantity','2']]){
-    const old=object[key];object[key]=bad;expect(await runInDurableObject(order,async i=>{try{await i.capture();return '';}catch(e){return e.message;}})).toMatch(/match/);object[key]=old;
-  }
-  expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(0);for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('reserved');
 });
 it('keeps a recovered missing Bitcoin checkout expired and reserves the next cart under a new identity',async()=>{
   const {id,order}=await setup('bitcoin');await order.start('bitcoin');
@@ -292,10 +255,10 @@ it('keeps partially paid expired Bitcoin orders reserved for review',async()=>{
   const {order}=await setup('bitcoin');await order.start('bitcoin');invoices[0].status='Expired';invoices[0].additionalStatus='PaidPartial';invoices[0].payments=[{id:'TX',value:'0.001'}];await order.refresh();expect((await read(order)).status).toBe('review');for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('reserved');
 });
 it('requires the order access key and permits existing orders to finish when new checkout is paused',async()=>{
-  const {id,order}=await setup();await order.start('paypal');approve();
-  expect((await cartCheckout(request('capture',{orderId:id,key:'b'.repeat(64)}),{...env,...config})).status).toBe(404);
+  const {id,order}=await setup();await pay(order);
+  expect((await cartCheckout(request('status',{orderId:id,key:'b'.repeat(64)}),{...env,...config})).status).toBe(404);
   expect((await cartCheckout(request('quote',{catalogVersion,items:[]}),{...env,...config,CART_CHECKOUT_ENABLED:'false'})).status).toBe(503);
-  const response=await cartCheckout(request('capture',{orderId:id,key:'a'.repeat(64)}),{...env,...config,CART_CHECKOUT_ENABLED:'false'});expect(response.status).toBe(200);expect((await response.json()).status).toBe('paid');
+  const response=await cartCheckout(request('status',{orderId:id,key:'a'.repeat(64)}),{...env,...config,CART_CHECKOUT_ENABLED:'false'});expect(response.status).toBe(200);expect((await response.json()).status).toBe('paid');
   expect((await cartCheckout(new Request('https://worker/checkout/cart/catalog',{headers:{Origin:'https://other.example'}}),{...env,...config})).status).toBe(403);
 });
 it('accepts both website domains in production and echoes the caller origin',async()=>{
@@ -307,18 +270,18 @@ it('accepts both website domains in production and echoes the caller origin',asy
   expect((await cartCheckout(new Request('https://worker/checkout/cart/catalog',{headers:{Origin:'https://www.tjm.art.evil.example'}}),live)).status).toBe(403);
 });
 it('buys and tracks two parcel labels once while recording the payment only once',async()=>{
-  const {order}=await setup('paypal',{SHIPPO_AUTO_LABEL_ENABLED:'true'});await order.start('paypal');approve();await order.capture();await order.refresh();await order.refresh();
+  const {order}=await setup('square',{SHIPPO_AUTO_LABEL_ENABLED:'true'});await pay(order);await order.refresh();await order.refresh();
   expect(calls.filter(c=>c.url==='https://api.goshippo.com/transactions/')).toHaveLength(2);
   expect((await read(order)).jobs.map(j=>j.status)).toEqual(['ready','ready']);expect(calls.filter(c=>isDor(c.url))).toHaveLength(0);expect(mailCount).toBe(3);
   const messages=calls.filter(c=>c.url.includes('gmail.googleapis.com')).map(c=>atob(c.body.raw.replaceAll('-','+').replaceAll('_','/')));expect(messages.filter(m=>m.includes('To: buyer@example.test'))).toHaveLength(1);
 });
 it('checks out a 50% commission deposit alone: no shipping, stock or labels; linked to the request; seller and buyer emails',async()=>{
-  const on={...env,...config,COMMISSION_DEPOSITS_ENABLED:'true'};
+  const on={...env,...config,COMMISSION_DEPOSITS_ENABLED:'true',SQUARE_CHECKOUT_ALL:'true'};
   expect(paymentMethods({...env,...config},'deposit-small-landscape-12x15')).toEqual([]);
   expect(paymentMethods({...on,COMMISSION_DEPOSITS_PAUSED:'true'},'deposit-small-landscape-12x15')).toEqual([]);
-  expect(paymentMethods(on,'deposit-small-landscape-12x15')).toEqual(['paypal']);
+  expect(paymentMethods(on,'deposit-small-landscape-12x15')).toEqual(['square']);
   const btc={...on,CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'};
-  expect(paymentMethods(btc,'deposit-single-portrait-7-5x12-3f')).toEqual(['paypal','bitcoin']);
+  expect(paymentMethods(btc,'deposit-single-portrait-7-5x12-3f')).toEqual(['bitcoin']);
   expect(cartItems([{id:'deposit-small-landscape-12x15',quantity:1,amount:'0.01'}])[0].amount).toBe('125.00');
   expect(cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:1}])[0].amount).toBe('50.00');
   expect(cartItems([{id:'deposit-single-portrait-7-5x12-4f',quantity:1}])[0]).toMatchObject({amount:'200.00',type:'deposit',commission:{balance:'200.00'}});
@@ -326,7 +289,7 @@ it('checks out a 50% commission deposit alone: no shipping, stock or labels; lin
   expect(()=>cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:2}])).toThrow();
   expect(()=>cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:1,requestId:'x'}])).toThrow();
   const catalogReply=await (await cartCheckout(new Request('https://worker/checkout/cart/catalog'),on)).json();
-  expect(catalogReply.products.find(p=>p.id==='deposit-small-landscape-12x15')).toMatchObject({type:'deposit',amount:'125.00',methods:['paypal']});
+  expect(catalogReply.products.find(p=>p.id==='deposit-small-landscape-12x15')).toMatchObject({type:'deposit',amount:'125.00',methods:['square']});
   const requestId=crypto.randomUUID(),id=crypto.randomUUID(),key='d'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...on};});
   const items=[{id:'deposit-small-landscape-12x15',quantity:1,requestId}];
@@ -337,31 +300,29 @@ it('checks out a 50% commission deposit alone: no shipping, stock or labels; lin
   expect(await priceCart(on,cartItems(items),{name:'',street1:'',city:'',state:'',zip:''},'buyer@example.test')).toMatchObject({address:null,tax:'0.00',total:'125.00'});
   const bare=await cartCheckout(request('quote',{items,email:'buyer@example.test',catalogVersion}),on);expect(bare.status).toBe(200);
   expect((await bare.json()).quote).toMatchObject({shipping:'0.00',base:'125.00',tax:'0.00',total:'125.00'});
-  // PayPal is a test-only fixture here (production deposits offer Bitcoin and Square), so this flow still sends an address.
   const quoted=await cartCheckout(request('quote',{items,address,email:'buyer@example.test',catalogVersion,holdId:id,key}),on);expect(quoted.status).toBe(200);
   const q=await quoted.json();expect(q.quote).toMatchObject({shipping:'0.00',base:'125.00',tax:'0.00',total:'125.00'});expect(q.quote.taxRate).toBeUndefined();
   expect(calls.some(c=>c.url.includes('goshippo')||c.url.endsWith('/shipments/'))).toBe(false);
   expect(calls.some(c=>isDor(c.url))).toBe(false);
-  expect((await (await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),on)).json()).status).toBe('pending');
-  approve();await order.capture();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
+  expect((await (await cartCheckout(request('start',{orderId:id,key,method:'square',sourceId:'cnon:test-card'}),on)).json()).status).toBe('paid');
+  expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
   const d=await read(order);expect(d.jobs).toEqual([]);expect(d.printJob).toBeUndefined();expect(d.depositSellerMail.status).toBe('sent');expect(d.customerMail.status).toBe('sent');
   expect(calls.some(c=>c.url.endsWith('/transactions/'))).toBe(false);
-  // The mocked PayPal capture ID is shared across tests, so check the order's own receipt.
   const archived=await runInDurableObject(order,instance=>instance.receipt());
   expect(archived.gross).toBe(d.quote.total);expect(archived.items[0].commission.requestId).toBe(requestId);
   expect(archived.commissionDeposit[0]).toMatchObject({package:'small-landscape',option:'12x15',requestId,balance:'125.00'});expect(archived.fulfillment.labelStatus).toBe('ready');
 });
 it('checks out a commission balance alone, like the deposit, with nothing left owing (studio-tracker #76)',async()=>{
-  const on={...env,...config,COMMISSION_DEPOSITS_ENABLED:'true'};
-  expect(paymentMethods(on,'balance-small-landscape-12x15')).toEqual(['paypal']);
+  const on={...env,...config,COMMISSION_DEPOSITS_ENABLED:'true',SQUARE_CHECKOUT_ALL:'true'};
+  expect(paymentMethods(on,'balance-small-landscape-12x15')).toEqual(['square']);
   expect(paymentMethods({...on,COMMISSION_DEPOSITS_PAUSED:'true'},'balance-small-landscape-12x15')).toEqual([]);
   const btc={...on,CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'};
-  expect(paymentMethods(btc,'balance-single-portrait-7-5x12-3f')).toEqual(['paypal','bitcoin']);
+  expect(paymentMethods(btc,'balance-single-portrait-7-5x12-3f')).toEqual(['bitcoin']);
   expect(cartItems([{id:'balance-single-portrait-7-5x12-4f',quantity:1,amount:'0.01'}])[0]).toMatchObject({amount:'200.00',type:'deposit',title:expect.stringMatching(/^Commission balance/),commission:{stage:'balance',packagePrice:'400.00',balance:'0.00'}});
   expect(()=>cartItems([{id:'balance-single-portrait-7-5x12-1f',quantity:1},{id:ids[0],quantity:1}])).toThrow();
   expect(()=>cartItems([{id:'balance-single-portrait-7-5x12-1f',quantity:1},{id:'deposit-single-portrait-7-5x12-1f',quantity:1}])).toThrow();
   const catalogReply=await (await cartCheckout(new Request('https://worker/checkout/cart/catalog'),on)).json();
-  expect(catalogReply.products.find(p=>p.id==='balance-small-landscape-12x15')).toMatchObject({type:'deposit',amount:'125.00',commission:{stage:'balance'},methods:['paypal']});
+  expect(catalogReply.products.find(p=>p.id==='balance-small-landscape-12x15')).toMatchObject({type:'deposit',amount:'125.00',commission:{stage:'balance'},methods:['square']});
   const requestId=crypto.randomUUID(),id=crypto.randomUUID(),key='e'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...on};});
   const items=[{id:'balance-small-landscape-12x15',quantity:1,requestId}];
@@ -370,8 +331,8 @@ it('checks out a commission balance alone, like the deposit, with nothing left o
   await expect(priceCart(on,cartItems(items),undefined,'buyer@example.test')).rejects.toThrow(/address/i);
   const quoted=await cartCheckout(request('quote',{items,address,email:'buyer@example.test',catalogVersion,holdId:id,key}),on);expect(quoted.status).toBe(200);
   const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('125.00');expect(Number(q.quote.tax)).toBeGreaterThan(0);
-  expect((await (await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),on)).json()).status).toBe('pending');
-  approve();await order.capture();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
+  expect((await (await cartCheckout(request('start',{orderId:id,key,method:'square',sourceId:'cnon:test-card'}),on)).json()).status).toBe('paid');
+  expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
   const d=await read(order);expect(d.jobs).toEqual([]);expect(d.depositSellerMail.status).toBe('sent');expect(d.customerMail.status).toBe('sent');
   const archived=await runInDurableObject(order,instance=>instance.receipt());
   expect(archived.items[0].commission).toMatchObject({stage:'balance',requestId,balance:'0.00'});

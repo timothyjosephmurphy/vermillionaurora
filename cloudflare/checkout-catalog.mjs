@@ -1208,7 +1208,6 @@ export const inventory = {
     "status": "inquiry"
   }
 };
-export const legacyLinks = {};
 export default {
   "el-zonte-at-sunrise": {
     "title": "Sunrise from Punta El Zonte Hostel",
