@@ -44,11 +44,12 @@ export async function finerworksDiagnostic(request,env,products) {
         const saved=papers.find(p=>p.paper===o.paper.paper),media=materials.media.find(m=>m.id===saved.media.id),style=materials.styles.find(s=>s.id===(o.print?saved.borderedStyle:saved.style).id);
         if(!media||!style||(o.print&&style.borderSize!==saved.borderedStyle.borderSize)||finerworksProductCode(media,style,o.print||o.paper)!==o.paper.sku)throw Error('Edition material or exact paper size needs review');
       }
-      const prices=await finerworksPrices(env,[...new Set(candidates.map(o=>o.paper.sku))]),quotedAt=new Date().toISOString();
+      const padSku=o=>config.artworks[o.productId]?.variants?.[o.key]?.sku;// SIDE BRANCH ONLY: also quote the padded (frame base) edition
+      const prices=await finerworksPrices(env,[...new Set(candidates.flatMap(o=>[o.paper.sku,padSku(o)].filter(Boolean)))]),quotedAt=new Date().toISOString();
       const variants=candidates.map(o=>{
         const q=prices.find(p=>p.code===o.paper.sku);
         if(!q?.ok||q.quantity!==1||q.shippingIncluded!==false||q.taxIncluded!==false)throw Error('An exact edition price could not be verified');
-        return {productId:o.productId,key:o.key,sku:o.paper.sku,amount:printRetailPrice(q.productionCost),pricingRule:PRINT_PRICING.id,quotedAt};
+        const pq=prices.find(p=>p.code===padSku(o));return {productId:o.productId,key:o.key,sku:o.paper.sku,amount:printRetailPrice(q.productionCost),productionCost:q.productionCost,paddedSku:padSku(o),paddedAmount:pq?.ok?printRetailPrice(pq.productionCost):null,paddedProductionCost:pq?.productionCost??null,pricingRule:PRINT_PRICING.id,quotedAt};
       });
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,ordersSubmitted:false,variants});
     }
