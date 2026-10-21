@@ -103,6 +103,22 @@
           ],
           "previewLongEdge": 2200
         }
+      },
+      "medium": "Watercolor pastel",
+      "recordedDimensions": {
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "source": "artist",
+        "orientation": "front-image",
+        "note": "TJ, Oct 21 2026 (W x H, portrait)"
+      },
+      "description": "Self Portrait on Goat Lake by TJ Murphy, painted on Mt Baker near Goat Lake. Reproduced in TJ Murphy’s Watercolor Portraits book (page 69) as “Myself Painting on Mt Baker near Goat Lake”.",
+      "bookReference": {
+        "book": "Watercolor Portraits",
+        "page": 69,
+        "caption": "Myself Painting on Mt Baker near Goat Lake 12 x 15",
+        "mergedFrom": "book-art-50a7984f819bec72d1c7"
       }
     },
     {
