@@ -29,7 +29,9 @@ export async function finerworksDiagnostic(request,env,products) {
       const options=printOptions(product,config,papers),materials=await finerworksMaterials(env),variants=[];
       if(!options.length||options.some(o=>!o.ready))throw Error('The unframed edition must be ready before framing');
       for(const option of options){
-        const quoted=await quoteFramedOptions(env,materials,option,['black','white','natural'],art.variants[option.key]?.frameOptions);
+        // SIDE BRANCH ONLY: frame the padded edition (the catalog's frame base), not the bordered unframed sheet.
+        const pv=art.variants[option.key],pa=pv.asset,padded={...option,paper:{...option.paper,width:pa.paperWidthIn,height:pa.paperHeightIn,sku:pv.sku},image:{...option.image,width:pa.imageWidthIn,height:pa.imageHeightIn},layoutSpec:pa.layoutSpec,asset:pa,amount:pv.amount};delete padded.print;
+        const quoted=await quoteFramedOptions(env,materials,padded,['black','white','natural'],pv.frameOptions);option.amount=pv.amount;option.asset=pa;
         for(const q of quoted)variants.push({productId:product.id,key:option.key,frameKey:q.frame.key,sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.pricing.recommendedAmount,unframedAmount:option.amount,pricingRule:q.pricing.ruleId,quotedAt:q.quotedAt,sourceSha256:art.source.sha256,assetSha256:option.asset.sha256});
       }
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,ordersSubmitted:false,variants});
