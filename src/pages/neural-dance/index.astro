@@ -1,0 +1,409 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Neural Dance Mural | TJ Murphy</title>
+<meta name="description" content="Explore Neural Dance, a participatory mural in development about human agency, shared rhythm, and connection. Try the interactive network prototype." />
+<style is:inline>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#07080c;color:#f4f6fb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{padding:16px}.app{width:min(1500px,100%);margin:auto}h1{margin:0;font-size:clamp(22px,3vw,34px)}.sub{margin:4px 0 12px;color:#9da5b8}.controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px 14px;padding:12px;background:#10121a;border:1px solid rgba(255,255,255,.12);border-radius:14px;margin-bottom:12px}.controls label{display:grid;gap:4px;min-width:115px;color:#aab0c0;font-size:12px}.controls input[type=range]{width:125px}.controls output{color:#fff;font-variant-numeric:tabular-nums}.controls button,.controls select{border:1px solid rgba(255,255,255,.13);background:#171a24;color:#fff;border-radius:9px;padding:9px 12px;font:inherit;cursor:pointer}.controls button.primary{background:#3158b8;border-color:#527af0}.stage{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 18px 60px rgba(0,0,0,.35)}canvas{display:block;width:100%;height:auto;background:#05060a;cursor:crosshair}.status{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:9px;color:#9da5b8;font-size:13px}.back{display:inline-block;margin-bottom:1em;color:#7b8ab6;font-size:14px;text-decoration:none}.back:hover{color:#b0bcdd}body.full{padding:0;overflow:hidden}body.full h1,body.full .sub,body.full .controls,body.full .status,body.full .back{display:none}body.full .app,body.full .stage{width:100vw;height:100vh;max-width:none;margin:0;border:0;border-radius:0}body.full canvas{width:100vw;height:100vh;object-fit:contain}
+
+.project-story{max-width:1100px;margin:24px auto 16px;padding:12px 0 0;font-size:16px;line-height:1.75;color:#c2c8d7}
+.project-label{color:#9baef0;font-size:14px;letter-spacing:.06em;margin:0 0 12px}
+.project-story h2{font-size:clamp(28px,4vw,42px);line-height:1.2;letter-spacing:-.025em;color:#f4f6fb;margin:0 0 20px}
+.project-intro{font-size:clamp(18px,2vw,21px);max-width:850px;color:#e0e5f1;margin-bottom:30px}
+.project-columns{display:grid;grid-template-columns:1fr 1.35fr;gap:24px 48px}
+.project-story h3{font-size:21px;line-height:1.35;color:#f4f6fb;margin:0 0 12px}
+.project-story p{margin-top:0}
+.prototype-note{padding:24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:#10121a;margin-top:24px}
+.prototype-note p:last-child{margin-bottom:0}
+.project-credit{font-size:14px;color:#9da5b8;margin:28px 0 0}
+body.full .project-story{display:none}
+@media(max-width:720px){.project-columns{grid-template-columns:1fr;gap:20px}.project-story{margin-top:32px;padding-top:28px}.prototype-note{padding:20px}}
+.performance-note{color:#b9c7ef;font-size:14px;margin:8px 0 12px}.emergency-stop{display:none}body.full .performance-note{display:none}.stage:fullscreen .emergency-stop,body.full .emergency-stop{display:block;position:fixed;z-index:100;top:12px;right:12px;background:#171a24;color:white;border:1px solid #9baef0;border-radius:9px;padding:10px 14px;font:inherit}
+
+#original-simulation{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
+#original-simulation .prototype-note{margin:0 0 20px;color:#c2c8d7;line-height:1.65}
+#original-simulation h2{margin:0 0 14px;color:#f4f6fb;font-size:clamp(22px,3vw,32px)}
+body.full #original-simulation{margin:0;padding:0;border:0}
+body.full #original-simulation .prototype-note{display:none}
+</style>
+<link href="/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="/site-header.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<SiteHeader />
+<div class="app" id="main-content" role="main" tabindex="-1">
+  <a href="/" class="back">← Back to portfolio</a>
+  <h1>Neural Dance Mural</h1>
+  <p class="sub">An interactive prototype for a participatory mural about agency, rhythm, and connection.</p>
+  <section class="project-story" aria-labelledby="project-purpose">
+    <p class="project-label">About the project · An installation in development</p>
+    <h2 id="project-purpose">Showing up and moving, together.</h2>
+    <p class="project-intro">Neural Dance is a participatory mural that turns individual acts of presence into a shared, living constellation. Dance, music, and projected light make each person’s contribution visible—and let it ripple through the people around them.</p>
+
+    <p class="project-credit">A project by Timothy Joseph Murphy · Vermillion Aurora Productions</p>
+  </section>
+
+<section id="nd-mural-mapped" aria-labelledby="mural-simulation-title">
+  <div class="viz-row"><h2 id="mural-simulation-title">Dance across the mural</h2><button class="btn btn-primary" data-action="play">Start simulation</button><button class="btn" data-action="audio" aria-pressed="false">Audio off</button><button class="btn" data-action="reset">Reset placement</button></div>
+  <p class="mural-help">Start the simulation to see 28 dancers mapped onto the mural’s silhouette stickers. Zoom in to explore; drag a marker to adjust its placement, click to add a dancer, or Shift-click to remove one.</p>
+  <div class="viz-controls">
+    <label class="form-label">New dancer rhythm<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Mid</option><option value="3">Treble</option></select></label>
+    <label class="form-label">Tempo <output data-value="bpm">120 BPM</output><input class="form-range" data-control="bpm" type="range" min="70" max="180" value="120"></label>
+    <label class="form-label">Zoom <output data-value="zoom">1×</output><input class="form-range" data-control="zoom" type="range" min="1" max="3" step=".1" value="1"></label>
+    <label class="form-label">View center<input class="form-range" data-control="pan" aria-label="Horizontal view center" type="range" min="0" max="1" step=".01" value=".5"></label>
+  </div>
+  <canvas class="cursor-interaction" data-stage width="1764" height="640" role="img" aria-label="Interactive neural light overlay on the shipping container mural. Click to add a dancer; drag a marker to align it with a silhouette; shift-click to remove it."></canvas>
+  <div class="viz-row text-small"><span data-legend="0">● Kick</span><span data-legend="1">◆ Bass</span><span data-legend="2">■ Mid</span><span data-legend="3">▲ Treble</span><span data-status role="status" aria-live="polite">Ready · 28 dancers</span></div>
+  <img data-mural src="/neural-dance/mural-with-silhouettes.jpeg" hidden alt="Shipping container mural with dancer silhouettes">
+</section>
+<style is:inline>
+#nd-mural-mapped{--background:#07080c;--foreground:#f4f6fb;--viz-series-1:#ff927d;--viz-series-2:#eb92f5;--viz-series-3:#7fe8b3;--viz-series-4:#81b7fc;margin:48px 0 24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
+#nd-mural-mapped .viz-row,#nd-mural-mapped .viz-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+#nd-mural-mapped h2{font-size:clamp(22px,3vw,32px);margin:0 auto 0 0}
+#nd-mural-mapped .mural-help{color:#aab0c0;line-height:1.6}
+#nd-mural-mapped .viz-controls{padding:12px;background:#10121a;border-radius:14px}
+#nd-mural-mapped .form-label{display:grid;gap:6px;flex:1 1 160px;min-width:0;color:#aab0c0;font-size:14px}
+#nd-mural-mapped .form-range{width:100%;margin:0;accent-color:#81b7fc}
+#nd-mural-mapped .btn,#nd-mural-mapped .form-select{border:1px solid rgba(255,255,255,.18);background:#171a24;color:#f4f6fb;border-radius:9px;padding:10px 12px;font:inherit;cursor:pointer}
+#nd-mural-mapped .btn-primary{background:#3158b8;border-color:#527af0}
+#nd-mural-mapped button:focus-visible,#nd-mural-mapped input:focus-visible,#nd-mural-mapped select:focus-visible{outline:2px solid #9baef0;outline-offset:3px}
+#nd-mural-mapped .text-small{font-size:14px;color:#aab0c0}
+body.full #nd-mural-mapped{display:none}
+
+#nd-mural-mapped [data-stage]{display:block;width:100%;height:auto;aspect-ratio:1764/640;touch-action:none;margin:16px 0}
+#nd-mural-mapped .viz-row{justify-content:flex-start}
+#nd-mural-mapped h2{margin-right:auto}
+</style>
+<script is:inline>
+(()=>{
+const root=document.getElementById('nd-mural-mapped');
+const canvas=root.querySelector('[data-stage]'),ctx=canvas.getContext('2d'),photo=root.querySelector('[data-mural]');
+const el=s=>root.querySelector(s),play=el('[data-action="play"]'),audioButton=el('[data-action="audio"]'),status=el('[data-status]');
+const W=882,H=196,R=82,MAX=48,MAX_PULSES=48,rates=[1,.5,1.5,2];
+let nodes=[],pulses=[],id=0,bpm=120,zoom=1,pan=.5,running=false,audio=false,low=false;
+let timer=0,raf=0,last=0,started=0,slow=0,time=0,lastReport=0,pointer=null;
+let ac=null,master=null,voices=new Set(),lastTone=[-99,-99,-99,-99],toneWindow=0,toneCount=0;
+let colors=[],foreground='',background='';const glows=[];
+function theme(){
+  const resolver=document.createElement('span');root.appendChild(resolver);
+  function color(token){resolver.style.color='var('+token+')';return getComputedStyle(resolver).color;}
+  colors=[1,2,3,4].map(i=>color('--viz-series-'+i));foreground=color('--foreground');background=color('--background');resolver.remove();
+  for(let k=0;k<4;k++){
+    el('[data-legend="'+k+'"]').style.color=colors[k];
+    const sprite=document.createElement('canvas');sprite.width=sprite.height=64;const c=sprite.getContext('2d');
+    const gradient=c.createRadialGradient(32,32,0,32,32,32);gradient.addColorStop(0,colors[k]);gradient.addColorStop(1,'transparent');
+    c.fillStyle=gradient;c.fillRect(0,0,64,64);glows[k]=sprite;
+  }
+  still();
+}
+function add(x,y,k){if(nodes.length>=MAX){report('48-dancer limit · remove one to add another');return;}nodes.push({id:++id,x,y,k,phase:(id%7)*.047,a:0,rest:0,peak:0,ref:0});}
+// Manually traced sticker centers, in source-photo pixels (882 x 196).
+// Blurred centers remain approximate; drag markers for individual corrections.
+const positions=[[122.8,75.0],[124.8,98.5],[134.6,68.6],[141.8,49.0],[141.4,99.5],[154.7,75.0],[162.8,71.0],[163.0,100.6],[183.0,105.5],[203.2,74.3],[202.9,109.8],[208.7,99.5],[222.9,51.3],[222.8,123.6],[235.1,124.4],[244.0,98.7],[255.7,123.4],[283.0,123.8],[288.7,131.2],[349.0,48.5],[351.2,123.6],[366.6,127.6],[357.6,162.7],[473.0,51.0],[654.5,130.2],[703.0,46.0],[755.6,117.3],[768.6,106.0]];
+function reset(){stop('Placement reset');nodes=[];pulses=[];id=0;time=0;positions.forEach(([x,y],i)=>add(x,y,i%4));still();report('Ready · '+nodes.length+' dancers');}
+function view(){const scale=canvas.width/W*zoom;return {scale,x:canvas.width/2-pan*W*scale,y:canvas.height/2-H*scale/2};}
+function transform(n){const v=view();return {x:v.x+n.x*v.scale,y:v.y+n.y*v.scale};}
+function report(text){status.textContent=text;}
+function onscreen(){const r=canvas.getBoundingClientRect();return !document.hidden&&r.bottom>0&&r.top<innerHeight&&r.left<innerWidth&&r.right>0&&root.isConnected;}
+function cancel(){clearTimeout(timer);cancelAnimationFrame(raf);timer=raf=0;}
+function mute(){audio=false;audioButton.textContent='Audio off';audioButton.setAttribute('aria-pressed','false');for(const voice of [...voices]){try{voice.o.stop();}catch{}voice.release();}if(ac)ac.suspend().catch(()=>{});}
+function stop(text='Paused'){running=false;cancel();mute();play.textContent='Resume';report(text);}
+function start(){if(running||!onscreen())return;cancel();running=true;last=performance.now();started=last;slow=0;play.textContent='Pause';report(low?'Running · reduced effects':'Running');schedule(0);}
+function schedule(delay){if(running)timer=setTimeout(()=>{timer=0;raf=requestAnimationFrame(frame);},delay);}
+function still(){if(running||raf||!root.isConnected)return;raf=requestAnimationFrame(()=>{raf=0;draw();});}
+async function toggleAudio(){if(audio){mute();return;}try{start();if(!running)return;if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.16;master.connect(ac.destination);}await ac.resume();if(!running||!onscreen()){mute();return;}audio=true;audioButton.textContent='Audio on';audioButton.setAttribute('aria-pressed','true');}catch{mute();report('Audio unavailable · visuals ready');}}
+function tone(k){if(!audio||!ac||voices.size>=8)return;const now=ac.currentTime;if(now-lastTone[k]<.09)return;if(now-toneWindow>=1){toneWindow=now;toneCount=0;}if(toneCount>=24)return;toneCount++;lastTone[k]=now;
+ const o=ac.createOscillator(),g=ac.createGain();o.type=k===1?'sawtooth':'sine';o.frequency.setValueAtTime([130,55,430,1500][k],now);if(k===0)o.frequency.exponentialRampToValueAtTime(42,now+.15);
+ g.gain.setValueAtTime(.001,now);g.gain.exponentialRampToValueAtTime([.65,.22,.15,.09][k],now+.008);g.gain.exponentialRampToValueAtTime(.001,now+.18);o.connect(g).connect(master);
+ const voice={o,release(){o.disconnect();g.disconnect();o.onended=null;voices.delete(voice);}};voices.add(voice);o.onended=voice.release;o.start(now);o.stop(now+.2);
+}
+function update(dt){time+=dt;const queue=[],emitted=new Set(),received=new Map();
+ function emit(n){if(!emitted.has(n.id)){emitted.add(n.id);queue.push(n);}}
+ for(const n of nodes){n.a=Math.max(0,n.a-dt*1.5);n.phase+=dt*bpm/60*rates[n.k];n.rest=Math.max(0,n.rest-dt);if(n.phase>=1){n.phase%=1;if(!n.rest){n.a=Math.min(2,Math.max(.95,n.a+.25));emit(n);}}}
+ for(let i=0;i<queue.length&&i<MAX;i++){const a=queue[i];tone(a.k);let trails=0;
+  for(const b of nodes){const distance=Math.hypot(a.x-b.x,a.y-b.y);if(a===b||distance>=R||b.rest)continue;
+   const used=received.get(b.id)||0,amount=Math.min(.65-used,.2+.25*(1-distance/R));if(amount>0){received.set(b.id,used+amount);b.a=Math.min(2,b.a+amount);if(b.a>=1.4&&time>=b.ref){b.ref=time+.2;emit(b);}}
+   if(trails<2&&pulses.length<(low?24:MAX_PULSES)){pulses.push({a,b,k:a.k,age:0,duration:.3+distance/170,trail:[]});trails++;}
+  }
+ }
+ for(const n of nodes){n.peak=n.a>1.75?n.peak+dt:Math.max(0,n.peak-dt*.6);if(n.peak>2.8){n.rest=1.6;n.peak=0;n.a=.4;}}
+ for(let i=pulses.length-1;i>=0;i--){const p=pulses[i];p.age+=dt;if(p.age>=p.duration){pulses.splice(i,1);continue;}const q=path(p.a,p.b,p.age/p.duration);p.trail.push(q);if(p.trail.length>10)p.trail.shift();}
+}
+function path(a,b,t){return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t-Math.sin(Math.PI*t)*Math.min(18,Math.abs(b.x-a.x)*.15)};}
+function shape(n,p,r){ctx.beginPath();if(n.k===0)ctx.arc(p.x,p.y,r,0,Math.PI*2);else if(n.k===1){ctx.moveTo(p.x,p.y-r);ctx.lineTo(p.x+r,p.y);ctx.lineTo(p.x,p.y+r);ctx.lineTo(p.x-r,p.y);ctx.closePath();}else if(n.k===2)ctx.rect(p.x-r*.8,p.y-r*.8,r*1.6,r*1.6);else{ctx.moveTo(p.x,p.y-r);ctx.lineTo(p.x+r,p.y+r);ctx.lineTo(p.x-r,p.y+r);ctx.closePath();}ctx.fill();}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);const v=view();ctx.fillStyle=background;ctx.fillRect(0,0,canvas.width,canvas.height);
+ if(photo.complete&&photo.naturalWidth)ctx.drawImage(photo,v.x,v.y,W*v.scale,H*v.scale);
+ ctx.save();ctx.beginPath();ctx.rect(Math.max(0,v.x),Math.max(0,v.y),Math.min(canvas.width,W*v.scale),Math.min(canvas.height,H*v.scale));ctx.clip();
+ ctx.lineWidth=1.5;ctx.strokeStyle=foreground;
+ for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j];if(Math.hypot(a.x-b.x,a.y-b.y)>R)continue;const activity=Math.min(a.a,b.a);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=transform(a),q=transform(b),mid=transform(path(a,b,.5));ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
+ ctx.globalAlpha=1;
+ for(const pulse of pulses){ctx.strokeStyle=colors[pulse.k];for(let j=1;j<pulse.trail.length;j++){ctx.globalAlpha=.6*j/pulse.trail.length;ctx.lineWidth=2+j/4;const a=transform(pulse.trail[j-1]),b=transform(pulse.trail[j]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=transform(path(pulse.a,pulse.b,pulse.age/pulse.duration));ctx.fillStyle=colors[pulse.k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
+ for(const n of nodes){const p=transform(n),q=Math.min(1,n.a/1.4),radius=(5+11*q)*Math.min(2,zoom);ctx.globalAlpha=n.rest?.4:1;
+  if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[n.k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}
+  ctx.strokeStyle=colors[n.k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[n.k];shape(n,p,3+2*q);
+ }
+ ctx.restore();ctx.globalAlpha=1;
+}
+function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while out of view');return;}if(now-started>300000){stop('Paused after five minutes');return;}const begin=performance.now(),gap=now-last;last=now;
+ try{update(Math.min(.067,gap/1000));draw();}catch{stop('Paused · reset to continue');return;}const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);
+ if(cost>150||slow>=12){low=true;stop('Paused to keep the browser responsive');return;}if(slow>=4){low=true;pulses.length=Math.min(24,pulses.length);}
+ if(now-lastReport>1000){report(nodes.length+' dancers · '+pulses.length+' pulses'+(low?' · reduced effects':''));lastReport=now;}
+ schedule(Math.max(0,1000/(low?15:30)-cost));
+}
+function pointerWorld(e){const r=canvas.getBoundingClientRect(),v=view();return {x:((e.clientX-r.left)*canvas.width/r.width-v.x)/v.scale,y:((e.clientY-r.top)*canvas.height/r.height-v.y)/v.scale};}
+canvas.addEventListener('pointerdown',e=>{const p=pointerWorld(e);if(p.x<0||p.x>W||p.y<0||p.y>H)return;const radius=12/zoom;let near=null,best=radius;for(const n of nodes){const d=Math.hypot(n.x-p.x,n.y-p.y);if(d<best){near=n;best=d;}}
+ if(e.shiftKey){if(near){nodes=nodes.filter(n=>n!==near);pulses=pulses.filter(p=>p.a!==near&&p.b!==near);still();}return;}
+ pointer={node:near,x:e.clientX,y:e.clientY,moved:false};canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener('pointermove',e=>{if(!pointer)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.node&&pointer.moved){const p=pointerWorld(e);pointer.node.x=Math.max(0,Math.min(W,p.x));pointer.node.y=Math.max(0,Math.min(H,p.y));still();}});
+canvas.addEventListener('pointerup',e=>{if(!pointer)return;if(!pointer.node&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H)add(p.x,p.y,+el('[data-control="type"]').value);}pointer=null;still();});
+canvas.addEventListener('pointercancel',()=>pointer=null);
+play.onclick=()=>running?stop():start();audioButton.onclick=toggleAudio;el('[data-action="reset"]').onclick=reset;
+el('[data-control="bpm"]').oninput=e=>{bpm=+e.target.value;el('[data-value="bpm"]').textContent=bpm+' BPM';};
+el('[data-control="zoom"]').oninput=e=>{zoom=+e.target.value;el('[data-value="zoom"]').textContent=zoom.toFixed(1)+'×';still();};
+el('[data-control="pan"]').oninput=e=>{pan=+e.target.value;still();};
+window.addEventListener('pagehide',()=>stop());
+document.addEventListener('keydown',e=>{if(e.key==='Escape')stop();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('Paused while out of view');});
+if('IntersectionObserver' in window)new IntersectionObserver(()=>{if(running&&!onscreen())stop('Paused while out of view');}).observe(canvas);
+new MutationObserver(theme).observe(document.documentElement,{attributes:true,attributeFilter:['class','style','data-theme']});
+photo.onload=still;theme();reset();play.textContent='Start simulation';
+})();
+</script>
+
+  <div class="project-story">
+    <div class="project-columns">
+      <section aria-labelledby="project-motivation">
+        <h3 id="project-motivation">Why make it?</h3>
+        <p>As AI and automation take on more of our labor and decision-making, what will it mean to exercise human agency? Neural Dance explores a future in which meaning comes from choosing to move, create, connect, and affect the world.</p>
+        <p>Joining the mural is a small, deliberate act. Where you place yourself changes the relationships that form around you. Each dancer keeps a distinct rhythm, while their presence helps shape something larger: a collective work that exists because people chose to participate.</p>
+      </section>
+
+      <section aria-labelledby="project-experience">
+        <h3 id="project-experience">The intended experience</h3>
+        <p>Designed for a shared gathering around music and dance, the proposed installation begins at a photo booth. Participants are photographed dancing; their silhouettes are cut into stickers, which they place wherever they choose on a mural shaped by sacred geometry and the feeling of a communal stage or amphitheater.</p>
+        <p>A fixed camera would locate the silhouettes, and a projector would illuminate each one individually. One dancer might swell with the bass, another flash with the kick, another breathe with the midrange or flicker with the treble. Their different rhythmic personalities would move together within the same music.</p>
+        <p>Nearby dancers reinforce one another. Pulses travel along connections and geometric paths, activating other dancers and spreading waves of light. The neural-network metaphor makes connection tangible: each participant becomes a point of influence in an evolving record of the gathering.</p>
+      </section>
+    </div>
+  </div>
+
+  <section id="original-simulation" aria-labelledby="prototype-use">
+    <section class="prototype-note" aria-labelledby="prototype-use">
+      <h2 id="prototype-use">Explore the original prototype</h2>
+      <p>The interactive sketch below explores the light, rhythm, and network behavior. Its colored points stand in for dancer silhouettes. It generates its own rhythmic audio; the photo booth, physical mural, and camera-to-projector installation are the next context for this idea.</p>
+      <p>Select <strong>Start simulation</strong> to begin. The demo pauses when you switch tabs or scroll away, and after five minutes of playback. You can resume whenever you’re ready. Choose a rhythm under <strong>Type</strong>, then click or tap the stage to add a dancer. Place dancers close together or farther apart and watch how the network changes. Select <strong>Start audio</strong> to hear it, adjust <strong>BPM</strong> to change the tempo, or use <strong>Seed pulse</strong> to start a wave. Shift-click removes a nearby dancer; <strong>Reset</strong> creates a new arrangement.</p>
+    </section>
+  <div class="controls">
+    <button id="audio" class="primary">Start audio</button>
+    <label>Volume<input id="vol" type="range" min="0" max="1" step=".01" value=".48"><output id="volv">48%</output></label>
+    <label>Type<select id="kind"><option value="kick">Kick</option><option value="bass" selected>Bass</option><option value="mid">Mid</option><option value="treble">Treble</option></select></label>
+    <label>BPM<input id="bpm" type="range" min="70" max="180" value="120"><output id="bpmv">120</output></label>
+    <label>Gravity<input id="gravity" type="range" min="0" max="6" step=".1" value="2.5"><output id="gravityv">2.5×</output></label>
+    <label>Wander<input id="wander" type="range" min="0" max=".8" step=".05" value=".25"><output id="wanderv">0.25</output></label>
+    <label>Pulse bloom<input id="bloom" type="range" min="0" max="3" step=".1" value="1.4"><output id="bloomv">1.4×</output></label>
+    <label>Halo bloom<input id="halobloom" type="range" min="0" max="3" step=".1" value="1.5"><output id="halobloomv">1.5×</output></label>
+    <label>Threshold<input id="thr" type="range" min="1" max="1.9" step=".05" value="1.4"><output id="thrv">1.40</output></label>
+    <label>Peak hold<input id="stamina" type="range" min="1" max="6" step=".1" value="2.8"><output id="staminav">2.8 s</output></label>
+    <label>Wobble<input id="wobble" type="range" min="0" max="2.5" step=".1" value="1"><output id="wobblev">1.0×</output></label>
+    <button id="seed">Seed pulse</button><button id="pause" class="primary">Start simulation</button><button id="reset">Reset</button><button id="fullscreen">Fullscreen</button>
+  </div>
+  <p id="performance-note" class="performance-note" role="status" aria-live="polite">Ready. Select Start simulation.</p>
+  <div class="stage"><button id="stop" class="emergency-stop">Stop simulation</button><canvas id="canvas" width="1000" height="620"></canvas></div>
+  <div class="status"><span id="status">Loading…</span><span>Click: add dancer · Shift-click: remove nearest</span></div>
+
+  </section>
+
+</div>
+<script is:inline>
+(()=>{
+"use strict";
+const c=document.getElementById('canvas'),ctx=c.getContext('2d');
+const CX=500,CY=310,SX=1.18,SY=.72,R=135,MINV=52,DRAG=2,BOOST=245,GRAV_R=155,HIT_R=18;
+let bpm=120,TH=1.4,WANDER=.25,WOBBLE=1,GRAVITY=2.5,BLOOM=1.4,HALO_BLOOM=1.5,STAMINA=2.8,paused=true,last=performance.now(),t=0,id=1;
+const MAX_NODES=48,MAX_PULSES=48,MAX_LINKS=96,MAX_TRAIL=10,MAX_VOICES=8;
+let nodes=[],pulses=[],links=new Map();
+const activationQueue=[],queuedDancers=new Set();
+function queueActivation(n){if(!queuedDancers.has(n.id)&&activationQueue.length<MAX_NODES){queuedDancers.add(n.id);activationQueue.push(n);}}
+function reinforceNeighbors(){
+  const received=new Map();
+  // At most one emission per dancer per step, with bounded incoming reinforcement.
+  for(let i=0;i<activationQueue.length&&i<MAX_NODES;i++){
+    const source=activationQueue[i];if(source.tired||!nodes.includes(source))continue;
+    sound(source.k);spread(source,null,.76,80);
+    for(const neighbor of nodes){
+      const distance=D(source,neighbor);
+      if(neighbor===source||neighbor.tired||distance>=R)continue;
+      const used=received.get(neighbor.id)||0;
+      const amount=Math.min(.65-used,.2+.25*(1-distance/R));
+      if(amount<=0)continue;
+      received.set(neighbor.id,used+amount);fire(neighbor,amount);
+    }
+  }
+  activationQueue.length=0;queuedDancers.clear();
+}
+let lowPower=false,slowFrames=0,rafId=0,timerId=0,sessionStart=0;
+let visible=true,notice='Ready. Select Start simulation.';
+const noticeEl=document.getElementById('performance-note');
+function showNotice(text){notice=text;noticeEl.textContent=text;}
+function pulseLimit(){return lowPower?24:MAX_PULSES;}
+function onScreen(){const r=c.getBoundingClientRect();return r.bottom>0&&r.top<window.innerHeight&&r.right>0&&r.left<window.innerWidth;}
+function stopAudio(){
+  audioOn=false;document.getElementById('audio').textContent='Start audio';
+  for(const voice of [...voices]){try{voice.source.stop();}catch{}voice.release();}
+  if(ac&&ac.state!=='closed')ac.suspend().catch(()=>{});
+}
+function cancelFrame(){clearTimeout(timerId);cancelAnimationFrame(rafId);timerId=rafId=0;}
+function pauseSimulation(reason='Paused. Select Resume to continue.'){
+  paused=true;cancelFrame();stopAudio();
+  document.getElementById('pause').textContent='Resume';showNotice(reason);
+}
+function startSimulation(){
+  if(document.hidden||!onScreen())return;
+  if(!paused)return;
+  paused=false;visible=true;last=performance.now();sessionStart=last;slowFrames=0;
+  document.getElementById('pause').textContent='Pause';
+  showNotice(lowPower?'Running in reduced-effects mode.':'Running with resource limits.');
+  scheduleFrame(0);
+}
+function scheduleFrame(delay){
+  if(paused||document.hidden||!visible)return;
+  timerId=setTimeout(()=>{timerId=0;rafId=requestAnimationFrame(frame);},delay);
+}
+function renderStill(){
+  if(!paused||document.hidden||!onScreen()||rafId)return;
+  rafId=requestAnimationFrame(()=>{rafId=0;draw();});
+}
+const T={kick:{h:10,m:1},bass:{h:292,m:.5},mid:{h:150,m:1.5},treble:{h:215,m:2}};
+let ac=null,master=null,audioOn=false,noiseBuffer=null;
+const voices=new Set(),lastSound={kick:-Infinity,bass:-Infinity,mid:-Infinity,treble:-Infinity};
+let soundWindow=0,soundsInWindow=0;
+async function ensureAudio(){
+  try{
+    startSimulation();if(paused)return;
+    if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=+document.getElementById('vol').value;master.connect(ac.destination);}
+    await ac.resume();
+    if(paused||document.hidden||!visible){stopAudio();return;}
+    audioOn=true;document.getElementById('audio').textContent='Mute audio';
+  }catch{stopAudio();showNotice('Audio is unavailable. The visual simulation can still run.');}
+}
+function env(g,x,p,d){g.gain.setValueAtTime(.0001,x);g.gain.exponentialRampToValueAtTime(Math.max(.001,p),x+.006);g.gain.exponentialRampToValueAtTime(.0001,x+d)}
+function sound(k){
+  if(!audioOn||!ac||paused||document.hidden||!visible||voices.size>=MAX_VOICES)return;
+  const x=ac.currentTime;
+  if(x-lastSound[k]<.08)return;
+  if(x-soundWindow>=1){soundWindow=x;soundsInWindow=0;}
+  if(soundsInWindow>=24)return;
+  lastSound[k]=x;soundsInWindow++;
+  let source,filter=null,g=ac.createGain(),duration=.1;
+  if(k==='mid'){
+    if(!noiseBuffer){noiseBuffer=ac.createBuffer(1,Math.floor(ac.sampleRate*.1),ac.sampleRate);const d=noiseBuffer.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*(1-i/d.length);}
+    source=ac.createBufferSource();source.buffer=noiseBuffer;
+    filter=ac.createBiquadFilter();filter.type='bandpass';filter.frequency.value=1150;
+    env(g,x,.07,.09);duration=.11;
+  }else{
+    source=ac.createOscillator();
+    if(k==='kick'){source.frequency.setValueAtTime(145,x);source.frequency.exponentialRampToValueAtTime(45,x+.16);env(g,x,.48,.21);duration=.23;}
+    else if(k==='bass'){source.type='sawtooth';source.frequency.value=55;filter=ac.createBiquadFilter();filter.type='lowpass';filter.frequency.value=225;env(g,x,.14,.25);duration=.28;}
+    else{source.type='triangle';source.frequency.value=1750;env(g,x,.045,.06);duration=.07;}
+  }
+  if(filter)source.connect(filter).connect(g);else source.connect(g);g.connect(master);
+  const voice={source,release(){source.disconnect();if(filter)filter.disconnect();g.disconnect();voices.delete(voice);source.onended=null;}};
+  voices.add(voice);source.onended=voice.release;source.start(x);source.stop(x+duration);
+}
+const D=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),K=(a,b)=>a.id<b.id?`${a.id}:${b.id}`:`${b.id}:${a.id}`;
+function add(x,y,k){if(nodes.length>=MAX_NODES){showNotice("Dancer limit reached (48). Remove a dancer or reset to add more.");return;}nodes.push({id:id++,x,y,k,a:0,last:-99,phase:((id-1)%7)*.047,ref:0,tired:false,fatigue:0,peak:0})}
+function reset(){nodes=[];pulses=[];links.clear();activationQueue.length=0;queuedDancers.clear();id=1;let ks=Object.keys(T);for(let i=0;i<24;i++){let a=Math.random()*Math.PI*2,r=50+Math.random()*260;add(CX+Math.cos(a)*r*SX*.94,CY+Math.sin(a)*r*SY*.94,ks[i%4])}}
+function fc(p){let x=(p.x-CX)/SX,y=(p.y-CY)/SY;return{r:Math.hypot(x,y),a:Math.atan2(y,x)}}
+function ad(a,b){let d=b-a;while(d>Math.PI)d-=Math.PI*2;while(d<-Math.PI)d+=Math.PI*2;return d}const sm=z=>z*z*(3-2*z);
+function topo(a,b,z){let A=fc(a),B=fc(b),s=sm(z),ang=A.a+ad(A.a,B.a)*s,rad=A.r+(B.r-A.r)*s,rings=[105,185,265],avg=(A.r+B.r)/2,target=rings.reduce((u,v)=>Math.abs(v-avg)<Math.abs(u-avg)?v:u);rad+=(target-rad)*.2*Math.max(0,1-Math.abs(A.r-B.r)/160)*Math.sin(Math.PI*z);return{x:CX+Math.cos(ang)*rad*SX,y:CY+Math.sin(ang)*rad*SY}}
+function plen(a,b){let p=topo(a,b,0),L=0;for(let i=1;i<=25;i++){let q=topo(a,b,i/25);L+=D(p,q);p=q}return Math.max(1,L)}
+function quad(a,q,b,z){let u=1-z;return{x:u*u*a.x+2*u*z*q.x+z*z*b.x,y:u*u*a.y+2*u*z*q.y+z*z*b.y}}
+function fire(n,s){if(n.tired)return false;n.a=Math.min(2,n.a+s*(1-.42*n.fatigue));if(n.a>=TH&&t>n.ref){n.last=t;n.ref=t+.18;queueActivation(n);return true}return false}
+function launch(a,b,str=.85,v=0,k=null,parent=null){if(pulses.length>=pulseLimit())return;let q=parent||{};pulses.push({mode:'edge',a:a.id,b:b.id,d:0,len:plen(a,b),v:Math.max(330,v+BOOST),str,age:0,kind:k||a.k,phase:q.phase??Math.random()*6.28,freq:q.freq??10+Math.random()*8,amp:q.amp??3+Math.random()*3,noise:q.noise??Math.random()*100,trail:[],hit:new Set([a.id]),gx:0,gy:0,gvx:0,gvy:0,wander:false})}
+function spread(n,exclude,str,v,k=null,parent=null){nodes.filter(o=>o.id!==n.id&&o.id!==exclude&&D(n,o)<R).sort(()=>Math.random()-.5).slice(0,2).forEach(o=>launch(n,o,str,v,k,parent))}
+function maybeWander(p,dt){if(p.mode!=='edge'||p.wander||Math.random()>WANDER*dt)return;let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return;let z=Math.min(1,p.d/p.len),here=topo(a,b,z),cand=nodes.filter(n=>n.id!==p.a&&n.id!==p.b&&D(here,n)<190);if(!cand.length)return;let target=cand[Math.floor(Math.random()*cand.length)],dx=target.x-here.x,dy=target.y-here.y,L=Math.max(1,Math.hypot(dx,dy)),nx=-dy/L,ny=dx/L,bend=(Math.random()-.5)*120;p.mode='wander';p.wander=true;p.sx=here.x;p.sy=here.y;p.tx=target.x;p.ty=target.y;p.ctrl={x:(here.x+target.x)/2+nx*bend,y:(here.y+target.y)/2+ny*bend};p.len=Math.max(1,D(here,target)*1.08);p.d=0;p.target=target.id;p.v*=.92;p.gx=0;p.gy=0}
+function basePos(p){if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return null;return topo(a,b,Math.min(1,p.d/p.len))}if(p.mode==='wander')return quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.min(1,p.d/p.len));return{x:p.x+p.ux*p.d,y:p.y+p.uy*p.d}}
+function tangent(p){const e=.008;if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return{x:1,y:0};let u=Math.min(1,p.d/p.len),q0=topo(a,b,Math.max(0,u-e)),q1=topo(a,b,Math.min(1,u+e)),dx=q1.x-q0.x,dy=q1.y-q0.y,L=Math.max(.001,Math.hypot(dx,dy));return{x:dx/L,y:dy/L}}if(p.mode==='wander'){let u=Math.min(1,p.d/p.len),q0=quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.max(0,u-e)),q1=quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.min(1,u+e)),dx=q1.x-q0.x,dy=q1.y-q0.y,L=Math.max(.001,Math.hypot(dx,dy));return{x:dx/L,y:dy/L}}return{x:p.ux,y:p.uy}}
+function rawPos(p){let b=basePos(p);if(!b)return null;return{x:b.x+p.gx,y:b.y+p.gy}}
+function pos(p){let b=rawPos(p);if(!b)return null;let tg=tangent(p),nx=-tg.y,ny=tg.x,s=Math.max(0,Math.min(1,(p.v-MINV)/500)),f=p.freq*(.62+s*.9),amp=p.amp*(1.42-s*.55)*WOBBLE,irr=Math.sin(t*f*.37+p.noise+Math.sin(t*1.7+p.noise)*.85)*.3,w=(Math.sin(t*f+p.phase)+irr)*amp;return{x:b.x+nx*w,y:b.y+ny*w}}
+function applyGravity(p,dt){let z=rawPos(p);if(!z||GRAVITY<=0)return;let ax=0,ay=0;for(let n of nodes){if(p.hit.has(n.id))continue;let dx=n.x-z.x,dy=n.y-z.y,d=Math.hypot(dx,dy);if(d<4||d>GRAV_R)continue;let fall=1-d/GRAV_R,force=GRAVITY*150*fall*fall;ax+=dx/d*force;ay+=dy/d*force}p.gvx=(p.gvx+ax*dt)*Math.exp(-2.4*dt);p.gvy=(p.gvy+ay*dt)*Math.exp(-2.4*dt);let gm=Math.hypot(p.gvx,p.gvy);if(gm>95){p.gvx=p.gvx/gm*95;p.gvy=p.gvy/gm*95}p.gx+=p.gvx*dt;p.gy+=p.gvy*dt;let off=Math.hypot(p.gx,p.gy);if(off>85){p.gx=p.gx/off*85;p.gy=p.gy/off*85}}
+function collide(p,z){if(!z)return;for(let n of nodes){if(p.hit.has(n.id)||D(z,n)>HIT_R)continue;p.hit.add(n.id);if(n.tired)continue;let fresh=fire(n,.48*p.str);sound(n.k);if(fresh&&Math.random()<.52)spread(n,null,p.str*.62,p.v,p.kind,p);p.str*=.9;p.v=Math.max(MINV,p.v*.94)}}
+function update(dt){t+=dt;for(let n of nodes){if(n.tired){n.fatigue=Math.max(0,n.fatigue-.24*dt);n.a=Math.max(0,n.a-3.1*dt);n.peak=Math.max(0,n.peak-2*dt);if(n.fatigue<.2){n.tired=false;n.ref=t+.25}}else{if(n.a>1.76)n.peak+=dt;else if(n.a>1.56)n.peak+=dt*.22;else n.peak=Math.max(0,n.peak-dt*.65);n.fatigue=Math.min(1,n.peak/STAMINA);if(n.peak>=STAMINA){n.tired=true;n.fatigue=1;n.a=Math.min(n.a,TH*.78);n.ref=t+.9}}}
+for(const n of nodes){
+  // Integrate phase instead of sampling a narrow beat window: works at 15 or 30 FPS.
+  n.phase+=dt*bpm/60*T[n.k].m;
+  if(n.phase>=1){
+    n.phase%=1;
+    if(n.tired)continue;
+    n.a=Math.min(2,Math.max(.95,n.a+.25));n.last=t;
+    queueActivation(n);
+  }
+}
+for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j];if(a.tired||b.tired||D(a,b)>R)continue;if(t-a.last<.14&&t-b.last<.14){let k=K(a,b);if(links.has(k)||links.size<MAX_LINKS)links.set(k,Math.min(2.2,(links.get(k)||.1)+.015));if(Math.random()<.04){launch(a,b,.8,90);launch(b,a,.8,90)}}}
+for(let [k,w] of [...links]){let q=w*Math.pow(.996,dt*60);if(q<.035)links.delete(k);else links.set(k,q)}
+for(let i=pulses.length-1;i>=0;i--){let p=pulses[i];p.age+=dt;p.v=Math.max(MINV,p.v*Math.exp(-DRAG*dt));p.d+=p.v*dt;maybeWander(p,dt);applyGravity(p,dt);let z=pos(p);if(z){p.trail.push({x:z.x,y:z.y});if(p.trail.length>MAX_TRAIL)p.trail.shift();collide(p,z)}if(p.d>=p.len){if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(a&&b&&b.tired){let tg=tangent(p);p.mode='free';p.x=b.x+p.gx;p.y=b.y+p.gy;p.ux=tg.x;p.uy=tg.y;p.d=0;p.len=140;p.age=0;p.gx=0;p.gy=0;continue}}pulses.splice(i,1)}else if(p.age>2.1)pulses.splice(i,1)}
+reinforceNeighbors();
+for(let n of nodes)if(!n.tired)n.a=Math.max(0,n.a-1.7*dt)}
+function sacred(){ctx.strokeStyle='rgba(145,150,180,.22)';ctx.lineWidth=1.4;for(let r of [105,185,265]){ctx.beginPath();for(let i=0;i<=100;i++){let a=i/100*Math.PI*2,x=CX+Math.cos(a)*r*SX,y=CY+Math.sin(a)*r*SY;i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke()}for(let a=0;a<Math.PI;a+=Math.PI/4){ctx.beginPath();ctx.moveTo(CX-Math.cos(a)*360,CY-Math.sin(a)*230);ctx.lineTo(CX+Math.cos(a)*360,CY+Math.sin(a)*230);ctx.stroke()}}
+// Cache four small glow textures instead of building gradients and blurred shadows per pulse.
+const glowCache=new Map();
+function glow(h){
+  if(glowCache.has(h))return glowCache.get(h);
+  const sprite=document.createElement('canvas');sprite.width=sprite.height=96;
+  const gctx=sprite.getContext('2d'),g=gctx.createRadialGradient(48,48,0,48,48,48);
+  g.addColorStop(0,`hsla(${h},100%,80%,.35)`);g.addColorStop(.3,`hsla(${h},100%,65%,.16)`);g.addColorStop(1,`hsla(${h},100%,50%,0)`);
+  gctx.fillStyle=g;gctx.fillRect(0,0,96,96);glowCache.set(h,sprite);return sprite;
+}
+function pulseBloom(p,z,h){if(lowPower||BLOOM<=0)return;const r=Math.min(40,18*BLOOM);ctx.drawImage(glow(h),z.x-r,z.y-r,r*2,r*2);}
+function haloBloom(n,q,h){if(lowPower||HALO_BLOOM<=0||n.tired||q<=.02)return;const r=Math.min(60,(18+24*q)*HALO_BLOOM);ctx.drawImage(glow(h),n.x-r,n.y-r,r*2,r*2);}
+function draw(){ctx.fillStyle='#080910';ctx.fillRect(0,0,c.width,c.height);ctx.lineCap='round';sacred();for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j],w=links.get(K(a,b))||0;if(w>.04){ctx.strokeStyle=`rgba(180,190,225,${Math.min(.45,.04+w*.2)})`;ctx.lineWidth=1+w;ctx.beginPath();for(let u=0;u<=20;u++){let q=topo(a,b,u/20);u?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y)}ctx.stroke()}}
+for(let p of pulses){let z=pos(p);if(!z)continue;let h=T[p.kind].h,N=p.trail.length;ctx.save();ctx.globalCompositeOperation='lighter';for(let j=1;j<N;j+=lowPower?2:1){let f=j/(N-1),a=p.trail[j-1],b=p.trail[j],hh=(h+(1-f)*125)%360;ctx.shadowColor=`hsla(${hh},100%,65%,.5)`;ctx.shadowBlur=0;ctx.strokeStyle=`hsla(${hh},100%,65%,${.03+.48*f*f})`;ctx.lineWidth=1+5*f;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}ctx.restore();pulseBloom(p,z,h);let s=Math.max(0,Math.min(1,(p.v-MINV)/500));ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowBlur=0;ctx.shadowColor=`hsl(${h},100%,70%)`;ctx.fillStyle=`hsl(${h},100%,88%)`;ctx.beginPath();ctx.arc(z.x,z.y,4.5+2.8*s,0,Math.PI*2);ctx.fill();ctx.restore();ctx.strokeStyle=`hsla(${(h+55)%360},100%,78%,${.55+.25*s})`;ctx.lineWidth=1.6;ctx.beginPath();ctx.arc(z.x,z.y,10+6*s,0,Math.PI*2);ctx.stroke()}
+for(let n of nodes){let q=Math.min(1,n.a/TH),h=T[n.k].h;haloBloom(n,q,h);if(q>.04){ctx.strokeStyle=n.tired?'rgba(125,135,160,.28)':`hsla(${h},95%,70%,${.14+.7*q})`;ctx.lineWidth=2;ctx.beginPath();ctx.arc(n.x,n.y,18+36*q,0,Math.PI*2);ctx.stroke()}ctx.fillStyle=n.tired?'rgba(125,135,160,.55)':`hsl(${h},85%,76%)`;ctx.beginPath();ctx.arc(n.x,n.y,8+3*q,0,Math.PI*2);ctx.fill();if(n.tired){ctx.strokeStyle='rgba(255,180,90,.55)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(n.x,n.y,14,-Math.PI/2,-Math.PI/2+Math.PI*2*n.fatigue);ctx.stroke()}}
+let resting=nodes.filter(n=>n.tired).length,wandering=pulses.filter(p=>p.mode==='wander').length;document.getElementById('status').textContent=`${nodes.length} dancers · ${pulses.length} pulses · ${wandering} wandering · ${resting} resting · gravity ${GRAVITY.toFixed(1)}× · pulse bloom ${BLOOM.toFixed(1)}× · halo bloom ${HALO_BLOOM.toFixed(1)}×`}
+function point(e){let r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height}}
+c.addEventListener('click',e=>{let p=point(e);if(e.shiftKey){let nearest=null,best=60;for(let n of nodes){let d=Math.hypot(n.x-p.x,n.y-p.y);if(d<best){best=d;nearest=n}}if(nearest){nodes=nodes.filter(n=>n.id!==nearest.id);for(let k of [...links.keys()])if(k.startsWith(nearest.id+':')||k.endsWith(':'+nearest.id))links.delete(k)}return}add(p.x,p.y,document.getElementById('kind').value)});
+document.getElementById('audio').onclick=()=>{if(!audioOn)ensureAudio();else stopAudio();};
+for(let [idn,varname,fmt] of [['bpm','bpm',v=>v],['gravity','GRAVITY',v=>(+v).toFixed(1)+'×'],['wander','WANDER',v=>(+v).toFixed(2)],['bloom','BLOOM',v=>(+v).toFixed(1)+'×'],['halobloom','HALO_BLOOM',v=>(+v).toFixed(1)+'×'],['thr','TH',v=>(+v).toFixed(2)],['stamina','STAMINA',v=>(+v).toFixed(1)+' s'],['wobble','WOBBLE',v=>(+v).toFixed(1)+'×']]){document.getElementById(idn).addEventListener('input',e=>{let v=+e.target.value;if(varname==='bpm')bpm=v;if(varname==='GRAVITY')GRAVITY=v;if(varname==='WANDER')WANDER=v;if(varname==='BLOOM')BLOOM=v;if(varname==='HALO_BLOOM')HALO_BLOOM=v;if(varname==='TH')TH=v;if(varname==='STAMINA')STAMINA=v;if(varname==='WOBBLE')WOBBLE=v;document.getElementById(idn+'v').textContent=fmt(v)})}
+document.getElementById('vol').oninput=e=>{let v=+e.target.value;if(master)master.gain.value=v;document.getElementById('volv').textContent=Math.round(v*100)+'%'};
+document.getElementById('seed').onclick=()=>{let a=nodes.filter(n=>!n.tired);if(!a.length)return;let n=a[Math.floor(Math.random()*a.length)];n.a=TH;if(fire(n,.3))sound(n.k);spread(n,null,1,180)};
+document.getElementById('pause').onclick=()=>{if(paused)startSimulation();else pauseSimulation();};
+document.getElementById('reset').onclick=()=>{pauseSimulation('Reset. Select Resume to start a new arrangement.');reset();renderStill();};
+document.getElementById('stop').onclick=()=>pauseSimulation();
+document.addEventListener('keydown',e=>{if(e.key==='Escape')pauseSimulation();});
+c.addEventListener('click',renderStill);
+document.querySelector('.controls').addEventListener('input',renderStill);
+document.getElementById('seed').addEventListener('click',renderStill);
+function checkVisibility(){
+  visible=!document.hidden&&onScreen();
+  if(!visible)pauseSimulation('Paused while the simulation is out of view. Select Resume to continue.');
+}
+document.addEventListener('visibilitychange',checkVisibility);
+window.addEventListener('pagehide',()=>pauseSimulation('Paused. Select Resume to continue.'));
+if('IntersectionObserver' in window)new IntersectionObserver(checkVisibility,{threshold:0}).observe(c);
+else window.addEventListener('scroll',checkVisibility,{passive:true});
+document.getElementById('fullscreen').onclick=async()=>{let st=document.querySelector('.stage');try{if(!document.fullscreenElement){await st.requestFullscreen();document.body.classList.add('full')}else await document.exitFullscreen()}catch{document.body.classList.toggle('full')}};document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)document.body.classList.remove('full')});
+function frame(now){
+  rafId=0;
+  if(paused)return;
+  if(document.hidden||!onScreen()){checkVisibility();return;}
+  if(now-sessionStart>300000){pauseSimulation('Paused after five minutes to save resources. Select Resume to continue.');return;}
+  const gap=now-last,started=performance.now(),dt=Math.min(.067,gap/1000);last=now;
+  try{update(dt);draw();}catch(error){pauseSimulation('Simulation stopped after an error. Try Reset.');console.error(error);return;}
+  const cost=performance.now()-started;
+  slowFrames=cost>25||gap>150?slowFrames+1:Math.max(0,slowFrames-1);
+  if(cost>150||slowFrames>=12){pauseSimulation('Paused to keep your browser responsive. Select Resume to try again with fewer effects.');lowPower=true;pulses.length=Math.min(pulses.length,24);return;}
+  if(slowFrames>=4&&!lowPower){lowPower=true;pulses.length=Math.min(pulses.length,24);showNotice('Reduced effects automatically to keep your browser responsive.');}
+  scheduleFrame(Math.max(0,(lowPower?1000/15:1000/30)-cost));
+}
+reset();draw();showNotice(notice);
+})();
+</script>
+</body>
+</html>

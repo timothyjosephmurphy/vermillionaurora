@@ -44,10 +44,10 @@ async function setup() {
   return {id,slug,order,stock};
 }
 const settled=()=>{invoices[0].status='Settled';invoices[0].payments=[{id:'tx:0',value:'0.00027',status:'Settled',receivedDate:Date.now()/1000}];};
-it('reserves the same original against PayPal while Bitcoin confirms, using the complete USD quote',async()=>{
+it('reserves the same original against another buyer while Bitcoin confirms, using the complete USD quote',async()=>{
   const {id,slug,order,stock}=await setup();
   expect((await order.start(id,slug,quote)).url).toContain('/i/INV0');
-  expect(await stock.reserve('paypal-buyer')).toBe(false);
+  expect(await stock.reserve('other-buyer')).toBe(false);
   await runInDurableObject(stock,(_,ctx)=>ctx.storage.sql.exec('UPDATE stock SET expires_at=0'));
   expect(await stock.status()).toBe('reserved');
   const create=requests.find(r=>r.method==='POST');

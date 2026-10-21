@@ -1,5 +1,7 @@
 # Sales records
 
+> **PayPal removed (October 2026, studio-tracker #133).** PayPal checkout, its sandbox pages and its Worker code are gone. Cards go through Square and Bitcoin through BTCPay. PayPal passages below are kept as history only; historical PayPal sales stay in the ledger.
+
 Every completed payment through shared PayPal checkout is saved with the sold state in the painting's private SQLite Durable Object before the server confirms success. An independent retrying job copies it into a monthly ledger and a dedicated private R2 bucket, `vermillion-sales-records`. Verified legacy PayPal IPN payments are recorded before the notification is acknowledged, including payments that do not match an automatic inventory link. Verified IPN refunds and reversals are retained as separate adjustments.
 
 ## Open the records

@@ -1,0 +1,32 @@
+---
+// Shell for pages of paintings added in /catalog-admin/ before the next build (studio-tracker #133).
+// worker/catalog-pages.mjs renderAdded() fetches this built page and fills the title, meta tags and <main>,
+// so admin-added paintings share the Astro product page head, header, footer and styles. Never indexed itself.
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painting — TJ Murphy</title>
+  <meta name="description" content="" />
+  <meta name="robots" content="noindex" data-catalog-shell />
+  <link rel="canonical" href="https://tjm.art/catalog-shell/product/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="https://tjm.art/catalog-shell/product/" />
+  <meta property="og:image" content="" data-catalog-image />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image" content="" data-catalog-image />
+  <link href="/fonts/fonts.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" /><link rel="stylesheet" href="/site-header.css" />
+  <link rel="stylesheet" href="/gallery/painting-details.css" />
+</head>
+<body><div class="page-shell"><SiteHeader />
+<main class="container product-detail"></main>
+<SiteFooter /></div></body>
+</html>

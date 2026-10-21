@@ -1,0 +1,145 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline type="application/ld+json" data-source="src/data/structured-data.mjs">{"@context":"https://schema.org","@type":["Person","VisualArtist"],"@id":"https://tjm.art/#tj-murphy","name":"TJ Murphy","alternateName":"Timothy Joseph Murphy","jobTitle":"Watercolor artist","description":"Seattle watercolor artist TJ Murphy paints Pacific Northwest light, travel scenes, portraits and murals in watercolor pastel.","url":"https://tjm.art/about/","image":"https://tjm.art/about/images/tj-murphy-portrait.jpg","homeLocation":{"@type":"Place","name":"Seattle, Washington"},"brand":{"@type":"Brand","name":"Vermillion Aurora"},"sameAs":["https://www.instagram.com/tj_de_la_playa/","https://www.facebook.com/profile.php?id=61594734493796","https://x.com/tj_de_la_playa","https://njump.me/npub10m0uf224v7tly6k6h8gl6kkmuhmx7969gmudmmhqj5pv65e03r9sxsumee"]}</script>
+    <title>About TJ Murphy | Seattle Watercolor Artist</title>
+    <meta
+      name="description"
+      content="Meet TJ Murphy, a Seattle artist exploring light, color, and expression through watercolor, portraits, and outdoor acrylic murals."
+    />
+    <link
+      href="/fonts/fonts.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  <link rel="canonical" href="https://tjm.art/about/" /><style is:inline>.artist-statement{max-width:1180px;padding-top:64px;padding-bottom:64px}.artist-statement h1{font-size:clamp(3rem,7vw,5rem);line-height:1.1;margin:12px 0 32px}.artist-headshot{display:block;width:100%;max-width:320px;height:auto;border-radius:16px;margin:24px 0 32px}.artist-statement h2{font-size:2.3rem;margin:40px 0 16px}.artist-statement p{font-size:1.1rem;line-height:1.85;margin-bottom:22px}.artist-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}.portrait-gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0}.portrait-gallery figure{margin:0}.portrait-gallery img{width:100%;height:380px;object-fit:contain;background:#e8dfd3;border-radius:12px}.portrait-gallery figcaption{font-size:.9rem;color:#65574d;margin-top:10px}.film-poster{display:block;max-width:420px;width:100%;height:auto;margin:24px auto;border-radius:12px}@media(max-width:600px){.portrait-gallery{grid-template-columns:1fr}.portrait-gallery img{height:auto;max-height:500px}} </style><link rel="stylesheet" href="/site-header.css">
+<style is:inline>
+.about-hero{display:grid;grid-template-columns:minmax(0,424px) minmax(520px,1fr);gap:32px;align-items:center;margin:24px 0 48px}.about-hero>img{display:block;width:100%;max-width:424px;height:auto;border-radius:16px;margin:0}.about-hero .artist-portfolio{margin:0;min-width:0}.about-hero .portfolio-summary{grid-template-columns:minmax(180px,220px) minmax(280px,1fr)}.artist-portfolio{margin:40px 0 48px;padding:28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.4);scroll-margin-top:100px}
+.portfolio-summary{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center}
+.portfolio-cover{display:block;line-height:0}
+.portfolio-cover img{display:block;width:100%;height:auto;border:1px solid var(--line);box-shadow:0 8px 24px rgba(28,18,12,.08)}
+.artist-portfolio h2{margin:0 0 12px;font-size:2rem}
+.artist-portfolio .portfolio-description{font-size:1rem;line-height:1.65;margin:0 0 16px}
+.artist-portfolio .portfolio-meta{font-size:.8rem;color:var(--muted);margin:0 0 10px}
+.portfolio-actions{display:flex;flex-wrap:wrap;gap:10px}
+.portfolio-actions .button{font-size:.75rem;padding:12px 16px}
+.portfolio-reader{margin-top:24px;border-top:1px solid var(--line);padding-top:18px}
+.portfolio-reader summary{cursor:pointer;font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
+.portfolio-reader iframe{display:block;width:100%;height:70vh;min-height:420px;max-height:800px;margin-top:18px;border:1px solid var(--line);background:white}
+@media(max-width:1050px){.about-hero{grid-template-columns:1fr}.about-hero>img{margin-inline:auto}.about-hero .artist-portfolio{margin:0}}@media(max-width:600px){.artist-portfolio{padding:20px}.portfolio-summary{grid-template-columns:1fr;gap:22px}.portfolio-cover{max-width:280px;margin-inline:auto}.portfolio-actions .button{flex:1;text-align:center}.portfolio-reader iframe{min-height:360px}}
+.about-feature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start;margin:48px 0 32px}.about-feature-grid .artist-portfolio{margin:0;min-width:0}.about-feature-grid .portfolio-summary{grid-template-columns:180px minmax(0,1fr);gap:22px}.about-feature-grid .portfolio-cover{min-width:0}.about-feature-grid .portfolio-meta{white-space:normal}.about-feature-grid .portfolio-description{overflow-wrap:normal;word-break:normal}.documentary-feature{padding:28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.4)}.documentary-feature h2{margin:0 0 12px}.documentary-feature p{font-size:1rem;line-height:1.65;margin:0 0 18px}.video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}@media(max-width:1000px){.about-feature-grid{grid-template-columns:1fr}.about-feature-grid .portfolio-summary{grid-template-columns:minmax(180px,220px) minmax(0,1fr)}}@media(max-width:600px){.about-feature-grid .portfolio-summary{grid-template-columns:1fr}}
+.about-bio{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,360px);gap:40px;align-items:start}.about-bio-text{min-width:0}.about-bio-photo{display:block;margin:48px 0 22px}.about-bio-photo img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(28,18,12,.08)}@media(max-width:760px){.about-bio{grid-template-columns:1fr;gap:0}.about-bio-photo{width:100%;max-width:420px;margin:8px auto 24px}}
+</style>
+</head>
+<body><a class="skip-link" href="#main-content">Skip to content</a><div class="page-shell"><SiteHeader /><main id="main-content"><article class="container artist-statement">
+<p class="eyebrow dark">Artist · Vermillion Aurora</p><h1>TJ Murphy</h1><img class="artist-headshot" src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" fetchpriority="high" />
+<h2>Artist statement</h2>
+<p>I paint to capture the luminosity of changing light and the character of the people and places around me. My practice began in 2020 with ink, watercolor, and watercolor pastel. Watching Mount Rainier from Denny Blaine and the morning sky from my balcony became a form of meditation—and an invitation to translate fleeting color into paint.</p>
+<p>Working with a limited palette of three or four primary colors and a tone color, I build each painting’s colors through mixing and layering. Watercolor pastel brings deep saturation, while the texture of the paper creates granulation. I return often to shorelines, birds, and the meeting of sea and sky; in portraits, I look for the expression that makes a person distinctly themselves.</p>
+<p>My recent outdoor murals extend this exploration into acrylic, spray paint, and airbrush. I am drawn to the way a painting can become part of its surroundings, bringing color and a sense of place into a garden or shared space.</p>
+<p><a href="/commissions/process/">Read how I create a watercolor commission →</a></p>
+<div class="portrait-gallery" aria-label="Selected portraits"><figure><img src="images/portrait-together.jpg" alt="Watercolor portrait of three people sharing an animated moment." loading="lazy"><figcaption>Expression, color, and shared moments.</figcaption></figure><figure><img src="images/portrait-with-children.jpg" alt="Watercolor portrait of a seated adult with two children." loading="lazy"><figcaption>Portraiture in watercolor.</figcaption></figure></div>
+<nav class="about-socials" aria-label="Follow TJ Murphy" style="display:flex;flex-wrap:wrap;gap:14px 18px;margin:8px 0 28px">
+  <a href="https://www.instagram.com/tj_de_la_playa/" target="_blank" rel="me noopener noreferrer">Instagram</a>
+  <a href="https://www.facebook.com/profile.php?id=61594734493796" target="_blank" rel="me noopener noreferrer">Facebook</a>
+  <a href="https://x.com/tj_de_la_playa/" target="_blank" rel="me noopener noreferrer">X</a>
+  <a href="https://njump.me/npub10m0uf224v7tly6k6h8gl6kkmuhmx7969gmudmmhqj5pv65e03r9sxsumee" target="_blank" rel="me noopener noreferrer">Nostr</a>
+  <a href="/links/">All links</a>
+</nav>
+<section class="artist-cv" id="cv" aria-labelledby="cv-heading" style="margin:36px 0 40px;padding:24px 28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.4)">
+  <h2 id="cv-heading" style="margin:0 0 16px;font-size:2rem">Selected CV</h2>
+  <p style="font-size:.9rem;color:var(--muted);margin:0 0 18px">Newest first. Full portfolio PDF available below.</p>
+  <h3 style="font-size:1.15rem;margin:0 0 8px"><a href="/exhibitions/">Exhibitions</a></h3>
+  <ul style="margin:0 0 18px;padding-left:1.2rem;line-height:1.7">
+    <li><time datetime="2026">2026</time> — <a href="/exhibitions/bitcoin-film-festival-warsaw/">Bitcoin Film Festival</a>, Kinoteka, Warsaw, Poland · group show</li>
+    <li><time datetime="2025">2025</time> — <a href="/exhibitions/victrola/">Victrola Coffee Shop</a>, Seattle, Washington · solo show</li>
+    <li><time datetime="2025">2025</time> — <a href="/exhibitions/cape-town/">Adopting Bitcoin Cape Town</a>, South Africa · solo show</li>
+    <li><time datetime="2024">2024</time> — <a href="/exhibitions/el-salvador/">Adopting Bitcoin El Salvador</a> · group show</li>
+    <li><time datetime="2023">2023</time> — <a href="/exhibitions/studio-601/">Studio 601</a>, Seattle, Washington · solo show</li>
+    <li><time datetime="2023">2023</time> — <a href="/exhibitions/intiman-auction/">Intiman Theater Seattle Auction</a> · benefit auction</li>
+    <li>Current — <a href="/exhibitions/living-room/">My Living Room</a>, Seattle, Washington · solo show</li>
+  </ul>
+  <h3 style="font-size:1.15rem;margin:0 0 8px">Books</h3>
+  <ul style="margin:0 0 18px;padding-left:1.2rem;line-height:1.7">
+    <li><a href="/products/watercolor-portraits/">Watercolor Portraits</a> — art book</li>
+    <li><a href="/products/watercolor-landscapes/">Watercolor Landscapes</a> — art book</li>
+    <li><a href="/products/reflections-on-time/">Reflections on Time</a> — twelve poems by Paul Michael Murphy, illustrated by TJ Murphy</li>
+  </ul>
+  <h3 style="font-size:1.15rem;margin:0 0 8px">Murals</h3>
+  <ul style="margin:0 0 18px;padding-left:1.2rem;line-height:1.7">
+    <li><time datetime="2026">2026</time> — <a href="/murals/#garden-mural">Cormorant Presiding over Sunset on Puget Sound</a>, garden mural, Seattle</li>
+    <li><time datetime="2026">2026</time> — <a href="/murals/#friends-story">Friends Club</a>, festival mural, Lillooet, BC</li>
+    <li><time datetime="2025-11">November 2025</time> — <a href="/murals/berlin-el-salvador/">Berlín, El Salvador</a>, community mural, Bitcoin Festival</li>
+  </ul>
+  <h3 style="font-size:1.15rem;margin:0 0 8px">Film</h3>
+  <ul style="margin:0 0 18px;padding-left:1.2rem;line-height:1.7">
+    <li><time datetime="2026">2026</time> — Subject of <em>Coined in Watercolor: The Art of Going All In</em>, a documentary by Gavin Robertson; premiered at the Bitcoin Film Festival, Warsaw</li>
+  </ul>
+  <h3 style="font-size:1.15rem;margin:0 0 8px">Mentorship</h3>
+  <ul style="margin:0 0 18px;padding-left:1.2rem;line-height:1.7">
+    <li><time datetime="2017">2017</time>–present — <a href="/exhibitions/chase-toole/">Art mentorship with Chase Toole</a></li>
+  </ul>
+  <h3 style="font-size:1.15rem;margin:0 0 8px">Education</h3>
+  <ul style="margin:0 0 18px;padding-left:1.2rem;line-height:1.7">
+    <li>MS, Business Analytics, University of Cincinnati, 2008–2010</li>
+    <li>BBA, Finance and International Business, University of Cincinnati, 2002–2007</li>
+  </ul>
+  <h3 style="font-size:1.15rem;margin:0 0 8px">Prior career</h3>
+  <ul style="margin:0;padding-left:1.2rem;line-height:1.7">
+    <li>Data analyst, Toyota</li>
+    <li>Data scientist, Amazon</li>
+    <li>Data scientist and Scrum Master, Nordstrom</li>
+    <li>Sr. Associate, Customer Experience, Discover, 2011–2013</li>
+    <li>Product owner and product manager, Bitcoin exchanges and startups</li>
+  </ul>
+  <p style="margin:18px 0 0"><a href="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf" target="_blank" rel="noopener noreferrer">Download artist portfolio PDF (2026)</a></p>
+</section>
+<div class="about-bio"><div class="about-bio-text">
+<h2>Background</h2>
+<p>Based in Seattle, I have made approximately 500 paintings, including many portraits. I have had solo shows at Studio 601 and Victrola in Seattle and in Cape Town, South Africa, and have shown in group exhibitions such as Adopting Bitcoin El Salvador and the Bitcoin Film Festival in Warsaw. In El Salvador and Cape Town, I exhibited a series exploring the origin story of Satoshi Nakamoto, accompanied by twelve poems.</p>
+<p>I have published two art books, <a href="/products/watercolor-portraits/">Watercolor Portraits</a> and <a href="/products/watercolor-landscapes/">Watercolor Landscapes</a> and <a href="/products/reflections-on-time/">illustrated twelve poems for my father’s book, <em>Reflections on Time</em></a>. Original watercolors and portrait commissions are available through Vermillion Aurora, and I welcome opportunities to create outdoor murals.</p>
+</div><picture class="about-bio-photo"><source type="image/avif" srcset="/display/tj-murphy-cafe-ddac27a227-160.avif 160w, /display/tj-murphy-cafe-ddac27a227-480.avif 480w, /display/tj-murphy-cafe-ddac27a227-960.avif 960w, /display/tj-murphy-cafe-ddac27a227-1600.avif 1600w" sizes="(max-width: 760px) min(420px, calc(100vw - 48px)), 360px"><img src="/about/images/tj-murphy-cafe.jpg" alt="TJ Murphy at an outdoor café table" width="1600" height="2133" loading="lazy" decoding="async"></picture></div>
+<section class="about-feature-grid" aria-label="Portfolio and documentary">
+<section class="artist-portfolio" id="portfolio" aria-labelledby="portfolio-heading">
+  <div class="portfolio-summary">
+    <a class="portfolio-cover" href="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View TJ Murphy’s artist portfolio PDF">
+      <img src="/about/images/artist-portfolio-2026.jpg" alt="TJ Murphy’s portfolio cover featuring Sunrise on Rainier with Eagle" width="900" height="696" loading="lazy" decoding="async">
+    </a>
+    <div>
+      <p class="portfolio-meta">2026 · 9 pages · PDF · 3.7 MB</p>
+      <h2 id="portfolio-heading">Artist portfolio</h2>
+      <p class="portfolio-description">Selected paintings, murals, and collaborations, with the story of my journey into art.</p>
+      <div class="portfolio-actions">
+        <a class="button button-solid" href="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf" target="_blank" rel="noopener noreferrer">View portfolio</a>
+        <a class="button button-ghost" href="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf" download="TJ-Murphy-Artist-Portfolio-2026.pdf">Download PDF</a>
+      </div>
+    </div>
+  </div>
+  <details class="portfolio-reader">
+    <summary>Read the portfolio on this page</summary>
+    <iframe data-src="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf#view=FitH" title="TJ Murphy artist portfolio, 2026" loading="lazy"></iframe>
+  </details>
+</section>
+<div class="documentary-feature">
+<h2>Coined in Watercolor</h2>
+<p>Gavin Robertson’s documentary, <em>Coined in Watercolor: The Art of Going All In</em>, follows my journey into art.</p>
+<div class="video-frame"><button type="button" class="video-facade" data-youtube="i7tvzE_bqM8" data-title="Coined in Watercolor: The Art of Going All In" aria-label="Play video: Coined in Watercolor: The Art of Going All In"><img src="https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360"><span class="video-facade-play" aria-hidden="true"></span></button><noscript><a href="https://www.youtube.com/watch?v=i7tvzE_bqM8">Watch Coined in Watercolor on YouTube</a></noscript></div>
+</div>
+</section><div class="artist-links"><a class="button button-solid" href="/commissions/#form">Discuss a commission</a><a class="button button-ghost" href="/murals/">Explore the murals</a></div>
+<p class="testimonial-cta"><a href="/testimonials/">Own one of my paintings? Share your story <span aria-hidden="true">→</span></a></p>
+<section class="email-signup" aria-labelledby="email-signup-heading"><h2 id="email-signup-heading">Studio notes by email</h2><p>New paintings, prints, exhibitions, and books, a few times a year. Unsubscribe anytime.</p><form action="https://buttondown.com/api/emails/embed-subscribe/timothyjosephmurphy" method="post" target="_blank" class="email-signup-form"><label for="bd-email">Email address</label><div class="email-signup-row"><input type="email" name="email" id="bd-email" autocomplete="email" required placeholder="you@example.com"><input type="hidden" name="embed" value="1"><button type="submit" class="button button-solid">Subscribe</button></div></form></section>
+<style is:inline>.email-signup{max-width:640px;margin:48px auto;padding:24px;border:1px solid var(--line,#d7ccba);border-radius:12px;background:#fffcf6}.email-signup h2{margin:0 0 8px;font-size:1.8rem}.email-signup p{margin:0 0 14px;line-height:1.6}.email-signup label{display:block;font-size:.8rem;margin-bottom:6px}.email-signup-row{display:flex;gap:10px;flex-wrap:wrap}.email-signup input[type=email]{flex:1 1 220px;min-height:44px;padding:10px 12px;border:1px solid #cdbfae;border-radius:6px;font:inherit}</style>
+</article></main><SiteFooter /></div><style is:inline>.video-facade{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#1d1a17;cursor:pointer;overflow:hidden;border-radius:inherit}.video-facade img{width:100%;height:100%;object-fit:cover;display:block}.video-facade-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#d34220}.video-facade-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}.video-facade:focus-visible{outline:3px solid #d34220;outline-offset:3px}</style>
+<script is:inline>
+// Load heavy embeds only when asked: the portfolio PDF when its reader opens, YouTube on play.
+document.querySelectorAll('.portfolio-reader').forEach(d=>d.addEventListener('toggle',()=>{const f=d.querySelector('iframe[data-src]');if(d.open&&f&&!f.src)f.src=f.dataset.src;}));
+document.querySelectorAll('.video-facade').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src=`https://www.youtube-nocookie.com/embed/${b.dataset.youtube}?autoplay=1`;f.title=b.dataset.title;f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.style.cssText='width:100%;aspect-ratio:16/9;border:0;display:block';b.replaceWith(f);f.focus();}));
+</script>
+</body>
+</html>

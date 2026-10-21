@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { checkoutReadiness } from './checkout-readiness.mjs';
 
 test('production readiness requires authentication and only reads provider configuration',async t=>{
-  const env={CHECKOUT_AUDIT_TOKEN:'audit-secret',CHECKOUT_MODE:'live',PAYPAL_CLIENT_ID:'client',PAYPAL_CLIENT_SECRET:'paypal-secret',PAYPAL_WEBHOOK_ID:'hook',PAYPAL_MERCHANT_ID:'8DYAVLDCWDESE',SHIPPO_TOKEN:'shippo_live_fake',GITHUB_TOKEN:'github-secret',PAINTING_STOCK:{},SALES_LEDGER:{},SALES_ARCHIVE:{},SHIP_FROM_STREET:'123 private street'};
+  const env={CHECKOUT_AUDIT_TOKEN:'audit-secret',CHECKOUT_MODE:'live',SHIPPO_TOKEN:'shippo_live_fake',GITHUB_TOKEN:'github-secret',PAINTING_STOCK:{},SALES_LEDGER:{},SALES_ARCHIVE:{},SHIP_FROM_STREET:'123 private street'};
   const DOR='<?xml version="1.0" encoding="utf-8"?><response loccode="1726" localrate=".0405" rate=".1055" code="2" xmlns=""><addressline code="1726" state="WA" zip="98104" period="Q42026" /><rate name="SEATTLE" code="1726" staterate=".0650" localrate=".0405" /></response>';
   let dorReply=DOR,dorRequests=[];
   let applePayCalls=[],applePayAllowed=true,calls=0,squareCardProcessing=true,squareWebhookEnabled=true,bitcoinInvoiceAllowed=true;
@@ -28,7 +28,7 @@ test('production readiness requires authentication and only reads provider confi
   const request=()=>new Request('https://worker/checkout/readiness',{method:'POST',headers:{Authorization:'Bearer audit-secret'}});
   const r=await checkoutReadiness(request(),env);assert.equal(r.status,200);
   const text=await r.text();assert.equal(JSON.parse(text).ready,true);
-  for(const secret of ['audit-secret','paypal-secret','github-secret','123 private street','shippo_live_fake'])assert.ok(!text.includes(secret));
+  for(const secret of ['audit-secret','github-secret','123 private street','shippo_live_fake'])assert.ok(!text.includes(secret));
   assert.deepEqual(JSON.parse(text).checks.waTaxRate,{rate:'0.1055',loccode:'1726',jurisdiction:'SEATTLE',period:'Q42026',basis:'address',resultCode:2});
   assert.equal(JSON.parse(text).checks.waTaxLookup,true);
   assert.deepEqual(Object.fromEntries(dorRequests.at(-1).searchParams),{output:'xml',addr:'600 4th Ave',city:'Seattle',zip:'98104'});
