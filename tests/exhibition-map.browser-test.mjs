@@ -83,10 +83,16 @@ try {
     await page.locator('[data-map-place="seattle"]').click();
     assert.equal(await page.locator('#map-seattle[open] a').count(),5);
     assert(await page.locator('#map-seattle a[href="/murals/#garden-mural"]').isVisible());
-    await page.locator('[data-map-place="lillooet"]').focus();
-    await page.keyboard.press('Enter');
-    // Wait for the keyboard-opened details (CI is slower than a single instant check).
-    await page.locator('#map-lillooet[open] a[href="/murals/#friends-story"]').waitFor({state:'visible',timeout:5000});
+    // Markers are redrawn on zoomend, so a pan/zoom still settling after the Seattle click can replace the
+    // focused pin (seen on slower CI runners). Retry the keyboard activation on the current pin element.
+    const friends = page.locator('#map-lillooet[open] a[href="/murals/#friends-story"]');
+    for (let attempt = 0; attempt < 5 && !(await friends.isVisible()); attempt++) {
+      await page.waitForTimeout(attempt ? 400 : 0);
+      await page.locator('[data-map-place="lillooet"]').focus();
+      await page.keyboard.press('Enter');
+      await friends.waitFor({state:'visible',timeout:1000}).catch(() => {});
+    }
+    assert(await friends.isVisible(), 'Enter on the Lillooet pin opens its details');
     assert.equal(await page.locator('#map-seattle[open]').count(),0);
     await checkLayout();
     await page.getByRole('button',{name:'San Salvador & Berlín',exact:true}).click();
