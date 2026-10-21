@@ -72,3 +72,12 @@ test('new commission emails contain no image attachment, and send failures roll 
  assert.equal((await commissionForm(submission(),env)).status,200);assert.match(mime,/commission-manager/);assert.doesNotMatch(mime,/Content-Disposition: attachment|private bytes/);assert.equal(env.COMMISSION_UPLOADS.data.size,2);
  const failed=setup();globalThis.fetch=async()=>Response.json({error:'mock'},{status:500});assert.equal((await commissionForm(submission(),failed)).status,500);assert.equal(failed.COMMISSION_UPLOADS.data.size,0);
 });
+test('inquiry is saved to D1 before email, and a Google failure still returns the reference (#115)',async t=>{
+ const env=setup();const runs=[];env.CATALOG_DB={prepare:sql=>({run:async()=>runs.push([sql]),bind:(...v)=>({run:async()=>runs.push([sql,v])})})};
+ t.mock.method(globalThis,'fetch',async()=>Response.json({error:'invalid_client'},{status:401}));
+ const r=await commissionForm(submission(),env);const body=await r.json();
+ assert.equal(r.status,200);assert.match(body.reference,/^TJM-\d{6}-[0-9A-F]{4}$/);
+ assert.ok(runs.some(([s])=>s.startsWith('INSERT INTO commission_inquiries')));
+ assert.ok(runs.some(([s,v])=>s.includes('SET status=?')&&v[0]==='notify_failed'));
+ assert.equal(env.COMMISSION_UPLOADS.data.size,2);
+});
