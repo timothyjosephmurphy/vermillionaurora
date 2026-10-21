@@ -12,7 +12,7 @@ A confirmed payment immediately marks the Durable Object sold. `/inventory/statu
 
 Keep credentials in Cloudflare secrets: PayPal client ID/secret, merchant ID and webhook ID; Shippo token and shipping origin; Gmail OAuth values; and BTCPay credentials when enabled. The production Worker no longer needs `GITHUB_TOKEN`. Sandbox continues to reject that credential as a configuration guard.
 
-`PAYPAL_CHECKOUT_ENABLED` and `PAYPAL_CHECKOUT_SLUGS` control new PayPal purchases. Bitcoin uses its separate existing enable flag and slug allowlist. Pausing new purchases does not interrupt pending returns or webhook reconciliation. The existing production pilot is still only `painting-portrait-in-green`; this migration does not expand it or enable Bitcoin.
+PayPal checkout was removed in October 2026 (studio-tracker #133). Bitcoin and Square use their own enable flags.
 
 Shipping is explicit at each product's `checkout.shipping`: parcel dimensions in inches, weight in pounds, packaging, insurance request, verification state, and notes. Existing generic estimates remain marked `estimated`; do not enable additional originals before checking their packed dimensions and weight. The pilot retains the authorized 15 × 12 × 0.125-inch, 0.25-lb envelope and sale-value insurance.
 
