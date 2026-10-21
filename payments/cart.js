@@ -121,7 +121,7 @@
     if(!form)return false;const on=depositOnly()&&!!capabilities?.enabled&&!!eligible(cart[0].id);
     form.querySelectorAll('[data-cart-address]').forEach(el=>{el.hidden=on;el.querySelectorAll('input').forEach(input=>{if(input.dataset.wasRequired===undefined)input.dataset.wasRequired=input.required?'1':'';input.required=on?false:input.dataset.wasRequired==='1';});});
     const legend=form.querySelector('[data-cart-legend]');if(legend)legend.textContent=on?'Contact':'Contact & delivery';
-    const note=form.querySelector('[data-cart-deposit-note]');if(note)note.hidden=!on;
+    const note=form.querySelector('[data-cart-deposit-note]');if(note)note.hidden=!on;applyCountry();
     const quoteButton=form.querySelector('[data-cart-quote]');if(quoteButton)quoteButton.hidden=on;
     if(on&&!quoted){const amount=depositAmount();root.querySelector('[data-cart-shipping]').textContent='None';root.querySelector('[data-cart-tax]').textContent=money(0);if(amount)root.querySelector('[data-cart-total]').textContent=money(amount);updatePaymentControls(true);}
     return on;
@@ -225,12 +225,29 @@
     walletInstances=[];
     const host=root?.querySelector('[data-cart-wallets]');if(host){host.hidden=true;host.querySelector('[data-wallet-buttons]').replaceChildren();}
   }
+  // Region and postal-code fields follow the destination country (rules come from catalog/addresses.mjs).
+  function applyCountry(){
+    const select=form?.querySelector('select[name="country"]');if(!select)return;
+    let rules={};try{rules=JSON.parse(document.getElementById('cart-address-rules')?.textContent||'{}');}catch{}
+    const c=select.value||'US',region=form.querySelector('input[name="state"]'),postal=form.querySelector('input[name="zip"]'),codes=rules.regions?.[c],deposit=depositOnly()&&!!capabilities?.enabled;
+    const regionRequired=(rules.required||[]).includes(c),postalRequired=(rules.postal||[]).includes(c);
+    form.querySelector('[data-cart-region-label]').textContent=(rules.regionLabels?.[c]||'State, province or region')+(regionRequired?'':' (optional)');
+    form.querySelector('[data-cart-postal-label]').textContent=(rules.postalLabels?.[c]||'Postal code')+(postalRequired?'':' (optional)');
+    region.dataset.wasRequired=regionRequired?'1':'';postal.dataset.wasRequired=postalRequired?'1':'';
+    region.required=!deposit&&regionRequired;postal.required=!deposit&&postalRequired;
+    region.placeholder=c==='US'?'WA':c==='CA'?'ON':c==='AU'?'NSW':'';postal.placeholder=c==='CA'?'A1A 1A1':c==='GB'?'SW1A 1AA':'';
+    postal.inputMode=c==='US'?'numeric':'text';
+    if(codes)region.pattern=codes.join('|')+'|'+codes.map(x=>x.toLowerCase()).join('|');else region.removeAttribute('pattern');
+    if(c==='US')postal.pattern='[0-9]{5}(-[0-9]{4})?';else if(c==='CA')postal.pattern='[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]';else postal.removeAttribute('pattern');
+    const list=document.getElementById('cart-regions');if(list)list.replaceChildren(...(codes||[]).map(code=>{const o=document.createElement('option');o.value=code;return o;}));
+    const duties=root?.querySelector('[data-cart-duties]')||document.querySelector('[data-cart-duties]');if(duties)duties.hidden=c==='US'||deposit;
+  }
   function walletRequest(payments,q){
     const total=walletAmount(q.quote.total),cents=v=>Math.round(Number(v)*100);
     const lines=[['Artwork',q.quote.base],['Shipping',q.quote.shipping],['Tax',q.quote.tax]].filter(([,v])=>v!==undefined&&v!==null);
     // Itemize only when the parts add up exactly to the server total; the total itself is always the quote.
     const itemized=lines.length===3&&lines.reduce((sum,[,v])=>sum+cents(v),0)===cents(total);
-    return payments.paymentRequest({countryCode:'US',currencyCode:'USD',total:{amount:total,label:'TJ Murphy'},
+    return payments.paymentRequest({countryCode:capabilities?.square?.country||'US',currencyCode:'USD',total:{amount:total,label:'TJ Murphy'},
       ...(itemized?{lineItems:lines.map(([label,v])=>({label,amount:walletAmount(v)}))}:{}),requestBillingContact:false,requestShippingContact:false});
   }
   async function setupWallets(q){
@@ -341,7 +358,7 @@
       }else if(method==='square'){
         const card=await ensureSquareCard(),values=Object.fromEntries(new FormData(form));
         const names=String(values.name||'').trim().split(/\s+/),token=await card.tokenize({amount:quoted.quote.total,currencyCode:'USD',intent:'CHARGE',customerInitiated:true,sellerKeyedIn:false,
-          billingContact:{givenName:names.shift()||'',familyName:names.join(' '),email:String(values.email||''),countryCode:'US'}});
+          billingContact:{givenName:names.shift()||'',familyName:names.join(' '),email:String(values.email||''),countryCode:String(values.country||'US')}});
         if(token.status!=='OK'||!token.token)throw Error('Square could not tokenize these card details. Check them and try again.');
         sourceId=token.token;
       }
@@ -410,14 +427,15 @@
     if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;const requestId=params.get('request');cart=[{id:buy,quantity:1,...(/^(deposit|balance)-/.test(buy)&&REQUEST.test(requestId||'')?{requestId}:{})}]; /* view only; do not overwrite a saved multi-item cart */}
     const addressChanged=()=>{if(quoted)invalidate();else updateQuoteButton();};
     form.addEventListener('input',addressChanged);form.addEventListener('change',addressChanged);
-    form.addEventListener('invalid',()=>{const message='Check the highlighted delivery field. Enter your email, name, street, city, two-letter state and ZIP code.';announce(message);quoteFeedback.textContent=message;},true);
+    applyCountry();form.querySelector('select[name="country"]')?.addEventListener('change',applyCountry);
+    form.addEventListener('invalid',()=>{const message='Check the highlighted delivery field. Enter your email, name, street, city, country and the region and postal code your country uses.';announce(message);quoteFeedback.textContent=message;},true);
     form.addEventListener('submit',async event=>{event.preventDefault();if(busy)return;if(!form.reportValidity())return;await runQuote();});
     quoteNow=runQuote;
     async function runQuote(){
       busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');quoteFeedback.textContent='Checking your cart and calculating shipping and tax…';
       const values=Object.fromEntries(new FormData(form));
       // FormData omits disabled controls; collect from named elements explicitly.
-      for(const input of form.querySelectorAll('input[name]'))values[input.name]=input.value.trim();
+      for(const input of form.querySelectorAll('input[name],select[name]'))values[input.name]=input.value.trim();
       const {email,printCode,...address}=values;
       try{
         if(pendingOrder&&pending(pendingOrder)){

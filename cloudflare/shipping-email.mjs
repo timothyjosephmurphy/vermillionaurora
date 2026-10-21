@@ -1,3 +1,4 @@
+import {addressLines} from '../catalog/addresses.mjs';
 // Reuses the commission form's authenticated Gmail identity. No customer email is sent.
 // Site mail goes out as tj@tjm.art, an alias of the same Google Workspace mailbox configured as a Gmail "Send mail as"
 // address (SPF include:_spf.google.com, DKIM google._domainkey.tjm.art, DMARC p=quarantine), like the testimonial notes.
@@ -94,8 +95,7 @@ export async function sendShippingEmail(token, sale, job, env = {}) {
     `Painting: ${quote.title || sale.slug}`, `Product: https://tjm.art/products/${sale.slug}/`,
     `${integrationTest ? 'Sample order' : bitcoin ? 'Bitcoin order' : 'PayPal order'}: ${sale.order_id}`, `${integrationTest ? 'Test reference' : bitcoin ? 'BTCPay invoice' : 'PayPal capture'}: ${sale.capture_id}`,
     ...(quote.orderTotal ? [`This parcel: artwork $${quote.base} | Shipping $${quote.shipping}`,`Whole order: tax $${quote.orderTax} | Total $${quote.orderTotal}`] : [`Painting: $${quote.base} | Shipping: $${quote.shipping} | Tax: $${quote.tax} | Total: $${quote.total}`]), '',
-    'Ship to:', address.name, address.street1, address.street2,
-    `${address.city}, ${address.state} ${address.zip}`, address.country, '',
+    'Ship to:', ...addressLines(address), ...(address.country && address.country !== 'US' ? [`International: customs declaration HS ${quote.customs?.hsCode || '9701.91'}, DDU (buyer pays duties). Value $${quote.customs?.value || quote.base} USD.`] : []), '',
     `Service: ${quote.carrier} — ${quote.service}`,
     ...(quote.insurance ? [job.insuranceConfirmed
       ? `Insurance: $${quote.insurance.amount} ${quote.insurance.currency} requested through XCover; premium $${quote.insurance.fee} included in shipping. Insured rate confirmed on the label.`

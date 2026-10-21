@@ -16,7 +16,7 @@ export function squarePaymentBody(env,data) {
     note:`Vermillion Aurora order: ${data.quote.items.map(item=>item.title).join('; ')}`.slice(0,500),
     ...(data.quote.address?{shipping_address:{first_name:data.quote.address.name.split(/\s+/)[0],last_name:data.quote.address.name.split(/\s+/).slice(1).join(' '),
       address_line_1:data.quote.address.street1,...(data.quote.address.street2?{address_line_2:data.quote.address.street2}:{}),
-      locality:data.quote.address.city,administrative_district_level_1:data.quote.address.state,postal_code:data.quote.address.zip,country:'US'}}:{})};
+      locality:data.quote.address.city,...(data.quote.address.state?{administrative_district_level_1:data.quote.address.state}:{}),...(data.quote.address.zip?{postal_code:data.quote.address.zip}:{}),country:data.quote.address.country||'US'}}:{})};
 }
 export function validateSquarePayment(env,data,payment) {
   const amount=Number(payment.amount_money?.amount);

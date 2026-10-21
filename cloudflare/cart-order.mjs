@@ -91,6 +91,8 @@ export class CartOrder extends DurableObject {
     if(Date.now()>d.expiresAt){if(d.heldIds?.length)await this.expireCartHold();else this.save({...d,status:'expired'});return this.result();}
     if(d.quote.catalogVersion!==catalogVersion||this.env.CHECKOUT_MODE!==d.mode||!d.methods.includes(method)||!commonMethods(this.env,d.quote.items).includes(method))throw Error('Refresh this cart before payment');
     if(method==='square'&&(typeof payment.sourceId!=='string'||!payment.sourceId||payment.sourceId.length>2000))throw Error('Enter valid card details before paying.');
+    // An original shipping abroad needs a certified customs declaration before a label can be bought, so payment waits for it.
+    if((d.quote.shipments||[]).some(s=>s.customs&&s.customs.certified!==true))throw Object.assign(Error('International shipping for originals is not open yet. Email tj@tjm.art and I will arrange it.'),{code:'DESTINATION'});
     const code=this.codeOrder(d);
     if(code&&!await code.codeClaim(d.id))return {...this.result(),codeError:'That discount code has already been used.'};
     await this.schedule();

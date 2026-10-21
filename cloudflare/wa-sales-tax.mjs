@@ -1,6 +1,6 @@
 // Washington destination-based sales tax from the Department of Revenue's free rate lookup.
 // https://dor.wa.gov/taxes-rates/retail-sales-tax/destination-based-sales-tax-and-streamlined-sales-tax/wa-sales-tax-rate-lookup-url-interface
-// Only the shipping street, city and ZIP are sent. Orders shipping outside Washington are not taxed.
+// Only the shipping street, city and ZIP are sent. Orders shipping outside Washington (including outside the US) are not taxed.
 export const DOR_RATE_URL='https://webgis.dor.wa.gov/webapi/AddressRates.aspx';
 export const TAX_ADDRESS_ERROR='We couldn’t calculate Washington sales tax for this address. Check the street, city and ZIP code, then try again.';
 // DOR result codes: 0 address found, 1 ZIP+4 found, 2 address updated and found. Higher codes are partial or no match.
@@ -56,7 +56,8 @@ export async function waRate(address) {
 // A WA destination whose rate cannot be looked up is taxed at FALLBACK_RATE (basis 'fallback', taxFallback true).
 export async function salesTax(address,taxableCents) {
   if(!Number.isSafeInteger(taxableCents)||taxableCents<0)throw Error('Invalid taxable amount');
-  if(address.country&&address.country!=='US')throw Error('Only US addresses are supported');
+  // Exports are not subject to Washington sales tax; the buyer pays any import taxes on delivery (DDU).
+  if(address.country&&address.country!=='US')return {taxCents:0,tax:{country:address.country,collected:false,rate:'0',basis:'export'}};
   if(address.state!=='WA')return {taxCents:0,tax:{state:address.state,collected:false,rate:'0',basis:'out-of-state'}};
   let found;
   try { found=await waRate(address); }
