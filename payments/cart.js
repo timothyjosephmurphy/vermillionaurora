@@ -434,7 +434,7 @@
         if(reservation(restored)){await restoreReservation(restored);}
         else if(id===saved.orderId){
           current=restored;showOrder();announce('');
-          if(params.get('result')==='return')await updateOrder('capture');else if(params.get('result')==='cancel')await updateOrder('cancel');else if(pending(current))poll();
+          if(pending(current))poll();
           history.replaceState(null,'','/cart/');
         }else{
           current=null;
