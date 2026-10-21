@@ -1,5 +1,7 @@
 # Shared checkout for original paintings
 
+> **PayPal removed (October 2026, studio-tracker #133).** PayPal checkout, its sandbox pages and its Worker code are gone. Cards go through Square and Bitcoin through BTCPay. PayPal passages below are kept as history only; historical PayPal sales stay in the ledger.
+
 The product page calls the `vermillion-commissions` Worker. One SQLite Durable Object per stable product ID serializes PayPal and Bitcoin reservations. `cloudflare/checkout-catalog.mjs` is generated from `catalog/products.json` by `npm run build`; never edit it by hand or scrape prices from HTML.
 
 A buyer enters a US shipping address, receives a Shippo shipping quote plus Washington sales tax from the Department of Revenue rate lookup (WA destinations only: rate × artwork, framing and shipping; ZIP-only fallback; an unresolved WA address blocks payment), then approves the full USD total with the selected provider. Server-side reservation and total checks prevent concurrent purchase of an original. Existing orders retain their original price, shipping, tax, address, and fulfillment snapshot even if the catalog changes. New pages send a catalog hash; mismatches reject new quote/create requests with a reload message. Payment returns and verified webhooks do not depend on the latest catalog hash.

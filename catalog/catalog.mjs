@@ -56,7 +56,6 @@ export function validateCatalog(items=products, groups=collections) {
       const s=p.checkout.shipping;
       if(!price || !p.dimensions || !s || !['length','width','height','weight'].every(k=>Number.isFinite(s[k])&&s[k]>0) || !['flat','tube'].includes(s.packaging) || !['estimated','verified'].includes(s.verification)) fail(p,'explicit shipping profile and price required');
     }
-    if(p.checkout?.mode==='paypal-link' && (p.checkout.link?.title!==p.title || p.checkout.link?.amount!==price?.amount || p.checkout.link?.currency!==price?.currency)) fail(p,'hosted payment link must match the listing');
   }
   for(const [key,entries] of Object.entries(groups)) {
     const seen=new Set();

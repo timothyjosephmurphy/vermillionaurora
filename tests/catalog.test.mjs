@@ -289,7 +289,7 @@ test('the wedding portrait and four commissioned portraits lead the /commissions
 });
 
 test('living room exhibition keeps its 18 chosen photographs in source and catalog',()=>{
- const $=load(fs.readFileSync('exhibitions/living-room/index.html','utf8'));
+ const $=load(fs.readFileSync('src/pages/exhibitions/living-room/index.astro','utf8'));
  const links=$('.exhibition-grid a.ex-photo');
  assert.equal(links.length,18);
  assert.match($('.section-heading p').first().text(),/^18 photographs and videos\./);
