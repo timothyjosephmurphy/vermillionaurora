@@ -62,6 +62,14 @@ export async function commissionForm(request,env) {
       if (uploaded.reduce((sum,x)=>sum+x.bytes.byteLength,0)>18*1024*1024) return json({success:false,error:"Combined images must be 18 MB or smaller."},400,cors);
       await saveCommissionReferences(env.COMMISSION_UPLOADS,requestId,uploaded);
       if(uploaded.length)pendingReferences={id:requestId,files:uploaded};
+      // Save the inquiry before any email, so a mail failure never loses it (studio-tracker #115).
+      const logged=await logInquiry(env,{requestId,reference,kind:isPurchase?"purchase":"commission",name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
+      if(logged)sent=true; // the saved row points at the uploads, so keep them
+      const savedOnly=async why=>{
+        console.error("Commission notification failed; inquiry saved",why);
+        await markStatus(env,requestId,"notify_failed");
+        return json({success:true,message:"Commission request received.",requestId,reference},200,cors);
+      };
 
       const tokenResponse=await fetch("https://oauth2.googleapis.com/token",{
         method:"POST",
@@ -73,9 +81,11 @@ export async function commissionForm(request,env) {
           grant_type:"refresh_token"
         })
       });
-      const tokenData=await tokenResponse.json();
+      const tokenData=await tokenResponse.json().catch(()=>({}));
       if (!tokenResponse.ok || !tokenData.access_token) {
-        console.error("Commission notification OAuth failed",tokenResponse.status);
+        const why=`OAuth ${tokenResponse.status} ${["invalid_client","invalid_grant","unauthorized_client","invalid_request","invalid_scope"].includes(tokenData.error)?tokenData.error:"unknown"}`;
+        if(logged)return savedOnly(why);
+        console.error("Commission notification OAuth failed",why);
         return json({success:false,error:"Unable to send request."},500,cors);
       }
 
@@ -113,7 +123,7 @@ export async function commissionForm(request,env) {
       // This avoids relying on a runtime address variable for MIME parsing.
       const senderAddress = "tj@vermillionaurora.com";
       const mimeParts = [
-        `From: Vermilion Aurora Website <${senderAddress}>`,
+        `From: Vermillion Aurora Website <${senderAddress}>`,
         `To: ${notifyAddress(env)}`,
         `Reply-To: ${email}`,
         `Subject: ${mimeHeader(isPurchase ? `Painting Purchase Inquiry — ${paintingTitle} (${reference})` : `New Commission Request — ${name} (${reference})`)}`,
@@ -137,12 +147,13 @@ export async function commissionForm(request,env) {
       });
       const gmailData=await gmail.json();
       if (!gmail.ok) {
+        if(logged)return savedOnly(`Gmail ${gmail.status}`);
         console.error("Commission notification failed",gmail.status);
         return json({success:false,error:"Unable to send request."},500,cors);
       }
       sent=true;
-      // studio-tracker #115: one row per inquiry, then an acknowledgement to the sender (off unless COMMISSION_AUTOREPLY is "true").
-      await logInquiry(env,{requestId,reference,kind:isPurchase?"purchase":"commission",name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
+      // studio-tracker #115: the row was saved above; now acknowledge the sender (off unless COMMISSION_AUTOREPLY is "true").
+      if(!logged)await logInquiry(env,{requestId,reference,kind:isPurchase?"purchase":"commission",name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
       let acknowledged=false;
       if (env.COMMISSION_AUTOREPLY === "true") {
         try {
@@ -202,6 +213,10 @@ export async function logInquiry(env,i){
       .bind(i.requestId,i.reference,new Date().toISOString(),i.kind,i.name,i.email,i.size||"",i.paintingSlug||"",i.paintingTitle||"",i.description,i.uploads||0).run();
     return true;
   }catch{console.error("Commission inquiry log failed");return false;}
+}
+async function markStatus(env,requestId,status){
+  if(!env.CATALOG_DB)return;
+  try{await env.CATALOG_DB.prepare("UPDATE commission_inquiries SET status=? WHERE request_id=?").bind(status,requestId).run();}catch{}
 }
 async function markAcknowledged(env,requestId,ok){
   if(!env.CATALOG_DB)return;
