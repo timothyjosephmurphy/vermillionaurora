@@ -38,6 +38,8 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   for(const id of removedBookArt){
     assert(!manifest.artworks.some(art=>art.id===id),`${id} should be absent from the source manifest`);
     assert(!manifest.sections.some(group=>group.artworks.includes(id)),`${id} should be absent from every book gallery`);
+  // studio-tracker #252: the framed photo of 'Sunrise on Rainier with Eagle' is gone; painting-portrait-with-hat is the master.
+  assert(!manifest.artworks.some(art=>art.id==='book-art-d78badff7e21472c00b8'),'the framed duplicate scan is removed');
     assert(!bookProducts.some(product=>product.id===id),`${id} should have no product page`);
     assert(!(id in bookPrints),`${id} should have no print-ordering record`);
   }
