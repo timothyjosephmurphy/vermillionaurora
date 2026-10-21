@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="7a07079bab1427379910";
+export const printVersion="ea0a0b3a175c3614b764";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -75055,25 +75055,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Large print",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "105.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M9S13.57X17.9",
+    "sku": "5M144M9S9.08X11.98",
     "scale": 1,
     "imageSize": {
-      "width": 13.57,
-      "height": 17.9,
+      "width": 9.08,
+      "height": 11.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.57,
-      "height": 18.9,
+      "width": 10.08,
+      "height": 12.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f12fd2fa03ecb46d6a3c7db79f9fb9783c4684e2f29ba23f796603c30fcbc2d0.jpg",
-    "assetSha256": "f12fd2fa03ecb46d6a3c7db79f9fb9783c4684e2f29ba23f796603c30fcbc2d0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a43833d5cc88a7286c62f6242b641c89e94a511dd702c630b7db2f8afc24ee46.jpg",
+    "assetSha256": "a43833d5cc88a7286c62f6242b641c89e94a511dd702c630b7db2f8afc24ee46",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75089,8 +75089,8 @@ export default {
     "layout": "full-image-finerworks-border-v1",
     "sizeBasis": "image-proportional",
     "printSize": {
-      "width": 13.57,
-      "height": 17.9,
+      "width": 9.08,
+      "height": 11.98,
       "unit": "in"
     }
   },
@@ -75101,25 +75101,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Large print — Black frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "188.00",
+    "amount": "104.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD83X18DD16F1S16DD83X21DD16J1S13DD83X18DD16G1",
+    "sku": "5M144M8S9DD34X12DD25F1S12DD34X15DD25J1S9DD34X12DD25G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.5767,
-      "height": 17.9033,
+      "width": 9.0867,
+      "height": 11.9833,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.83,
-      "height": 18.16,
+      "width": 9.34,
+      "height": 12.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37.jpg",
-    "assetSha256": "6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0d441d9c1575a4d44d4f44cd3a2e767b97a3046e0e83bdd5db0a2a4f4ef83f48.jpg",
+    "assetSha256": "0d441d9c1575a4d44d4f44cd3a2e767b97a3046e0e83bdd5db0a2a4f4ef83f48",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75139,18 +75139,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16.83,
-        "height": 21.16,
+        "width": 12.34,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
-        "width": 13.83,
-        "height": 18.16,
+        "width": 9.34,
+        "height": 12.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S13.83X18.16",
+    "baseSku": "5M144M8S9.34X12.25",
     "frame": {
       "key": "black",
       "id": 1,
@@ -75160,8 +75160,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16.83,
-        "height": 21.16,
+        "width": 12.34,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -75169,7 +75169,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "105.00"
+    "unframedAmount": "50.00"
   },
   "print-archived-painting-308-full-frame-white": {
     "id": "print-archived-painting-308-full-frame-white",
@@ -75178,25 +75178,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Large print — White frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "188.00",
+    "amount": "104.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD83X18DD16F2S16DD83X21DD16J1S13DD83X18DD16G1",
+    "sku": "5M144M8S9DD34X12DD25F2S12DD34X15DD25J1S9DD34X12DD25G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.5767,
-      "height": 17.9033,
+      "width": 9.0867,
+      "height": 11.9833,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.83,
-      "height": 18.16,
+      "width": 9.34,
+      "height": 12.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37.jpg",
-    "assetSha256": "6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0d441d9c1575a4d44d4f44cd3a2e767b97a3046e0e83bdd5db0a2a4f4ef83f48.jpg",
+    "assetSha256": "0d441d9c1575a4d44d4f44cd3a2e767b97a3046e0e83bdd5db0a2a4f4ef83f48",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75216,18 +75216,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16.83,
-        "height": 21.16,
+        "width": 12.34,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
-        "width": 13.83,
-        "height": 18.16,
+        "width": 9.34,
+        "height": 12.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S13.83X18.16",
+    "baseSku": "5M144M8S9.34X12.25",
     "frame": {
       "key": "white",
       "id": 2,
@@ -75237,8 +75237,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16.83,
-        "height": 21.16,
+        "width": 12.34,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -75246,7 +75246,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "105.00"
+    "unframedAmount": "50.00"
   },
   "print-archived-painting-308-full-frame-natural": {
     "id": "print-archived-painting-308-full-frame-natural",
@@ -75255,25 +75255,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Large print — Natural wood frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "205.00",
+    "amount": "117.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD83X18DD16F7S16DD83X21DD16J1S13DD83X18DD16G1",
+    "sku": "5M144M8S9DD34X12DD25F7S12DD34X15DD25J1S9DD34X12DD25G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.5767,
-      "height": 17.9033,
+      "width": 9.0867,
+      "height": 11.9833,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.83,
-      "height": 18.16,
+      "width": 9.34,
+      "height": 12.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37.jpg",
-    "assetSha256": "6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0d441d9c1575a4d44d4f44cd3a2e767b97a3046e0e83bdd5db0a2a4f4ef83f48.jpg",
+    "assetSha256": "0d441d9c1575a4d44d4f44cd3a2e767b97a3046e0e83bdd5db0a2a4f4ef83f48",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75293,18 +75293,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16.83,
-        "height": 21.16,
+        "width": 12.34,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
-        "width": 13.83,
-        "height": 18.16,
+        "width": 9.34,
+        "height": 12.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S13.83X18.16",
+    "baseSku": "5M144M8S9.34X12.25",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -75314,8 +75314,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16.83,
-        "height": 21.16,
+        "width": 12.34,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -75323,7 +75323,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "105.00"
+    "unframedAmount": "50.00"
   },
   "print-archived-painting-308-medium": {
     "id": "print-archived-painting-308-medium",
@@ -75332,25 +75332,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Medium print",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "60.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M9S10.18X13.42",
+    "sku": "5M144M9S6.81X8.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.18,
-      "height": 13.42,
+      "width": 6.81,
+      "height": 8.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.18,
-      "height": 14.42,
+      "width": 7.81,
+      "height": 9.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/78d08c259961583af50936a6f05ad62a761897c9023f11d3036281cb8fff57a4.jpg",
-    "assetSha256": "78d08c259961583af50936a6f05ad62a761897c9023f11d3036281cb8fff57a4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2c5ef3d1cd8e53e72987567c1ce937a931a92b44751e616c352d7c8f092ae254.jpg",
+    "assetSha256": "2c5ef3d1cd8e53e72987567c1ce937a931a92b44751e616c352d7c8f092ae254",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75366,8 +75366,8 @@ export default {
     "layout": "full-image-finerworks-border-v1",
     "sizeBasis": "image-proportional",
     "printSize": {
-      "width": 10.18,
-      "height": 13.42,
+      "width": 6.81,
+      "height": 8.99,
       "unit": "in"
     }
   },
@@ -75378,25 +75378,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Medium print — Black frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "121.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD44X13DD68F1S13DD44X16DD68J1S10DD44X13DD68G1",
+    "sku": "5M144M8S7DD07X9DD25F1S10DD07X12DD25J1S7DD07X9DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1833,
-      "height": 13.4267,
+      "width": 6.8167,
+      "height": 8.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.44,
-      "height": 13.68,
+      "width": 7.07,
+      "height": 9.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1.jpg",
-    "assetSha256": "965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/60dc5782be9bafde29d2a34dce6946a2ce1613b0c5fdb63e249424f4c71be86c.jpg",
+    "assetSha256": "60dc5782be9bafde29d2a34dce6946a2ce1613b0c5fdb63e249424f4c71be86c",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75416,18 +75416,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 13.44,
-        "height": 16.68,
+        "width": 10.07,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
-        "width": 10.44,
-        "height": 13.68,
+        "width": 7.07,
+        "height": 9.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S10.44X13.68",
+    "baseSku": "5M144M8S7.07X9.25",
     "frame": {
       "key": "black",
       "id": 1,
@@ -75437,8 +75437,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 13.44,
-        "height": 16.68,
+        "width": 10.07,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -75446,7 +75446,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "60.00"
+    "unframedAmount": "30.00"
   },
   "print-archived-painting-308-medium-frame-white": {
     "id": "print-archived-painting-308-medium-frame-white",
@@ -75455,25 +75455,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Medium print — White frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "121.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD44X13DD68F2S13DD44X16DD68J1S10DD44X13DD68G1",
+    "sku": "5M144M8S7DD07X9DD25F2S10DD07X12DD25J1S7DD07X9DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1833,
-      "height": 13.4267,
+      "width": 6.8167,
+      "height": 8.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.44,
-      "height": 13.68,
+      "width": 7.07,
+      "height": 9.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1.jpg",
-    "assetSha256": "965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/60dc5782be9bafde29d2a34dce6946a2ce1613b0c5fdb63e249424f4c71be86c.jpg",
+    "assetSha256": "60dc5782be9bafde29d2a34dce6946a2ce1613b0c5fdb63e249424f4c71be86c",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75493,18 +75493,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 13.44,
-        "height": 16.68,
+        "width": 10.07,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
-        "width": 10.44,
-        "height": 13.68,
+        "width": 7.07,
+        "height": 9.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S10.44X13.68",
+    "baseSku": "5M144M8S7.07X9.25",
     "frame": {
       "key": "white",
       "id": 2,
@@ -75514,8 +75514,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 13.44,
-        "height": 16.68,
+        "width": 10.07,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -75523,7 +75523,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "60.00"
+    "unframedAmount": "30.00"
   },
   "print-archived-painting-308-medium-frame-natural": {
     "id": "print-archived-painting-308-medium-frame-natural",
@@ -75532,25 +75532,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Medium print — Natural wood frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "135.00",
+    "amount": "82.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD44X13DD68F7S13DD44X16DD68J1S10DD44X13DD68G1",
+    "sku": "5M144M8S7DD07X9DD25F7S10DD07X12DD25J1S7DD07X9DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1833,
-      "height": 13.4267,
+      "width": 6.8167,
+      "height": 8.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.44,
-      "height": 13.68,
+      "width": 7.07,
+      "height": 9.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1.jpg",
-    "assetSha256": "965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/60dc5782be9bafde29d2a34dce6946a2ce1613b0c5fdb63e249424f4c71be86c.jpg",
+    "assetSha256": "60dc5782be9bafde29d2a34dce6946a2ce1613b0c5fdb63e249424f4c71be86c",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75570,18 +75570,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 13.44,
-        "height": 16.68,
+        "width": 10.07,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
-        "width": 10.44,
-        "height": 13.68,
+        "width": 7.07,
+        "height": 9.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S10.44X13.68",
+    "baseSku": "5M144M8S7.07X9.25",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -75591,8 +75591,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 13.44,
-        "height": 16.68,
+        "width": 10.07,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -75600,7 +75600,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "60.00"
+    "unframedAmount": "30.00"
   },
   "print-archived-painting-308-small": {
     "id": "print-archived-painting-308-small",
@@ -75609,25 +75609,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Small print",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M9S6.78X8.94",
+    "sku": "5M144M9S4.53X5.98",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.78,
-      "height": 8.94,
+      "width": 4.53,
+      "height": 5.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.78,
-      "height": 9.94,
+      "width": 5.53,
+      "height": 6.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e864241944de60883b0790e9ee5f446d4989d71cc0f6732995cd0c232f1dcfa2.jpg",
-    "assetSha256": "e864241944de60883b0790e9ee5f446d4989d71cc0f6732995cd0c232f1dcfa2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5925330bbfe421a9d0dea388fe244779546b9d1f7b5f70526eff5fd57c922f8b.jpg",
+    "assetSha256": "5925330bbfe421a9d0dea388fe244779546b9d1f7b5f70526eff5fd57c922f8b",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75643,8 +75643,8 @@ export default {
     "layout": "full-image-finerworks-border-v1",
     "sizeBasis": "image-proportional",
     "printSize": {
-      "width": 6.78,
-      "height": 8.94,
+      "width": 4.53,
+      "height": 5.98,
       "unit": "in"
     }
   },
@@ -75655,25 +75655,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Small print — Black frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "71.00",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD04X9DD2F1S10DD04X12DD2J1S7DD04X9DD2G1",
+    "sku": "5M144M8S4DD79X6DD25F1S8DD01X9DD47J1S4DD79X6DD25G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7833,
-      "height": 8.9467,
+      "width": 4.5367,
+      "height": 5.9833,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.04,
-      "height": 9.2,
+      "width": 4.79,
+      "height": 6.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67.jpg",
-    "assetSha256": "d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d8c2fdead1f42e1e754429b35a14f8a1173c4801daaf2e603015d5e59e48c2af.jpg",
+    "assetSha256": "d8c2fdead1f42e1e754429b35a14f8a1173c4801daaf2e603015d5e59e48c2af",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75693,18 +75693,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10.04,
-        "height": 12.2,
+        "width": 8.01,
+        "height": 9.47,
         "unit": "in"
       },
       "window": {
-        "width": 7.04,
-        "height": 9.2,
+        "width": 4.79,
+        "height": 6.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.04X9.2",
+    "baseSku": "5M144M8S4.79X6.25",
     "frame": {
       "key": "black",
       "id": 1,
@@ -75714,8 +75714,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10.04,
-        "height": 12.2,
+        "width": 8.01,
+        "height": 9.47,
         "unit": "in"
       },
       "glazing": {
@@ -75723,7 +75723,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "30.00"
+    "unframedAmount": "25.00"
   },
   "print-archived-painting-308-small-frame-white": {
     "id": "print-archived-painting-308-small-frame-white",
@@ -75732,25 +75732,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Small print — White frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "71.00",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD04X9DD2F2S10DD04X12DD2J1S7DD04X9DD2G1",
+    "sku": "5M144M8S4DD79X6DD25F2S8DD01X9DD47J1S4DD79X6DD25G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7833,
-      "height": 8.9467,
+      "width": 4.5367,
+      "height": 5.9833,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.04,
-      "height": 9.2,
+      "width": 4.79,
+      "height": 6.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67.jpg",
-    "assetSha256": "d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d8c2fdead1f42e1e754429b35a14f8a1173c4801daaf2e603015d5e59e48c2af.jpg",
+    "assetSha256": "d8c2fdead1f42e1e754429b35a14f8a1173c4801daaf2e603015d5e59e48c2af",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75770,18 +75770,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10.04,
-        "height": 12.2,
+        "width": 8.01,
+        "height": 9.47,
         "unit": "in"
       },
       "window": {
-        "width": 7.04,
-        "height": 9.2,
+        "width": 4.79,
+        "height": 6.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.04X9.2",
+    "baseSku": "5M144M8S4.79X6.25",
     "frame": {
       "key": "white",
       "id": 2,
@@ -75791,8 +75791,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10.04,
-        "height": 12.2,
+        "width": 8.01,
+        "height": 9.47,
         "unit": "in"
       },
       "glazing": {
@@ -75800,7 +75800,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "30.00"
+    "unframedAmount": "25.00"
   },
   "print-archived-painting-308-small-frame-natural": {
     "id": "print-archived-painting-308-small-frame-natural",
@@ -75809,25 +75809,25 @@ export default {
     "productId": "archived-painting-308",
     "title": "Self Portrait on Goat Lake — Small print — Natural wood frame",
     "artworkTitle": "Self Portrait on Goat Lake",
-    "amount": "82.00",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD04X9DD2F7S10DD04X12DD2J1S7DD04X9DD2G1",
+    "sku": "5M144M8S4DD79X6DD25F7S8DD01X9DD47J1S4DD79X6DD25G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7833,
-      "height": 8.9467,
+      "width": 4.5367,
+      "height": 5.9833,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.04,
-      "height": 9.2,
+      "width": 4.79,
+      "height": 6.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67.jpg",
-    "assetSha256": "d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d8c2fdead1f42e1e754429b35a14f8a1173c4801daaf2e603015d5e59e48c2af.jpg",
+    "assetSha256": "d8c2fdead1f42e1e754429b35a14f8a1173c4801daaf2e603015d5e59e48c2af",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -75847,18 +75847,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10.04,
-        "height": 12.2,
+        "width": 8.01,
+        "height": 9.47,
         "unit": "in"
       },
       "window": {
-        "width": 7.04,
-        "height": 9.2,
+        "width": 4.79,
+        "height": 6.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.04X9.2",
+    "baseSku": "5M144M8S4.79X6.25",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -75868,8 +75868,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10.04,
-        "height": 12.2,
+        "width": 8.01,
+        "height": 9.47,
         "unit": "in"
       },
       "glazing": {
@@ -75877,7 +75877,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "30.00"
+    "unframedAmount": "25.00"
   },
   "print-archived-painting-307-full": {
     "id": "print-archived-painting-307-full",

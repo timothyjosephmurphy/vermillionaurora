@@ -51,6 +51,8 @@ test('inferred sizes stay approximate and separately attributed from recorded si
     assert(d.evidence.matchingFeatures>=16);
     assert(!p.dimensionsInscription,'Preserve written measurements instead of replacing them with estimates');
     const product=products.find(x=>x.id===p.id);
+    // An artist-recorded size (TJ, Oct 21 2026: Goat Lake #308 is 10 × 12 in) replaces the estimate on the page.
+    if(p.recordedDimensions?.source==='artist'){assert(product.facts.some(f=>f.label==='Size'&&f.value===`${p.recordedDimensions.width} × ${p.recordedDimensions.height} in (W × H)`));assert(!product.facts.some(f=>f.label==='Approximate paper size'));continue;}
     assert(product.facts.some(f=>f.label==='Approximate paper size'&&f.value.includes('estimated from photographs')));
   }
 });
