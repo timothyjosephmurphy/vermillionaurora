@@ -73,3 +73,7 @@ PayPal checkout has been removed; cards go through Square. BTCPay accepts on-cha
 
 Use shared checkout for new original-art sales. Books continue to Amazon, commissions continue to inquiries, and paintings without measurements remain inquiry-only.
 
+
+## Blog card images
+
+Each post on `/blog/` needs its own card/hero/og image; site-update posts must not use the default Esperanza hero. `tests/blog-card-images.test.mjs` (in `npm test`) enforces this. Its `ALLOW_SHARED` list is temporary; drop entries as posts get their own images.
