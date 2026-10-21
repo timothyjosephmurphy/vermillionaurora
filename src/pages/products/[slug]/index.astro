@@ -10,6 +10,7 @@ import referenceMedia from '../../../../catalog/reference-media.json';
 import CommissionProcess from '../../../components/CommissionProcess.astro';
 import PrintPurchaseDialog from '../../../components/PrintPurchaseDialog.astro';
 import EmailSignup from '../../../components/EmailSignup.astro';
+import RelatedWorks from '../../../components/RelatedWorks.astro';
 import {printOptions,config,papers} from '../../../../catalog/prints.mjs';
 import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../catalog/catalog.mjs';
 export function getStaticPaths() { return products.map(product=>({params:{slug:product.slug},props:{product}})); }
@@ -109,6 +110,7 @@ const facts=painting ? [
       <a class="product-back" href={p.back.href}>{p.back.label}</a>
     </div>
   </article>
+  {painting && <RelatedWorks product={p} />}
   {availablePrints.length>0&&<PrintPurchaseDialog product={p}/>}
 </main>}
 <style is:global>.older-originals-list{margin:26px 0}.older-originals-list h2{font:600 1.6rem/1.2 'Cormorant Garamond',serif;margin:0 0 10px}.older-originals-list ul{list-style:none;margin:0;padding:0}.older-originals-list li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #e3d9ce}.older-original-thumb{display:block;background:#f1ece4;border-radius:3px}.older-original-thumb img{display:block;width:72px;height:72px;object-fit:contain;padding:4px}.older-original-name{color:inherit;font-weight:600}.older-originals-list li p{margin:2px 0 0;font-size:.88rem;color:#665b52}.older-originals-list .older-original-buy{padding:8px 18px;min-height:0}.older-original-view{color:#a34528;font-size:.9rem}</style>

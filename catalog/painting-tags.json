@@ -1,0 +1,927 @@
+{
+ "_note": "Tags for TJ Murphy paintings (issue #248). assignments are keyed by product id (stable across slug renames). twins lists the same physical painting shown on several pages (archive/book/product); twins share tags and are never shown as related to each other. Same-title pages and book-galleries originalProductId pairs are treated as twins automatically. Paul Murphy works are never tagged.",
+ "tags": {
+  "bass-coast": {
+   "label": "Bass Coast",
+   "kind": "place"
+  },
+  "burning-man": {
+   "label": "Burning Man",
+   "kind": "place"
+  },
+  "mexico": {
+   "label": "Mexico",
+   "kind": "place"
+  },
+  "el-salvador": {
+   "label": "El Salvador",
+   "kind": "place"
+  },
+  "sedona": {
+   "label": "Sedona",
+   "kind": "place"
+  },
+  "ukraine": {
+   "label": "Ukraine",
+   "kind": "place"
+  },
+  "san-juan-islands": {
+   "label": "San Juan Islands",
+   "kind": "place"
+  },
+  "denny-blaine": {
+   "label": "Denny Blaine",
+   "kind": "series"
+  },
+  "tahoma-rainier": {
+   "label": "Tahoma / Rainier",
+   "kind": "place"
+  },
+  "maui-hawaii": {
+   "label": "Maui / Hawaii",
+   "kind": "place"
+  },
+  "cape-town": {
+   "label": "Cape Town",
+   "kind": "place"
+  },
+  "austin": {
+   "label": "Austin",
+   "kind": "place"
+  },
+  "miami": {
+   "label": "Miami",
+   "kind": "place"
+  },
+  "seattle": {
+   "label": "Seattle",
+   "kind": "place"
+  },
+  "pacific-northwest": {
+   "label": "Pacific Northwest",
+   "kind": "place"
+  },
+  "sunrise": {
+   "label": "Sunrise",
+   "kind": "subject"
+  },
+  "sunset": {
+   "label": "Sunset",
+   "kind": "subject"
+  },
+  "bounty-of-satoshi": {
+   "label": "Bounty of Satoshi",
+   "kind": "series"
+  },
+  "el-salvador-triptych": {
+   "label": "El Salvador: Past, Present, Future",
+   "kind": "series"
+  },
+  "brekkie-bitcoin-b": {
+   "label": "Brekkie Bitcoin B",
+   "kind": "series"
+  },
+  "catherine-dance": {
+   "label": "Catherine dance series",
+   "kind": "series"
+  },
+  "bass-coast-sunrise": {
+   "label": "Sunrise at Bass Coast",
+   "kind": "series"
+  },
+  "burning-man-temple": {
+   "label": "Burning Man Temple 2022",
+   "kind": "series"
+  },
+  "bitcoiners": {
+   "label": "Bitcoiners",
+   "kind": "subject"
+  },
+  "family": {
+   "label": "Family",
+   "kind": "subject"
+  },
+  "meditation": {
+   "label": "Meditation",
+   "kind": "subject"
+  },
+  "self-portrait": {
+   "label": "Self-portrait",
+   "kind": "subject"
+  },
+  "political-portraits": {
+   "label": "Political portraits",
+   "kind": "subject"
+  }
+ },
+ "twins": [
+  [
+   "archived-painting-433",
+   "archived-painting-436",
+   "archived-painting-437",
+   "archived-painting-438",
+   "book-art-9a4b9331f62350fa36fc",
+   "book-art-c198f09bc8ddad18ed1e"
+  ],
+  [
+   "archived-painting-22",
+   "book-art-67cc9a4d5823eca2182e"
+  ],
+  [
+   "archived-painting-19",
+   "burning-man-temple-2022-daytime"
+  ]
+ ],
+ "assignments": {
+  "el-zonte-at-sunrise": [
+   "el-salvador",
+   "sunrise"
+  ],
+  "honeybadger-and-cub-with-genesis-block": [
+   "bitcoiners"
+  ],
+  "sunset-in-el-tunco-el-salvador": [
+   "el-salvador",
+   "sunset"
+  ],
+  "painting-chef-in-white": [
+   "bitcoiners"
+  ],
+  "painting-clouds-over-water": [
+   "el-salvador"
+  ],
+  "painting-couple-in-color": [
+   "family"
+  ],
+  "michael-and-katie-in-yelapa": [
+   "mexico"
+  ],
+  "painting-emergence": [
+   "el-salvador",
+   "el-salvador-triptych"
+  ],
+  "myself-my-mother-ruth-my-grandpa-howard": [
+   "family",
+   "self-portrait"
+  ],
+  "painting-festival-portrait": [
+   "bounty-of-satoshi",
+   "bitcoiners"
+  ],
+  "painting-figures-in-wheatfield": [
+   "ukraine"
+  ],
+  "painting-golden-coast": [
+   "san-juan-islands",
+   "pacific-northwest",
+   "sunset"
+  ],
+  "sunset-in-el-zonte-el-salvador": [
+   "el-salvador",
+   "sunset"
+  ],
+  "painting-insect-garden": [
+   "el-salvador",
+   "el-salvador-triptych"
+  ],
+  "painting-moonlit-water": [
+   "pacific-northwest"
+  ],
+  "painting-phoenix-rising": [
+   "bounty-of-satoshi",
+   "bitcoiners"
+  ],
+  "grandpa-howard": [
+   "family"
+  ],
+  "painting-portrait-in-gold": [
+   "bitcoiners"
+  ],
+  "painting-portrait-with-cheese": [
+   "brekkie-bitcoin-b",
+   "bitcoiners"
+  ],
+  "painting-portrait-with-hat": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "painting-red-horizon": [
+   "maui-hawaii",
+   "sunset"
+  ],
+  "painting-shoreline-at-dusk": [
+   "el-salvador",
+   "sunrise"
+  ],
+  "el-zonte-before-dawn": [
+   "el-salvador",
+   "sunrise"
+  ],
+  "sunrise-in-el-zonte-large": [
+   "el-salvador",
+   "sunrise"
+  ],
+  "meditation-at-denny-blaine": [
+   "denny-blaine",
+   "seattle",
+   "pacific-northwest",
+   "meditation"
+  ],
+  "painting-studio-figure": [
+   "brekkie-bitcoin-b",
+   "bitcoiners"
+  ],
+  "painting-sunflower-woman": [
+   "ukraine"
+  ],
+  "joaquim-in-zihuatanejo": [
+   "mexico"
+  ],
+  "painting-sunset-silhouette": [
+   "san-juan-islands",
+   "pacific-northwest",
+   "sunset"
+  ],
+  "painting-twin-dragons": [
+   "el-salvador",
+   "el-salvador-triptych"
+  ],
+  "burning-man-temple-2022-blue": [
+   "burning-man",
+   "burning-man-temple"
+  ],
+  "burning-man-temple-2022-pink": [
+   "burning-man",
+   "burning-man-temple"
+  ],
+  "burning-man-temple-2022-flame": [
+   "burning-man",
+   "burning-man-temple"
+  ],
+  "burning-man-temple-2022-daytime": [
+   "burning-man",
+   "burning-man-temple"
+  ],
+  "cormorant-presiding-over-sunset-on-puget-sound": [
+   "seattle",
+   "pacific-northwest",
+   "sunset"
+  ],
+  "meditating-at-denny-blaine-on-solstice-2015": [
+   "denny-blaine",
+   "seattle",
+   "pacific-northwest",
+   "meditation"
+  ],
+  "sunrise-on-tahoma-from-denny-blaine": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise",
+   "meditation",
+   "self-portrait"
+  ],
+  "sunrise-on-rainier-from-denny-blaine": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "lisa-climbing-tahoma-at-sunrise-from-denny-blaine": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "lake-in-the-north-cascades": [
+   "pacific-northwest"
+  ],
+  "book-art-ded6b759e667e3c2a313": [
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "book-art-e6068e265bfdc379526c": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise",
+   "meditation",
+   "self-portrait"
+  ],
+  "book-art-9ae261289a3bce952c6f": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "book-art-2a670ca4f87a8cbd8b02": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "book-art-d78badff7e21472c00b8": [
+   "denny-blaine",
+   "tahoma-rainier",
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "book-art-deb3358c321671dae1fc": [
+   "tahoma-rainier",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "book-art-85d951d0a1ea09ef4aa6": [
+   "pacific-northwest"
+  ],
+  "book-art-502372c530af5261540c": [
+   "pacific-northwest"
+  ],
+  "book-art-aa4dcced8a2ae6a8111c": [
+   "pacific-northwest"
+  ],
+  "book-art-8fde7c978d6cd5d53727": [
+   "pacific-northwest"
+  ],
+  "book-art-5e4eb881d89ae9f5c635": [
+   "san-juan-islands",
+   "pacific-northwest",
+   "sunset"
+  ],
+  "book-art-f56007f6a7d6ee955caf": [
+   "san-juan-islands",
+   "pacific-northwest",
+   "sunset"
+  ],
+  "book-art-d1399111a441ed91feaa": [
+   "san-juan-islands",
+   "pacific-northwest",
+   "sunset"
+  ],
+  "book-art-c198f09bc8ddad18ed1e": [
+   "bass-coast",
+   "sunrise",
+   "bass-coast-sunrise"
+  ],
+  "book-art-9a4b9331f62350fa36fc": [
+   "bass-coast",
+   "sunrise",
+   "bass-coast-sunrise"
+  ],
+  "book-art-b01b8695b2528cb850a3": [
+   "denny-blaine",
+   "seattle",
+   "pacific-northwest",
+   "sunrise"
+  ],
+  "book-art-164299ae97e7b62137f5": [
+   "pacific-northwest"
+  ],
+  "book-art-7a3ad7bacdb71faac1b8": [
+   "pacific-northwest"
+  ],
+  "book-art-9c7b9d41bee5615f1d7f": [
+   "mexico",
+   "sunset"
+  ],
+  "book-art-87cf2a732259b313f5ab": [
+   "mexico",
+   "sunrise"
+  ],
+  "book-art-93957f4169bc931e0a52": [
+   "mexico",
+   "sunset"
+  ],
+  "book-art-c4a5109c84daedd78291": [
+   "mexico",
+   "self-portrait"
+  ],
+  "book-art-471daf14a8bb7883f114": [
+   "mexico",
+   "sunrise",
+   "meditation",
+   "self-portrait"
+  ],
+  "book-art-ac338ff3806b66917b3c": [
+   "el-salvador"
+  ],
+  "book-art-7599e02b4ff7013e7261": [
+   "el-salvador",
+   "sunrise"
+  ],
+  "book-art-1cc00425e5226b3aa20c": [
+   "el-salvador",
+   "sunset"
+  ],
+  "book-art-9b6b4f1ce8b283e14b21": [
+   "el-salvador",
+   "sunrise"
+  ],
+  "book-art-7676696646b77fc3ca94": [
+   "el-salvador",
+   "sunset"
+  ],
+  "book-art-e6f013fae1925ab77100": [
+   "el-salvador",
+   "sunset"
+  ],
+  "book-art-c8da7882b2a3b7a36874": [
+   "el-salvador"
+  ],
+  "book-art-103c2ba59ca485e56a86": [
+   "el-salvador"
+  ],
+  "book-art-fc89b36cb40743a90fa8": [
+   "el-salvador"
+  ],
+  "book-art-e3293c73dbb01f94b39b": [
+   "el-salvador"
+  ],
+  "book-art-a2e53a8418a8d84f3dc5": [
+   "el-salvador"
+  ],
+  "book-art-56e40e02275a8767a802": [
+   "cape-town",
+   "sunset"
+  ],
+  "book-art-fe853b565936ef8b2e73": [
+   "cape-town",
+   "sunset"
+  ],
+  "book-art-f7e73a57e2af01359446": [
+   "cape-town",
+   "sunrise"
+  ],
+  "book-art-9f546bff5102042a3ad4": [
+   "cape-town",
+   "sunset"
+  ],
+  "book-art-9fc2e730b10c7b8c333b": [
+   "cape-town"
+  ],
+  "book-art-27fee33e69f262ecfacb": [
+   "sedona"
+  ],
+  "book-art-65bf0ecd265f1fd96e4a": [
+   "sedona"
+  ],
+  "book-art-ff6db6906f0ed48ccc3a": [
+   "sedona"
+  ],
+  "book-art-55829535637cd4974a88": [
+   "maui-hawaii"
+  ],
+  "book-art-04a049ea60a5a09e6873": [
+   "maui-hawaii",
+   "sunset"
+  ],
+  "book-art-e589c9375e23d1de4748": [
+   "sunset"
+  ],
+  "book-art-82ab8d65fb50fe0d096a": [
+   "ukraine"
+  ],
+  "book-art-04de39dfa1817b8d1ed9": [
+   "ukraine"
+  ],
+  "book-art-e97329411fa8b273b508": [
+   "sunrise"
+  ],
+  "book-art-f91504eaa0ab6b936c29": [
+   "miami"
+  ],
+  "book-art-fb5eaeb2078ebf9c75f0": [
+   "miami"
+  ],
+  "book-art-4bb692457bed7cd4bb00": [
+   "miami"
+  ],
+  "book-art-024a1e2da99a49b4438a": [
+   "family",
+   "self-portrait"
+  ],
+  "book-art-02b06cbfebb63c2794d9": [
+   "family"
+  ],
+  "book-art-311b1c39d98767f359b5": [
+   "self-portrait"
+  ],
+  "book-art-cb92d1d647c6f92403c7": [
+   "self-portrait"
+  ],
+  "book-art-64a80ece808ac08d4877": [
+   "burning-man",
+   "sunrise"
+  ],
+  "book-art-2136f2260225dd8ef20a": [
+   "bitcoiners"
+  ],
+  "book-art-29b3572972c367d351d1": [
+   "bounty-of-satoshi",
+   "bitcoiners"
+  ],
+  "book-art-8ff9ac182d32fa228450": [
+   "bounty-of-satoshi",
+   "bitcoiners"
+  ],
+  "book-art-c33709aeb2717b0c53de": [
+   "austin"
+  ],
+  "book-art-edbfc2a7fff1189141f6": [
+   "maui-hawaii"
+  ],
+  "book-art-4bf5a04e40e7d8341378": [
+   "maui-hawaii"
+  ],
+  "book-art-74a736000a32427842b1": [
+   "seattle",
+   "pacific-northwest"
+  ],
+  "book-art-9209f1fd7d47f373597f": [
+   "catherine-dance"
+  ],
+  "book-art-a61c71e5de8cc1b71500": [
+   "catherine-dance"
+  ],
+  "book-art-596837cb5ff533c620dd": [
+   "catherine-dance"
+  ],
+  "book-art-7bce6e3509027d1f7a0b": [
+   "catherine-dance"
+  ],
+  "book-art-3a9cba708a8045364e82": [
+   "burning-man"
+  ],
+  "book-art-0d7df713c5f0f67733ae": [
+   "bass-coast"
+  ],
+  "book-art-b7410a9f4340e559e4f4": [
+   "mexico"
+  ],
+  "book-art-ad30c3da712401606ea6": [
+   "mexico"
+  ],
+  "book-art-14d2876a55c720cbc908": [
+   "mexico"
+  ],
+  "book-art-159503a8e82d7b91c293": [
+   "mexico"
+  ],
+  "book-art-4a03ad4df3ef51a39639": [
+   "austin"
+  ],
+  "book-art-616ff8378f27047b4a91": [
+   "austin"
+  ],
+  "book-art-1ff2691533c9a9d8b091": [
+   "austin"
+  ],
+  "book-art-3cd6b3fb3e356c4b1d1d": [
+   "bass-coast"
+  ],
+  "book-art-04f4a52773ffd19b4f67": [
+   "bass-coast"
+  ],
+  "book-art-614d5b68dbe5052e302a": [
+   "bass-coast"
+  ],
+  "book-art-54ff45104a57a68d4beb": [
+   "bass-coast"
+  ],
+  "book-art-4350a257e5a6a5e75a31": [
+   "bass-coast"
+  ],
+  "book-art-f367882aaeb0e32471eb": [
+   "bass-coast"
+  ],
+  "book-art-67cc9a4d5823eca2182e": [
+   "bass-coast"
+  ],
+  "book-art-df8db0bc08adfeae5829": [
+   "austin"
+  ],
+  "book-art-8d1545e1ac13c99eb4ce": [
+   "family"
+  ],
+  "book-art-ea6e156a9a533d06f198": [
+   "family"
+  ],
+  "book-art-1a843fe4506374e2f33e": [
+   "family",
+   "self-portrait"
+  ],
+  "book-art-5cdcafbf4759d14a793f": [
+   "family"
+  ],
+  "book-art-466dc684227286c40502": [
+   "family"
+  ],
+  "book-art-a526883c6ca5fefe7402": [
+   "family"
+  ],
+  "book-art-82127d1886ae57d5cb6e": [
+   "family"
+  ],
+  "book-art-0a80f9a5da0d39edc80f": [
+   "family"
+  ],
+  "book-art-0351c2ff290526e4f204": [
+   "bitcoiners"
+  ],
+  "book-art-7a498f39e7a66a2e8eb5": [
+   "bitcoiners"
+  ],
+  "book-art-e1fa746bb51029294a17": [
+   "bitcoiners"
+  ],
+  "book-art-c04c7e48687fe35e65f5": [
+   "bitcoiners"
+  ],
+  "book-art-d6e03f6907615dac3797": [
+   "bitcoiners"
+  ],
+  "book-art-ec22daff29e72f16eb76": [
+   "bitcoiners"
+  ],
+  "book-art-43a3f16ac35df7262254": [
+   "bitcoiners"
+  ],
+  "book-art-e4bbfe556c3c847d9c90": [
+   "bitcoiners"
+  ],
+  "book-art-0735a5fb0eb1c613b658": [
+   "bitcoiners"
+  ],
+  "book-art-6ef848d3ccb6b48184ab": [
+   "bitcoiners"
+  ],
+  "book-art-044d157c01c7bb07eeab": [
+   "bitcoiners"
+  ],
+  "book-art-4d53927ad111f0259402": [
+   "bitcoiners"
+  ],
+  "book-art-4afb5cab4bdbe1ff6845": [
+   "bitcoiners"
+  ],
+  "book-art-b57fc2205e7bce68d524": [
+   "bitcoiners"
+  ],
+  "book-art-b38b9ae1893908d604da": [
+   "bitcoiners"
+  ],
+  "book-art-1fb8762b7bf8fce0d0f9": [
+   "brekkie-bitcoin-b",
+   "bitcoiners",
+   "meditation"
+  ],
+  "book-art-7718008765132b8bc17f": [
+   "brekkie-bitcoin-b",
+   "bitcoiners"
+  ],
+  "book-art-ef24f49017a62819330d": [
+   "brekkie-bitcoin-b",
+   "bitcoiners"
+  ],
+  "book-art-504e3fafdacd7c9bbcd0": [
+   "bitcoiners"
+  ],
+  "book-art-4a0bb9cdd6c404c4e77c": [
+   "bitcoiners"
+  ],
+  "book-art-0ee2717bc04e65d0507e": [
+   "bitcoiners"
+  ],
+  "book-art-deb92de6e72f7b3ce951": [
+   "bitcoiners"
+  ],
+  "book-art-a26ad79970ed645ce1a9": [
+   "brekkie-bitcoin-b",
+   "bitcoiners"
+  ],
+  "book-art-5a462e9705ba39d756a2": [
+   "bitcoiners"
+  ],
+  "book-art-d95085ce3029e490bb31": [
+   "bitcoiners"
+  ],
+  "book-art-481025eb48c792356553": [
+   "bitcoiners"
+  ],
+  "book-art-3cd168e82a87b1ccf91b": [
+   "bitcoiners"
+  ],
+  "book-art-1d0517e85d349222c362": [
+   "bitcoiners"
+  ],
+  "book-art-a6a2c048812a41cee4e4": [
+   "bitcoiners"
+  ],
+  "book-art-0f696788184bbba1d236": [
+   "self-portrait"
+  ],
+  "book-art-50a7984f819bec72d1c7": [
+   "pacific-northwest",
+   "self-portrait"
+  ],
+  "book-art-4c6fb3817fed4e5a6195": [
+   "burning-man"
+  ],
+  "book-art-19d9a8360c1f1df745d6": [
+   "denny-blaine",
+   "seattle",
+   "pacific-northwest",
+   "self-portrait"
+  ],
+  "book-art-ffffb682294d4b12c35e": [
+   "seattle",
+   "pacific-northwest",
+   "meditation"
+  ],
+  "book-art-bab6791e6223d24b9fbd": [
+   "denny-blaine",
+   "seattle",
+   "pacific-northwest",
+   "meditation"
+  ],
+  "archived-painting-308": [
+   "pacific-northwest",
+   "self-portrait"
+  ],
+  "archived-painting-307": [
+   "maui-hawaii"
+  ],
+  "archived-painting-img-1555": [
+   "meditation"
+  ],
+  "archived-painting-363": [
+   "political-portraits"
+  ],
+  "archived-painting-370": [
+   "bitcoiners"
+  ],
+  "archived-painting-364": [
+   "bitcoiners"
+  ],
+  "archived-painting-366": [
+   "political-portraits"
+  ],
+  "archived-painting-367": [
+   "bitcoiners"
+  ],
+  "archived-painting-362": [
+   "bitcoiners"
+  ],
+  "archived-painting-412": [
+   "brekkie-bitcoin-b",
+   "bitcoiners"
+  ],
+  "archived-painting-385": [
+   "political-portraits"
+  ],
+  "archived-painting-386": [
+   "political-portraits"
+  ],
+  "archived-painting-387": [
+   "political-portraits"
+  ],
+  "archived-painting-389": [
+   "political-portraits"
+  ],
+  "archived-painting-390": [
+   "political-portraits"
+  ],
+  "archived-painting-249": [
+   "pacific-northwest"
+  ],
+  "archived-painting-img-1608": [
+   "family"
+  ],
+  "archived-painting-416": [
+   "brekkie-bitcoin-b",
+   "bitcoiners"
+  ],
+  "archived-painting-img-1612": [
+   "bounty-of-satoshi",
+   "bitcoiners"
+  ],
+  "archived-painting-246": [
+   "el-salvador",
+   "sunset"
+  ],
+  "archived-painting-248": [
+   "el-salvador",
+   "sunset"
+  ],
+  "archived-painting-247": [
+   "el-salvador",
+   "sunset"
+  ],
+  "archived-painting-133": [
+   "burning-man"
+  ],
+  "archived-painting-438": [
+   "bass-coast",
+   "sunrise",
+   "bass-coast-sunrise"
+  ],
+  "archived-painting-437": [
+   "bass-coast",
+   "sunrise",
+   "bass-coast-sunrise"
+  ],
+  "archived-painting-433": [
+   "bass-coast",
+   "sunrise",
+   "bass-coast-sunrise"
+  ],
+  "archived-painting-436": [
+   "bass-coast",
+   "sunrise",
+   "bass-coast-sunrise"
+  ],
+  "archived-painting-90": [
+   "bass-coast"
+  ],
+  "archived-painting-66": [
+   "mexico"
+  ],
+  "archived-painting-53": [
+   "denny-blaine",
+   "seattle",
+   "pacific-northwest",
+   "meditation",
+   "self-portrait"
+  ],
+  "archived-painting-18": [
+   "burning-man"
+  ],
+  "archived-painting-19": [
+   "burning-man",
+   "burning-man-temple"
+  ],
+  "archived-painting-20": [
+   "burning-man",
+   "burning-man-temple"
+  ],
+  "archived-painting-22": [
+   "bass-coast"
+  ],
+  "older-work-sunset-ridge-strips": [
+   "sunset"
+  ],
+  "older-work-bitcoin-voices": [
+   "bitcoiners"
+  ],
+  "older-work-nakamoto-hayek": [
+   "bitcoiners"
+  ],
+  "older-work-beach-sunsets": [
+   "sunset"
+  ],
+  "older-work-sunset-ridge-strips-original-1": [
+   "sunset"
+  ],
+  "older-work-sunset-ridge-strips-original-2": [
+   "sunset"
+  ],
+  "older-work-sunset-ridge-strips-original-3": [
+   "sunset"
+  ],
+  "older-work-sunset-ridge-strips-original-4": [
+   "sunset"
+  ],
+  "older-work-sunset-ridge-strips-original-5": [
+   "sunset"
+  ],
+  "older-work-sunset-ridge-strips-original-6": [
+   "sunset"
+  ],
+  "older-work-bitcoin-voices-original-4": [
+   "bitcoiners"
+  ],
+  "older-work-nakamoto-hayek-original-1": [
+   "bitcoiners"
+  ],
+  "older-work-beach-sunsets-original-1": [
+   "sunset"
+  ],
+  "older-work-beach-sunsets-original-2": [
+   "sunset"
+  ],
+  "older-work-beach-sunsets-original-3": [
+   "sunset"
+  ]
+ }
+}
