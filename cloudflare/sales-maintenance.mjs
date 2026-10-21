@@ -1,6 +1,7 @@
 import catalog from './checkout-catalog.mjs';
 import { backfillCheckoutSale } from './historical-sales.mjs';
 
+const STATUS_CONCURRENCY=8;
 // Deployment-only maintenance. No public export or customer information in the response.
 export async function salesMaintenance(request,env) {
   const reply=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store'}});
@@ -23,10 +24,15 @@ export async function salesMaintenance(request,env) {
   let stage='inventory',product=null,checked=0;
   try {
     const periods=new Set();let backfilled=0;
-    for(const slug of Object.keys(catalog)) {
-      stage='inventory';product=slug;checked++;
-      if(await env.PAINTING_STOCK.getByName(slug).status()!=='sold')continue;
-      stage='backfill';
+    // Stock status is read-only, so check it a few at a time: one-by-one round trips took ~67 s for
+    // 148 paintings and began exceeding the 90 s post-deploy timeout. Backfills stay sequential, in catalog order.
+    const slugs=Object.keys(catalog),sold=new Array(slugs.length).fill(false);let next=0;
+    await Promise.all(Array.from({length:Math.min(STATUS_CONCURRENCY,slugs.length)},async()=>{
+      while(next<slugs.length){const i=next++;product=slugs[i];checked++;sold[i]=await env.PAINTING_STOCK.getByName(slugs[i]).status()==='sold';}
+    }));
+    for(const [i,slug] of slugs.entries()) {
+      if(!sold[i])continue;
+      stage='backfill';product=slug;
       const result=await backfillCheckoutSale(env,slug);
       if(result.recorded){periods.add(result.period);backfilled++;}
     }
