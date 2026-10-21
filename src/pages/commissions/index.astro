@@ -37,9 +37,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
   <title>Watercolor Portrait &amp; Landscape Commissions | Seattle Watercolor Artist TJ Murphy</title>
   <meta name="description" content={`Commission a watercolor portrait or landscape by Seattle artist TJ Murphy. Portraits from $${fromPrice(portraitOptions)}, landscapes from $${fromPrice(byId['small-landscape']?.options || [])}, 50% deposit to start, typical turnaround 2–4 weeks.`} />
   <link rel="canonical" href="https://tjm.art/commissions/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="/fonts/fonts.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/site-header.css" />
   <link rel="stylesheet" href="/portrait-preview.css" />
@@ -160,6 +158,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
             <details open>
               <summary>How do deposits and payment work?</summary>
               <p>A <strong>50% deposit</strong> starts the commission. The balance is due when the painting is finished, before shipping or pickup.</p>
+              <p>Pay with Bitcoin / Lightning (BTCPay) or card.</p>
             </details>
             <details>
               <summary>How long does a commission take?</summary>
