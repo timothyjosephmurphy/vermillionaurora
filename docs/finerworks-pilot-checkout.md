@@ -1,5 +1,7 @@
 # Dorian and Chase checkout pilot
 
+> **PayPal removed (October 2026, studio-tracker #133).** PayPal checkout, its sandbox pages and its Worker code are gone. Cards go through Square and Bitcoin through BTCPay. PayPal passages below are kept as history only; historical PayPal sales stay in the ledger.
+
 ## Limited live sample release
 
 The owner approved real sample purchases on 2026-09-30 using the existing

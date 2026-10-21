@@ -1,8 +1,8 @@
 import {DurableObject} from 'cloudflare:workers';
 import {catalogVersion,commonMethods,cartOrigin,publicCartItem} from './cart-policy.mjs';
-import {paypalRequest,paypalBody,validatePaypal,approvalUrl,squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './cart-providers.mjs';
+import {squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './cart-providers.mjs';
 import {bitcoinApi,bitcoinServer,checkoutUrl} from './bitcoin-api.mjs';
-import {captureDetails,ledgerFor,fulfillmentRecord} from './sales-records.mjs';
+import {ledgerFor,fulfillmentRecord} from './sales-records.mjs';
 import {queueQuickbooks,queueQuickbooksCost} from './quickbooks-sync.mjs';
 import {syncEnabled as quickbooksEnabled,costSyncEnabled} from './quickbooks-core.mjs';
 import {costSources} from './quickbooks-costs.mjs';
@@ -95,7 +95,6 @@ export class CartOrder extends DurableObject {
     if(code&&!await code.codeClaim(d.id))return {...this.result(),codeError:'That discount code has already been used.'};
     await this.schedule();
     d=this.save({...d,status:'reserving',method,squareSandboxNoFulfillment:method==='square'&&this.env.CHECKOUT_MODE==='sandbox'&&this.env.SQUARE_MODE==='sandbox'&&this.env.SQUARE_SANDBOX_NO_FULFILLMENT==='true',expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
-      merchantId:method==='paypal'?this.env.PAYPAL_MERCHANT_ID:null,
       ...(method==='square'?{squareMode:this.env.SQUARE_MODE,squareLocationId:this.env.SQUARE_LOCATION_ID,squareSourceId:payment.sourceId,
         squareAttempt:(d.squareAttempt||0)+1,squareIdempotencyKey:`${d.id}-${String((d.squareAttempt||0)+1).padStart(2,'0')}`,paymentError:undefined}:{}),
       ...(method==='bitcoin'?{server:bitcoinServer(this.env),storeId:this.env.BTCPAY_STORE_ID}:{})});
@@ -121,12 +120,6 @@ export class CartOrder extends DurableObject {
       this.save({...d,providerId:payment.id,squareSourceId:undefined,status:'settling',captureId,
         details:squarePaymentDetails(payment),paidAt:payment.updated_at||payment.created_at||new Date().toISOString()});
       await this.settle(captureId,squarePaymentDetails(payment));
-    } else if(d.method==='paypal') {
-      const order=await paypalRequest(this.env,'/v2/checkout/orders',paypalBody(this.env,d),d.id);
-      validatePaypal(this.env,d,order);
-      // A repeated create can return an already-approved or completed order.
-      this.save({...d,providerId:order.id,status:'pending',url:order.status==='COMPLETED'?null:approvalUrl(this.env,order)});
-      if(order.status==='COMPLETED')await this.acceptPaypal(order);
     } else {
       const invoice=await bitcoinApi(this.env,'/invoices',{amount:d.quote.total,currency:'USD',metadata:{orderId:`va-cart-${d.id}`,itemDesc:`${d.quote.items.length} artwork items — Vermillion Aurora`},
         checkout:{paymentMethods:['BTC-CHAIN','BTC-LN'],speedPolicy:'MediumSpeed',paymentTolerance:0,expirationMinutes:15,monitoringMinutes:1440,redirectAutomatically:true,redirectURL:`${cartOrigin(this.env)}/cart/?order=${d.id}`}});
@@ -140,27 +133,6 @@ export class CartOrder extends DurableObject {
     await this.codeOrder(d)?.codeRelease(d.id);
     this.save({...d,status:d.releaseStatus||'cancelled'});
     if(d.method==='bitcoin'&&d.providerId)await this.schedule(15*60000);else await this.ctx.storage.deleteAlarm();
-  }
-  async capture(){return this.exclusive(async()=>{
-    let d=this.read();if(!d||d.method!=='paypal')throw Error('Not a PayPal order');
-    if(['paid','settling','capturing'].includes(d.status)){await this.reconcile();return this.result();}
-    if(d.status!=='pending')return this.result();
-    if(Date.now()>d.expiresAt){await this.reconcile();return this.result();}
-    for(const i of d.quote.items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))if(!await this.stock(i.id).ownsCart(d.id))throw Error('Reservation lost');
-    const order=await paypalRequest(this.env,`/v2/checkout/orders/${d.providerId}`);validatePaypal(this.env,d,order);
-    if(order.status==='COMPLETED'){await this.acceptPaypal(order);return this.result();}
-    if(order.status!=='APPROVED')throw Error('Payment is not approved');
-    await this.schedule();d=this.save({...d,status:'capturing',captureAttemptedAt:Date.now()});
-    try{await this.capturePaypal(d);}catch(error){console.error('Cart capture needs reconciliation',d.id,error.message);}
-    return this.result();
-  });}
-  async capturePaypal(d) {
-    const order=await paypalRequest(this.env,`/v2/checkout/orders/${d.providerId}/capture`,{},`c:${d.id}`);
-    await this.acceptPaypal(order);
-  }
-  async acceptPaypal(order) {
-    const d=this.read(),captureId=validatePaypal(this.env,d,order,true);
-    await this.settle(captureId,captureDetails(order));
   }
   async acceptSquare(paymentId) {
     const d=this.read();if(!d||d.method!=='square'||!d.squareLocationId)return;
@@ -230,13 +202,7 @@ export class CartOrder extends DurableObject {
     if(d.status==='quoted'||d.status==='holding'){await this.expireCartHold('cancelled');return this.result();}
     // Closing a Bitcoin window cannot invalidate an invoice or release its stock.
     if(d.method==='bitcoin'||!['pending','creating'].includes(d.status)){await this.reconcile();return this.result();}
-    if(!d.providerId){await this.reconcile();return this.result();}
-    const order=await paypalRequest(this.env,`/v2/checkout/orders/${d.providerId}`);validatePaypal(this.env,d,order);
-    if(order.status==='COMPLETED')await this.acceptPaypal(order);
-    else if(['CREATED','PAYER_ACTION_REQUIRED','APPROVED','VOIDED'].includes(order.status)) {
-      this.save({...d,status:'releasing',releaseStatus:'cancelled'});await this.releaseAll();
-    }
-    return this.result();
+    await this.reconcile();return this.result();
   });}
   async publicStatus(){if(this.read()&&Date.now()-(this.read().checkedAt||0)>5000)await this.refresh();return this.result();}
   async refresh(invoiceId){return this.exclusive(()=>this.reconcile(invoiceId));}
@@ -260,21 +226,8 @@ export class CartOrder extends DurableObject {
       await this.acceptSquare(d.providerId);return;
     }
     if(d.method==='paypal') {
-      if(!d.providerId) {
-        // PayPal-Request-Id safely recovers an interrupted create within its retention window.
-        if(Date.now()-d.createAttemptedAt>30*60000){this.save({...d,status:'review',reason:'PayPal order creation could not be confirmed. Check PayPal before releasing inventory.'});await this.reviewNotice();return;}
-        await this.createPayment(d);return;
-      }
-      const order=await paypalRequest(this.env,`/v2/checkout/orders/${d.providerId}`);validatePaypal(this.env,d,order);
-      if(order.status==='COMPLETED'){await this.acceptPaypal(order);return;}
-      if(d.status==='capturing') {
-        if(order.status==='APPROVED')await this.capturePaypal(d);
-        // PENDING captures and uncertain outcomes keep every original reserved.
-        return;
-      }
-      if(Date.now()>d.expiresAt&&['CREATED','PAYER_ACTION_REQUIRED','APPROVED','VOIDED'].includes(order.status)) {
-        this.save({...d,status:'releasing',releaseStatus:'expired'});await this.releaseAll();
-      }
+      // PayPal checkout was removed (studio-tracker #133). A stored PayPal order is never settled or released automatically.
+      if(d.status!=='review'){this.save({...d,status:'review',reason:'PayPal checkout was removed. Check this order in PayPal before releasing inventory.'});await this.reviewNotice();}
       return;
     }
     let invoice;
