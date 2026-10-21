@@ -9,7 +9,7 @@ export function framedRetailPrice(quote,unframedAmount) {
   const extras=['matCost','secondMatCost','frameCost','glazingCost'].map(k=>moneyCents(quote[k],{allowZero:true}));
   if(base+extras.reduce((a,b)=>a+b,0)!==total||extras[0]<=0||extras[1]!==0||extras[2]<=0||extras[3]<=0)throw Error('Frame cost breakdown does not match the complete quote');
   const artwork=moneyCents(unframedAmount);
-  if(artwork<moneyCents(printRetailPrice(quote.baseCost)))throw Error('Print production cost changed; review the saved retail price before checkout');
+  if(artwork<moneyCents(printRetailPrice(quote.baseCost)))throw Error(`Print production cost changed; review the saved retail price before checkout [side-branch debug: code ${quote.code} base ${quote.baseCost} total ${quote.productionCost} unframed ${unframedAmount}]`);
   return moneyString(artwork+total-base);
 }
 export function reviewFramedPrice(quote,unframedAmount,published={}) {
