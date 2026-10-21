@@ -1,7 +1,7 @@
 name: Deploy isolated checkout sandbox
 on:
   push:
-    branches: [main, shared-paypal-checkout, finerworks-print-ordering]
+    branches: [main, finerworks-print-ordering]
     paths:
       - 'cloudflare/**'
       - 'payments/verify-print-sandbox.mjs'

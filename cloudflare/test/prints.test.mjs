@@ -10,8 +10,8 @@ import {isDor,dorReply} from './dor-mock.mjs';
 const id='print-painting-portrait-in-green-medium',art='painting-portrait-in-green';
 const item={id,type:'print',productId:art,title:'Chase Toole — Medium print',amount:'80.00',sku:'GLOBAL-FAP-12X16',scale:.75,imageSize:{width:9,height:11.25,unit:'in'},paperSize:{width:12,height:16,unit:'in'},paper:'Enhanced matte',assetUrl:'https://media.vermillionaurora.com/prints/approved.pdf',attributes:{},quantity:2};
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const settings={PRODIGI_API_KEY:'fake',PRODIGI_ENV:'sandbox',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:id,CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://sandbox.example.test'};
-let calls,orders,payment,loseReply,providerStage,price,objects,mailCount;
+const settings={PRODIGI_API_KEY:'fake',PRODIGI_ENV:'sandbox',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:id,CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_ALL:'true',SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook',SANDBOX_RETURN_ORIGIN:'https://sandbox.example.test'};
+let squareCount=0,calls,orders,payment,loseReply,providerStage,price,objects,mailCount;
 beforeEach(()=>{
   prints[id]={...item};calls=[];orders=new Map();payment=null;loseReply=false;providerStage='InProgress';price='10.00';objects=[];mailCount=0;
   vi.stubGlobal('fetch',vi.fn(async(input,init={})=>{
@@ -25,11 +25,9 @@ beforeEach(()=>{
       if(providerStage==='Complete')order.shipments=[{id:'shp_TEST',carrier:{name:'UPS'},tracking:{number:'TRACK',url:'https://www.ups.com/track'},dispatchDate:'2026-09-29'}];
       return Response.json({outcome:'Ok',order});
     }
-    if(u.pathname==='/v1/oauth2/token'||u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
-    if(u.pathname==='/v2/checkout/orders'){payment={...body,id:'ORDER1',status:'CREATED',links:[{rel:'approve',href:'https://www.sandbox.paypal.com/checkoutnow?token=ORDER1'}]};return Response.json(payment);}
-    if(u.pathname.startsWith('/v2/checkout/orders/')){
-      if(u.pathname.endsWith('/capture')){payment.status='COMPLETED';payment.purchase_units[0].payments={captures:[{id:'PRINTCAPTURE',status:'COMPLETED',amount:payment.purchase_units[0].amount,create_time:'2026-09-29T12:00:00Z'}]};}return Response.json(payment);
-    }
+    if(u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
+    if(u.hostname==='connect.squareupsandbox.com'&&u.pathname==='/v2/payments'){if(!payment||payment.idempotency_key!==body.idempotency_key)payment={id:'SQUAREPAY'+(squareCount++),idempotency_key:body.idempotency_key,status:'COMPLETED',location_id:body.location_id,reference_id:body.reference_id,amount_money:body.amount_money,created_at:'2026-09-29T12:00:00Z',updated_at:'2026-09-29T12:00:00Z',processing_fee:[{amount_money:{amount:200,currency:'USD'}}]};return Response.json({payment});}
+    if(u.hostname==='connect.squareupsandbox.com'&&u.pathname.startsWith('/v2/payments/'))return Response.json({payment});
     if(isDor(u))return dorReply();
     if(u.hostname==='gmail.googleapis.com')return Response.json({id:`MAIL${mailCount++}`});
     throw Error(`Unexpected external request: ${u.origin}${u.pathname}`);
@@ -41,14 +39,14 @@ async function setup() {
   const orderId=crypto.randomUUID(),order=env.CART_ORDERS.getByName(orderId);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...settings};});
   const quote=await priceCart({...env,...settings},cartItems([{id,quantity:2}]),address,'buyer@example.test');
-  await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['paypal']);return {orderId,order,quote};
+  await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['square']);return {orderId,order,quote};
 }
-async function pay(order){await order.start('paypal');payment.status='APPROVED';await order.capture();}
+async function pay(order){await order.start('square',{sourceId:'cnon:test-card'});}
 const advance=order=>runInDurableObject(order,i=>i.save({...i.read(),printJob:{...i.read().printJob,checkedAt:0}}));
 it('isolates environments and requires separate print allowlisting; client prices and assets are ignored',()=>{
   expect(()=>prodigiEnvironment({...settings,PRODIGI_ENV:'live'})).toThrow();
   expect(paymentMethods({...env,...settings,PRINT_CHECKOUT_IDS:''},id)).toEqual([]);
-  expect(paymentMethods({...env,...settings,PRINT_CHECKOUT_IDS:'',PRINT_CHECKOUT_ALL:'true'},id)).toEqual(['paypal']);
+  expect(paymentMethods({...env,...settings,PRINT_CHECKOUT_IDS:'',PRINT_CHECKOUT_ALL:'true'},id)).toEqual(['square']);
   expect(cartItems([{id,quantity:2,amount:'.01',assetUrl:'https://attacker.test/x'}])[0]).toEqual(item);
   expect(()=>cartItems([{id,quantity:11}])).toThrow();expect(()=>cartItems([{id:art,quantity:2}])).toThrow();
 });
@@ -71,7 +69,7 @@ it('sells prints without touching original inventory, persists one payment, and 
   const key=(await inspect(order)).printJob.request.idempotencyKey;
   loseReply=false;await advance(order);await order.refresh();expect((await inspect(order)).printJob.providerId).toBe('ord_TEST');expect(orders.size).toBe(1);expect((await inspect(order)).printJob.request.idempotencyKey).toBe(key);
   expect(await env.PAINTING_STOCK.getByName(art).status()).toBe(originalStatus);
-  expect(payment.purchase_units[0].items[0].quantity).toBe('2');expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(1);
+  expect(calls.filter(c=>c.url==='https://connect.squareupsandbox.com/v2/payments')).toHaveLength(1);
   expect(calls.some(c=>c.url.includes('shippo'))).toBe(false);
   const archive=await env.SALES_ARCHIVE.get(`orders/sandbox/${orderId}.json`);expect((await archive.json()).receipt.printFulfillment.providerOrderId).toBe('ord_TEST');
   const publicState=await order.result();expect(publicState.quote.items[0].assetUrl).toBeUndefined();expect(publicState.quote.printQuote).toBeUndefined();
