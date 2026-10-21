@@ -20,7 +20,7 @@ export async function cartCheckout(request,env) {
     const squareReady=products.some(product=>product.methods.includes('square'));
     return reply({enabled:true,version:catalogVersion,products,...(squareReady?{square:{applicationId:env.SQUARE_APPLICATION_ID,locationId:env.SQUARE_LOCATION_ID,mode:env.SQUARE_MODE}}:{})});
   }
-  if(request.method!=='POST'||!['hold','quote','start','status','capture','cancel'].includes(action)||!env.CART_ORDERS)return reply({error:'Not found'},404);
+  if(request.method!=='POST'||!['hold','quote','start','status','cancel'].includes(action)||!env.CART_ORDERS)return reply({error:'Not found'},404);
   const raw=await request.text();if(raw.length>12000)return reply({error:'Request too large'},413);
   let body;try{body=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   try {
@@ -56,7 +56,6 @@ export async function cartCheckout(request,env) {
     const order=env.CART_ORDERS.getByName(body.orderId);
     if(!await order.authorize(await keyHash(body.key)))return reply({error:'Order not found'},404);
     if(action==='start'){const started=await order.start(body.method,{sourceId:body.sourceId});return started.codeError?reply({error:started.codeError,code:'PRINT_CODE'},409):reply(started);}
-    if(action==='capture')return reply(await order.capture());
     if(action==='cancel')return reply(await order.cancel());
     return reply(await order.publicStatus());
   } catch(error) {

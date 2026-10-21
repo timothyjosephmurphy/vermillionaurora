@@ -32,7 +32,7 @@ for(const e of exhibitions){
   console.log(e.slug,photos.length,'photos');
 }
 // Murals: the final images at full physical scale (dimensions from the mural notes and the catalog).
-const muralHtml=await fs.readFile('murals/index.html','utf8');
+const muralHtml=await fs.readFile('src/pages/murals/index.astro','utf8');
 const chapters=[...muralHtml.matchAll(/"title": "([^"]+)", "photos": \[[^\]]*\], "text": \["((?:[^"\\]|\\.){40,}?)"/g)].map(m=>({title:m[1],text:clean(m[2])}));
 const murals=[
   {id:'friends-club-mural',title:'Friends Club',place:'Lillooet, British Columbia · 2026',size:{width:480,height:108,unit:'in'},sizeLabel:'40 × 9 ft shipping-container mural',href:'/murals/#friends-story',image:await texture(await fs.readFile('murals/images/3886996e.jpg'),'friends-club-mural',4096),
