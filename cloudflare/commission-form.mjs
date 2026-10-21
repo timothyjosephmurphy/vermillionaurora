@@ -36,6 +36,7 @@ export async function commissionForm(request,env) {
       if (!validEmail(email)) return json({success:false,error:"Please enter a valid email address."},400,cors);
 
       const requestId=crypto.randomUUID();
+      const reference=inquiryReference(requestId);
       const uploaded=[];
       for (const [field,label] of [["referenceImage","Reference image"],["paletteImage","Palette swatch"]]) {
         const file=form.get(field);
@@ -84,6 +85,7 @@ export async function commissionForm(request,env) {
       const body = isPurchase
         ? [
             "New painting purchase inquiry","",
+            `Reference: ${reference}`,
             `Request ID: ${requestId}`,
             `Painting: ${paintingTitle}`,
             `Price: ${paintingPrice || "Not specified"}`,
@@ -94,6 +96,7 @@ export async function commissionForm(request,env) {
           ].join("\r\n")
         : [
             "New commission request","",
+            `Reference: ${reference}`,
             `Request ID: ${requestId}`,
             `Name: ${name}`,
             `Email: ${email}`,
@@ -111,9 +114,9 @@ export async function commissionForm(request,env) {
       const senderAddress = "tj@vermillionaurora.com";
       const mimeParts = [
         `From: Vermilion Aurora Website <${senderAddress}>`,
-        `To: ${senderAddress}`,
+        `To: ${notifyAddress(env)}`,
         `Reply-To: ${email}`,
-        `Subject: ${mimeHeader(isPurchase ? `Painting Purchase Inquiry — ${paintingTitle}` : `New Commission Request — ${name}`)}`,
+        `Subject: ${mimeHeader(isPurchase ? `Painting Purchase Inquiry — ${paintingTitle} (${reference})` : `New Commission Request — ${name} (${reference})`)}`,
         "MIME-Version: 1.0",
         `Content-Type: multipart/mixed; boundary="${boundary}"`,
         "",
@@ -138,7 +141,18 @@ export async function commissionForm(request,env) {
         return json({success:false,error:"Unable to send request."},500,cors);
       }
       sent=true;
-      return json({success:true,message:"Commission request sent.",requestId},200,cors);
+      // studio-tracker #115: one row per inquiry, then an acknowledgement to the sender (off unless COMMISSION_AUTOREPLY is "true").
+      await logInquiry(env,{requestId,reference,kind:isPurchase?"purchase":"commission",name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
+      let acknowledged=false;
+      if (env.COMMISSION_AUTOREPLY === "true") {
+        try {
+          const ack=autoReply({name,email,reference,paintingTitle:isPurchase?paintingTitle:""});
+          const r=await fetch("https://gmail.googleapis.com/gmail/v1/users/me/messages/send",{method:"POST",headers:{Authorization:`Bearer ${tokenData.access_token}`,"Content-Type":"application/json"},body:JSON.stringify({raw:base64url(ackMime(ack,senderAddress))})});
+          acknowledged=r.ok; if(!r.ok)console.error("Commission acknowledgement failed",r.status);
+        } catch {console.error("Commission acknowledgement failed");}
+        await markAcknowledged(env,requestId,acknowledged);
+      }
+      return json({success:true,message:"Commission request sent.",requestId,reference},200,cors);
     } catch (error) {
       console.error("Commission form failed");
       return json({success:false,error:"Unable to send request."},500,cors);
@@ -155,3 +169,41 @@ function extensionFor(t){return ({"image/jpeg":"jpg","image/png":"png","image/we
 function mimeHeader(v){const b=new TextEncoder().encode(v);let s="";for(const x of b)s+=String.fromCharCode(x);return `=?UTF-8?B?${btoa(s)}?=`;}
 function base64url(v){const b=new TextEncoder().encode(v);let s="";for(const x of b)s+=String.fromCharCode(x);return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");}
 function json(d,status,h={}){return new Response(JSON.stringify(d),{status,headers:{"Content-Type":"application/json; charset=UTF-8","Cache-Control":"no-store",...h}});}
+
+// Short, human reference for an inquiry, e.g. TJM-261020-7F3A (date in Pacific time + 4 hex chars of the request ID).
+export function inquiryReference(requestId,now=new Date()){
+  const d=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Los_Angeles",year:"2-digit",month:"2-digit",day:"2-digit"}).format(now).replace(/-/g,"");
+  return `TJM-${d}-${String(requestId).replace(/-/g,"").slice(0,4).toUpperCase()}`;
+}
+export function notifyAddress(env){return env.COMMISSION_NOTIFY_TO || "tj@tjm.art";}
+// Public copy: TJ approves this wording before COMMISSION_AUTOREPLY is turned on.
+export function autoReply({name,email,reference,paintingTitle}){
+  const first=(String(name).trim().split(/\s+/)[0]||"there").slice(0,60);
+  const opener=paintingTitle
+    ? `Thanks for asking about ${paintingTitle}. I got your message, and I'll write back to you personally in a few days.`
+    : `Thanks for reaching out about a painting. I got your request, and I'll write back to you personally in a few days.`;
+  return {to:email,subject:`I got your message (${reference})`,text:[
+    `Hi ${first},`,"",opener,"",
+    `Your reference number is ${reference}. If you write to me about this, please include it.`,"",
+    "If you want to add anything, like more photos or details, just reply to this email.","",
+    "TJ Murphy","https://tjm.art"
+  ].join("\r\n")};
+}
+function ackMime(ack,from){
+  return [`From: TJ Murphy <${from}>`,`To: ${ack.to}`,"Reply-To: tj@tjm.art",`Subject: ${mimeHeader(ack.subject)}`,"MIME-Version: 1.0",'Content-Type: text/plain; charset="UTF-8"',"Content-Transfer-Encoding: 8bit","",ack.text,""].join("\r\n");
+}
+const INQUIRY_TABLE=`CREATE TABLE IF NOT EXISTS commission_inquiries (request_id TEXT PRIMARY KEY, reference TEXT NOT NULL, created_at TEXT NOT NULL, kind TEXT NOT NULL, name TEXT, email TEXT, size TEXT, painting_slug TEXT, painting_title TEXT, description TEXT, uploads INTEGER DEFAULT 0, acknowledged INTEGER DEFAULT 0, status TEXT DEFAULT 'new')`;
+// Logging never blocks the inquiry: the email to TJ has already gone out.
+export async function logInquiry(env,i){
+  if(!env.CATALOG_DB)return false;
+  try{
+    await env.CATALOG_DB.prepare(INQUIRY_TABLE).run();
+    await env.CATALOG_DB.prepare("INSERT INTO commission_inquiries (request_id,reference,created_at,kind,name,email,size,painting_slug,painting_title,description,uploads) VALUES (?,?,?,?,?,?,?,?,?,?,?)")
+      .bind(i.requestId,i.reference,new Date().toISOString(),i.kind,i.name,i.email,i.size||"",i.paintingSlug||"",i.paintingTitle||"",i.description,i.uploads||0).run();
+    return true;
+  }catch{console.error("Commission inquiry log failed");return false;}
+}
+async function markAcknowledged(env,requestId,ok){
+  if(!env.CATALOG_DB)return;
+  try{await env.CATALOG_DB.prepare("UPDATE commission_inquiries SET acknowledged=? WHERE request_id=?").bind(ok?1:0,requestId).run();}catch{}
+}
