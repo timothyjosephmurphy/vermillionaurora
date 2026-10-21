@@ -20436,7 +20436,7 @@
       }
     },
     "archived-painting-308": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -20474,8 +20474,14 @@
               }
             }
           },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-21T19:08:44.859Z",
           "bordered": {
             "sku": "5M144M9S9.08X11.98",
+            "amount": "50.00",
+            "pricingRule": "finerworks-3.5x-v1",
+            "quotedAt": "2026-10-21T19:08:44.859Z",
             "asset": {
               "provider": "finerworks",
               "url": "https://vermillionaurora.com/print-editions/a43833d5cc88a7286c62f6242b641c89e94a511dd702c630b7db2f8afc24ee46.jpg",
@@ -20540,8 +20546,14 @@
               }
             }
           },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-21T19:08:44.859Z",
           "bordered": {
             "sku": "5M144M9S6.81X8.99",
+            "amount": "30.00",
+            "pricingRule": "finerworks-3.5x-v1",
+            "quotedAt": "2026-10-21T19:08:44.859Z",
             "asset": {
               "provider": "finerworks",
               "url": "https://vermillionaurora.com/print-editions/2c5ef3d1cd8e53e72987567c1ce937a931a92b44751e616c352d7c8f092ae254.jpg",
@@ -20606,8 +20618,14 @@
               }
             }
           },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-21T19:08:44.859Z",
           "bordered": {
             "sku": "5M144M9S4.53X5.98",
+            "amount": "25.00",
+            "pricingRule": "finerworks-3.5x-v1",
+            "quotedAt": "2026-10-21T19:08:44.859Z",
             "asset": {
               "provider": "finerworks",
               "url": "https://vermillionaurora.com/print-editions/5925330bbfe421a9d0dea388fe244779546b9d1f7b5f70526eff5fd57c922f8b.jpg",

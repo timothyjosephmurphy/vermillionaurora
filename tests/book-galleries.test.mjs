@@ -122,7 +122,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
 });
 
 test('book print files preserve native resolution and use content-addressed R2 assets',()=>{
-  assert.equal(Object.keys(bookPrints).length,54); // +1: Sunrise on Rainier from Denny Blaine carries the book-art-9ae2… prints (Oct 20 2026)
+  assert.equal(Object.keys(bookPrints).length,53); // +1: Sunrise on Rainier from Denny Blaine carries the book-art-9ae2… prints (Oct 20 2026); -1: Goat Lake book scan retired for archived-painting-308 (Oct 21 2026)
   assert.equal(Object.values(bookPrints).reduce((count,art)=>count+Object.keys(art.variants).length,0),111); // +2 variants (full, medium) on the same listing
   assert(Object.values(bookPrints).every(art=>art.enabled));
   for(const product of bookProducts){
