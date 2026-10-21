@@ -26,5 +26,5 @@ Print-lab orders are still placed and checked at the listed retail price, so the
 receipt records `printCode.kind` and the list total.
 
 ## PayPal
-PayPal is hidden by `PAYPAL_DEPRECATED: "true"` in both Worker configs (the sandbox keeps `PAYPAL_CHECKOUT_ENABLED: "true"` because its
-deploy workflow requires it). Remove `PAYPAL_DEPRECATED` (and set production `PAYPAL_CHECKOUT_ENABLED` back to `"true"`) to restore PayPal.
+PayPal checkout was removed from the site and Workers (studio-tracker #133). It cannot be restored by a config flag.
+

@@ -1,5 +1,7 @@
 # Checkout release preparation — September 29, 2026
 
+> **PayPal removed (October 2026, studio-tracker #133).** PayPal checkout, its sandbox pages and its Worker code are gone. Cards go through Square and Bitcoin through BTCPay. PayPal passages below are kept as history only; historical PayPal sales stay in the ledger.
+
 Pull request #3 is merged. Production checkout is deployed with purchases disabled.
 
 ## Current release status — September 29, 2026

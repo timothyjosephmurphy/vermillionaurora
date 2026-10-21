@@ -28,12 +28,10 @@ async function walk(dir) {
 for(const root of roots)await walk(root);
 for(const entry of await readdir('.', {withFileTypes:true})) if(entry.isFile() && /\.(css|js|ico|svg|png|txt|xml)$/.test(entry.name) && !entry.name.endsWith('.config.js')) {await copyFile(entry.name,`dist/${entry.name}`);}
 await mkdir('dist/payments',{recursive:true});
-await copyFile('payments/paypal-checkout.js','dist/payments/paypal-checkout.js');
 await mkdir('dist/catalog',{recursive:true});
 await copyFile('catalog/availability.js','dist/catalog/availability.js');
 await writeFile('dist/catalog/products.json',JSON.stringify({version:catalogVersion,printVersion,prints:Object.values(readyPrints).filter(p=>!p.testOnly).map(p=>publicCartItem({...p,quantity:1})),products:listed.map(p=>({id:p.id,slug:p.slug,title:p.title,type:p.type,listing:p.listing,image:p.image}))}));
 await writeFile('dist/catalog/version.json',JSON.stringify({version:catalogVersion,products:products.length}));
-await writeFile('dist/payments/paypal-links.json',JSON.stringify(Object.fromEntries(products.filter(p=>p.checkout?.mode==='paypal-link').map(p=>[p.slug,p.checkout.link]))));
 // Read-only compatibility export for existing links and integrations. Never edit it.
 await writeFile('dist/gallery/inventory.json',JSON.stringify({paintings:listed.filter(p=>p.type==='painting').map(p=>({A:p.slug,B:p.title,C:p.listing.price?.amount||'0',D:p.listing.price?.currency||'USD',E:statusLabel(p),F:p.dimensions?.width||'',G:p.dimensions?.height||'',H:p.dimensions?.unit||'',I:p.medium||'',J:p.surface||'',K:p.year||'',L:p.framing||'',M:p.story.join('\n\n'),O:`https://vermillionaurora.com/products/${p.slug}/`,P:p.image.src,image:p.image.src}))}));
 console.log(`Public assets copied; catalog ${catalogVersion}`);
