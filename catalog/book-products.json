@@ -238,56 +238,6 @@
     ]
   },
   {
-    "id": "book-art-d78badff7e21472c00b8",
-    "slug": "book-art-d78badff7e21472c00b8",
-    "title": "Sunrise on Tahoma from Denny Blaine with Eagle catching fish",
-    "type": "painting",
-    "artist": "TJ Murphy",
-    "bookGallery": true,
-    "eyebrow": "Pacific North West",
-    "description": "Sunrise on Tahoma from Denny Blaine with Eagle catching fish from TJ Murphy’s watercolor art books.",
-    "image": {
-      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d78badff7e21472c00b8.webp",
-      "alt": "Sunrise on Tahoma from Denny Blaine with Eagle catching fish",
-      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d78badff7e21472c00b8.jpg"
-    },
-    "listing": {
-      "status": "not-for-sale"
-    },
-    "facts": [
-      {
-        "label": "Book measurements",
-        "value": "36 × 72 — unit not specified in book"
-      }
-    ],
-    "story": [],
-    "back": {
-      "href": "/book-galleries/watercolor-landscapes-pacific-north-west/",
-      "label": "← Back to Pacific North West"
-    },
-    "inquiry": {
-      "label": "Contact the artist",
-      "note": ""
-    },
-    "bookSources": [
-      {
-        "book": "watercolor-landscapes",
-        "pages": [
-          14,
-          15
-        ],
-        "xref": 193,
-        "captions": [
-          "Sunrise on Tahoma from Denny Blaine with Eagle catching fish",
-          "36x72"
-        ],
-        "measurements": [
-          "36x72"
-        ]
-      }
-    ]
-  },
-  {
     "id": "book-art-deb3358c321671dae1fc",
     "slug": "book-art-deb3358c321671dae1fc",
     "title": "Sunrise on Tahoma with motorcycles",

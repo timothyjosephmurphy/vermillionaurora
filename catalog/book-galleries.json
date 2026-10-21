@@ -443,56 +443,6 @@
       ]
     },
     {
-      "key": "d78badff7e21472c00b8",
-      "book": "watercolor-landscapes",
-      "pages": [
-        14,
-        15
-      ],
-      "xref": 193,
-      "sourceHash": "0002b816708471c1008a8cccbe7cb7e0080a4341fc8c772780b7df47839f0303",
-      "crop": [
-        0,
-        0,
-        2978,
-        1055
-      ],
-      "widthPx": 2978,
-      "heightPx": 1055,
-      "masterSha256": "d4bd779da9c2ab944bbe724fb70bab33fee48f49fabf8db6347f3fcfa565da99",
-      "captions": [
-        "Sunrise on Tahoma from Denny Blaine with Eagle catching fish",
-        "36x72"
-      ],
-      "title": "Sunrise on Tahoma from Denny Blaine with Eagle catching fish",
-      "measurements": [
-        "36 \u00d7 72"
-      ],
-      "sectionIds": [],
-      "spread": true,
-      "id": "book-art-d78badff7e21472c00b8",
-      "printCandidate": true,
-      "masterUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/d78badff7e21472c00b8.jpg",
-      "previewUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/d78badff7e21472c00b8.webp",
-      "sources": [
-        {
-          "book": "watercolor-landscapes",
-          "pages": [
-            14,
-            15
-          ],
-          "xref": 193,
-          "captions": [
-            "Sunrise on Tahoma from Denny Blaine with Eagle catching fish",
-            "36x72"
-          ],
-          "measurements": [
-            "36x72"
-          ]
-        }
-      ]
-    },
-    {
       "key": "deb3358c321671dae1fc",
       "book": "watercolor-landscapes",
       "pages": [
