@@ -6,7 +6,7 @@ export function newPrintJob(env,order,items) {
   const origin=mode==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
   const request={idempotencyKey:key,merchantReference:`va-cart-${order.id}-prints`,shippingMethod:q.printQuote.shippingMethod,
     callbackUrl:`${origin}/checkout/prints/callback?order=${order.id}&key=${callbackKey}`,
-    recipient:{name:a.name,address:{line1:a.street1,line2:a.street2||'',postalOrZipCode:a.zip,countryCode:'US',townOrCity:a.city,stateOrCounty:a.state}},
+    recipient:{name:a.name,address:{line1:a.street1,line2:a.street2||'',postalOrZipCode:a.zip,countryCode:a.country||'US',townOrCity:a.city,stateOrCounty:a.state}},
     items:items.map(i=>({merchantReference:i.id,sku:i.sku,copies:i.quantity,sizing:'fitPrintArea',attributes:i.attributes||{},assets:[{printArea:'default',url:i.assetUrl}]}))};
   return {provider:'prodigi',status:'pending',mode,callbackKey,request,items,maximumProviderCost:q.printQuote.maximumProviderCost,quotedProductionCost:q.printQuote.productionCost,quotedShipping:q.printQuote.shipping,shipments:[]};
 }

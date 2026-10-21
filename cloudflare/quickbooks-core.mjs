@@ -285,7 +285,7 @@ export function salesReceiptPayload(receipt, refs) {
     CustomerRef: { value: refs.customerId },
     DepositToAccountRef: { value: refs.depositAccountId },
     PaymentRefNum: String(receipt.transactionId || '').slice(-21),
-    PrivateNote: withAtCostMarker(`Vermillion Aurora order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}${waTaxCollected(receipt) ? `; ${waTaxNote(receipt)}` : ''}`, receipt.printCode),
+    PrivateNote: withAtCostMarker(`Vermillion Aurora order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}${waTaxCollected(receipt) ? `; ${waTaxNote(receipt)}` : ''}${address.country && address.country !== 'US' ? `; Export to ${String(address.country).slice(0, 2)} (DDU, no WA sales tax)` : ''}`, receipt.printCode),
     ...(receipt.buyerEmail ? { BillEmail: { Address: String(receipt.buyerEmail).slice(0, 100) } } : {}),
     ...(address.street1 ? { ShipAddr: { Line1: String(address.street1).slice(0, 500), ...(address.street2 ? { Line2: String(address.street2).slice(0, 500) } : {}),
       City: String(address.city || '').slice(0, 255), CountrySubDivisionCode: String(address.state || '').slice(0, 255), PostalCode: String(address.zip || '').slice(0, 30), Country: String(address.country || 'US').slice(0, 255) } } : {}),

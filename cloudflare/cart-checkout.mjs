@@ -18,7 +18,7 @@ export async function cartCheckout(request,env) {
     for(const [id,p] of Object.entries(prints))if(paymentMethods(env,id).length)products.push({...publicCartItem({...p,quantity:1}),methods:paymentMethods(env,id),status:'available'});
     for(const [id,d] of Object.entries(deposits))if(paymentMethods(env,id).length)products.push({id,type:'deposit',title:d.title,amount:d.amount,quantity:1,commission:{package:d.package,...(d.stage?{stage:d.stage}:{}),packageTitle:d.packageTitle,packagePrice:d.packagePrice},methods:paymentMethods(env,id),status:'available'});
     const squareReady=products.some(product=>product.methods.includes('square'));
-    return reply({enabled:true,version:catalogVersion,products,...(squareReady?{square:{applicationId:env.SQUARE_APPLICATION_ID,locationId:env.SQUARE_LOCATION_ID,mode:env.SQUARE_MODE}}:{})});
+    return reply({enabled:true,version:catalogVersion,products,...(squareReady?{square:{applicationId:env.SQUARE_APPLICATION_ID,locationId:env.SQUARE_LOCATION_ID,mode:env.SQUARE_MODE,country:env.SQUARE_COUNTRY||'US'}}:{})});
   }
   if(request.method!=='POST'||!['hold','quote','start','status','cancel'].includes(action)||!env.CART_ORDERS)return reply({error:'Not found'},404);
   const raw=await request.text();if(raw.length>12000)return reply({error:'Request too large'},413);
@@ -61,11 +61,12 @@ export async function cartCheckout(request,env) {
   } catch(error) {
     console.error('Cart checkout failed:',action,error.message);
     // A Washington address whose sales tax cannot be found blocks payment with an address message (never a $0 tax).
+    if((action==='quote'&&error?.code==='DESTINATION'||action==='start'&&/^International shipping for originals is not open yet\./.test(error?.message||'')))return reply({error:error.message,code:'DESTINATION'},422);
     if(action==='quote'&&error?.code==='TAX_ADDRESS')return reply({error:error.message,code:'TAX_ADDRESS'},422);
     if(action==='hold'&&error.message==='Checkout has already started.')return reply({error:'Checkout has already started.',code:'CHECKOUT_STARTED'},409);
     const reservationError=/^(Your cart reservation expired|Your cart changed while calculating shipping|An original in your cart is no longer reserved)/.test(error.message||'');
     const bitcoinPermissionError=action==='status'&&/^BTCPay API (401|403)$/.test(error.message||'');
-    const safeError=bitcoinPermissionError?'BTCPay denied invoice status access. Its API key needs View invoices permission for this store. Your reservation is being kept safe.':action==='quote'&&reservationError?error.message:action==='quote'?'Could not calculate this cart. Check the items and US address, then try again.':'The cart could not be updated yet. Keep your cart open and try again.';
+    const safeError=bitcoinPermissionError?'BTCPay denied invoice status access. Its API key needs View invoices permission for this store. Your reservation is being kept safe.':action==='quote'&&reservationError?error.message:action==='quote'?'Could not calculate this cart. Check the items and delivery address, then try again.':'The cart could not be updated yet. Keep your cart open and try again.';
     return reply({error:safeError},action==='quote'?422:503);
   }
 }

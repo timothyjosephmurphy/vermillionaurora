@@ -1,3 +1,4 @@
+import {destinationError,countryName} from '../catalog/addresses.mjs';
 import {finerworksRequest,finerworksMaterials,finerworksPrices,finerworksEnvironment} from './finerworks-api.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
 import {moneyCents,moneyString,printRetailPrice} from '../catalog/print-pricing.mjs';
@@ -14,11 +15,17 @@ const clean=(value,max,required=true)=>{
   if(typeof value!=='string'||value.length>max||/[\u0000-\u001f]/.test(value)||(required&&!value.trim()))throw Error('Invalid print shipping address');
   return value.trim();
 };
+// US recipients use state_code; everywhere else FinerWorks takes the region as province (its API rule).
 export function finerworksRecipient(address,po) {
-  if(!address||address.country!=='US'||! /^[A-Z]{2}$/.test(address.state||'')||! /^\d{5}(?:-\d{4})?$/.test(address.zip||''))throw Error('A complete US print shipping address is required');
+  if(!address||!/^[A-Z]{2}$/.test(address.country||''))throw Error('A complete print shipping address is required');
+  const us=address.country==='US';
+  if(us&&(! /^[A-Z]{2}$/.test(address.state||'')||! /^\d{5}(?:-\d{4})?$/.test(address.zip||'')))throw Error('A complete US print shipping address is required');
+  if(!us&&(typeof address.zip!=='string'||address.zip.length>10))throw Error('Invalid print shipping postal code');
   const name=clean(address.name,100),parts=name.split(/\s+/),first=parts.shift(),last=parts.join(' ');
   if(!last||first.length>50||last.length>50)throw Error('Enter first and last name for print delivery');
-  return {first_name:first,last_name:last,address_1:clean(address.street1,100),address_2:clean(address.street2||'',100,false),city:clean(address.city,50),state_code:address.state,zip_postal_code:address.zip,country_code:'US',address_order_po:po};
+  return {first_name:first,last_name:last,address_1:clean(address.street1,100),address_2:clean(address.street2||'',100,false),city:clean(address.city,50),
+    ...(us?{state_code:address.state}:{state_code:null,province:clean(address.state||'',50,false)}),zip_postal_code:address.zip,country_code:address.country,
+    ...(address.phone?{phone:clean(address.phone,50)}:{}),address_order_po:po};
 }
 const borderedItem=item=>item.layout===BORDERED_LAYOUT&&item.sizeBasis==='image-proportional'&&item.layoutApproved===true&&!item.mat&&!item.frame;
 export function groupPrintProducts(items,po) {
@@ -118,8 +125,14 @@ export async function quoteFinerWorksPrints(env,items,address) {
     product.product_image={product_url_file:url,product_url_thumbnail:printThumbnailUrl(item.assetUrl,env.CHECKOUT_MODE)};
   }
   const body={orders:[{order_po:po,order_key:null,recipient,order_items:products,shipping_code:'EC',test_mode:env.CHECKOUT_MODE==='sandbox'}]};
-  const data=await finerworksRequest(env,'/v3/list_shipping_options_multiple',body);
-  const options=shippingOptions(data,po,products),selected=options[0];
+  let options;
+  try { options=shippingOptions(await finerworksRequest(env,'/v3/list_shipping_options_multiple',body),po,products); }
+  catch(error) {
+    // The print lab quotes each destination itself. Where it has no shipping option, prints are blocked; originals can still ship.
+    if(address.country!=='US'){console.error('FinerWorks international quote failed:',address.country,error.message);throw destinationError(`The print lab cannot ship prints to ${countryName(address.country)} through online checkout. Remove the prints from your cart (originals can still ship), or email tj@tjm.art.`);}
+    throw error;
+  }
+  const selected=options[0];
   // unitCosts (dollars per copy by SKU) let at-cost print codes price prints after the retail check above.
   return {provider:'finerworks',mode:finerworksEnvironment(env),currency:'USD',...selected,selectionHash:await selectionHash(items,address),shippingMarkup:'0.00',options,unitCosts:Object.fromEntries(units.filter(q=>q.ok).map(q=>[q.code,q.productionCost]))};
 }

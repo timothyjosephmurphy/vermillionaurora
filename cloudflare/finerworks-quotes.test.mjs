@@ -30,11 +30,13 @@ test('keeps shipping unmarked-up and accounts for supplier tax separately',()=>{
 test('rejects mismatched order IDs, quantities, duplicate rows, missing totals and malformed money',()=>{
   for(const alter of [d=>d.orders[0].order_po='other',d=>d.orders.push(d.orders[0]),d=>d.orders[0].options[0].id=0,d=>d.orders[0].options[0].rate='8.95',d=>d.orders[0].options[0].calculated_total.product_pricing[0].product_qty=2,d=>d.orders[0].options[0].calculated_total.order_grand_total=0]) {const d=reply();alter(d);assert.throws(()=>shippingOptions(d,'po',products));}
 });
-test('groups identical manufacturing codes without losing quantities; no size or country changes',()=>{
+test('groups identical manufacturing codes without losing quantities; no size changes; international recipients use province',()=>{
   assert.equal(groupPrintProducts([item,{...item,id:'second',quantity:2}],'po')[0].product_qty,3);
   assert.throws(()=>groupPrintProducts([{...item,paperSize:{width:8,height:6}}],'po'));
   assert.throws(()=>groupPrintProducts([item,item],'po'));
-  assert.throws(()=>finerworksRecipient({...a,country:'GB'},'po'));
+  assert.throws(()=>finerworksRecipient({...a,country:''},'po'));
+  assert.throws(()=>finerworksRecipient({...a,country:'US',zip:'SW1A 2AA'},'po'));
+  const gb=finerworksRecipient({...a,country:'GB',state:'',zip:'SW1A 2AA'},'po');assert.equal(gb.country_code,'GB');assert.equal(gb.state_code,null);assert.equal(gb.province,'');
   assert.throws(()=>finerworksRecipient({...a,name:'Test'},'po'));
 });
 test('preflight cannot become a billed order even if called incorrectly',async t=>{

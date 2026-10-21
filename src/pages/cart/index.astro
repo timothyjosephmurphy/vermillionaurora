@@ -3,6 +3,8 @@ import PurchaseReassurance from '../../components/PurchaseReassurance.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import {catalogVersion} from '../../../catalog/catalog.mjs';
+import {COUNTRIES,REGION_CODES,REGION_REQUIRED,REGION_LABEL,POSTAL_LABEL,POSTAL_FORMATS,DUTIES_NOTE} from '../../../catalog/addresses.mjs';
+const addressRules=JSON.stringify({regions:REGION_CODES,required:[...REGION_REQUIRED],regionLabels:REGION_LABEL,postalLabels:POSTAL_LABEL,postal:Object.keys(POSTAL_FORMATS)});
 ---
 <!doctype html><html lang="en"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -31,10 +33,15 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
           <label data-cart-address>Street address<input name="street1" autocomplete="shipping address-line1" maxlength="100" required/></label>
           <label data-cart-address>Apartment, suite, etc. <span>(optional)</span><input name="street2" autocomplete="shipping address-line2" maxlength="100"/></label>
           <label data-cart-address>City<input name="city" autocomplete="shipping address-level2" maxlength="100" required/></label>
-          <div data-cart-address class="cart-address-row"><label>State<input name="state" autocomplete="shipping address-level1" pattern="[A-Za-z]{2}" maxlength="2" placeholder="WA" required/></label><label>ZIP code<input name="zip" autocomplete="shipping postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required/></label></div>
+          <label data-cart-address>Country<select name="country" autocomplete="shipping country" required>{COUNTRIES.map(c=><option value={c.code} selected={c.code==='US'}>{c.name}</option>)}</select></label>
+          <div data-cart-address class="cart-address-row"><label><span data-cart-region-label>State</span><input name="state" autocomplete="shipping address-level1" maxlength="50" placeholder="WA" list="cart-regions" required/></label><label><span data-cart-postal-label>ZIP code</span><input name="zip" autocomplete="shipping postal-code" maxlength="10" required/></label></div>
+          <datalist id="cart-regions"></datalist>
+          <label data-cart-address>Phone for the carrier <span>(optional)</span><input type="tel" name="phone" autocomplete="shipping tel" maxlength="20"/></label>
+          <script type="application/json" id="cart-address-rules" set:html={addressRules}></script>
           <details data-cart-address class="cart-code-toggle"><summary>Have a code?</summary><label>Discount code<input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label></details>
           <p class="cart-footnote" data-cart-code-note hidden></p>
-          <p data-cart-address class="cart-footnote">United States delivery. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order.</p>
+          <p data-cart-address class="cart-footnote">We ship worldwide, except to sanctioned destinations. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order.</p>
+          <p class="cart-footnote" data-cart-duties hidden>{DUTIES_NOTE}</p>
         </fieldset>
         <p class="cart-footnote">Your details are used to quote and fulfill this order. <a href="/privacy/">How your information is handled</a>.</p>
         <button class="button button-solid cart-wide" type="submit" data-cart-quote>Calculate shipping &amp; tax</button>
