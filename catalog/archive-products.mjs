@@ -20,7 +20,7 @@ export default archivePaintings.map(p => {
     id:p.id,slug:p.id,type:'painting',title:archiveTitle(p),artist:'TJ Murphy',
     description:`${archiveTitle(p)} by TJ Murphy, from Archived Paintings.${p.index!==null&&p.inscription&&p.inscription!==archiveTitle(p)?` ${p.inscription}.`:''}`,
     eyebrow:'Archived Paintings',listing:{status:price?'available':'not-for-sale',price},
-    year:p.year||null,dimensions,
+    medium:p.medium||null,year:p.year||null,dimensions,
     facts:[
       ...(p.index===null?[]:[{label:'Archive index',value:`#${p.index}`}]),
       ...(p.dimensionsInscription?[{label:'Size noted on reverse',value:`${p.dimensionsInscription.text} in`}]:[]),
