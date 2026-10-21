@@ -232,13 +232,13 @@ it('retries only the sandbox attachment once and reuses its existing label', asy
   expect(emails()).toHaveLength(2);
 });
 
-it('runs a sample shipping check once without a PayPal purchase or inventory mutation', async () => {
+it('runs a sample shipping check once without a payment or inventory mutation', async () => {
   const stub = env.SHIPPING_CHECK.getByName(crypto.randomUUID()); objects.push(stub);
   await stub.start();
   await runDurableObjectAlarm(stub);
   expect(await stub.status()).toMatchObject({test:true,status:'ready',transactionCreated:true,emailAccepted:true,pdfAttached:true});
   const encodedBody = emailMime().split('Content-Transfer-Encoding: base64\r\n\r\n')[1].split('\r\n--')[0];
-  expect(atob(encodedBody.replaceAll('\r\n',''))).toContain('sample order, no PayPal charge');
+  expect(atob(encodedBody.replaceAll('\r\n',''))).toContain('sample order, no payment taken');
   await stub.start();
   expect(await runDurableObjectAlarm(stub)).toBe(false);
   expect(purchases()).toHaveLength(1);
@@ -246,7 +246,7 @@ it('runs a sample shipping check once without a PayPal purchase or inventory mut
   expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('dor.wa.gov'))).toBe(false);
 });
 
-it('keeps the insured Chase diagnostic separate and confirms its coverage without a PayPal purchase', async () => {
+it('keeps the insured Chase diagnostic separate and confirms its coverage without a payment', async () => {
   transaction = {...success,rate:'INS_RATE'};
   const stub = env.SHIPPING_CHECK.getByName(crypto.randomUUID()); objects.push(stub);
   await stub.start('chase-insurance');
@@ -276,7 +276,7 @@ it('diagnoses a failed test transaction without exposing private message text or
 it.each([
   ['no diagnostic token',{}],
   ['wrong diagnostic token',{SHIPPING_CHECK_TOKEN:'different'}],
-  ['live PayPal mode',{SHIPPING_CHECK_TOKEN:'test',CHECKOUT_MODE:'live'}],
+  ['live checkout mode',{SHIPPING_CHECK_TOKEN:'test',CHECKOUT_MODE:'live'}],
   ['live Shippo key',{SHIPPING_CHECK_TOKEN:'test',SHIPPO_TOKEN:'shippo_live_fake'}],
   ['production inventory credential',{SHIPPING_CHECK_TOKEN:'test',GITHUB_TOKEN:'fake'}]
 ])('blocks shipping diagnostics with %s',async (_, overrides) => {

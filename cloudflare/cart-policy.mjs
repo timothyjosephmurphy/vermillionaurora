@@ -21,7 +21,6 @@ export const listed=(list,id)=>!!list?.split(',').map(s=>s.trim()).includes(id);
 // generated, server-owned catalog to scale past Wrangler's 5.1 kB text-binding
 // limit. This flag never admits an ID absent from the generated print catalog.
 export const printCheckoutListed=(env,id)=>env.PRINT_CHECKOUT_ALL==='true'?Object.hasOwn(prints,id):listed(env.PRINT_CHECKOUT_IDS,id);
-const paypalFixture=env=>env.PAYPAL_TEST_FIXTURE==='true'&&!!env.PAYPAL_MERCHANT_ID;
 export function paymentMethods(env,id) {
   if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
   const print=Object.hasOwn(prints,id)?prints[id]:null;
@@ -35,8 +34,6 @@ export function paymentMethods(env,id) {
     else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.CHECKOUT_MODE)return [];
   } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!Object.hasOwn(catalog,id)||catalog[id].available===false)return [];
   const methods=[];
-  // PayPal is removed from checkout. The cart's PayPal adapter is reachable only from unit-test fixtures (never live).
-  if(paypalFixture(env))methods.push('paypal');
   if(print?!print.sampleOnly&&printBitcoinOffered(env):bitcoinOffered(env,id))methods.push('bitcoin');
   if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.CHECKOUT_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&
     (env.SQUARE_CHECKOUT_ALL==='true'||listed(env.SQUARE_CHECKOUT_SLUGS,id))&&env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
@@ -48,7 +45,6 @@ export function paymentMethods(env,id) {
 export function depositMethods(env) {
   if(env.COMMISSION_DEPOSITS_ENABLED!=='true'||env.COMMISSION_DEPOSITS_PAUSED==='true')return [];
   const methods=[];
-  if(paypalFixture(env))methods.push('paypal');
   if(printBitcoinOffered(env))methods.push('bitcoin');
   if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.CHECKOUT_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&env.SQUARE_CHECKOUT_ALL==='true'&&
     env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
@@ -81,7 +77,7 @@ export function cartItems(input) {
     return {id:line.id,type:'original',quantity:1,title:catalog[line.id].title,amount:catalog[line.id].amount};
   }).sort((a,b)=>a.id.localeCompare(b.id));
 }
-export function commonMethods(env,items) { return ['paypal','square','bitcoin'].filter(method=>items.every(item=>paymentMethods(env,item.id).includes(method))); }
+export function commonMethods(env,items) { return ['square','bitcoin'].filter(method=>items.every(item=>paymentMethods(env,item.id).includes(method))); }
 export function cleanEmail(email) {
   if(typeof email!=='string'||email.length>254||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))throw Error('Enter a valid email address.');
   return email;
