@@ -1,8 +1,13 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="application/ld+json" data-source="src/data/structured-data.mjs">{"@context":"https://schema.org","@type":["Person","VisualArtist"],"@id":"https://tjm.art/#tj-murphy","name":"TJ Murphy","alternateName":"Timothy Joseph Murphy","jobTitle":"Watercolor artist","description":"Seattle watercolor artist TJ Murphy paints Pacific Northwest light, travel scenes, portraits and murals in watercolor pastel.","url":"https://tjm.art/about/","image":"https://tjm.art/about/images/tj-murphy-portrait.jpg","homeLocation":{"@type":"Place","name":"Seattle, Washington"},"brand":{"@type":"Brand","name":"Vermillion Aurora"},"sameAs":["https://www.instagram.com/tj_de_la_playa/","https://www.facebook.com/profile.php?id=61594734493796","https://x.com/tj_de_la_playa","https://njump.me/npub10m0uf224v7tly6k6h8gl6kkmuhmx7969gmudmmhqj5pv65e03r9sxsumee"]}</script>
+    <script is:inline type="application/ld+json" data-source="src/data/structured-data.mjs">{"@context":"https://schema.org","@type":["Person","VisualArtist"],"@id":"https://tjm.art/#tj-murphy","name":"TJ Murphy","alternateName":"Timothy Joseph Murphy","jobTitle":"Watercolor artist","description":"Seattle watercolor artist TJ Murphy paints Pacific Northwest light, travel scenes, portraits and murals in watercolor pastel.","url":"https://tjm.art/about/","image":"https://tjm.art/about/images/tj-murphy-portrait.jpg","homeLocation":{"@type":"Place","name":"Seattle, Washington"},"brand":{"@type":"Brand","name":"Vermillion Aurora"},"sameAs":["https://www.instagram.com/tj_de_la_playa/","https://www.facebook.com/profile.php?id=61594734493796","https://x.com/tj_de_la_playa","https://njump.me/npub10m0uf224v7tly6k6h8gl6kkmuhmx7969gmudmmhqj5pv65e03r9sxsumee"]}</script>
     <title>About TJ Murphy | Seattle Watercolor Artist</title>
     <meta
       name="description"
@@ -13,8 +18,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
-  <link rel="canonical" href="https://tjm.art/about/" /><style>.artist-statement{max-width:1180px;padding-top:64px;padding-bottom:64px}.artist-statement h1{font-size:clamp(3rem,7vw,5rem);line-height:1.1;margin:12px 0 32px}.artist-headshot{display:block;width:100%;max-width:320px;height:auto;border-radius:16px;margin:24px 0 32px}.artist-statement h2{font-size:2.3rem;margin:40px 0 16px}.artist-statement p{font-size:1.1rem;line-height:1.85;margin-bottom:22px}.artist-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}.portrait-gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0}.portrait-gallery figure{margin:0}.portrait-gallery img{width:100%;height:380px;object-fit:contain;background:#e8dfd3;border-radius:12px}.portrait-gallery figcaption{font-size:.9rem;color:#65574d;margin-top:10px}.film-poster{display:block;max-width:420px;width:100%;height:auto;margin:24px auto;border-radius:12px}@media(max-width:600px){.portrait-gallery{grid-template-columns:1fr}.portrait-gallery img{height:auto;max-height:500px}} </style><link rel="stylesheet" href="/site-header.css">
-<style>
+  <link rel="canonical" href="https://tjm.art/about/" /><style is:inline>.artist-statement{max-width:1180px;padding-top:64px;padding-bottom:64px}.artist-statement h1{font-size:clamp(3rem,7vw,5rem);line-height:1.1;margin:12px 0 32px}.artist-headshot{display:block;width:100%;max-width:320px;height:auto;border-radius:16px;margin:24px 0 32px}.artist-statement h2{font-size:2.3rem;margin:40px 0 16px}.artist-statement p{font-size:1.1rem;line-height:1.85;margin-bottom:22px}.artist-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}.portrait-gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0}.portrait-gallery figure{margin:0}.portrait-gallery img{width:100%;height:380px;object-fit:contain;background:#e8dfd3;border-radius:12px}.portrait-gallery figcaption{font-size:.9rem;color:#65574d;margin-top:10px}.film-poster{display:block;max-width:420px;width:100%;height:auto;margin:24px auto;border-radius:12px}@media(max-width:600px){.portrait-gallery{grid-template-columns:1fr}.portrait-gallery img{height:auto;max-height:500px}} </style><link rel="stylesheet" href="/site-header.css">
+<style is:inline>
 .about-hero{display:grid;grid-template-columns:minmax(0,424px) minmax(520px,1fr);gap:32px;align-items:center;margin:24px 0 48px}.about-hero>img{display:block;width:100%;max-width:424px;height:auto;border-radius:16px;margin:0}.about-hero .artist-portfolio{margin:0;min-width:0}.about-hero .portfolio-summary{grid-template-columns:minmax(180px,220px) minmax(280px,1fr)}.artist-portfolio{margin:40px 0 48px;padding:28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.4);scroll-margin-top:100px}
 .portfolio-summary{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center}
 .portfolio-cover{display:block;line-height:0}
@@ -31,32 +36,8 @@
 .about-feature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start;margin:48px 0 32px}.about-feature-grid .artist-portfolio{margin:0;min-width:0}.about-feature-grid .portfolio-summary{grid-template-columns:180px minmax(0,1fr);gap:22px}.about-feature-grid .portfolio-cover{min-width:0}.about-feature-grid .portfolio-meta{white-space:normal}.about-feature-grid .portfolio-description{overflow-wrap:normal;word-break:normal}.documentary-feature{padding:28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.4)}.documentary-feature h2{margin:0 0 12px}.documentary-feature p{font-size:1rem;line-height:1.65;margin:0 0 18px}.video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}@media(max-width:1000px){.about-feature-grid{grid-template-columns:1fr}.about-feature-grid .portfolio-summary{grid-template-columns:minmax(180px,220px) minmax(0,1fr)}}@media(max-width:600px){.about-feature-grid .portfolio-summary{grid-template-columns:1fr}}
 .about-bio{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,360px);gap:40px;align-items:start}.about-bio-text{min-width:0}.about-bio-photo{display:block;margin:48px 0 22px}.about-bio-photo img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(28,18,12,.08)}@media(max-width:760px){.about-bio{grid-template-columns:1fr;gap:0}.about-bio-photo{width:100%;max-width:420px;margin:8px auto 24px}}
 </style>
-</head><body><a class="skip-link" href="#main-content">Skip to content</a><div class="page-shell"><header class="site-header">
-        <div class="container header-inner">
-          <div class="brand-block">
-            <a href="/#top" class="brand" aria-label="TJ Murphy — Vermillion Aurora home">
-              <img class="brand-mark" src="/brand/tj-murphy-logo-52.webp" srcset="/brand/tj-murphy-logo-104.webp 2x, /brand/tj-murphy-logo-156.webp 3x" width="52" height="60" alt="TJ Murphy" decoding="async">
-              <span>TJ Murphy<br /><small>Vermillion Aurora</small></span>
-            </a>
-          </div>
-
-          <nav class="main-nav" aria-label="Main navigation">
-            <a href="/gallery/">Gallery</a>
-            <a href="/exhibitions/">Exhibitions</a>
-            <a href="/murals/">Murals</a>
-            <a href="/books/">Books</a>
-            <a href="/commissions/">Commissions</a>
-            <a href="/testimonials/">Testimonials</a>
-            <a href="/#film">Film</a>
-            <a href="/about/">About</a>
-            <a href="/commissions/#form">Contact</a>
-          </nav>
-
-          <div class="header-actions">
-            <a href="/commissions/#form" class="button button-solid header-cta"><span class="header-cta-lead">Book a&nbsp;</span>commission</a>
-          </div>
-        </div>
-      </header><main id="main-content"><article class="container artist-statement">
+</head>
+<body><a class="skip-link" href="#main-content">Skip to content</a><div class="page-shell"><SiteHeader /><main id="main-content"><article class="container artist-statement">
 <p class="eyebrow dark">Artist · Vermillion Aurora</p><h1>TJ Murphy</h1><img class="artist-headshot" src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" fetchpriority="high" />
 <h2>Artist statement</h2>
 <p>I paint to capture the luminosity of changing light and the character of the people and places around me. My practice began in 2020 with ink, watercolor, and watercolor pastel. Watching Mount Rainier from Denny Blaine and the morning sky from my balcony became a form of meditation—and an invitation to translate fleeting color into paint.</p>
@@ -153,24 +134,12 @@
 </section><div class="artist-links"><a class="button button-solid" href="/commissions/#form">Discuss a commission</a><a class="button button-ghost" href="/murals/">Explore the murals</a></div>
 <p class="testimonial-cta"><a href="/testimonials/">Own one of my paintings? Share your story <span aria-hidden="true">→</span></a></p>
 <section class="email-signup" aria-labelledby="email-signup-heading"><h2 id="email-signup-heading">Studio notes by email</h2><p>New paintings, prints, exhibitions, and books, a few times a year. Unsubscribe anytime.</p><form action="https://buttondown.com/api/emails/embed-subscribe/timothyjosephmurphy" method="post" target="_blank" class="email-signup-form"><label for="bd-email">Email address</label><div class="email-signup-row"><input type="email" name="email" id="bd-email" autocomplete="email" required placeholder="you@example.com"><input type="hidden" name="embed" value="1"><button type="submit" class="button button-solid">Subscribe</button></div></form></section>
-<style>.email-signup{max-width:640px;margin:48px auto;padding:24px;border:1px solid var(--line,#d7ccba);border-radius:12px;background:#fffcf6}.email-signup h2{margin:0 0 8px;font-size:1.8rem}.email-signup p{margin:0 0 14px;line-height:1.6}.email-signup label{display:block;font-size:.8rem;margin-bottom:6px}.email-signup-row{display:flex;gap:10px;flex-wrap:wrap}.email-signup input[type=email]{flex:1 1 220px;min-height:44px;padding:10px 12px;border:1px solid #cdbfae;border-radius:6px;font:inherit}</style>
-</article></main><footer class="site-footer">
-        <div class="container footer-inner">
-          <div>
-            <p class="footer-brand">VERMILLION AURORA PRODUCTIONS</p>
-          </div>
-          <div class="footer-links">
-            <a href="/murals/">Murals</a>
-            <a href="/gallery/">Gallery</a>
-            <a href="/#services">Services</a>
-            <a href="/about/">About</a>
-            <a href="/commissions/#form">Contact</a><a href="/shipping-returns/">Shipping &amp; returns</a><a href="/privacy/">Privacy</a>
-          </div>
-        </div>
-      </footer></div><style>.video-facade{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#1d1a17;cursor:pointer;overflow:hidden;border-radius:inherit}.video-facade img{width:100%;height:100%;object-fit:cover;display:block}.video-facade-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#d34220}.video-facade-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}.video-facade:focus-visible{outline:3px solid #d34220;outline-offset:3px}</style>
-<script>
+<style is:inline>.email-signup{max-width:640px;margin:48px auto;padding:24px;border:1px solid var(--line,#d7ccba);border-radius:12px;background:#fffcf6}.email-signup h2{margin:0 0 8px;font-size:1.8rem}.email-signup p{margin:0 0 14px;line-height:1.6}.email-signup label{display:block;font-size:.8rem;margin-bottom:6px}.email-signup-row{display:flex;gap:10px;flex-wrap:wrap}.email-signup input[type=email]{flex:1 1 220px;min-height:44px;padding:10px 12px;border:1px solid #cdbfae;border-radius:6px;font:inherit}</style>
+</article></main><SiteFooter /></div><style is:inline>.video-facade{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#1d1a17;cursor:pointer;overflow:hidden;border-radius:inherit}.video-facade img{width:100%;height:100%;object-fit:cover;display:block}.video-facade-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#d34220}.video-facade-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}.video-facade:focus-visible{outline:3px solid #d34220;outline-offset:3px}</style>
+<script is:inline>
 // Load heavy embeds only when asked: the portfolio PDF when its reader opens, YouTube on play.
 document.querySelectorAll('.portfolio-reader').forEach(d=>d.addEventListener('toggle',()=>{const f=d.querySelector('iframe[data-src]');if(d.open&&f&&!f.src)f.src=f.dataset.src;}));
 document.querySelectorAll('.video-facade').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src=`https://www.youtube-nocookie.com/embed/${b.dataset.youtube}?autoplay=1`;f.title=b.dataset.title;f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.style.cssText='width:100%;aspect-ratio:16/9;border:0;display:block';b.replaceWith(f);f.focus();}));
 </script>
-</body></html>
+</body>
+</html>

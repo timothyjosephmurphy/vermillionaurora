@@ -1,5 +1,5 @@
 // Imported only by the isolated sandbox entry point. This sample order does not
-// call PayPal, publish inventory, or take a payment.
+// charge anyone, publish inventory, or take a payment.
 import { DurableObject } from 'cloudflare:workers';
 import { priceOrder } from './checkout-pricing.mjs';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
