@@ -85,7 +85,8 @@ try {
     assert(await page.locator('#map-seattle a[href="/murals/#garden-mural"]').isVisible());
     await page.locator('[data-map-place="lillooet"]').focus();
     await page.keyboard.press('Enter');
-    assert(await page.locator('#map-lillooet[open] a[href="/murals/#friends-story"]').isVisible());
+    // Wait for the keyboard-opened details (CI is slower than a single instant check).
+    await page.locator('#map-lillooet[open] a[href="/murals/#friends-story"]').waitFor({state:'visible',timeout:5000});
     assert.equal(await page.locator('#map-seattle[open]').count(),0);
     await checkLayout();
     await page.getByRole('button',{name:'San Salvador & Berlín',exact:true}).click();
