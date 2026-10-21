@@ -87,7 +87,7 @@ export async function sendShippingEmail(token, sale, job, env = {}) {
     }
   }
   const lines = [
-    integrationTest ? 'INTEGRATION TEST — sample order, no PayPal charge. This label is not valid for shipping.' :
+    integrationTest ? 'INTEGRATION TEST — sample order, no payment taken. This label is not valid for shipping.' :
       job.mode === 'sandbox' ? 'TEST SALE — this label is not valid for shipping.' : 'Payment confirmed.', '',
     'Dispatch originals within 3–5 business days of payment confirmation. Send the customer tracking at dispatch. If delayed, contact the customer with a revised date and cancellation/refund option.',
     'Order support: https://tjm.art/shipping-returns/',
