@@ -37,7 +37,7 @@ export function buildWall(artist){
     const slot=place.get(p.id),status=p.listing?.status||'';
     return {
       id:p.id,title:p.title,href:urlFor(p),status,statusLabel:statusLabel(p),
-      artist:p.artist,description:[p.medium||p.eyebrow,p.year].filter(Boolean).join(' · '),
+      artist:p.artist,description:[p.medium||p.eyebrow,p.year].filter(Boolean).join(' · '),gallery:p.eyebrow||'',
       sizeLabel:wallBasis(p)==='print'?`Shown at its largest print size, ${+stated.width.toFixed(1)} × ${+stated.height.toFixed(1)} in`:dimensionLabel(p),scaleBasis:wallBasis(p),buy:status==='available',buyHref:buyHref(p),
       frameWidth:FRAME_INCHES*WALL_UNIT,
       x:slot.x*WALL_UNIT,y:slot.y*WALL_UNIT,width:slot.width*WALL_UNIT,height:slot.height*WALL_UNIT,

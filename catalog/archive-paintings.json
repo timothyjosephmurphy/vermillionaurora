@@ -1407,6 +1407,8 @@
     },
     {
       "id": "archived-painting-246",
+      "medium": "Watercolor pastel",
+      "year": 2022,
       "order": 32,
       "index": 246,
       "indexStatus": "verified",
@@ -1457,6 +1459,8 @@
     },
     {
       "id": "archived-painting-248",
+      "medium": "Watercolor pastel",
+      "year": 2022,
       "order": 33,
       "index": 248,
       "indexStatus": "verified",
@@ -1507,6 +1511,8 @@
     },
     {
       "id": "archived-painting-247",
+      "medium": "Watercolor pastel",
+      "year": 2022,
       "order": 34,
       "index": 247,
       "indexStatus": "verified",

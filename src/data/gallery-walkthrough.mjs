@@ -13,7 +13,10 @@ const painting=a=>({
   sources:sources(a.sources)
 });
 const plaque=(id,title,lines,href)=>({id,kind:'plaque',title,lines:lines.filter(Boolean),href,width:.62,height:.82});
-const works=re=>tjWall.artworks.filter(a=>!/^Mural/.test(a.description)&&re.test(a.description)).map(painting);
+// Archived paintings stay in the archive room even once they carry a medium (studio-tracker #44).
+const ARCHIVED=a=>/^Archived Paintings/.test(a.gallery||'');
+const works=re=>tjWall.artworks.filter(a=>!/^Mural/.test(a.description)&&!ARCHIVED(a)&&re.test(a.description)).map(painting);
+const archived=()=>tjWall.artworks.filter(a=>!/^Mural/.test(a.description)&&(ARCHIVED(a)||/^Archived Paintings/.test(a.description))).map(painting);
 // Exhibitions are represented by their plaque only: the walkthrough hangs paintings with a product page and the two
 // murals, never photographs.
 const exhibition=id=>{const ex=assets.exhibitions.find(e=>e.id===id);return [{...plaque(ex.id+'-plaque',ex.title,['Exhibition · '+ex.date,...ex.story],ex.href),exhibition:ex.id}];};
@@ -49,7 +52,7 @@ export function arrange(items){
 // Archived works about people (friends, family, portraits, Bitcoin figures) hang with Friends, Family & Bitcoiners;
 // a series moves whole because these titles are matched by their shared stem.
 const PEOPLE_ARCHIVE=/^(Devo|Self Portrait|Ben & Kermit|Brekkie|Catherine|Elon|Flamenco Guitarist|Josie|Max Keiser|My Dad|RFK|Ron Paul|Tulsi Gabbard|Bounty of Satoshi|Dad Meditating)/;
-const archivedWorks=works(/^Archived Paintings/),archivedPeople=archivedWorks.filter(a=>PEOPLE_ARCHIVE.test(a.title)),archivedRest=archivedWorks.filter(a=>!PEOPLE_ARCHIVE.test(a.title));
+const archivedWorks=archived(),archivedPeople=archivedWorks.filter(a=>PEOPLE_ARCHIVE.test(a.title)),archivedRest=archivedWorks.filter(a=>!PEOPLE_ARCHIVE.test(a.title));
 export const walkthroughRooms=[
   {id:'central',ring:'S',kind:'hall',title:'Watercolor Pastels',galleries:['Cormorant garden mural','Watercolor Pastels'],items:[murals[0],murals[3],...arrange(works(/^Watercolor/))]},
   {id:'people',ring:'W',kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Archived Paintings (portraits & people)','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
