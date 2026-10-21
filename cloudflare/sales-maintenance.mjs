@@ -2,6 +2,17 @@ import catalog from './checkout-catalog.mjs';
 import { backfillCheckoutSale } from './historical-sales.mjs';
 
 const STATUS_CONCURRENCY=8;
+// Right after a deploy, Durable Object instances from the previous version are being replaced and an
+// in-flight RPC can fail with "Durable Object ... is no longer active ... retry the request". Status reads
+// are read-only, so retry those (with a fresh stub) a couple of times before failing the check.
+const STATUS_ATTEMPTS=3;
+const retryableObjectError=error=>error?.retryable===true||/no longer active|Reconnect or retry|Network connection lost|object to be reset/i.test(error?.message||'');
+export async function readStockStatus(stock,slug,attempts=STATUS_ATTEMPTS,wait=ms=>new Promise(r=>setTimeout(r,ms))) {
+  for(let attempt=1;;attempt++) {
+    try { return await stock.getByName(slug).status(); }
+    catch(error){ if(attempt>=attempts||!retryableObjectError(error))throw error; await wait(250*attempt); }
+  }
+}
 // Deployment-only maintenance. No public export or customer information in the response.
 export async function salesMaintenance(request,env) {
   const reply=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store'}});
@@ -28,7 +39,7 @@ export async function salesMaintenance(request,env) {
     // 148 paintings and began exceeding the 90 s post-deploy timeout. Backfills stay sequential, in catalog order.
     const slugs=Object.keys(catalog),sold=new Array(slugs.length).fill(false);let next=0;
     await Promise.all(Array.from({length:Math.min(STATUS_CONCURRENCY,slugs.length)},async()=>{
-      while(next<slugs.length){const i=next++;product=slugs[i];checked++;sold[i]=await env.PAINTING_STOCK.getByName(slugs[i]).status()==='sold';}
+      while(next<slugs.length){const i=next++;product=slugs[i];checked++;sold[i]=await readStockStatus(env.PAINTING_STOCK,slugs[i])==='sold';}
     }));
     for(const [i,slug] of slugs.entries()) {
       if(!sold[i])continue;
