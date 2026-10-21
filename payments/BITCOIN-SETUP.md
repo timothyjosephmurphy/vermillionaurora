@@ -1,6 +1,6 @@
 # Bitcoin checkout through BTCPay
 
-The product checkout can offer **Buy with Bitcoin** alongside PayPal. It uses the
+The product checkout can offer **Buy with Bitcoin** alongside card checkout (Square). It uses the
 existing US shipping quote, Washington DOR sales tax calculation, per-original reservation,
 shipping-label workflow and private sales ledger. BTCPay converts the complete
 USD total to BTC and presents on-chain and Lightning methods that are enabled in
@@ -45,7 +45,7 @@ product-page scripts or screenshots shared for troubleshooting.
 ## Payment lifecycle and recovery
 
 - `BitcoinOrder` stores an immutable quote and order ID before invoice creation.
-  `PaintingStock` prevents another Bitcoin or PayPal attempt buying that original.
+  `PaintingStock` prevents another Bitcoin or card attempt buying that original.
 - A 15-minute invoice expiration is distinct from a pending transaction. A paid
   invoice keeps the painting reserved while it confirms. An expired invoice is
   released only after BTCPay reports no payment and an empty payment list.

@@ -1,5 +1,7 @@
 # Shippo label and seller email setup
 
+> **PayPal removed (October 2026, studio-tracker #133).** PayPal checkout, its sandbox pages and its Worker code are gone. Cards go through Square and Bitcoin through BTCPay. PayPal passages below are kept as history only; historical PayPal sales stay in the ledger.
+
 After a verified PayPal capture, the painting's Durable Object buys the **same Shippo rate quoted at checkout** and sends a printable PDF and tracking information to **tj@vermillionaurora.com**. Email uses the existing commission form's Gmail identity. It does not send mail to the buyer or control a physical printer. The default PDF is suitable for a regular printer; `PDF_4x6` selects a thermal label.
 
 This feature defaults **off in production** and is enabled in the isolated sandbox configuration. The implementation branch does not enable production checkout, change its credentials, or deploy the PayPal buttons. Integrate it with the checkout release from PR #3 before enabling it. It applies only to the shared `/checkout/` flow, not legacy hosted PayPal links or IPN payments.
