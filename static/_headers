@@ -1,0 +1,4 @@
+# studio-tracker #240: the /play gallery frames run inside the /play shell, which already carries Cloudflare Web Analytics.
+# no-transform stops Cloudflare auto-injecting a second beacon into the frame, so each visit counts once.
+/play/g/*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
