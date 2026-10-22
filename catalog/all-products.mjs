@@ -11,8 +11,10 @@ import olderWorkProducts from './older-work-products.mjs';
 import strawberryPointProducts from './strawberry-point-products.mjs';
 // Studio default (TJ): his own paintings are watercolor pastel unless a record says otherwise. Product pages show it as the
 // Medium (mediumDisplay). It is deliberately NOT written to `medium`, because the Painting Wall and 3D walkthrough group
-// works by medium-or-eyebrow. Paul Murphy's works are left blank.
-const withMedium=p=>p.type==='painting'&&p.artist==='TJ Murphy'&&!p.medium?{...p,mediumDisplay:'Watercolor pastel'}:p;
+// works by medium-or-eyebrow. Paul Murphy's works (TJ, Oct 22): Watercolor, 2025, shown the same way (yearDisplay).
+const withMedium=p=>p.type!=='painting'||p.medium?p
+  :p.artist==='TJ Murphy'?{...p,mediumDisplay:'Watercolor pastel'}
+  :p.artist==='Paul Murphy'?{...p,mediumDisplay:'Watercolor',...(p.year?{}:{yearDisplay:2025})}:p;
 // Short factual descriptions (short-descriptions.json) go first, ahead of any story already on the record.
 const withShort=p=>shortDescriptions[p.slug]?{...p,story:[...shortDescriptions[p.slug],...(p.story||[])]}:p;
 export default [...existing,...bookProducts,...archiveProducts,...olderWorkProducts,...strawberryPointProducts].map(withMedium).map(withShort);

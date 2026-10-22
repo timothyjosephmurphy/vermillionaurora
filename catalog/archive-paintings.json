@@ -1149,16 +1149,12 @@
       },
       "alt": "A narrow lake winding through wooded blue mountains",
       "inscription": "Lake in North Cascades",
-      "dimensionsInscription": {
-        "text": "24 × 13",
-        "unit": "in"
-      },
       "otherMarks": "An older corner index reads #124; another number is crossed out.",
       "recordedDimensions": {
         "width": 13.0,
         "height": 24.0,
         "unit": "in",
-        "source": "reverse-inscription",
+        "source": "artist",
         "orientation": "front-image"
       },
       "originalSale": {
@@ -2285,6 +2281,7 @@
     },
     {
       "id": "archived-painting-2",
+      "title": "Rainier from Denny Blaine at Sunrise II",
       "order": 51,
       "index": 2,
       "indexStatus": "verified",
@@ -2351,6 +2348,7 @@
     },
     {
       "id": "archived-painting-1",
+      "title": "Rainier from Denny Blaine at Sunrise I",
       "order": 53,
       "index": 1,
       "indexStatus": "verified",

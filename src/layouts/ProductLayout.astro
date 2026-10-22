@@ -33,7 +33,7 @@ const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title,
       creator:(product.artist||'TJ Murphy')==='TJ Murphy'?{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'}:{'@type':'Person',name:product.artist},
       ...((product.medium||product.mediumDisplay)?{artMedium:product.medium||product.mediumDisplay}:{}), ...(product.surface?{artworkSurface:product.surface}:{}), image:new URL(product.image.src, Astro.site).href, description:metaDescription||product.description, url:canonical,
-      ...(product.year?{dateCreated:String(product.year)}:{}),
+      ...((product.year||product.yearDisplay)?{dateCreated:String(product.year||product.yearDisplay)}:{}),
       copyrightHolder: product.artist && product.artist !== 'TJ Murphy' ? { '@type':'Person', name:product.artist } : studio,
       ...(product.dimensions?.width&&product.dimensions?.height?{width:{'@type':'Distance',name:`${product.dimensions.width} ${product.dimensions.unit||'in'}`},height:{'@type':'Distance',name:`${product.dimensions.height} ${product.dimensions.unit||'in'}`}}:{}),
       ...(product.listing?.price?.amount&&product.listing.status!=='not-for-sale'?{offers:{'@type':'Offer',price:product.listing.price.amount,priceCurrency:product.listing.price.currency||'USD',url:canonical,
