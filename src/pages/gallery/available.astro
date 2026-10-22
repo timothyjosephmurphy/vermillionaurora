@@ -1,7 +1,7 @@
 ---
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import { products, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
+import { products, urlFor, priceLabel, statusLabel, dimensionLabelBoth } from '../../../catalog/catalog.mjs';
 import { printsFromLabel } from '../../data/card-commerce.mjs';
 import { tagsFor } from '../../../catalog/related-works.mjs';
 import { artworkAlt } from '../../data/artwork-alt.mjs';
@@ -59,7 +59,7 @@ const subjectList = [...subjectOptions].sort((a, b) => a[1].localeCompare(b[1]))
       {section.items.map(product => <li class="painting-list-row card-tile" data-product-id={product.id} data-price={rowData(product).price} data-size-band={band(SIZE_BANDS,rowData(product).side)} data-side={rowData(product).side??''} data-price-band={band(PRICE_BANDS,rowData(product).price)} data-year={Number(product.year)||''} data-subjects={rowData(product).subjects.map(t=>t.id).join(' ')} data-search={[product.title,product.artist,...rowData(product).subjects.map(t=>t.label)].filter(Boolean).join(' ').toLowerCase()}>
         <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={artworkAlt(product)} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
         <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
-        <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
+        <p class="painting-list-dimensions">{dimensionLabelBoth(product)}</p>
         <div class="painting-list-commerce">{printsFromLabel(product)&&<p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>}<div class="card-buy-row">{printsFromLabel(product)?<p class="card-prints-from">{printsFromLabel(product)}</p>:<p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>}<span class="card-buy" data-card-buy aria-hidden="true">Buy</span></div></div>
       </li>)}
     </ul>

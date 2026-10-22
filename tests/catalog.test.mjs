@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {load} from 'cheerio';
-import {products,collections,byId,catalogVersion,validateCatalog,priceLabel,dimensionLabel} from '../catalog/catalog.mjs';
+import {products,collections,byId,catalogVersion,validateCatalog,priceLabel,dimensionLabel,dimensionLabelBoth} from '../catalog/catalog.mjs';
 import {estimatePaperParcelWeightLb} from '../catalog/shipping-estimates.mjs';
 import checkout,{catalogVersion as workerVersion} from '../cloudflare/checkout-catalog.mjs';
 import {inventoryStatus} from '../cloudflare/inventory-api.mjs';
@@ -47,7 +47,7 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
   const scope=({gallery:'.painting-list',paul:'.exhibition-grid',chase:'.collaboration-grid',gavin:'.film-collaboration-gallery'})[key];
   assert.deepEqual($(`${scope} [data-product-id]`).map((i,e)=>$(e).attr('data-product-id')).get(),expected);
  }
- for(const node of $('[data-product-id]').toArray()){const id=$(node).attr('data-product-id');assert.ok(byId[id],id);assert.equal(($(node).find('img, svg[data-image-src]').first().attr('data-image-src') || $(node).find('img, svg[data-image-src]').first().attr('src')),byId[id].image.src);if(key==='gallery')assert.equal($(node).find('.painting-list-dimensions').text(),dimensionLabel(byId[id]));}
+ for(const node of $('[data-product-id]').toArray()){const id=$(node).attr('data-product-id');assert.ok(byId[id],id);assert.equal(($(node).find('img, svg[data-image-src]').first().attr('data-image-src') || $(node).find('img, svg[data-image-src]').first().attr('src')),byId[id].image.src);if(key==='gallery')assert.equal($(node).find('.painting-list-dimensions').text(),dimensionLabelBoth(byId[id]));}
  }
 });
 test('invalid identities, missing assets, unsafe prices and shipping stop the build',()=>{

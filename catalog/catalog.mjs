@@ -17,6 +17,17 @@ export function dimensionLabel(p) {
   const {width, height, unit} = p.dimensions;
   return p.dimensionOrder === 'height-width' ? `${height} × ${width} ${unit} (H × W)` : `${width} × ${height} ${unit} (W × H)`;
 }
+
+// Gallery-card size line: both units, e.g. "13 × 24 in (33 × 61 cm) (W × H)". Same order rule as dimensionLabel.
+// Inches show up to one decimal, centimetres are rounded to the nearest whole cm. Product pages keep the stored unit.
+export function dimensionLabelBoth(p) {
+  if (!p.dimensions) return dimensionLabel(p);
+  const {width, height, unit} = p.dimensions;
+  if (unit !== 'in' && unit !== 'cm') return dimensionLabel(p);
+  const inch = v => +(unit === 'in' ? v : v / 2.54).toFixed(1), cm = v => Math.round(unit === 'cm' ? v : v * 2.54);
+  const hw = p.dimensionOrder === 'height-width', [a, b] = hw ? [height, width] : [width, height];
+  return `${inch(a)} × ${inch(b)} in (${cm(a)} × ${cm(b)} cm) ${hw ? '(H × W)' : '(W × H)'}`;
+}
 export function validateCatalog(items=products, groups=collections) {
   const ids=new Set(), slugs=new Set();
   const fail=(p,msg)=>{throw Error(`Catalog ${p.id || '(missing id)'}: ${msg}`);};
