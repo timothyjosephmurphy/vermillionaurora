@@ -23,8 +23,8 @@ const shareImageAlt = product.image?.alt || shareTitle;
 const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title,
       creator:(product.artist||'TJ Murphy')==='TJ Murphy'?{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'}:{'@type':'Person',name:product.artist},
-      ...(product.medium?{artMedium:product.medium}:{}), ...(product.surface?{artworkSurface:product.surface}:{}), image:new URL(product.image.src, Astro.site).href, description:metaDescription||product.description, url:canonical,
-      ...(product.year?{dateCreated:String(product.year)}:{}),
+      ...((product.medium||product.mediumDisplay)?{artMedium:product.medium||product.mediumDisplay}:{}), ...(product.surface?{artworkSurface:product.surface}:{}), image:new URL(product.image.src, Astro.site).href, description:metaDescription||product.description, url:canonical,
+      ...((product.year||product.yearDisplay)?{dateCreated:String(product.year||product.yearDisplay)}:{}),
       ...(product.dimensions?.width&&product.dimensions?.height?{width:{'@type':'Distance',name:`${product.dimensions.width} ${product.dimensions.unit||'in'}`},height:{'@type':'Distance',name:`${product.dimensions.height} ${product.dimensions.unit||'in'}`}}:{}),
       ...(product.listing?.price?.amount&&product.listing.status!=='not-for-sale'?{offers:{'@type':'Offer',price:product.listing.price.amount,priceCurrency:product.listing.price.currency||'USD',url:canonical,
         availability:product.listing.status==='available'?'https://schema.org/InStock':product.listing.status==='sold'?'https://schema.org/SoldOut':'https://schema.org/LimitedAvailability'}}:{}) }
@@ -80,7 +80,7 @@ const structuredData = product.type === 'painting'
   {product.examples?.length>0 && <link rel="stylesheet" href="/exhibitions/viewer.css" />}
   <style is:global>.commission-gallery{margin-top:28px}.commission-gallery .section-heading{margin-bottom:12px}.commission-gallery h2{font-size:2rem;margin:0 0 6px}.commission-gallery .section-heading p{font-size:.9rem;margin:0}</style>
 </head>
-<body><div class="page-shell"><SiteHeader /><a class="back-to-dungeon" href="/play/?resume=1" hidden>← Back to the Dungeon</a><script is:inline>(()=>{let p=0;try{p=new URLSearchParams(location.search).get('from')==='play'||!!sessionStorage.getItem('tjmPlayState')}catch(e){}if(p)document.querySelector('.back-to-dungeon').hidden=false})()</script><style>.back-to-dungeon{position:fixed;left:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px #0005}.back-to-dungeon[hidden]{display:none}</style><div id="main-content" tabindex="-1"><slot /></div><SiteFooter /></div>
+<body><div class="page-shell"><SiteHeader /><a class="back-to-dungeon" href="/play/?resume=1" hidden>← Back to the 3D gallery</a><script is:inline>(()=>{let p=0;try{p=new URLSearchParams(location.search).get('from')==='play'||!!sessionStorage.getItem('tjmPlayState')}catch(e){}if(p)document.querySelector('.back-to-dungeon').hidden=false})()</script><style>.back-to-dungeon{position:fixed;left:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px #0005}.back-to-dungeon[hidden]{display:none}</style><div id="main-content" tabindex="-1"><slot /></div><SiteFooter /></div>
 {product.type==='painting' && <><script is:inline src="/payments/cart.js" defer></script><script is:inline src="/catalog/availability.js" defer></script></>}
 {product.type==='book' && <script is:inline src="/book-viewer/viewer.js" defer></script>}
 {product.examples?.length>0 && <script is:inline src="/exhibitions/viewer.js" defer></script>}

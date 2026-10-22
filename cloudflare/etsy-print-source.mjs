@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="ea0a0b3a175c3614b764";
+export const sourcePrintVersion="782005098a9edc19b663";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -7,7 +7,7 @@ export default [
     "artist": "TJ Murphy",
     "year": 2026,
     "medium": "Watercolor pastel",
-    "surface": "Arches Coldpress Paper",
+    "surface": "Arches cold-press paper",
     "dimensions": {
       "width": 100,
       "height": 70,
@@ -186,7 +186,7 @@ export default [
     "artist": "TJ Murphy",
     "year": 2026,
     "medium": "Watercolor pastel",
-    "surface": "Arches Coldpress Paper",
+    "surface": "Arches cold-press paper",
     "dimensions": {
       "width": 100,
       "height": 70,
@@ -366,7 +366,7 @@ export default [
     "artist": "TJ Murphy",
     "year": 2022,
     "medium": "Watercolor pastel",
-    "surface": "Arches Coldpress Paper",
+    "surface": "Arches cold-press paper",
     "dimensions": {
       "width": 23,
       "height": 44,
@@ -544,7 +544,7 @@ export default [
     "artist": "TJ Murphy",
     "year": 2023,
     "medium": "Watercolor pastel",
-    "surface": "Arches Coldpress Paper",
+    "surface": "Arches cold-press paper",
     "dimensions": {
       "width": 48,
       "height": 24,
@@ -722,7 +722,7 @@ export default [
     "artist": "TJ Murphy",
     "year": 2023,
     "medium": "Watercolor pastel",
-    "surface": "Arches Coldpress Paper",
+    "surface": "Arches cold-press paper",
     "dimensions": {
       "width": 24,
       "height": 48,
