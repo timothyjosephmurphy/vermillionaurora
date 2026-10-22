@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="964c6980576ea3995166";
+export const printVersion="782005098a9edc19b663";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -115772,8 +115772,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M9S14.4X4",
@@ -115801,7 +115801,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -115818,8 +115818,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print — Black frame",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print — Black frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD22X4F1S18DD22X8J1S14DD22X4G1",
@@ -115847,7 +115847,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -115895,8 +115895,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print — White frame",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print — White frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD22X4F2S18DD22X8J1S14DD22X4G1",
@@ -115924,7 +115924,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -115972,8 +115972,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print — Natural wood frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "111.00",
     "currency": "USD",
     "sku": "5M144M8S14DD22X4F7S18DD22X8J1S14DD22X4G1",
@@ -116001,7 +116001,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116326,8 +116326,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M9S14.59X4.01",
@@ -116355,7 +116355,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116372,8 +116372,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print — Black frame",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print — Black frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD21X4F1S18DD21X8J1S14DD21X4G1",
@@ -116401,7 +116401,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116449,8 +116449,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print — White frame",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print — White frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD21X4F2S18DD21X8J1S14DD21X4G1",
@@ -116478,7 +116478,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116526,8 +116526,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print — Natural wood frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "111.00",
     "currency": "USD",
     "sku": "5M144M8S14DD21X4F7S18DD21X8J1S14DD21X4G1",
@@ -116555,7 +116555,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,

@@ -33,7 +33,7 @@ const metaDescription=(()=>{
   if(!painting||p.bookGallery)return null;
   const tj=!p.artist||p.artist==='TJ Murphy';
   const d=p.dimensions,size=d?.width&&d?.height?(p.dimensionOrder==='height-width'?`${d.height} × ${d.width} ${d.unit}`:`${d.width} × ${d.height} ${d.unit}`):'';
-  const detail=[size,p.year].filter(Boolean).join(', ');
+  const detail=[size,p.year||p.yearDisplay].filter(Boolean).join(', ');
   const shownMedium=p.medium||p.mediumDisplay;
   const medium=shownMedium?`${shownMedium.toLowerCase().replace(/pastels$/,'pastel')} painting`:'painting';
   const lead=tj
@@ -48,7 +48,7 @@ const facts=painting ? [
   ...(!p.bookGallery&&!p.archive&&!p.olderWork?[{label:'Dimensions',value:dimensionLabel(p)}]:[]),
   ...((p.medium||p.mediumDisplay)?[{label:'Medium',value:p.medium||p.mediumDisplay}]:[]),
   ...(p.surface?[{label:p.artist==='Paul Murphy'?'Material':'Surface',value:p.surface}]:[]),
-  ...(p.year?[{label:'Year',value:p.year}]:[]),
+  ...((p.year||p.yearDisplay)?[{label:'Year',value:p.year||p.yearDisplay}]:[]),
   ...(p.framing?[{label:'Framing',value:p.framing}]:[]),
   ...(p.facts||[]),
   ...(p.artist==='Paul Murphy'?[{label:'Artist',value:p.artist},{label:'Gallery reference',value:p.galleryReference}]:[])
