@@ -1,13 +1,16 @@
 // studio-tracker #311: photo booth backend Worker (DRAFT, not deployed, not wired into the site Worker).
-// Bindings (placeholders in wrangler.draft.jsonc): PHOTOS (R2), DB (D1), secret BOOTH_ADMIN_PASSWORD.
-// Visibility: the visitor who took a photo sees it at once (owner token); everyone else sees it only after TJ approves it.
-import { FRAME, LIMITS, expiresAt } from './config.mjs';
+// Bindings (placeholders in wrangler.draft.jsonc): PHOTOS (R2), DB (D1), AI (Workers AI), secret CATALOG_ADMIN_PASSWORD (shared with /catalog-admin/).
+// Flow: consent is required (no consent = nothing stored) -> content filter -> pass: published at once, no approval queue;
+// filter says no / unsure / errors: held privately, visible only to the admin tool. Consenting photos never expire.
+import { LIMITS, FILTER } from './config.mjs';
+import { moderate } from './moderation.mjs';
 
 const enc = new TextEncoder();
-const COOKIE = '__Host-booth-admin';
+const COOKIE = '__Host-catalog-admin';   // same cookie and signing string as worker/catalog-admin.mjs: one sign-in covers both
 const ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const TOKEN = /^[0-9a-f]{64}$/;
 const json = (body, status = 200, headers = {}) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store', ...headers } });
+const notFound = () => new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
 const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
 const sha256 = async (s) => hex(await crypto.subtle.digest('SHA-256', enc.encode(s)));
 async function hmac(secret, data) {
@@ -20,111 +23,96 @@ async function same(a, b) {
   return diff === 0;
 }
 
-// Owner-only approval: the same pattern as /catalog-admin/ (worker/catalog-admin.mjs): a Worker-secret password,
+// Admin remove tool: the same pattern as /catalog-admin/ (worker/catalog-admin.mjs) and the same secret, CATALOG_ADMIN_PASSWORD:
 // a 12-hour signed HttpOnly cookie after login, or "Authorization: Bearer <password>" for scripts; no secret = closed.
 export async function adminAuthed(request, env) {
-  const secret = env.BOOTH_ADMIN_PASSWORD; if (!secret) return false;
+  const secret = env.CATALOG_ADMIN_PASSWORD; if (!secret) return false;
   const bearer = request.headers.get('Authorization')?.match(/^Bearer (.+)$/)?.[1];
   if (bearer) return same(bearer, secret);
   const c = (request.headers.get('Cookie') || '').split(/;\s*/).find((x) => x.startsWith(COOKIE + '='))?.slice(COOKIE.length + 1);
   const [exp, sig] = (c || '').split('.');
-  return !!exp && Number(exp) > Date.now() && same(sig || '', await hmac(secret, 'booth-admin:' + exp));
+  return !!exp && Number(exp) > Date.now() && same(sig || '', await hmac(secret, 'catalog-admin:' + exp));
 }
 
-// "id.token" pairs from X-Booth-Owner (or a single ?t= token for one image). Returns the ids whose token matches.
-async function ownedIds(db, pairs) {
-  const ok = new Map();
-  for (const pair of pairs.slice(0, LIMITS.OWNER_TOKENS_MAX)) {
-    const [id, token] = pair.trim().split('.');
-    if (!ID.test(id || '') || !TOKEN.test(token || '')) continue;
-    const row = await db.prepare('SELECT owner_hash FROM photos WHERE id = ?').bind(id).first();
-    if (row && await same(row.owner_hash, await sha256(token))) ok.set(id, token);
-  }
-  return ok;
+// The visitor's delete link: header "X-Booth-Owner: <id>.<token>".
+async function owns(db, id, header) {
+  const [hid, token] = String(header || '').trim().split('.');
+  if (hid !== id || !TOKEN.test(token || '')) return false;
+  const row = await db.prepare('SELECT owner_hash FROM photos WHERE id = ?').bind(id).first();
+  return !!row && same(row.owner_hash, await sha256(token));
 }
-const live = (now) => '(expires_at IS NULL OR expires_at > ' + Number(now) + ')';
-const publicItem = (r, token) => ({ id: r.id, url: `/booth/photos/${r.id}` + (token ? `?t=${token}` : ''), createdAt: r.created_at, frame: r.frame, ...(token ? { mine: true, status: r.status, expiresAt: r.expires_at } : {}) });
+
+// Stored with a content type taken from the upload, so check the file really is that format.
+function looksLike(type, b) {
+  const u = new Uint8Array(b.slice(0, 12));
+  if (type === 'image/jpeg') return u[0] === 0xff && u[1] === 0xd8 && u[2] === 0xff;
+  if (type === 'image/png') return [0x89, 0x50, 0x4e, 0x47].every((v, i) => u[i] === v);
+  if (type === 'image/webp') return String.fromCharCode(...u.slice(0, 4)) === 'RIFF' && String.fromCharCode(...u.slice(8, 12)) === 'WEBP';
+  return false;
+}
+const item = (r) => ({ id: r.id, url: `/booth/photos/${r.id}`, createdAt: r.created_at });
 
 async function upload(request, env, now) {
   const form = await request.formData().catch(() => null);
   const file = form?.get('photo');
   if (!file || typeof file === 'string') return json({ error: 'Send the photo as the "photo" field.' }, 400);
-  const ext = LIMITS.CONTENT_TYPES[file.type];
-  if (!ext) return json({ error: 'Photos must be JPEG, WebP or PNG.' }, 415);
+  // No consent to keep the photo: it is never uploaded to the wall and never stored (nothing is written anywhere).
+  if (form.get('consent') !== 'yes') return json({ error: 'Photos are only posted with your consent to keep them.' }, 422);
+  if (!LIMITS.CONTENT_TYPES[file.type]) return json({ error: 'Photos must be JPEG, WebP or PNG.' }, 415);
   if (file.size > LIMITS.MAX_PHOTO_BYTES) return json({ error: 'That photo is too large.' }, 413);
-  const consent = form.get('consent') === 'yes';
-  const frame = String(form.get('frame') || 'none');
-  if (!FRAME.options.includes(frame) || (!FRAME.enabled && frame !== 'none')) return json({ error: 'Unknown frame.' }, 400);
+  const bytes = await file.arrayBuffer();
+  if (!looksLike(file.type, bytes)) return json({ error: 'That file is not a valid photo.' }, 415);
+  const used = await env.DB.prepare('SELECT count(*) AS n FROM photos WHERE created_at > ?').bind(now - 86400e3).first();
+  if (used.n >= FILTER.DAILY_MAX) return json({ error: 'The photo wall is busy. Try again later.' }, 503);
+
+  const verdict = await moderate(env, bytes, file.type);   // never throws; failures come back as a hold
   const id = crypto.randomUUID(), token = hex(crypto.getRandomValues(new Uint8Array(32)));
-  await env.PHOTOS.put(`photos/${id}`, await file.arrayBuffer(), { httpMetadata: { contentType: file.type } });
-  await env.DB.prepare('INSERT INTO photos (id, owner_hash, status, consent_keep, frame, content_type, bytes, created_at, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
-    .bind(id, await sha256(token), 'pending', consent ? 1 : 0, frame, file.type, file.size, now, expiresAt(consent, now)).run();
-  // The visitor keeps owner = `${id}.${token}`; the delete link is DELETE /booth/api/photos/<id> with that header.
-  return json({ id, owner: `${id}.${token}`, status: 'pending', url: `/booth/photos/${id}?t=${token}`, expiresAt: expiresAt(consent, now) }, 201);
+  await env.PHOTOS.put(`photos/${id}`, bytes, { httpMetadata: { contentType: file.type } });
+  await env.DB.prepare('INSERT INTO photos (id, owner_hash, status, hold_reason, content_type, bytes, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)')
+    .bind(id, await sha256(token), verdict.publish ? 'published' : 'held', verdict.reason, file.type, file.size, now).run();
+  // `owner` is the visitor's delete link credential: DELETE /booth/api/photos/<id> with it in X-Booth-Owner.
+  if (verdict.publish) return json({ id, owner: `${id}.${token}`, status: 'published', url: `/booth/photos/${id}` }, 201);
+  return json({ id, owner: `${id}.${token}`, status: 'held', message: 'This photo was not posted.' }, 202);
 }
 
-async function wall(request, env, now) {
-  const db = env.DB;
-  const rows = (await db.prepare(`SELECT * FROM photos WHERE status = 'approved' AND ${live(now)} ORDER BY created_at DESC LIMIT ?`).bind(LIMITS.WALL_CAP).all()).results;
-  const mine = await ownedIds(db, (request.headers.get('X-Booth-Owner') || '').split(',').filter(Boolean));
-  const items = new Map(rows.map((r) => [r.id, publicItem(r, mine.get(r.id))]));
-  for (const [id, token] of mine) {
-    const r = await db.prepare(`SELECT * FROM photos WHERE id = ? AND status IN ('pending','approved') AND ${live(now)}`).bind(id).first();
-    if (r) items.set(id, publicItem(r, token));
-  }
-  return json({ photos: [...items.values()].sort((a, b) => b.createdAt - a.createdAt) });
+async function wall(env) {
+  const rows = (await env.DB.prepare(`SELECT * FROM photos WHERE status = 'published' ORDER BY created_at DESC LIMIT ?`).bind(LIMITS.WALL_CAP).all()).results;
+  return json({ photos: rows.map(item) }, 200, { 'Cache-Control': 'public, max-age=30' });
 }
 
-async function image(request, env, id, now) {
+async function image(request, env, id) {
   const row = await env.DB.prepare('SELECT * FROM photos WHERE id = ?').bind(id).first();
-  const url = new URL(request.url);
-  const admin = await adminAuthed(request, env);
-  const owner = (await ownedIds(env.DB, [`${id}.${url.searchParams.get('t') || ''}`])).has(id);
-  const isLive = row && (row.expires_at == null || row.expires_at > now);
-  const visible = isLive && (row.status === 'approved' || ((owner || admin) && row.status === 'pending'));
-  if (!visible) return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+  const admin = !!row && row.status === 'held' && await adminAuthed(request, env);
+  if (!row || !(row.status === 'published' || admin)) return notFound();
   const obj = await env.PHOTOS.get(`photos/${id}`);
-  if (!obj) return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
-  const shared = row.status === 'approved' && !owner && !admin;
-  return new Response(obj.body, { headers: { 'Content-Type': row.content_type, 'X-Content-Type-Options': 'nosniff', 'Cache-Control': shared ? 'public, max-age=300' : 'private, no-store' } });
+  if (!obj) return notFound();
+  return new Response(obj.body, { headers: { 'Content-Type': row.content_type, 'X-Content-Type-Options': 'nosniff', 'Cache-Control': row.status === 'published' ? 'public, max-age=300' : 'private, no-store' } });
 }
 
-async function remove(env, id, status) {
+async function remove(env, id) {
   await env.PHOTOS.delete(`photos/${id}`);
-  await env.DB.prepare('UPDATE photos SET status = ? WHERE id = ?').bind(status, id).run();
+  const res = await env.DB.prepare(`UPDATE photos SET status = 'removed' WHERE id = ? AND status != 'removed'`).bind(id).run();
+  return res.meta.changes > 0;
 }
 
-export async function sweepExpired(env, now = Date.now()) {
-  const rows = (await env.DB.prepare(`SELECT id FROM photos WHERE expires_at IS NOT NULL AND expires_at <= ? AND status NOT IN ('expired','deleted') LIMIT 500`).bind(now).all()).results;
-  for (const { id } of rows) await remove(env, id, 'expired');
-  return rows.length;
-}
-
-async function admin(request, env, op, now) {
+async function admin(request, env, op) {
   const url = new URL(request.url);
-  if (!env.BOOTH_ADMIN_PASSWORD || !env.DB) return json({ error: 'Photo booth admin is not configured.' }, 503);
+  if (!env.CATALOG_ADMIN_PASSWORD) return json({ error: 'Photo booth admin is not configured.' }, 503);
   if (request.method !== 'GET' && request.headers.get('Origin') !== url.origin && !request.headers.get('Authorization')) return json({ error: 'Wrong origin.' }, 403);
   if (op === 'login' && request.method === 'POST') {
     const { password } = await request.json().catch(() => ({}));
-    if (!password || !await same(password, env.BOOTH_ADMIN_PASSWORD)) { await new Promise((r) => setTimeout(r, 800)); return json({ error: 'Wrong password.' }, 403); }
+    if (!password || !await same(password, env.CATALOG_ADMIN_PASSWORD)) { await new Promise((r) => setTimeout(r, 800)); return json({ error: 'Wrong password.' }, 403); }
     const exp = Date.now() + 12 * 3600e3;
-    return json({ ok: true }, 200, { 'Set-Cookie': `${COOKIE}=${exp}.${await hmac(env.BOOTH_ADMIN_PASSWORD, 'booth-admin:' + exp)}; Path=/; Secure; HttpOnly; SameSite=Strict; Max-Age=43200` });
+    return json({ ok: true }, 200, { 'Set-Cookie': `${COOKIE}=${exp}.${await hmac(env.CATALOG_ADMIN_PASSWORD, 'catalog-admin:' + exp)}; Path=/; Secure; HttpOnly; SameSite=Strict; Max-Age=43200` });
   }
   if (op === 'logout') return json({ ok: true }, 200, { 'Set-Cookie': `${COOKIE}=; Path=/; Secure; HttpOnly; SameSite=Strict; Max-Age=0` });
   if (!await adminAuthed(request, env)) return json({ error: 'Sign in first.' }, 401);
-  if (op === 'queue' && request.method === 'GET') {
-    const rows = (await env.DB.prepare(`SELECT * FROM photos WHERE status = 'pending' AND ${live(now)} ORDER BY created_at ASC LIMIT ?`).bind(LIMITS.QUEUE_MAX).all()).results;
-    return json({ queue: rows.map((r) => ({ id: r.id, url: `/booth/photos/${r.id}`, createdAt: r.created_at, consentKeep: !!r.consent_keep, frame: r.frame, expiresAt: r.expires_at })) });
+  if (op === 'photos' && request.method === 'GET') {
+    const rows = (await env.DB.prepare(`SELECT * FROM photos WHERE status IN ('published','held') ORDER BY created_at DESC LIMIT ?`).bind(LIMITS.ADMIN_LIST_MAX).all()).results;
+    return json({ photos: rows.map((r) => ({ ...item(r), status: r.status, holdReason: r.hold_reason })) });
   }
-  const m = op.match(/^photos\/([^/]+)\/(approve|reject)$/);
-  if (m && request.method === 'POST') {
-    if (!ID.test(m[1])) return json({ error: 'Not found.' }, 404);
-    const status = m[2] === 'approve' ? 'approved' : 'rejected';
-    const res = await env.DB.prepare(`UPDATE photos SET status = ?, decided_at = ? WHERE id = ? AND status IN ('pending','approved','rejected') AND ${live(now)}`).bind(status, now, m[1]).run();
-    if (!res.meta.changes) return json({ error: 'Not found.' }, 404);
-    if (status === 'rejected') await env.PHOTOS.delete(`photos/${m[1]}`);
-    return json({ ok: true, id: m[1], status });
-  }
+  const m = op.match(/^photos\/([^/]+)\/remove$/);
+  if (m && request.method === 'POST' && ID.test(m[1])) return await remove(env, m[1]) ? json({ ok: true, id: m[1], status: 'removed' }) : json({ error: 'Not found.' }, 404);
   return json({ error: 'Not found.' }, 404);
 }
 
@@ -133,25 +121,22 @@ export default {
     const url = new URL(request.url), path = url.pathname.replace(/\/+$/, '');
     if (!path.startsWith('/booth/')) return new Response('Not found', { status: 404 });
     if (!env.DB || !env.PHOTOS) return json({ error: 'Photo booth is not configured.' }, 503);
-    const now = Date.now(), m = request.method;
+    const m = request.method;
     try {
-      if (path === '/booth/api/photos' && m === 'POST') return await upload(request, env, now);
-      if (path === '/booth/api/wall' && m === 'GET') return await wall(request, env, now);
+      if (path === '/booth/api/photos' && m === 'POST') return await upload(request, env, Date.now());
+      if (path === '/booth/api/wall' && m === 'GET') return await wall(env);
       const del = path.match(/^\/booth\/api\/photos\/([^/]+)$/);
       if (del && m === 'DELETE') {
         if (!ID.test(del[1])) return json({ error: 'Not found.' }, 404);
-        const owns = (await ownedIds(env.DB, (request.headers.get('X-Booth-Owner') || '').split(','))).has(del[1]);
-        if (!owns && !await adminAuthed(request, env)) return json({ error: 'Not found.' }, 404);
-        await remove(env, del[1], 'deleted');
-        return json({ ok: true });
+        if (!await owns(env.DB, del[1], request.headers.get('X-Booth-Owner')) && !await adminAuthed(request, env)) return json({ error: 'Not found.' }, 404);
+        return await remove(env, del[1]) ? json({ ok: true }) : json({ error: 'Not found.' }, 404);
       }
       const img = path.match(/^\/booth\/photos\/([^/]+)$/);
-      if (img && m === 'GET') return ID.test(img[1]) ? await image(request, env, img[1], now) : new Response('Not found', { status: 404 });
-      if (path.startsWith('/booth/api/admin/')) return await admin(request, env, path.slice('/booth/api/admin/'.length), now);
-    } catch (err) {
+      if (img && m === 'GET') return ID.test(img[1]) ? await image(request, env, img[1]) : notFound();
+      if (path.startsWith('/booth/api/admin/')) return await admin(request, env, path.slice('/booth/api/admin/'.length));
+    } catch {
       return json({ error: 'Something went wrong.' }, 500);
     }
     return json({ error: 'Not found.' }, 404);
   },
-  async scheduled(event, env) { await sweepExpired(env); },
 };

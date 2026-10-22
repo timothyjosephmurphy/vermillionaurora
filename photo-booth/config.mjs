@@ -1,28 +1,19 @@
-// studio-tracker #311 photo booth: every tunable lives here. Items marked TODO are open questions for TJ (see the PR).
-const DAY = 86400e3;
-
-export const EXPIRY = {
-  // TODO(#311, OPEN): the exact expiry rule. The card has two readings of TJ's voice message
-  // ("I want photos to expire if they give consent to keep them"): expire, or speech-to-text for "don't expire".
-  // Placeholder follows the literal message: consenting photos expire after this many days. Set to null for "never expires".
-  CONSENTED_TTL_DAYS: 90,
-  // TODO(#311, OPEN): how long photos WITHOUT consent to keep stay up (card: "photos without that consent expire").
-  UNCONSENTED_TTL_DAYS: 7,
-};
-
-export function expiresAt(consentKeep, createdAt) {
-  const days = consentKeep ? EXPIRY.CONSENTED_TTL_DAYS : EXPIRY.UNCONSENTED_TTL_DAYS;
-  return days == null ? null : createdAt + days * DAY;
-}
-
-// TODO(#311, OPEN): branded frame or overlay? Off until TJ chooses. The visitor picks one of FRAME.options (ids only);
-// the id is stored with the photo and returned by the API. The frame itself is drawn by the client, never by this Worker.
-export const FRAME = { enabled: false, options: ['none'] };
+// studio-tracker #311 photo booth: every tunable lives here.
+// TJ's decisions (Oct 22, 2026): consenting photos stay up indefinitely (no expiry), photos without consent are never stored,
+// no frame, an inappropriate-content filter runs on every upload and publishes the photos that pass with no approval queue.
 
 export const LIMITS = {
-  MAX_PHOTO_BYTES: 2 * 1024 * 1024,
+  MAX_PHOTO_BYTES: 2 * 1024 * 1024, // the client should downscale (about 1280 px on the long side) before upload
   CONTENT_TYPES: { 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/png': 'png' },
-  WALL_CAP: 60,            // card: newest first, capped at about 60
-  OWNER_TOKENS_MAX: 10,    // owner tokens accepted per request (one browser may have taken several photos)
-  QUEUE_MAX: 200,
+  WALL_CAP: 60,                     // card: newest first, capped at about 60
+  ADMIN_LIST_MAX: 200,
+};
+
+export const FILTER = {
+  // Workers AI vision model used as the filter (Workers AI has no dedicated NSFW image classifier, see the design doc).
+  MODEL: '@cf/meta/llama-3.2-11b-vision-instruct',
+  MAX_TOKENS: 60,
+  // Hard cap on filter runs per rolling 24 hours, so a flood of uploads cannot run past Workers AI's free daily allowance.
+  // Over the cap, uploads are refused (nothing stored) until the window moves on. A guess to keep usage inside the free allowance: measure neurons per image on the first real uploads, then tune.
+  DAILY_MAX: 300,
 };
