@@ -23,8 +23,9 @@ export default archivePaintings.map(p => {
     medium:p.medium||null,year:p.year||null,dimensions,
     facts:[
       ...(p.index===null?[]:[{label:'Archive index',value:`#${p.index}`}]),
-      ...(p.dimensionsInscription?[{label:'Size noted on reverse',value:`${p.dimensionsInscription.text} in`}]:[]),
-      ...(recorded?.source==='artist'?[{label:'Size',value:`${recorded.width} × ${recorded.height} ${recorded.unit} (W × H)`}]:[]),
+      ...(p.dimensionsInscription?[{label:'Written on the reverse',value:`${p.dimensionsInscription.text} in`}]:[]),
+      // Always show width × height as the listing and share text use it, so the reverse note (any order) never reads as a conflict.
+      ...(recorded&&recorded.width&&recorded.height?[{label:'Size',value:`${recorded.width} × ${recorded.height} ${recorded.unit} (W × H)`}]:[]),
       ...(p.bookReference?[{label:'Book reference',value:`${p.bookReference.book}, page ${p.bookReference.page}: “${p.bookReference.caption}”`}]:[]),
       ...(p.estimatedDimensions&&recorded?.source!=='artist'?[{label:'Approximate paper size',value:`About ${p.estimatedDimensions.width} × ${p.estimatedDimensions.height} in (W × H), estimated from photographs; allow roughly 10% variation.`}]:[]),
       ...(p.cataloguedDimensions?[{label:'Previously catalogued size',value:`${p.cataloguedDimensions.width} × ${p.cataloguedDimensions.height} ${p.cataloguedDimensions.unit} (W × H)`}]:[])

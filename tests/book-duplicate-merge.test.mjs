@@ -32,7 +32,7 @@ const MERGED={
   'book-art-1cc00425e5226b3aa20c':['sunset-in-el-tunco-el-salvador','Sunset in El Tunco, El Salvador'],
   'book-art-ef24f49017a62819330d':['painting-portrait-with-cheese','Brekkie @BVBTC with polished Bitcoin B'],
   'book-art-06b4b66f6389416c412c':['girl-wearing-flower-crown','Girl Wearing Flower Crown'],
-  'book-art-9f6386bac0e6198f6661':['rice-paddies-in-vietnam','Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith'],
+  'book-art-9f6386bac0e6198f6661':['rice-paddies-in-vietnam','Rice Paddies in Vietnam'],
   // Second batch (same rule), visually confirmed.
   'book-art-e1fa746bb51029294a17':['painting-chef-in-white','Jimmy Song @jimmysong'],
   'book-art-04a049ea60a5a09e6873':['painting-red-horizon','Sunset at Kihei on Maui'],

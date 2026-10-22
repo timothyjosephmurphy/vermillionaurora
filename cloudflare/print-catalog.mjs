@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="ea0a0b3a175c3614b764";
+export const printVersion="964c6980576ea3995166";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -51167,8 +51167,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print",
+    "artworkTitle": "Sunset in Greece",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M9S9.99X5.51",
@@ -51192,7 +51192,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51210,8 +51210,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Black frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print — Black frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S10DD25X5DD77F1S13DD25X8DD77J1S10DD25X5DD77G1",
@@ -51235,7 +51235,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51284,8 +51284,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — White frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print — White frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S10DD25X5DD77F2S13DD25X8DD77J1S10DD25X5DD77G1",
@@ -51309,7 +51309,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51358,8 +51358,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Natural wood frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "87.00",
     "currency": "USD",
     "sku": "5M144M8S10DD25X5DD77F7S13DD25X8DD77J1S10DD25X5DD77G1",
@@ -51383,7 +51383,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51432,8 +51432,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print",
+    "artworkTitle": "Sunset in Greece",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M9S7.49X4.13",
@@ -51457,7 +51457,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51475,8 +51475,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Black frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print — Black frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S7DD75X4DD39F1S11DD37X8DD01J1S7DD75X4DD39G1",
@@ -51500,7 +51500,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51549,8 +51549,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — White frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print — White frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S7DD75X4DD39F2S11DD37X8DD01J1S7DD75X4DD39G1",
@@ -51574,7 +51574,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51623,8 +51623,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Natural wood frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S7DD75X4DD39F7S11DD37X8DD01J1S7DD75X4DD39G1",
@@ -51648,7 +51648,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},

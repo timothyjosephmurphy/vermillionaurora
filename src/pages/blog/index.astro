@@ -21,9 +21,9 @@ import SiteFooter from '../../components/SiteFooter.astro';
         <header class="journal-heading">
           <p class="eyebrow dark">Stories</p>
           <h1>What&rsquo;s happening in the studio</h1>
-          <p>Notes about the paintings, travels, and people behind my work. New stories appear here when they go out on Nostr.</p>
+          <p>Notes about the paintings, travels and people behind my work. New stories every week or so.</p>
         </header>
-        <p id="journal-status" class="journal-status" role="status" aria-live="polite">Checking for the latest story…</p>
+        <p id="journal-status" class="journal-status" role="status" aria-live="polite">Loading stories…</p>
         <section id="journal-entries" class="journal-entries" aria-label="Stories">
         <article class="journal-entry" data-static-story>
           <header>
@@ -210,7 +210,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
             ...stories.map(post => ({ node: makeEntry(post), time: Date.parse(post.publishedAt) || 0 })),
           ].sort((a, b) => b.time - a.time);
           entriesNode.replaceChildren(...dated.map(entry => entry.node));
-          statusNode.textContent = stories.length || staticStories.length ? '' : 'The first story will appear here when it is released on Nostr.';
+          statusNode.textContent = stories.length || staticStories.length ? '' : 'New stories are on the way. Please check back soon.';
         })
         .catch(() => {
           statusNode.textContent = entriesNode.querySelector('[data-static-story]') ? '' : 'The story feed is temporarily unavailable. Please check back shortly.';
