@@ -1,0 +1,21 @@
+// DRAFT for studio-tracker #311. Not used by any deploy: the file name is deliberately not wrangler.jsonc.
+// Every value marked REPLACE_ME is a placeholder. Nothing here has been created in Cloudflare.
+// To go live (TJ's call, later): create the D1 database and R2 bucket, put the real ids below, rename to wrangler.jsonc,
+// run `wrangler d1 migrations apply`, accept the Meta license for the filter model, and set the secret (see below).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tjm-photo-booth",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-09-29",
+  "workers_dev": false,
+  "preview_urls": false,
+  "d1_databases": [{ "binding": "DB", "database_name": "REPLACE_ME_booth_db", "database_id": "REPLACE_ME_D1_DATABASE_ID", "migrations_dir": "migrations" }],
+  "r2_buckets": [{ "binding": "PHOTOS", "bucket_name": "REPLACE_ME_booth_photos" }],
+  // Workers AI for the content filter. Needs no id; usage is metered (free daily allowance, then paid), capped by FILTER.DAILY_MAX in config.mjs.
+  "ai": { "binding": "AI" },
+  // Decided Oct 22, 2026: the booth lives at tjm.art/booth/*. TODO before go-live: confirm in a preview that this route wins over the
+  // site Worker's custom domain for /booth/* (the site Worker's assets/run_worker_first list does not include /booth/*).
+  "routes": [{ "pattern": "tjm.art/booth/*", "zone_name": "tjm.art" }]
+  // Secret (not in this file): CATALOG_ADMIN_PASSWORD, the same value as the catalog admin Worker secret
+  // (`wrangler secret put CATALOG_ADMIN_PASSWORD`, pasted by TJ; never committed, never logged). No cron: nothing expires.
+}
