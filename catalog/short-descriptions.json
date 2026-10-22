@@ -1,0 +1,48 @@
+{
+  "_note": "Short factual descriptions for works that have no approved story yet. One sentence from the image description already in the catalog, no stories, no places or dates that TJ has not confirmed. Prepended to the work's story in all-products.mjs. When TJ approves a story, add it to painting-stories.json (that replaces the story) and delete the entry here.",
+  "archived-painting-img-1555": [
+    "A seated man in a brimmed hat with his hands raised beside a sunlit woodland path. Watercolor pastel, 2026."
+  ],
+  "archived-painting-249": [
+    "A narrow lake winding through wooded blue mountains. Watercolor pastel."
+  ],
+  "archived-painting-246": [
+    "A sunset over ocean water and a terrace railing. Watercolor pastel, 2022."
+  ],
+  "archived-painting-248": [
+    "Yellow light breaking through clouds above the sea. Watercolor pastel, 2022."
+  ],
+  "archived-painting-247": [
+    "A golden sunset reflected on the sea beside a curved terrace. Watercolor pastel, 2022."
+  ],
+  "archived-painting-438": [
+    "A tree reflected in still water beneath a dawn sky. Watercolor pastel, 2023."
+  ],
+  "archived-painting-437": [
+    "A lone tree beside a pool under scattered dawn clouds. Watercolor pastel, 2023."
+  ],
+  "archived-painting-433": [
+    "A blue and gold dawn landscape with still water. Watercolor pastel, 2023."
+  ],
+  "archived-painting-436": [
+    "A tall tree silhouette reflected in water at dawn. Watercolor pastel, 2023."
+  ],
+  "archived-painting-66": [
+    "A guitarist playing outdoors in warm sunset light. Watercolor pastel."
+  ],
+  "archived-painting-301": [
+    "A woman with dark hair and raised arms in yellow and rose tones. Watercolor pastel."
+  ],
+  "archived-painting-15": [
+    "A central figure surrounded by a radiating colorful headdress. Watercolor pastel."
+  ],
+  "archived-painting-22": [
+    "Two people facing one another in vivid orange and blue tones. Watercolor pastel."
+  ],
+  "archived-painting-2": [
+    "A panoramic mountain and water landscape with a small seated figure. Watercolor pastel."
+  ],
+  "archived-painting-1": [
+    "A panoramic mountain landscape with a person seated beside the water. Watercolor pastel."
+  ]
+}
