@@ -1,6 +1,6 @@
 ---
 import ArtworkImage from './ArtworkImage.astro';
-import { urlFor, priceLabel, statusLabel, dimensionLabel, byId } from '../../catalog/catalog.mjs';
+import { urlFor, priceLabel, statusLabel, dimensionLabelBoth, byId } from '../../catalog/catalog.mjs';
 import { artworkAlt } from '../data/artwork-alt.mjs';
 import { printsFromLabel, showBuy, buyLabel } from '../data/card-commerce.mjs';
 import { commissionExampleGroups, interleave } from '../data/commission-examples.mjs';
@@ -32,7 +32,7 @@ variant==='service' ? <article class="service-card">
   <div class="product-info"><p class="eyebrow dark">{p.collaboration.chapter}</p><h2><a class="product-title-link" href={url}>{p.collaboration.title}</a></h2><p>{p.collaboration.credit}</p><p class="collaboration-medium">{p.medium} · {p.year}</p><p data-live-status hidden></p><a class="button button-ghost" href={url}>View painting</a></div>
 </article> : variant==='poster' ? <article class="product-card film-collaboration-poster" data-product-id={p.id} data-availability={status}>
   <a href={url} aria-label={`View ${p.title}`}><ArtworkImage src={p.image.src} alt={artworkAlt(p)} width={p.image.width} height={p.image.height} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a>
-  <div class="product-info"><p class="eyebrow dark">Original painting · {p.artist}</p><h2><a class="product-title-link" href={url}>{p.title}</a></h2><p>{dimensionLabel(p)}<br />{p.medium} on {p.surface}</p><p class="product-availability" data-live-status>{status}{p.gifted?' · Gifted':''}</p><a class="button button-ghost" href={url}>View painting and story</a></div>
+  <div class="product-info"><p class="eyebrow dark">Original painting · {p.artist}</p><h2><a class="product-title-link" href={url}>{p.title}</a></h2><p>{dimensionLabelBoth(p)}<br />{p.medium} on {p.surface}</p><p class="product-availability" data-live-status>{status}{p.gifted?' · Gifted':''}</p><a class="button button-ghost" href={url}>View painting and story</a></div>
 </article> : <article class:list={['product-card','card-tile',{'ex-slide':variant==='carousel'}]} data-product-id={p.id} data-availability={status} data-prints-from={printsFrom||undefined} data-buy={buy?'true':'false'}>
   <a href={url} class="gallery-product-image"><ArtworkImage src={p.image.src} alt={artworkAlt(p)} loading={priority?'eager':'lazy'} decoding="async" fetchpriority={priority?'high':'auto'} width={p.image.width} height={p.image.height} /></a>
   <div class="product-info"><h3><a href={url} class="product-title-link">{p.title}</a></h3>{printsFrom&&<p>{p.medium && <>{p.medium} · </>}<span data-card-price>{p.listing.status==='available'?priceLabel(p):status}</span></p>}<p class="card-buy-row">{printsFrom?<span class="card-prints-from">{printsFrom}</span>:<span class="card-buy-text">{p.medium && <>{p.medium} · </>}<span data-card-price>{p.listing.status==='available'?priceLabel(p):status}</span></span>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>{buyLabel(p)}</span></p></div>
