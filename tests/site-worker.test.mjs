@@ -180,3 +180,11 @@ test('Lightning address tj@tjm.art: BTCPay payRequest passed through unchanged, 
   }
   for(const n of ['bob','toString','']){const r=await lnurlp(n,async()=>{throw Error('must not fetch');});assert.equal(r.status,404);assert.equal((await r.json()).status,'ERROR');}
 });
+
+test('site worker keeps logs: wrangler.jsonc enables observability like the checkout worker (#132)',async()=>{
+  const fs=await import('node:fs');
+  const site=JSON.parse(fs.readFileSync('wrangler.jsonc','utf8'));
+  assert.equal(site.observability?.enabled,true);
+  assert.equal(site.observability?.logs?.enabled,true);
+  assert.equal(site.observability?.logs?.invocation_logs,true);
+});
