@@ -3,6 +3,7 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { products, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
 import { printsFromLabel } from '../../data/card-commerce.mjs';
+import { tagsFor } from '../../../catalog/related-works.mjs';
 const availablePaintings = products
   .filter(product => product.type === 'painting' && product.listing.status === 'available')
   .sort((a,b) => Number(b.listing.price?.amount||0) - Number(a.listing.price?.amount||0) || a.title.localeCompare(b.title));
@@ -12,21 +13,42 @@ const sections = [
   { id: 'tj-murphy', heading: 'Original paintings by TJ Murphy', intro: '', items: availablePaintings.filter(isTj) },
   { id: 'paul-murphy', heading: 'Featured artist: Paul Murphy', intro: 'Original paintings by Paul Murphy, presented by TJ Murphy.', items: availablePaintings.filter(product => !isTj(product)) },
 ].filter(section => section.items.length);
+// Filters and sort (studio-tracker #129). Everything is client-side; each row carries data-* attributes.
+// Price bands use the original's listed price. Size bands use the longest side in inches (cm converted).
+const PRICE_BANDS = [['under-150', 'Under $150', 0, 150], ['150-299', '$150 to $299', 150, 300], ['300-749', '$300 to $749', 300, 750], ['750-up', '$750 and up', 750, Infinity]];
+const SIZE_BANDS = [['small', 'Small (12 in or less)', 0, 12.01], ['medium', 'Medium (12 to 24 in)', 12.01, 24.01], ['large', 'Large (over 24 in)', 24.01, Infinity]];
+const longestSideIn = p => p.dimensions ? Math.max(p.dimensions.width, p.dimensions.height) * (p.dimensions.unit === 'cm' ? 1 / 2.54 : 1) : null;
+const band = (bands, v) => v === null ? '' : (bands.find(([, , lo, hi]) => v >= lo && v < hi)?.[0] || '');
+const subjectsFor = p => [...(p.series === 'strawberry-point' ? [{ id: 'strawberry-point', label: 'Strawberry Point series' }] : []), ...tagsFor(p)];
+const rowData = product => ({ price: Number(product.listing.price?.amount || 0), side: longestSideIn(product), subjects: subjectsFor(product) });
+const subjectOptions = new Map();
+for (const product of availablePaintings) for (const t of subjectsFor(product)) if (!subjectOptions.has(t.id)) subjectOptions.set(t.id, t.label);
+const subjectList = [...subjectOptions].sort((a, b) => a[1].localeCompare(b[1]));
 ---
 <!doctype html><html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Available Paintings | TJ Murphy</title>
   <meta name="description" content="Browse original paintings currently available from TJ Murphy and featured artist Paul Murphy, sorted by price. Explore landscapes and portraits.">
   <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site-header.css"><link rel="stylesheet" href="/gallery/painting-list.css">
-  <style>.available-section{margin-top:2.5rem}.available-section+.available-section{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line,#d9d0c7)}.available-section-heading{font:600 clamp(1.9rem,4vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0 0 .4rem}.available-section-intro{margin:0 0 1rem;color:var(--muted)}</style>
+  <style>.available-section{margin-top:2.5rem}.available-section+.available-section{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line,#d9d0c7)}.available-section-heading{font:600 clamp(1.9rem,4vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0 0 .4rem}.available-section-intro{margin:0 0 1rem;color:var(--muted)}.avail-filters{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-end;margin:1.5rem 0 .5rem}.avail-filters[hidden]{display:none}.avail-filters label{display:flex;flex-direction:column;gap:4px;font-size:.8rem;color:var(--muted,#665b52)}.avail-filters select,.avail-filters input{font:inherit;font-size:1rem;padding:8px 10px;min-height:44px;border:1px solid var(--line,#d9d0c7);border-radius:8px;background:#fff;color:inherit}.avail-search{flex:1 1 220px}.avail-filters .button{min-height:44px}.avail-count{flex:1 0 100%;margin:0;font-size:.9rem;color:var(--muted,#665b52)}.avail-empty{margin:1.5rem 0}.avail-link{background:none;border:0;padding:0;font:inherit;color:#a34528;text-decoration:underline;cursor:pointer}@media(max-width:600px){.avail-filters label,.avail-filters .button{flex:1 1 calc(50% - 8px)}.avail-search{flex-basis:100%}}</style>
 </head><body class="painting-gallery-page"><div class="page-shell"><SiteHeader/><main><section class="section section-light"><div class="container">
   <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a><span>/ Available paintings</span></nav>
   <header class="section-heading"><p class="eyebrow dark">Original artwork</p><h1>Available Paintings</h1><p>Currently available originals by TJ Murphy, followed by works from featured artist Paul Murphy. Each section is ordered from highest to lowest listed price. <a href="/gallery/">Browse all paintings, including sold and archived works →</a></p></header>
+  <form class="avail-filters" data-avail-filters hidden aria-label="Filter and sort available paintings" onsubmit="return false">
+    <label class="avail-search">Search<input type="search" name="q" placeholder="Title, place or subject" autocomplete="off"></label>
+    <label>Price<select name="price"><option value="">Any price</option>{PRICE_BANDS.map(([id,label]) => <option value={id}>{label}</option>)}</select></label>
+    <label>Size<select name="size"><option value="">Any size</option>{SIZE_BANDS.map(([id,label]) => <option value={id}>{label}</option>)}</select></label>
+    <label>Subject or series<select name="subject"><option value="">All</option>{subjectList.map(([id,label]) => <option value={id}>{label}</option>)}</select></label>
+    <label>Sort<select name="sort"><option value="price-desc">Price, high to low</option><option value="price-asc">Price, low to high</option><option value="newest">Newest first</option><option value="size-desc">Largest first</option><option value="size-asc">Smallest first</option><option value="title">Title, A to Z</option></select></label>
+    <button type="button" class="button button-ghost" data-avail-reset>Reset</button>
+    <p class="avail-count" role="status" aria-live="polite" data-avail-count></p>
+  </form>
+  <p class="avail-empty" data-avail-empty hidden>No paintings match those filters. <button type="button" class="avail-link" data-avail-reset>Show all available paintings</button></p>
   {sections.map(section => <section class="available-section" id={section.id} aria-labelledby={`${section.id}-heading`}>
     <h2 id={`${section.id}-heading`} class="available-section-heading">{section.heading}</h2>
     {section.intro && <p class="available-section-intro">{section.intro}</p>}
     <ul class="painting-list" aria-label={section.heading}>
-      {section.items.map(product => <li class="painting-list-row card-tile" data-product-id={product.id}>
+      {section.items.map(product => <li class="painting-list-row card-tile" data-product-id={product.id} data-price={rowData(product).price} data-size-band={band(SIZE_BANDS,rowData(product).side)} data-side={rowData(product).side??''} data-price-band={band(PRICE_BANDS,rowData(product).price)} data-year={Number(product.year)||''} data-subjects={rowData(product).subjects.map(t=>t.id).join(' ')} data-search={[product.title,product.artist,...rowData(product).subjects.map(t=>t.label)].filter(Boolean).join(' ').toLowerCase()}>
         <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
         <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
         <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
@@ -34,4 +56,52 @@ const sections = [
       </li>)}
     </ul>
   </section>)}
-</div></section></main><SiteFooter/></div></body></html>
+</div></section></main><SiteFooter/>
+<script is:inline>
+(function(){
+  var form=document.querySelector('[data-avail-filters]');if(!form)return;
+  var rows=[].slice.call(document.querySelectorAll('.painting-list-row'));
+  var sections=[].slice.call(document.querySelectorAll('.available-section'));
+  var count=form.querySelector('[data-avail-count]'),empty=document.querySelector('[data-avail-empty]');
+  var home=new Map();rows.forEach(function(r,i){home.set(r,i);});
+  var num=function(r,k){var v=parseFloat(r.dataset[k]);return isNaN(v)?null:v;};
+  var sorts={
+    'price-desc':function(a,b){return num(b,'price')-num(a,'price');},
+    'price-asc':function(a,b){return num(a,'price')-num(b,'price');},
+    'newest':function(a,b){return (num(b,'year')||0)-(num(a,'year')||0);},
+    'size-desc':function(a,b){return (num(b,'side')||0)-(num(a,'side')||0);},
+    'size-asc':function(a,b){return (num(a,'side')||1e9)-(num(b,'side')||1e9);},
+    'title':function(a,b){return a.querySelector('.product-title-link').textContent.localeCompare(b.querySelector('.product-title-link').textContent);}
+  };
+  var f=function(n){return form.elements[n];};
+  function apply(push){
+    var q=f('q').value.trim().toLowerCase(),pr=f('price').value,sz=f('size').value,sub=f('subject').value,sort=f('sort').value;
+    var shown=0;
+    sections.forEach(function(sec){
+      var list=sec.querySelector('.painting-list'),items=[].slice.call(list.children);
+      items.sort(function(a,b){return (sorts[sort]||sorts['price-desc'])(a,b)||home.get(a)-home.get(b);});
+      var vis=0;
+      items.forEach(function(r){
+        list.appendChild(r);
+        var ok=(!q||q.split(/\s+/).every(function(w){return r.dataset.search.indexOf(w)>-1;}))&&(!pr||r.dataset.priceBand===pr)&&(!sz||r.dataset.sizeBand===sz)&&(!sub||(' '+r.dataset.subjects+' ').indexOf(' '+sub+' ')>-1);
+        r.hidden=!ok;if(ok)vis++;
+      });
+      sec.hidden=vis===0;shown+=vis;
+    });
+    count.textContent=shown===rows.length?rows.length+' available paintings':shown+' of '+rows.length+' available paintings';
+    empty.hidden=shown>0;
+    if(push!==false){
+      var p=new URLSearchParams();['q','price','size','subject'].forEach(function(n){if(f(n).value.trim())p.set(n,f(n).value.trim());});
+      if(sort!=='price-desc')p.set('sort',sort);
+      history.replaceState(null,'',location.pathname+(p.toString()?'?'+p:'')+location.hash);
+    }
+  }
+  var init=new URLSearchParams(location.search);
+  ['q','price','size','subject','sort'].forEach(function(n){var v=init.get(n);if(v!==null&&f(n)){f(n).value=v;if(f(n).value!==v)f(n).value=n==='sort'?'price-desc':'';}});
+  form.hidden=false;
+  form.addEventListener('input',function(){apply();});form.addEventListener('change',function(){apply();});
+  document.querySelectorAll('[data-avail-reset]').forEach(function(b){b.addEventListener('click',function(){form.reset();apply();});});
+  apply(false);
+})();
+</script>
+</div></body></html>
