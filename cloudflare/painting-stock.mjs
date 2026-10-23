@@ -1,7 +1,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
 import { checkoutRecord, fulfillmentRecord, ledgerFor } from './sales-records.mjs';
-import {stockStatus, nextManualRow, nextEtsySale} from './original-availability.mjs';
+import {stockStatus, nextManualRow, nextEtsySale, nextMarketSale} from './original-availability.mjs';
 
 // One SQLite-backed object per original. All state changes happen on the same object.
 export class PaintingStock extends DurableObject {
@@ -142,6 +142,15 @@ export class PaintingStock extends DurableObject {
     if (next.duplicate) return {ok: true, duplicate: true, status: 'sold'};
     if (next.conflict) return {ok: false, conflict: true, status: this.status()};
     this.applyRow(next, 'Etsy receipt ' + receiptId, at);
+    return {ok: true, status: 'sold', replacedHold: !!next.replacedHold};
+  }
+  // Not called by anything yet (#325 phase 4 wires marketplace sale detection to it).
+  recordMarketSale(ref, at = new Date().toISOString()) {
+    const next = nextMarketSale(this.row(), String(ref));
+    if (next.duplicate) return {ok: true, duplicate: true, status: 'sold'};
+    if (next.conflict) return {ok: false, conflict: true, status: this.status()};
+    this.applyRow(next, 'Marketplace order ' + ref, at);
+    this.queueEtsySync();   // delist on Etsy, like any other site sale
     return {ok: true, status: 'sold', replacedHold: !!next.replacedHold};
   }
   queueEtsySync() {
