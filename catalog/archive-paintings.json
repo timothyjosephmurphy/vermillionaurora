@@ -1120,7 +1120,9 @@
         "captureDate": "2026:10:12 12:22:58"
       },
       "alt": "A lion’s face rendered in vivid pink, yellow, and blue strokes",
-      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate.",
+      "notForSale": true,
+      "notForSaleNote": "Not for sale (TJ, Oct 23 2026, studio-tracker #250): based on a National Geographic cover."
     },
     {
       "id": "archived-painting-249",
@@ -1886,7 +1888,7 @@
         "height": 5712,
         "captureDate": "2026:10:12 12:52:53"
       },
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "year": 2022,
       "dimensionsInscription": {
         "text": "19.25 × 21.5",
@@ -1899,7 +1901,8 @@
         "unit": "in",
         "source": "reverse-inscription",
         "orientation": "front-image"
-      }
+      },
+      "title": "Axler with the Proviber Doinger"
     },
     {
       "id": "archived-painting-241",
@@ -2428,6 +2431,13 @@
           ],
           "previewLongEdge": 2200
         }
+      },
+      "title": "Pagoda in Botanical Garden",
+      "bookReference": {
+        "book": "Watercolor Landscapes",
+        "page": 20,
+        "caption": "Pagoda in Botanical Garden 24x8",
+        "mergedFrom": "book-art-164f60d23032b0f718de"
       }
     }
   ],
