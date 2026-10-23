@@ -5969,11 +5969,17 @@
     "facts": [
       {
         "label": "Original",
-        "value": "Mural in a private garden"
+        "value": "Mural in a private garden",
+        "href": "/murals/#garden-mural"
       },
       {
         "label": "Location",
         "value": "Seattle, Washington"
+      },
+      {
+        "label": "Backstory",
+        "value": "See how the mural was made",
+        "href": "/murals/#garden-mural"
       }
     ],
     "story": [
