@@ -6,6 +6,9 @@ import fs from 'node:fs';
 const files=fs.readFileSync(0,'utf8').split('\n').map(s=>s.trim()).filter(Boolean);
 const full=[/^cloudflare\//,/^payments\//,/^worker\//,/^wrangler\.jsonc$/,/^package(-lock)?\.json$/,/^\.github\//,/^scripts\/ci\//,/^catalog\/.*\.(m?js)$/,/^src\/pages\/cart\//,/^src\/data\/card-commerce\.mjs$/,/^tests\/(cart|print-checkout)/,/^scripts\/build-.*print/];
 const content=[/^catalog\/.*\.json$/,/^gallery-images\//,/^images\//,/^static\//,/^src\/pages\/blog\//,/^src\/content\//,/^public\//,/^docs\//,/\.(jpe?g|png|webp|gif|avif|svg|mp4|webm|md|txt)$/i,/^scripts\/sitemap-lastmod\.json$/,/^src\/data\/testimonials\.json$/];
+// These files change serving behavior, so they need the routing/cache unit tests
+// even though they live alongside ordinary content and images.
+const assetConfig=/^(static|public)\/_(headers|redirects)$/;
 const areas=[
   [/gallery-wall/,['tests/gallery-wall.browser-test.mjs']],
   [/paintings-wall/,['tests/paintings-wall.browser-test.mjs']],
@@ -24,7 +27,7 @@ let tier;
 const printOnly=files.length>0&&files.includes('catalog/prints.json')&&files.every(f=>printMaster.some(r=>r.test(f)));
 if(process.env.FORCE_FULL!=='true'&&printOnly)tier='content';
 else if(process.env.FORCE_FULL==='true'||!files.length||files.length>=3000||files.some(f=>full.some(r=>r.test(f))))tier='full';
-else if(files.every(f=>content.some(r=>r.test(f))))tier='content';
+else if(files.every(f=>!assetConfig.test(f)&&content.some(r=>r.test(f))))tier='content';
 else tier='code';
 const browser=new Set();let room=false;
 for(const f of files){
