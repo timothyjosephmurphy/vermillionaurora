@@ -55,3 +55,15 @@ Deployment preserves dashboard variables with `keep_vars: true`. A missing enabl
 - Read-only status: https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/status. It reports the number of scheduled posts, each scheduled post's id, time, status, text and image, the enabled state, and the connection-test (`testPost`) receipt.
 - `/blog` lists published notes with their note URLs. It feeds https://tjm.art/blog/.
 - Neither endpoint can trigger publishing, and there is no public write endpoint.
+
+## Marketplace sync (studio-tracker #325, phase 1: built, not wired)
+
+Code for listing TJ's originals on Shopstr and Plebeian as kind 30402 events (plus kind 30406 shipping options and a kind 0 profile). **Nothing here is called by the Worker's routes or cron, and it does not publish.** Files: `src/market-config.mjs` (every value TJ should review), `src/market-listing.mjs` (pure mappers), `src/market-run.mjs` (planner, gated runner, signer), `scripts/market-dry-run.mjs`, `src/market.test.mjs`.
+
+- **Dry-run is the default.** It prints unsigned events as JSON and never reads the key. From the repo root: `node nostr-publisher/scripts/market-dry-run.mjs --only <product-id> [--now <unix seconds>]` (listing plus the two shipping options) and `--profile [--current profile.json]` (kind 0, merged into the current profile).
+- **Gates for publishing (all set only by TJ):** `MARKET_PUBLISH_ENABLED=true`, `MARKET_MODE=publish`, the product id in `MARKET_APPROVED_IDS` (default: none), and real shipping rates (`MARKET_SHIPPING.placeholder` set to `false` in `market-config.mjs`). The profile also needs `MARKET_PROFILE_APPROVED=true`.
+- **What gets listed:** only TJ Murphy's original paintings with status available or sold and a USD price. Never prints, books, commissions, not-for-sale works or Paul Murphy's works. Price = site price. Listing `d` tag = `tjm-<productId>`, `created_at` = max(now, previous + 1), unchanged content is skipped.
+- **Sold** works stay listed (`status` sold, quantity and stock 0, still visible). A site hold sets quantity and stock 0 while the listing stays active.
+- **Shipping:** flat US and worldwide tiers in `MARKET_SHIPPING` (placeholder numbers, buyer pays). Framed, oversize (over 40 in) or no-parcel-profile works get "contact for a quote" instead of a cost.
+- **Signing:** `makeSigner` allows only kinds 30402 and 30406 (and 0 once the profile is approved), checks the signature pubkey equals `MARKET_PUBKEY`, and reads the key lazily through an injected `getKey()`.
+- **Not built yet:** hold handling for marketplace orders (TTL 2 h, `MARKET_HOLD_TTL_MS`), DM and zap sale detection (5 min poll, `MARKET_POLL_INTERVAL_MS`), fan-out of site holds and sales to the listings, BTCPay matching. `nextMarketSale` and `PaintingStock.recordMarketSale` exist (tested) but nothing calls them.
