@@ -32,9 +32,8 @@ const frameChoices=[...new Map(options.flatMap(o=>o.frameOptions||[]).map(o=>[o.
   <p class="print-paper" data-print-paper></p><p class="print-total" data-print-total aria-live="polite"></p><p class="print-border-note" data-print-inclusions>Print only; frame not included.</p><p class="print-border-note">Shipping is quoted separately at checkout without a markup. Applicable tax is additional.</p>
   {preview&&<p class="print-border-note">Borderless printing uses a small trimming bleed. This illustration is not an approved edge-trimming proof.</p>}
   {preview&&<details class="print-readiness"><summary>Preparation for this size</summary><ul data-print-readiness></ul></details>}
-  <div class="print-actions"><label hidden={sample&&!preview}>Quantity <input data-print-quantity type="number" min="1" max={sample&&!preview?'1':'10'} step="1" value="1" inputmode="numeric"/></label><button data-print-add class="button button-solid" type="button" disabled>{preview?'Ordering not yet open':'Add print to cart'}</button></div>
+  <div class="print-actions"><label hidden={sample&&!preview}>Quantity <input data-print-quantity type="number" min="1" max={sample&&!preview?'1':'10'} step="1" value="1" inputmode="numeric"/></label><button data-print-add class="button button-solid" type="button" disabled>{preview?'Ordering not yet open':'Add print to cart'}</button><p data-print-message class="print-message" role="status" aria-live="polite"></p></div>
   {!preview&&<PurchaseReassurance kind="print"/>}
-  <p data-print-message class="print-message" role="status" aria-live="polite"></p>
 </section>}
 <link rel="stylesheet" href="/payments/prints.css"/>
 <script is:inline src="/payments/prints.js" defer></script>
