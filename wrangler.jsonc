@@ -8,5 +8,6 @@
   "d1_databases": [{ "binding": "CATALOG_DB", "database_name": "tjm-catalog", "database_id": "e7514ceb-a633-4613-9cf1-cda817d8ca94" }],
   "r2_buckets": [{ "binding": "IMAGES", "bucket_name": "tjm-images" }],
   "services": [{ "binding": "CHECKOUT", "service": "vermillion-commissions" }],
-  "vars": { "PRIMARY_HOST": "tjm.art", "LEGACY_REDIRECT": "true" }
+  "vars": { "PRIMARY_HOST": "tjm.art", "LEGACY_REDIRECT": "true" },
+  "observability": { "enabled": true, "logs": { "enabled": true, "invocation_logs": true } }
 }
