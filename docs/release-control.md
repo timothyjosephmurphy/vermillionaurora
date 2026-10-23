@@ -22,7 +22,7 @@ The `release` branch is a frozen backup of the last two-stage release and no lon
 | Tier | Paths | Runs |
 | --- | --- | --- |
 | content | catalog JSON, images, blog, static, docs | build, catalog drift, smoke on home/gallery/product/cart + changed pages |
-| code | other site code | the above + unit tests + browser tests for touched areas |
+| code | other site code; static `_headers` and `_redirects` configuration | the above + unit tests + browser tests for touched areas |
 | full | `cloudflare/`, `payments/`, `worker/`, catalog code, cart, CI, dependencies, manual runs | full suite (unit, browser, room, Worker, print framing) |
 
 Squash-merge PRs into `main`. Never use `--admin` or force-push.
