@@ -148,3 +148,6 @@
 /products/book-art-7a3ad7bacdb71faac1b8 /products/lake-in-the-north-cascades/ 301
 /products/lisa-climbing-tahoma-at-sunrise-prototype/ /products/sunrise-on-rainier-from-denny-blaine/ 301
 /products/lisa-climbing-tahoma-at-sunrise-prototype /products/sunrise-on-rainier-from-denny-blaine/ 301
+# /search/ was a 404 (studio-tracker #129). Send it to the available-paintings page, which has a search box; ?q= is kept.
+/search /gallery/available/ 301
+/search/ /gallery/available/ 301
