@@ -23,7 +23,7 @@ export const canonicalArtwork = {
   'book-art-04de39dfa1817b8d1ed9': 'painting-figures-in-wheatfield', // The Mother of Kiev
   'book-art-7718008765132b8bc17f': 'painting-studio-figure', // Brekkie @BVBTC hoisting a sculpture in progress
   'book-art-159503a8e82d7b91c293': 'joaquim-in-zihuatanejo', // Joaquim in Zihuatanejo
-  'book-art-a137dffe65723d0b5a07': 'daniel-portrait-1', // Daniel — portrait 1
+  'book-art-a137dffe65723d0b5a07': 'daniel-portrait-1', // Daniel Getting Reprimanded (TJ, Oct 23 2026; was Daniel — portrait 1)
   'book-art-c8da7882b2a3b7a36874': 'painting-clouds-over-water', // El Salvador
   'book-art-82ab8d65fb50fe0d096a': 'painting-sunflower-woman', // Vision of Ukraine at Peace
   'book-art-1cc00425e5226b3aa20c': 'sunset-in-el-tunco-el-salvador', // Sunset in El Tunco, El Salvador
@@ -39,6 +39,7 @@ export const canonicalArtwork = {
   'book-art-29b3572972c367d351d1': 'painting-festival-portrait', // The Bounty of Satoshi: Wonder
   'book-art-ea6e156a9a533d06f198': 'grandpa-howard', // Grandpa Howard
   'book-art-82127d1886ae57d5cb6e': 'archived-painting-img-1608', // Father Paul -> My Dad, Paul Murphy (Oct 2026: same painting, better photo)
+  'book-art-164f60d23032b0f718de': 'archived-painting-217', // Pagoda in Botanical Garden (TJ, Oct 23 2026, #250: the archive scan is the higher-res page)
   // Oct 15 2026 backend audit (TJ approved): same painting under two slugs; the page with the stock record survives, titles unchanged.
   'book-art-f91504eaa0ab6b936c29': 'older-work-beach-sunsets-original-1', // Miami (book) = TJ Beach Sunset 310
   'book-art-4bb692457bed7cd4bb00': 'older-work-beach-sunsets-original-2', // Miami (book) = TJ Beach Sunset 311

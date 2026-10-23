@@ -112,6 +112,34 @@
   "political-portraits": {
    "label": "Political portraits",
    "kind": "subject"
+  },
+  "friends": {
+   "label": "Friends",
+   "kind": "subject"
+  },
+  "landscapes": {
+   "label": "Landscapes",
+   "kind": "subject"
+  },
+  "moonrise": {
+   "label": "Moonrise",
+   "kind": "subject"
+  },
+  "portrait": {
+   "label": "Portrait",
+   "kind": "subject"
+  },
+  "poster": {
+   "label": "Poster",
+   "kind": "subject"
+  },
+  "animals": {
+   "label": "Animals",
+   "kind": "subject"
+  },
+  "festival": {
+   "label": "Festival",
+   "kind": "subject"
   }
  },
  "twins": [
@@ -130,6 +158,10 @@
   [
    "archived-painting-19",
    "burning-man-temple-2022-daytime"
+  ],
+  [
+   "archived-painting-301",
+   "book-art-b50262c37f44843487ae"
   ]
  ],
  "assignments": {
@@ -138,7 +170,8 @@
    "sunrise"
   ],
   "honeybadger-and-cub-with-genesis-block": [
-   "bitcoiners"
+   "bitcoiners",
+   "animals"
   ],
   "sunset-in-el-tunco-el-salvador": [
    "el-salvador",
@@ -182,14 +215,16 @@
   ],
   "painting-insect-garden": [
    "el-salvador",
-   "el-salvador-triptych"
+   "el-salvador-triptych",
+   "animals"
   ],
   "painting-moonlit-water": [
    "pacific-northwest"
   ],
   "painting-phoenix-rising": [
    "bounty-of-satoshi",
-   "bitcoiners"
+   "bitcoiners",
+   "animals"
   ],
   "grandpa-howard": [
    "family"
@@ -206,7 +241,8 @@
    "tahoma-rainier",
    "seattle",
    "pacific-northwest",
-   "sunrise"
+   "sunrise",
+   "animals"
   ],
   "painting-red-horizon": [
    "maui-hawaii",
@@ -247,28 +283,34 @@
   ],
   "painting-twin-dragons": [
    "el-salvador",
-   "el-salvador-triptych"
+   "el-salvador-triptych",
+   "animals"
   ],
   "burning-man-temple-2022-blue": [
    "burning-man",
-   "burning-man-temple"
+   "burning-man-temple",
+   "festival"
   ],
   "burning-man-temple-2022-pink": [
    "burning-man",
-   "burning-man-temple"
+   "burning-man-temple",
+   "festival"
   ],
   "burning-man-temple-2022-flame": [
    "burning-man",
-   "burning-man-temple"
+   "burning-man-temple",
+   "festival"
   ],
   "burning-man-temple-2022-daytime": [
    "burning-man",
-   "burning-man-temple"
+   "burning-man-temple",
+   "festival"
   ],
   "cormorant-presiding-over-sunset-on-puget-sound": [
    "seattle",
    "pacific-northwest",
-   "sunset"
+   "sunset",
+   "animals"
   ],
   "meditating-at-denny-blaine-on-solstice-2015": [
    "denny-blaine",
@@ -342,10 +384,12 @@
    "pacific-northwest"
   ],
   "book-art-aa4dcced8a2ae6a8111c": [
-   "pacific-northwest"
+   "pacific-northwest",
+   "animals"
   ],
   "book-art-8fde7c978d6cd5d53727": [
-   "pacific-northwest"
+   "pacific-northwest",
+   "animals"
   ],
   "book-art-5e4eb881d89ae9f5c635": [
    "san-juan-islands",
@@ -365,12 +409,14 @@
   "book-art-c198f09bc8ddad18ed1e": [
    "bass-coast",
    "sunrise",
-   "bass-coast-sunrise"
+   "bass-coast-sunrise",
+   "festival"
   ],
   "book-art-9a4b9331f62350fa36fc": [
    "bass-coast",
    "sunrise",
-   "bass-coast-sunrise"
+   "bass-coast-sunrise",
+   "festival"
   ],
   "book-art-b01b8695b2528cb850a3": [
    "denny-blaine",
@@ -515,7 +561,8 @@
   ],
   "book-art-64a80ece808ac08d4877": [
    "burning-man",
-   "sunrise"
+   "sunrise",
+   "festival"
   ],
   "book-art-2136f2260225dd8ef20a": [
    "bitcoiners"
@@ -526,7 +573,8 @@
   ],
   "book-art-8ff9ac182d32fa228450": [
    "bounty-of-satoshi",
-   "bitcoiners"
+   "bitcoiners",
+   "animals"
   ],
   "book-art-c33709aeb2717b0c53de": [
    "austin"
@@ -539,7 +587,8 @@
   ],
   "book-art-74a736000a32427842b1": [
    "seattle",
-   "pacific-northwest"
+   "pacific-northwest",
+   "animals"
   ],
   "book-art-9209f1fd7d47f373597f": [
    "catherine-dance"
@@ -554,10 +603,12 @@
    "catherine-dance"
   ],
   "book-art-3a9cba708a8045364e82": [
-   "burning-man"
+   "burning-man",
+   "festival"
   ],
   "book-art-0d7df713c5f0f67733ae": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-b7410a9f4340e559e4f4": [
    "mexico"
@@ -581,25 +632,32 @@
    "austin"
   ],
   "book-art-3cd6b3fb3e356c4b1d1d": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-04f4a52773ffd19b4f67": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-614d5b68dbe5052e302a": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-54ff45104a57a68d4beb": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-4350a257e5a6a5e75a31": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-f367882aaeb0e32471eb": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-67cc9a4d5823eca2182e": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "book-art-df8db0bc08adfeae5829": [
    "austin"
@@ -630,7 +688,8 @@
    "family"
   ],
   "book-art-0351c2ff290526e4f204": [
-   "bitcoiners"
+   "bitcoiners",
+   "animals"
   ],
   "book-art-7a498f39e7a66a2e8eb5": [
    "bitcoiners"
@@ -710,7 +769,8 @@
    "bitcoiners"
   ],
   "book-art-481025eb48c792356553": [
-   "bitcoiners"
+   "bitcoiners",
+   "animals"
   ],
   "book-art-3cd168e82a87b1ccf91b": [
    "bitcoiners"
@@ -729,7 +789,8 @@
    "self-portrait"
   ],
   "book-art-4c6fb3817fed4e5a6195": [
-   "burning-man"
+   "burning-man",
+   "festival"
   ],
   "book-art-19d9a8360c1f1df745d6": [
    "denny-blaine",
@@ -762,7 +823,8 @@
    "political-portraits"
   ],
   "archived-painting-370": [
-   "bitcoiners"
+   "bitcoiners",
+   "animals"
   ],
   "archived-painting-364": [
    "bitcoiners"
@@ -807,7 +869,8 @@
   ],
   "archived-painting-img-1612": [
    "bounty-of-satoshi",
-   "bitcoiners"
+   "bitcoiners",
+   "animals"
   ],
   "archived-painting-246": [
    "el-salvador",
@@ -822,30 +885,36 @@
    "sunset"
   ],
   "archived-painting-133": [
-   "burning-man"
+   "burning-man",
+   "festival"
   ],
   "archived-painting-438": [
    "bass-coast",
    "sunrise",
-   "bass-coast-sunrise"
+   "bass-coast-sunrise",
+   "festival"
   ],
   "archived-painting-437": [
    "bass-coast",
    "sunrise",
-   "bass-coast-sunrise"
+   "bass-coast-sunrise",
+   "festival"
   ],
   "archived-painting-433": [
    "bass-coast",
    "sunrise",
-   "bass-coast-sunrise"
+   "bass-coast-sunrise",
+   "festival"
   ],
   "archived-painting-436": [
    "bass-coast",
    "sunrise",
-   "bass-coast-sunrise"
+   "bass-coast-sunrise",
+   "festival"
   ],
   "archived-painting-90": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "archived-painting-66": [
    "mexico"
@@ -858,18 +927,22 @@
    "self-portrait"
   ],
   "archived-painting-18": [
-   "burning-man"
+   "burning-man",
+   "festival"
   ],
   "archived-painting-19": [
    "burning-man",
-   "burning-man-temple"
+   "burning-man-temple",
+   "festival"
   ],
   "archived-painting-20": [
    "burning-man",
-   "burning-man-temple"
+   "burning-man-temple",
+   "festival"
   ],
   "archived-painting-22": [
-   "bass-coast"
+   "bass-coast",
+   "festival"
   ],
   "older-work-sunset-ridge-strips": [
    "sunset"
@@ -915,6 +988,231 @@
   ],
   "older-work-beach-sunsets-original-3": [
    "sunset"
+  ],
+  "coined-in-watercolor-film-poster": [
+   "poster",
+   "self-portrait",
+   "cape-town",
+   "meditation",
+   "bitcoiners"
+  ],
+  "warszawska-syrenka": [
+   "poster",
+   "bitcoiners"
+  ],
+  "painting-lightburst": [
+   "bounty-of-satoshi"
+  ],
+  "hope-the-vermillion-aurora": [
+   "bitcoiners"
+  ],
+  "painting-portrait-in-green": [
+   "portrait",
+   "bitcoiners",
+   "el-salvador"
+  ],
+  "book-art-ccff23f1e469654faa05": [
+   "portrait",
+   "bitcoiners",
+   "el-salvador"
+  ],
+  "painting-portrait-in-blue-light": [
+   "portrait"
+  ],
+  "book-art-18e4d05240ce63a1a44b": [
+   "portrait"
+  ],
+  "daniel-portrait-1": [
+   "portrait",
+   "friends"
+  ],
+  "book-art-a137dffe65723d0b5a07": [
+   "portrait",
+   "friends"
+  ],
+  "book-art-7df006b029abcb751da2": [
+   "portrait"
+  ],
+  "painting-guitarist": [
+   "portrait"
+  ],
+  "book-art-1708a7dca996aca40e6c": [
+   "portrait"
+  ],
+  "girl-wearing-flower-crown": [
+   "portrait"
+  ],
+  "book-art-06b4b66f6389416c412c": [
+   "portrait"
+  ],
+  "rice-paddies-in-vietnam": [
+   "friends",
+   "landscapes"
+  ],
+  "book-art-9f6386bac0e6198f6661": [
+   "friends",
+   "landscapes"
+  ],
+  "book-art-66fa2eb4ccbaa13b172e": [
+   "tahoma-rainier",
+   "meditation",
+   "landscapes"
+  ],
+  "book-art-164f60d23032b0f718de": [
+   "pacific-northwest",
+   "seattle"
+  ],
+  "book-art-f2025e5a72f4a70866c6": [
+   "landscapes"
+  ],
+  "book-art-94e2edf9a24c90950489": [
+   "landscapes"
+  ],
+  "book-art-6e6d7ac51608e0b7f10f": [
+   "moonrise",
+   "landscapes"
+  ],
+  "book-art-b7a9cd259d8ac51a236b": [
+   "animals"
+  ],
+  "book-art-76b81da2337321bf158d": [
+   "portrait"
+  ],
+  "book-art-9c77e540218eab97ba3d": [
+   "portrait"
+  ],
+  "book-art-d1a4ee225dafe10ba934": [
+   "portrait"
+  ],
+  "book-art-db933efcbc4fbe01c841": [
+   "portrait"
+  ],
+  "book-art-1143b08e177333e43dc7": [
+   "portrait"
+  ],
+  "book-art-64cfd389b3dbb5cde532": [
+   "portrait"
+  ],
+  "book-art-a627c7b7d19ace6b3e51": [
+   "portrait"
+  ],
+  "book-art-44161b6b117af79e3df4": [
+   "portrait"
+  ],
+  "book-art-0e4564564eee5d70c105": [
+   "portrait"
+  ],
+  "book-art-6bcf18417734a8e3010a": [
+   "portrait"
+  ],
+  "book-art-0c4b161071524e23d519": [
+   "portrait"
+  ],
+  "book-art-8137549f4fe7a3a1b90d": [
+   "portrait"
+  ],
+  "book-art-029f45a5fbfd6c90212e": [
+   "portrait"
+  ],
+  "book-art-28bec44600b36ed0766f": [
+   "portrait"
+  ],
+  "book-art-7123da0440d527299914": [
+   "portrait"
+  ],
+  "book-art-37fe572d9bb47cab3bc7": [
+   "portrait"
+  ],
+  "book-art-b50262c37f44843487ae": [
+   "portrait",
+   "catherine-dance"
+  ],
+  "archived-painting-301": [
+   "portrait",
+   "catherine-dance"
+  ],
+  "book-art-92fdb3112257f4fb66e8": [
+   "portrait",
+   "catherine-dance"
+  ],
+  "book-art-c347459aa3f77f7213ae": [
+   "portrait",
+   "friends"
+  ],
+  "archived-painting-241": [
+   "portrait"
+  ],
+  "archived-painting-15": [
+   "bitcoiners"
+  ],
+  "archived-painting-193": [
+   "portrait"
+  ],
+  "archived-painting-368": [
+   "portrait"
+  ],
+  "archived-painting-369": [
+   "portrait"
+  ],
+  "archived-painting-375": [
+   "portrait"
+  ],
+  "archived-painting-233": [
+   "portrait"
+  ],
+  "archived-painting-226": [
+   "portrait"
+  ],
+  "archived-painting-371": [
+   "bitcoiners",
+   "portrait"
+  ],
+  "archived-painting-373": [
+   "bitcoiners",
+   "portrait"
+  ],
+  "archived-painting-62": [
+   "bitcoiners",
+   "friends",
+   "bass-coast",
+   "festival"
+  ],
+  "archived-painting-354": [
+   "animals"
+  ],
+  "archived-painting-73": [
+   "portrait"
+  ],
+  "archived-painting-75": [
+   "portrait",
+   "sunset"
+  ],
+  "archived-painting-76": [
+   "mexico",
+   "friends",
+   "portrait"
+  ],
+  "archived-painting-1": [
+   "tahoma-rainier",
+   "denny-blaine",
+   "meditation",
+   "sunrise",
+   "landscapes"
+  ],
+  "archived-painting-2": [
+   "tahoma-rainier",
+   "denny-blaine",
+   "meditation",
+   "sunrise",
+   "landscapes"
+  ],
+  "archived-painting-4": [
+   "tahoma-rainier",
+   "landscapes"
+  ],
+  "archived-painting-217": [
+   "pacific-northwest",
+   "seattle"
   ]
  }
 }
