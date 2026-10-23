@@ -40,6 +40,19 @@ export function nextEtsySale(row, receiptId, now = Date.now()) {
   return {replacedHold, manual: 'sold', state: 'sold', order_id: capture, capture_id: capture, expires_at: null};
 }
 
+// Sale on a Nostr marketplace (Shopstr / Plebeian), studio-tracker #325. `ref` is the order or payment event id.
+// Same rules as Etsy: first confirmed sale wins, a repeat of the same ref is a duplicate, a different ref is a conflict
+// (the loser is refunded by hand and TJ is alerted). A site checkout hold is replaced because a confirmed payment is final.
+// TODO (phase 4): nextMarketHold for marketplace order DMs (hold TTL 2 h = MARKET_HOLD_TTL_MS in
+// nostr-publisher/src/market-config.mjs, owner can release) and the DM / zap detection that calls recordMarketSale.
+export function nextMarketSale(row, ref, now = Date.now()) {
+  const capture = 'market:' + ref;
+  if (row?.state === 'sold' && row.capture_id === capture) return {duplicate: true};
+  if (row?.state === 'sold' || row?.state === 'capturing') return {conflict: true};
+  const replacedHold = (row?.state === 'held' && Number(row.expires_at) > now) || row?.state === 'cart-held';
+  return {replacedHold, manual: 'sold', state: 'sold', order_id: capture, capture_id: capture, expires_at: null};
+}
+
 export const ETSY_ORIGINAL_UPLIFT = 1.1;
 
 export function etsyOriginalPrice(sitePrice, uplift = ETSY_ORIGINAL_UPLIFT) {
