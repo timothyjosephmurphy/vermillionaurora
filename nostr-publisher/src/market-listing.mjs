@@ -20,19 +20,15 @@ export function dimensionText(dimensions) {
   return `${dimensions.width} × ${dimensions.height} ${dimensions.unit}`;
 }
 
-function longestSideInches(dimensions) {
-  if (!dimensions) return Infinity;
-  const longest = Math.max(dimensions.width, dimensions.height);
-  return dimensions.unit === 'cm' ? longest / 2.54 : longest;
+// Shippo-quoted costs, or "contact for quote" only when Shippo could not quote (see market-shipping.mjs).
+// rates: { us:{cost}, international:{cost} } | { unavailable: reason } | undefined.
+export function shippingMode(product, rates) {
+  if (product?.checkout?.mode !== 'integrated' || !product.checkout?.shipping) return { quote: true, reason: 'no-parcel-profile' };
+  if (!rates?.us?.cost || !rates?.international?.cost) return { quote: true, reason: rates?.unavailable || 'shippo-not-quoted' };
+  return { quote: false, us: rates.us.cost, international: rates.international.cost };
 }
 
-// Flat rate or "contact for quote" for one product.
-export function shippingMode(product, shipping = MARKET_SHIPPING) {
-  if (shipping.framedIsQuote && product.framing && !/unframed/i.test(product.framing)) return { quote: true, reason: 'framed' };
-  if (shipping.noQuoteProfileIsQuote && !product.checkout?.shipping) return { quote: true, reason: 'no-parcel-profile' };
-  if (longestSideInches(product.dimensions) > shipping.maxFlatLongestSideIn) return { quote: true, reason: 'oversize' };
-  return { quote: false };
-}
+export const shippingOptionId = (tier, productId, shipping = MARKET_SHIPPING) => `${shipping[tier].idPrefix}-${productId}`;
 
 /** Marketplace price: the site price (USD) times the configured uplift (1 = same price). Returns "123.00" or null. */
 export function marketPrice(product, uplift = MARKET_PRICE_UPLIFT) {
@@ -77,12 +73,12 @@ function summaryText(product) {
   return base.length > 240 ? `${base.slice(0, 237).trimEnd()}...` : base;
 }
 
-function descriptionText(product, mode, shipping) {
+function descriptionText(product, mode) {
   const specs = [product.medium, product.surface, product.year, dimensionText(product.dimensions), product.framing]
     .filter(Boolean).join(' · ');
   const shipLine = mode.quote
     ? MARKET_QUOTE_TEXT
-    : `Shipping is a flat rate paid by the buyer: $${shipping.us.cost} within the United States, $${shipping.international.cost} worldwide. Contact me for a quote if you would like something different.`;
+    : `Shipping is paid by the buyer, quoted by carrier for this packed painting: $${mode.us} within the United States, $${mode.international} worldwide (Shopstr checkout charges the worldwide rate). Import duties and taxes outside the US are paid by the buyer. Contact me for a quote if you would like something different.`;
   return [
     ...(product.story || []),
     `Original artwork by ${MARKET_ARTIST}. ${specs}.`,
@@ -95,13 +91,13 @@ function descriptionText(product, mode, shipping) {
  * Catalog product -> unsigned kind 30402 template carrying both Shopstr and Plebeian (Gamma) tags.
  * Returns null when the product is ineligible.
  * options: { now (unix s), publishedAt (unix s, kept from the first publish), live, categories [labels],
- *            prevCreatedAt (unix s), shipping (config), pubkey }
+ *            prevCreatedAt (unix s), rates (Shippo quote for this product, see market-shipping.mjs), shipping (config), pubkey }
  */
 export function mapListing(product, options = {}) {
   if (ineligibleReason(product)) return null;
-  const { now = Math.floor(Date.now() / 1000), publishedAt, live, categories = [], prevCreatedAt, shipping = MARKET_SHIPPING, pubkey = MARKET_PUBKEY } = options;
+  const { now = Math.floor(Date.now() / 1000), publishedAt, live, categories = [], prevCreatedAt, rates, shipping = MARKET_SHIPPING, pubkey = MARKET_PUBKEY } = options;
   const stock = stockFor(product, live);
-  const mode = shippingMode(product, shipping);
+  const mode = shippingMode(product, rates);
   const tags = [
     ['d', listingId(product.id)],
     ['title', product.title],
@@ -127,36 +123,40 @@ export function mapListing(product, options = {}) {
   if (mode.quote) {
     tags.push(['shipping-note', 'Contact for a shipping quote']);
   } else {
-    const tier = shipping[shipping.shopstrTier] || shipping.international;
-    tags.push(['shipping', 'Added Cost', tier.cost, 'USD']);
-    tags.push(['shipping_option', shippingAddress(shipping.us.id, pubkey)]);
-    tags.push(['shipping_option', shippingAddress(shipping.international.id, pubkey)]);
+    tags.push(['shipping', 'Added Cost', shipping.shopstrTier === 'us' ? mode.us : mode.international, 'USD']);
+    tags.push(['shipping_option', shippingAddress(shippingOptionId('us', product.id, shipping), pubkey)]);
+    tags.push(['shipping_option', shippingAddress(shippingOptionId('international', product.id, shipping), pubkey)]);
   }
   const topics = new Set(['art', 'original-art', 'watercolor', 'painting', 'shopstr', ...categories.map((c) => String(c).toLowerCase().replace(/\s+/g, '-'))]);
   for (const topic of topics) tags.push(['t', topic]);
   const createdAt = Math.max(now, (prevCreatedAt ?? 0) + 1);
-  return { kind: KIND_LISTING, created_at: createdAt, tags, content: descriptionText(product, mode, shipping) };
+  return { kind: KIND_LISTING, created_at: createdAt, tags, content: descriptionText(product, mode) };
 }
 
-/** The two flat shipping options (US, worldwide) as unsigned kind 30406 templates. */
-export function mapShippingOptions(options = {}) {
-  const { now = Math.floor(Date.now() / 1000), prevCreatedAt = {}, shipping = MARKET_SHIPPING } = options;
-  const build = (tier, countries, description) => ({
-    kind: KIND_SHIPPING,
-    created_at: Math.max(now, (prevCreatedAt[tier.id] ?? 0) + 1),
-    content: `${description} Buyer pays shipping. Flat rate placeholder until the artist sets final rates; contact for a quote for framed, oversize or special requests.`,
-    tags: [
-      ['d', tier.id],
-      ['title', tier.title],
-      ['price', tier.cost, 'USD'],
-      ['country', ...countries],
-      ['service', 'standard'],
-      ['duration', String(tier.durationDays[0]), String(tier.durationDays[1]), 'D']
-    ]
-  });
+/** One product's two Shippo-quoted shipping options (US, worldwide) as unsigned kind 30406 templates; [] if quote-only. */
+export function mapShippingOptions(product, options = {}) {
+  const { now = Math.floor(Date.now() / 1000), prevCreatedAt = {}, rates, shipping = MARKET_SHIPPING } = options;
+  const mode = shippingMode(product, rates);
+  if (mode.quote) return [];
+  const build = (tierName, countries, description) => {
+    const tier = shipping[tierName], d = shippingOptionId(tierName, product.id, shipping);
+    return {
+      kind: KIND_SHIPPING,
+      created_at: Math.max(now, (prevCreatedAt[d] ?? 0) + 1),
+      content: `${description} Buyer pays shipping. Carrier rate quoted for "${product.title}" as packed. Contact for a quote for special requests.`,
+      tags: [
+        ['d', d],
+        ['title', `${tier.title}: ${product.title}`],
+        ['price', mode[tierName], 'USD'],
+        ['country', ...countries],
+        ['service', 'standard'],
+        ['duration', String(tier.durationDays[0]), String(tier.durationDays[1]), 'D']
+      ]
+    };
+  };
   return [
-    build(shipping.us, ['US'], 'Tracked shipping within the United States.'),
-    build(shipping.international, INTERNATIONAL_COUNTRIES, 'Tracked shipping worldwide except sanctioned destinations. Import duties, VAT and customs fees are not included and are paid by the buyer.')
+    build('us', ['US'], 'Tracked shipping within the United States.'),
+    build('international', INTERNATIONAL_COUNTRIES, 'Tracked shipping worldwide except sanctioned destinations. Import duties, VAT and customs fees are not included and are paid by the buyer.')
   ];
 }
 

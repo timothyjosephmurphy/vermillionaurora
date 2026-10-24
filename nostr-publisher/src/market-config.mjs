@@ -23,27 +23,36 @@ export const MARKET_GIFT_WRAP_LOOKBACK_S = 2 * 24 * 60 * 60;
 // TJ: marketplace price = site price, USD, no uplift (Etsy keeps its own 10% uplift).
 export const MARKET_PRICE_UPLIFT = 1;
 
-// ---- Shipping (TJ: "contact for quote or just a flat rate for now"; buyer pays; worldwide) ----------------
-// PLACEHOLDER VALUES, NOT FINAL. TJ: set these. They are deliberately conservative (high) so a sale never
-// loses money on postage. Costs are USD whole dollars as strings.
+// ---- Shipping (TJ, Oct 24 2026: "use Shippo to calculate all these costs for real"; buyer pays; worldwide) --
+// Every cost is a real Shippo rate quote for that painting's packed parcel, computed with the same code and
+// parcel/packaging profiles as site checkout (cloudflare/shippo-rate.mjs + catalog/shipping.mjs checkoutItem).
+// Rate quotes only: the publisher never creates a Shippo transaction, so it never buys a label.
+// Quotes are fetched at sync time against two representative destinations and cached in the Durable Object.
 export const MARKET_SHIPPING = Object.freeze({
-  placeholder: true,                 // TJ: set to false once the numbers below are real
-  us: Object.freeze({ id: 'tjm-ship-us', title: 'Tracked shipping, United States', cost: '45.00', durationDays: [3, 10] }),
-  international: Object.freeze({ id: 'tjm-ship-intl', title: 'Tracked shipping, international', cost: '95.00', durationDays: [7, 21] }),
-  // Which flat tier the single-cost Shopstr `shipping` tag carries. Shopstr has one "Added Cost" per listing,
-  // so the default is the higher (international) tier so a buyer never underpays. TJ: confirm.
-  shopstrTier: 'international',
-  // Works that do not fit a flat rate get "contact for quote" instead of a cost: no shipping cost tags,
-  // a `shipping-note` tag and a line in the description.
-  framedIsQuote: true,
-  maxFlatLongestSideIn: 40,          // TJ: longest side (inches) above which a work is quote-only
-  noQuoteProfileIsQuote: true        // no packed-parcel profile in the catalog -> quote
+  source: 'shippo',
+  // Representative destinations (defaults, TJ may change). Both are deliberately far from Seattle so the
+  // quoted cost is at the high end for its region: Miami is the farthest UPS/USPS zone (8) in the lower 48;
+  // Sydney is a long-haul, customs-declared destination that costs more than Canada, the UK or the EU.
+  destinations: Object.freeze({
+    us: Object.freeze({ name: 'Marketplace rate quote', street1: '200 S Biscayne Blvd', city: 'Miami', state: 'FL', zip: '33131', country: 'US' }),
+    international: Object.freeze({ name: 'Marketplace rate quote', street1: '1 Martin Place', city: 'Sydney', state: 'NSW', zip: '2000', country: 'AU' })
+  }),
+  roundUpToWholeDollar: true,          // $38.41 -> "39.00", so a buyer never underpays by cents
+  cacheTtlMs: 7 * 24 * 60 * 60_000,    // re-quote weekly, or at once when the parcel, price or destination changes
+  // Per-painting kind 30406 options: d = `${idPrefix}-${productId}`.
+  us: Object.freeze({ idPrefix: 'tjm-ship-us', title: 'Tracked shipping, United States', durationDays: [3, 10] }),
+  international: Object.freeze({ idPrefix: 'tjm-ship-intl', title: 'Tracked shipping, international', durationDays: [7, 21] }),
+  // Shopstr has one "Added Cost" per listing, so it carries the international (worldwide-safe) quote and a
+  // buyer never underpays (TJ, Oct 23, kept Oct 24 with Shippo costs).
+  shopstrTier: 'international'
+  // Quote-only ("contact for a quote") is now only a fallback: no packed-parcel profile in the catalog, or
+  // Shippo could not quote either destination (not configured, no carrier, customs limit over $2,500, error).
 });
 export const MARKET_QUOTE_TEXT = 'Shipping: contact me for a quote before buying. Buyer pays shipping.';
 
 // ISO 3166-1 alpha-2 codes shipped to. US tier = US only. International = every country except the
 // sanctioned destinations on tjm.art/shipping-returns (Cuba, Iran, North Korea, Syria, Russia, Belarus;
-// the occupied regions of Ukraine are regions, not countries, so they are not expressible here: TJ to confirm).
+// the occupied regions of Ukraine are regions, not countries, so they are not expressible here: accepted by TJ, Oct 24 2026).
 export const SANCTIONED_COUNTRIES = Object.freeze(['CU', 'IR', 'KP', 'SY', 'RU', 'BY']);
 const ALL_COUNTRIES = 'AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IS IT JE JM JO JP KE KG KH KI KM KN KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW'.split(' ');
 const UNINHABITED = ['AQ', 'BV', 'HM', 'GS', 'TF', 'UM', 'IO', 'CX', 'CC'];
@@ -60,7 +69,9 @@ export const MARKET_RELAYS = Object.freeze([
 export const MARKET_ARTIST = 'TJ Murphy';
 export const MARKET_BUSINESS = 'Vermillion Aurora Productions';
 
-// ---- Profile (kind 0), DRAFT for TJ -----------------------------------------------------------------------
+// ---- Profile (kind 0). Bio approved by TJ as is, Oct 24 2026. Signing still needs MARKET_PROFILE_APPROVED=true
+// (runtime gate, default off) plus the publish switches. -----------------------------------------------------------------------
+export const MARKET_PROFILE_BIO_APPROVED = true;   // content approval only; not a runtime gate
 export const MARKET_PROFILE = Object.freeze({
   name: 'TJ Murphy',
   display_name: 'TJ Murphy',

@@ -7,10 +7,11 @@
 //  * The key is only ever reached through an injected `getKey()` that the signer calls lazily.
 import { finalizeEvent, getPublicKey } from 'nostr-tools/pure';
 import { SimplePool } from 'nostr-tools/pool';
-import { MARKET_PUBKEY, MARKET_RELAYS, MARKET_SHIPPING, MODE_DRY_RUN, MODE_PUBLISH } from './market-config.mjs';
+import { MARKET_PUBKEY, MARKET_RELAYS, MODE_DRY_RUN, MODE_PUBLISH } from './market-config.mjs';
+import { makeShippoQuoter } from './market-shipping.mjs';
 import {
   KIND_LISTING, KIND_PROFILE, KIND_SHIPPING, buildProfileTemplate, contentHash, ineligibleReason,
-  listingId, mapListing, mapShippingOptions
+  listingId, mapListing, mapShippingOptions, shippingMode
 } from './market-listing.mjs';
 
 export function marketSettings(env = {}) {
@@ -28,48 +29,49 @@ export function marketSettings(env = {}) {
 
 const listingKey = (productId) => `market:listing:${productId}`;
 const shippingKey = (d) => `market:ship:${d}`;
+const shippingModeReason = (product, rates) => shippingMode(product, rates).reason;
 const PROFILE_KEY = 'market:profile';
 
 /**
  * Decide what would be published. Pure apart from reading `store` (get only).
  * products: catalog products. live: { [productId]: 'available'|'reserved'|'sold'|'unavailable' }.
  * categories: { [productId]: [labels] }. previewIds: build templates for these even if unapproved (dry-run display only).
+ * quoteShipping: async (product) => Shippo rates (market-shipping.mjs). Without it every listing is quote-only.
  */
-export async function planMarket({ settings, products, live = {}, categories = {}, store, now = Date.now(), previewIds = [] }) {
+export async function planMarket({ settings, products, live = {}, categories = {}, store, now = Date.now(), previewIds = [], quoteShipping }) {
   const nowS = Math.floor(now / 1000);
   const items = [];
-  let anyPublish = false;
+  const shipping = [];
   for (const product of products) {
     const approved = settings.approved.has(product.id);
     const preview = previewIds.includes(product.id);
-    if (!approved && !preview) continue;     // unapproved products are not even mapped
+    if (!approved && !preview) continue;     // unapproved products are not even mapped (or quoted)
     const reason = ineligibleReason(product);
     if (reason) { items.push({ productId: product.id, action: 'skip-ineligible', reason }); continue; }
+    const rates = quoteShipping ? await quoteShipping(product) : undefined;
+    // This product's 30406 options first, so a listing never points at a missing option.
+    const prevCreatedAt = {}, prev = {};
+    const options = mapShippingOptions(product, { now: nowS, rates });
+    for (const option of options) {
+      const d = option.tags[0][1];
+      prev[d] = (await store?.get(shippingKey(d))) || null;
+      prevCreatedAt[d] = prev[d]?.createdAt;
+    }
+    for (const template of mapShippingOptions(product, { now: nowS, rates, prevCreatedAt })) {
+      const d = template.tags[0][1];
+      const hash = await contentHash(template);
+      shipping.push({ productId: product.id, d, action: !approved ? 'preview-only' : (prev[d]?.hash === hash ? 'skip-unchanged' : 'publish'), hash, template });
+    }
     const state = (await store?.get(listingKey(product.id))) || null;
     const template = mapListing(product, {
-      now: nowS, publishedAt: state?.publishedAt, prevCreatedAt: state?.createdAt, live: live[product.id], categories: categories[product.id]
+      now: nowS, publishedAt: state?.publishedAt, prevCreatedAt: state?.createdAt, live: live[product.id], categories: categories[product.id], rates
     });
     const hash = await contentHash(template);
     let action = 'publish';
     if (!approved) action = 'preview-only';
     else if (state?.hash === hash) action = 'skip-unchanged';
-    if (action === 'publish') anyPublish = true;
-    items.push({ productId: product.id, d: listingId(product.id), action, hash, template });
-  }
-  const shipping = [];
-  if (anyPublish || previewIds.length) {
-    const prevCreatedAt = {};
-    const prev = {};
-    for (const d of Object.values(MARKET_SHIPPING).filter((t) => t?.id).map((t) => t.id)) {
-      prev[d] = (await store?.get(shippingKey(d))) || null;
-      prevCreatedAt[d] = prev[d]?.createdAt;
-    }
-    const templates = mapShippingOptions({ now: nowS, prevCreatedAt });
-    for (const template of templates) {
-      const d = template.tags[0][1];
-      const hash = await contentHash(template);
-      shipping.push({ d, action: !anyPublish ? 'preview-only' : (prev[d]?.hash === hash ? 'skip-unchanged' : 'publish'), hash, template });
-    }
+    items.push({ productId: product.id, d: listingId(product.id), action, hash, template,
+      shippingCosts: rates?.us && rates?.international ? { us: rates.us, international: rates.international } : { quoteOnly: shippingModeReason(product, rates) } });
   }
   return { mode: settings.publishLive ? MODE_PUBLISH : MODE_DRY_RUN, items, shipping };
 }
@@ -130,17 +132,21 @@ async function sendOne({ store, stateKey, pendingKey, template, hash, now, signT
 
 /**
  * Plan, then (only if every gate is open) sign and publish approved items.
- * deps: { signTemplate, publish, store, log }. In dry-run neither signTemplate nor publish is ever called.
+ * deps: { signTemplate, publish, store, log, quoteShipping, fetch }. In dry-run neither signTemplate nor publish is ever called.
+ * Shipping costs: deps.quoteShipping, else a Shippo quoter built from env (SHIPPO_TOKEN etc.; deps.fetch mocks Shippo).
+ * Dry-run never writes the quote cache; live publishing refuses a Shippo test token.
  */
-export async function runMarket({ env, products, live, categories, previewIds, now = Date.now(), deps = {}, shippingConfig = MARKET_SHIPPING }) {
+export async function runMarket({ env, products, live, categories, previewIds, now = Date.now(), deps = {} }) {
   const settings = marketSettings(env);
-  const plan = await planMarket({ settings, products, live, categories, store: deps.store, now, previewIds });
+  const quoteShipping = deps.quoteShipping || makeShippoQuoter({
+    env, now, fetchImpl: deps.fetch || globalThis.fetch, store: settings.publishLive ? deps.store : undefined,
+    requireLiveToken: settings.publishLive, log: deps.log
+  });
+  const plan = await planMarket({ settings, products, live, categories, store: deps.store, now, previewIds, quoteShipping });
   if (!settings.publishLive) {
     return { mode: MODE_DRY_RUN, unsigned: [...plan.shipping, ...plan.items].filter((i) => i.template).map((i) => i.template), plan, published: 0 };
   }
   if (!deps.signTemplate || !deps.publish || !deps.store) throw new Error('Live marketplace publishing needs signTemplate, publish and store');
-  // Placeholder shipping numbers must never go public. TJ sets MARKET_SHIPPING.placeholder to false with real rates.
-  if (shippingConfig.placeholder) return { mode: MODE_DRY_RUN, blocked: 'placeholder-shipping', plan, published: 0 };
   let published = 0;
   // Shipping options first, so a listing never points at a missing 30406.
   for (const item of plan.shipping.filter((s) => s.action === 'publish')) {
