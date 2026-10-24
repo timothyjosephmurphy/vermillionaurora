@@ -71,7 +71,7 @@ export async function planMarket({ settings, products, live = {}, categories = {
     if (!approved) action = 'preview-only';
     else if (state?.hash === hash) action = 'skip-unchanged';
     items.push({ productId: product.id, d: listingId(product.id), action, hash, template,
-      shippingCosts: rates?.us && rates?.international ? { us: rates.us, international: rates.international } : { quoteOnly: shippingModeReason(product, rates) } });
+      shippingCosts: rates?.us ? { us: rates.us, international: rates.international || { byInquiry: rates.internationalUnavailable || true } } : { quoteOnly: shippingModeReason(product, rates) } });
   }
   return { mode: settings.publishLive ? MODE_PUBLISH : MODE_DRY_RUN, items, shipping };
 }

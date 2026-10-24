@@ -84,7 +84,7 @@ test('constants: 2 h hold, 5 min poll, publisher pubkey, Shippo shipping, bio ap
   assert.match(MARKET_PUBKEY, /^[0-9a-f]{64}$/);
   assert.equal(MARKET_SHIPPING.source, 'shippo');
   assert.equal('placeholder' in MARKET_SHIPPING, false);
-  assert.equal(MARKET_SHIPPING.shopstrTier, 'international');
+  assert.equal(MARKET_SHIPPING.shopstrTier, 'us');
   assert.equal(MARKET_PROFILE_BIO_APPROVED, true);
   assert.ok(!INTERNATIONAL_COUNTRIES.includes('US') && !INTERNATIONAL_COUNTRIES.includes('RU') && INTERNATIONAL_COUNTRIES.includes('CA'));
 });
@@ -101,11 +101,14 @@ test('mapper: one original carries both Shopstr and Plebeian tags', () => {
   assert.deepEqual(one(listing, 'visibility'), ['visibility', 'on-sale']);
   assert.deepEqual(one(listing, 'type'), ['type', 'simple', 'physical']);
   assert.deepEqual(one(listing, 'image'), ['image', 'https://tjm.art/gallery-images/warszawska-syrenka-2026.jpg']);
-  assert.deepEqual(one(listing, 'shipping'), ['shipping', 'Added Cost', '92.00', 'USD']);   // Shopstr: worldwide-safe
+  assert.deepEqual(one(listing, 'shipping'), ['shipping', 'Added Cost', '39.00', 'USD']);   // Shopstr: US quote (TJ, Oct 24)
+  assert.deepEqual(one(listing, 'shipping-note'), ['shipping-note', 'International shipping available by inquiry: contact via tjm.art or a Nostr DM']);
+  assert.match(listing.content, /International buyers on Shopstr: international shipping is available by inquiry\. Contact me via https:\/\/tjm\.art or a Nostr DM/);
+  assert.match(listing.content, /Shopstr checkout charges the US rate/);
   assert.deepEqual(tag(listing, 'shipping_option').map((t) => t[1]), [         // Plebeian, per painting
     `30406:${MARKET_PUBKEY}:tjm-ship-us-warszawska-syrenka`, `30406:${MARKET_PUBKEY}:tjm-ship-intl-warszawska-syrenka`
   ]);
-  assert.match(listing.content, /\$39\.00 within the United States, \$92\.00 worldwide/);
+  assert.match(listing.content, /\$39\.00 within the United States, \$92\.00 worldwide on Plebeian Market/);
   assert.ok(tag(listing, 't').some((t) => t[1] === 'shopstr') && tag(listing, 't').some((t) => t[1] === 'warsaw'));
   assert.match(listing.content, /tjm\.art\/products\/warszawska-syrenka\//);
   assert.doesNotMatch(JSON.stringify(listing), /nsec|secret/i);
@@ -146,7 +149,16 @@ test('shipping: quote-only is only a fallback when Shippo cannot quote or there 
   assert.equal(shippingMode({ ...syrenka, checkout: undefined }, RATES).reason, 'no-parcel-profile');
   assert.equal(shippingMode(syrenka, { unavailable: 'shippo-no-rate' }).reason, 'shippo-no-rate');
   assert.equal(shippingMode(syrenka, undefined).reason, 'shippo-not-quoted');
-  assert.equal(shippingMode(syrenka, { us: { cost: '39.00' } }).quote, true);   // no worldwide quote -> never underpay
+  // International quote failed: keep the US cost and option; international is by inquiry, not the whole listing.
+  const usOnly = { us: { cost: '39.00' }, international: null, internationalUnavailable: 'shippo-no-rate' };
+  assert.deepEqual(shippingMode(syrenka, usOnly), { quote: false, us: '39.00', international: null });
+  const partial = mapListing(syrenka, { now: NOW, rates: usOnly });
+  assert.deepEqual(one(partial, 'shipping'), ['shipping', 'Added Cost', '39.00', 'USD']);
+  assert.deepEqual(tag(partial, 'shipping_option').map((t) => t[1]), [`30406:${MARKET_PUBKEY}:tjm-ship-us-warszawska-syrenka`]);
+  assert.match(partial.content, /^International shipping is available by inquiry\. Contact me via https:\/\/tjm\.art or a Nostr DM/m);
+  assert.doesNotMatch(partial.content, /worldwide on Plebeian/);
+  assert.deepEqual(mapShippingOptions(syrenka, { now: NOW, rates: usOnly }).map((o) => one(o, 'd')[1]), ['tjm-ship-us-warszawska-syrenka']);
+  assert.equal(shippingMode(syrenka, { international: { cost: '92.00' } }).quote, true);   // no US quote -> quote-only
   const quote = mapListing(syrenka, { now: NOW, rates: { unavailable: 'shippo-no-rate' } });
   assert.equal(tag(quote, 'shipping').length, 0);
   assert.equal(tag(quote, 'shipping_option').length, 0);
@@ -195,7 +207,7 @@ test('Shippo quoter: checkout parcel profile, Miami + Sydney, cheapest rate roun
   assert.equal(shippo.calls.length, 6);
 });
 
-test('Shippo quoter: falls back to quote-only when Shippo cannot quote', async () => {
+test('Shippo quoter: quote-only without a US quote; a failed international quote keeps the US cost', async () => {
   const noConfig = makeShippoQuoter({ env: {}, fetchImpl: () => assert.fail('no call without config') });
   assert.deepEqual(await noConfig(syrenka), { unavailable: 'shippo-not-configured' });
   assert.deepEqual(await noConfig({ ...syrenka, checkout: undefined }), { unavailable: 'no-parcel-profile' });
@@ -203,11 +215,18 @@ test('Shippo quoter: falls back to quote-only when Shippo cannot quote', async (
   assert.deepEqual(await testToken(syrenka), { unavailable: 'shippo-test-token' });
   const store = memoryStore();
   const down = makeShippoQuoter({ env: SHIPPO_ENV, store, fetchImpl: mockShippo({ fail: (b) => b.address_to.country !== 'US' }).fetch });
-  assert.deepEqual(await down(syrenka), { unavailable: 'shippo-no-rate', tier: 'international' });
-  assert.equal(store.data.size, 0);   // failures are not cached
-  // Originals over $2,500 cannot ship internationally through checkout (AES filing), so they stay quote-only.
+  const partial = await down(syrenka);
+  assert.equal(partial.us.cost, '39.00');
+  assert.equal(partial.international, null);
+  assert.equal(partial.internationalUnavailable, 'shippo-no-rate');
+  assert.equal(store.data.size, 0);   // partial results are not cached, so international is retried
+  const usDown = makeShippoQuoter({ env: SHIPPO_ENV, store, fetchImpl: mockShippo({ fail: (b) => b.address_to.country === 'US' }).fetch });
+  assert.deepEqual(await usDown(syrenka), { unavailable: 'shippo-no-rate', tier: 'us' });
+  // Originals over $2,500 cannot ship internationally through checkout (AES filing): US cost, international by inquiry.
   const pricey = { ...syrenka, listing: { ...syrenka.listing, price: { amount: '3000.00', currency: 'USD' } } };
-  assert.equal((await makeShippoQuoter({ env: SHIPPO_ENV, fetchImpl: mockShippo().fetch })(pricey)).unavailable, 'shippo-no-rate');
+  const priceyRates = await makeShippoQuoter({ env: SHIPPO_ENV, fetchImpl: mockShippo().fetch })(pricey);
+  assert.equal(priceyRates.us.cost, '39.00');
+  assert.equal(priceyRates.international, null);
 });
 
 test('idempotency: fixed d tag, hash ignores timestamps, created_at is monotonic, published_at kept', async () => {
@@ -254,7 +273,8 @@ test('approved flag: only the approved ids publish; ineligible approved ids are 
   assert.equal(result.plan.items.find((i) => i.productId === paul.id).action, 'skip-ineligible');
   assert.deepEqual(one(relay.events[2], 'd'), ['d', 'tjm-warszawska-syrenka']);
   assert.deepEqual(one(relay.events[0], 'price'), ['price', '39.00', 'USD']);
-  assert.deepEqual(one(relay.events[2], 'shipping'), ['shipping', 'Added Cost', '92.00', 'USD']);
+  assert.deepEqual(one(relay.events[2], 'shipping'), ['shipping', 'Added Cost', '39.00', 'USD']);
+  assert.deepEqual(one(relay.events[1], 'price'), ['price', '92.00', 'USD']);   // Plebeian worldwide option kept
 });
 
 test('kill switch: master switch off or mode not publish means dry-run, key never read, nothing sent', async () => {

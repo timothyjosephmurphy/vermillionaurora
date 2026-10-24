@@ -20,7 +20,8 @@ export function parcelItem(product) {
 }
 
 /**
- * Returns async (product) => { us:{cost,carrier,service}, international:{...}, quotedAt } or { unavailable: reason }.
+ * Returns async (product) => { us:{cost,carrier,service}, international:{...}|null, internationalUnavailable?, quotedAt }
+ * or { unavailable: reason } when the US quote fails. A failed international quote keeps the US cost (international by inquiry).
  * deps: { env (SHIPPO_TOKEN, SHIP_FROM_STREET, SHIP_FROM_PHONE, SHIPPO_CUSTOMS_SIGNER, SHIPPO_CARRIER_ALLOWLIST),
  *         store (cache, optional), now (ms), fetchImpl (tests mock Shippo here), requireLiveToken, log }.
  * requireLiveToken: refuse a shippo_test_ token (test rates are not real prices); set for live publishing.
@@ -44,9 +45,12 @@ export function makeShippoQuoter({ env = {}, store, now = Date.now(), fetchImpl 
         rates[tier] = { cost, quoted: q.shipping, carrier: q.carrier, service: q.service };
       } catch (error) {
         log?.({ productId: product.id, tier, status: 'shippo-quote-failed', message: String(error?.message || error) });
-        return { unavailable: 'shippo-no-rate', tier };   // not cached: retried next sync
+        if (tier === 'us') return { unavailable: 'shippo-no-rate', tier };   // not cached: retried next sync
+        rates.international = null;                                         // international by inquiry
+        rates.internationalUnavailable = 'shippo-no-rate';
       }
     }
+    if (!rates.international) return rates;   // partial result not cached, so international is retried next sync
     await store?.put(quoteKey(product.id), { fingerprint, quotedAt: now, rates });
     return rates;
   };

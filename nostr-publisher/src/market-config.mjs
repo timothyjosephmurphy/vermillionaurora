@@ -42,12 +42,15 @@ export const MARKET_SHIPPING = Object.freeze({
   // Per-painting kind 30406 options: d = `${idPrefix}-${productId}`.
   us: Object.freeze({ idPrefix: 'tjm-ship-us', title: 'Tracked shipping, United States', durationDays: [3, 10] }),
   international: Object.freeze({ idPrefix: 'tjm-ship-intl', title: 'Tracked shipping, international', durationDays: [7, 21] }),
-  // Shopstr has one "Added Cost" per listing, so it carries the international (worldwide-safe) quote and a
-  // buyer never underpays (TJ, Oct 23, kept Oct 24 with Shippo costs).
-  shopstrTier: 'international'
+  // Shopstr has one "Added Cost" per listing: it carries the US (domestic) quote so most buyers are not
+  // overcharged (TJ, Oct 24 2026). International Shopstr buyers get shipping by inquiry (MARKET_INTL_INQUIRY_NOTE).
+  // Plebeian keeps both per-painting 30406 options. A failed international quote keeps the US option only.
+  shopstrTier: 'us'
   // Quote-only ("contact for a quote") is now only a fallback: no packed-parcel profile in the catalog, or
-  // Shippo could not quote either destination (not configured, no carrier, customs limit over $2,500, error).
+  // Shippo could not quote the US destination (not configured, no carrier, error). A failed international quote only makes
+  // international shipping by inquiry (e.g. originals over $2,500 abroad need an AES filing).
 });
+export const MARKET_INTL_INQUIRY_NOTE = 'International shipping available by inquiry: contact via tjm.art or a Nostr DM';
 export const MARKET_QUOTE_TEXT = 'Shipping: contact me for a quote before buying. Buyer pays shipping.';
 
 // ISO 3166-1 alpha-2 codes shipped to. US tier = US only. International = every country except the

@@ -1,7 +1,7 @@
 // Pure mappers: catalog product -> kind 30402 listing, kind 30406 shipping options, kind 0 profile.
 // No I/O, no key, no clock (callers pass `now`). Output templates are UNSIGNED: { kind, created_at, tags, content }.
 import {
-  MARKET_PUBKEY, MARKET_PRICE_UPLIFT, MARKET_SHIPPING, MARKET_QUOTE_TEXT, MARKET_SITE, MARKET_LOCATION,
+  MARKET_PUBKEY, MARKET_PRICE_UPLIFT, MARKET_SHIPPING, MARKET_QUOTE_TEXT, MARKET_INTL_INQUIRY_NOTE, MARKET_SITE, MARKET_LOCATION,
   MARKET_ARTIST, MARKET_PROFILE, INTERNATIONAL_COUNTRIES
 } from './market-config.mjs';
 
@@ -21,11 +21,12 @@ export function dimensionText(dimensions) {
 }
 
 // Shippo-quoted costs, or "contact for quote" only when Shippo could not quote (see market-shipping.mjs).
-// rates: { us:{cost}, international:{cost} } | { unavailable: reason } | undefined.
+// rates: { us:{cost}, international:{cost}|null } | { unavailable: reason } | undefined. A US quote is enough to list;
+// a missing international quote means international shipping by inquiry.
 export function shippingMode(product, rates) {
   if (product?.checkout?.mode !== 'integrated' || !product.checkout?.shipping) return { quote: true, reason: 'no-parcel-profile' };
-  if (!rates?.us?.cost || !rates?.international?.cost) return { quote: true, reason: rates?.unavailable || 'shippo-not-quoted' };
-  return { quote: false, us: rates.us.cost, international: rates.international.cost };
+  if (!rates?.us?.cost) return { quote: true, reason: rates?.unavailable || 'shippo-not-quoted' };
+  return { quote: false, us: rates.us.cost, international: rates.international?.cost || null };
 }
 
 export const shippingOptionId = (tier, productId, shipping = MARKET_SHIPPING) => `${shipping[tier].idPrefix}-${productId}`;
@@ -78,7 +79,12 @@ function descriptionText(product, mode) {
     .filter(Boolean).join(' · ');
   const shipLine = mode.quote
     ? MARKET_QUOTE_TEXT
-    : `Shipping is paid by the buyer, quoted by carrier for this packed painting: $${mode.us} within the United States, $${mode.international} worldwide (Shopstr checkout charges the worldwide rate). Import duties and taxes outside the US are paid by the buyer. Contact me for a quote if you would like something different.`;
+    : [
+      `Shipping is paid by the buyer, quoted by carrier for this packed painting: $${mode.us} within the United States${mode.international ? `, $${mode.international} worldwide on Plebeian Market` : ''}. Shopstr checkout charges the US rate.`,
+      mode.international
+        ? `International buyers on Shopstr: international shipping is available by inquiry. Contact me via ${MARKET_SITE} or a Nostr DM before buying. Import duties and taxes outside the US are paid by the buyer.`
+        : `International shipping is available by inquiry. Contact me via ${MARKET_SITE} or a Nostr DM before buying. Import duties and taxes outside the US are paid by the buyer.`
+    ].join('\n\n');
   return [
     ...(product.story || []),
     `Original artwork by ${MARKET_ARTIST}. ${specs}.`,
@@ -123,9 +129,11 @@ export function mapListing(product, options = {}) {
   if (mode.quote) {
     tags.push(['shipping-note', 'Contact for a shipping quote']);
   } else {
-    tags.push(['shipping', 'Added Cost', shipping.shopstrTier === 'us' ? mode.us : mode.international, 'USD']);
+    // Shopstr has one Added Cost: the US quote (TJ, Oct 24). International Shopstr buyers ship by inquiry.
+    tags.push(['shipping', 'Added Cost', mode.us, 'USD']);
+    tags.push(['shipping-note', MARKET_INTL_INQUIRY_NOTE]);
     tags.push(['shipping_option', shippingAddress(shippingOptionId('us', product.id, shipping), pubkey)]);
-    tags.push(['shipping_option', shippingAddress(shippingOptionId('international', product.id, shipping), pubkey)]);
+    if (mode.international) tags.push(['shipping_option', shippingAddress(shippingOptionId('international', product.id, shipping), pubkey)]);
   }
   const topics = new Set(['art', 'original-art', 'watercolor', 'painting', 'shopstr', ...categories.map((c) => String(c).toLowerCase().replace(/\s+/g, '-'))]);
   for (const topic of topics) tags.push(['t', topic]);
@@ -133,7 +141,7 @@ export function mapListing(product, options = {}) {
   return { kind: KIND_LISTING, created_at: createdAt, tags, content: descriptionText(product, mode) };
 }
 
-/** One product's two Shippo-quoted shipping options (US, worldwide) as unsigned kind 30406 templates; [] if quote-only. */
+/** One product's Shippo-quoted kind 30406 options: US, plus worldwide when quoted; [] if quote-only. */
 export function mapShippingOptions(product, options = {}) {
   const { now = Math.floor(Date.now() / 1000), prevCreatedAt = {}, rates, shipping = MARKET_SHIPPING } = options;
   const mode = shippingMode(product, rates);
@@ -154,10 +162,10 @@ export function mapShippingOptions(product, options = {}) {
       ]
     };
   };
-  return [
-    build('us', ['US'], 'Tracked shipping within the United States.'),
-    build('international', INTERNATIONAL_COUNTRIES, 'Tracked shipping worldwide except sanctioned destinations. Import duties, VAT and customs fees are not included and are paid by the buyer.')
-  ];
+  const result = [build('us', ['US'], 'Tracked shipping within the United States.')];
+  // No international quote: no worldwide option; international shipping is by inquiry.
+  if (mode.international) result.push(build('international', INTERNATIONAL_COUNTRIES, 'Tracked shipping worldwide except sanctioned destinations. Import duties, VAT and customs fees are not included and are paid by the buyer.'));
+  return result;
 }
 
 /**
