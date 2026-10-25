@@ -2817,8 +2817,8 @@
     "id": "daniel-portrait-1",
     "slug": "daniel-portrait-1",
     "type": "painting",
-    "title": "Daniel \u2014 portrait 1",
-    "description": "Daniel \u2014 portrait 1 by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Daniel Getting Reprimanded",
+    "description": "Daniel Getting Reprimanded by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -2850,8 +2850,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-shore.jpg",
-      "alt": "Daniel \u2014 portrait 1 by TJ Murphy",
-      "caption": "Daniel \u2014 portrait 1"
+      "alt": "Daniel Getting Reprimanded by TJ Murphy",
+      "caption": "Daniel Getting Reprimanded"
     },
     "checkout": {
       "mode": "inquiry"

@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="ea0a0b3a175c3614b764";
+export const printVersion="1bee248cd6059b868a97";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -107462,8 +107462,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Large print",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Large print",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "165.00",
     "currency": "USD",
     "sku": "5M144M9S18.74X20.76",
@@ -107488,10 +107488,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107508,8 +107508,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Large print — Black frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Large print — Black frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "277.00",
     "currency": "USD",
     "sku": "5M144M8S19X21DD02F1S22X24DD02J1S19X21DD02G1",
@@ -107534,10 +107534,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107585,8 +107585,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Large print — White frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Large print — White frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "277.00",
     "currency": "USD",
     "sku": "5M144M8S19X21DD02F2S22X24DD02J1S19X21DD02G1",
@@ -107611,10 +107611,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107662,8 +107662,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Large print — Natural wood frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "297.00",
     "currency": "USD",
     "sku": "5M144M8S19X21DD02F7S22X24DD02J1S19X21DD02G1",
@@ -107688,10 +107688,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107739,8 +107739,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Medium print",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Medium print",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "95.00",
     "currency": "USD",
     "sku": "5M144M9S14.05X15.57",
@@ -107765,10 +107765,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107785,8 +107785,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Medium print — Black frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Medium print — Black frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S14DD31X15DD83F1S17DD31X18DD83J1S14DD31X15DD83G1",
@@ -107811,10 +107811,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107862,8 +107862,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Medium print — White frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Medium print — White frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S14DD31X15DD83F2S17DD31X18DD83J1S14DD31X15DD83G1",
@@ -107888,10 +107888,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107939,8 +107939,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Medium print — Natural wood frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "191.00",
     "currency": "USD",
     "sku": "5M144M8S14DD31X15DD83F7S17DD31X18DD83J1S14DD31X15DD83G1",
@@ -107965,10 +107965,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108016,8 +108016,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Small print",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Small print",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M9S9.36X10.37",
@@ -108042,10 +108042,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108062,8 +108062,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Small print — Black frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Small print — Black frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "97.00",
     "currency": "USD",
     "sku": "5M144M8S9DD62X10DD63F1S12DD62X13DD63J1S9DD62X10DD63G1",
@@ -108088,10 +108088,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108139,8 +108139,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Small print — White frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Small print — White frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "97.00",
     "currency": "USD",
     "sku": "5M144M8S9DD62X10DD63F2S12DD62X13DD63J1S9DD62X10DD63G1",
@@ -108165,10 +108165,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108216,8 +108216,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-62",
-    "title": "Painting #62 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #62",
+    "title": "Axler with the Proviber Doinger — Small print — Natural wood frame",
+    "artworkTitle": "Axler with the Proviber Doinger",
     "amount": "109.00",
     "currency": "USD",
     "sku": "5M144M8S9DD62X10DD63F7S12DD62X13DD63J1S9DD62X10DD63G1",
@@ -108242,10 +108242,10 @@ export default {
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
       "fullSrc": "/display/archived-painting-62-1600.webp",
-      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "alt": "Axler at Bass Coast holding up her Proviber Doinger, the festival totem her friends follow to find each other in the crowd, in vivid blue, orange, and yellow.",
       "width": 5626,
       "height": 6233,
-      "caption": "Painting #62"
+      "caption": "Axler with the Proviber Doinger"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116603,8 +116603,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Large print",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Large print",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M9S7.64X24.3",
@@ -116632,7 +116632,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116649,8 +116649,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Large print — Black frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Large print — Black frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "163.00",
     "currency": "USD",
     "sku": "5M144M8S7DD9X24DD57F1S10DD9X27DD57J1S7DD9X24DD57G1",
@@ -116678,7 +116678,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116726,8 +116726,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Large print — White frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Large print — White frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "163.00",
     "currency": "USD",
     "sku": "5M144M8S7DD9X24DD57F2S10DD9X27DD57J1S7DD9X24DD57G1",
@@ -116755,7 +116755,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116803,8 +116803,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Large print — Natural wood frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "180.00",
     "currency": "USD",
     "sku": "5M144M8S7DD9X24DD57F7S10DD9X27DD57J1S7DD9X24DD57G1",
@@ -116832,7 +116832,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116880,8 +116880,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Medium print",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Medium print",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M9S5.73X18.23",
@@ -116909,7 +116909,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116926,8 +116926,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Medium print — Black frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Medium print — Black frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S5DD99X18DD49F1S8DD99X21DD49J1S5DD99X18DD49G1",
@@ -116955,7 +116955,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -117003,8 +117003,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Medium print — White frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Medium print — White frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S5DD99X18DD49F2S8DD99X21DD49J1S5DD99X18DD49G1",
@@ -117032,7 +117032,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -117080,8 +117080,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Medium print — Natural wood frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "132.00",
     "currency": "USD",
     "sku": "5M144M8S5DD99X18DD49F7S8DD99X21DD49J1S5DD99X18DD49G1",
@@ -117109,7 +117109,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -117157,8 +117157,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Small print",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Small print",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M9S4.01X12.33",
@@ -117186,7 +117186,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -117203,8 +117203,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Small print — Black frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Small print — Black frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S4DD07X12DD41F1S8DD01X16DD35J1S4DD07X12DD41G1",
@@ -117232,7 +117232,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -117280,8 +117280,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Small print — White frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Small print — White frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S4DD07X12DD41F2S8DD01X16DD35J1S4DD07X12DD41G1",
@@ -117309,7 +117309,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -117357,8 +117357,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-217",
-    "title": "Painting #217 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #217",
+    "title": "Pagoda in Botanical Garden — Small print — Natural wood frame",
+    "artworkTitle": "Pagoda in Botanical Garden",
     "amount": "96.00",
     "currency": "USD",
     "sku": "5M144M8S4DD07X12DD41F7S8DD01X16DD35J1S4DD07X12DD41G1",
@@ -117386,7 +117386,7 @@ export default {
       "alt": "A narrow garden scene with trees, a pavilion, and a pond",
       "width": 2296,
       "height": 7297,
-      "caption": "Painting #217"
+      "caption": "Pagoda in Botanical Garden"
     },
     "attributes": {},
     "minimumDpi": 300,

@@ -10,7 +10,7 @@ export const archivePreview = (p, width=960) => `/display/${p.id}-${width}.webp`
 export default archivePaintings.map(p => {
   const recorded=p.recordedDimensions||p.cataloguedDimensions;
   const dimensions=recorded?{width:recorded.width,height:recorded.height,unit:recorded.unit}:null;
-  const price=p.originalSale?{amount:p.originalSale.amount,currency:p.originalSale.currency}:null;
+  const price=p.originalSale&&!p.notForSale?{amount:p.originalSale.amount,currency:p.originalSale.currency}:null;
   let checkout={mode:'inquiry'};
   if(price&&dimensions){
     const weight=estimatePaperParcelWeightLb({dimensions,checkout:{shipping:{height:2}}});

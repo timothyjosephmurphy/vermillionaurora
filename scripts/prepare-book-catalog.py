@@ -2,7 +2,7 @@
 import json,pathlib,sys,re,hashlib
 root=pathlib.Path(__file__).resolve().parents[1];work=pathlib.Path(sys.argv[1]);raw=json.load(open(work/'extracted.json'))
 # Explicit display titles where a raster heading supplies the only name.
-names={('watercolor-portraits',111):'Chase Toole',('watercolor-portraits',135):'Daniel — portrait 1',('watercolor-portraits',145):'Daniel — portrait 2',('watercolor-portraits',1197):'Dorian Nakamoto',('watercolor-landscapes',1050):'Dorian Nakamoto'}
+names={('watercolor-portraits',111):'Chase Toole',('watercolor-portraits',135):'Daniel Getting Reprimanded',('watercolor-portraits',41):'Hummingbird Friend',('watercolor-portraits',145):'Daniel — portrait 2',('watercolor-portraits',1197):'Dorian Nakamoto',('watercolor-landscapes',1050):'Dorian Nakamoto'}
 # The caption describes the entire dance series, not the dimensions of each pose.
 for n,x in enumerate([222,220,224,226],1):names['watercolor-portraits',x]=f'Catherine dance series — study {n}'
 for n,x in enumerate([300,298,301],1):names['watercolor-landscapes',x]=f'Larches in the North Cascades — study {n}'
