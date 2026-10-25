@@ -53,9 +53,29 @@ test('the Worker passes asset responses through untouched (cache headers now com
   const env={...off,ASSETS:{fetch:()=>new Response('x',{headers:{'Cache-Control':'public, max-age=0, must-revalidate','Content-Type':'image/webp'}})}};
   for(const p of ['/display/a-123-160.webp','/_astro/index.abc.css','/gallery-images/a.jpg']){const r=await worker.fetch(new Request('https://tjm.art'+p),env);assert.equal(r.headers.get('Cache-Control'),'public, max-age=0, must-revalidate',p);}
 });
-test('long-cache headers are a zone rule limited to 200 responses, not a static/_headers file (which would also cache 404s for a year)',async()=>{
+test('static headers allow revalidation but never long-lived caching of error responses',async()=>{
   const fs=await import('node:fs');
-  assert.ok(!fs.existsSync('static/_headers')&&!fs.existsSync('dist/_headers'),'no _headers file: it would stamp immutable Cache-Control on 404s under /_astro/ and /display/');
+  for(const path of ['static/_headers','dist/_headers']){
+    if(!fs.existsSync(path))continue;
+    const headers=fs.readFileSync(path,'utf8');
+    // _headers rules match URLs, not response status. Revalidation/no-transform
+    // is safe on a 404; positive cache lifetimes and immutable are not.
+    for(const [,value] of headers.matchAll(/^[ \t]+cache-control:[ \t]*(.*)$/gim)){
+      assert.doesNotMatch(value,/(?:^|,)\s*immutable\s*(?:,|$)/i,`${path}: immutable belongs in the status-aware zone rule`);
+      for(const [,directive,seconds] of value.matchAll(/(?:^|,)\s*(s-maxage|max-age)\s*=\s*"?(\d+)"?/gi)){
+        assert.equal(Number(seconds),0,`${path}: ${directive} must not cache error responses`);
+      }
+    }
+  }
+});
+test('gallery frames keep their revalidating no-transform header in the built assets',async()=>{
+  const fs=await import('node:fs');
+  const source=fs.readFileSync('static/_headers','utf8');
+  assert.match(source,/^\/play\/g\/\*\r?\n[ \t]+Cache-Control: public, max-age=0, must-revalidate, no-transform\s*$/m);
+  if(fs.existsSync('dist/index.html'))assert.equal(fs.readFileSync('dist/_headers','utf8'),source,'the build must preserve the gallery analytics header');
+});
+test('long-cache headers remain a zone rule limited to successful asset responses',async()=>{
+  const fs=await import('node:fs');
   const doc=fs.readFileSync('docs/static-bypass-zone-rules.md','utf8');
   const expr=doc.match(/^CACHE_RULE_EXPRESSION: (.+)$/m)?.[1];
   assert.ok(expr,'the doc records the cache rule expression');

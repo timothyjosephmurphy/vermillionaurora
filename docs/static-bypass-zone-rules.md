@@ -35,6 +35,17 @@ CACHE_RULE_EXPRESSION: (http.host eq "tjm.art" and http.response.code eq 200 and
 
 (The workers.dev preview URL is not covered by the zone rule, so it serves these files with the default cache header.)
 
+## Static response headers
+
+`static/_headers` is allowed for policies that are safe on error responses. Its `/play/g/*` rule sets
+`Cache-Control: public, max-age=0, must-revalidate, no-transform` to prevent a second analytics beacon in
+the gallery frames. Keep that file in the built `dist/` assets. Do not put positive `max-age`/`s-maxage`
+values or `immutable` in this file: URL-based header rules also apply to matching error responses.
+The status-aware zone rule above remains responsible for long-lived asset caching.
+
+Header and redirect configuration changes run the code-tier gate, including the routing and cache-policy
+tests in `tests/site-worker.test.mjs`. Ordinary static content keeps the faster content-tier checks.
+
 ## Roll back
 
 1. Set `"run_worker_first": true` in `wrangler.jsonc` again and restore `withLongCache` from git history and release.
