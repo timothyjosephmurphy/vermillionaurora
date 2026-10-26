@@ -74,4 +74,6 @@ Use shared checkout for new original-art sales. Books continue to Amazon, commis
 
 ## Blog card images
 
-Each post on `/blog/` needs its own card/hero/og image; site-update posts must not use the default Esperanza hero. `tests/blog-card-images.test.mjs` (in `npm test`) enforces this. Its `ALLOW_SHARED` list is temporary; drop entries as posts get their own images.
+Each post on `/blog/` needs its own card/hero/og image; site-update posts must not use the default Esperanza hero. `tests/blog-card-images.test.mjs` (in `npm test`, and in the blog gate) enforces this. Its `ALLOW_SHARED` list is temporary; drop entries as posts get their own images.
+
+Publish a story without the Playwright gate: [docs/publish-blog.md](docs/publish-blog.md).

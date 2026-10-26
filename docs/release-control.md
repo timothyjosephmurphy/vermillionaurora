@@ -21,9 +21,14 @@ The `release` branch is a frozen backup of the last two-stage release and no lon
 
 | Tier | Paths | Runs |
 | --- | --- | --- |
-| content | catalog JSON, images, blog, static, docs | build, catalog drift, smoke on home/gallery/product/cart + changed pages |
+| blog | a story only: `static/blog/`, `src/pages/blog/`, that post's `static/display/` and `static/social/` files, `scripts/display-files.json`, and `scripts/blog-media-upload/` assets or `publish-assets/` | `npm ci` (no browser download), `npm run build`, catalog drift, the new `/blog/<slug>/` is on the index. No Playwright |
+| content | catalog JSON, other images, other static, docs | build, catalog drift, smoke on home/gallery/product/cart + changed pages |
 | code | other site code; static `_headers` and `_redirects` configuration | the above + unit tests + browser tests for touched areas |
 | full | `cloudflare/`, `payments/`, `worker/`, catalog code, cart, CI, dependencies, manual runs | full suite (unit, browser, room, Worker, print framing) |
+
+`scripts/display-files.json` is not a content path. A story pull request that updates it used to fall through to the code tier and install Chromium. Display or social files without a story or the blog index stay on the content or code tier.
+
+Publishing steps: [publish-blog.md](publish-blog.md). Squash-merge the blog pull request once `gate` is green. Do not wait for a Playwright job; the blog tier does not start one.
 
 Squash-merge PRs into `main`. Never use `--admin` or force-push.
 
