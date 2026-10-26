@@ -6,3 +6,12 @@ export function deriveParcel(dimensions, weight=2, flatThickness=2, {rollable=tr
  if(rollable&&longer>12)return {length:ceilInches(shorter),width:4,height:4,weight,packaging:'tube'};
  return {length:ceilInches(longer)+2,width:ceilInches(shorter)+2,height:flatThickness,weight,packaging:'flat'};
 }
+
+// Shippo insurance for originals (studio-tracker #128).
+// Every shippable original priced at or above this amount (USD) is quoted and labeled with Shippo insurance for its
+// full listed price; the premium is included in the shipping quote (cloudflare/shipping-insurance.mjs). Below it
+// originals ship uninsured unless a product sets checkout.shipping.insuranceRequested: true. TJ and the bookkeeper
+// should confirm this number. Changing it changes live shipping cost after the next catalog build and deploy.
+export const INSURANCE_THRESHOLD_USD = 300;
+export const insuranceRequiredFor = (amount, explicit = false) => explicit === true || Number(amount) >= INSURANCE_THRESHOLD_USD;
+

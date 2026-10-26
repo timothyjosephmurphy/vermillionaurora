@@ -1216,7 +1216,8 @@ export default {
       "height": 4,
       "weight": 1.625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "honeybadger-and-cub-with-genesis-block": {
     "title": "Honeybadger and Cub with Genesis Block",
@@ -1228,7 +1229,8 @@ export default {
       "height": 4,
       "weight": 1.8125
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-chef-in-white": {
     "title": "Jimmy Song @jimmysong",
@@ -1240,7 +1242,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-clouds-over-water": {
     "title": "El Salvador",
@@ -1264,7 +1267,8 @@ export default {
       "height": 4,
       "weight": 1.625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-insect-garden": {
     "title": "El Salvador: Past - Chase Toole Collab",
@@ -1276,7 +1280,8 @@ export default {
       "height": 4,
       "weight": 1.625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-moonlit-water": {
     "title": "Moonrise Over the Cascades",
@@ -1288,7 +1293,8 @@ export default {
       "height": 4,
       "weight": 0.5625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-portrait-in-gold": {
     "title": "Dorian Nakamoto",
@@ -1326,7 +1332,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-red-horizon": {
     "title": "Sunset at Kihei on Maui",
@@ -1338,7 +1345,8 @@ export default {
       "height": 4,
       "weight": 1.5
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "hope-the-vermillion-aurora": {
     "title": "Hope, the Vermillion Aurora",
@@ -1350,7 +1358,8 @@ export default {
       "height": 4,
       "weight": 1.4375
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-shoreline-at-dusk": {
     "title": "El Zonte at Dawn",
@@ -1362,7 +1371,8 @@ export default {
       "height": 4,
       "weight": 1.625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "el-zonte-before-dawn": {
     "title": "El Zonte Before Dawn",
@@ -1374,7 +1384,8 @@ export default {
       "height": 4,
       "weight": 1.625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "sunrise-in-el-zonte-large": {
     "title": "Sunrise in El Zonte (Large)",
@@ -1386,7 +1397,8 @@ export default {
       "height": 4,
       "weight": 2.4375
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "meditation-at-denny-blaine": {
     "title": "Meditation at Denny Blaine",
@@ -1398,7 +1410,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-studio-figure": {
     "title": "Brekkie @BVBTC hoisting a sculpture in progress",
@@ -1410,7 +1423,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "painting-twin-dragons": {
     "title": "El Salvador: Future - Chase Toole Collab",
@@ -1422,7 +1436,8 @@ export default {
       "height": 4,
       "weight": 1.625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-1": {
     "title": "Tipi",
@@ -1434,7 +1449,8 @@ export default {
       "height": 2,
       "weight": 0.4375
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-11": {
     "title": "Puerto Rico Beach",
@@ -1458,7 +1474,8 @@ export default {
       "height": 2,
       "weight": 0.4375
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-15": {
     "title": "Eagle from Photo 2",
@@ -1470,7 +1487,8 @@ export default {
       "height": 2,
       "weight": 0.4375
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-2": {
     "title": "Leo/Bear Constellation",
@@ -1686,7 +1704,8 @@ export default {
       "height": 2,
       "weight": 0.4375
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-56": {
     "title": "Peach Preserves",
@@ -1698,7 +1717,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-57": {
     "title": "Lady in Gold",
@@ -1710,7 +1730,8 @@ export default {
       "height": 2,
       "weight": 6
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-6": {
     "title": "Son TJ Sedona",
@@ -1734,7 +1755,8 @@ export default {
       "height": 2,
       "weight": 3
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-63": {
     "title": "Slot Canyon Face",
@@ -1746,7 +1768,8 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-64": {
     "title": "Slot Canyon Arizona",
@@ -1758,7 +1781,8 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-65": {
     "title": "Phoenix",
@@ -1770,7 +1794,8 @@ export default {
       "height": 4,
       "weight": 0.4375
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-7": {
     "title": "Slot Canyon",
@@ -1794,7 +1819,8 @@ export default {
       "height": 4,
       "weight": 0.8125
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-73": {
     "title": "Sunset Tree",
@@ -1818,7 +1844,8 @@ export default {
       "height": 4,
       "weight": 0.75
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-8": {
     "title": "Arizona Slot Cave",
@@ -1830,7 +1857,8 @@ export default {
       "height": 2,
       "weight": 0.4375
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "paul-murphy-painting-83": {
     "title": "Soul Connections 1",
@@ -1878,7 +1906,8 @@ export default {
       "height": 4,
       "weight": 1.8125
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "meditating-at-denny-blaine-on-solstice-2015": {
     "title": "Meditating at Denny Blaine on Solstice 2015",
@@ -1890,7 +1919,8 @@ export default {
       "height": 4,
       "weight": 1.5625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "sunrise-on-tahoma-from-denny-blaine": {
     "title": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait",
@@ -1902,7 +1932,8 @@ export default {
       "height": 4,
       "weight": 1.1875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "sunrise-on-rainier-from-denny-blaine": {
     "title": "Sunrise on Rainier from Denny Blaine",
@@ -1914,7 +1945,8 @@ export default {
       "height": 4,
       "weight": 4.125
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "lake-in-the-north-cascades": {
     "title": "Lake in the North Cascades",
@@ -1926,7 +1958,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-249": {
     "title": "Lake in North Cascades",
@@ -1938,7 +1971,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-246": {
     "title": "Sunset from Atami, El Salvador #1",
@@ -1950,7 +1984,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-248": {
     "title": "Sunset from Atami, El Salvador #2",
@@ -1962,7 +1997,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-247": {
     "title": "Sunset from Atami, El Salvador #3",
@@ -1974,7 +2010,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-438": {
     "title": "Sunrise at Bass Coast 2023 #4",
@@ -1986,7 +2023,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-437": {
     "title": "Sunrise at Bass Coast 2023 #3",
@@ -1998,7 +2036,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-433": {
     "title": "Sunrise at Bass Coast 2023 #1",
@@ -2010,7 +2049,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-436": {
     "title": "Sunrise at Bass Coast 2023 #2",
@@ -2022,7 +2062,8 @@ export default {
       "height": 4,
       "weight": 0.875
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-66": {
     "title": "Flamenco Guitarist in Zihuatanejo",
@@ -2034,7 +2075,8 @@ export default {
       "height": 4,
       "weight": 1.0625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-301": {
     "title": "Catherine #1",
@@ -2046,7 +2088,8 @@ export default {
       "height": 4,
       "weight": 1.0625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-15": {
     "title": "Symbiosis #1",
@@ -2058,7 +2101,8 @@ export default {
       "height": 4,
       "weight": 1.5625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "archived-painting-22": {
     "title": "Devo & Katie @ Bass Coast",
@@ -2070,7 +2114,8 @@ export default {
       "height": 4,
       "weight": 1.5625
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "insuranceRequested": true
   },
   "older-work-hummingbird-feeder-190": {
     "title": "TJ Hummingbird Feeder 190",
