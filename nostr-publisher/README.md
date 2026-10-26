@@ -16,6 +16,7 @@ A Cloudflare Worker (`vermillion-nostr-publisher`) that publishes TJ's art posts
 | Thu Oct 22, 6:00 PM | Coined in Watercolor poster | scheduled |
 | Sat Oct 24, 10:00 AM | Moonrise in the North Cascades | scheduled |
 | Tue Oct 27, 7:00 AM | Honeybadger and Cub prints | scheduled |
+| Tue Oct 27, 10:00 AM | Layers of Sound: My Live Looping Guitar Setup | scheduled |
 | Thu Oct 29, 6:00 PM | Exhibition history | scheduled |
 | Sat Oct 31, 10:00 AM | Maui Sunset from Kihei | scheduled |
 | Tue Nov 3, 7:00 AM | Sunrise on Rainier with Eagle | scheduled |
@@ -26,7 +27,7 @@ A Cloudflare Worker (`vermillion-nostr-publisher`) that publishes TJ's art posts
 
 ## Note format
 
-Each note is `text`, then `https://tjm.art` + `productUrl`, then `imageUrl`, separated by blank lines (the product link is not repeated when `text` already contains it). `text` is the X caption without its trailing tjm.art link. X @handles are replaced with plain names. `xText` keeps the Buffer X caption for reference and is not published. Links and images point to `tjm.art`. A `utm_source=x` parameter is rewritten to `utm_source=nostr`. A note carries one image, so for carousel posts only the first image goes out.
+Each note is `text`, then `https://tjm.art` + `productUrl`, then `imageUrl`, separated by blank lines (the product link is not repeated when `text` already contains it). `text` is the X caption without its trailing tjm.art link. X @handles are replaced with plain names. `xText` keeps the Buffer X caption for reference and is not published. Links point to `tjm.art`. Images point to `tjm.art`, or to a `.jpg` poster on `img.tjm.art` when the note is image-only. A `utm_source=x` parameter is rewritten to `utm_source=nostr`. A note carries one image, so for carousel posts only the first image goes out.
 
 ## Safety rules
 
