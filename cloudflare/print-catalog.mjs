@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="1bee248cd6059b868a97";
+export const printVersion="80241f9625ad5d87a341";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -796,271 +796,6 @@ export default {
     },
     "unframedAmount": "40.00"
   },
-  "print-honeybadger-and-cub-with-genesis-block-full": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-full",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Large print",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "155.00",
-    "currency": "USD",
-    "sku": "5M144M9S16.04X22.92",
-    "scale": 1,
-    "imageSize": {
-      "width": 16.04,
-      "height": 22.92,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 17.04,
-      "height": 23.92,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/23d799473d9a899f8f0ce2ca860bf9c42b68994a4be6853d18c45c40d3e88b5e.jpg",
-    "assetSha256": "23d799473d9a899f8f0ce2ca860bf9c42b68994a4be6853d18c45c40d3e88b5e",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-finerworks-border-v1",
-    "sizeBasis": "image-proportional",
-    "printSize": {
-      "width": 16.04,
-      "height": 22.92,
-      "unit": "in"
-    }
-  },
-  "print-honeybadger-and-cub-with-genesis-block-full-frame-black": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Large print — Black frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "268.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD3X23DD18F1S19DD3X26DD18J1S16DD3X23DD18G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 16.0467,
-      "height": 22.9233,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.3,
-      "height": 23.18,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e.jpg",
-    "assetSha256": "168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.3,
-        "height": 26.18,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.3,
-        "height": 23.18,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.3X23.18",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.3,
-        "height": 26.18,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "160.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-full-frame-white": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Large print — White frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "268.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD3X23DD18F2S19DD3X26DD18J1S16DD3X23DD18G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 16.0467,
-      "height": 22.9233,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.3,
-      "height": 23.18,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e.jpg",
-    "assetSha256": "168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.3,
-        "height": 26.18,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.3,
-        "height": 23.18,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.3X23.18",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.3,
-        "height": 26.18,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "160.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-full-frame-natural": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Large print — Natural wood frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "289.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD3X23DD18F7S19DD3X26DD18J1S16DD3X23DD18G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 16.0467,
-      "height": 22.9233,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.3,
-      "height": 23.18,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e.jpg",
-    "assetSha256": "168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.3,
-        "height": 26.18,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.3,
-        "height": 23.18,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.3X23.18",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.3,
-        "height": 26.18,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "160.00"
-  },
   "print-honeybadger-and-cub-with-genesis-block-medium": {
     "id": "print-honeybadger-and-cub-with-genesis-block-medium",
     "type": "print",
@@ -1070,24 +805,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M9S12.03X17.19",
+    "sku": "5M144M9S11.69X18.32",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.03,
-      "height": 17.19,
+      "width": 11.69,
+      "height": 18.32,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.03,
-      "height": 18.19,
+      "width": 12.69,
+      "height": 19.32,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fec6c4150f10826fcd97f0d58576df80b9338c9849f95b029aa153e4323ef9bb.jpg",
-    "assetSha256": "fec6c4150f10826fcd97f0d58576df80b9338c9849f95b029aa153e4323ef9bb",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d594dba47d4e17a710c513245204ab303b8757171b1cb7b5676b8a1612547aed.jpg",
+    "assetSha256": "d594dba47d4e17a710c513245204ab303b8757171b1cb7b5676b8a1612547aed",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1099,8 +834,8 @@ export default {
     "layout": "full-image-finerworks-border-v1",
     "sizeBasis": "image-proportional",
     "printSize": {
-      "width": 12.03,
-      "height": 17.19,
+      "width": 11.69,
+      "height": 18.32,
       "unit": "in"
     }
   },
@@ -1113,24 +848,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "167.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD29X17DD45F1S15DD29X20DD45J1S12DD29X17DD45G1",
+    "sku": "5M144M8S11DD95X18DD59F1S14DD95X21DD59J1S11DD95X18DD59G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.0367,
-      "height": 17.1967,
+      "width": 11.6967,
+      "height": 18.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.29,
-      "height": 17.45,
+      "width": 11.95,
+      "height": 18.59,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51.jpg",
-    "assetSha256": "78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/93396b51380b414bff04e557063132ead8b258f9d052569e0bb9f5d83ce0b5eb.jpg",
+    "assetSha256": "93396b51380b414bff04e557063132ead8b258f9d052569e0bb9f5d83ce0b5eb",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1146,18 +881,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15.29,
-        "height": 20.45,
+        "width": 14.95,
+        "height": 21.59,
         "unit": "in"
       },
       "window": {
-        "width": 12.29,
-        "height": 17.45,
+        "width": 11.95,
+        "height": 18.59,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S12.29X17.45",
+    "baseSku": "5M144M8S11.95X18.59",
     "frame": {
       "key": "black",
       "id": 1,
@@ -1167,8 +902,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15.29,
-        "height": 20.45,
+        "width": 14.95,
+        "height": 21.59,
         "unit": "in"
       },
       "glazing": {
@@ -1187,24 +922,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "167.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD29X17DD45F2S15DD29X20DD45J1S12DD29X17DD45G1",
+    "sku": "5M144M8S11DD95X18DD59F2S14DD95X21DD59J1S11DD95X18DD59G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.0367,
-      "height": 17.1967,
+      "width": 11.6967,
+      "height": 18.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.29,
-      "height": 17.45,
+      "width": 11.95,
+      "height": 18.59,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51.jpg",
-    "assetSha256": "78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/93396b51380b414bff04e557063132ead8b258f9d052569e0bb9f5d83ce0b5eb.jpg",
+    "assetSha256": "93396b51380b414bff04e557063132ead8b258f9d052569e0bb9f5d83ce0b5eb",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1220,18 +955,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15.29,
-        "height": 20.45,
+        "width": 14.95,
+        "height": 21.59,
         "unit": "in"
       },
       "window": {
-        "width": 12.29,
-        "height": 17.45,
+        "width": 11.95,
+        "height": 18.59,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S12.29X17.45",
+    "baseSku": "5M144M8S11.95X18.59",
     "frame": {
       "key": "white",
       "id": 2,
@@ -1241,8 +976,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15.29,
-        "height": 20.45,
+        "width": 14.95,
+        "height": 21.59,
         "unit": "in"
       },
       "glazing": {
@@ -1261,24 +996,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "183.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD29X17DD45F7S15DD29X20DD45J1S12DD29X17DD45G1",
+    "sku": "5M144M8S11DD95X18DD59F7S14DD95X21DD59J1S11DD95X18DD59G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.0367,
-      "height": 17.1967,
+      "width": 11.6967,
+      "height": 18.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.29,
-      "height": 17.45,
+      "width": 11.95,
+      "height": 18.59,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51.jpg",
-    "assetSha256": "78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/93396b51380b414bff04e557063132ead8b258f9d052569e0bb9f5d83ce0b5eb.jpg",
+    "assetSha256": "93396b51380b414bff04e557063132ead8b258f9d052569e0bb9f5d83ce0b5eb",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1294,18 +1029,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15.29,
-        "height": 20.45,
+        "width": 14.95,
+        "height": 21.59,
         "unit": "in"
       },
       "window": {
-        "width": 12.29,
-        "height": 17.45,
+        "width": 11.95,
+        "height": 18.59,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S12.29X17.45",
+    "baseSku": "5M144M8S11.95X18.59",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -1315,8 +1050,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15.29,
-        "height": 20.45,
+        "width": 14.95,
+        "height": 21.59,
         "unit": "in"
       },
       "glazing": {
@@ -1335,24 +1070,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M9S8.01X11.45",
+    "sku": "5M144M9S7.79X12.21",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.01,
-      "height": 11.45,
+      "width": 7.79,
+      "height": 12.21,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.01,
-      "height": 12.45,
+      "width": 8.79,
+      "height": 13.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/efbc521474eba4276d65b693e4a29526540aaf4b7de20c06a21c30ed317236a8.jpg",
-    "assetSha256": "efbc521474eba4276d65b693e4a29526540aaf4b7de20c06a21c30ed317236a8",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/da311e4d957c71d52a243272c51ef81033e0afb598f5936edeb1887db6e69a87.jpg",
+    "assetSha256": "da311e4d957c71d52a243272c51ef81033e0afb598f5936edeb1887db6e69a87",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1364,8 +1099,8 @@ export default {
     "layout": "full-image-finerworks-border-v1",
     "sizeBasis": "image-proportional",
     "printSize": {
-      "width": 8.01,
-      "height": 11.45,
+      "width": 7.79,
+      "height": 12.21,
       "unit": "in"
     }
   },
@@ -1378,24 +1113,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD27X11DD71F1S11DD27X14DD71J1S8DD27X11DD71G1",
+    "sku": "5M144M8S8DD05X12DD48F1S11DD05X15DD48J1S8DD05X12DD48G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.0167,
-      "height": 11.4533,
+      "width": 7.7967,
+      "height": 12.2167,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.27,
-      "height": 11.71,
+      "width": 8.05,
+      "height": 12.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff.jpg",
-    "assetSha256": "731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/45aa3fb61552cdd69deae0a1c573a79b3791c93ee48bbca9f1ad94a1f61a30f5.jpg",
+    "assetSha256": "45aa3fb61552cdd69deae0a1c573a79b3791c93ee48bbca9f1ad94a1f61a30f5",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1411,18 +1146,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11.27,
-        "height": 14.71,
+        "width": 11.05,
+        "height": 15.48,
         "unit": "in"
       },
       "window": {
-        "width": 8.27,
-        "height": 11.71,
+        "width": 8.05,
+        "height": 12.48,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S8.27X11.71",
+    "baseSku": "5M144M8S8.05X12.48",
     "frame": {
       "key": "black",
       "id": 1,
@@ -1432,8 +1167,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11.27,
-        "height": 14.71,
+        "width": 11.05,
+        "height": 15.48,
         "unit": "in"
       },
       "glazing": {
@@ -1452,24 +1187,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD27X11DD71F2S11DD27X14DD71J1S8DD27X11DD71G1",
+    "sku": "5M144M8S8DD05X12DD48F2S11DD05X15DD48J1S8DD05X12DD48G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.0167,
-      "height": 11.4533,
+      "width": 7.7967,
+      "height": 12.2167,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.27,
-      "height": 11.71,
+      "width": 8.05,
+      "height": 12.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff.jpg",
-    "assetSha256": "731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/45aa3fb61552cdd69deae0a1c573a79b3791c93ee48bbca9f1ad94a1f61a30f5.jpg",
+    "assetSha256": "45aa3fb61552cdd69deae0a1c573a79b3791c93ee48bbca9f1ad94a1f61a30f5",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1485,18 +1220,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11.27,
-        "height": 14.71,
+        "width": 11.05,
+        "height": 15.48,
         "unit": "in"
       },
       "window": {
-        "width": 8.27,
-        "height": 11.71,
+        "width": 8.05,
+        "height": 12.48,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S8.27X11.71",
+    "baseSku": "5M144M8S8.05X12.48",
     "frame": {
       "key": "white",
       "id": 2,
@@ -1506,8 +1241,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11.27,
-        "height": 14.71,
+        "width": 11.05,
+        "height": 15.48,
         "unit": "in"
       },
       "glazing": {
@@ -1526,24 +1261,24 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD27X11DD71F7S11DD27X14DD71J1S8DD27X11DD71G1",
+    "sku": "5M144M8S8DD05X12DD48F7S11DD05X15DD48J1S8DD05X12DD48G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.0167,
-      "height": 11.4533,
+      "width": 7.7967,
+      "height": 12.2167,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.27,
-      "height": 11.71,
+      "width": 8.05,
+      "height": 12.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff.jpg",
-    "assetSha256": "731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff",
-    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/45aa3fb61552cdd69deae0a1c573a79b3791c93ee48bbca9f1ad94a1f61a30f5.jpg",
+    "assetSha256": "45aa3fb61552cdd69deae0a1c573a79b3791c93ee48bbca9f1ad94a1f61a30f5",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
@@ -1559,18 +1294,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11.27,
-        "height": 14.71,
+        "width": 11.05,
+        "height": 15.48,
         "unit": "in"
       },
       "window": {
-        "width": 8.27,
-        "height": 11.71,
+        "width": 8.05,
+        "height": 12.48,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S8.27X11.71",
+    "baseSku": "5M144M8S8.05X12.48",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -1580,8 +1315,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11.27,
-        "height": 14.71,
+        "width": 11.05,
+        "height": 15.48,
         "unit": "in"
       },
       "glazing": {
