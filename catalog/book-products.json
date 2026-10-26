@@ -6005,7 +6005,30 @@
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/7a498f39e7a66a2e8eb5.jpg"
     },
     "listing": {
-      "status": "not-for-sale"
+      "status": "available",
+      "price": {
+        "amount": "200.00",
+        "currency": "USD"
+      }
+    },
+    "dimensions": {
+      "width": 12,
+      "height": 15,
+      "unit": "in"
+    },
+    "dimensionOrder": "width-height",
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 12,
+        "width": 4,
+        "height": 4,
+        "weight": 0.5,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
     },
     "facts": [
       {
@@ -6301,7 +6324,30 @@
       "height": 635
     },
     "listing": {
-      "status": "not-for-sale"
+      "status": "available",
+      "price": {
+        "amount": "1000.00",
+        "currency": "USD"
+      }
+    },
+    "dimensions": {
+      "width": 24,
+      "height": 24,
+      "unit": "in"
+    },
+    "dimensionOrder": "width-height",
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 24,
+        "width": 4,
+        "height": 4,
+        "weight": 1.125,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
     },
     "facts": [
       {
@@ -6350,7 +6396,30 @@
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0735a5fb0eb1c613b658.jpg"
     },
     "listing": {
-      "status": "not-for-sale"
+      "status": "available",
+      "price": {
+        "amount": "1000.00",
+        "currency": "USD"
+      }
+    },
+    "dimensions": {
+      "width": 24,
+      "height": 24,
+      "unit": "in"
+    },
+    "dimensionOrder": "width-height",
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 24,
+        "width": 4,
+        "height": 4,
+        "weight": 1.125,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
     },
     "facts": [
       {

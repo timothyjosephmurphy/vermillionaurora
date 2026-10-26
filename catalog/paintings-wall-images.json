@@ -3384,5 +3384,50 @@
     "src": "/wall-paintings/paul-murphy-painting-86-d4f58b4034-2880.webp"
    }
   ]
+ },
+ "book-art-7a498f39e7a66a2e8eb5": {
+  "sha256": "92f9fbc100",
+  "width": 690,
+  "height": 774,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-7a498f39e7a66a2e8eb5-92f9fbc100-320.webp"
+   },
+   {
+    "width": 690,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7a498f39e7a66a2e8eb5.webp"
+   }
+  ]
+ },
+ "book-art-e4bbfe556c3c847d9c90": {
+  "sha256": "5dfd60a16e",
+  "width": 613,
+  "height": 635,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-e4bbfe556c3c847d9c90-5dfd60a16e-320.webp"
+   },
+   {
+    "width": 613,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-color.webp"
+   }
+  ]
+ },
+ "book-art-0735a5fb0eb1c613b658": {
+  "sha256": "4f54b790cb",
+  "width": 560,
+  "height": 690,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-0735a5fb0eb1c613b658-4f54b790cb-320.webp"
+   },
+   {
+    "width": 560,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0735a5fb0eb1c613b658.webp"
+   }
+  ]
  }
 }

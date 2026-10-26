@@ -17,8 +17,19 @@ const groups=new Map(manifest.sections.map(group=>[group.id,group]));
 
 test('book gallery sections contain only the retained artwork inventory',()=>{
   const originalIds=new Set(originalProducts.map(product=>product.id));
+  // studio-tracker #298: TJ priced these three Bitcoiners originals. Every other book
+  // scan still has no price, checkout, or dimensions (unstated units must not become inches).
+  const shopListed=new Set(['book-art-7a498f39e7a66a2e8eb5','book-art-e4bbfe556c3c847d9c90','book-art-0735a5fb0eb1c613b658']);
   for(const product of bookProducts){
     assert(!originalIds.has(product.id));
+    if(shopListed.has(product.id)){
+      assert.equal(product.listing.status,'available');
+      assert.equal(product.checkout?.mode,'integrated');
+      assert.match(product.listing.price.amount,/^\d+\.\d{2}$/);
+      assert.equal(product.listing.price.currency,'USD');
+      assert.equal(product.dimensions.unit,'in');
+      continue;
+    }
     assert(!product.checkout);
     assert(!product.listing.price);
     assert(!product.dimensions,'Unstated units must not become inches');
