@@ -16,6 +16,19 @@ export function estimateShippingPackages(works) {
     // A listing has one shipping profile for all variations. Use the largest
     // framed parcel when frames are offered, and the existing paper parcel otherwise.
     const parcels = framed.length ? framed : unframed;
+    // A reprint can be held with no priced sizes. Keep the recorded original parcel
+    // so other listings in the same sync list can still estimate calculated shipping.
+    if (!parcels.length && work.original?.shipping) {
+      const ship = work.original.shipping;
+      return [work.id, {
+        item_weight: ship.item_weight,
+        item_length: ship.item_length,
+        item_width: ship.item_width,
+        item_height: ship.item_height,
+        item_weight_unit: ship.item_weight_unit || 'lb',
+        item_dimensions_unit: ship.item_dimensions_unit || 'in'
+      }];
+    }
     if (!parcels.length) throw Error('No print dimensions are available to estimate shipping for ' + work.title + '.');
     return [work.id, {
       item_weight: Math.max(...parcels.map(p => p.weight)),

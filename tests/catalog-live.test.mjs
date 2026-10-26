@@ -27,23 +27,23 @@ test('an imported catalog is identical to the built one: no page changes', () =>
   assert.equal(d.changes.size, 0); assert.equal(d.added.length, 0);
 });
 test('price, title and print edits patch only that painting, everywhere it appears', () => {
-  const t = rows(t => { const p = t.paintings.find(p => p.id === 'el-zonte-at-sunrise'); p.price_amount = '1100.00'; p.title = 'Sunrise Test';
-    t.editions.find(e => e.id === 'print-el-zonte-at-sunrise-full').amount = '130.00'; t.editions.find(e => e.id === 'print-el-zonte-at-sunrise-medium').enabled = 0; t.images.find(i => i.product_id === 'el-zonte-at-sunrise').rev = 7; return t; });
+  const t = rows(t => { const p = t.paintings.find(p => p.id === 'painting-shoreline-at-dusk'); p.price_amount = '1100.00'; p.title = 'Dawn Test';
+    t.editions.find(e => e.id === 'print-painting-shoreline-at-dusk-full').amount = '130.00'; t.editions.find(e => e.id === 'print-painting-shoreline-at-dusk-medium').enabled = 0; t.images.find(i => i.product_id === 'painting-shoreline-at-dusk').rev = 7; return t; });
   const L = live(t), d = diffCatalog(L, snap);
-  const page = patchHtml(fs.readFileSync('dist/products/el-zonte-at-sunrise/index.html', 'utf8'), 'el-zonte-at-sunrise', d, snap, L);
-  assert.ok(page.includes('<h1') && page.includes('Sunrise Test') && !page.includes('Sunrise from Punta El Zonte Hostel'));
+  const page = patchHtml(fs.readFileSync('dist/products/painting-shoreline-at-dusk/index.html', 'utf8'), 'painting-shoreline-at-dusk', d, snap, L);
+  assert.ok(page.includes('<h1') && page.includes('Dawn Test') && !page.includes('El Zonte at Dawn'));
   assert.ok(page.includes('$1,100') && page.includes('"price":"1100.00"') && !page.includes('$1,000'));
-  assert.ok(page.includes('<b>$130.00</b>') && !page.includes('value="print-el-zonte-at-sunrise-medium"'));
-  assert.ok(!page.includes('&quot;id&quot;:&quot;print-el-zonte-at-sunrise-medium&quot;') && page.includes('&quot;amount&quot;:&quot;130.00&quot;'));
+  assert.ok(page.includes('<b>$130.00</b>') && !page.includes('value="print-painting-shoreline-at-dusk-medium"'));
+  assert.ok(!page.includes('&quot;id&quot;:&quot;print-painting-shoreline-at-dusk-medium&quot;') && page.includes('&quot;amount&quot;:&quot;130.00&quot;'));
   assert.match(page, /img\.tjm\.art\/display\/[^"? ]+\?v=7/);
   const gallery = fs.readFileSync('dist/gallery/index.html', 'utf8'), g = patchHtml(gallery, null, d, snap, L);
-  assert.ok(g.includes('data-price="1100.00"') && g.includes('Sunrise Test'));
+  assert.ok(g.includes('data-price="1100.00"') && g.includes('Dawn Test'));
   const card = (h, id) => h.slice(h.indexOf(`data-product-id="${id}"`), h.indexOf('</li>', h.indexOf(`data-product-id="${id}"`)));
   assert.equal(card(g, 'painting-emergence'), card(gallery, 'painting-emergence'), 'other $1,000 paintings untouched');
   assert.ok(card(gallery, 'painting-emergence').includes('$1,000'));
   const pj = patchProductsJson(JSON.parse(fs.readFileSync('dist/catalog/products.json', 'utf8')), L);
-  assert.equal(pj.prints.find(p => p.id === 'print-el-zonte-at-sunrise-full').amount, '130.00');
-  assert.ok(!pj.prints.some(p => p.id === 'print-el-zonte-at-sunrise-medium'));
+  assert.equal(pj.prints.find(p => p.id === 'print-painting-shoreline-at-dusk-full').amount, '130.00');
+  assert.ok(!pj.prints.some(p => p.id === 'print-painting-shoreline-at-dusk-medium'));
 });
 test('an unavailable or sold original updates the product page details line; prints stay', () => {
   for (const [status, text] of [['unavailable', 'Not currently available'], ['sold', 'Sold']]) {
@@ -62,12 +62,12 @@ test('an unavailable or sold original updates the product page details line; pri
   }
 });
 test('checkout uses D1 prices, keeps Etsy on the live price, and falls back to the built catalog when D1 fails', async () => {
-  const builtAmount = catalog['el-zonte-at-sunrise'].amount, builtPrint = prints['print-el-zonte-at-sunrise-full'].amount;
-  const t = rows(t => { t.paintings.find(p => p.id === 'el-zonte-at-sunrise').price_amount = '1100.00'; t.editions.find(e => e.id === 'print-el-zonte-at-sunrise-full').amount = '130.00'; t.status.find(s => s.product_id === 'el-zonte-at-sunrise').status = 'sold'; return t; });
+  const builtAmount = catalog['painting-shoreline-at-dusk'].amount, builtPrint = prints['print-painting-shoreline-at-dusk-full'].amount;
+  const t = rows(t => { t.paintings.find(p => p.id === 'painting-shoreline-at-dusk').price_amount = '1100.00'; t.editions.find(e => e.id === 'print-painting-shoreline-at-dusk-full').amount = '130.00'; t.status.find(s => s.product_id === 'painting-shoreline-at-dusk').status = 'sold'; return t; });
   resetCache(); assert.equal(await applyCatalogOverlay({ CATALOG_DB: fakeDb(t) }), '1');
-  assert.equal(catalog['el-zonte-at-sunrise'].amount, '1100.00'); assert.equal(prints['print-el-zonte-at-sunrise-full'].amount, '130.00'); assert.equal(inventory['el-zonte-at-sunrise'].status, 'sold');
-  const w = works.find(w => w.id === 'el-zonte-at-sunrise'); if (w?.original) assert.equal(w.original.price, '1100.00');
+  assert.equal(catalog['painting-shoreline-at-dusk'].amount, '1100.00'); assert.equal(prints['print-painting-shoreline-at-dusk-full'].amount, '130.00'); assert.equal(inventory['painting-shoreline-at-dusk'].status, 'sold');
+  const w = works.find(w => w.id === 'painting-shoreline-at-dusk'); if (w?.original) assert.equal(w.original.price, '1100.00');
   t.fail = true; resetCache(); assert.equal(await applyCatalogOverlay({ CATALOG_DB: fakeDb(t) }), 'built');
-  assert.equal(catalog['el-zonte-at-sunrise'].amount, builtAmount); assert.equal(prints['print-el-zonte-at-sunrise-full'].amount, builtPrint); assert.equal(catalogSource(), 'built');
+  assert.equal(catalog['painting-shoreline-at-dusk'].amount, builtAmount); assert.equal(prints['print-painting-shoreline-at-dusk-full'].amount, builtPrint); assert.equal(catalogSource(), 'built');
   assert.equal(await applyCatalogOverlay({}), 'built');
 });

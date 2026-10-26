@@ -30,8 +30,8 @@ test('all 54 archive masters retain exact bytes and offer native-resolution edit
     }
     assert.equal(wallArtworks.filter(a=>a.id===recipe.id).length,1,recipe.id);
   }
-  assert.equal(wallArtworks.length,77);
-  assert.equal(roomArtworks.length,24,'Expanded Print Wall does not overcrowd the curated 3D room');
+  assert.equal(wallArtworks.length,75);
+  assert.equal(roomArtworks.length,22,'Expanded Print Wall does not overcrowd the curated 3D room');
 });
 
 test('identified featured selections have comparable original prices and measured shipping only',()=>{

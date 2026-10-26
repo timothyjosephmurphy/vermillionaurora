@@ -6,7 +6,7 @@ import {promisify} from 'node:util';
 import config from '../catalog/prints.json' with {type:'json'};
 import products from '../catalog/all-products.mjs';
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
-import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN} from '../catalog/edition-layout.mjs';
+import {editionLayouts,EDITION_LAYOUT,editionBorderIn} from '../catalog/edition-layout.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
 import bookPrints from '../catalog/book-prints.json' with {type:'json'};
 import {borderedEdition} from './bordered-edition.mjs';
@@ -46,7 +46,9 @@ await Promise.all(Array.from({length:4},async()=>{
     for(const choice of editionLayouts(source,product.dimensions,config.minimumDpi,art.layoutOptions)){
       const {layoutSpec,image,paper,key}=choice,c=layoutSpec.content;
       // Contain the complete source; fit:inside and no enlargement preserve every edge.
-      const border=Math.ceil(EDITION_BORDER_IN*layoutSpec.dpi);
+      // Use the reserved margin (0.125" shop-wide, 1" where requested), not the centered leftover,
+      // so the fit check matches editionLayouts for every other approved file.
+      const border=Math.ceil(editionBorderIn(art.layoutOptions)*layoutSpec.dpi);
       const widthLimited=(layoutSpec.widthPx-2*border)/info.width<=(layoutSpec.heightPx-2*border)/info.height;
       const resized=await sharp(normalized,{raw:{width:info.width,height:info.height,channels:info.channels}}).resize({...widthLimited?{width:c.width}:{height:c.height},withoutEnlargement:true}).raw().toBuffer({resolveWithObject:true});
       if(resized.info.width!==c.width||resized.info.height!==c.height)throw Error(`Unexpected fitted dimensions: ${product.id}`);
@@ -58,7 +60,9 @@ await Promise.all(Array.from({length:4},async()=>{
       await writeFile(new URL(`${hash}.jpg`,output),data);count++;
       // FinerWorks builds its order thumbnail from product_url_thumbnail; a full print master is too large for it.
       await writeFile(new URL(`thumbs/${hash}.jpg`,output),await sharp(data).resize({width:1000,height:1000,fit:'inside',withoutEnlargement:true}).jpeg({quality:80}).toBuffer());
-      if(await writeBordered(data,choice,asset,stock,art.variants,key,prepare||prepareBordered))count++;
+      // Style 9's half-inch lab border would crop a requested 1" white margin off the sheet.
+      if((editionBorderIn(art.layoutOptions)||0)>=1){if(art.variants[key]?.bordered)delete art.variants[key].bordered;}
+      else if(await writeBordered(data,choice,asset,stock,art.variants,key,prepare||prepareBordered))count++;
     }
     if(prepare)config.artworks[product.id]=art;
     console.log(`Prepared ${product.id}`);

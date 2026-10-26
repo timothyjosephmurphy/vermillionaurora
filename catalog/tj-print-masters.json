@@ -14,8 +14,15 @@
   {
     "id": "el-zonte-at-sunrise",
     "title": "Sunrise from Punta El Zonte Hostel",
-    "sha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
-    "local": "static/print-masters/6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8.jpg"
+    "sha256": "ce6e5765c8fee5776ddc0918e24ab5f2f8e39fab84213f26dd6c8d93e17c5506",
+    "local": "static/print-masters/ce6e5765c8fee5776ddc0918e24ab5f2f8e39fab84213f26dd6c8d93e17c5506.jpg",
+    "derivedFrom": {
+      "sha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+      "edit": "rotate 90 degrees counter-clockwise so the horizon is horizontal; no crop or resample"
+    },
+    "layoutOptions": {
+      "borderIn": 1
+    }
   },
   {
     "id": "painting-red-horizon",
@@ -167,7 +174,10 @@
     "id": "el-zonte-before-dawn",
     "title": "El Zonte Before Dawn",
     "sha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
-    "local": "static/print-masters/0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559.jpg"
+    "local": "static/print-masters/0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559.jpg",
+    "layoutOptions": {
+      "borderIn": 1
+    }
   },
   {
     "id": "sunrise-in-el-zonte-large",

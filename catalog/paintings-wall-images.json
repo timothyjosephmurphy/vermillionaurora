@@ -3385,4 +3385,51 @@
    }
   ]
  }
+,
+ "el-zonte-at-sunrise": {
+  "sha256": "5507ee2abe",
+  "width": 2400,
+  "height": 1219,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/el-zonte-at-sunrise-5507ee2abe-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/el-zonte-at-sunrise-5507ee2abe-960.webp"
+   },
+   {
+    "width": 1920,
+    "src": "/wall-paintings/el-zonte-at-sunrise-5507ee2abe-1920.webp"
+   },
+   {
+    "width": 2400,
+    "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg"
+   }
+  ]
+ },
+ "el-zonte-before-dawn": {
+  "sha256": "eb12934b57",
+  "width": 2400,
+  "height": 1145,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/el-zonte-before-dawn-eb12934b57-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/el-zonte-before-dawn-eb12934b57-960.webp"
+   },
+   {
+    "width": 1920,
+    "src": "/wall-paintings/el-zonte-before-dawn-eb12934b57-1920.webp"
+   },
+   {
+    "width": 2400,
+    "src": "/gallery-images/el-zonte-before-dawn.jpg"
+   }
+  ]
+ }
 }

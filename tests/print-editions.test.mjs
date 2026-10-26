@@ -96,6 +96,15 @@ test('every generated print file matches its approved hash, paper dimensions and
     const edge=await sharp(bytes).extract({left:0,top:0,width:metadata.width,height:4}).raw().toBuffer();assert(edge.every(v=>v>=250));
   }
 });
+test('a requested 1 inch white margin is embedded on every side', () => {
+  const layouts = editionLayouts({widthPx:7082,heightPx:3598},{width:48,height:24,unit:'in'},300,{borderIn:1});
+  const medium = layouts.find(choice => choice.key === 'medium');
+  assert.equal(layouts.length, 3);
+  assert(Math.abs(medium.paper.width - medium.image.width - 2) < 0.03);
+  assert(Math.abs(medium.paper.height - medium.image.height - 2) < 0.03);
+  assert.equal(medium.layoutSpec.content.top, 300);
+  assert(medium.layoutSpec.content.left >= 300);
+});
 test('group composites never print larger than the physical set (layoutOptions.setDimensions)', () => {
   const l = editionLayouts({widthPx:5604,heightPx:2480}, null, 300, {setDimensions:{width:15,height:6.64,unit:'in'}});
   assert(l.length >= 1 && l.every(c => Math.max(c.image.width, c.image.height) <= 15));

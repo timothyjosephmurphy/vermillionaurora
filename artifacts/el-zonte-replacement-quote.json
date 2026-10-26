@@ -1,0 +1,55 @@
+{
+  "purpose": "Replacement quote only. No FinerWorks order was submitted. TJ approves spend after seeing cost.",
+  "paidOrderSubmitted": false,
+  "doNotResubmit": ["FinerWorks order 776898", "site orders 66ad9cd1 and 8afa352c"],
+  "shipTo": {
+    "name": "Ruth Perkey",
+    "address": "591 Belvedere Rd NW",
+    "city": "Palm Bay",
+    "region": "FL",
+    "postalCode": "32907",
+    "country": "US"
+  },
+  "lines": [
+    {
+      "catalogId": "el-zonte-at-sunrise",
+      "catalogTitle": "Sunrise from Punta El Zonte Hostel",
+      "requestedAs": "El Zonte at Sunrise — Medium — Natural wood frame, Snow White mat, Premium Clear acrylic",
+      "orientation": "landscape",
+      "whiteMarginIn": 1,
+      "paper": "Watercolor Bright White (media 144, product type 5)",
+      "style": "8 borderless. The 1 inch white is embedded in the file. Style 9 would add only 1/2 inch outside the image and crop this margin.",
+      "bleedNote": "Style 8 may trim about 0.06 inch. The file embeds 1.00 inch, so the finished white can finish slightly under 1 inch.",
+      "unframedSku": "5M144M8S19.7X10.99",
+      "sheetIn": {"width": 19.7, "height": 10.99},
+      "imageIn": {"width": 17.6967, "height": 8.99},
+      "fileSha256": "94472f45bbc69fde56dd76216a26d433711f0027ef5d12ed43bff9f081860f03",
+      "frame": {"id": 7, "name": "Natural wood", "matId": 1, "matName": "Snow White", "glazingId": 1, "glazingName": "Premium Clear"},
+      "matOuterIn": {"width": 22.7, "height": 13.99},
+      "matBorderIn": 1.5,
+      "mouldingWidthIn": 0.88,
+      "framedSku": "Built by FinerWorks POST /v3/build_product_code from the unframed sheet plus FrameID 7, MatID 1, GlassID 1. Not invented locally.",
+      "preview": "artifacts/el-zonte-sunrise-medium-framed-preview.png"
+    },
+    {
+      "catalogId": "el-zonte-before-dawn",
+      "catalogTitle": "El Zonte Before Dawn",
+      "requestedAs": "El Zonte at Dawn — Large — unframed watercolor",
+      "identityNote": "The received sheet aspect matches el-zonte-before-dawn (7544×3600). The catalog title El Zonte at Dawn is painting-shoreline-at-dusk and was not changed.",
+      "orientation": "landscape",
+      "whiteMarginIn": 1,
+      "paper": "Watercolor Bright White (media 144, product type 5)",
+      "style": "8 borderless, with the 1 inch white embedded. Unframed sales normally use style 9; that style is skipped here so the inch is not cropped.",
+      "bleedNote": "Style 8 may trim about 0.06 inch. The file embeds 1.00 inch.",
+      "unframedSku": "5M144M8S27.14X14",
+      "sheetIn": {"width": 27.14, "height": 14},
+      "imageIn": {"width": 25.14, "height": 11.9967},
+      "fileSha256": "34b47b0aa2fb2f179d05ee10b615271acc7bd3d0a7aeb4799efeaa4a5b8b4d40",
+      "preview": "artifacts/el-zonte-dawn-large-unframed-preview.png"
+    }
+  ],
+  "productionCost": null,
+  "blocker": "No production cost was returned. This environment has no FINERWORKS_WEB_API_KEY, FINERWORKS_APP_KEY, CLOUDFLARE_API_TOKEN, or DEPLOYED_SHA. Worker secret values are write-only. payments/quote-tj-prints.mjs quotes the deployed sandbox catalog, which still has the previous portrait Sunrise sizes and the old 0.125 inch margin, and it would also write a sandbox audit secret. An undeployed read-only checker (worker version a21dffa3-7a5d-46f7-9107-91b8fc48c578 on vermillion-checkout-sandbox) was not deployed: deploying it would replace the live sandbox. Shipping was not quoted because the new edition files are not on the public site yet.",
+  "sellable": false,
+  "reasonHeld": "Both prints are enabled:false with prices removed so the new SKUs are not published at the old dollar amounts. Original paintings stay for sale."
+}
