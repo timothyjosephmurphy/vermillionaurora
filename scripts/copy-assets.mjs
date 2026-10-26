@@ -40,6 +40,7 @@ console.log(`Public assets copied; catalog ${catalogVersion}`);
 await copyFile('payments/cart.js','dist/payments/cart.js');
 await copyFile('payments/cart.css','dist/payments/cart.css');
 await copyFile('payments/prints.js','dist/payments/prints.js');
+await copyFile('payments/stickers.js','dist/payments/stickers.js');
 await copyFile('payments/prints.css','dist/payments/prints.css');
 await copyFile('payments/print-samples.js','dist/payments/print-samples.js');
 function addMobileMenu(html) {
