@@ -13,7 +13,7 @@
       "label": "Watercolor Bright White"
     },
     "photo-rag": {
-      "label": "Hahnem\u00fchle Photo Rag"
+      "label": "Hahnemühle Photo Rag"
     }
   },
   "artworks": {
@@ -64301,6 +64301,72 @@
                   }
                 },
                 "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            }
+          }
+        },
+        "full": {
+          "sku": "5M144M8S15.86X24.71",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b.jpg",
+            "sha256": "798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b",
+            "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
+            "productCode": "5M144M8S15.86X24.71",
+            "imageWidthIn": 15.6067,
+            "imageHeightIn": 24.4533,
+            "paperWidthIn": 15.86,
+            "paperHeightIn": 24.71,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-white-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 4758,
+              "heightPx": 7413,
+              "content": {
+                "left": 38,
+                "top": 38,
+                "width": 4682,
+                "height": 7336
+              }
+            }
+          },
+          "bordered": {
+            "sku": "5M144M9S15.6X24.45",
+            "asset": {
+              "provider": "finerworks",
+              "url": "https://vermillionaurora.com/print-editions/0b8a8d37b4ee2eceffa07ecee8d336a82237be61231420327aa9e5c292f99e12.jpg",
+              "sha256": "0b8a8d37b4ee2eceffa07ecee8d336a82237be61231420327aa9e5c292f99e12",
+              "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
+              "editionSha256": "798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b",
+              "productCode": "5M144M9S15.6X24.45",
+              "imageWidthIn": 15.6,
+              "imageHeightIn": 24.45,
+              "printWidthIn": 15.6,
+              "printHeightIn": 24.45,
+              "paperWidthIn": 16.6,
+              "paperHeightIn": 25.45,
+              "borderIn": 0.5,
+              "approved": true,
+              "layoutApproved": true,
+              "layout": "full-image-finerworks-border-v1",
+              "layoutSpec": {
+                "dpi": 300,
+                "widthPx": 4680,
+                "heightPx": 7335,
+                "crop": {
+                  "left": 39,
+                  "top": 38,
+                  "width": 4680,
+                  "height": 7335
+                },
+                "content": {
+                  "left": 0,
+                  "top": 0,
+                  "width": 4680,
+                  "height": 7335
+                }
               }
             }
           }
