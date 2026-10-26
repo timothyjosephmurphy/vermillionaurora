@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book viewer viewport fit fixture</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/site-header.css" />
+  <link rel="stylesheet" href="/book-viewer/product.css" />
+  <link rel="stylesheet" href="/book-viewer/viewer.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand-block">
+          <a href="#top" class="brand">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>TJ Murphy<br><small>Vermillion Aurora Productions</small></span>
+          </a>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#top">Gallery</a>
+          <a href="#top">Exhibitions</a>
+          <a href="#top">Murals</a>
+          <a href="#top">Books</a>
+          <a href="#top">Commissions</a>
+          <a href="#top">Testimonials</a>
+          <a href="#top">Blog</a>
+          <a href="#top">Play</a>
+          <a href="#top">About</a>
+          <a href="#top">Contact</a>
+          <a href="#top">Cart</a>
+        </nav>
+        <div class="header-actions">
+          <a href="#top" class="button button-solid header-cta"><span class="header-cta-lead">Book a&nbsp;</span>commission</a>
+        </div>
+      </div>
+    </header>
+    <div id="main-content">
+      <main class="container book-product">
+        <nav class="book-breadcrumb" aria-label="Breadcrumb"><a href="#top">Home</a> / <a href="#top">Books</a> / Fixture</nav>
+        <section class="book-intro" aria-labelledby="book-title">
+          <div class="book-cover" style="height:220px;background:#c4b49a"></div>
+          <div class="book-summary">
+            <p class="eyebrow dark">Book</p>
+            <h1 id="book-title">Viewport fit fixture</h1>
+            <p class="book-author">Colored pages stand in for the PDF.</p>
+            <p class="book-description">The thumbnail strip, the controls, and both pages of the spread have to sit in one viewport under the sticky header. The colored band at the bottom of each page is the edge that was getting clipped.</p>
+            <div class="book-actions"><a class="button button-ghost" href="#read-book">Read the book</a></div>
+          </div>
+        </section>
+        <section id="read-book" class="book-preview" aria-labelledby="book-preview-title">
+          <div class="book-preview-heading">
+            <h2 id="book-preview-title">Inside the book</h2>
+            <a href="#top">Open PDF <span>(fixture)</span></a>
+          </div>
+          <div class="book-reader">
+            <nav class="book-thumbnail-nav" aria-label="Page thumbnails">
+              <button type="button" aria-label="Scroll thumbnails left">←</button>
+              <div class="book-thumbnails" aria-label="Choose a page"></div>
+              <button type="button" aria-label="Scroll thumbnails right">→</button>
+            </nav>
+            <div class="book-reader-controls" role="group" aria-label="Book viewer controls">
+              <button type="button" data-prev>← Previous</button>
+              <span role="status">Pages 15–16 of 79</span>
+              <button type="button" data-next>Next →</button>
+              <label>Layout <select aria-label="Layout">
+                <option value="2" selected>Two pages</option>
+                <option value="1">Single page</option>
+              </select></label>
+            </div>
+            <div class="book-reader-pages" aria-label="Book pages"></div>
+          </div>
+        </section>
+        <p class="book-back"><a href="#top">← All books</a></p>
+      </main>
+    </div>
+  </div>
+  <script src="/book-viewer/viewer.js" defer></script>
+  <script>
+    const pages = document.querySelector('.book-reader-pages');
+    const status = document.querySelector('[role="status"]');
+    const colors = ['#e7b15a', '#7eb0c9'];
+    const canvases = [15, 16].map((n, i) => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 850;
+      canvas.height = 1100;
+      canvas.setAttribute('role', 'img');
+      canvas.setAttribute('aria-label', `Book page ${n}`);
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#fffaf4';
+      ctx.fillRect(0, 0, 850, 1100);
+      ctx.fillStyle = colors[i];
+      ctx.fillRect(36, 36, 778, 900);
+      ctx.fillStyle = '#1d1a17';
+      ctx.font = '64px Georgia, serif';
+      ctx.fillText('Page ' + n, 70, 160);
+      ctx.fillStyle = '#8c4d39';
+      ctx.fillRect(0, 1020, 850, 80);
+      ctx.fillStyle = '#fffaf4';
+      ctx.font = '42px Georgia, serif';
+      ctx.fillText('PAGE BOTTOM ' + n, 48, 1072);
+      return canvas;
+    });
+    const thumbs = document.querySelector('.book-thumbnails');
+    for (let n = 9; n <= 17; n++) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'book-thumbnail';
+      button.setAttribute('aria-pressed', String(n === 15 || n === 16));
+      button.innerHTML = `<span class="book-thumbnail-preview" aria-hidden="true"></span><span>${n}</span>`;
+      const preview = button.querySelector('.book-thumbnail-preview');
+      const thumb = document.createElement('canvas');
+      thumb.width = 60;
+      thumb.height = 80;
+      const tctx = thumb.getContext('2d');
+      tctx.fillStyle = n === 15 ? colors[0] : n === 16 ? colors[1] : '#d9cbb8';
+      tctx.fillRect(0, 0, 60, 80);
+      preview.append(thumb);
+      thumbs.append(button);
+    }
+    function applyLayout(count) {
+      pages.style.gridTemplateColumns = `repeat(${count}, minmax(0, 1fr))`;
+      pages.replaceChildren(...canvases.slice(0, count));
+      status.textContent = count === 2 ? 'Pages 15–16 of 79' : 'Page 15 of 79';
+      document.querySelectorAll('.book-thumbnail').forEach(button => {
+        const n = Number(button.querySelector('span:last-child').textContent);
+        button.setAttribute('aria-pressed', String(n >= 15 && n < 15 + count));
+      });
+    }
+    document.querySelector('select').addEventListener('change', event => applyLayout(Number(event.target.value)));
+    applyLayout(2);
+  </script>
+</body>
+</html>

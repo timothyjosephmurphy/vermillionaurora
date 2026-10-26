@@ -10,12 +10,13 @@
 .book-actions { display:flex; flex-wrap:wrap; gap:10px; }
 .book-actions .button { padding:.7rem 1.1rem; width:auto; }
 .book-purchase-note { margin:8px 0 0; color:var(--muted); font-size:.78rem; }
-.book-preview { margin:28px 0 0; scroll-margin-top:110px; }
-.book-preview-heading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+.book-preview { --book-header-offset:110px; margin:28px 0 0; scroll-margin-top:var(--book-header-offset); height:calc(100vh - var(--book-header-offset)); height:calc(100dvh - var(--book-header-offset)); display:flex; flex-direction:column; min-height:0; }
+.book-preview-heading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:12px; flex:0 0 auto; }
 .book-preview-heading h2 { margin:0; font:600 1.8rem/1.15 "Cormorant Garamond",serif; }
 .book-preview-heading a { font-size:.85rem; text-decoration:underline; text-underline-offset:3px; }
 .book-preview-heading span { color:var(--muted); }
-.book-preview iframe { display:block; width:100%; height:75vh; min-height:400px; max-height:1000px; border:1px solid #cbbdab; border-radius:12px; background:#e8dfd3; }
+.book-preview iframe { display:block; width:100%; flex:1 1 auto; min-height:0; border:1px solid #cbbdab; border-radius:12px; background:#e8dfd3; }
 .book-back { margin:20px 0 0; font-size:.9rem; }
 @media(max-width:600px) { .book-product { padding-top:18px; }.book-intro { grid-template-columns:110px minmax(0,1fr); gap:16px; align-items:start; }.book-cover { max-height:170px; }.book-summary h1 { font-size:2rem; }.book-description { font-size:.92rem; }.book-author { font-size:.8rem; }.book-actions { gap:8px; }.book-actions .button { font-size:.66rem; padding:.65rem .85rem; }.book-preview { margin-top:24px; } }
+@media(max-height:640px) { .book-preview-heading { margin-bottom:6px; }.book-preview-heading h2 { font-size:1.4rem; } }
 @media(max-width:360px) { .book-intro { grid-template-columns:85px minmax(0,1fr); gap:12px; }.book-summary h1 { font-size:1.75rem; } }
