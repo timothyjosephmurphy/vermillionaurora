@@ -111,6 +111,15 @@ export const posts = [
     "xText": "Fix the money, fix the world, and think about who inherits it. Honeybadger and Cub with Genesis Block comes as a fine-art print on textured watercolor paper, $25 / $35 / $50 by size. Original $1,200. https://tjm.art/products/honeybadger-and-cub-with-genesis-block/"
   },
   {
+    "id": "campaign-layers-of-sound-live-looping-2026-10-27",
+    "title": "Layers of Sound: My Live Looping Guitar Setup",
+    "scheduledAt": "2026-10-27T10:00:00-07:00",
+    "text": "Most of my days go to watercolor. Lately I've been building layers the same way on guitar: live looping with a Ditto X4, an HX Stomp XL, and an EV-30.\n\nWrote up the setup, the sound, and a lesson with my teacher Chris Flanders.",
+    "imageUrl": "https://img.tjm.art/blog/live-looping-guitar/live-looping-guitar-poster.jpg",
+    "productUrl": "/blog/live-looping-guitar/",
+    "xText": "Most of my days go to watercolor. Lately I've been building layers the same way on guitar: live looping with a Ditto X4, an HX Stomp XL, and an EV-30.\n\nWrote up the setup, the sound, and a lesson with my teacher Chris Flanders. https://tjm.art/blog/live-looping-guitar/"
+  },
+  {
     "id": "campaign-exhibition-history-2026-10-29",
     "title": "Where my paintings have hung",
     "scheduledAt": "2026-10-29T18:00:00-07:00",

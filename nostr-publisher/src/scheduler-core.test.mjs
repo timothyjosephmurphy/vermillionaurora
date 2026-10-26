@@ -11,9 +11,9 @@ const fixture = [
 
 const PUBLISHED = ['launch-warszawska-syrenka-2026-10-03', 'launch-honeybadger-cub-2026-10-06'];
 const EL_ZONTE = 'launch-sunrise-el-zonte-bitcoin-beach-2026-10-08';
-// Pacific wall-clock slots matching the Buffer schedule (Sun Oct 11, then Tue 7 AM / Thu 6 PM / Sat 10 AM, plus the Fri Oct 16 noon testimonial request).
+// Pacific wall-clock slots matching the Buffer schedule (Sun Oct 11, then Tue 7 AM / Thu 6 PM / Sat 10 AM, plus the Fri Oct 16 noon testimonial request and Tue Oct 27 10 AM Layers of Sound).
 const SLOTS = ['2026-10-03 23:00', '2026-10-06 07:00', '2026-10-11 10:00', '2026-10-13 07:00', '2026-10-15 18:00', '2026-10-16 12:00', '2026-10-17 10:00',
-  '2026-10-20 07:00', '2026-10-22 18:00', '2026-10-24 10:00', '2026-10-27 07:00', '2026-10-29 18:00', '2026-10-31 10:00',
+  '2026-10-20 07:00', '2026-10-22 18:00', '2026-10-24 10:00', '2026-10-27 07:00', '2026-10-27 10:00', '2026-10-29 18:00', '2026-10-31 10:00',
   '2026-11-03 07:00', '2026-11-05 18:00', '2026-11-07 10:00'];
 const pacific = (ms) => {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
@@ -79,9 +79,26 @@ test('after deploy: published entries never repeat and nothing publishes before 
   }
 });
 
+test('Layers of Sound goes out Tue Oct 27 at 10 AM PT with the poster, and Honeybadger prints stay at 7 AM', () => {
+  const post = posts.find(entry => entry.id === 'campaign-layers-of-sound-live-looping-2026-10-27');
+  assert.equal(post.scheduledAt, '2026-10-27T10:00:00-07:00');
+  assert.equal(pacific(Date.parse(post.scheduledAt)), '2026-10-27 10:00');
+  assert.equal(post.title, 'Layers of Sound: My Live Looping Guitar Setup');
+  assert.equal(post.text, "Most of my days go to watercolor. Lately I've been building layers the same way on guitar: live looping with a Ditto X4, an HX Stomp XL, and an EV-30.\n\nWrote up the setup, the sound, and a lesson with my teacher Chris Flanders.");
+  assert.equal(post.imageUrl, 'https://img.tjm.art/blog/live-looping-guitar/live-looping-guitar-poster.jpg');
+  assert.equal(post.productUrl, '/blog/live-looping-guitar/');
+  assert.equal(post.xText, `${post.text} https://tjm.art/blog/live-looping-guitar/`);
+  const content = eventContent(post);
+  assert.equal(content, `${post.text}\n\nhttps://tjm.art/blog/live-looping-guitar/\n\n${post.imageUrl}`);
+  assert.equal(content.match(/https:\/\/tjm\.art\/blog\/live-looping-guitar\//g).length, 1);
+  const honeybadger = posts.find(entry => entry.id === 'campaign-honeybadger-prints-2026-10-27');
+  assert.equal(honeybadger.scheduledAt, '2026-10-27T07:00:00-07:00');
+  assert.equal(honeybadger.imageUrl, 'https://tjm.art/gallery-images/honeybadger-and-cub.jpeg');
+});
+
 test('notes use tjm.art links and images, no X handles, and no duplicated link', () => {
   for (const post of posts) {
-    assert.match(post.imageUrl, /^https:\/\/tjm\.art\/[^\s]+\.(jpe?g|webp)$/);
+    assert.match(post.imageUrl, /^https:\/\/(?:img\.)?tjm\.art\/[^\s]+\.(jpe?g|webp)$/);
     assert.match(post.productUrl, /^\/[a-z0-9/-]+\/$/);
     const content = eventContent(post);
     assert.ok(!/vermillionaurora\.com/.test(content), post.id);
