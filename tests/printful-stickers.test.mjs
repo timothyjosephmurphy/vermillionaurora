@@ -18,7 +18,8 @@ test('sticker order sits beside print order on the starter paintings only', () =
     const sticker = $('.product-sticker-action');
     assert.equal(print.length, 1, slug);
     assert.equal(sticker.length, 1, slug);
-    assert.equal(sticker.parent().attr('class'), 'product-purchase-actions');
+    assert.equal(sticker.parent().attr('class'), 'product-edition-actions');
+    assert.equal(sticker.parent().parent().attr('class'), 'product-purchase-actions');
     assert.equal(sticker.prev().is('.product-print-action'), true, slug);
     assert.equal(sticker.find('[data-sticker-open]').text(), 'Order a sticker');
     assert.equal(print.find('[data-print-open]').text(), 'Buy a print');

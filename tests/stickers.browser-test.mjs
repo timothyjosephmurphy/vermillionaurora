@@ -39,10 +39,12 @@ try {
     const stickerButton = section.querySelector('[data-sticker-open]');
     const printBox = printButton.getBoundingClientRect();
     const stickerBox = stickerButton.getBoundingClientRect();
-    return { sameRow: Math.abs(printBox.top - stickerBox.top) < 8, stickerAfter: stickerBox.left > printBox.right - 1 };
+    const sideBySide = Math.abs(printBox.top - stickerBox.top) < 8 && stickerBox.left > printBox.right - 1;
+    const stackedWithPrint = Math.abs(stickerBox.left - printBox.left) < 8 && stickerBox.top > printBox.bottom - 1;
+    return { grouped: printButton.closest('.product-edition-actions') === stickerButton.closest('.product-edition-actions'), nextToPrint: sideBySide || stackedWithPrint };
   });
-  assert.equal(beside.sameRow, true);
-  assert.equal(beside.stickerAfter, true);
+  assert.equal(beside.grouped, true);
+  assert.equal(beside.nextToPrint, true);
   await purchase.screenshot({ path: path.join(shots, 'dawn-order-controls.png') });
   await sticker.click();
   const dialog = page.locator('[data-sticker-dialog]');
