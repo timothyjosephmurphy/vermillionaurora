@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog painting carousel fixture</title>
+  <link rel="stylesheet" href="../../static/blog/painting-carousel.css">
+  <style>
+    body { margin: 0; background: #f5f0e8; color: #2c2924; font: 16px/1.5 Inter, system-ui, sans-serif; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="blog-painting-carousel" aria-roledescription="carousel" aria-label="Bitcoiners in El Salvador">
+      <div class="blog-painting-track" tabindex="0" aria-label="Swipe or use arrow keys to browse paintings.">
+        <figure class="blog-painting-slide" data-product-id="book-art-4afb5cab4bdbe1ff6845">
+          <a href="/products/book-art-4afb5cab4bdbe1ff6845/">
+            <img src="https://media.vermillionaurora.com/images/book-galleries/v1/4afb5cab4bdbe1ff6845.webp" alt="Viv @btcviv" loading="lazy" decoding="async">
+            <span class="blog-painting-title">Viv @btcviv</span>
+            <span class="blog-painting-caption">Met in El Salvador</span>
+          </a>
+        </figure>
+        <figure class="blog-painting-slide" data-product-id="book-art-b38b9ae1893908d604da">
+          <a href="/products/book-art-b38b9ae1893908d604da/">
+            <img src="https://media.vermillionaurora.com/images/book-galleries/v1/b38b9ae1893908d604da.webp" alt="Alejandra Guajardo @MissBitcoin_sv" loading="lazy" decoding="async">
+            <span class="blog-painting-title">Alejandra Guajardo @MissBitcoin_sv</span>
+            <span class="blog-painting-caption">Adopting Bitcoin</span>
+          </a>
+        </figure>
+        <figure class="blog-painting-slide" data-product-id="book-art-4d53927ad111f0259402">
+          <a href="/products/book-art-4d53927ad111f0259402/">
+            <img src="https://media.vermillionaurora.com/images/book-galleries/v1/4d53927ad111f0259402.webp" alt="Scott Dedels @LanternBitcoin" loading="lazy" decoding="async">
+            <span class="blog-painting-title">Scott Dedels @LanternBitcoin</span>
+            <span class="blog-painting-caption">Gifted in El Salvador</span>
+          </a>
+        </figure>
+        <figure class="blog-painting-slide" data-product-id="book-art-c04c7e48687fe35e65f5">
+          <a href="/products/book-art-c04c7e48687fe35e65f5/">
+            <img src="https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.webp" alt="Maya Parbhoe @MayaPar25" loading="lazy" decoding="async">
+            <span class="blog-painting-title">Maya Parbhoe @MayaPar25</span>
+            <span class="blog-painting-caption">Gifted in El Salvador</span>
+          </a>
+        </figure>
+      </div>
+      <div class="blog-painting-controls" hidden>
+        <button type="button" data-dir="-1" aria-label="Previous painting">←</button>
+        <p class="blog-painting-status" role="status" aria-live="polite"></p>
+        <button type="button" data-dir="1" aria-label="Next painting">→</button>
+      </div>
+    </section>
+  </main>
+  <script src="../../static/blog/painting-carousel.js" defer></script>
+</body>
+</html>
