@@ -164,3 +164,30 @@ const observer = new IntersectionObserver(entries => {
   });
 }, {rootMargin:'200px'});
 document.querySelectorAll('.book-preview iframe').forEach(frame => observer.observe(frame));
+
+// Keep the preview as tall as the space under the sticky header, including its top margin,
+// so a jump to #read-book shows the spread without a second scroll. 110px is the fallback.
+function alignBookPreview(preview) {
+  try { preview.scrollIntoView({block:'start', behavior:'instant'}); }
+  catch { preview.scrollIntoView({block:'start'}); }
+}
+function syncBookPreviewOffset() {
+  const header = document.querySelector('.site-header');
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+  for (const preview of document.querySelectorAll('.book-preview')) {
+    const marginTop = parseFloat(getComputedStyle(preview).marginTop) || 0;
+    const offset = Math.ceil(headerHeight + marginTop);
+    const previous = parseFloat(preview.style.getPropertyValue('--book-header-offset')) || offset;
+    preview.style.setProperty('--book-header-offset', `${offset}px`);
+    // The spread was already sitting under the header; follow a header-size change.
+    if (offset !== previous && Math.abs(preview.getBoundingClientRect().top - previous) <= 2) alignBookPreview(preview);
+  }
+}
+syncBookPreviewOffset();
+addEventListener('resize', syncBookPreviewOffset);
+const bookHeader = document.querySelector('.site-header');
+if (bookHeader && 'ResizeObserver' in window) new ResizeObserver(syncBookPreviewOffset).observe(bookHeader);
+if (location.hash === '#read-book') {
+  const bookTarget = document.getElementById('read-book');
+  if (bookTarget) alignBookPreview(bookTarget);
+}
