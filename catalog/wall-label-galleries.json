@@ -1,0 +1,241 @@
+{
+  "source": "Derived from studio-tracker #354 wall labels (labels354.json). Reiki is omitted (no members; studio-tracker #394). The site reads this file at build time and does not consult play-tags.",
+  "omitted": [
+    {
+      "id": "reiki",
+      "title": "Reiki",
+      "reason": "No members in labels354 and no Reiki hang or catalog works; omitted per studio-tracker #394."
+    }
+  ],
+  "memberResolution": {
+    "festival-burning-man": "labels354 has no members array. Filled with every product id assigned the burning-man tag and/or the festival tag in catalog/painting-tags.json, in assignment order.",
+    "landscapes-by-size": "labels354 has no members array. Filled with every product id assigned the landscapes tag in catalog/painting-tags.json, in assignment order. That tag already matched catalog paintings, so related place and subject tags were not added."
+  },
+  "galleries": [
+    {
+      "id": "bitcoiners",
+      "title": "Bitcoiners",
+      "thumb": "/galleries/labels/label-bitcoiners.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "older-work-bitcoin-voices-original-3",
+        "older-work-bitcoin-voices-original-4",
+        "older-work-bitcoin-voices-original-1",
+        "older-work-bitcoin-voices-original-2",
+        "older-work-yakes-todd-dickerson-original-2",
+        "older-work-yakes-todd-dickerson-original-1",
+        "older-work-yakes-todd-dickerson-original-3",
+        "older-work-rochard-martinez-original-1",
+        "older-work-ammous-livera-original-1",
+        "older-work-ammous-livera-original-2",
+        "older-work-nakamoto-hayek-original-1",
+        "older-work-nakamoto-hayek-original-2",
+        "older-work-fernandez-moran-pysh-original-1",
+        "older-work-fernandez-moran-pysh-original-2",
+        "older-work-fernandez-moran-pysh-original-3",
+        "older-work-rochard-martinez-original-2"
+      ]
+    },
+    {
+      "id": "festival-burning-man",
+      "title": "Festival · Burning Man",
+      "thumb": "/galleries/labels/label-festival-burning-man.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "burning-man-temple-2022-blue",
+        "burning-man-temple-2022-pink",
+        "burning-man-temple-2022-flame",
+        "burning-man-temple-2022-daytime",
+        "book-art-c198f09bc8ddad18ed1e",
+        "book-art-9a4b9331f62350fa36fc",
+        "book-art-64a80ece808ac08d4877",
+        "book-art-3a9cba708a8045364e82",
+        "book-art-0d7df713c5f0f67733ae",
+        "book-art-3cd6b3fb3e356c4b1d1d",
+        "book-art-04f4a52773ffd19b4f67",
+        "book-art-614d5b68dbe5052e302a",
+        "book-art-54ff45104a57a68d4beb",
+        "book-art-4350a257e5a6a5e75a31",
+        "book-art-f367882aaeb0e32471eb",
+        "book-art-67cc9a4d5823eca2182e",
+        "book-art-4c6fb3817fed4e5a6195",
+        "archived-painting-133",
+        "archived-painting-438",
+        "archived-painting-437",
+        "archived-painting-433",
+        "archived-painting-436",
+        "archived-painting-90",
+        "archived-painting-18",
+        "archived-painting-19",
+        "archived-painting-20",
+        "archived-painting-22",
+        "archived-painting-62"
+      ]
+    },
+    {
+      "id": "bass-coast-sunrises",
+      "title": "Bass Coast Sunrises",
+      "thumb": "/galleries/labels/label-bass-coast-sunrises.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "archived-painting-433",
+        "archived-painting-438",
+        "archived-painting-436",
+        "archived-painting-437"
+      ]
+    },
+    {
+      "id": "temples",
+      "title": "Temples",
+      "thumb": "/galleries/labels/label-temples.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "archived-painting-19",
+        "archived-painting-20",
+        "burning-man-temple-2022-flame",
+        "burning-man-temple-2022-pink"
+      ]
+    },
+    {
+      "id": "renoirs-and-ridges",
+      "title": "Renoirs & Ridges",
+      "thumb": "/galleries/labels/label-renoirs-and-ridges.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "lisa-climbing-tahoma-at-sunrise-from-denny-blaine",
+        "older-work-sunset-ridge-strips-original-1",
+        "older-work-sunset-ridge-strips-original-2",
+        "older-work-sunset-ridge-strips-original-3",
+        "older-work-sunset-ridge-strips-original-4",
+        "sunrise-on-tahoma-from-denny-blaine",
+        "older-work-sunset-ridge-strips-original-5",
+        "older-work-sunset-ridge-strips-original-6",
+        "older-work-ridge-strips-unindexed-original-1",
+        "older-work-ridge-strips-unindexed-original-3",
+        "painting-portrait-with-hat",
+        "older-work-ridge-strips-unindexed-original-4",
+        "older-work-ridge-strips-unindexed-original-2",
+        "older-work-ridge-strips-unindexed-original-5",
+        "older-work-ridge-strips-unindexed-original-6",
+        "older-work-ridge-strips-unindexed-original-7"
+      ]
+    },
+    {
+      "id": "father-paul",
+      "title": "Father Paul",
+      "thumb": "/galleries/labels/label-father-paul.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "book-art-0a80f9a5da0d39edc80f",
+        "book-art-82127d1886ae57d5cb6e",
+        "archived-painting-img-1555",
+        "grandpa-howard"
+      ]
+    },
+    {
+      "id": "bounty-of-satoshi",
+      "title": "Bounty of Satoshi",
+      "thumb": "/galleries/labels/label-bounty-of-satoshi.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "archived-painting-img-1612",
+        "painting-phoenix-rising",
+        "painting-festival-portrait"
+      ]
+    },
+    {
+      "id": "ukraine",
+      "title": "Ukraine",
+      "thumb": "/galleries/labels/label-ukraine.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "painting-sunflower-woman",
+        "painting-figures-in-wheatfield",
+        "girl-wearing-flower-crown"
+      ]
+    },
+    {
+      "id": "small-watercolors",
+      "title": "Small Watercolors",
+      "thumb": "/galleries/labels/label-small-watercolors.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "older-work-mountain-layers-original-1",
+        "older-work-mountain-layers-original-2",
+        "older-work-mountain-layers-original-3",
+        "older-work-mountain-layers-original-4",
+        "older-work-beach-sunsets-original-1",
+        "older-work-beach-sunsets-original-2",
+        "older-work-beach-sunsets-original-3",
+        "older-work-lake-hillside-color-wheel-original-1",
+        "older-work-lake-hillside-color-wheel-original-2",
+        "older-work-lake-hillside-color-wheel-original-3"
+      ]
+    },
+    {
+      "id": "attendees",
+      "title": "Attendees",
+      "thumb": "/galleries/labels/label-attendees.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "book-art-044d157c01c7bb07eeab",
+        "book-art-4afb5cab4bdbe1ff6845",
+        "book-art-4d53927ad111f0259402",
+        "book-art-6ef848d3ccb6b48184ab",
+        "book-art-0ee2717bc04e65d0507e",
+        "book-art-deb92de6e72f7b3ce951"
+      ]
+    },
+    {
+      "id": "landscapes-by-size",
+      "title": "Landscapes by Size",
+      "thumb": "/galleries/labels/label-landscapes-by-size.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "rice-paddies-in-vietnam",
+        "book-art-9f6386bac0e6198f6661",
+        "book-art-66fa2eb4ccbaa13b172e",
+        "book-art-f2025e5a72f4a70866c6",
+        "book-art-94e2edf9a24c90950489",
+        "book-art-6e6d7ac51608e0b7f10f",
+        "archived-painting-1",
+        "archived-painting-2",
+        "archived-painting-4"
+      ]
+    },
+    {
+      "id": "forest-triptych",
+      "title": "Forest Triptych",
+      "thumb": "/galleries/labels/label-forest-triptych.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "older-work-forest-triptych-original-1",
+        "older-work-forest-triptych-original-2",
+        "older-work-forest-triptych-original-3"
+      ]
+    },
+    {
+      "id": "hummingbirds",
+      "title": "Hummingbirds",
+      "thumb": "/galleries/labels/label-hummingbirds.desktop.webp",
+      "thumbWidth": 1024,
+      "thumbHeight": 256,
+      "members": [
+        "book-art-b7a9cd259d8ac51a236b",
+        "older-work-hummingbird-feeder-190"
+      ]
+    }
+  ]
+}

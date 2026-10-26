@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/BookGalleryLayout.astro';
+import {urlFor} from '../../../catalog/catalog.mjs';
+import {artworkAlt} from '../../data/artwork-alt.mjs';
+import {wallLabelGalleries} from '../../../catalog/wall-label-galleries.mjs';
+
+export function getStaticPaths() {
+  return wallLabelGalleries.map(gallery => ({params:{id:gallery.id}, props:{gallery}}));
+}
+
+const {gallery} = Astro.props;
+const works = gallery.works;
+const countLabel = `${works.length} ${works.length === 1 ? 'work' : 'works'}`;
+---
+
+<Layout title={`${gallery.title} — Gallery`} description={`${gallery.title}: ${countLabel} grouped under this studio wall label by TJ Murphy.`}>
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/galleries/">Galleries</a> / {gallery.title}</nav>
+  <header class="book-gallery-intro">
+    <p class="eyebrow dark">Wall label</p>
+    <h1>{gallery.title}</h1>
+    <p>{countLabel} in this group. A painting can also appear in other galleries. Each image opens its catalog page.</p>
+  </header>
+  <figure class="wall-label-hero">
+    <img src={gallery.thumb} alt="" width={gallery.thumbWidth} height={gallery.thumbHeight} />
+  </figure>
+  {works.length
+    ? <ul class="book-gallery-grid wall-label-works" aria-label={`${gallery.title} works`}>
+        {works.map(product => <li class="book-gallery-card">
+          <a href={urlFor(product)}>
+            <img src={product.image.src} alt={artworkAlt(product)} width={product.image.width} height={product.image.height} loading="lazy" decoding="async" />
+            <h2>{product.title}</h2>
+          </a>
+        </li>)}
+      </ul>
+    : <p>None of the recorded works for this label are in the catalog right now.</p>}
+  <nav class="book-gallery-links" aria-label="More galleries"><a href="/galleries/">All wall label galleries →</a><a href="/book-galleries/">Book galleries →</a></nav>
+</Layout>
+
+<style>
+  .wall-label-hero { margin: 0 0 32px; background: #111; border-radius: 4px; }
+  .wall-label-hero img { display: block; width: 100%; height: auto; }
+</style>
