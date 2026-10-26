@@ -26,7 +26,7 @@ const MERGED={
   'book-art-04de39dfa1817b8d1ed9':['painting-figures-in-wheatfield','The Mother of Kiev'],
   'book-art-7718008765132b8bc17f':['painting-studio-figure','Brekkie @BVBTC hoisting a sculpture in progress'],
   'book-art-159503a8e82d7b91c293':['joaquim-in-zihuatanejo','Joaquim in Zihuatanejo'],
-  'book-art-a137dffe65723d0b5a07':['daniel-portrait-1','Daniel — portrait 1'],
+  'book-art-a137dffe65723d0b5a07':['daniel-portrait-1','Daniel Getting Reprimanded'],
   'book-art-c8da7882b2a3b7a36874':['painting-clouds-over-water','El Salvador'],
   'book-art-82ab8d65fb50fe0d096a':['painting-sunflower-woman','Vision of Ukraine at Peace'],
   'book-art-1cc00425e5226b3aa20c':['sunset-in-el-tunco-el-salvador','Sunset in El Tunco, El Salvador'],
@@ -142,4 +142,32 @@ test('Father Paul and My Dad, Paul Murphy are one painting: the archive page wit
   assert.equal($(`.collector-items-carousel [data-product-id="${slug}"]`).length,1);
   const page=read(`dist/products/${slug}/index.html`);
   assert.equal(page('.product-availability').text().trim(),'Not for sale');
+});
+
+test('Pagoda in Botanical Garden is one page: the archive scan survives and the book page 301s to it',()=>{
+  const slug='archived-painting-217',scan='book-art-164f60d23032b0f718de',pagoda=archiveProducts.find(p=>p.id===slug);
+  assert.equal(pagoda.title,'Pagoda in Botanical Garden');
+  assert.equal(canonicalArtwork[scan],slug);
+  assert(bookProducts.some(b=>b.id===scan),'the scan keeps its data so its book print IDs stay valid');
+  for(const from of [`/products/${scan}/`,`/products/${scan}`]){
+    assert.deepEqual(redirects.find(([f])=>f===from),[from,`/products/${slug}/`,'301'],from);
+    assert.equal(renamedProductPath(from),`/products/${slug}/`);
+  }
+  assert.equal(read(`dist/products/${slug}/index.html`)('h1').text(),'Pagoda in Botanical Garden');
+  assert.equal([...products,...archiveProducts].filter(p=>p.title==='Pagoda in Botanical Garden').length,1);
+});
+
+test('Oct 23 2026 (#250): Hummingbird Friend, Axler title, not-for-sale lion and Yes album, Yes story',()=>{
+  const book=Object.fromEntries(bookProducts.map(b=>[b.id,b])),arch=Object.fromEntries(archiveProducts.map(p=>[p.id,p]));
+  const hb=book['book-art-b7a9cd259d8ac51a236b'];
+  assert.equal(hb.title,'Hummingbird Friend');assert.equal(hb.image.alt,'Hummingbird Friend');assert(hb.description.startsWith('Hummingbird Friend'));
+  assert.equal(arch['archived-painting-62'].title,'Axler with the Proviber Doinger');
+  assert(arch['archived-painting-62'].image.alt.startsWith('Axler at Bass Coast holding up her Proviber Doinger'));
+  assert.equal(byId['daniel-portrait-1'].title,'Daniel Getting Reprimanded');
+  assert.equal(book['book-art-a137dffe65723d0b5a07'].title,'Daniel Getting Reprimanded');
+  assert.equal(arch['archived-painting-354'].listing.status,'not-for-sale');
+  assert.equal(arch['archived-painting-354'].listing.price,null);
+  assert.equal(book['book-art-94e2edf9a24c90950489'].listing.status,'not-for-sale');
+  const page=read('dist/products/book-art-94e2edf9a24c90950489/index.html');
+  assert(page('body').text().includes('Close to the Edge was one of my mom'),'Yes story is on the page');
 });

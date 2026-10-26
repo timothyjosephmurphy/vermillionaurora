@@ -49,9 +49,7 @@ Production deploys in one step: merging a pull request into `main` runs `.github
 
 The `release` branch is a frozen backup of the former two-stage flow and no longer deploys. The website and checkout deploys are coordinated rather than atomic across two Workers, so the workflow verifies both versions before declaring success.
 
-In GitHub repository Settings → Actions → General, keep workflow permissions at least Read and write and enable “Allow GitHub Actions to create and approve pull requests.” The promotion workflow needs that repository-level setting to create the next `main` → `release` pull request after a release is merged.
-
-Protect both `main` and `release` in GitHub. Require pull requests for `main`, require the `Release gate / gate` check, and prevent direct pushes to `release`; the promotion pull request is the deliberate production approval step. Keep the existing checkout pause flags available for emergency shutdowns.
+Protect `main`: require pull requests and the `Release gate / gate` check. Squash-merging a reviewed PR into `main` is the production approval step. Keep the frozen `release` backup protected from direct pushes; there is no longer a `main` → `release` promotion step. The current workflows declare their own permissions and do not need permission to create or approve promotion PRs. Keep the existing checkout pause flags available for emergency shutdowns.
 
 Rollback content and templates together with the generated Worker catalog. Do not roll back or delete Durable Object data. A failed release leaves CI visibly failed; investigate the failing deployment instead of clearing stock or replaying payments.
 
