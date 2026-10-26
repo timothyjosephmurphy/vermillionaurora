@@ -3,16 +3,16 @@ import assert from 'node:assert/strict';
 import listings,{sourcePrintVersion} from './etsy-print-source.mjs';
 import {printVersion} from './print-catalog.mjs';
 
-test('Etsy draft source contains only the five requested prepared print paintings',()=>{
+test('Etsy draft source contains only the prepared print paintings that have a published price',()=>{
   assert.equal(sourcePrintVersion,printVersion);
   assert.deepEqual(listings.map(item=>item.id),[
     'warszawska-syrenka',
     'honeybadger-and-cub-with-genesis-block',
     'painting-red-horizon',
-    'painting-shoreline-at-dusk',
-    'el-zonte-at-sunrise'
+    'painting-shoreline-at-dusk'
   ]);
-  assert.deepEqual(listings.map(item=>item.variants.length),[3,3,3,3,3]); // Kihei master (Oct 2026) also yields three sizes
+  // Sunrise is held until the landscape reprint is quoted. Kihei still yields three sizes.
+  assert.deepEqual(listings.map(item=>item.variants.length),[3,3,3,3]);
   for(const item of listings){
     assert.equal(item.artist,'TJ Murphy');
     assert.equal(item.variants.length>0,true);

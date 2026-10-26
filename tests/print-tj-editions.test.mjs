@@ -10,8 +10,20 @@ test('All 22 reviewed TJ masters have native-resolution editions and three frame
   let sizes=0;
   for(const recipe of recipes){
     const art=config.artworks[recipe.id],base=Object.values(readyPrints).filter(p=>p.productId===recipe.id&&!p.mat&&!p.frame);
-    assert(art.enabled);assert(!art.sampleOnly&&!art.testOnly);assert(base.length);sizes+=base.length;
-    if(recipe.layoutOptions)assert.deepEqual(base.map(p=>p.id),['print-'+recipe.id+'-full']);
+    // These two reprints use a 1" white margin and stay off sale until a FinerWorks quote matches the new size.
+    if(recipe.layoutOptions?.borderIn>=1){
+      assert.equal(art.enabled,false,recipe.id);
+      assert.equal(base.length,0,recipe.id);
+      for(const variant of Object.values(art.variants)){
+        assert.equal(variant.asset.layout,'full-image-white-border-v1');
+        assert(!variant.bordered&&!variant.amount,recipe.id);
+        assert(Math.abs(variant.asset.paperWidthIn-variant.asset.imageWidthIn-2)<0.03);
+        assert(Math.abs(variant.asset.paperHeightIn-variant.asset.imageHeightIn-2)<0.03);
+      }
+    }else{
+      assert(art.enabled);assert(!art.sampleOnly&&!art.testOnly);assert(base.length);sizes+=base.length;
+      if(recipe.layoutOptions?.sizeKeys)assert.deepEqual(base.map(p=>p.id),['print-'+recipe.id+'-full']);
+    }
     const source=await readFile(new URL('../static'+new URL(art.source.url).pathname,import.meta.url));
     assert.equal(createHash('sha256').update(source).digest('hex'),art.source.sha256);
     for(const p of base){
@@ -23,7 +35,7 @@ test('All 22 reviewed TJ masters have native-resolution editions and three frame
       }
     }
   }
-  assert.equal(sizes,57); // Rainier with Eagle: full-res master adds a medium size
+  assert.equal(sizes,51); // Rainier with Eagle adds a medium; the two El Zonte reprints wait on a quote
 });
 
 test('Cormorant mural master is the exact 3:2 crop of the high-resolution photo, offered at three native-resolution sizes',()=>{

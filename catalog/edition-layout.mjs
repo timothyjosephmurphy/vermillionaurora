@@ -2,9 +2,18 @@
 // A white safety margin absorbs the borderless lab's trimming bleed.
 export const EDITION_LAYOUT = 'full-image-white-border-v1';
 export const EDITION_BORDER_IN = 0.125;
+// Per-artwork white margin. The shop default stays 0.125" (borderless trim safety).
+// A replacement can ask for a full inch of white without repricing every other edition.
+export function editionBorderIn(options = {}) {
+  const borderIn = options.borderIn ?? EDITION_BORDER_IN;
+  if (typeof borderIn !== 'number' || !Number.isFinite(borderIn) || borderIn < EDITION_BORDER_IN || borderIn > 2) return null;
+  return Math.round(borderIn * 1000) / 1000;
+}
 const round = n => Math.round(n * 10000) / 10000;
 export function editionLayouts(source, original, dpi = 300, options = {}) {
   if (!Number.isSafeInteger(dpi) || dpi < 300 || !['widthPx','heightPx'].every(k => Number.isSafeInteger(source?.[k]) && source[k] > 0)) return [];
+  const borderIn = editionBorderIn(options);
+  if (borderIn == null) return [];
   const w = source.widthPx, h = source.heightPx;
   // Group composites have no single original; layoutOptions.setDimensions caps them at the physical set size.
   original = original || options.setDimensions || null;
@@ -15,12 +24,12 @@ export function editionLayouts(source, original, dpi = 300, options = {}) {
     const [short,long] = [original.width/divisor,original.height/divisor].sort((a,b)=>a-b);
     factor = Math.min(factor, short/Math.min(w,h), long/Math.max(w,h));
   }
-  const borderPx = Math.ceil(EDITION_BORDER_IN * dpi), seen = new Set();
+  const borderPx = Math.ceil(borderIn * dpi), seen = new Set();
   return [['full','Large print',1],['medium','Medium print',0.75],['small','Small print',0.5]].flatMap(([key,label,scale]) => {
     if (options.sizeKeys && !options.sizeKeys.includes(key)) return [];
     // Paper dimensions are hundredths of an inch; never round quality upwards.
-    let paperWidth = Math.floor((w*factor*scale+2*EDITION_BORDER_IN)*100+1e-8)/100;
-    let paperHeight = Math.floor((h*factor*scale+2*EDITION_BORDER_IN)*100+1e-8)/100;
+    let paperWidth = Math.floor((w*factor*scale+2*borderIn)*100+1e-8)/100;
+    let paperHeight = Math.floor((h*factor*scale+2*borderIn)*100+1e-8)/100;
     if (options.padPaperToMinimum) {paperWidth=Math.max(4,paperWidth);paperHeight=Math.max(4,paperHeight);}
     if (Math.min(paperWidth,paperHeight) < 4 || Math.max(paperWidth,paperHeight) > 40) return [];
     const widthPx = Math.round(paperWidth*dpi), heightPx = Math.round(paperHeight*dpi);

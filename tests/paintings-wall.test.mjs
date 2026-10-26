@@ -93,5 +93,5 @@ test('works with neither a size nor a print are listed, not drawn',()=>{
   assert.equal(notToScale.filter(i=>i.kind==='Commission package').length,3);
   assert.equal(notToScale.filter(i=>i.kind==='Archived painting').length,0);
 });
-test('the print wall includes the 54 archive additions',()=>{assert.equal(wallArtworks.length,77);assert(archiveProducts.every(p=>wallArtworks.some(a=>a.id===p.id)));});
+test('the print wall includes the 54 archive additions',()=>{assert.equal(wallArtworks.length,75);assert(archiveProducts.every(p=>wallArtworks.some(a=>a.id===p.id)));});
 

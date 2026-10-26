@@ -76,19 +76,19 @@ test('plans use the catalog titles, Punta spelling, and separate print and origi
   assert.equal(originalTitle({title: 'El Zonte Before Dawn', dimensions: {width: 48, height: 24, unit: 'in'}}), 'El Zonte Before Dawn, Original Watercolor Pastel, 48 x 24 in');
 });
 
-test('updates the two existing print drafts and creates only the missing one', async t => {
+test('updates the shoreline print draft and refuses unquoted El Zonte reprints', async t => {
   const env = envOf(); await connected(env); const calls = mock(t);
-  const res = await req(env, '/etsy/listings/sync', {kind: 'print', productIds: ['painting-shoreline-at-dusk', 'el-zonte-at-sunrise', 'el-zonte-before-dawn']});
+  const res = await req(env, '/etsy/listings/sync', {kind: 'print', productIds: ['painting-shoreline-at-dusk']});
   assert.equal(res.status, 200, await res.clone().text());
   const data = await res.json();
-  assert.deepEqual(data.results.map(item => item.listingId), [4587311664, 4587305955, 777]);
-  assert.deepEqual(data.results.map(item => item.created), [false, false, true]);
-  const creates = calls.filter(call => call.url.includes('/listings?legacy=false'));
-  assert.equal(creates.length, 1);
-  assert.equal(new URLSearchParams(creates[0].options.body).get('title'), 'El Zonte Before Dawn Art Print · Framed or Unframed');
-  assert.equal(new URLSearchParams(creates[0].options.body).get('price'), String(Math.min(...SYNC_WORKS.find(work => work.id === 'el-zonte-before-dawn').variants.map(variant => Number(variant.price)))));
-  assert.equal(calls.filter(call => call.url.includes('/inventory')).length, 3);
+  assert.deepEqual(data.results.map(item => item.listingId), [4587311664]);
+  assert.deepEqual(data.results.map(item => item.created), [false]);
+  assert.equal(calls.filter(call => call.url.includes('/listings?legacy=false')).length, 0);
+  assert.equal(calls.filter(call => call.url.includes('/inventory')).length, 1);
   assert.equal(calls.some(call => call.url.includes('4587311534')), false);
+  const held = await req(env, '/etsy/listings/sync', {kind: 'print', productIds: ['el-zonte-at-sunrise', 'el-zonte-before-dawn']});
+  assert.equal(held.status, 502);
+  assert.match((await held.json()).error, /three frame options/);
 });
 
 test('creates original drafts at the site price plus the Etsy uplift and can publish them explicitly', async t => {
