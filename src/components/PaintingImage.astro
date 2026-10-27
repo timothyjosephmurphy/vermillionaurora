@@ -28,7 +28,7 @@ const count = gallery.length + 1;
     <picture>
       <source type="image/avif" srcset={`${g.base}-${g.widths[0]}.avif`} />
       <source type="image/webp" srcset={`${g.base}-${g.widths[0]}.webp`} />
-      <img src={g.fallback} alt="" width={g.width} height={g.height} loading="lazy" decoding="async" />
+      <img src={g.fallback} alt={g.alt} width={g.width} height={g.height} loading="lazy" decoding="async" />
     </picture>
   </button></li>)}
 </ul>}
