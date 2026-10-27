@@ -31,6 +31,8 @@ const availablePrints=painting?printOptions(p,config,papers).filter(o=>o.ready&&
 const sticker=painting?stickerOffer(p.id):null;
 const olderOriginals=p.olderWork&&p.olderWork.members.length>1?p.olderWork.members.filter(m=>m.originalId&&byId[m.originalId]).map(m=>({...m,product:byId[m.originalId],status:byId[m.originalId].listing.status})):[];
 const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
+const quoteHref=`/commissions/?quote=${encodeURIComponent(p.slug)}#form`;
+const stickerOnlyQuote=p.listing.status!=='available'&&availablePrints.length===0&&!!sticker;
 // Search/share description for original paintings, built only from catalog facts (no invented details).
 const metaDescription=(()=>{
   if(!painting||p.bookGallery)return null;
@@ -92,6 +94,9 @@ const facts=painting ? [
         <p class="product-print-availability">Kiss-cut vinyl sticker · ships in the US</p>
       </div>}
     </div>}
+    {stickerOnlyQuote
+      ? <p class="product-quote-line">Stickers ship within the United States. <a data-shipping-quote href={quoteHref}>Request a quote (Bitcoin welcome)</a> for delivery outside the US.</p>
+      : <p class="product-quote-line">Checkout ships in the US and internationally, in US dollars. You pay import duties on delivery. <a data-shipping-quote href={quoteHref}>Request a quote (Bitcoin welcome)</a> if checkout can’t reach your country, or you’d like me to arrange shipping first.</p>}
   </section>}
       {relatedProduct&&<p class="product-print-availability"><a href={urlFor(relatedProduct)}>{p.bookGallery?'View the original painting':(relatedPrints?'View fine-art print options':'View in the book collection')} →</a></p>}
       {p.listing.price && p.listing.status!=='not-for-sale' && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p)}</p>}

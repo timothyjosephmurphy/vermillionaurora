@@ -7,6 +7,8 @@ import {estimatePaperParcelWeightLb} from '../catalog/shipping-estimates.mjs';
 import checkout,{catalogVersion as workerVersion} from '../cloudflare/checkout-catalog.mjs';
 import {inventoryStatus} from '../cloudflare/inventory-api.mjs';
 import {lowestPrintPrice} from '../src/data/card-commerce.mjs';
+import {printOptions,config,papers} from '../catalog/prints.mjs';
+import {stickerOffer} from '../catalog/printful-stickers.mjs';
 test('every product renders at its stable URL with matching content and checkout price',()=>{
  assert.equal(catalogVersion,workerVersion);
  for(const p of products){const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));assert.equal($('h1').text(),p.title);assert.equal($('meta[name=catalog-version]').attr('content'),catalogVersion);assert.equal($('link[rel=canonical]').attr('href'),`https://tjm.art/products/${p.slug}/`);for(const paragraph of p.story)assert.ok($('main').text().includes(paragraph),p.slug);if(p.image)assert.equal(($('main img, main svg[data-image-src]').first().attr('data-image-src') || $('main img, main svg[data-image-src]').first().attr('src')),p.image.src);if(checkout[p.id]){assert.equal(checkout[p.id].amount,p.listing.price.amount);assert.equal($('.product-detail-price').text(),priceLabel(p));}}
@@ -146,6 +148,34 @@ test('original purchase buttons say "Buy"; paintings without online checkout sti
    assert.equal($('[data-cart-product] [data-purchase-inquiry]').length,1,`${p.id}: fallback until the cart confirms stock`);
   }
  }
+});
+test('buyable painting pages link to a shipping quote without calling checkout US-only',()=>{
+ const readyPrints=p=>printOptions(p,config,papers).some(o=>o.ready&&!o.testOnly);
+ const quotable=products.filter(p=>p.type==='painting'&&(p.listing.status==='available'||readyPrints(p)||stickerOffer(p.id)));
+ assert.ok(quotable.length>5);
+ for(const p of quotable){
+  const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
+  const href=`/commissions/?quote=${encodeURIComponent(p.slug)}#form`;
+  const line=$('.product-quote-line');
+  assert.equal(line.length,1,p.id);
+  assert.equal(line.find('[data-shipping-quote]').attr('href'),href,p.id);
+  assert.equal(line.find('[data-shipping-quote]').text(),'Request a quote (Bitcoin welcome)',p.id);
+  const stickerOnly=p.listing.status!=='available'&&!readyPrints(p)&&stickerOffer(p.id);
+  if(stickerOnly)assert.match(line.text(),/United States/,p.id);
+  else{assert.match(line.text(),/internationally/,p.id);assert.doesNotMatch(line.text(),/US-only|ships only/i,p.id);}
+  $('[data-shipping-quote]').each((i,el)=>assert.equal($(el).attr('href'),href,p.id));
+  assert.doesNotMatch($.root().text(),/\bLLC\b/,p.id);
+ }
+ const quiet=products.find(p=>p.type==='painting'&&p.listing.status!=='available'&&!readyPrints(p)&&!stickerOffer(p.id));
+ if(quiet)assert.equal(load(fs.readFileSync(`dist/products/${quiet.slug}/index.html`,'utf8'))('.product-quote-line').length,0,quiet.id);
+ const commissions=load(fs.readFileSync('dist/commissions/index.html','utf8'));
+ assert.equal(commissions('[name=shipCountry]').length,1);
+ assert.notEqual(commissions('[data-quote-pitch]').first().attr('hidden'),undefined);
+ assert.match(commissions('main').text(),/How a shipping quote works/);
+ assert.match(commissions('main').text(),/Request a quote \(Bitcoin welcome\)/);
+ const policy=load(fs.readFileSync('dist/shipping-returns/index.html','utf8'));
+ assert.match(policy('main').text(),/internationally/);
+ assert.match(policy('main').text(),/Request a quote on the painting/);
 });
 test('painting cards: price without "USD", "Prints from" the cheapest ready print, vermillion Buy cue inside one whole-tile link',async()=>{
  const {lowestPrintPrice,printsFromLabel,showBuy,dollars}=await import('../src/data/card-commerce.mjs');

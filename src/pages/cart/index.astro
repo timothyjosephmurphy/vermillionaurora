@@ -40,7 +40,7 @@ const addressRules=JSON.stringify({regions:REGION_CODES,required:[...REGION_REQU
           <script type="application/json" id="cart-address-rules" set:html={addressRules}></script>
           <details data-cart-address class="cart-code-toggle"><summary>Have a code?</summary><label>Discount code<input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label></details>
           <p class="cart-footnote" data-cart-code-note hidden></p>
-          <p data-cart-address class="cart-footnote">We ship worldwide, except to sanctioned destinations. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order.</p>
+          <p data-cart-address class="cart-footnote">We ship worldwide, except to sanctioned destinations. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order. If checkout can’t quote your destination, <a href="/commissions/?quote=shipping#form">request a quote (Bitcoin welcome)</a>.</p>
           <p class="cart-footnote" data-cart-duties hidden>{DUTIES_NOTE}</p>
         </fieldset>
         <p class="cart-footnote">Your details are used to quote and fulfill this order. <a href="/privacy/">How your information is handled</a>.</p>

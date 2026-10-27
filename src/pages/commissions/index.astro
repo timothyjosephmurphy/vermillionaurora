@@ -178,7 +178,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
             </details>
             <details>
               <summary>How is shipping handled?</summary>
-              <p>Finished works ship carefully packaged from Seattle. Checkout ships within the US and internationally. International orders are charged in USD and ship duties unpaid: import duties and taxes are paid by you on delivery. Local pickup can be arranged. See <a href="/shipping-returns/">shipping &amp; returns</a> for general guidance.</p>
+              <p>Finished works ship carefully packaged from Seattle. Checkout ships within the US and internationally. International orders are charged in USD and ship duties unpaid: import duties and taxes are paid by you on delivery. If checkout can’t quote your destination, use Request a quote (Bitcoin welcome) on the painting’s page. I reply within 2 business days with a price in US dollars. Local pickup can be arranged. See <a href="/shipping-returns/">shipping &amp; returns</a> for general guidance.</p>
             </details>
             <details>
               <summary>What about murals or custom sizes?</summary>
@@ -197,24 +197,33 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
       <section id="form" class="section section-contact" aria-labelledby="form-heading">
         <div class="container contact-grid">
           <div class="contact-copy">
-            <p class="eyebrow dark">Request a commission</p>
+            <p class="eyebrow dark"><span data-commission-pitch>Request a commission</span><span data-quote-pitch hidden>Shipping quote</span></p>
             <h2 id="form-heading">Tell me about your idea</h2>
-            <p>Share a few details and optional reference images. This is an inquiry—no payment until we agree on the approach.</p>
+            <p data-commission-pitch>Share a few details and optional reference images. This is an inquiry—no payment until we agree on the approach.</p>
+            <p data-quote-pitch hidden>Checkout already ships in the US and internationally, in US dollars. You pay import duties on delivery. If checkout can’t reach your country, or you’d like to pay with Bitcoin before I ship, send the details below. This is a quote — no payment until we agree.</p>
             <ul class="contact-list">
               <li>Seattle, WA</li>
               <li><a class="contact-email" href="mailto:tj@tjm.art"><svg class="contact-email-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3.5 7 8.5 6.5L20.5 7"></path></svg><span>tj@tjm.art</span></a></li>
-              <li>50% deposit to start</li>
-              <li>Typical turnaround 2–4 weeks</li>
+              <li data-commission-pitch>50% deposit to start</li>
+              <li data-commission-pitch>Typical turnaround 2–4 weeks</li>
+              <li data-quote-pitch hidden>Pay with Bitcoin / Lightning (BTCPay) or card</li>
               <li>I reply within 2 business days</li>
             </ul>
-            <h3 id="commission-steps">From inquiry to delivery</h3>
-            <ol class="commission-steps">
+            <h3 id="commission-steps" data-commission-pitch>From inquiry to delivery</h3>
+            <ol class="commission-steps" data-commission-pitch>
               <li>Send me your idea and any reference photos with this form.</li>
               <li>I reply within 2 business days with questions and a price.</li>
               <li>Once we agree on the approach, you pay a 50% deposit to start.</li>
               <li>I paint it, usually in 2–4 weeks.</li>
               <li>When it’s finished, you pay the balance.</li>
               <li>I ship it from Seattle, or you pick it up locally.</li>
+            </ol>
+            <h3 data-quote-pitch hidden>How a shipping quote works</h3>
+            <ol class="commission-steps" data-quote-pitch hidden>
+              <li>Tell me your country, city, and whether you want the original, a print, or both.</li>
+              <li>I reply within 2 business days with a price in US dollars, including shipping.</li>
+              <li>You pay with Bitcoin / Lightning or card.</li>
+              <li>I ship from Seattle, or the print lab ships the print. You pay import duties on delivery.</li>
             </ol>
           </div>
 
@@ -250,6 +259,17 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
               <input type="email" name="email" placeholder="Email" autocomplete="email" required="">
             </label>
 
+            <div class="quote-only" hidden>
+              <label>
+                <span>Country (required)</span>
+                <input type="text" name="shipCountry" autocomplete="shipping country-name" maxlength="80" placeholder="Country">
+              </label>
+              <label>
+                <span>City or region</span>
+                <input type="text" name="shipCity" autocomplete="shipping address-level2" maxlength="80" placeholder="City">
+              </label>
+            </div>
+
             <label class="commission-only">
               <span>Package</span>
               <select name="package">
@@ -284,7 +304,8 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
 
             <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
 
-            <p class="form-privacy-note">Your details and optional images are used to respond to your request and plan your commission. This does not subscribe you to marketing or authorize public use of your photos. <a href="/privacy/">Privacy &amp; image retention</a>.</p>
+            <p class="form-privacy-note" data-commission-privacy>Your details and optional images are used to respond to your request and plan your commission. This does not subscribe you to marketing or authorize public use of your photos. <a href="/privacy/">Privacy &amp; image retention</a>.</p>
+            <p class="form-privacy-note" data-quote-privacy hidden>Your details are used to reply with a shipping quote. This does not subscribe you to marketing or authorize public use of anything you send. <a href="/privacy/">Privacy</a>.</p>
             <p class="form-reply-note">I reply within 2 business days.</p>
             <button type="submit" class="button button-solid">Send commission request</button>
             <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>

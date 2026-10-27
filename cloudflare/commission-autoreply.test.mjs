@@ -9,10 +9,11 @@ test('notifications go to tj@tjm.art unless overridden',()=>{
   assert.equal(notifyAddress({COMMISSION_NOTIFY_TO:'x@y.z'}),'x@y.z');
 });
 test('auto-reply: first name, reference, no prices or emojis',()=>{
-  for (const a of [autoReply({name:'Ana Lopez',email:'a@b.co',reference:'TJM-261020-7F3A'}),autoReply({name:'Ana',email:'a@b.co',reference:'TJM-261020-7F3A',paintingTitle:'Hope'})]){
+  for (const a of [autoReply({name:'Ana Lopez',email:'a@b.co',reference:'TJM-261020-7F3A'}),autoReply({name:'Ana',email:'a@b.co',reference:'TJM-261020-7F3A',paintingTitle:'Hope'}),autoReply({name:'Ana',email:'a@b.co',reference:'TJM-261020-7F3A',paintingTitle:'Hope',quote:true})]){
     assert.match(a.text,/^Hi Ana,/); assert.match(a.text,/TJM-261020-7F3A/); assert.match(a.subject,/TJM-261020-7F3A/);
     assert.doesNotMatch(a.text,/\$|\p{Extended_Pictographic}/u); assert.equal(a.to,'a@b.co');
   }
+  assert.match(autoReply({name:'Ana',email:'a@b.co',reference:'TJM-261020-7F3A',paintingTitle:'Hope',quote:true}).text,/shipping quote for Hope/);
 });
 test('inquiry log writes one row and never throws',async()=>{
   const runs=[]; const db={prepare:sql=>({run:async()=>runs.push(sql),bind:(...v)=>({run:async()=>runs.push([sql,v])})})};

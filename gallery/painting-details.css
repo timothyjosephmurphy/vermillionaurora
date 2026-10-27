@@ -34,6 +34,8 @@
 .bitcoin-order-controls{display:flex;flex-wrap:wrap;gap:.65rem}
 
 .product-purchase-actions{display:flex;flex-wrap:wrap;align-items:flex-start;gap:1rem 1.5rem;margin:1.25rem 0 1.5rem;padding:0 0 1.25rem;border-bottom:1px solid var(--line,#d6c9bc)}
+.product-quote-line{flex:1 0 100%;margin:0;max-width:40rem;font-size:.9rem;line-height:1.55;color:var(--muted,#65574d)}
+.product-quote-line a,.print-border-note a,.sticker-order .checkout-country a{text-decoration:underline;text-underline-offset:.18em}
 .product-purchase-actions:has(>[data-original-purchase]:only-child>[data-cart-product][hidden]),.product-purchase-actions:has(>[data-original-purchase][hidden]:only-child){display:none}
 .product-purchase-actions [hidden]{display:none!important}
 .product-purchase-actions .cart-product-actions{display:grid;grid-template-columns:minmax(180px,auto) auto;margin:0;align-items:center;gap:.5rem 1.25rem}
