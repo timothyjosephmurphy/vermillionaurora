@@ -3,7 +3,7 @@
 `wrangler.jsonc` sets `assets.run_worker_first` to an explicit route list. Static files, pages, `static/_redirects`
 and 404s are served by the Cloudflare assets layer without invoking the `vermillionaurora` Worker, so they no longer count toward the
 Workers request limit (100,000 a day on the free plan, shared by every Worker in the account). Only the QuickBooks API, the testimonials
-API, `/inventory/originals` and the Apple merchant-id file reach `worker/site.mjs`.
+API, `/testimonials/` (approved quotes written into the HTML), `/inventory/originals` and the Apple merchant-id file reach `worker/site.mjs`.
 
 What the Worker used to do for every request now lives elsewhere:
 

@@ -6,8 +6,12 @@ import { testimonials, testimonialPins } from '../data/testimonials.mjs';
 import { ld, person } from '../data/structured-data.mjs';
 import { PUBLISH_NOTICE, PUBLISH_NOTICE_VERSION } from '../../cloudflare/testimonial-notice.mjs';
 const pinSeed = JSON.stringify(testimonialPins.map(({id, city, lat, lng}) => ({id, city, lat, lng}))).replace(/</g, '\\u003c');
-// Hand-curated entries (src/data/testimonials.json) render at build time; approved form submissions load at
-// request time from /testimonials/api/approved, so approving one on /testimonial-manager/ needs no rebuild.
+// Hand-curated entries (src/data/testimonials.json) render at build time. Approved submissions are written
+// into this HTML by the website Worker on each GET (worker/testimonials-html.mjs) from
+// /testimonials/api/approved, so a crawler sees the quotes and an approval needs no rebuild.
+// Keep data-testimonial-list and data-has-testimonials: the Worker and testimonials-page.js both use them.
+// Hand-curated entries can carry Review markup with no rating. Approved quotes use Quotation in the Worker
+// (no AggregateRating; star snippets wait on studio-tracker #47).
 const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Person',name:t.name}, reviewBody:t.quote, itemReviewed:{'@type':'VisualArtwork',name:t.painting||'Painting by TJ Murphy',creator:{'@id':person['@id']}} }));
 ---
 <!doctype html>
