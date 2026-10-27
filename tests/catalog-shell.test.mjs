@@ -17,6 +17,9 @@ test('admin-added painting page fills the Astro product shell', async () => {
   assert.match(html, /class="site-header"/); assert.match(html, /class="site-footer"/);
   assert.equal((html.match(/application\/ld\+json/g) || []).length, 1);
   assert.match(html, /og:image" content="https:\/\/img.tjm.art\/display\/new-one-960.webp\?v=2"/);
+  assert.match(html, /data-shipping-quote/);
+  assert.match(html, /href="\/commissions\/\?quote=new-one#form"/);
+  assert.match(html, /internationally/);
   const noImage = await renderAdded(env, p, { images: new Map(), status: new Map() });
   assert.doesNotMatch(noImage, /og:image/);
 });

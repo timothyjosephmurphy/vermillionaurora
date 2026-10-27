@@ -72,6 +72,19 @@ test('new commission emails contain no image attachment, and send failures roll 
  assert.equal((await commissionForm(submission(),env)).status,200);assert.match(mime,/commission-manager/);assert.doesNotMatch(mime,/Content-Disposition: attachment|private bytes/);assert.equal(env.COMMISSION_UPLOADS.data.size,2);
  const failed=setup();globalThis.fetch=async()=>Response.json({error:'mock'},{status:500});assert.equal((await commissionForm(submission(),failed)).status,500);assert.equal(failed.COMMISSION_UPLOADS.data.size,0);
 });
+function quoteSubmission(){const f=new FormData();f.set('name','Test buyer');f.set('email','buyer@example.com');f.set('inquiryType','shipping-quote');f.set('paintingSlug','painting-shoreline-at-dusk');f.set('paintingTitle','Shoreline at Dusk');f.set('paintingPrice','$1,200.00');f.set('shipCountry','Germany');f.set('shipCity','Berlin');f.set('description','Hello, I would like a shipping quote. Bitcoin is welcome.');return new Request('https://worker.test/',{method:'POST',headers:{Origin:'https://tjm.art'},body:f});}
+test('shipping quote emails TJ with the destination and is not a commission (#116)',async t=>{
+ const env=setup();const runs=[];env.CATALOG_DB={prepare:sql=>({run:async()=>runs.push([sql]),bind:(...v)=>({run:async()=>runs.push([sql,v])})})};
+ let mime='';
+ t.mock.method(globalThis,'fetch',async(url,options)=>{if(String(url).includes('/token'))return Response.json({access_token:'mock'});mime=Buffer.from(JSON.parse(options.body).raw,'base64url').toString();return Response.json({id:'mock-message'});});
+ assert.equal((await commissionForm(quoteSubmission(),env)).status,200);
+ assert.match(mime,/International shipping quote/);assert.match(mime,/Shoreline at Dusk/);assert.match(mime,/Destination: Berlin, Germany/);assert.match(mime,/Bitcoin \(BTCPay or Lightning\)/);
+ assert.doesNotMatch(mime,/New commission request|commission-manager|LLC/);
+ const subject=mime.match(/Subject: =\?UTF-8\?B\?([^?]+)\?=/)[1];
+ assert.match(Buffer.from(subject,'base64').toString('utf8'),/^Shipping quote — Shoreline at Dusk \(/);
+ const insert=runs.find(row=>Array.isArray(row)&&String(row[0]).includes('INSERT INTO commission_inquiries'));
+ assert.equal(insert[1][3],'shipping-quote');
+});
 test('inquiry is saved to D1 before email, and a Google failure still returns the reference (#115)',async t=>{
  const env=setup();const runs=[];env.CATALOG_DB={prepare:sql=>({run:async()=>runs.push([sql]),bind:(...v)=>({run:async()=>runs.push([sql,v])})})};
  t.mock.method(globalThis,'fetch',async()=>Response.json({error:'invalid_client'},{status:401}));

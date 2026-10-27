@@ -24,16 +24,22 @@ export async function commissionForm(request,env) {
       const name=clean(form.get("name"),100);
       const email=clean(form.get("email"),254);
       const size=clean(form.get("size"),100);
-      const description=clean(form.get("description") || form.get("message"),5000);
+      let description=clean(form.get("description") || form.get("message"),5000);
       const inquiryType=clean(form.get("inquiryType"),30);
       const paintingSlug=clean(form.get("paintingSlug"),150);
       const paintingTitle=clean(form.get("paintingTitle"),200);
       const paintingPrice=clean(form.get("paintingPrice"),100);
-      const isPurchase=inquiryType === "purchase" && paintingTitle;
+      const shipCountry=clean(form.get("shipCountry"),80);
+      const shipCity=clean(form.get("shipCity"),80);
+      const isQuote=inquiryType === "shipping-quote";
+      const isPurchase=!isQuote && inquiryType === "purchase" && paintingTitle;
+      const kind=isQuote ? "shipping-quote" : isPurchase ? "purchase" : "commission";
       const website=clean(form.get("website"),200);
       if (website) return json({success:true},200,cors);
       if (!name || !email || !description) return json({success:false,error:"Name, email, and project description are required."},400,cors);
       if (!validEmail(email)) return json({success:false,error:"Please enter a valid email address."},400,cors);
+      const destination=[shipCity,shipCountry].filter(Boolean).join(", ");
+      if (destination && !description.includes(destination)) description=`Shipping destination: ${destination}\n\n${description}`;
 
       const requestId=crypto.randomUUID();
       const reference=inquiryReference(requestId);
@@ -63,7 +69,7 @@ export async function commissionForm(request,env) {
       await saveCommissionReferences(env.COMMISSION_UPLOADS,requestId,uploaded);
       if(uploaded.length)pendingReferences={id:requestId,files:uploaded};
       // Save the inquiry before any email, so a mail failure never loses it (studio-tracker #115).
-      const logged=await logInquiry(env,{requestId,reference,kind:isPurchase?"purchase":"commission",name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
+      const logged=await logInquiry(env,{requestId,reference,kind,name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
       if(logged)sent=true; // the saved row points at the uploads, so keep them
       const savedOnly=async why=>{
         console.error("Commission notification failed; inquiry saved",why);
@@ -92,7 +98,21 @@ export async function commissionForm(request,env) {
       const uploadLines=uploaded.length
         ? uploaded.flatMap(x=>[`${x.label}: ${x.originalName}`,`Private reference: ${x.key}`])
         : ["Uploads: None"];
-      const body = isPurchase
+      const body = isQuote
+        ? [
+            "International shipping quote","",
+            `Reference: ${reference}`,
+            `Request ID: ${requestId}`,
+            `Artwork: ${paintingTitle || "Not specified"}`,
+            `Listed price: ${paintingPrice || "Not specified"}`,
+            `Inventory ID: ${paintingSlug || "Not specified"}`,
+            `Destination: ${destination || "Not specified"}`,"",
+            `Name: ${name}`,
+            `Email: ${email}`,"",
+            "Reply with a price in US dollars that includes shipping. The buyer pays import duties on delivery. Bitcoin (BTCPay or Lightning) and card are both fine.","",
+            "Message:",description
+          ].join("\r\n")
+        : isPurchase
         ? [
             "New painting purchase inquiry","",
             `Reference: ${reference}`,
@@ -126,7 +146,7 @@ export async function commissionForm(request,env) {
         `From: Vermillion Aurora Productions Website <${senderAddress}>`,
         `To: ${notifyAddress(env)}`,
         `Reply-To: ${email}`,
-        `Subject: ${mimeHeader(isPurchase ? `Painting Purchase Inquiry — ${paintingTitle} (${reference})` : `New Commission Request — ${name} (${reference})`)}`,
+        `Subject: ${mimeHeader(isQuote ? `Shipping quote — ${paintingTitle || name} (${reference})` : isPurchase ? `Painting Purchase Inquiry — ${paintingTitle} (${reference})` : `New Commission Request — ${name} (${reference})`)}`,
         "MIME-Version: 1.0",
         `Content-Type: multipart/mixed; boundary="${boundary}"`,
         "",
@@ -153,11 +173,11 @@ export async function commissionForm(request,env) {
       }
       sent=true;
       // studio-tracker #115: the row was saved above; now acknowledge the sender (off unless COMMISSION_AUTOREPLY is "true").
-      if(!logged)await logInquiry(env,{requestId,reference,kind:isPurchase?"purchase":"commission",name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
+      if(!logged)await logInquiry(env,{requestId,reference,kind,name,email,size,paintingSlug,paintingTitle,description,uploads:uploaded.length});
       let acknowledged=false;
       if (env.COMMISSION_AUTOREPLY === "true") {
         try {
-          const ack=autoReply({name,email,reference,paintingTitle:isPurchase?paintingTitle:""});
+          const ack=autoReply({name,email,reference,paintingTitle:(isPurchase||isQuote)?paintingTitle:"",quote:isQuote});
           const r=await fetch("https://gmail.googleapis.com/gmail/v1/users/me/messages/send",{method:"POST",headers:{Authorization:`Bearer ${tokenData.access_token}`,"Content-Type":"application/json"},body:JSON.stringify({raw:base64url(ackMime(ack,senderAddress))})});
           acknowledged=r.ok; if(!r.ok)console.error("Commission acknowledgement failed",r.status);
         } catch {console.error("Commission acknowledgement failed");}
@@ -188,9 +208,11 @@ export function inquiryReference(requestId,now=new Date()){
 }
 export function notifyAddress(env){return env.COMMISSION_NOTIFY_TO || "tj@tjm.art";}
 // Public copy: TJ approves this wording before COMMISSION_AUTOREPLY is turned on.
-export function autoReply({name,email,reference,paintingTitle}){
+export function autoReply({name,email,reference,paintingTitle,quote=false}){
   const first=(String(name).trim().split(/\s+/)[0]||"there").slice(0,60);
-  const opener=paintingTitle
+  const opener=quote
+    ? `Thanks for asking about a shipping quote${paintingTitle ? ` for ${paintingTitle}` : ""}. I got your message, and I'll write back to you personally in a few days with a price in US dollars.`
+    : paintingTitle
     ? `Thanks for asking about ${paintingTitle}. I got your message, and I'll write back to you personally in a few days.`
     : `Thanks for reaching out about a painting. I got your request, and I'll write back to you personally in a few days.`;
   return {to:email,subject:`I got your message (${reference})`,text:[

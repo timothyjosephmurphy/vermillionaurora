@@ -15,6 +15,7 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
   const params = new URLSearchParams(window.location.search);
   const productSlug = params.get('product');
   const purchaseSlug = params.get('buy');
+  const quoteSlug = (params.get('quote') || '').trim();
   const packageSlug = params.get('package');
   const btcpayRef = btcpayReference(params);
   const btcpayField = form.querySelector('[name="btcpayRef"]');
@@ -62,9 +63,10 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
     }
   }
 
-  if (purchaseSlug || productSlug) {
+  if (quoteSlug || purchaseSlug || productSlug) {
     fetch('/catalog/products.json').then(response=>response.json()).then(async catalog=>{
-      const product=catalog.products.find(p=>p.slug===(purchaseSlug||productSlug));
+      const product=catalog.products.find(p=>p.slug===(quoteSlug||purchaseSlug||productSlug));
+      if(quoteSlug){fillShippingQuote(form,product||null);return;}
       if(!product)return;
       if(message && !message.value)message.value='Hello, I’m interested in '+product.title+'.\n\n';
       if(!purchaseSlug || product.listing?.status!=='available')return;
@@ -81,7 +83,7 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
       summary.querySelector('.purchase-title').textContent=product.title;
       summary.querySelector('.purchase-price').textContent=price;
       if(message)message.value='Hello, I’m interested in purchasing '+product.title+' for '+price+'.\n\n';
-    }).catch(()=>{});
+    }).catch(()=>{if(quoteSlug)fillShippingQuote(form,null);});
   }
 
   if (packageSelect && message) {
@@ -97,6 +99,7 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
 
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('.form-status');
+  if (quoteSlug) prepareShippingQuoteForm(form);
   const originalText = button.textContent;
   let sending = false;
 
@@ -146,8 +149,14 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
       data.set('name', [firstName, lastName].filter(Boolean).join(' ') || 'Website visitor');
       const packageLabel = packageSelect?.selectedOptions?.[0]?.textContent?.trim();
       let description = (data.get('message') || '').toString();
-      if (packageLabel && packageSelect?.value) {
+      if (packageLabel && packageSelect?.value && !form.classList.contains('quote-mode')) {
         description = 'Package: ' + packageLabel + '\n\n' + description;
+      }
+      const shipCountry = (data.get('shipCountry') || '').toString().trim();
+      const shipCity = (data.get('shipCity') || '').toString().trim();
+      const destination = [shipCity, shipCountry].filter(Boolean).join(', ');
+      if (destination && form.classList.contains('quote-mode') && !description.includes(destination)) {
+        description = 'Shipping destination: ' + destination + '\n\n' + description;
       }
       const btcpayValue = (data.get('btcpayRef') || '').toString();
       if (btcpayValue && !description.includes(btcpayValue)) description = btcpayValue + '\n\n' + description;
@@ -188,9 +197,17 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
         return;
       }
 
-      status.textContent = 'Thank you! Your message has been submitted.';
+      status.textContent = form.classList.contains('quote-mode')
+        ? 'Thank you! Your quote request has been submitted. I reply within 2 business days.'
+        : 'Thank you! Your message has been submitted.';
       const chosenPackage = packageSelect?.value || '';
+      const quoteFields = form.classList.contains('quote-mode') ? {
+        slug: form.querySelector('[name="paintingSlug"]')?.value || '',
+        title: form.querySelector('[name="paintingTitle"]')?.value || '',
+        price: form.querySelector('[name="paintingPrice"]')?.value || ''
+      } : null;
       form.reset();
+      if (quoteFields) restoreShippingQuoteForm(form, quoteFields);
       offerDeposit(chosenPackage, result.requestId);
     } catch (error) {
       status.textContent = 'We could not confirm your submission. Please check your connection and try again, or email tj@tjm.art directly.';
@@ -235,6 +252,66 @@ async function optimizeImage(file) {
     type: 'image/jpeg',
     lastModified: Date.now()
   });
+}
+
+function prepareShippingQuoteForm(form) {
+  const type = form.querySelector('[name="inquiryType"]');
+  if (type) type.value = 'shipping-quote';
+  form.classList.add('quote-mode');
+  form.querySelectorAll('.commission-only').forEach(element => { element.hidden = true; });
+  form.querySelectorAll('.quote-only').forEach(element => { element.hidden = false; });
+  const country = form.querySelector('[name="shipCountry"]');
+  if (country) country.required = true;
+  const submitButton = form.querySelector('button[type="submit"]');
+  if (submitButton) submitButton.textContent = 'Request a quote';
+  if (document.querySelector('[data-quote-pitch]')) {
+    const heading = document.getElementById('form-heading');
+    if (heading) heading.textContent = 'Request a shipping quote';
+  }
+  document.querySelectorAll('[data-commission-pitch]').forEach(element => { element.hidden = true; });
+  document.querySelectorAll('[data-quote-pitch]').forEach(element => { element.hidden = false; });
+  const privacy = form.querySelector('[data-commission-privacy]');
+  const quotePrivacy = form.querySelector('[data-quote-privacy]');
+  if (privacy && quotePrivacy) { privacy.hidden = true; quotePrivacy.hidden = false; }
+  const message = form.querySelector('[name="message"]');
+  if (message) message.placeholder = 'Original, print, or both — and anything else I should know';
+}
+
+function fillShippingQuote(form, product) {
+  const title = product?.title || '';
+  const amount = product?.listing?.price?.amount;
+  const price = amount
+    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: product.listing.price?.currency || 'USD', maximumFractionDigits: 2 }).format(Number(amount))
+    : '';
+  const forSale = product?.listing?.status === 'available' && price;
+  const set = (name, value) => { const field = form.querySelector('[name="' + name + '"]'); if (field) field.value = value; };
+  set('inquiryType', 'shipping-quote');
+  set('paintingSlug', product?.slug || '');
+  set('paintingTitle', title);
+  set('paintingPrice', forSale ? price : '');
+  const summary = form.querySelector('.purchase-summary');
+  if (summary && title) {
+    summary.hidden = false;
+    const eyebrow = summary.querySelector('.eyebrow');
+    if (eyebrow) eyebrow.textContent = 'Shipping quote';
+    const titleEl = summary.querySelector('.purchase-title');
+    if (titleEl) titleEl.textContent = title;
+    const priceEl = summary.querySelector('.purchase-price');
+    if (priceEl) priceEl.textContent = forSale ? price + ' before shipping' : 'Shipping quoted for this artwork';
+  }
+  const message = form.querySelector('[name="message"]');
+  const draft = title
+    ? 'Hello, I’d like a shipping quote for ' + title + '.' + (forSale ? ' The listed price is ' + price + ' before shipping.' : '') + ' Bitcoin is welcome.\n\nWhat I’d like (original, print, or both):\n\n'
+    : 'Hello, I’d like a shipping quote. Bitcoin is welcome.\n\nArtwork:\nWhat I’d like (original, print, or both):\n\n';
+  if (message && (!message.value || message.value.startsWith('Hello, I’d like to commission') || message.value.startsWith('Hello, I’m interested'))) message.value = draft;
+}
+
+function restoreShippingQuoteForm(form, fields) {
+  prepareShippingQuoteForm(form);
+  const set = (name, value) => { const field = form.querySelector('[name="' + name + '"]'); if (field) field.value = value; };
+  set('paintingSlug', fields.slug);
+  set('paintingTitle', fields.title);
+  set('paintingPrice', fields.price);
 }
 
 function canvasToBlob(canvas, type, quality) {
