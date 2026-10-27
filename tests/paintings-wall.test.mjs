@@ -4,7 +4,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {tjWall,paulWall,notToScale,WALL_UNIT,WALL_GAP,FRAME_INCHES} from '../src/data/paintings-wall.mjs';
 import {packWall} from '../src/data/paintings-wall-layout.mjs';
-import {scaledPaintings,unscaledPaintings,inchesOf} from '../src/data/paintings-wall-selection.mjs';
+import {scaledPaintings,unscaledPaintings,inchesOf,heldOffWall,wallHangSets} from '../src/data/paintings-wall-selection.mjs';
+import {printOptions,config,papers} from '../catalog/prints.mjs';
 import {wallArtworks} from '../src/data/gallery-wall.mjs';
 import {products,statusLabel} from '../catalog/catalog.mjs';
 import archiveProducts from '../catalog/archive-products.mjs';
@@ -14,7 +15,7 @@ import {canonicalArtwork} from '../src/data/canonical-artworks.mjs';
 const walls=[['TJ Murphy',tjWall],['Paul Murphy',paulWall]];
 test('the TJ wall draws every TJ work with a size or a print; Paul\'s wall every measured painting, each once',()=>{
   const covered=p=>p.olderWork?.members?.length>1&&p.olderWork.members.every((_,i)=>products.some(x=>x.id===`${p.id}-original-${i+1}`));
-  const tjWorks=products.filter(p=>p.artist==='TJ Murphy'&&(p.type==='painting'||p.bookGallery)&&!covered(p)&&!p.strawberryGroup&&!(canonicalArtwork[p.id]&&products.some(x=>x.id===canonicalArtwork[p.id])));
+  const tjWorks=products.filter(p=>p.artist==='TJ Murphy'&&(p.type==='painting'||p.bookGallery)&&!covered(p)&&!p.strawberryGroup&&!heldOffWall.has(p.id)&&!(canonicalArtwork[p.id]&&products.some(x=>x.id===canonicalArtwork[p.id])));
   assert(tjWall.artworks.every(a=>!canonicalArtwork[a.id])&&notToScale.every(i=>!canonicalArtwork[i.id]||!products.some(x=>x.id===canonicalArtwork[i.id])),'merged book scans are not drawn or listed');
   const drawnTJ=new Set(tjWall.artworks.map(a=>a.id)),listed=new Set(notToScale.map(i=>i.id));
   assert(tjWorks.every(p=>drawnTJ.has(p.id)!==listed.has(p.id)),'each TJ work is drawn or listed, never both');
@@ -94,4 +95,52 @@ test('works with neither a size nor a print are listed, not drawn',()=>{
   assert.equal(notToScale.filter(i=>i.kind==='Archived painting').length,0);
 });
 test('the print wall includes the 54 archive additions',()=>{assert.equal(wallArtworks.length,77);assert(archiveProducts.every(p=>wallArtworks.some(a=>a.id===p.id)));});
+test('hang sets stay contiguous, triptychs are one row, and the four temples are a 2×2',()=>{
+  const byId=new Map(tjWall.artworks.map(a=>[a.id,a]));
+  const inch=a=>({x:a.x/WALL_UNIT,y:a.y/WALL_UNIT,w:a.width/WALL_UNIT,h:a.height/WALL_UNIT});
+  assert(!byId.has('sunrise-on-rainier-from-denny-blaine')&&!notToScale.some(i=>i.id==='sunrise-on-rainier-from-denny-blaine'));
+  assert(products.some(p=>p.id==='sunrise-on-rainier-from-denny-blaine'),'the product page stays');
+  assert(byId.has('sunrise-on-tahoma-from-denny-blaine')&&byId.has('lisa-climbing-tahoma-at-sunrise-from-denny-blaine'));
+  assert(!byId.has('archived-painting-19')&&!byId.has('archived-painting-20'));
+  const eagle=products.find(p=>p.id==='painting-portrait-with-hat');
+  assert.equal(eagle.listing.status,'sold');assert.equal(eagle.listing.price,null);
+  assert(printOptions(eagle,config,papers).some(o=>o.ready&&!o.testOnly),'prints stay for sale the way other sold originals do');
+  const eagleArt=byId.get('painting-portrait-with-hat');
+  assert.equal(eagleArt.status,'sold');assert.equal(eagleArt.statusLabel,'Sold');assert.equal(eagleArt.buy,false);
+  const forest=['older-work-forest-triptych-original-2','older-work-forest-triptych-original-1','older-work-forest-triptych-original-3'];
+  for(const set of wallHangSets()){
+    const arts=set.members.map(id=>byId.get(id));
+    assert(arts.every(Boolean),set.id);
+    const r=arts.map(inch);
+    const box={x:Math.min(...r.map(i=>i.x)),y:Math.min(...r.map(i=>i.y)),r:Math.max(...r.map(i=>i.x+i.w)),b:Math.max(...r.map(i=>i.y+i.h))};
+    const ids=new Set(set.members);
+    for(const other of tjWall.artworks){
+      if(ids.has(other.id))continue;
+      const p=inch(other);
+      assert(!(p.x<box.r-.01&&p.x+p.w>box.x+.01&&p.y<box.b-.01&&p.y+p.h>box.y+.01),`${other.id} inside ${set.id}`);
+    }
+    if(set.arrangement==='stack'){
+      for(let i=0;i<r.length-1;i++){
+        assert(Math.abs(r[i].y+r[i].h+WALL_GAP-r[i+1].y)<.02,`${set.id} stacked gap`);
+        assert(Math.abs((r[i].x+r[i].w/2)-(r[i+1].x+r[i+1].w/2))<.02,`${set.id} stacked`);
+      }
+    }else if(set.arrangement==='grid'){
+      assert.equal(r.length,4,set.id);
+      const mid=a=>a.y+a.h/2,cx=a=>a.x+a.w/2;
+      assert(Math.abs(mid(r[0])-mid(r[1]))<.02&&r[0].x+r[0].w+WALL_GAP<=r[1].x+.02,set.id+' top row');
+      assert(Math.abs(mid(r[2])-mid(r[3]))<.02&&r[2].x+r[2].w+WALL_GAP<=r[3].x+.02&&mid(r[0])<mid(r[2]),set.id+' bottom row');
+      assert(Math.abs(cx(r[0])-cx(r[2]))<.2&&Math.abs(cx(r[1])-cx(r[3]))<.2,set.id+' columns');
+      assert(r[0].y+r[0].h+WALL_GAP<=r[2].y+.02,set.id+' row gap');
+    }else{
+      for(let i=0;i<r.length-1;i++){
+        assert(Math.abs(r[i].x+r[i].w+WALL_GAP-r[i+1].x)<.02,`${set.id} row gap`);
+        assert(Math.abs((r[i].y+r[i].h/2)-(r[i+1].y+r[i+1].h/2))<.02,`${set.id} one row`);
+      }
+    }
+  }
+  assert.deepEqual(forest.map(id=>byId.get(id).title),['TJ Forest 302','TJ Forest 303','TJ Forest 304']);
+  const fx=forest.map(id=>byId.get(id).x);
+  assert(fx[0]<fx[1]&&fx[1]<fx[2],'Forest reads 302, 303, 304 left to right');
+  assert.deepEqual([...byId.keys()].filter(id=>id.startsWith('burning-man-temple-2022-')).sort(),['burning-man-temple-2022-blue','burning-man-temple-2022-daytime','burning-man-temple-2022-flame','burning-man-temple-2022-pink']);
+});
 

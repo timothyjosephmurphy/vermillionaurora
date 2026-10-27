@@ -1802,11 +1802,11 @@
     "slug": "painting-portrait-with-hat",
     "type": "painting",
     "title": "Sunrise on Rainier with Eagle",
-    "description": "Sunrise on Rainier with Eagle by TJ Murphy. Watercolor pastel. Not for sale.",
+    "description": "Sunrise on Rainier with Eagle by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "",
     "artist": "TJ Murphy",
     "listing": {
-      "status": "not-for-sale",
+      "status": "sold",
       "price": null
     },
     "medium": "Watercolor pastel",

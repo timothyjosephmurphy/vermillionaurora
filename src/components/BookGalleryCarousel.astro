@@ -5,6 +5,8 @@ import {sectionArtworkIds} from '../data/canonical-artworks.mjs';
 import {archivePaintings,archivePreview} from '../../catalog/archive-products.mjs';
 import {olderWorkGroups,olderWorkPreview} from '../../catalog/older-work-products.mjs';
 import {wallLabelGalleries} from '../../catalog/wall-label-galleries.mjs';
+import {artworkAlt} from '../data/artwork-alt.mjs';
+import {galleryHero} from '../data/gallery-hero.mjs';
 const olderWorkCount=olderWorkGroups.reduce((n,g)=>n+g.members.length,0);
 const groups=manifest.sections;
 const slideCount=groups.length+wallLabelGalleries.length+2;
@@ -14,7 +16,7 @@ const slideCount=groups.length+wallLabelGalleries.length+2;
   <div class="ex-carousel book-section-carousel" role="region" aria-roledescription="carousel" aria-label="Selected Galleries">
     <div class="ex-track" tabindex="0" aria-label="Swipe or use arrow keys to browse galleries">
       {groups.map(g=>{const p=byId[sectionArtworkIds(g)[0]];return <article class="ex-slide product-card"><a href={`/book-galleries/${g.id}/`}><img src={p.image.src} alt={p.title} loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>{g.book==='watercolor-landscapes'?'Landscapes':'Portraits'}</p><h3>{g.title}</h3><p>{g.artworks.length} {g.artworks.length===1?'work':'works'} · Explore gallery →</p></div></a></article>})}
-      {wallLabelGalleries.map(g=><article class="ex-slide product-card"><a href={`/galleries/${g.id}/`}><img src={g.thumb} alt={`${g.title} — studio wall label`} width={g.thumbWidth} height={g.thumbHeight} loading="lazy" decoding="async" style="object-fit:contain;background:#111"/><div class="ex-slide-caption product-info"><p>Wall label</p><h3>{g.title}</h3><p>{g.works.length} {g.works.length===1?'work':'works'} · Explore gallery →</p></div></a></article>)}
+      {wallLabelGalleries.map(g=>{const hero=galleryHero(g);return <article class="ex-slide product-card"><a href={`/galleries/${g.id}/`}><img src={hero.image.src} alt={artworkAlt(hero)} width={hero.image.width} height={hero.image.height} loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>Wall label</p><h3>{g.title}</h3><p>{g.works.length} {g.works.length===1?'work':'works'} · Explore gallery →</p></div></a></article>})}
       <article class="ex-slide product-card"><a href="/gallery/archived/"><img src={archivePreview(archivePaintings[0],480)} alt="Archived Paintings by TJ Murphy" loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>From the studio archive</p><h3>Archived Paintings</h3><p>{archivePaintings.length} works · Explore gallery →</p></div></a></article>
       <article class="ex-slide product-card"><a href="/gallery/older-work/"><img src={olderWorkPreview(olderWorkGroups[0],480)} alt="Older Work by TJ Murphy" loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>From the studio</p><h3>Older Work</h3><p>{olderWorkCount} works · Explore gallery →</p></div></a></article>
     </div>
