@@ -17,6 +17,7 @@ import { renamedProductPath } from './product-renames.mjs';
 import { catalogResponse, CATALOG_PATHS } from './catalog-pages.mjs';
 import { catalogAdmin } from './catalog-admin.mjs';
 import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
+import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 export { TESTIMONIALS_PAGE };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*', '/catalog/products.json', '/catalog-admin', '/catalog-admin/*'];
@@ -157,8 +158,12 @@ export default {
     if (url.pathname === NOSTR_JSON_PATH) return nostrJson();
     if (url.pathname.startsWith(LNURLP_PREFIX)) return lnurlp(url.pathname.slice(LNURLP_PREFIX.length));
     // One painting wall: the older framed print wall moved to the all-paintings wall.
-    // The old 3D gallery room is retired; the play gallery replaces it (studio-tracker #154).
-    if (/^\/gallery\/room\/?$/.test(url.pathname)) return Response.redirect(new URL('/play/' + url.search, url).href, 301);
+    // The old 3D room entry soft-points at the hex gallery (studio-tracker #771). tjm.art/play stays up until #772.
+    if (/^\/gallery\/room\/?$/.test(url.pathname)) {
+      const dest = new URL(GALLERY_3D_URL);
+      dest.search = url.search;
+      return Response.redirect(dest.href, 301);
+    }
     if (/^\/gallery\/wall\/?$/.test(url.pathname)) return Response.redirect(new URL('/gallery/wall/all/' + url.search, url).href, 301);
     // Live catalog (tjm-catalog D1): owner admin, and catalog pages patched at request time (built page on any D1 error).
     if (/^\/catalog-admin(?:\/|$)/.test(url.pathname)) return catalogAdmin(request, env, ctx);

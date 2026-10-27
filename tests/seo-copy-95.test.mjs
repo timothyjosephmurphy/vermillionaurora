@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import { byId } from '../catalog/catalog.mjs';
 import { productCrumb } from '../src/data/product-crumb.mjs';
 import { playReturn } from '../src/data/play-return.mjs';
+import { GALLERY_3D_LABEL, GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 
 const HOME_TITLE = 'TJ Murphy | Original Watercolor Paintings &amp; Prints, Seattle';
 const HOME_DESCRIPTION = 'Original watercolor pastel paintings and fine-art prints of Pacific Northwest landscapes, travels and portraits by Seattle artist TJ Murphy. Originals from $75, prints from $25, commissions from $100.';
@@ -64,17 +65,35 @@ test('/play shell title and start-screen H1 use gallery wording', () => {
   assert.equal(manifest.short_name, 'TJM Gallery');
 });
 
-test('dungeon wording is only for a visit that came from /play', () => {
-  assert.deepEqual(playReturn({ search: '?from=play' }), { show: true, label: '← Back to the Dungeon', href: '/play/?resume=1' });
-  assert.deepEqual(playReturn({ referrer: 'https://tjm.art/play/orsay/' }), { show: true, label: '← Back to the Dungeon', href: '/play/?resume=1' });
-  assert.deepEqual(playReturn({ playState: true }), { show: true, label: '← Back to the 3D gallery', href: '/play/?resume=1' });
+test('dungeon wording is gone from buyer return chips; Quake resume stays on /play (studio-tracker #771)', () => {
+  const quake = { show: true, label: '← Back to Play', href: '/play/?resume=1' };
+  const hex = { show: true, label: GALLERY_3D_LABEL, href: GALLERY_3D_URL };
+  assert.deepEqual(playReturn({ search: '?from=play' }), quake);
+  assert.deepEqual(playReturn({ referrer: 'https://tjm.art/play/orsay/' }), quake);
+  assert.deepEqual(playReturn({ playState: true }), quake);
+  assert.deepEqual(playReturn({ referrer: 'https://preview-251.tjm-tag-gallery-preview.pages.dev/play/' }), hex);
   assert.deepEqual(playReturn({ referrer: 'https://tjm.art/gallery/' }), { show: false, label: '← Back to the gallery', href: '/gallery/' });
   const layout = fs.readFileSync('src/layouts/ProductLayout.astro', 'utf8');
   assert.match(layout, /← Back to the gallery/);
-  assert.doesNotMatch(layout, /← Back to the Dungeon/);
+  assert.doesNotMatch(layout, /Dungeon/);
   const cart = fs.readFileSync('src/pages/cart/index.astro', 'utf8');
   assert.match(cart, /← Back to the gallery/);
-  assert.doesNotMatch(cart, /← Back to the Dungeon/);
+  assert.doesNotMatch(cart, /Dungeon/);
+  const header = fs.readFileSync('src/components/SiteHeader.astro', 'utf8');
+  assert.ok(header.includes(`href="${GALLERY_3D_URL}">${GALLERY_3D_LABEL}`));
+  assert.doesNotMatch(header, /dungeon/i);
+  for (const file of ['src/pages/index.astro', 'src/components/GalleryRoomCard.astro']) {
+    const html = fs.readFileSync(file, 'utf8');
+    assert.match(html, /GALLERY_3D_URL/, file);
+    assert.match(html, /GALLERY_3D_LABEL/, file);
+    assert.doesNotMatch(html, /dungeon/i, file);
+    assert.doesNotMatch(html, /href="\/play\/"/, file);
+  }
+  for (const post of ['static/blog/my-week-in-art-oct-11-17-2026/index.html', 'static/blog/3d-gallery-to-relay-gate/index.html', 'static/blog/el-salvador-sunrises-sunsets/index.html']) {
+    const html = fs.readFileSync(post, 'utf8');
+    assert.match(html, new RegExp(GALLERY_3D_LABEL), post);
+    assert.doesNotMatch(html, /step into the dungeon|take me to the dungeon/i, post);
+  }
 });
 
 test('blog index drops placeholder jargon and the week post matches the Older Work count', () => {

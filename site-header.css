@@ -198,7 +198,7 @@ body.full .site-header{display:none}
   .site-header .header-inner{gap:10px}
   .site-header .brand{gap:7px;font-size:.84rem}
   .site-header .brand-mark{width:44px;height:51px}
-  .site-header .main-nav{flex-wrap:nowrap;gap:8px 9px;font-size:.7rem;letter-spacing:.03em}
+  .site-header .main-nav{flex-wrap:wrap;justify-content:flex-end;gap:8px 9px;font-size:.7rem;letter-spacing:.03em}
   .site-header .main-nav a{white-space:nowrap}
   .site-header .main-nav .cart-payment-icons{display:none}
   .site-header .header-actions .button{padding:.7rem .9rem;font-size:.66rem;letter-spacing:.05em}
@@ -220,9 +220,8 @@ body.full .site-header{display:none}
 @media(max-width:429.98px){.site-header .header-cta-lead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}}
 @media(max-width:389.98px){.site-header .cart-nav-mobile .cart-payment-icons{display:none}.site-header .container{width:calc(100% - 16px)}.site-header .header-actions{gap:4px}.site-header .header-actions .button{padding:.6rem .5rem}}
 @media(max-width:359.98px){.site-header .brand{gap:4px}.site-header .brand-mark{width:30px;height:35px}.site-header .brand small{font-size:.45rem;letter-spacing:.02em}.site-header .cart-nav-mobile{letter-spacing:0}}
-/* Keep the desktop nav on one line with the Play link (studio-tracker #218). */
-@media(min-width:980.01px){.site-header .main-nav{flex-wrap:nowrap;gap:12px 16px}.site-header .main-nav a{white-space:nowrap}}
-/* No horizontal scroll with the Play link: compact nav and CTA up to 1360px; let it wrap below 1060px (studio-tracker #218). */
+/* The 3D gallery label is longer than Play. Wrap the row so it stays on screen (studio-tracker #218, #771). */
+@media(min-width:980.01px){.site-header .main-nav{flex:1 1 280px;min-width:0;flex-wrap:wrap;justify-content:flex-end;gap:8px 12px}.site-header .main-nav a{white-space:nowrap}}
 @media(min-width:980.01px) and (max-width:1059.98px){.site-header .main-nav{flex-wrap:wrap}}
 @media(min-width:980.01px) and (max-width:1360px){.site-header .header-cta-lead{display:none}.site-header .main-nav{gap:12px;letter-spacing:.05em}}
 
