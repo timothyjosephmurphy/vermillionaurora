@@ -49,7 +49,8 @@ export const ORIGINALS_API = '/inventory/originals';
 // 60 s; holds, quotes and payments always reach the checkout Worker, which re-validates price and stock.
 export const CART_API = '/checkout/cart/';
 // Kiss-cut sticker checkout. The website Worker only forwards. The checkout Worker
-// holds PRINTFUL_API_TOKEN and stays on the mock preview until PRINTFUL_STICKERS_MODE=draft.
+// holds PRINTFUL_API_TOKEN. Committed PRINTFUL_STICKERS_MODE=draft still does not call
+// Printful until the painting file is marked fileReady, and this code never confirms.
 export const STICKERS_API = '/checkout/stickers/';
 const CART_CATALOG = '/checkout/cart/catalog';
 export async function cartApi(request, env, ctx) {

@@ -7,7 +7,7 @@
   "keep_vars": true,
   "vars": {
     "CHECKOUT_MODE": "sandbox",
-    "PRINTFUL_STICKERS_MODE": "mock",
+    "PRINTFUL_STICKERS_MODE": "draft",
     "SQUARE_CHECKOUT_ENABLED": "true",
     "SQUARE_MODE": "sandbox",
     "SQUARE_SANDBOX_NO_FULFILLMENT": "true",

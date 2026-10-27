@@ -132,10 +132,10 @@ test('public catalog lists the three starter paintings and no supplier prices or
   assert.equal(JSON.stringify(body).includes('PRINTFUL_API_TOKEN'), false);
 });
 
-test('Worker config keeps the sticker flag in mock and does not store a Printful token', () => {
+test('Worker config commits draft mode and does not store a Printful token', () => {
   for (const file of ['cloudflare/wrangler.jsonc', 'cloudflare/wrangler.sandbox.jsonc']) {
     const config = JSON.parse(fs.readFileSync(file, 'utf8'));
-    assert.equal(config.vars.PRINTFUL_STICKERS_MODE, 'mock');
+    assert.equal(config.vars.PRINTFUL_STICKERS_MODE, 'draft');
     assert.equal(Object.hasOwn(config.vars, 'PRINTFUL_API_TOKEN'), false);
     assert.equal(Object.hasOwn(config.vars, 'PRINTFUL_STORE_ID'), false);
   }

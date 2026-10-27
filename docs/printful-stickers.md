@@ -37,22 +37,19 @@ Set these on the checkout Worker `vermillion-commissions` (Cloudflare → Worker
 
 | Name | Kind | Purpose |
 | --- | --- | --- |
-| `PRINTFUL_API_TOKEN` | Secret | Bearer token for `https://api.printful.com`. Absent means every sticker request stays a mock preview. |
-| `PRINTFUL_STORE_ID` | Secret, optional | Sent as `X-PF-Store-Id` for an account-level token. Omit for a private store token. |
-| `PRINTFUL_STICKERS_MODE` | Plain var | `mock` in `cloudflare/wrangler.jsonc` and `cloudflare/wrangler.sandbox.jsonc`. `draft` is the only other value this code honors. |
+| `PRINTFUL_API_TOKEN` | Secret, already on the live Worker | Bearer token for `https://api.printful.com`. Not in git. Absent means every sticker request stays a mock preview. |
+| `PRINTFUL_STORE_ID` | Omitted | The live token is a single-store token, so `X-PF-Store-Id` is not set. Do not add this to git. |
+| `PRINTFUL_STICKERS_MODE` | Plain var | Committed as `draft` in `cloudflare/wrangler.jsonc` and `cloudflare/wrangler.sandbox.jsonc`. `draft` is the only value that can call Printful, and only when the token is present and that painting’s `fileReady` is true. |
 
-```bash
-npx wrangler secret put PRINTFUL_API_TOKEN --config cloudflare/wrangler.jsonc
-npx wrangler secret put PRINTFUL_STORE_ID --config cloudflare/wrangler.jsonc
-```
-
-Creating the Printful account and the token is the studio manager’s step, not this change.
+`PRINTFUL_API_TOKEN` is already set on `vermillion-commissions`. Do not commit it, and do not set `PRINTFUL_STORE_ID`.
 
 The website Worker forwards `POST /checkout/stickers/order` and `GET /checkout/stickers/catalog` to `vermillion-commissions`. US addresses only (states and Washington, DC). Standard shipping. The packing slip name is TJ Murphy and the slip email is tj@tjm.art. The return address still comes from the Printful store settings (Settings → Stores → Returns). Set that to the studio before any real shipment. Printful’s own mark can still appear on the carrier label; the packing slip is the white-label piece this order sets.
 
 ## What an order does
 
-`PRINTFUL_STICKERS_MODE=mock`, a missing token, or any other flag: the route returns a preview id and does not call Printful.
+The committed flag is `draft`. With the token already on the live Worker and `fileReady` still false, a sticker request returns `409` and does not call Printful.
+
+A missing token, or any mode other than `draft`: the route returns a preview id and does not call Printful.
 
 `draft` plus a token, while `fileReady` is false: `409`. Printful is not called.
 
@@ -60,10 +57,10 @@ The website Worker forwards `POST /checkout/stickers/order` and `GET /checkout/s
 
 ## Test-order steps
 
-TJ has to approve before any paid sticker order. Do not confirm a draft in the Printful dashboard until then. Confirming charges the Printful wallet and ships the sticker.
+TJ has to approve before any paid sticker order. Do not confirm a draft in the Printful dashboard until then. Confirming charges the Printful wallet and ships the sticker. Leave `fileReady` false and `printfulTemplateId` null until that approval.
 
-1. Open one of the three product URLs. **Order a sticker** is next to **Buy a print**.
-2. Submit a US address. With the committed `mock` flag, the page says it is a preview. Nothing is charged and Printful is not contacted.
+1. Open one of the three product URLs. **Order a sticker** is grouped with **Buy a print**.
+2. Submit a US address. After this branch deploys, the response is `409` because the print file is not approved. Nothing is charged and Printful is not contacted.
 3. `curl -sS -X POST https://tjm.art/checkout/stickers/order -H 'content-type: application/json' -d '{"productId":"painting-shoreline-at-dusk","variantId":"3x3","quantity":1,"recipient":{"name":"A Collector","email":"collector@example.com","address1":"123 Test St","city":"Seattle","state":"WA","zip":"98122","country":"US"}}'`
-4. Expect `"mode":"mock"` and `"charged":false`.
-5. Later, and only with TJ’s OK: put the token in the Worker, replace the placeholder file with a print-ready PNG, set that painting’s `fileReady` to true, and set `PRINTFUL_STICKERS_MODE` to `draft` on a non-production Worker first. The route will create an unconfirmed draft. Delete that draft in Printful, or `DELETE /v2/orders/{id}`, if it should not remain. Do not confirm it from the dashboard unless TJ has approved a paid test.
+4. Expect `"fileReady":false`, `"charged":false`, and no Printful order id.
+5. Later, and only with TJ’s OK: replace the placeholder file with a print-ready PNG and set that painting’s `fileReady` to true. The route will then create an unconfirmed draft. Delete that draft in Printful, or `DELETE /v2/orders/{id}`, if it should not remain. Do not confirm it from the dashboard unless TJ has approved a paid test.
