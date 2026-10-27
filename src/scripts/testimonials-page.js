@@ -1,4 +1,6 @@
-// /testimonials/: loads approved testimonials at request time and submits the public form.
+// /testimonials/: the Worker already inlines approved quotes for crawlers. This still loads
+// /testimonials/api/approved and appends any id that is not in the HTML yet (approved during the
+// page's one-minute cache), and submits the public form.
 // Photos are resized in the browser (max 2000 px, JPEG) which also drops their EXIF/GPS metadata;
 // the Worker strips metadata again server-side, so a raw upload is still safe.
 const MAX_PHOTOS = 4, MAX_BYTES = 10 * 1024 * 1024, MAX_EDGE = 2000;
@@ -26,19 +28,28 @@ function card(t) {
 
 // Inline player: nothing downloads until it is near the screen (poster image) or played; no autoplay, never sound
 // on its own. Without a captured poster, preload="metadata" is switched on near the viewport so the first frame shows.
+// Cards the Worker already wrote into the HTML get the same treatment (their ids are not rebuilt).
 let nearViewport;
+function armVideo(video) {
+  if (video.dataset.armed) return;
+  video.dataset.armed = '1';
+  const source = video.querySelector('source');
+  const fallback = video.parentElement?.querySelector('.video-fallback');
+  if (source && fallback) source.addEventListener('error', () => { fallback.hidden = false; });
+  if (!video.getAttribute('poster')) {
+    nearViewport ||= 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.preload = 'metadata'; nearViewport.unobserve(e.target); } }), {rootMargin: '400px'}) : null;
+    if (nearViewport) nearViewport.observe(video); else video.preload = 'metadata';
+  }
+}
 function videoPlayer(t, who) {
   const video = el('video', {controls: true, playsInline: true, preload: 'none', ariaLabel: `Video from ${who}${t.painting ? ` about “${t.painting}”` : ''}`});
   video.setAttribute('playsinline', '');
   if (t.video.poster) video.poster = t.video.poster;
   video.append(el('source', {src: t.video.src, type: t.video.type}));
   const fallback = el('p', {className: 'video-fallback', hidden: true}, 'This video can’t play in this browser. Try Safari or another device, or ', el('a', {href: t.video.src, textContent: 'open the video file'}), '.');
-  video.querySelector('source').addEventListener('error', () => { fallback.hidden = false; });
-  if (!t.video.poster) {
-    nearViewport ||= 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.preload = 'metadata'; nearViewport.unobserve(e.target); } }), {rootMargin: '400px'}) : null;
-    if (nearViewport) nearViewport.observe(video); else video.preload = 'metadata';
-  }
-  return el('figure', {className: 'testimonial-video'}, video, fallback);
+  const figure = el('figure', {className: 'testimonial-video'}, video, fallback);
+  armVideo(video);
+  return figure;
 }
 
 async function loadApproved() {
@@ -46,11 +57,13 @@ async function loadApproved() {
   if (!list) return;
   try {
     const r = await fetch('/testimonials/api/approved', {cache: 'no-cache', headers: {Accept: 'application/json'}});
-    if (!r.ok) return;
-    const {testimonials = []} = await r.json();
-    const fresh = testimonials.filter(t => !document.getElementById(t.id));
-    list.append(...fresh.map(card));
+    if (r.ok) {
+      const {testimonials = []} = await r.json();
+      const fresh = testimonials.filter(t => !document.getElementById(t.id));
+      list.append(...fresh.map(card));
+    }
   } catch {}
+  list.querySelectorAll('.testimonial-video video').forEach(armVideo);
   if (list.children.length) document.querySelectorAll('[data-has-testimonials]').forEach(n => { n.hidden = false; });
   if (location.hash && location.hash !== '#share') document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }

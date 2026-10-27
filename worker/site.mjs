@@ -1,7 +1,8 @@
 // Website Worker. wrangler.jsonc sets assets.run_worker_first to an explicit route list, so static files, pages,
 // static/_redirects and 404s are served by the Cloudflare assets layer WITHOUT invoking this Worker
 // (and without counting toward the Workers request limit). Only the routes listed there reach this code: the
-// QuickBooks API, the testimonials API, the original-inventory API (all forwarded to the checkout Worker) and the
+// QuickBooks API, the testimonials API and the original-inventory API (forwarded to the checkout Worker),
+// the testimonials page (approved quotes inlined for crawlers) and the
 // Apple Pay merchant-id file. Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
 //
 // Host-level redirects now live at the Cloudflare edge (zone Redirect Rules, see docs/static-bypass-zone-rules.md):
@@ -14,6 +15,8 @@ import { APPLE_PAY_DOMAIN_ASSOCIATION } from './apple-pay-domain-association.mjs
 import { renamedProductPath } from './product-renames.mjs';
 import { catalogResponse, CATALOG_PATHS } from './catalog-pages.mjs';
 import { catalogAdmin } from './catalog-admin.mjs';
+import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
+export { TESTIMONIALS_PAGE };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*', '/catalog/products.json', '/catalog-admin', '/catalog-admin/*'];
 
@@ -129,6 +132,10 @@ export default {
     }
     if (url.pathname.startsWith(TESTIMONIALS_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Testimonials are temporarily unavailable.' }, { status: 503 });
+    }
+    // Approved quotes in the first HTML byte (studio-tracker #102). The API route above stays a forward.
+    if (TESTIMONIALS_PAGE.includes(url.pathname) && request.method === 'GET' && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
+      return testimonialsPage(request, env);
     }
     if (url.pathname === ORIGINALS_API && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });

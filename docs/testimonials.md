@@ -29,10 +29,17 @@ Collectors (people TJ has given or sold paintings to) share testimonials on http
    (edit name, wording, painting, slug, city, pin, photos first), **Unpublish**, **Delete (reject)**. API:
    `POST /testimonials/api/owner` with `Origin: https://tjm.art` and `Authorization: Bearer $COMMISSION_MANAGER_TOKEN`
    (actions `list`, `photo`, `geocode`, `approve`, `unpublish`, `delete`, `issueCode`).
-6. **Display**: /testimonials/, the /exhibitions/world-map/ map, the homepage exhibitions card, and the map beside “Share your story”
-   fetch `GET /testimonials/api/approved` at page load (`cache: no-store`; the response is `public, max-age=60, must-revalidate`),
-   so an approval or unpublish shows on the next view and within a minute where a shared cache keeps the JSON. No rebuild.
-   Approve, unpublish and delete rebuild `testimonials/approved.json`, which is what that endpoint reads. Approved photos are
+6. **Display**: Approve, unpublish and delete rebuild `testimonials/approved.json`. The website Worker
+   (`worker/testimonials-html.mjs`) reads that list on `GET /testimonials/` and writes each approved quote into the HTML,
+   so a crawler sees the words without running JavaScript. The same response adds an ItemList of schema.org Quotation
+   entries (author, words, and the painting when there is one). There is no Review rating and no AggregateRating:
+   the published set is still small and family-heavy, so star snippets wait (studio-tracker #47). The HTML is cached for
+   60 seconds, the same window as `GET /testimonials/api/approved` (`public, max-age=60, must-revalidate`). If the checkout
+   Worker cannot be read, the built page is served unchanged. The page script still fetches the approved JSON
+   (`cache: no-cache`) and appends any id that is not already in the HTML, which covers a testimonial approved during
+   that minute. The /exhibitions/world-map/ map, the homepage exhibitions card, and the map beside “Share your story”
+   still load pins from that JSON only. No rebuild.
+   Approved photos are
    served from `/testimonials/api/photo/<id>/<n>`. On the full map, pins are green speech-mark markers with a "Collector testimonials"
    legend entry. The homepage card keeps its build-time exhibition dots and adds unlabeled green dots (nearby pins merged). The
    testimonials page map is only those collector pins, captioned “Collectors around the world”, and links to the full map.
@@ -52,7 +59,7 @@ Collectors (people TJ has given or sold paintings to) share testimonials on http
    testimonial never issues or sends anything.
 
 The site Worker (`worker/site.mjs`) forwards `/testimonials/api/*` on tjm.art to the checkout Worker through the `CHECKOUT`
-service binding, like the QuickBooks routes.
+service binding, like the QuickBooks routes. `GET /testimonials/` and `GET /testimonials` run in that Worker too, so approved quotes are in the HTML.
 
 ## Reply by email (no form)
 
