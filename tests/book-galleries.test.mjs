@@ -169,8 +169,15 @@ test('perspective-corrected book photos replace the desk photo everywhere and st
     assert.match($('meta[property="og:image"]').attr('content'),/^https:\/\/img\.tjm\.art\/social\//);
     assert.equal(JSON.parse($('script[type="application/ld+json"]').first().html()).image,c.previewUrl);
     assert.equal($('.product-figure img').attr('width'),String(c.widthPx));
-    // Width/height reserve the aspect ratio only; height:auto keeps the frame from letterboxing to max-height.
-    assert.match(fs.readFileSync('styles.css','utf8'),/\.product-figure img \{[^}]*height: auto;/);
+    // The frame shrink-wraps. width:auto + max-width/max-height keep the painted aspect, so a tall crop is not letterboxed onto the paper background.
+    const css=fs.readFileSync('styles.css','utf8');
+    assert.match(css,/\.product-figure \{[^}]*width: fit-content;/);
+    assert.match(css,/\.product-figure img \{[^}]*width: auto; height: auto; max-width: 100%; max-height: 75vh;/);
+    const galleryCss=fs.readFileSync('src/layouts/BookGalleryLayout.astro','utf8');
+    assert.match(galleryCss,/\.book-gallery-page \.ev-three-up \.ev-cell img\{width:auto;height:100%;padding:0;object-fit:contain\}/);
+    assert.match(galleryCss,/\.book-gallery-page \.painting-list-row \.gallery-product-image img\{object-fit:cover\}/);
+    assert.doesNotMatch(galleryCss,/\.book-gallery-page \.ev-three-up \.ev-cell\{background:#f4efe8\}/);
+    assert.match(fs.readFileSync('exhibitions/viewer.js','utf8'),/Closest cell, so mixed aspect ratios/);
     assert.equal($('.painting-image-trigger').attr('href'),c.masterUrl);
     for(const section of art.sectionIds){
       const html=fs.readFileSync(`dist/book-galleries/${section}/index.html`,'utf8');

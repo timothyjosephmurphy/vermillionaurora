@@ -148,8 +148,13 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
     window.addEventListener('pointerup', release); window.addEventListener('pointercancel', release);
     stage.addEventListener('wheel', () => { resumeAt = performance.now() + 5000; }, {passive:true});
     stage.addEventListener('scroll', () => {
-      const width = stage.children[1]?.offsetLeft - (stage.children[0]?.offsetLeft || 0);
-      const n = width ? Math.round(stage.scrollLeft / width) : 0;
+      // Closest cell, so mixed aspect ratios (book gallery tiles sized to the photo) still track the scroll position.
+      const origin = stage.children[0]?.offsetLeft || 0;
+      let n = 0, best = Infinity;
+      for (let i = 0; i < stage.children.length; i++) {
+        const distance = Math.abs(stage.children[i].offsetLeft - origin - stage.scrollLeft);
+        if (distance < best) { best = distance; n = i; }
+      }
       if (n !== index) show(n, true);
     }, {passive:true});
     requestAnimationFrame(animate);
