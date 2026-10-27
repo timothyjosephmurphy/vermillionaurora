@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="96ec6f5df6713283e80b";
+export const sourcePrintVersion="7bfcba872375478aa8d9";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -202,6 +202,58 @@ export default [
       "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy"
     },
     "variants": [
+      {
+        "key": "full",
+        "label": "Large",
+        "price": "155.00",
+        "sku": "5M144M9S15.6X24.45",
+        "paperSize": {
+          "width": 16.6,
+          "height": 25.45,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "268.00",
+            "sku": "5M144M8S15DD86X24DD71F1S18DD86X27DD71J1S15DD86X24DD71G1",
+            "outerSize": {
+              "width": 18.86,
+              "height": 27.71,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "268.00",
+            "sku": "5M144M8S15DD86X24DD71F2S18DD86X27DD71J1S15DD86X24DD71G1",
+            "outerSize": {
+              "width": 18.86,
+              "height": 27.71,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "289.00",
+            "sku": "5M144M8S15DD86X24DD71F7S18DD86X27DD71J1S15DD86X24DD71G1",
+            "outerSize": {
+              "width": 18.86,
+              "height": 27.71,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
       {
         "key": "medium",
         "label": "Medium",

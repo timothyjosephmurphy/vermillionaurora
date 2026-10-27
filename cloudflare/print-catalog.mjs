@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="96ec6f5df6713283e80b";
+export const printVersion="7bfcba872375478aa8d9";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -795,6 +795,271 @@ export default {
       }
     },
     "unframedAmount": "40.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "155.00",
+    "currency": "USD",
+    "sku": "5M144M9S15.6X24.45",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.6,
+      "height": 24.45,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.6,
+      "height": 25.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0b8a8d37b4ee2eceffa07ecee8d336a82237be61231420327aa9e5c292f99e12.jpg",
+    "assetSha256": "0b8a8d37b4ee2eceffa07ecee8d336a82237be61231420327aa9e5c292f99e12",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.6,
+      "height": 24.45,
+      "unit": "in"
+    }
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full-frame-black": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print — Black frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "268.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD86X24DD71F1S18DD86X27DD71J1S15DD86X24DD71G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.6067,
+      "height": 24.4533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.86,
+      "height": 24.71,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b.jpg",
+    "assetSha256": "798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.86,
+        "height": 27.71,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.86,
+        "height": 24.71,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.86X24.71",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.86,
+        "height": 27.71,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "160.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full-frame-white": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print — White frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "268.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD86X24DD71F2S18DD86X27DD71J1S15DD86X24DD71G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.6067,
+      "height": 24.4533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.86,
+      "height": 24.71,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b.jpg",
+    "assetSha256": "798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.86,
+        "height": 27.71,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.86,
+        "height": 24.71,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.86X24.71",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.86,
+        "height": 27.71,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "160.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full-frame-natural": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print — Natural wood frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "289.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD86X24DD71F7S18DD86X27DD71J1S15DD86X24DD71G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.6067,
+      "height": 24.4533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.86,
+      "height": 24.71,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b.jpg",
+    "assetSha256": "798c1f58b0a876c50e346089ebde7baf29985a4538df2be94afbba4148499a4b",
+    "sourceSha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.86,
+        "height": 27.71,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.86,
+        "height": 24.71,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.86X24.71",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.86,
+        "height": 27.71,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "160.00"
   },
   "print-honeybadger-and-cub-with-genesis-block-medium": {
     "id": "print-honeybadger-and-cub-with-genesis-block-medium",
