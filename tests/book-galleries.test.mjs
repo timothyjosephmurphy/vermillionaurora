@@ -188,3 +188,20 @@ test('perspective-corrected book photos replace the desk photo everywhere and st
   }
 });
 
+test('homepage selected galleries crop portrait heroes to a short landscape tile', () => {
+  const src = fs.readFileSync('src/components/BookGalleryCarousel.astro', 'utf8');
+  assert.doesNotMatch(src, /style="[^"]*object-fit:\s*contain/);
+  assert.match(src, /\.book-section-carousel \.ex-slide img \{[^}]*aspect-ratio:\s*4\s*\/\s*3;[^}]*object-fit:\s*cover;/s);
+  assert.match(src, /Explore gallery →/);
+  assert.match(src, /alt=\{p\.title\}/);
+  assert.match(src, /alt=\{artworkAlt\(hero\)\}/);
+  assert.match(src, /aria-roledescription="carousel"/);
+  // Shared carousel rules stay put so exhibitions, murals, and featured works are unchanged.
+  const css = fs.readFileSync('styles.css', 'utf8');
+  assert.match(css, /\.ex-slide img \{ width:100%; aspect-ratio:4\/3; object-fit:cover; background:var\(--paper\); \}/);
+  assert.match(css, /\.painting-carousel \.ex-slide img \{ height:100%; aspect-ratio:auto; \}/);
+  const home = fs.readFileSync('home-compact.css', 'utf8');
+  assert.match(home, /\.home-page #exhibitions \.ex-slide img,\.home-page #featured-artists \.ex-slide img \{ aspect-ratio:16\/9; \}/);
+  assert.match(home, /\.home-page #murals \.ex-slide img \{ display:block; height:280px; aspect-ratio:16\/9; object-fit:cover; \}/);
+});
+
