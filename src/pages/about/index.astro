@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
+import EmailSignup from '../../components/EmailSignup.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -133,8 +134,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
 </div>
 </section><div class="artist-links"><a class="button button-solid" href="/commissions/#form">Discuss a commission</a><a class="button button-ghost" href="/murals/">Explore the murals</a></div>
 <p class="testimonial-cta"><a href="/testimonials/">Own one of my paintings? Share your story <span aria-hidden="true">→</span></a></p>
-<section class="email-signup" aria-labelledby="email-signup-heading"><h2 id="email-signup-heading">Studio notes by email</h2><p>New paintings, prints, exhibitions, and books, a few times a year. Unsubscribe anytime.</p><form action="https://buttondown.com/api/emails/embed-subscribe/timothyjosephmurphy" method="post" target="_blank" class="email-signup-form"><label for="bd-email">Email address</label><div class="email-signup-row"><input type="email" name="email" id="bd-email" autocomplete="email" required placeholder="you@example.com"><input type="hidden" name="embed" value="1"><button type="submit" class="button button-solid">Subscribe</button></div></form></section>
-<style is:inline>.email-signup{max-width:640px;margin:48px auto;padding:24px;border:1px solid var(--line,#d7ccba);border-radius:12px;background:#fffcf6}.email-signup h2{margin:0 0 8px;font-size:1.8rem}.email-signup p{margin:0 0 14px;line-height:1.6}.email-signup label{display:block;font-size:.8rem;margin-bottom:6px}.email-signup-row{display:flex;gap:10px;flex-wrap:wrap}.email-signup input[type=email]{flex:1 1 220px;min-height:44px;padding:10px 12px;border:1px solid #cdbfae;border-radius:6px;font:inherit}</style>
+<EmailSignup id="about-email" />
 </article></main><SiteFooter /></div><style is:inline>.video-facade{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#1d1a17;cursor:pointer;overflow:hidden;border-radius:inherit}.video-facade img{width:100%;height:100%;object-fit:cover;display:block}.video-facade-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#d34220}.video-facade-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}.video-facade:focus-visible{outline:3px solid #d34220;outline-offset:3px}</style>
 <script is:inline>
 // Load heavy embeds only when asked: the portfolio PDF when its reader opens, YouTube on play.

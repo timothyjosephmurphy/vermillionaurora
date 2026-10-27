@@ -3,7 +3,7 @@
 Codes are typed into the **Code** field on /cart/ before "Calculate shipping & tax".
 
 ## Collector codes (single use)
-For a collector after a testimonial. Prints only (not originals or deposits), priced at the print lab's
+For a collector after a testimonial, and for someone who joins the email list. Prints only (not originals or deposits), priced at the print lab's
 production cost per copy plus shipping, with no markup. Each code works for one paid order.
 
 ```sh
@@ -15,6 +15,16 @@ with the name, email and note).
 
 Lifecycle: checked at quote, claimed when payment starts, released if that checkout is cancelled, expires, or the card is
 declined, redeemed when payment completes. A claimed code cannot be used in a second checkout at the same time.
+
+## Newsletter signup
+
+Joining the list on the site (`POST /newsletter/subscribe`) subscribes that address with the Buttondown API and emails one collector code. The note is `Newsletter signup YYYY-MM-DD`. The same address does not get a second newsletter code. A testimonial code for that address stays separate.
+
+The checkout Worker (`vermillion-commissions`) needs secret `BUTTONDOWN_API_KEY` (Buttondown → Settings → API). Without it the form says the list isn’t accepting signups and does not issue a code. This secret is not on the Worker yet.
+
+Optional: secret `BUTTONDOWN_WEBHOOK_SECRET` and a Buttondown webhook for `subscriber.created` and `subscriber.confirmed` aimed at `https://tjm.art/newsletter/buttondown-webhook`. The signature is `X-Buttondown-Signature: sha256=` plus the HMAC-SHA256 hex of the raw body. If the event only includes a subscriber id, the handler loads the address with `BUTTONDOWN_API_KEY`. No webhook is configured yet.
+
+Verify without adding a stranger to the list: `node --test cloudflare/newsletter.test.mjs` mocks Buttondown and Gmail. After the API key is saved and this is deployed, sign up with an address you control. One code email should arrive from tj@tjm.art. Submitting that address again should not send a second code.
 
 ## Owner code (TJ, unlimited)
 Stored only as a SHA-256 hash in `cloudflare/print-codes.mjs`. Prints at production cost; originals at $0 plus shipping

@@ -28,6 +28,7 @@ import { quickbooksApi } from './quickbooks-api.mjs';
 import { pollTips } from './btcpay-tips.mjs';
 import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestimonialVideos } from './testimonials.mjs';
 import { handleTestimonialEmail } from './testimonial-reply.mjs';
+import { newsletterApi } from './newsletter.mjs';
 export default {
   // Cloudflare Email Routing (stories@reply.tjm.art). Does not run for ordinary HTTP requests.
   async email(message, env, ctx) {
@@ -43,6 +44,7 @@ export default {
     // Live catalog (D1) over the built catalog; built values if D1 is unavailable.
     await applyCatalogOverlay(env);
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);
+    if (path === '/newsletter/subscribe' || path === '/newsletter/buttondown-webhook') return newsletterApi(request,env);
     if (path.startsWith('/buffer/')) return bufferApi(request,env);
     if (path.startsWith('/etsy/listings/')) return etsyListings(request,env);
     if (path.startsWith('/etsy/')) return etsyConnection(request,env);
