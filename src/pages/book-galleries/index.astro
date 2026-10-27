@@ -8,6 +8,8 @@ import {byId} from '../../../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../../../catalog/prints.mjs';
 import {sectionArtworkIds} from '../../data/canonical-artworks.mjs';
 import {wallLabelGalleries} from '../../../catalog/wall-label-galleries.mjs';
+import {artworkAlt} from '../../data/artwork-alt.mjs';
+import {galleryHero} from '../../data/gallery-hero.mjs';
 
 const galleryArtworks=[...new Set(manifest.sections.flatMap(sectionArtworkIds))];
 const totalPrintReady=galleryArtworks.filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length;
@@ -47,13 +49,16 @@ const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title
     <h2 class="book-group-heading" id="wall-label-galleries-heading">Wall labels</h2>
     <p>Groups from the studio wall labels. These sit alongside the book chapters above.</p>
     <ul class="book-gallery-grid" aria-label="Wall label galleries">
-      {wallLabelGalleries.map(gallery => <li class="book-gallery-card wall-label-card">
-        <a href={`/galleries/${gallery.id}/`}>
-          <img src={gallery.thumb} alt={`${gallery.title} — studio wall label`} width={gallery.thumbWidth} height={gallery.thumbHeight} loading="lazy" decoding="async" />
-          <h3>{gallery.title}</h3>
-          <p>Wall label · {gallery.works.length} {gallery.works.length === 1 ? 'work' : 'works'}</p>
-        </a>
-      </li>)}
+      {wallLabelGalleries.map(gallery => {
+        const hero = galleryHero(gallery);
+        return <li class="book-gallery-card wall-label-card">
+          <a href={`/galleries/${gallery.id}/`}>
+            <img src={hero.image.src} alt={artworkAlt(hero)} width={hero.image.width} height={hero.image.height} loading="lazy" decoding="async" />
+            <h3>{gallery.title}</h3>
+            <p>Wall label · {gallery.works.length} {gallery.works.length === 1 ? 'work' : 'works'}</p>
+          </a>
+        </li>;
+      })}
     </ul>
   </section>
   <nav class="book-gallery-links" aria-label="Read the watercolor books">
@@ -61,7 +66,4 @@ const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title
     <a href="/galleries/">All wall label galleries →</a>
   </nav>
 </Layout>
-<style is:global>
-  .book-gallery-card.wall-label-card img { height: auto; aspect-ratio: 4 / 1; object-fit: contain; background: #111; }
-</style>
 

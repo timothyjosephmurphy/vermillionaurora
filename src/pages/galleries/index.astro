@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/BookGalleryLayout.astro';
+import {artworkAlt} from '../../data/artwork-alt.mjs';
+import {galleryHero} from '../../data/gallery-hero.mjs';
 import {wallLabelGalleries} from '../../../catalog/wall-label-galleries.mjs';
 ---
 
@@ -11,16 +13,15 @@ import {wallLabelGalleries} from '../../../catalog/wall-label-galleries.mjs';
     <p>Paintings grouped under the studio wall labels. A work can belong to more than one group. Book chapter galleries stay on <a href="/book-galleries/">Selected Galleries</a>.</p>
   </header>
   <ul class="book-gallery-grid" aria-label="Wall label galleries">
-    {wallLabelGalleries.map(gallery => <li class="book-gallery-card wall-label-card">
-      <a href={`/galleries/${gallery.id}/`}>
-        <img src={gallery.thumb} alt={`${gallery.title} — studio wall label`} width={gallery.thumbWidth} height={gallery.thumbHeight} loading="lazy" decoding="async" />
-        <h2>{gallery.title}</h2>
-        <p>{gallery.works.length} {gallery.works.length === 1 ? 'work' : 'works'}</p>
-      </a>
-    </li>)}
+    {wallLabelGalleries.map(gallery => {
+      const hero = galleryHero(gallery);
+      return <li class="book-gallery-card wall-label-card">
+        <a href={`/galleries/${gallery.id}/`}>
+          <img src={hero.image.src} alt={artworkAlt(hero)} width={hero.image.width} height={hero.image.height} loading="lazy" decoding="async" />
+          <h2>{gallery.title}</h2>
+          <p>{gallery.works.length} {gallery.works.length === 1 ? 'work' : 'works'}</p>
+        </a>
+      </li>;
+    })}
   </ul>
 </Layout>
-
-<style is:global>
-  .book-gallery-card.wall-label-card img { height: auto; aspect-ratio: 4 / 1; object-fit: contain; background: #111; }
-</style>

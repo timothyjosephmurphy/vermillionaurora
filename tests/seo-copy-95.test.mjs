@@ -41,11 +41,16 @@ test('product pages render the crumb and room-shot alts without emptying the mai
   assert.match(layout, /VisualArtwork/);
 });
 
-test('home wall-label thumbs describe the label; the hero background stays decorative', () => {
+test('home wall-label cards use a painting hero; the page title stays a small mosaic mark', () => {
   const home = fs.readFileSync('src/components/BookGalleryCarousel.astro', 'utf8');
-  assert.match(home, /alt=\{`\$\{g\.title\} — studio wall label`\}/);
+  assert.match(home, /alt=\{artworkAlt\(hero\)\}/);
+  assert.doesNotMatch(home, /studio wall label/);
   assert.match(fs.readFileSync('src/pages/index.astro', 'utf8'), /aria-hidden="true"/);
-  assert.match(fs.readFileSync('src/pages/galleries/[id].astro', 'utf8'), /studio wall label/);
+  const landing = fs.readFileSync('src/pages/galleries/[id].astro', 'utf8');
+  assert.match(landing, /class="wall-label-page-title"/);
+  assert.match(landing, /class="wall-label-mark"/);
+  assert.match(landing, /alt=\{artworkAlt\(hero\)\}/);
+  assert.match(landing, /studio wall label/);
 });
 
 test('/play shell title and start-screen H1 use gallery wording', () => {
