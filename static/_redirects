@@ -155,3 +155,6 @@
 # (studio-tracker #131). If the gallery repo build ever ships them under /play, remove these rules (redirects win over assets).
 /play/holo/* https://img.tjm.art/play/holo/:splat 301
 /play/books/* https://img.tjm.art/play/books/:splat 301
+# /search/ was a 404 (studio-tracker #129). Send it to the available-paintings page, which has a search box; ?q= is kept.
+/search /gallery/available/ 301
+/search/ /gallery/available/ 301
