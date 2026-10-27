@@ -24,7 +24,9 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     # Backstop if a cold install is slow. Cached browsers should make later runs short.
-    timeout-minutes: 60
+    # A cold Ubuntu 26 WebKit apt install has taken about 50 minutes and then cancelled
+    # the full suite at 60, while the browser tests that had started were still passing.
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
