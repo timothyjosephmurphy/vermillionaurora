@@ -18,6 +18,21 @@ test('nothing moves while the flag is off, except www.tjm.art to the apex',()=>{
   assert.equal(loc('https://tjm.art/about/',on),null);
   assert.deepEqual(loc('https://www.tjm.art/commissions/?a=1',off),[301,'https://tjm.art/commissions/?a=1']);
 });
+test('the retired gallery room soft-points at the hex gallery; /play/ is not cut (studio-tracker #771)', async () => {
+  const { GALLERY_3D_URL } = await import('../src/data/gallery-entry.mjs');
+  const env = { ...off, ASSETS: { fetch: r => new Response('asset:' + new URL(r.url).pathname) } };
+  assert.equal(await (await worker.fetch(new Request('https://tjm.art/play/'), env)).text(), 'asset:/play/');
+  assert.equal(await (await worker.fetch(new Request('https://tjm.art/play/orsay/'), env)).text(), 'asset:/play/orsay/');
+  for (const path of ['/gallery/room/', '/gallery/room']) {
+    const r = await worker.fetch(new Request('https://tjm.art' + path + '?from=home'), env);
+    assert.equal(r.status, 301, path);
+    assert.equal(r.headers.get('Location'), GALLERY_3D_URL + '?from=home', path);
+  }
+  const fs = await import('node:fs');
+  const rules = fs.readFileSync('static/_redirects', 'utf8').split('\n').map(l => l.trim().split(/\s+/)).filter(l => l[0] && !l[0].startsWith('#'));
+  for (const path of ['/gallery/room/', '/gallery/room']) assert.deepEqual(rules.find(l => l[0] === path)?.slice(1), [GALLERY_3D_URL, '301']);
+  for (const path of ['/play', '/play/', '/play/index.html']) assert.equal(rules.find(l => l[0] === path), undefined, path);
+});
 test('other requests are served by the assets binding',async()=>{
   const env={...off,ASSETS:{fetch:r=>new Response('asset:'+new URL(r.url).pathname)}};
   assert.equal(await (await worker.fetch(new Request('https://vermillionaurora.com/about/'),env)).text(),'asset:/about/');

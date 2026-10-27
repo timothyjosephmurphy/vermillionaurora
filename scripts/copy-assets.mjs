@@ -54,7 +54,7 @@ function addMobileMenu(html) {
   const brand=astro.match(/<div class="brand-block">[^]*?<\/div>/)[0];
   return html
     .replace(/<div class="brand-block">[^]*?<\/div>/,brand)
-    // Same nav links as SiteHeader.astro (Blog, Play, cart), so legacy pages don't drift (studio-tracker #218).
+    // Same nav links as SiteHeader.astro (Blog, 3D gallery, cart). The gallery href must stay a literal URL: this paste is not compiled (studio-tracker #218, #771).
     .replace(/<nav class="main-nav"[^>]*>[^]*?<\/nav>/,()=>nav)
     .replace(/(<div class="header-actions">)([^]*?)(<\/div>)/,(m,open,body,close)=>`${open}${cart}${body}${tail}${close}`);
 }
