@@ -122,12 +122,12 @@ let drag=null;
 function behavior(){return motion.matches?'instant':'smooth'}
 function step(){return Math.max(80,stage.clientWidth-104)}
 function update(){
-  const left=stage.scrollLeft,right=left+stage.clientWidth,vis=[];
-  thumbs.forEach((el,i)=>{const a=el.offsetLeft,b=a+el.offsetWidth;if(b>left+1&&a<right-1)vis.push(i)});
+  const box=stage.getBoundingClientRect(),vis=[];
+  thumbs.forEach((el,i)=>{const r=el.getBoundingClientRect();if(r.right>box.left+1&&r.left<box.right-1)vis.push(i)});
   const first=vis.length?vis[0]+1:1,last=vis.length?vis[vis.length-1]+1:thumbs.length;
   count.textContent=first===last?first+' / '+thumbs.length:first+'\u2013'+last+' / '+thumbs.length;
-  prev.disabled=left<=1;
-  next.disabled=left+stage.clientWidth>=stage.scrollWidth-2;
+  prev.disabled=stage.scrollLeft<=8;
+  next.disabled=stage.scrollLeft+stage.clientWidth>=stage.scrollWidth-8;
 }
 function by(dx){stage.scrollBy({left:dx,behavior:behavior()})}
 prev.addEventListener('click',()=>by(-step()));
