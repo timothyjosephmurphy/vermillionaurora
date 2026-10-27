@@ -50,7 +50,8 @@ test('film page uses the June 5 2026 premiere, a hosted poster and the studio si
 test('shop and book galleries use the descriptive artwork alt', () => {
   assert.match(fs.readFileSync('src/pages/gallery/available.astro', 'utf8'), /alt=\{artworkAlt\(product\)\}/);
   assert.match(fs.readFileSync('src/pages/book-galleries/[section].astro', 'utf8'), /alt=\{artworkAlt\(original\|\|product\)\}/);
-  assert.match(fs.readFileSync('src/pages/galleries/[id].astro', 'utf8'), /studio wall label/);
+  assert.match(fs.readFileSync('src/pages/galleries/[id].astro', 'utf8'), /alt=\{artworkAlt\(hero\)\}/);
+  assert.match(fs.readFileSync('src/pages/galleries/[id].astro', 'utf8'), /alt=""/);
 });
 
 test('release gate and production deploy retry a failed install once', () => {

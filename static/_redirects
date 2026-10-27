@@ -158,3 +158,14 @@
 # /search/ was a 404 (studio-tracker #129). Send it to the available-paintings page, which has a search box; ?q= is kept.
 /search /gallery/available/ 301
 /search/ /gallery/available/ 301
+# Wall-label folds (studio-tracker #751). Old gallery URLs go to the surviving gallery.
+/galleries/temples /galleries/festival-burning-man/ 301
+/galleries/temples/ /galleries/festival-burning-man/ 301
+/galleries/bass-coast-sunrises /galleries/festival-burning-man/ 301
+/galleries/bass-coast-sunrises/ /galleries/festival-burning-man/ 301
+/galleries/attendees /galleries/bitcoiners/ 301
+/galleries/attendees/ /galleries/bitcoiners/ 301
+/galleries/renoirs-and-ridges /galleries/small-watercolors/ 301
+/galleries/renoirs-and-ridges/ /galleries/small-watercolors/ 301
+/galleries/forest-triptych /galleries/landscapes-by-size/ 301
+/galleries/forest-triptych/ /galleries/landscapes-by-size/ 301
