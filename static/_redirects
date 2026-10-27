@@ -150,3 +150,8 @@
 /products/book-art-164f60d23032b0f718de /products/archived-painting-217/ 301
 /products/lisa-climbing-tahoma-at-sunrise-prototype/ /products/sunrise-on-rainier-from-denny-blaine/ 301
 /products/lisa-climbing-tahoma-at-sunrise-prototype /products/sunrise-on-rainier-from-denny-blaine/ 301
+# /play asks for holo stills/videos and book covers under /play/holo/ and /play/books/, but those files live in the
+# tjm-images R2 bucket (img.tjm.art/play/...; CORS *), not in the built /play output. Without these two rules they 404
+# (studio-tracker #131). If the gallery repo build ever ships them under /play, remove these rules (redirects win over assets).
+/play/holo/* https://img.tjm.art/play/holo/:splat 301
+/play/books/* https://img.tjm.art/play/books/:splat 301
