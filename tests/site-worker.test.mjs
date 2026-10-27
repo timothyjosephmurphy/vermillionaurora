@@ -32,6 +32,13 @@ test('QuickBooks API paths on tjm.art go to the checkout Worker; public pages st
   assert.equal(await (await worker.fetch(new Request('https://vermillionaurora.com/quickbooks/callback'),env)).text(),'asset');
   assert.equal((await worker.fetch(new Request('https://tjm.art/quickbooks/connect'),{...env,CHECKOUT:undefined})).status,503);
 });
+test('sticker checkout on tjm.art is forwarded and fails closed without the checkout Worker',async()=>{
+  const seen=[];const env={...off,ASSETS:{fetch:()=>new Response('asset')},CHECKOUT:{fetch:r=>{seen.push(new URL(r.url).pathname);return Response.json({ok:true,mode:'mock'});}}};
+  assert.equal((await worker.fetch(new Request('https://tjm.art/checkout/stickers/order',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'}),env)).status,200);
+  assert.deepEqual(seen,['/checkout/stickers/order']);
+  assert.equal((await worker.fetch(new Request('https://tjm.art/checkout/stickers/catalog'),{...env,CHECKOUT:undefined})).status,503);
+  assert.equal(await (await worker.fetch(new Request('https://vermillionaurora.com/checkout/stickers/order'),env)).text(),'asset');
+});
 test('http on tjm.art upgrades to https with the same path and query',()=>{
   assert.deepEqual(loc('http://tjm.art/about/?a=1',off),[301,'https://tjm.art/about/?a=1']);
   assert.equal(loc('https://tjm.art/about/',off),null);
@@ -90,7 +97,7 @@ const workerFirst=async()=>{
   return config.assets.run_worker_first;
 };
 test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
-  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX,CATALOG_WORKER_FIRST,CART_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
+  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX,CATALOG_WORKER_FIRST,CART_API,STICKERS_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
   const patterns=await workerFirst();
   assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
   assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
@@ -98,7 +105,7 @@ test('run_worker_first lists exactly the routes the Worker serves, so static fil
   // Every route the Worker handles runs the Worker first.
   for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'tj'])assert.ok(matches(path),path+' must run the Worker');
   // Every pattern is a route the Worker actually handles (no stray patterns).
-  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'*',TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',STICKERS_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'*',TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
   for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.

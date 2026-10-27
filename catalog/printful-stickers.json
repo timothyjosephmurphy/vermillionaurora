@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "provider": "printful",
+  "shipping": {
+    "country": "US",
+    "method": "STANDARD",
+    "whiteLabel": {
+      "storeName": "TJ Murphy",
+      "email": "tj@tjm.art",
+      "message": "A kiss-cut vinyl sticker from TJ Murphy."
+    }
+  },
+  "product": {
+    "catalogProductId": 358,
+    "name": "Kiss-Cut Stickers",
+    "typeName": "Stickers | Kiss Cut | White",
+    "placement": "default",
+    "technique": "digital",
+    "source": "https://api.printful.com/products/358",
+    "sourcedOn": "2026-10-26",
+    "printfulTemplateId": null,
+    "notes": "Public Printful catalog product 358, Kiss-Cut Stickers (type Stickers | Kiss Cut | White). Variant ids below are that product's catalog variants from the same unauthenticated response. v1 reports technique DIGITAL; order creation sends the lowercase v2 technique digital. TODO: after PRINTFUL_API_TOKEN is set, confirm placement and technique with GET /v2/catalog-products/358 and replace printfulTemplateId with the store product-template id from the product-template API. Store template ids are account-specific and cannot be looked up without the token."
+  },
+  "variants": {
+    "3x3": {
+      "catalogVariantId": 10163,
+      "label": "3 × 3 in",
+      "size": "3″×3″",
+      "printfulBasePriceUsd": "2.34",
+      "offered": true
+    },
+    "4x4": {
+      "catalogVariantId": 10164,
+      "label": "4 × 4 in",
+      "size": "4″×4″",
+      "printfulBasePriceUsd": "2.54",
+      "offered": true
+    },
+    "5_5x5_5": {
+      "catalogVariantId": 10165,
+      "label": "5.5 × 5.5 in",
+      "size": "5.5″×5.5″",
+      "printfulBasePriceUsd": "2.74",
+      "offered": true
+    },
+    "15x3_75": {
+      "catalogVariantId": 16362,
+      "label": "15 × 3.75 in",
+      "size": "15″×3.75″",
+      "printfulBasePriceUsd": "5.47",
+      "offered": false,
+      "note": "In the Printful kiss-cut catalog. Not offered on the product page."
+    }
+  },
+  "paintings": {
+    "painting-shoreline-at-dusk": {
+      "enabled": true,
+      "title": "El Zonte at Dawn",
+      "path": "/products/painting-shoreline-at-dusk/",
+      "idNote": "Use this id for El Zonte at Dawn. el-zonte-before-dawn is a different painting titled El Zonte Before Dawn and is not a sticker.",
+      "variantIds": ["3x3", "4x4", "5_5x5_5"],
+      "printfulTemplateId": null,
+      "storeVariantIds": null,
+      "fileUrl": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "fileReady": false,
+      "fileNote": "Public gallery JPEG placeholder. Draft Printful orders stay blocked until a print-ready file is marked fileReady."
+    },
+    "honeybadger-and-cub-with-genesis-block": {
+      "enabled": true,
+      "title": "Honeybadger and Cub with Genesis Block",
+      "path": "/products/honeybadger-and-cub-with-genesis-block/",
+      "variantIds": ["3x3", "4x4", "5_5x5_5"],
+      "printfulTemplateId": null,
+      "storeVariantIds": null,
+      "fileUrl": "/gallery-images/honeybadger-and-cub-2026.jpg",
+      "fileReady": false,
+      "fileNote": "Public gallery JPEG placeholder. Draft Printful orders stay blocked until a print-ready file is marked fileReady."
+    },
+    "warszawska-syrenka": {
+      "enabled": true,
+      "title": "Warszawska Syrenka",
+      "path": "/products/warszawska-syrenka/",
+      "variantIds": ["3x3", "4x4", "5_5x5_5"],
+      "printfulTemplateId": null,
+      "storeVariantIds": null,
+      "fileUrl": "/gallery-images/warszawska-syrenka-2026.jpg",
+      "fileReady": false,
+      "fileNote": "Public gallery JPEG placeholder. Draft Printful orders stay blocked until a print-ready file is marked fileReady."
+    },
+    "card-back": {
+      "enabled": false,
+      "stub": true,
+      "title": "Card-back art",
+      "path": null,
+      "variantIds": [],
+      "printfulTemplateId": null,
+      "storeVariantIds": null,
+      "fileUrl": null,
+      "fileReady": false,
+      "fileNote": "Config hook only. No product page until the card-back asset is chosen."
+    }
+  }
+}

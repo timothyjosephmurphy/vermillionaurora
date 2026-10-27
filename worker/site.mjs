@@ -48,6 +48,10 @@ export const ORIGINALS_API = '/inventory/originals';
 // Cart checkout API, same-origin on tjm.art (no workers.dev round trip). The public catalog GET is edge-cached for
 // 60 s; holds, quotes and payments always reach the checkout Worker, which re-validates price and stock.
 export const CART_API = '/checkout/cart/';
+// Kiss-cut sticker checkout. The website Worker only forwards. The checkout Worker
+// holds PRINTFUL_API_TOKEN. Committed PRINTFUL_STICKERS_MODE=draft still does not call
+// Printful until the painting file is marked fileReady, and this code never confirms.
+export const STICKERS_API = '/checkout/stickers/';
 const CART_CATALOG = '/checkout/cart/catalog';
 export async function cartApi(request, env, ctx) {
   if (!env.CHECKOUT) return Response.json({ error: 'Checkout is temporarily unavailable.' }, { status: 503 });
@@ -130,6 +134,9 @@ export default {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });
     }
     if (url.pathname.startsWith(CART_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) return cartApi(request, env, ctx);
+    if (url.pathname.startsWith(STICKERS_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
+      return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Sticker checkout is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    }
     if (SHOP_REDIRECTS[url.pathname]) return moved(new URL(SHOP_REDIRECTS[url.pathname] + url.search, url).href);
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
     if (url.pathname === NOSTR_JSON_PATH) return nostrJson();

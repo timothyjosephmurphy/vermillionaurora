@@ -1,0 +1,39 @@
+---
+import { US_STATES } from '../../catalog/printful-stickers.mjs';
+const { product, offer } = Astro.props;
+---
+<dialog id="sticker-purchase-dialog" class="print-purchase-dialog" data-sticker-dialog aria-labelledby="sticker-dialog-title">
+  <div class="print-dialog-header">
+    <h2 id="sticker-dialog-title">Sticker of {product.title}</h2>
+    <button type="button" class="print-dialog-close" data-sticker-close autofocus aria-label="Close sticker options">Close <span aria-hidden="true">×</span></button>
+  </div>
+  <div class="print-dialog-content">
+    <form class="sticker-order" data-sticker-form data-product-id={offer.productId} action="/checkout/stickers/order" method="post">
+      <input type="hidden" name="productId" value={offer.productId} />
+      <p>Kiss-cut vinyl sticker of {offer.title}. It ships to you in the United States with a TJ Murphy packing slip.</p>
+      <p class="sticker-note">Ordering is not open. This check does not charge you and does not place a paid sticker order.</p>
+      <fieldset class="sticker-sizes">
+        <legend>Size</legend>
+        {offer.variants.map((variant) => <label><input type="radio" name="variantId" value={variant.id} checked={variant.id === offer.defaultVariantId} required /> <span>{variant.label}</span></label>)}
+      </fieldset>
+      <fieldset class="checkout-address-form">
+        <legend class="checkout-visually-hidden">US shipping address</legend>
+        <label class="checkout-full-row">Name <input name="name" autocomplete="name" required maxlength="80" /></label>
+        <label class="checkout-full-row">Email <input name="email" type="email" autocomplete="email" required maxlength="120" /></label>
+        <label class="checkout-full-row">Phone <span class="checkout-country">Optional</span> <input name="phone" type="tel" autocomplete="tel" maxlength="20" /></label>
+        <label class="checkout-full-row">Street address <input name="address1" autocomplete="address-line1" required maxlength="100" /></label>
+        <label class="checkout-full-row">Apartment, unit <span class="checkout-country">Optional</span> <input name="address2" autocomplete="address-line2" maxlength="100" /></label>
+        <label>City <input name="city" autocomplete="address-level2" required maxlength="80" /></label>
+        <label>State <select name="state" autocomplete="address-level1" required><option value="">State</option>{US_STATES.map(([code, name]) => <option value={code}>{name}</option>)}</select></label>
+        <label>ZIP code <input name="zip" autocomplete="postal-code" inputmode="numeric" required maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" /></label>
+        <p class="checkout-country checkout-full-row">Ships within the United States.</p>
+        <input type="hidden" name="country" value="US" />
+        <label class="checkout-full-row">Quantity <input name="quantity" type="number" min="1" max="10" step="1" value="1" inputmode="numeric" required /></label>
+        <button class="button button-solid" type="submit">Preview sticker order</button>
+      </fieldset>
+      <p data-sticker-message role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</dialog>
+<link rel="stylesheet" href="/payments/prints.css" />
+<script is:inline src="/payments/stickers.js" defer></script>

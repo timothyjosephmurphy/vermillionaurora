@@ -6,6 +6,7 @@
   "keep_vars": true,
   "vars": {
     "CHECKOUT_MODE": "live",
+    "PRINTFUL_STICKERS_MODE": "draft",
     "SQUARE_CHECKOUT_ENABLED": "true",
     "SQUARE_CHECKOUT_ALL": "true",
     "SQUARE_MODE": "live",
