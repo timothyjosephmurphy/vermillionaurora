@@ -1,7 +1,7 @@
 import images from '../../catalog/paintings-wall-images.json' with {type:'json'};
 import {urlFor,statusLabel,dimensionLabel} from '../../catalog/catalog.mjs';
 import {wallArtworks,WALL_UNIT} from './gallery-wall.mjs';
-import {scaledPaintings,unscaledPaintings,inchesOf,wallBasis} from './paintings-wall-selection.mjs';
+import {scaledPaintings,unscaledPaintings,inchesOf,wallBasis,wallHangSets} from './paintings-wall-selection.mjs';
 import {packWall,WALL_GAP,WALL_MARGIN} from './paintings-wall-layout.mjs';
 
 export {WALL_UNIT,WALL_GAP,WALL_MARGIN};
@@ -31,7 +31,7 @@ function shapeFor(p){
 
 export function buildWall(artist){
   const painted=scaledPaintings(artist).map(p=>({p,...shapeFor(p)}));
-  const packed=packWall(painted.map(({p,paint})=>({id:p.id,width:paint.width+2*FRAME_INCHES,height:paint.height+2*FRAME_INCHES})),{});
+  const packed=packWall(painted.map(({p,paint})=>({id:p.id,width:paint.width+2*FRAME_INCHES,height:paint.height+2*FRAME_INCHES})),{sets:artist==='TJ Murphy'?wallHangSets():[]});
   const place=new Map(packed.items.map(i=>[i.id,i]));
   const artworks=painted.map(({p,paint,photo,stated,mismatch})=>{
     const slot=place.get(p.id),status=p.listing?.status||'';
