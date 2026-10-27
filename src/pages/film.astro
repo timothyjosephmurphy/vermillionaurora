@@ -1,12 +1,14 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { ld } from '../data/structured-data.mjs';
+import EmailSignup from '../components/EmailSignup.astro';
+import { ld, studio } from '../data/structured-data.mjs';
+const poster = 'https://tjm.art/exhibitions/bitcoin-film-festival-warsaw/images/coined-in-watercolor-at-festival.jpeg';
 const video = { '@context':'https://schema.org', '@type':'VideoObject', name:'Coined in Watercolor: The Art of Going All In',
-  description:'Documentary by Gavin Robertson following Seattle watercolor artist TJ Murphy from Seattle to Cape Town.',
-  thumbnailUrl:'https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg', embedUrl:'https://www.youtube-nocookie.com/embed/i7tvzE_bqM8',
-  contentUrl:'https://www.youtube.com/watch?v=i7tvzE_bqM8', uploadDate:'2026-01-01', director:{'@type':'Person',name:'Gavin Robertson'},
-  actor:{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'} };
+  description:'Documentary by Gavin Robertson following Seattle watercolor artist TJ Murphy from Seattle to Cape Town. Premiered June 5, 2026 at the Bitcoin Film Festival, Kinoteka, Warsaw.',
+  thumbnailUrl:poster, embedUrl:'https://www.youtube-nocookie.com/embed/i7tvzE_bqM8',
+  contentUrl:'https://www.youtube.com/watch?v=i7tvzE_bqM8', uploadDate:'2026-06-05', director:{'@type':'Person',name:'Gavin Robertson'},
+  actor:{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'}, publisher:studio };
 ---
 <!doctype html>
 <html lang="en">
@@ -14,9 +16,9 @@ const video = { '@context':'https://schema.org', '@type':'VideoObject', name:'Co
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Coined in Watercolor — Documentary about Seattle watercolor artist TJ Murphy</title>
-  <meta name="description" content="Coined in Watercolor: The Art of Going All In, a documentary by Gavin Robertson following TJ Murphy from Seattle to Cape Town. Premiered at the Bitcoin Film Festival in Warsaw, 2026." />
+  <meta name="description" content="Coined in Watercolor: The Art of Going All In, a documentary by Gavin Robertson following TJ Murphy from Seattle to Cape Town. Premiered June 5, 2026 at the Bitcoin Film Festival in Warsaw." />
   <link rel="canonical" href="https://tjm.art/film/" />
-  <meta property="og:image" content="https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg" />
+  <meta property="og:image" content="https://tjm.art/exhibitions/bitcoin-film-festival-warsaw/images/coined-in-watercolor-at-festival.jpeg" />
   <link href="/fonts/fonts.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/site-header.css" />
@@ -29,14 +31,15 @@ const video = { '@context':'https://schema.org', '@type':'VideoObject', name:'Co
       <p class="eyebrow dark">A documentary by Gavin Robertson</p>
       <h1>Coined in Watercolor: The Art of Going All In</h1>
       <button type="button" class="video-facade" data-youtube="i7tvzE_bqM8" data-title="Coined in Watercolor: The Art of Going All In — documentary by Gavin Robertson" aria-label="Play the documentary Coined in Watercolor">
-        <img src="https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg" alt="" width="480" height="360" decoding="async" /><span class="video-facade-play" aria-hidden="true"></span>
+        <img src="/exhibitions/bitcoin-film-festival-warsaw/images/coined-in-watercolor-at-festival.jpeg" alt="Coined in Watercolor poster on display at the Bitcoin Film Festival in Warsaw" width="480" height="360" decoding="async" /><span class="video-facade-play" aria-hidden="true"></span>
       </button>
       <noscript><p><a href="https://www.youtube.com/watch?v=i7tvzE_bqM8">Watch on YouTube</a></p></noscript>
       <div class="film-copy">
         <p>Gavin Robertson follows my journey of becoming an artist, from Seattle to Cape Town. The film features my artwork at home and on display at the Bitcoin conference in Cape Town.</p>
-        <p>Gavin’s debut documentary premiered at the Bitcoin Film Festival in Warsaw, Poland, in 2026.</p>
+        <p>Gavin’s debut documentary premiered on June 5, 2026 at the Bitcoin Film Festival in Warsaw, Poland.</p>
         <p class="film-actions"><a class="button button-ghost" href="https://www.youtube.com/watch?v=i7tvzE_bqM8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a> <a class="button button-ghost" href="/exhibitions/gavin-robertson/">Gavin Robertson collaboration</a> <a class="button button-solid" href="/gallery/">Explore the paintings</a></p>
       </div>
+      <EmailSignup id="film-email" text="New paintings and studio news, a few times a year. Unsubscribe anytime." />
     </main>
     <SiteFooter />
   </div>

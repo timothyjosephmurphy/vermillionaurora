@@ -4,7 +4,15 @@ import SiteFooter from '../../components/SiteFooter.astro';
 import { byId, catalogVersion, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
 import { artworkAlt } from '../../data/artwork-alt.mjs';
 import { printsFromLabel, showBuy, buyLabel } from '../../data/card-commerce.mjs';
+import { collectionPage, ld } from '../../data/structured-data.mjs';
 import collections from '../../../catalog/collections.json';
+const galleryItems = collections.gallery.map(entry => byId[entry.product]).filter(Boolean);
+const galleryLd = collectionPage({
+  name: 'Paintings by TJ Murphy',
+  url: 'https://tjm.art/gallery/',
+  crumbs: [{ name: 'Home', url: 'https://tjm.art/' }, { name: 'Gallery', url: 'https://tjm.art/gallery/' }],
+  items: galleryItems.map(p => ({ name: p.title, url: `https://tjm.art${urlFor(p)}` }))
+});
 ---
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
@@ -16,6 +24,7 @@ import collections from '../../../catalog/collections.json';
   <link rel="stylesheet" href="/exhibitions/viewer.css"><link rel="stylesheet" href="/site-header.css">
   <link rel="stylesheet" href="/gallery/painting-list.css">
 <meta name="catalog-version" content={catalogVersion} />
+  <script type="application/ld+json" set:html={ld(galleryLd)} />
   <script is:inline>document.documentElement.classList.add('js-gallery');</script></head>
   <body class="painting-gallery-page">
     <div class="page-shell">

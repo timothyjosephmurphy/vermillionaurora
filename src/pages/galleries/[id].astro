@@ -21,7 +21,7 @@ const countLabel = `${works.length} ${works.length === 1 ? 'work' : 'works'}`;
     <p>{countLabel} in this group. A painting can also appear in other galleries. Each image opens its catalog page.</p>
   </header>
   <figure class="wall-label-hero">
-    <img src={gallery.thumb} alt="" width={gallery.thumbWidth} height={gallery.thumbHeight} />
+    <img src={gallery.thumb} alt={`${gallery.title} — studio wall label`} width={gallery.thumbWidth} height={gallery.thumbHeight} />
   </figure>
   {works.length
     ? <ul class="book-gallery-grid wall-label-works" aria-label={`${gallery.title} works`}>

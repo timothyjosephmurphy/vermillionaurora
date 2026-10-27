@@ -35,7 +35,15 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             cloudflare/test/package-lock.json
-      - run: npm ci
+      - name: Install dependencies
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
       - run: npm run build
       - name: Verify generated catalogs and production checkout config
         run: |
