@@ -13,7 +13,7 @@ import {wallLabelGalleries} from '../../../catalog/wall-label-galleries.mjs';
   <ul class="book-gallery-grid" aria-label="Wall label galleries">
     {wallLabelGalleries.map(gallery => <li class="book-gallery-card wall-label-card">
       <a href={`/galleries/${gallery.id}/`}>
-        <img src={gallery.thumb} alt="" width={gallery.thumbWidth} height={gallery.thumbHeight} loading="lazy" decoding="async" />
+        <img src={gallery.thumb} alt={`${gallery.title} — studio wall label`} width={gallery.thumbWidth} height={gallery.thumbHeight} loading="lazy" decoding="async" />
         <h2>{gallery.title}</h2>
         <p>{gallery.works.length} {gallery.works.length === 1 ? 'work' : 'works'}</p>
       </a>

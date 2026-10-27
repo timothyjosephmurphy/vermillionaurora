@@ -4,6 +4,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
 import { socialImage, withoutPrices } from '../data/social-image.mjs';
 import { studio } from '../data/structured-data.mjs';
+import { productCrumb } from '../data/product-crumb.mjs';
 import bookProductsData from '../../catalog/book-products.json';
 const bookProductList = Array.isArray(bookProductsData) ? bookProductsData : bookProductsData.products || [];
 const { product, metaDescription } = Astro.props;
@@ -21,6 +22,13 @@ const shareDescription = metaDescription || product.description || product.story
 const socialDescription = withoutPrices(shareDescription) || shareTitle;
 const shareImage = socialImage(product);
 const shareImageAlt = product.image?.alt || shareTitle;
+const crumb = product.type === 'book' ? { href: '/books/', name: 'Books' } : productCrumb(product);
+const siteOrigin = 'https://tjm.art';
+const breadcrumbData = { '@context':'https://schema.org', '@type':'BreadcrumbList', itemListElement:[
+  { '@type':'ListItem', position:1, name:'Home', item:`${siteOrigin}/` },
+  { '@type':'ListItem', position:2, name:crumb.name, item:new URL(crumb.href, siteOrigin).href },
+  { '@type':'ListItem', position:3, name:product.title, item:canonical },
+]};
 const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title,
       creator:(product.artist||'TJ Murphy')==='TJ Murphy'?{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'}:{'@type':'Person',name:product.artist},
@@ -52,6 +60,7 @@ const structuredData = product.type === 'painting'
   <meta name="twitter:description" content={socialDescription} />
   {shareImage && <><meta name="twitter:image" content={shareImage} /><meta name="twitter:image:alt" content={shareImageAlt} /></>}
   {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')} />}
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbData).replace(/</g,'\\u003c')} />
   <link href="/fonts/fonts.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" /><link rel="stylesheet" href="/site-header.css" />
   <link rel="stylesheet" href="/gallery/painting-details.css" />
@@ -83,7 +92,19 @@ const structuredData = product.type === 'painting'
   {product.examples?.length>0 && <link rel="stylesheet" href="/exhibitions/viewer.css" />}
   <style is:global>.commission-gallery{margin-top:28px}.commission-gallery .section-heading{margin-bottom:12px}.commission-gallery h2{font-size:2rem;margin:0 0 6px}.commission-gallery .section-heading p{font-size:.9rem;margin:0}</style>
 </head>
-<body><div class="page-shell"><SiteHeader /><a class="back-to-dungeon" href="/play/?resume=1" hidden>← Back to the Dungeon</a><script is:inline>(()=>{let p=0;try{p=new URLSearchParams(location.search).get('from')==='play'||!!sessionStorage.getItem('tjmPlayState')}catch(e){}if(p)document.querySelector('.back-to-dungeon').hidden=false})()</script><style>.back-to-dungeon{position:fixed;left:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px #0005}.back-to-dungeon[hidden]{display:none}</style><div id="main-content" tabindex="-1"><slot /></div><SiteFooter /></div>
+<body><div class="page-shell"><SiteHeader /><a class="back-to-dungeon" href="/gallery/" hidden>← Back to the gallery</a><style>.back-to-dungeon{position:fixed;left:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px #0005}.back-to-dungeon[hidden]{display:none}</style><div id="main-content" tabindex="-1"><slot /></div><SiteFooter /></div>
+<script>
+  import { playReturn } from '../data/play-return.mjs';
+  const link = document.querySelector('.back-to-dungeon');
+  if (link) {
+    let playState = false;
+    try { playState = !!sessionStorage.getItem('tjmPlayState'); } catch (e) {}
+    const choice = playReturn({ search: location.search, referrer: document.referrer, playState });
+    link.textContent = choice.label;
+    link.href = choice.href;
+    link.hidden = !choice.show;
+  }
+</script>
 {product.type==='painting' && <><script is:inline src="/payments/cart.js" defer></script><script is:inline src="/catalog/availability.js" defer></script></>}
 {product.type==='book' && <script is:inline src="/book-viewer/viewer.js" defer></script>}
 {product.examples?.length>0 && <script is:inline src="/exhibitions/viewer.js" defer></script>}
