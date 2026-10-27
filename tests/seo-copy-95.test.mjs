@@ -66,8 +66,8 @@ test('/play shell title and start-screen H1 use gallery wording', () => {
 });
 
 test('dungeon wording is gone from buyer return chips; Quake resume stays on /play (studio-tracker #771)', () => {
-  const quake = { show: true, label: '← Back to Play', href: '/play/?resume=1' };
-  const hex = { show: true, label: GALLERY_3D_LABEL, href: GALLERY_3D_URL };
+  const quake = { show: true, label: '← Back to 3D gallery', href: '/play/?resume=1' };
+  const hex = { show: true, label: '← Back to 3D gallery', href: GALLERY_3D_URL };
   assert.deepEqual(playReturn({ search: '?from=play' }), quake);
   assert.deepEqual(playReturn({ referrer: 'https://tjm.art/play/orsay/' }), quake);
   assert.deepEqual(playReturn({ playState: true }), quake);
