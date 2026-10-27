@@ -53,10 +53,11 @@ for(const engine of [chromium,webkit]){
 
       // Filter
       const filterButtons=page.locator('[data-wall-filter] [data-filter]');
-      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (208)','Available (103)','Sold (8)','Not for sale (97)']);
+      const n=tjWall.artworks.length,soldN=tjWall.artworks.filter(a=>a.status==='sold').length,availN=tjWall.artworks.filter(a=>a.status==='available').length,nfsN=tjWall.artworks.filter(a=>a.status==='not-for-sale').length;
+      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),[`All (${n})`,`Available (${availN})`,`Sold (${soldN})`,`Not for sale (${nfsN})`]);
       await page.locator('[data-filter="sold"]').click();await settled();
-      assert.equal(await page.locator('.wall-art.is-dimmed').count(),208-8);
-      assert.equal(await picker.locator('option').count(),9);
+      assert.equal(await page.locator('.wall-art.is-dimmed').count(),n-soldN);
+      assert.equal(await picker.locator('option').count(),soldN+1);
       await page.locator('[data-filter="all"]').click();await settled();
       assert.equal(await page.locator('.wall-art.is-dimmed').count(),0);
 
