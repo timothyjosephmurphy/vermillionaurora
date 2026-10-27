@@ -5,7 +5,9 @@
 //   testimonials/approved.json       public index rebuilt on every approve / unpublish / delete
 //   testimonials/rate/<day>/<hash>   per-visitor submission counters (hashed IP), purged by the hourly cron
 //   testimonials/videos/<id>/, testimonials/uploads/<id>.json   optional video + poster (see testimonial-videos.mjs)
+//   testimonials/email-ids/<hash>    dedup keys for reply-by-email (see testimonial-reply.mjs)
 // Nothing is published until TJ approves it on https://tjm.art/testimonial-manager/.
+// Email replies (studio-tracker #171) land in the same pending records; the website form is unchanged.
 import {inventory} from './checkout-catalog.mjs';
 import {authorized} from './etsy-connection.mjs';
 import {issueCollectorCode} from './print-codes.mjs';
@@ -31,6 +33,8 @@ const INDEX = 'testimonials/approved.json';
 const RATE = 'testimonials/rate/';
 const recordKey = id => RECORDS + id + '.json';
 const imageKey = (id, n, type) => `testimonials/images/${id}/${n}.${EXT[type]}`;
+export const photoStorageKey = imageKey;
+export const newTestimonialId = (now = Date.now()) => `t-${day(now).replace(/-/g, '')}-${crypto.randomUUID().replace(/-/g, '').slice(0, 12)}`;
 const privateHeaders = {'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer', 'X-Robots-Tag': 'noindex, nofollow'};
 const reply = (body, status = 200, extra = {}) => Response.json(body, {status, headers: {...privateHeaders, ...extra}});
 const clean = (v, n) => typeof v === 'string' ? v.replace(/\0/g, '').replace(/\r\n?/g, '\n').trim().slice(0, n) : '';
@@ -49,7 +53,7 @@ export async function testimonialsApi(request, env, ctx, now = Date.now()) {
   if (path === '/testimonials/api/approved' && ['GET', 'HEAD'].includes(request.method)) return approvedList(env);
   const photo = /^\/testimonials\/api\/photo\/(t-\d{8}-[0-9a-f]{12})\/([0-3])$/.exec(path);
   if (photo && ['GET', 'HEAD'].includes(request.method)) return publicPhoto(env, photo[1], Number(photo[2]));
-  if (path === '/testimonials/api/owner') return owner(request, env, now);
+  if (path === '/testimonials/api/owner') return owner(request, env, ctx, now);
   const upload = /^\/testimonials\/api\/video\/(start|part|complete|abort)$/.exec(path);
   if (upload) return videoUpload(request, env, now, upload[1], {rateLimited});
   if (!['GET', 'HEAD'].includes(request.method)) return reply({error: 'Not found'}, 404);
@@ -71,9 +75,9 @@ function done(request, ok, payload, status, {code = false} = {}) {
   return reply(payload, status);
 }
 
-async function rateLimited(env, request, now, {scope = '', perVisitor = DAILY_LIMIT, total: totalLimit = DAILY_TOTAL_LIMIT} = {}) {
+async function rateLimited(env, request, now, {scope = '', perVisitor = DAILY_LIMIT, total: totalLimit = DAILY_TOTAL_LIMIT, identity = ''} = {}) {
   const bucket = env.COMMISSION_UPLOADS, today = day(now);
-  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  const ip = identity || request.headers.get('CF-Connecting-IP') || 'unknown';
   const visitor = `${RATE}${today}/${scope ? scope + '-' : ''}${(await sha(`testimonial-rate:${scope}${today}:${ip}:${env.COMMISSION_MANAGER_TOKEN || ''}`)).slice(0, 32)}`;
   const total = `${RATE}${today}/_${scope || 'all'}`;
   const read = async key => { const o = await bucket.get(key); return o ? Number(await o.text()) || 0 : 0; };
@@ -81,6 +85,11 @@ async function rateLimited(env, request, now, {scope = '', perVisitor = DAILY_LI
   if (mine >= perVisitor || all >= totalLimit) return true;
   await Promise.all([bucket.put(visitor, String(mine + 1)), bucket.put(total, String(all + 1))]);
   return false;
+}
+// Reply-by-email has no visitor IP. Cap each sender, and keep a separate daily total so a mail flood
+// cannot use up the website form's limit.
+export function emailSenderLimited(env, identity, now = Date.now()) {
+  return rateLimited(env, new Request('https://tjm.art/testimonials/api/submit'), now, {scope: 'mail', identity: String(identity || 'unknown').toLowerCase(), perVisitor: 8, total: 60});
 }
 
 async function submit(request, env, ctx, now) {
@@ -211,13 +220,17 @@ async function notifyOwner(env, record) {
   const painting = record.paintingTitle || (record.paintingSlug ? record.paintingSlug : 'Not specified');
   const body = [
     'New testimonial waiting for your approval', '',
+    ...(record.source === 'email-reply' ? [
+      `Source: email reply to ${record.replyAddress || 'the testimonial address'}`,
+      `Consent: reply to the ask (${record.consent?.noticeSeen ? 'the consent note was in the message' : 'dedicated address; the consent note was not in this message'})`,
+    ] : []),
     `Name: ${record.name || 'Not given (shown as “A collector”)'}`,
     `Email (private): ${record.email || 'Not given (no thank-you code will be sent)'}`,
     `Painting: ${painting}${record.paintingSlug ? ` (https://tjm.art/products/${record.paintingSlug}/)` : ''}`,
     `City: ${record.city || 'Not given'}`,
     `Photos: ${record.photos.length}`,
     `Video: ${record.video ? `yes (${Math.round(record.video.bytes / 1048576)} MB${record.video.duration ? `, ${record.video.duration} s` : ''}) · may show on tjm.art: ${record.video.consent.site ? 'yes' : 'no'} · may share on social media: ${record.video.consent.social ? 'yes' : 'no'}` : 'none'}`, '',
-    'Testimonial:', record.quote || '(no written words; see the video)', '',
+    'Testimonial:', record.quote || (record.photos?.length ? '(no written words; photos attached)' : '(no written words; see the video)'), '',
     `Approve or reject: ${MANAGER_URL}`,
     'Nothing is published until you approve it. After approval you can issue their at-cost print code from the same page.',
     `Reference: ${record.id}`,
@@ -233,6 +246,33 @@ async function notifyOwner(env, record) {
     body: JSON.stringify({raw: base64url(mime)}),
   });
   if (!r.ok) throw Error(`Gmail ${r.status}`);
+}
+
+// Shared writer for the email-reply path. The website form keeps its own write so a change here cannot
+// change form validation. `files` are already metadata-stripped (and resized, when the Images binding did).
+export async function storePendingBundle(env, ctx, record, files) {
+  const bucket = env.COMMISSION_UPLOADS;
+  if (!bucket) return {ok: false, error: 'storage'};
+  const written = [];
+  let stored;
+  try {
+    for (const file of files) {
+      await bucket.put(file.key, file.bytes, {httpMetadata: {contentType: file.type}});
+      written.push(file.key);
+    }
+    stored = await bucket.put(recordKey(record.id), JSON.stringify(record), {httpMetadata: {contentType: 'application/json'}});
+  } catch (error) {
+    console.error('Testimonial storage failed');
+    if (written.length) await bucket.delete(written).catch(() => {});
+    return {ok: false, error: 'storage'};
+  }
+  const mark = extra => bucket.put(recordKey(record.id), JSON.stringify({...record, ...extra}), {onlyIf: {etagMatches: stored?.etag}, httpMetadata: {contentType: 'application/json'}}).catch(() => {});
+  const notify = notifyOwner(env, record).then(() => mark({notifiedAt: new Date().toISOString()}), error => {
+    console.error('Testimonial notification failed', String(error?.message || '').slice(0, 120));
+    return mark({notifyError: String(error?.message || 'failed').slice(0, 120)});
+  });
+  if (ctx?.waitUntil) ctx.waitUntil(notify); else await notify;
+  return {ok: true, id: record.id};
 }
 function utf8b64(v) { const b = new TextEncoder().encode(v); let s = ''; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode(...b.subarray(i, i + 0x8000)); return btoa(s); }
 const mimeHeader = v => `=?UTF-8?B?${utf8b64(v)}?=`;
@@ -321,7 +361,7 @@ export async function rebuildIndex(env, now = Date.now()) {
 }
 
 // ---------- Owner moderation ----------
-async function owner(request, env, now) {
+async function owner(request, env, ctx, now) {
   if (request.method !== 'POST' || request.headers.get('Origin') !== OWNER_ORIGIN || !await authorized(request, env)) return reply({error: 'Invalid management credential or origin.'}, 403);
   if (!env.COMMISSION_UPLOADS) return reply({error: 'Private storage unavailable'}, 503);
   let input;
@@ -332,6 +372,11 @@ async function owner(request, env, now) {
     return reply({records: await Promise.all(records.map(async r => ({...r, public: r.status === 'approved' ? forClient(publicEntry(r)) : null, videoUrls: await signedVideoUrls(env, r, now)})))});
   }
   if (input.action === 'geocode') return reply({geo: await geocodeCity(input.city, env)});
+  if (input.action === 'ingestReply') {
+    const {ingestOwnerReply} = await import('./testimonial-reply.mjs');
+    const result = await ingestOwnerReply(env, ctx, input, now);
+    return reply(result.body, result.status);
+  }
   if (!ID.test(input.id || '')) return reply({error: 'Invalid testimonial'}, 400);
   const object = await bucket.get(recordKey(input.id));
   if (!object) return reply({error: 'Testimonial not found'}, 404);
@@ -350,11 +395,12 @@ async function owner(request, env, now) {
   }
   if (input.action === 'approve') {
     const name = oneLine(input.name ?? record.name, 80), quote = clean(input.quote ?? record.quote, 2000);
-    if (!quote && !record.video) return reply({error: 'Testimonial text is required'}, 400);
     const slug = oneLine(input.paintingSlug ?? record.paintingSlug, 150);
     if (slug && !validSlug(slug)) return reply({error: 'Unknown painting page (product slug)'}, 400);
     const photos = (Array.isArray(input.photos) ? input.photos : record.photos.map(p => p.n)).map(Number)
       .filter(n => record.photos.some(p => p.n === n && p.publishable));
+    // A photo-only email reply has no words. The website form still requires words or a video before this exists.
+    if (!quote && !record.video && photos.length === 0) return reply({error: 'Add a few words or at least one photo before publishing'}, 400);
     const lat = Number(input.lat), lng = Number(input.lng);
     const city = oneLine(input.city ?? record.city, 100);
     const pin = input.map !== false && city && input.lat !== '' && input.lng !== '' && validCoord(lat, lng) ? [round2(lat), round2(lng)] : null;

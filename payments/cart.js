@@ -16,7 +16,7 @@
   };
   const capabilitiesPromise=api('catalog').catch(()=>null);
   window.vaCartReady=capabilitiesPromise;
-  const counts=()=>document.querySelectorAll('[data-cart-count]').forEach(el=>{const count=(buyOnly?clean(read(CART)):cart).reduce((n,i)=>n+i.quantity,0);el.textContent=String(count);el.closest('a')?.setAttribute('aria-label',`Cart, ${count} item${count===1?'':'s'}`);});
+  const counts=()=>document.querySelectorAll('[data-cart-count]').forEach(el=>{const count=(buyOnly?clean(read(CART)):cart).reduce((n,i)=>n+i.quantity,0);el.textContent=String(count);el.closest('a')?.setAttribute('aria-label',`Cart ${count} item${count===1?'':'s'}`);});
   function persistCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart.filter(i=>!/^(deposit|balance)-/.test(i.id))]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
    const methodIntersection=()=>['square','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
   const eligible=id=>capabilities?.enabled&&capabilities.products.find(p=>p.id===id&&(p.status==='available'||heldIds.has(id)));
@@ -52,7 +52,7 @@
   function saveCart(){persistCart();return syncHold(cart);}
   document.addEventListener('DOMContentLoaded',async()=>{
     const nav=document.querySelector('.main-nav');
-    if(nav&&!nav.querySelector('[data-cart-link]')){const a=node('a',undefined,'cart-nav');a.href='/cart/';a.dataset.cartLink='';a.append(node('span','Cart'));const count=node('span',String(cart.length),'cart-count');count.dataset.cartCount='';a.append(count,cartPaymentIcons());nav.append(a);}counts();
+    if(nav&&!nav.querySelector('[data-cart-link]')){const a=node('a',undefined,'cart-nav');a.href='/cart/';a.dataset.cartLink='';a.append(node('span','Cart '));const count=node('span',String(cart.length),'cart-count');count.dataset.cartCount='';a.append(count,cartPaymentIcons());nav.append(a);}counts();
     const root=document.querySelector('[data-cart-page]');
     // Product pages render Buy now / Add to cart enabled from build data; a click made before the
     // (edge-cached) catalog arrives is replayed once it is ready. The server re-checks price and stock at hold/quote.
