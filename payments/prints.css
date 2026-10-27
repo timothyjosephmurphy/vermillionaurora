@@ -28,3 +28,7 @@ html.print-dialog-open body{position:fixed;top:var(--print-dialog-scroll);width:
 .print-size-details summary{list-style:none}.print-size-details summary::-webkit-details-marker{display:none}
 .print-size-details summary::after{content:"+";font-weight:700;text-decoration:none;display:inline-block;width:1em;text-align:center}
 .print-size-details[open] summary::after{content:"−"}
+/* #130: the quantity and Add print to cart bar stays in view at the bottom of the print dialog, with its status message, so choosing a size and adding takes no scrolling. */
+.print-actions{flex-wrap:wrap}.print-actions .print-message{flex:1 0 100%;margin:0;min-height:0}.print-actions .print-message:empty{display:none}
+.print-dialog-content .print-actions{position:sticky;bottom:0;z-index:1;margin:16px -28px 0;padding:12px 28px;background:var(--bg,#f7f1e9);border-top:1px solid var(--line,#d9d0c7)}
+@media(max-width:600px){.print-dialog-content .print-actions{margin:16px -16px 0;padding:12px 16px}}

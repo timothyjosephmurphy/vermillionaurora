@@ -71,10 +71,14 @@
       if(button.disabled||!selected)return;
       const quantity=Number(root.querySelector('[data-print-quantity]').value);
       if(!Number.isSafeInteger(quantity)||quantity<1||quantity>(selected.sampleOnly?1:10)){message.textContent=selected.sampleOnly?'Choose one sample copy per painting.':'Choose between 1 and 10 copies.';return;}
+      // Show progress and block double clicks while the cart syncs; success opens the cart (#130).
+      button.disabled=true;button.textContent='Adding to cart…';message.textContent='';
       document.dispatchEvent(new CustomEvent('cart:add-print',{detail:{id:selected.id,quantity,onResult:result=>{
-        message.textContent=result.message;if(result.ok)location.assign('/cart/');
+        if(result.ok){message.textContent='Added. Opening your cart…';location.assign('/cart/');return;}
+        update();message.textContent=result.message;
       }}}));
     });
+    window.addEventListener('pageshow',event=>{if(event.persisted)update();});// back from the cart restores the button
     update();capabilities=await window.vaCartReady;update();
   }));
 })();
