@@ -175,6 +175,8 @@ test('perspective-corrected book photos replace the desk photo everywhere and st
     assert.match(css,/\.product-figure img \{[^}]*width: auto; height: auto; max-width: 100%; max-height: 75vh;/);
     const galleryCss=fs.readFileSync('src/layouts/BookGalleryLayout.astro','utf8');
     assert.match(galleryCss,/\.book-gallery-page \.ev-three-up \.ev-cell img\{width:auto;height:100%;padding:0;object-fit:contain\}/);
+    assert.match(galleryCss,/\.book-gallery-page \.ev-thumbs button\{flex:0 0 auto;width:auto;height:auto;padding:0;background:transparent\}/);
+    assert.match(galleryCss,/\.book-gallery-page \.ev-thumbs img\{width:auto;height:62px;object-fit:contain\}/);
     assert.match(galleryCss,/\.book-gallery-page \.painting-list-row \.gallery-product-image img\{object-fit:cover\}/);
     assert.doesNotMatch(galleryCss,/\.book-gallery-page \.ev-three-up \.ev-cell\{background:#f4efe8\}/);
     assert.match(fs.readFileSync('exhibitions/viewer.js','utf8'),/Closest cell, so mixed aspect ratios/);
