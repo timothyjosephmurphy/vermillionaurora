@@ -46,11 +46,11 @@ const books = collections.home
   .books-page { padding-top: 2.5rem; padding-bottom: 4rem; max-width: 1100px; }
   .books-page h1 {
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(2.6rem, 6vw, 4rem);
-    line-height: 1.08;
-    margin: 0 0 1rem;
+    font-size: var(--page-title-size);
+    line-height: var(--page-title-leading);
+    margin: 0 0 0.65rem;
   }
-  .books-intro { max-width: 40rem; line-height: 1.75; margin: 0 0 2rem; }
+  .books-intro { max-width: 40rem; line-height: 1.55; margin: 0 0 1.25rem; }
   .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

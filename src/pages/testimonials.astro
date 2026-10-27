@@ -163,14 +163,17 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     <SiteFooter />
   </div>
   <style is:global>
-    .testimonials-page{padding:48px 0 72px;max-width:1080px}
-    .testimonials-intro{max-width:760px;line-height:1.75;color:#3f3832}
-    .testimonials-intro h1{margin:.2em 0 .3em;font:600 clamp(2.6rem,6vw,4.2rem)/1.05 "Cormorant Garamond",serif;letter-spacing:-.01em;color:var(--ink)}
+    .testimonials-page{padding:28px 0 72px;max-width:1080px}
+    /* Short header (studio-tracker #752): the shared eyebrow margin and display-size title were leaving a tall block above the stories. */
+    .testimonials-intro{max-width:760px;color:#3f3832}
+    .testimonials-intro .eyebrow{margin:0 0 4px;line-height:1.3}
+    .testimonials-intro h1{margin:0 0 8px;font:600 clamp(2.15rem,4.2vw,3.3rem)/1.02 "Cormorant Garamond",serif;letter-spacing:-.01em;color:var(--ink)}
     .testimonial-form .field-row{align-items:start}
     /* Two columns share one label row, so a wrapping "Email" label cannot push its input below Name. */
     @media(min-width:641px){.testimonial-form .field-row{grid-template-rows:auto auto auto}.testimonial-form .field-row>label{grid-template-rows:subgrid;grid-row:span 3}}
-    .testimonials-lede{font:500 1.35rem/1.55 "Cormorant Garamond",serif;color:var(--ink)}
-    .testimonials-jump .button{margin:6px 8px 0 0}
+    .testimonials-lede{margin:0 0 12px;font:500 1.18rem/1.45 "Cormorant Garamond",serif;color:var(--ink)}
+    .testimonials-jump:not([hidden]){display:flex;flex-wrap:wrap;gap:10px;margin:0}
+    .testimonials-jump .button{margin:0}
     .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
     .testimonials-wall{margin:36px 0 12px}
     .testimonial-list{list-style:none;padding:0;margin:0;columns:3 280px;column-gap:24px}
@@ -237,7 +240,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .share-map-caption{margin:0;padding:7px 12px 9px;font:500 .78rem/1.3 Inter,Arial,sans-serif;color:#8a7b6c;letter-spacing:.01em}
     .share-map:focus-visible{outline:3px solid #bd381c;outline-offset:3px}
     @media(max-width:860px){.testimonial-share{grid-template-columns:1fr;gap:20px}.share-map{position:static;flex:none;max-height:none;min-height:0}.share-map-canvas{flex:none;height:190px;min-height:0}}
-    @media(max-width:640px){.testimonials-page{padding-top:32px}.testimonial-form .field-row{grid-template-columns:1fr}.testimonial-form button[type=submit]{justify-self:stretch}}
+    @media(max-width:640px){.testimonials-page{padding-top:16px}.testimonial-form .field-row{grid-template-columns:1fr}.testimonial-form button[type=submit]{justify-self:stretch}}
   </style>
   <script src="../scripts/testimonials-page.js"></script>
 </body>
