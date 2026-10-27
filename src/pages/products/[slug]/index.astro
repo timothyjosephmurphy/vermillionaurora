@@ -32,7 +32,7 @@ const sticker=painting?stickerOffer(p.id):null;
 const olderOriginals=p.olderWork&&p.olderWork.members.length>1?p.olderWork.members.filter(m=>m.originalId&&byId[m.originalId]).map(m=>({...m,product:byId[m.originalId],status:byId[m.originalId].listing.status})):[];
 const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
 const quoteHref=`/commissions/?quote=${encodeURIComponent(p.slug)}#form`;
-const stickerOnlyQuote=p.listing.status!=='available'&&availablePrints.length===0&&!!sticker;
+const stickerOnlyQuote=p.listing?.status!=='available'&&availablePrints.length===0&&!!sticker;
 // Search/share description for original paintings, built only from catalog facts (no invented details).
 const metaDescription=(()=>{
   if(!painting||p.bookGallery)return null;
