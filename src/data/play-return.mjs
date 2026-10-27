@@ -1,10 +1,11 @@
 // Buyer return chip (studio-tracker #96, #771).
 // The default 3D gallery is the hex preview. A visit that came from tjm.art/play
-// (or a saved Quake session) resumes that gallery, labeled as Play, never as the dungeon.
-import { GALLERY_3D_LABEL, GALLERY_3D_URL } from './gallery-entry.mjs';
+// (or a saved Quake session) resumes that gallery. Both chips use the same label.
+import { GALLERY_3D_URL } from './gallery-entry.mjs';
 
-const QUAKE_RETURN = { show: true, label: '← Back to Play', href: '/play/?resume=1' };
-const HEX_RETURN = { show: true, label: GALLERY_3D_LABEL, href: GALLERY_3D_URL };
+const PLAY_RETURN_LABEL = '← Back to 3D gallery';
+const QUAKE_RETURN = { show: true, label: PLAY_RETURN_LABEL, href: '/play/?resume=1' };
+const HEX_RETURN = { show: true, label: PLAY_RETURN_LABEL, href: GALLERY_3D_URL };
 const HEX_ORIGIN = new URL(GALLERY_3D_URL).origin;
 
 function playReferrer(referrer) {
