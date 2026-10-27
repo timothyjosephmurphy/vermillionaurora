@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
+import AvifImage from '../../components/AvifImage.astro';
 import strawberryProducts,{strawberryPaintings,strawberryGroups,strawberryId,strawberryTitle,strawberryGroupTitle} from '../../../catalog/strawberry-point-products.mjs';
 import {catalogVersion} from '../../../catalog/catalog.mjs';
 const title='Strawberry Point Backpacking Trip';
@@ -52,7 +53,7 @@ const forSale=strawberryProducts.filter(p=>p.listing.status==='available').lengt
     {sec.story.map(t=><p class="sp-story">{t}</p>)}
     {sec.ids.length>0&&<ul class="sp-row" aria-label={sec.label}>
       {cards(sec.ids).map(({p,pr,inches,measured,size,price})=><li class="sp-card" style={`--w:${inches}`} data-product-id={strawberryId(p)} data-scale={measured?'measured':'estimated'}><a href={`/products/${strawberryId(p)}/`}>
-        <img src={src(p.display,480)} srcset={srcset(p.display)} sizes={`(max-width: 700px) 46vw, (max-width: 1260px) ${Math.round(inches*2.1)}vw, ${Math.round(inches*28)}px`} width={p.display.width} height={p.display.height} alt={`${strawberryTitle(p)}, a painting by TJ Murphy`} loading={si<1?'eager':'lazy'} decoding="async"/>
+        <AvifImage src={src(p.display,480)} srcset={srcset(p.display)} sizes={`(max-width: 700px) 46vw, (max-width: 1260px) ${Math.round(inches*2.1)}vw, ${Math.round(inches*28)}px`} width={p.display.width} height={p.display.height} alt={`${strawberryTitle(p)}, a painting by TJ Murphy`} loading={si<1?'eager':'lazy'} decoding="async" />
         <div class="sp-caption"><h2>{strawberryTitle(p).replace('Strawberry Point Backpacking Trip ','')}</h2><p>{size}</p><p class="sp-price">{price}</p></div></a></li>)}
     </ul>}
   </section>)}
@@ -60,7 +61,7 @@ const forSale=strawberryProducts.filter(p=>p.listing.status==='available').lengt
   <h2 class="sp-sets">As photographed together</h2>
   <ul class="archive-grid" aria-label="Strawberry Point paintings photographed together">
     {strawberryGroups.map(g=><li class="archive-card" data-product-id={g.id}><a href={`/products/${g.id}/`}>
-      <div class="archive-image"><img src={src(g.display,480)} srcset={srcset(g.display)} sizes="(max-width: 600px) calc(100vw - 48px), 30vw" width={g.display.width} height={g.display.height} alt={`${g.members.length} paintings by TJ Murphy from Strawberry Point, photographed together`} loading="lazy" decoding="async"/></div>
+      <div class="archive-image"><AvifImage src={src(g.display,480)} srcset={srcset(g.display)} sizes="(max-width: 600px) calc(100vw - 48px), 30vw" width={g.display.width} height={g.display.height} alt={`${g.members.length} paintings by TJ Murphy from Strawberry Point, photographed together`} loading="lazy" decoding="async" /></div>
       <div class="archive-caption"><h2>{strawberryGroupTitle(g)}</h2><p>{g.members.length} paintings</p></div></a></li>)}
   </ul>
   <p class="archive-back"><a href="/gallery/">← Return to the main gallery</a></p>

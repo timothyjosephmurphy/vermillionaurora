@@ -53,7 +53,15 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             cloudflare/test/package-lock.json
-      - run: npm ci
+      - name: Install dependencies
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
       - run: npm run build
       - name: Confirm generated catalogs are committed
         run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/commission-deposits.mjs cloudflare/print-catalog.mjs cloudflare/etsy-print-source.mjs cloudflare/etsy-sync-source.mjs
@@ -104,10 +112,24 @@ jobs:
             ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}-
       - name: Install Chromium
         if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
-        run: npx playwright install --only-shell chromium
+        run: |
+          n=0
+          until npx playwright install --only-shell chromium; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "Chromium install failed; retrying once"
+            sleep 8
+          done
       - name: Install WebKit
         if: steps.changes.outputs.tier == 'full' || (steps.changes.outputs.tier == 'code' && steps.changes.outputs.browser_tests != '')
-        run: npx playwright install --with-deps webkit
+        run: |
+          n=0
+          until npx playwright install --with-deps webkit; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "WebKit install failed; retrying once"
+            sleep 8
+          done
       - name: Save Playwright browsers
         if: steps.playwright-version.outcome == 'success' && steps.playwright-cache.outputs.cache-hit != 'true' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
         continue-on-error: true

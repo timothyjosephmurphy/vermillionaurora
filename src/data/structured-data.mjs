@@ -30,4 +30,14 @@ export const website = {
   url: `${SITE}/`,
   publisher: { '@id': `${SITE}/#tj-murphy` }
 };
+// Gallery and shop listings. Names and URLs only, so the page stays a catalog for search without repeating every image.
+export const collectionPage = ({ name, url, crumbs, items }) => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', '@id': `${url}#page`, name, url, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#tj-murphy` }, mainEntity: { '@id': `${url}#list` } },
+    { '@type': 'ItemList', '@id': `${url}#list`, numberOfItems: items.length, itemListElement: items.map((item, i) => ({ '@type': 'ListItem', position: i + 1, url: item.url, name: item.name })) },
+    { '@type': 'BreadcrumbList', itemListElement: crumbs.map((crumb, i) => ({ '@type': 'ListItem', position: i + 1, name: crumb.name, item: crumb.url })) }
+  ]
+});
+export const studio = { '@type': 'Organization', name: 'Vermillion Aurora Productions', url: `${SITE}/` };
 export const ld = data => JSON.stringify(data).replace(/</g, '\\u003c');

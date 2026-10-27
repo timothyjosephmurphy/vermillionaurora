@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import {products,collections,byId,urlFor,catalogVersion} from '../../catalog/catalog.mjs';
+import {artworkAlt} from '../data/artwork-alt.mjs';
 import {config,papers,printOptions} from '../../catalog/prints.mjs';
 import exhibitions from '../../exhibitions/catalog.json';
 
@@ -75,7 +76,7 @@ const shareImage=new URL(originals[0]?.image.src||'/about/images/tj-murphy-portr
       <h2 id="prints-heading">Selected fine-art prints</h2>
       <div class="social-print-grid">
         {featuredPrints.map(({product,from})=><a href={urlFor(product)} class="social-print" data-product-id={product.id}>
-          <img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async"/>
+          <img src={product.image.src} alt={artworkAlt(product)} loading="lazy" decoding="async"/>
           <h3>{product.title}</h3><p>Prints from ${from.toFixed(2)}</p>
         </a>)}
       </div>

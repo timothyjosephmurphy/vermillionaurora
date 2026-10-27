@@ -4,6 +4,8 @@ import SiteFooter from '../../components/SiteFooter.astro';
 import { products, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
 import { printsFromLabel } from '../../data/card-commerce.mjs';
 import { tagsFor } from '../../../catalog/related-works.mjs';
+import { artworkAlt } from '../../data/artwork-alt.mjs';
+import { collectionPage, ld } from '../../data/structured-data.mjs';
 const availablePaintings = products
   .filter(product => product.type === 'painting' && product.listing.status === 'available')
   .sort((a,b) => Number(b.listing.price?.amount||0) - Number(a.listing.price?.amount||0) || a.title.localeCompare(b.title));
@@ -29,6 +31,12 @@ const subjectList = [...subjectOptions].sort((a, b) => a[1].localeCompare(b[1]))
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Available Paintings | TJ Murphy</title>
   <meta name="description" content="Browse original paintings currently available from TJ Murphy and featured artist Paul Murphy, sorted by price. Explore landscapes and portraits.">
+  <script type="application/ld+json" set:html={ld(collectionPage({
+    name: 'Available paintings',
+    url: 'https://tjm.art/gallery/available/',
+    crumbs: [{ name: 'Home', url: 'https://tjm.art/' }, { name: 'Gallery', url: 'https://tjm.art/gallery/' }, { name: 'Available paintings', url: 'https://tjm.art/gallery/available/' }],
+    items: availablePaintings.map(p => ({ name: p.title, url: `https://tjm.art${urlFor(p)}` }))
+  }))} />
   <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site-header.css"><link rel="stylesheet" href="/gallery/painting-list.css">
   <style>.available-section{margin-top:2.5rem}.available-section+.available-section{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line,#d9d0c7)}.available-section-heading{font:600 clamp(1.9rem,4vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0 0 .4rem}.available-section-intro{margin:0 0 1rem;color:var(--muted)}.avail-filters{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-end;margin:1.5rem 0 .5rem}.avail-filters[hidden]{display:none}.avail-filters label{display:flex;flex-direction:column;gap:4px;font-size:.8rem;color:var(--muted,#665b52)}.avail-filters select,.avail-filters input{font:inherit;font-size:1rem;padding:8px 10px;min-height:44px;border:1px solid var(--line,#d9d0c7);border-radius:8px;background:#fff;color:inherit}.avail-search{flex:1 1 220px}.avail-filters .button{min-height:44px}.avail-count{flex:1 0 100%;margin:0;font-size:.9rem;color:var(--muted,#665b52)}.avail-empty{margin:1.5rem 0}.avail-link{background:none;border:0;padding:0;font:inherit;color:#a34528;text-decoration:underline;cursor:pointer}@media(max-width:600px){.avail-filters label,.avail-filters .button{flex:1 1 calc(50% - 8px)}.avail-search{flex-basis:100%}}</style>
 </head><body class="painting-gallery-page"><div class="page-shell"><SiteHeader/><main><section class="section section-light"><div class="container">
@@ -49,7 +57,7 @@ const subjectList = [...subjectOptions].sort((a, b) => a[1].localeCompare(b[1]))
     {section.intro && <p class="available-section-intro">{section.intro}</p>}
     <ul class="painting-list" aria-label={section.heading}>
       {section.items.map(product => <li class="painting-list-row card-tile" data-product-id={product.id} data-price={rowData(product).price} data-size-band={band(SIZE_BANDS,rowData(product).side)} data-side={rowData(product).side??''} data-price-band={band(PRICE_BANDS,rowData(product).price)} data-year={Number(product.year)||''} data-subjects={rowData(product).subjects.map(t=>t.id).join(' ')} data-search={[product.title,product.artist,...rowData(product).subjects.map(t=>t.label)].filter(Boolean).join(' ').toLowerCase()}>
-        <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
+        <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={artworkAlt(product)} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
         <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
         <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
         <div class="painting-list-commerce">{printsFromLabel(product)&&<p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>}<div class="card-buy-row">{printsFromLabel(product)?<p class="card-prints-from">{printsFromLabel(product)}</p>:<p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>}<span class="card-buy" data-card-buy aria-hidden="true">Buy</span></div></div>
