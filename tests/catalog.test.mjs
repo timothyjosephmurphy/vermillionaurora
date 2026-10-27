@@ -12,6 +12,8 @@ import {stickerOffer} from '../catalog/printful-stickers.mjs';
 // Upcoming shows (studio-tracker #114). Loaded here so `npm test` runs it
 // without a package.json edit (that file would force the full release-gate tier).
 import './exhibitions-upcoming.test.mjs';
+// Friends Club sticker carousel (studio-tracker #748). Same reason.
+import './friends-club-stickers.test.mjs';
 test('every product renders at its stable URL with matching content and checkout price',()=>{
  assert.equal(catalogVersion,workerVersion);
  for(const p of products){const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));assert.equal($('h1').text(),p.title);assert.equal($('meta[name=catalog-version]').attr('content'),catalogVersion);assert.equal($('link[rel=canonical]').attr('href'),`https://tjm.art/products/${p.slug}/`);for(const paragraph of p.story)assert.ok($('main').text().includes(paragraph),p.slug);if(p.image)assert.equal(($('main img, main svg[data-image-src]').first().attr('data-image-src') || $('main img, main svg[data-image-src]').first().attr('src')),p.image.src);if(checkout[p.id]){assert.equal(checkout[p.id].amount,p.listing.price.amount);assert.equal($('.product-detail-price').text(),priceLabel(p));}}
