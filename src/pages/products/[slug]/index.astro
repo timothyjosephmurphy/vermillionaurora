@@ -111,8 +111,8 @@ const crumb = productCrumb(p);
       {painting&&!p.bookGallery&&p.listing.status==='sold'&&<section class="sold-next-steps" aria-label="Next steps for a sold painting">
         <p>This original has found its home. I can paint something in the same spirit for you.</p>
         <a class="button button-solid" href="/commissions/">Commission something similar</a>
-        {availablePrints.length===0&&!relatedPrints&&<EmailSignup id="notify-prints-email" compact heading="Notify me when prints are available" text="Join my studio notes and I’ll share when prints of this painting are released. A few emails a year; unsubscribe anytime." button="Notify me" />}
-        {!(availablePrints.length===0&&!relatedPrints)&&<EmailSignup id="sold-email" compact text="Get first look at new originals. A few emails a year; unsubscribe anytime." />}
+        {availablePrints.length===0&&!relatedPrints&&<EmailSignup id="notify-prints-email" compact heading="Notify me when prints are available" text="Join my studio notes and I’ll share when prints of this painting are released. One print at cost when you join. A few emails a year; unsubscribe anytime." button="Notify me" />}
+        {!(availablePrints.length===0&&!relatedPrints)&&<EmailSignup id="sold-email" compact text="Get first look at new originals. One print at cost when you join. A few emails a year; unsubscribe anytime." />}
       </section>}
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.href?<a href={f.href}>{f.value}</a>:f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}

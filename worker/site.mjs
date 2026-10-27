@@ -2,7 +2,8 @@
 // static/_redirects and 404s are served by the Cloudflare assets layer WITHOUT invoking this Worker
 // (and without counting toward the Workers request limit). Only the routes listed there reach this code: the
 // QuickBooks API, the testimonials API and the original-inventory API (forwarded to the checkout Worker),
-// the testimonials page (approved quotes inlined for crawlers) and the
+// the testimonials page (approved quotes inlined for crawlers), newsletter signup (Buttondown plus one
+// at-cost print code, forwarded to the checkout Worker) and the
 // Apple Pay merchant-id file. Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
 //
 // Host-level redirects now live at the Cloudflare edge (zone Redirect Rules, see docs/static-bypass-zone-rules.md):
@@ -44,6 +45,10 @@ export const QUICKBOOKS_API = new Set(['/quickbooks/connect', '/quickbooks/callb
 // Testimonial submission, the approved list, approved photos and the owner moderation API also live in the checkout
 // Worker (private R2 storage); forwarding keeps them same-origin with /testimonials/ and /testimonial-manager/.
 export const TESTIMONIALS_API = '/testimonials/api/';
+
+// Email-list signup and the optional Buttondown webhook. The checkout Worker holds the Buttondown API key,
+// print-code storage and the Gmail identity. Same-origin on tjm.art, like the testimonials API.
+export const NEWSLETTER_PATHS = ['/newsletter/subscribe', '/newsletter/buttondown-webhook'];
 
 // Owner original-status page posts here; the checkout Worker holds stock and the Etsy token.
 export const ORIGINALS_API = '/inventory/originals';
@@ -132,6 +137,9 @@ export default {
     }
     if (url.pathname.startsWith(TESTIMONIALS_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Testimonials are temporarily unavailable.' }, { status: 503 });
+    }
+    if (NEWSLETTER_PATHS.includes(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
+      return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ ok: false, error: 'Newsletter signup is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
     }
     // Approved quotes in the first HTML byte (studio-tracker #102). The API route above stays a forward.
     if (TESTIMONIALS_PAGE.includes(url.pathname) && request.method === 'GET' && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {

@@ -1,7 +1,7 @@
 // In-memory stand-in for an R2 bucket binding (get/put/head/list/delete, ranged reads, onlyIf etags, multipart).
 export class Bucket {
   data=new Map();seq=0;
-  async put(key,value,options={}){const prev=this.data.get(key);if(options.onlyIf?.etagMatches&&prev?.etag!==options.onlyIf.etagMatches)return null;const item={key,value,etag:String(++this.seq),...options};this.data.set(key,item);return item;}
+  async put(key,value,options={}){const prev=this.data.get(key);if(options.onlyIf?.etagMatches&&prev?.etag!==options.onlyIf.etagMatches)return null;const forbid=options.onlyIf?.etagDoesNotMatch;if(forbid&&(forbid==='*'?Boolean(prev):prev?.etag===forbid))return null;const item={key,value,etag:String(++this.seq),...options};this.data.set(key,item);return item;}
   async get(key,options={}){const item=this.data.get(key);if(!item)return null;const text=typeof item.value==='string'?item.value:null;let body=item.value;if(options.range&&typeof body!=='string')body=body.slice(options.range.offset,options.range.offset+options.range.length);return {...item,body,size:sizeOf(item.value),text:async()=>text??new TextDecoder().decode(item.value),json:async()=>JSON.parse(text)};}
   async head(key){const item=this.data.get(key);return item?{key,size:sizeOf(item.value),httpEtag:'"'+item.etag+'"',httpMetadata:item.httpMetadata}:null;}
   uploads=new Map();
