@@ -103,6 +103,9 @@
       "bucket_name": "vermillion-sales-records"
     }
   ],
+  "images": {
+    "binding": "IMAGES"
+  },
   "observability": {
     "logs": {
       "enabled": true,

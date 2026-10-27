@@ -54,6 +54,56 @@ Collectors (people TJ has given or sold paintings to) share testimonials on http
 The site Worker (`worker/site.mjs`) forwards `/testimonials/api/*` on tjm.art to the checkout Worker through the `CHECKOUT`
 service binding, like the QuickBooks routes.
 
+## Reply by email (no form)
+
+A collector can reply to an email from TJ instead of using the form. SMS is not part of this path. The website form is unchanged.
+
+The ask is a normal email from `TJ Murphy <tj@tjm.art>` with `Reply-To: stories@reply.tjm.art`. The address is a subdomain on purpose: `tjm.art` mail is Google Workspace, and turning on Cloudflare Email Routing for the apex would replace those MX records. Routing stays on `reply.tjm.art` only. The copy below is `ASK_TEMPLATE` in `cloudflare/testimonial-reply.mjs` (notice version `2026-10-27`). The consent sentence has to stay exact.
+
+```
+Subject: A photo of your painting?
+
+From: TJ Murphy <tj@tjm.art>
+Reply-To: stories@reply.tjm.art
+
+Hi,
+
+If you have a moment, reply to this email with a photo of the painting in your home, a few words about what it means to you, or both. A photo by itself is perfect.
+
+By replying, you’re OK with TJ showing your first name or initials, your words, and your photos on tjm.art after he’s read them.
+
+If you want the page to name the painting or your city, add lines like these (a city only, never your street address):
+
+Painting: Honeybadger and Cub with Genesis Block
+City: Tacoma, WA
+
+Thank you,
+TJ
+```
+
+What the Worker does with a reply:
+
+1. Cloudflare Email Routing delivers `stories@reply.tjm.art` to the checkout Worker’s `email()` handler (`cloudflare/commission-worker.js`). Set `TESTIMONIAL_REPLY_ADDRESS` only if that address changes.
+2. Quoted reply text, signatures (`-- `, “Sent from my iPhone”, Outlook “Original Message”), and `>` lines are removed. A `Painting:` line or a catalog title in the reply fills the painting when there is one clear match. A `City:` line is geocoded like the form; a street address on that line is ignored.
+3. Photos (JPEG, PNG, WebP, HEIC) are stripped of EXIF/GPS the same way as form uploads. When the Worker has the Images binding, each photo is also re-encoded as a JPEG whose long edge is at most 2000px. HEIC that cannot be converted stays private and cannot be published. At most four photos are kept. An image under 8 KB is skipped when a larger photo is attached (signature logos). A reply whose only photo is smaller is kept if the file is at least 400 bytes.
+4. Replying to the ask is the consent (`publishConsent: 'implied-by-reply'`), recorded with the notice above. The public name is the first name, or initials when the From header has no given name. The email address stays private and is used only for the thank-you print code.
+5. The submission is **pending**. It shows on `/testimonial-manager/` with an “Email reply” badge. Approve, unpublish, and delete are the same actions as a form submission. A photo with no words can be approved. Nothing is added to `/testimonials/`, the exhibitions map, or the homepage pins until then.
+6. The same pipeline is available to the owner API as `POST /testimonials/api/owner` action `ingestReply` with base64 `raw` (the RFC 5322 message), for a check without sending mail. It still requires `Authorization: Bearer $COMMISSION_MANAGER_TOKEN` and `Origin: https://tjm.art`.
+
+To receive real replies, add `reply.tjm.art` as an Email Routing subdomain (dashboard: Email Routing → the tjm.art zone → Settings → Subdomains) and route `stories@reply.tjm.art` to the Worker `vermillion-commissions`. Do not enable Email Routing on the apex. After the subdomain answers, send the ask above and reply to it from another mailbox.
+
+An authenticated check of the same ingest, without SMTP:
+
+```
+curl -sS https://tjm.art/testimonials/api/owner \
+  -H "Origin: https://tjm.art" \
+  -H "Authorization: Bearer $COMMISSION_MANAGER_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"action":"ingestReply","raw":"<base64 of a reply>"}'
+```
+
+Then approve that id on `/testimonial-manager/` (or `action: "approve"`). Delete the test row when you are done so it does not stay on the public page.
+
 ## Video testimonials
 
 The optional video control sits directly below "Add photos" (no separate encouragement box since 2026-10-08). Phones get two

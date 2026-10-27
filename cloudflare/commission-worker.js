@@ -27,7 +27,12 @@ import { markAtCostOrders } from './quickbooks-sync.mjs';
 import { quickbooksApi } from './quickbooks-api.mjs';
 import { pollTips } from './btcpay-tips.mjs';
 import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestimonialVideos } from './testimonials.mjs';
+import { handleTestimonialEmail } from './testimonial-reply.mjs';
 export default {
+  // Cloudflare Email Routing (stories@reply.tjm.art). Does not run for ordinary HTTP requests.
+  async email(message, env, ctx) {
+    await handleTestimonialEmail(message, env, ctx);
+  },
   async scheduled(event,env,ctx) {
     await applyCatalogOverlay(env);
     if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }

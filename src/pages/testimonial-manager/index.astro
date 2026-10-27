@@ -16,6 +16,7 @@ import PolicyLayout from '../../layouts/PolicyLayout.astro';
 <p><strong>Delete</strong> permanently removes the submission and its photos (use it to reject). <strong>Unpublish</strong> takes a published testimonial down but keeps it here. When you approve with <strong>Send thank-you email</strong> ticked (the default), the site issues their single-use at-cost print code and emails it to them as a short personal note from you (from and reply-to <MailIcon />tj@tjm.art). Untick it to approve quietly; you can send it later. Each submission gets at most one code and one email, and the code is always shown here. Email is optional on the form: a testimonial sent without one publishes as usual, but no code is issued or sent (the card says “No email, so no code sent”).</p>
 <p><strong>Videos</strong> play right on each card (signed links that expire after a few hours; press Refresh if one stops loading). Each video carries the collector’s two separate, optional permissions: <strong>tjm.art</strong> (may be shown on /testimonials/) and <strong>Social media</strong> (may be shared on your social accounts). A video appears on the site only when it is approved, “Show the video on tjm.art” is ticked, and the collector gave the tjm.art permission; without it the video stays private even after approval (their words, if any, can still be published, and the thank-you email and print code work as usual). <strong>Videos OK for social media</strong> lists approved videos whose owners allowed social sharing, with download links for the marketing side. If a collector asks to take a video down, use the withdraw buttons on their card (or Delete to remove everything). iPhone videos recorded in HEVC may not play in Chrome or Firefox; download them or use Safari. Recording locations are blanked from video files on upload. Videos on testimonials that stay unapproved are deleted after 90 days.</p>
 <p>Photos have location (GPS) and other EXIF metadata removed on upload. HEIC photos that the visitor’s browser could not convert are kept private and can’t be published.</p>
+<p><strong>Email replies</strong> to the ask (Reply-To <MailIcon />stories@reply.tjm.art) show up here as Pending, the same as the form. A photo, a few words, or both is enough. The card says “Email reply”. The public name starts as a first name or initials, and the painting is filled in when the reply names one. Nothing from an email is public until you approve it.</p>
 </details>
 <style is:global>
 .policy-page .tm-card{display:grid;gap:12px}
@@ -77,8 +78,8 @@ function card(r){
   const pub=r.published||{};
   const a=el('article',{className:'tm-card',id:r.id});
   const hidden=r.status==='approved'&&r.public&&!(r.public.quote||r.public.video||r.public.photos?.length);
-  a.append(el('h2',{},`${who(r)} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?(hidden?'Approved · private (not on the site)':'Published'):'Pending'}),r.video?el('span',{className:'tm-badge',textContent:'Video'}):''));
-  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,...(r.email?[el('a',{href:`mailto:${r.email}`,textContent:r.email}),' (private)']:['No email given']),` · ${r.id}`,r.notifiedAt?' · Email alert sent':r.notifyError?` · Email alert failed (${r.notifyError})`:'',r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
+  a.append(el('h2',{},`${who(r)} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?(hidden?'Approved · private (not on the site)':'Published'):'Pending'}),r.source==='email-reply'?el('span',{className:'tm-badge',textContent:'Email reply'}):'',r.video?el('span',{className:'tm-badge',textContent:'Video'}):''));
+  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,...(r.email?[el('a',{href:`mailto:${r.email}`,textContent:r.email}),' (private)']:['No email given']),` · ${r.id}`,r.source==='email-reply'?(r.consent?.noticeSeen?' · Reply consent':' · Reply consent (ask note not in the message)'):'',r.fromName&&r.fromName!==r.name?` · From: ${r.fromName}`:'',r.notifiedAt?' · Email alert sent':r.notifyError?` · Email alert failed (${r.notifyError})`:'',r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
   const name=el('input',{type:'text',value:'name' in pub?pub.name:r.name,maxLength:80,placeholder:'A collector'});
   const quote=el('textarea',{value:pub.quote??r.quote??'',maxLength:2000});
   const painting=el('input',{type:'text',value:pub.painting??r.paintingTitle??'',maxLength:200});
@@ -89,7 +90,7 @@ function card(r){
   const lng=el('input',{type:'number',step:'0.01',min:-180,max:180,value:pin?pin[1]:''});
   const map=el('input',{type:'checkbox',checked:r.status==='approved'?Boolean(pub.pin):Boolean(pin)});
   const geoNote=el('small',{textContent:r.geo?`Suggested from “${r.city}”: ${r.geo.label}`:(r.city?'No automatic match; use Look up or type coordinates (city centre, 2 decimals).':'No city given.')});
-  a.append(el('p',{className:'tm-quote',textContent:r.quote?`“${r.quote}”`:'(No written words; video only.)'}));
+  a.append(el('p',{className:'tm-quote',textContent:r.quote?`“${r.quote}”`:(r.photos?.length&&!r.video?'(No written words; photo only.)':'(No written words; video only.)')}));
   let videoBox=null;
   if(r.video){
     const v=r.video,c=v.consent||{};
@@ -122,7 +123,7 @@ function card(r){
       const img=el('img',{alt:`Photo ${p.n+1} from ${who(r)}`});
       call({action:'photo',id:r.id,n:p.n},true).then(b=>{img.src=URL.createObjectURL(b);}).catch(()=>{img.alt='Preview unavailable';});
       const box=el('input',{type:'checkbox',checked:p.publishable&&(r.status!=='approved'||(pub.photos||[]).includes(p.n)),disabled:!p.publishable});box.dataset.n=p.n;photoBoxes.push(box);
-      ul.append(el('li',{},img,el('label',{},box,p.publishable?' Publish':' Private (HEIC)'),el('span',{textContent:`${Math.round(p.bytes/1024)} KB${p.removed?.length?' · removed: '+p.removed.join(', '):''}`})));
+      ul.append(el('li',{},img,el('label',{},box,p.publishable?' Publish':' Private (HEIC)'),el('span',{textContent:`${Math.round(p.bytes/1024)} KB${p.resized?' · resized for web':''}${p.removed?.length?' · removed: '+p.removed.join(', '):''}`})));
     }
     a.append(ul);
   } else a.append(el('p',{className:'tm-meta',textContent:'No photos.'}));
