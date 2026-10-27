@@ -27,7 +27,7 @@ const description = 'Upcoming and past exhibitions by Seattle watercolor painter
 </li>))}
 </ul>
 </section>
-<EmailSignup id="exhibitions-email" heading="Show notes by email" text="Upcoming shows and new work, a few times a year. Unsubscribe anytime." />
+<EmailSignup id="exhibitions-email" heading="Show notes by email" text="Upcoming shows and new work, a few times a year. One print at cost when you join. Unsubscribe anytime." />
 <h2 id="past-shows-heading" class="section-title">Past shows</h2>
 <div class="exhibition-index-grid">{exhibitions.map(ex=>(
 <article class="product-card"><a class="exhibition-index-image" href={`/exhibitions/${ex.slug}/`}><img src={ex.image} alt={ex.alt} loading="lazy" style={ex.contain?'object-fit:contain;background:#e8dfd3':undefined}></a><div class="product-info"><h2><a class="product-title-link" href={`/exhibitions/${ex.slug}/`}>{ex.title}</a></h2>

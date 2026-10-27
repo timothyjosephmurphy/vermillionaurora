@@ -55,8 +55,9 @@ test('the exhibitions page lists upcoming shows and a Buttondown form above past
   assert.match(signup, /type="email"/);
   assert.match(signup, /autocomplete="email"/);
   assert.match(signup, /required/);
+  assert.match(page, /One print at cost when you join/);
   assert.equal(BUTTONDOWN_USERNAME, 'timothyjosephmurphy');
-  assert.equal(newsletterAction, 'https://buttondown.com/api/emails/embed-subscribe/timothyjosephmurphy');
+  assert.equal(newsletterAction, '/newsletter/subscribe');
   assert.match(signup, /action=\{newsletterAction\}/);
-  assert.match(signup, /name="embed"/);
+  assert.doesNotMatch(signup, /name="embed"/);
 });
