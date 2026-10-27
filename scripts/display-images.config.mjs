@@ -22,6 +22,9 @@ export const SIZES = [
   ['painting-list-row', '64px'],
   ['ev-thumbs', '76px'],
   ['gallery-product-image', '(max-width: 980px) 164px, 224px'],
+  // Homepage painting cards are ~164px on a phone. 164px × 3 picks the 960w file (just past 480w).
+  // 160px stays on 480w at 3x; tablets (641–980px) keep a larger slot so those cards can still use 960w.
+  ['carousel-thumb', '(max-width: 640px) 160px, (max-width: 980px) 240px, 224px'],
   ['featured-slide', '(max-width: 980px) 90vw, 340px'],
   ['portrait-preview', '(max-width: 600px) 80vw, 340px'],
   ['ex-slide', '(max-width: 600px) 75vw, 60vw'],
