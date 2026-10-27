@@ -42,8 +42,12 @@ if (process.argv.includes('--live')) {
     assert.equal(response.status, 200, url + ': HTTP ' + response.status);
     return response;
   }
+  // An unchanged catalog version lets the print check pass before Workers Builds
+  // has published this HTML. The week-post deploy (run 40537353670) was still
+  // serving the previous article when a five-minute wait ended.
+  const attempts = 90;
   let verified = false;
-  for (let attempt = 1; attempt <= 30; attempt++) {
+  for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
       const indexResponse = await request(site + '/blog/');
       assert.match(indexResponse.headers.get('content-type') || '', /text\/html/);
@@ -67,8 +71,8 @@ if (process.argv.includes('--live')) {
       verified = true;
       break;
     } catch (error) {
-      console.log('Live blog verification ' + attempt + '/30: ' + error.message);
-      if (attempt < 30) await new Promise(resolve => setTimeout(resolve, 10000));
+      console.log('Live blog verification ' + attempt + '/' + attempts + ': ' + error.message);
+      if (attempt < attempts) await new Promise(resolve => setTimeout(resolve, 10000));
     }
   }
   assert(verified, 'Production blog articles did not become ready');
