@@ -12,6 +12,7 @@ import archiveProducts from '../catalog/archive-products.mjs';
 import olderWorkProducts from '../catalog/older-work-products.mjs';
 import collections from '../catalog/collections.json' with {type:'json'};
 import {canonicalArtwork,sectionAdditions,sectionArtworkIds} from '../src/data/canonical-artworks.mjs';
+import wallLabels from '../catalog/wall-label-galleries.json' with {type:'json'};
 
 const groups=new Map(manifest.sections.map(group=>[group.id,group]));
 
@@ -93,12 +94,12 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   assert(viewer.includes("box.className = 'exhibition-viewer' + (threeUp ? ' ev-three-up' : '')"));
   const overview=load(fs.readFileSync('dist/book-galleries/index.html','utf8'));
   assert.equal(overview('.book-gallery-carousel-grid li').length,manifest.sections.length+2); // Archived + Older Work (Strawberry Point moved to the homepage Featured works, Oct 16 2026)
-  assert.equal(overview('.book-gallery-links a').length,manifest.books.length);
+  assert.equal(overview('.book-gallery-links a').length,manifest.books.length+1); // book PDFs plus the wall-label gallery index
   const uniqueIds=[...new Set(manifest.sections.flatMap(sectionArtworkIds))];
   const printReady=uniqueIds.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||[...originalProducts,...archiveProducts,...olderWorkProducts].find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
   assert.equal(Number(overview('.book-gallery-print-total').attr('data-total-print-ready-count')),printReady);
   const home=load(fs.readFileSync('dist/index.html','utf8'));
-  assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length+2); // Strawberry Point now in Featured works
+  assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length+wallLabels.galleries.length+2); // book chapters, wall labels, Archived, Older Work
   assert.equal(home('#book-galleries h2').text(),'Selected Galleries');
   assert.equal(home('#gallery h2').text(),'Featured works');
   for(const id of ['painting-portrait-in-green','painting-portrait-in-gold'])

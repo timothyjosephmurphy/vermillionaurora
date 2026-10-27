@@ -7,6 +7,7 @@ const olderWorkCount=olderWorkGroups.reduce((n,g)=>n+g.members.length,0);
 import {byId} from '../../../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../../../catalog/prints.mjs';
 import {sectionArtworkIds} from '../../data/canonical-artworks.mjs';
+import {wallLabelGalleries} from '../../../catalog/wall-label-galleries.mjs';
 
 const galleryArtworks=[...new Set(manifest.sections.flatMap(sectionArtworkIds))];
 const totalPrintReady=galleryArtworks.filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length;
@@ -42,8 +43,25 @@ const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title
       <li class="book-gallery-card" data-product="/gallery/older-work/" data-caption={`${olderWorkCount} older paintings from the studio`}><a href="/gallery/older-work/"><img src={olderWorkPreview(olderWorkGroups[0],480)} alt="Older Work by TJ Murphy" loading="lazy" decoding="async"/><h3>Older Work</h3><p>{olderWorkCount} works · From the studio</p></a></li>
     </ul>
   </section>
+  <section id="wall-labels" aria-labelledby="wall-label-galleries-heading">
+    <h2 class="book-group-heading" id="wall-label-galleries-heading">Wall labels</h2>
+    <p>Groups from the studio wall labels. These sit alongside the book chapters above.</p>
+    <ul class="book-gallery-grid" aria-label="Wall label galleries">
+      {wallLabelGalleries.map(gallery => <li class="book-gallery-card wall-label-card">
+        <a href={`/galleries/${gallery.id}/`}>
+          <img src={gallery.thumb} alt="" width={gallery.thumbWidth} height={gallery.thumbHeight} loading="lazy" decoding="async" />
+          <h3>{gallery.title}</h3>
+          <p>Wall label · {gallery.works.length} {gallery.works.length === 1 ? 'work' : 'works'}</p>
+        </a>
+      </li>)}
+    </ul>
+  </section>
   <nav class="book-gallery-links" aria-label="Read the watercolor books">
     {manifest.books.map(book=><a href={`/products/${book.id}/`}>Read {book.title} →</a>)}
+    <a href="/galleries/">All wall label galleries →</a>
   </nav>
 </Layout>
+<style is:global>
+  .book-gallery-card.wall-label-card img { height: auto; aspect-ratio: 4 / 1; object-fit: contain; background: #111; }
+</style>
 
