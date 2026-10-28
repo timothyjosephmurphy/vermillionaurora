@@ -9,14 +9,14 @@ const css = html.match(/<style>([\s\S]*?)<\/style>/)[1];
 const main = html.match(/<main class="article">([\s\S]*?)<\/main>/)[1];
 
 const figures = [...main.matchAll(/<figure class="photo[^"]*">[\s\S]*?<\/figure>/g)].map(match => match[0]);
-const rows = [...main.matchAll(/<div class="painting-row(?: quad)?">([\s\S]*?)<\/div>/g)].map(match => match[1]);
+const rows = [...main.matchAll(/<div class="painting-row(?: (?:triple|quad))?">([\s\S]*?)<\/div>/g)].map(match => match[1]);
 
 test('El Salvador paintings stay in the article as compact rows', () => {
   assert.equal(figures.length, 18);
   assert.equal(rows.length, 6);
 
   const topLevel = main
-    .replace(/<div class="painting-row(?: quad)?">[\s\S]*?<\/div>/g, '')
+    .replace(/<div class="painting-row(?: (?:triple|quad))?">[\s\S]*?<\/div>/g, '')
     .match(/<figure class="photo/g);
   assert.equal(topLevel?.length ?? 0, 1, 'only the opening painting sits outside a row');
   assert.match(figures[0], /El Zonte at Dawn/);
@@ -42,6 +42,7 @@ test('El Salvador paintings stay in the article as compact rows', () => {
 
 test('El Salvador painting CSS does not stretch figures to the column', () => {
   assert.match(css, /figure\.photo\{[^}]*width:min\(100%,480px\)/);
+  assert.match(css, /\.painting-row figure\.photo\{[^}]*width:min\(200px,46%\)/);
   assert.match(css, /\.painting-row figure\.photo\{[^}]*max-width:200px/);
   assert.match(css, /\.painting-row figure\.photo\.wide\{[^}]*max-width:340px/);
   assert.match(css, /\.painting-row figure\.photo img\{[^}]*max-height:240px/);
@@ -50,4 +51,31 @@ test('El Salvador painting CSS does not stretch figures to the column', () => {
   assert.doesNotMatch(css, /max-height:\s*82vh/);
   assert.doesNotMatch(css, /grid-template-columns:\s*1fr/);
   assert.doesNotMatch(css, /figure\.photo\{[^}]*margin:[^}]*-/);
+});
+
+test('three portrait rows stay on one line, including the El Zonte trio', () => {
+  assert.match(css, /\.painting-row\.triple\{[^}]*flex-wrap:\s*nowrap/);
+  assert.match(css, /\.painting-row\.triple figure\.photo\{[^}]*flex:\s*1 1 0/);
+  assert.match(css, /\.painting-row\.triple figure\.photo\{[^}]*width:\s*auto/);
+  assert.match(css, /\.painting-row\.triple figure\.photo\{[^}]*max-width:\s*200px/);
+  assert.match(css, /@media\(max-width:700px\)\{[\s\S]*\.painting-row\.triple\{column-gap:8px\}/);
+
+  const triples = [...main.matchAll(/<div class="painting-row triple">([\s\S]*?)<\/div>/g)];
+  assert.equal(triples.length, 2, 'only the portrait trios are three-up');
+  for (const [, row] of triples) {
+    assert.equal(row.match(/<figure class="photo"/g).length, 3);
+    assert.equal(row.includes('wide'), false);
+  }
+
+  const zonte = triples.map((match) => match[1]).find((row) => row.includes('Sunrise from Punta El Zonte Hostel'));
+  assert.ok(zonte, 'El Zonte portraits share a triple row');
+  assert.match(zonte, /Sunrise in El Zonte \(Large\)/);
+  assert.match(zonte, /Sunset in El Zonte, El Salvador/);
+
+  const atami = triples.map((match) => match[1]).find((row) => row.includes('Sunset from Atami, El Salvador #1'));
+  assert.match(atami, /Sunset from Atami, El Salvador #3/);
+
+  assert.match(main, /<div class="painting-row">[\s\S]*?class="photo wide"/);
+  assert.match(main, /<div class="painting-row quad">/);
+  assert.equal(main.match(/class="painting-row triple"/g).length, 2);
 });
