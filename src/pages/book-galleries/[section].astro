@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/BookGalleryLayout.astro';
 import manifest from '../../../catalog/book-galleries.json';
-import {byId,urlFor,priceLabel,dimensionLabel} from '../../../catalog/catalog.mjs';
+import {byId,urlFor,priceLabel,dimensionLabelBoth} from '../../../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../../../catalog/prints.mjs';
 import {canonicalArtwork,sectionArtworkIds} from '../../data/canonical-artworks.mjs';
 import {artworkAlt} from '../../data/artwork-alt.mjs';
@@ -70,7 +70,7 @@ for(const {source} of artworks){
         <li class="painting-list-row" data-product-id={id} data-print-ready={printPrice!==null?'true':'false'} data-price={printPrice??undefined} data-area={printArea??undefined}>
           <a href={urlFor(original||product)} class="gallery-product-image" aria-label={`View ${(original||product).title}`} tabindex="-1"><img src={(original||product).image.src} alt={artworkAlt(original||product)} loading="lazy" decoding="async" width={(original||product).image.width} height={(original||product).image.height}/></a>
           <h3><a href={urlFor(original||product)} class="product-title-link">{(original||product).title}</a></h3>
-          <p class="painting-list-dimensions">{original?dimensionLabel(original):source?.measurements?.join('; ')||''}</p>
+          <p class="painting-list-dimensions">{original?dimensionLabelBoth(original):source?.measurements?.join('; ')||''}</p>
           <p class="painting-list-price">{original&&<><a href={urlFor(original)}>Original · {priceLabel(original)}</a><br/></>}{printPrice!==null?<a href={urlFor(product)}>Fine-art prints from ${printPrice.toFixed(2)}</a>:'No fine-art prints currently available'}</p>
         </li>
       )}
