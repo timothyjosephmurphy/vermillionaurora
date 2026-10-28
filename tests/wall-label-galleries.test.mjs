@@ -8,6 +8,7 @@ import bookGalleries from '../catalog/book-galleries.json' with {type:'json'};
 import {byId, urlFor} from '../catalog/catalog.mjs';
 import {twinGroups} from '../catalog/related-works.mjs';
 import {galleryHero} from '../src/data/gallery-hero.mjs';
+import {olderWorkGalleryTiles} from '../src/data/older-work-gallery.mjs';
 import {resolveWallLabelGalleries, wallLabelGalleries} from '../catalog/wall-label-galleries.mjs';
 
 const ids = [
@@ -18,7 +19,6 @@ const ids = [
   'ukraine',
   'small-watercolors',
   'landscapes-by-size',
-  'hummingbirds',
 ];
 const folded = {
   temples: 'festival-burning-man',
@@ -26,6 +26,7 @@ const folded = {
   attendees: 'bitcoiners',
   'renoirs-and-ridges': 'small-watercolors',
   'forest-triptych': 'landscapes-by-size',
+  hummingbirds: 'older-work',
 };
 const tagged = (...names) => Object.entries(tags.assignments).filter(([, assigned]) => names.some(name => assigned.includes(name))).map(([id]) => id);
 const galleryById = id => manifest.galleries.find(gallery => gallery.id === id);
@@ -43,7 +44,6 @@ test('wall label galleries follow labels354 order, omit reiki, and fold #751', (
     ['ukraine', 'Ukraine', 3],
     ['small-watercolors', 'Small Watercolors', 26],
     ['landscapes-by-size', 'Landscapes', 11],
-    ['hummingbirds', 'Hummingbirds', 2],
   ]);
   assert.deepEqual(manifest.folded.map(entry => [entry.id, entry.into]), Object.entries(folded));
   assert.deepEqual(galleryById('bounty-of-satoshi').members, [
@@ -83,6 +83,14 @@ test('festival and landscapes members keep the tag backfill, with #751 folds and
   assert.ok(galleryById('small-watercolors').members.includes('painting-portrait-with-hat'));
   assert.match(manifest.memberResolution['festival-burning-man'], /burning-man/);
   assert.match(manifest.memberResolution['landscapes-by-size'], /rice-paddies-in-vietnam/);
+  assert.match(manifest.memberResolution['older-work'], /Hummingbird Friend/);
+  const hummingbirds = manifest.folded.find(entry => entry.id === 'hummingbirds');
+  assert.equal(hummingbirds.href, '/gallery/older-work/');
+  assert.deepEqual(hummingbirds.members, ['book-art-b7a9cd259d8ac51a236b', 'older-work-hummingbird-feeder-190']);
+  assert.notEqual(twinGroups()('book-art-b7a9cd259d8ac51a236b'), twinGroups()('older-work-hummingbird-feeder-190'));
+  const olderIds = olderWorkGalleryTiles().map(tile => tile.id);
+  assert.equal(olderIds.filter(id => id === 'older-work-hummingbird-feeder-190').length, 1);
+  assert.equal(olderIds[olderIds.indexOf('older-work-hummingbird-feeder-190') - 1], 'book-art-b7a9cd259d8ac51a236b');
   for (const gallery of manifest.galleries) {
     assert.equal(new Set(gallery.members).size, gallery.members.length, gallery.id);
     assert.ok(gallery.members.includes(gallery.hero), gallery.id);
@@ -95,9 +103,11 @@ test('festival and landscapes members keep the tag backfill, with #751 folds and
 
 test('folded gallery URLs redirect to the surviving gallery', () => {
   const rules = fs.readFileSync('static/_redirects', 'utf8');
-  for (const [from, to] of Object.entries(folded)) {
-    assert.ok(rules.includes(`/galleries/${from} /galleries/${to}/ 301\n`), from);
-    assert.ok(rules.includes(`/galleries/${from}/ /galleries/${to}/ 301\n`), `${from}/`);
+  for (const entry of manifest.folded) {
+    const to = entry.href || `/galleries/${entry.into}/`;
+    assert.equal(folded[entry.id], entry.into);
+    assert.ok(rules.includes(`/galleries/${entry.id} ${to} 301\n`), entry.id);
+    assert.ok(rules.includes(`/galleries/${entry.id}/ ${to} 301\n`), `${entry.id}/`);
   }
 });
 
@@ -147,8 +157,19 @@ test('landing pages and the homepage carousel list every wall label gallery', ()
   assert.equal(shown(home('.book-section-carousel a[href="/galleries/bitcoiners/"] img')), galleryHero(bitcoiners).image.src);
   assert.equal(home('.book-section-carousel a[href="/galleries/bass-coast-sunrises/"]').length, 0);
   assert.equal(home('.book-section-carousel a[href="/galleries/temples/"]').length, 0);
+  assert.equal(home('.book-section-carousel a[href="/galleries/hummingbirds/"]').length, 0);
+  assert.equal(home('.book-section-carousel a[href="/galleries/bitcoiners/"]').length, 1);
+  assert.equal(home('.book-section-carousel a[href="/book-galleries/watercolor-portraits-bitcoiners/"]').length, 1);
   assert.equal(index('a[href="/galleries/attendees/"]').length, 0);
+  assert.equal(index('a[href="/galleries/hummingbirds/"]').length, 0);
   assert.equal(selected('#wall-labels a[href="/galleries/renoirs-and-ridges/"]').length, 0);
+  assert.equal(selected('#wall-labels a[href="/galleries/hummingbirds/"]').length, 0);
+  const older = load(fs.readFileSync('dist/gallery/older-work/index.html', 'utf8'));
+  const olderIds = older('.older-work-grid > li').map((_, item) => older(item).attr('data-product-id')).get();
+  assert.equal(olderIds.filter(id => id === 'older-work-hummingbird-feeder-190').length, 1);
+  assert.equal(olderIds.filter(id => id === 'book-art-b7a9cd259d8ac51a236b').length, 1);
+  assert.equal(older(`a[href="/products/book-art-b7a9cd259d8ac51a236b/"]`).length, 1);
+  assert.equal(older(`a[href="/products/older-work-hummingbird-feeder-190/"]`).length, 1);
   assert.equal(selected('#wall-labels a[href="/galleries/festival-burning-man/"] h3').text(), 'Festivals');
   assert.equal(selected('#wall-labels a[href="/galleries/landscapes-by-size/"] h3').text(), 'Landscapes');
   assert.equal(shown(selected('#wall-labels a[href="/galleries/landscapes-by-size/"] img')), galleryHero(wallLabelGalleries.find(gallery => gallery.id === 'landscapes-by-size')).image.src);

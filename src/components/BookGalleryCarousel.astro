@@ -4,10 +4,11 @@ import {byId} from '../../catalog/catalog.mjs';
 import {sectionArtworkIds} from '../data/canonical-artworks.mjs';
 import {archivePaintings,archivePreview} from '../../catalog/archive-products.mjs';
 import {olderWorkGroups,olderWorkPreview} from '../../catalog/older-work-products.mjs';
+import {olderWorkPaintingCount} from '../data/older-work-gallery.mjs';
 import {wallLabelGalleries} from '../../catalog/wall-label-galleries.mjs';
 import {artworkAlt} from '../data/artwork-alt.mjs';
 import {galleryHero} from '../data/gallery-hero.mjs';
-const olderWorkCount=olderWorkGroups.reduce((n,g)=>n+g.members.length,0);
+const olderWorkCount=olderWorkPaintingCount();
 const groups=manifest.sections;
 const slideCount=groups.length+wallLabelGalleries.length+2;
 ---

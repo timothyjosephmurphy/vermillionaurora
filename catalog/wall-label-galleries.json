@@ -1,5 +1,5 @@
 {
-  "source": "Derived from studio-tracker #354 wall labels (labels354.json). Reiki is omitted (no members; studio-tracker #394). Studio-tracker #751 folds Temples and Bass Coast Sunrises into Festivals, Attendees into Bitcoiners, Renoirs & Ridges into Small Watercolors, and Forest Triptych into Landscapes. The site reads this file at build time and does not consult play-tags.",
+  "source": "Derived from studio-tracker #354 wall labels (labels354.json). Reiki is omitted (no members; studio-tracker #394). Studio-tracker #751 folds Temples and Bass Coast Sunrises into Festivals, Attendees into Bitcoiners, Renoirs & Ridges into Small Watercolors, and Forest Triptych into Landscapes. Hummingbirds is folded into Older Work (studio manager, Oct 28 2026). The site reads this file at build time and does not consult play-tags.",
   "omitted": [
     {
       "id": "reiki",
@@ -37,13 +37,25 @@
       "title": "Forest Triptych",
       "into": "landscapes-by-size",
       "reason": "studio-tracker #751. All three forest panels are appended to Landscapes."
+    },
+    {
+      "id": "hummingbirds",
+      "title": "Hummingbirds",
+      "into": "older-work",
+      "href": "/gallery/older-work/",
+      "members": [
+        "book-art-b7a9cd259d8ac51a236b",
+        "older-work-hummingbird-feeder-190"
+      ],
+      "reason": "Studio manager, Oct 28 2026. The standalone Hummingbirds wall label is removed from Selected Galleries and /galleries/. older-work-hummingbird-feeder-190 (Hummingbird Feeder) is already an Older Work product and stays once. book-art-b7a9cd259d8ac51a236b (Hummingbird Friend) is a different painting — the 15 × 24 rescued hummingbird, not a twin in catalog/painting-tags.json — and is listed once on Older Work beside the feeder. It also remains in the Friends book chapter. /galleries/hummingbirds/ redirects to /gallery/older-work/."
     }
   ],
   "memberResolution": {
     "festival-burning-man": "labels354 has no members array. Filled with every product id assigned the burning-man tag and/or the festival tag in catalog/painting-tags.json, in assignment order. Studio-tracker #751 retitles the gallery Festivals and folds temples and bass-coast-sunrises in. Twin copies of one physical painting are listed once, preferring the named catalog page, then an available archive photo, over a book scan: archived-painting-19 dropped for burning-man-temple-2022-daytime; the Bass Coast sunrise copies kept as archived-painting-438; book-art-67cc9a4d5823eca2182e dropped for archived-painting-22.",
     "landscapes-by-size": "labels354 has no members array. Filled with every product id assigned the landscapes tag in catalog/painting-tags.json, in assignment order. That tag already matched catalog paintings, so related place and subject tags were not added. Studio-tracker #751 retitles the gallery Landscapes, appends the forest-triptych panels, and removes book-art-9f6386bac0e6198f6661, the book scan of rice-paddies-in-vietnam (same title; canonicalArtwork). Bounty of Satoshi is a different gallery and is not changed here.",
     "bitcoiners": "studio-tracker #751 appends the former Attendees members after the original Bitcoiners, with no twin overlap.",
-    "small-watercolors": "studio-tracker #751 appends the former Renoirs & Ridges members after the original Small Watercolors, with no twin overlap."
+    "small-watercolors": "studio-tracker #751 appends the former Renoirs & Ridges members after the original Small Watercolors, with no twin overlap.",
+    "older-work": "Hummingbirds folds in (studio manager, Oct 28 2026). The feeder is the existing Older Work product older-work-hummingbird-feeder-190. Hummingbird Friend (book-art-b7a9cd259d8ac51a236b) is added once beside it. The two are not twins, so both stay. Bitcoiners is unchanged."
   },
   "galleries": [
     {
@@ -204,18 +216,6 @@
         "older-work-forest-triptych-original-1",
         "older-work-forest-triptych-original-2",
         "older-work-forest-triptych-original-3"
-      ]
-    },
-    {
-      "id": "hummingbirds",
-      "title": "Hummingbirds",
-      "thumb": "/galleries/labels/label-hummingbirds.desktop.webp",
-      "thumbWidth": 1024,
-      "thumbHeight": 256,
-      "hero": "book-art-b7a9cd259d8ac51a236b",
-      "members": [
-        "book-art-b7a9cd259d8ac51a236b",
-        "older-work-hummingbird-feeder-190"
       ]
     }
   ]

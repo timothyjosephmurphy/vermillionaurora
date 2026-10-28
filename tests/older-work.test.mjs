@@ -8,6 +8,7 @@ const olderWork=allOlderWork.filter(p=>p.olderWork);
 import recipes from '../catalog/older-work-print-masters.json' with {type:'json'};
 import config from '../catalog/prints.json' with {type:'json'};
 import {printsFromLabel,showBuy} from '../src/data/card-commerce.mjs';
+import {olderWorkGalleryTiles,olderWorkPaintingCount} from '../src/data/older-work-gallery.mjs';
 
 test('every Older Work painting belongs to exactly one product page',()=>{
   const names=manifest.groups.flatMap(g=>g.members.map(m=>g.id+'/'+m.name+'/'+m.index));
@@ -34,7 +35,11 @@ test('Older Work masters are committed, checksummed and quote-only',()=>{
 test('Older Work gallery is linked from the gallery and shows one tile per page',()=>{
   const $=load(fs.readFileSync('dist/gallery/older-work/index.html','utf8'));
   assert.equal($('link[rel="canonical"]').attr('href'),'https://tjm.art/gallery/older-work/');
-  assert.equal($('.older-work-grid > li').length,manifest.groups.length);
+  assert.equal($('.older-work-grid > li').length,olderWorkGalleryTiles().length);
+  assert.equal(Number($('.archive-count').text().match(/\d+/)),olderWorkPaintingCount());
+  const ids=$('.older-work-grid > li').map((_,item)=>$(item).attr('data-product-id')).get();
+  assert.equal(ids.filter(id=>id==='older-work-hummingbird-feeder-190').length,1);
+  assert.equal(ids.filter(id=>id==='book-art-b7a9cd259d8ac51a236b').length,1);
   for(const p of olderWork){
     const tile=$(`[data-product-id="${p.id}"]`);
     assert.equal(tile.find(`a[href="/products/${p.id}/"]`).length,1);
