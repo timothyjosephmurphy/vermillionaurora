@@ -40,6 +40,19 @@ test('upcoming shows are the known calendar, soonest first, without invented str
   assert.ok(exhibitions.some(show => show.slug === 'living-room'));
 });
 
+test('homepage Studio 601 card shows the whole flyer', () => {
+  const home = fs.readFileSync('src/pages/index.astro', 'utf8');
+  const tag = home.match(/<img src="\/exhibitions\/studio-601-hero\.png"[^>]*>/);
+  assert.ok(tag, 'homepage exhibitions carousel uses the Studio 601 flyer');
+  assert.match(tag[0], /object-fit:\s*contain/);
+  assert.match(tag[0], /object-position:\s*center/);
+  // The exhibitions index card is a 4:3 room photograph (IMG_4532), already the
+  // same shape as that grid. contain there would not fix the homepage crop.
+  const studio = exhibitions.find(show => show.slug === 'studio-601');
+  assert.equal(studio.image, 'https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4532.jpeg');
+  assert.equal(studio.contain, undefined);
+});
+
 test('the exhibitions page lists upcoming shows and a Buttondown form above past shows', () => {
   const upcomingAt = page.indexOf('id="upcoming-heading"');
   const formAt = page.indexOf('id="exhibitions-email"');
