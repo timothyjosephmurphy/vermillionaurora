@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="7bfcba872375478aa8d9";
+export const printVersion="2d4ef81dac706ebab0a6";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -51167,8 +51167,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print",
+    "artworkTitle": "Sunset in Greece",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M9S9.99X5.51",
@@ -51192,7 +51192,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51210,8 +51210,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Black frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print — Black frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S10DD25X5DD77F1S13DD25X8DD77J1S10DD25X5DD77G1",
@@ -51235,7 +51235,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51284,8 +51284,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — White frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print — White frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S10DD25X5DD77F2S13DD25X8DD77J1S10DD25X5DD77G1",
@@ -51309,7 +51309,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51358,8 +51358,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Natural wood frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "87.00",
     "currency": "USD",
     "sku": "5M144M8S10DD25X5DD77F7S13DD25X8DD77J1S10DD25X5DD77G1",
@@ -51383,7 +51383,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51432,8 +51432,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print",
+    "artworkTitle": "Sunset in Greece",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M9S7.49X4.13",
@@ -51457,7 +51457,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51475,8 +51475,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Black frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print — Black frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S7DD75X4DD39F1S11DD37X8DD01J1S7DD75X4DD39G1",
@@ -51500,7 +51500,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51549,8 +51549,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — White frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print — White frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S7DD75X4DD39F2S11DD37X8DD01J1S7DD75X4DD39G1",
@@ -51574,7 +51574,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -51623,8 +51623,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e589c9375e23d1de4748",
-    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Natural wood frame",
-    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "title": "Sunset in Greece — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset in Greece",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S7DD75X4DD39F7S11DD37X8DD01J1S7DD75X4DD39G1",
@@ -51648,7 +51648,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
-      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "alt": "Sunset in Greece",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
     },
     "attributes": {},
@@ -115772,8 +115772,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M9S14.4X4",
@@ -115801,7 +115801,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -115818,8 +115818,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print — Black frame",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print — Black frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD22X4F1S18DD22X8J1S14DD22X4G1",
@@ -115847,7 +115847,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -115895,8 +115895,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print — White frame",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print — White frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD22X4F2S18DD22X8J1S14DD22X4G1",
@@ -115924,7 +115924,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -115972,8 +115972,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-2",
-    "title": "Painting #2 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #2",
+    "title": "Rainier from Denny Blaine at Sunrise II — Large print — Natural wood frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise II",
     "amount": "111.00",
     "currency": "USD",
     "sku": "5M144M8S14DD22X4F7S18DD22X8J1S14DD22X4G1",
@@ -116001,7 +116001,7 @@ export default {
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "width": 4191,
       "height": 1069,
-      "caption": "Painting #2"
+      "caption": "Rainier from Denny Blaine at Sunrise II"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116326,8 +116326,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M9S14.59X4.01",
@@ -116355,7 +116355,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116372,8 +116372,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print — Black frame",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print — Black frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD21X4F1S18DD21X8J1S14DD21X4G1",
@@ -116401,7 +116401,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116449,8 +116449,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print — White frame",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print — White frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S14DD21X4F2S18DD21X8J1S14DD21X4G1",
@@ -116478,7 +116478,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -116526,8 +116526,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-1",
-    "title": "Painting #1 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #1",
+    "title": "Rainier from Denny Blaine at Sunrise I — Large print — Natural wood frame",
+    "artworkTitle": "Rainier from Denny Blaine at Sunrise I",
     "amount": "111.00",
     "currency": "USD",
     "sku": "5M144M8S14DD21X4F7S18DD21X8J1S14DD21X4G1",
@@ -116555,7 +116555,7 @@ export default {
       "alt": "A panoramic mountain landscape with a person seated beside the water",
       "width": 4190,
       "height": 1012,
-      "caption": "Painting #1"
+      "caption": "Rainier from Denny Blaine at Sunrise I"
     },
     "attributes": {},
     "minimumDpi": 300,
