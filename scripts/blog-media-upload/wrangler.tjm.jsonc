@@ -1,0 +1,7 @@
+{
+  "name": "vermillion-blog-publish-upload",
+  "main": "worker-tjm.mjs",
+  "compatibility_date": "2026-10-26",
+  "workers_dev": true,
+  "r2_buckets": [{ "binding": "BLOG_MEDIA", "bucket_name": "tjm-images" }]
+}

@@ -1,0 +1,65 @@
+name: Publish blog media
+
+# Upload this branch's new display, social, and blog/<slug>/ objects to tjm-images
+# (https://img.tjm.art), then delete the temporary Worker. Does not push to main.
+# Branch protection requires a pull request and the gate check; squash-merge publishes the site.
+# Run from the story branch: gh workflow run publish-blog.yml --ref <branch>
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-blog-media
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: List blog media changed on this branch
+        id: media
+        run: |
+          git fetch origin main
+          git diff --name-only --diff-filter=ACMRT origin/main...HEAD -- static/display static/social scripts/blog-media-upload/publish-assets > /tmp/blog-media.txt
+          count=$(grep -c . /tmp/blog-media.txt || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "Blog media files ($count):"
+          cat /tmp/blog-media.txt
+      - name: Confirm the dedicated Cloudflare credential is configured
+        if: steps.media.outputs.count != '0'
+        env:
+          BLOG_UPLOAD_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: test -n "$BLOG_UPLOAD_TOKEN"
+      - uses: actions/setup-node@v4
+        if: steps.media.outputs.count != '0'
+        with:
+          node-version: '22'
+      - name: Write the prefix-limited upload manifest
+        if: steps.media.outputs.count != '0'
+        run: node scripts/publish-blog-media.mjs --write-manifest < /tmp/blog-media.txt
+      - name: Deploy temporary prefix-limited R2 uploader
+        id: uploader
+        if: steps.media.outputs.count != '0'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          workingDirectory: scripts/blog-media-upload
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.tjm.jsonc
+      - name: Upload media and verify every public object
+        if: steps.media.outputs.count != '0'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/publish-blog-media.mjs --upload
+      - name: Remove temporary uploader
+        if: always() && steps.media.outputs.count != '0' && steps.uploader.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/remove-blog-media-uploader.mjs vermillion-blog-publish-upload

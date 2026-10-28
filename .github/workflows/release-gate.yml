@@ -1,7 +1,8 @@
 name: Release gate
 
 # Tiered PR gate (required check: "gate").
-#   content  (catalog data, images, blog, static, docs): build + changed pages load.
+#   blog     (story HTML, blog index, that post's display/social files, blog upload assets): build + article check. No Playwright.
+#   content  (catalog data, images, other static, docs): build + changed pages load.
 #   code     (site code): build + unit tests + browser tests for touched areas + smoke.
 #   print-master (only prints.json/master files for existing paintings): content + 3 sampled sandbox quotes.
 #   full     (checkout, payments, workers, CI, dependencies, or manual runs): the full suite.
@@ -53,7 +54,22 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             cloudflare/test/package-lock.json
+      # Blog publishes skip the Playwright browser download inside npm ci. Other tiers keep
+      # the normal install; their later steps still install the browsers they run.
+      - name: Install dependencies without browsers
+        if: steps.changes.outputs.tier == 'blog'
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
       - name: Install dependencies
+        if: steps.changes.outputs.tier != 'blog'
         run: |
           n=0
           until npm ci; do
@@ -74,15 +90,23 @@ jobs:
             throw new Error('Unexpected production Worker configuration');
           }
           NODE
-      # Playwright browsers live in ~/.cache/ms-playwright. Key on the version
-      # `npx playwright --version` reports (the copy npm ci installed) plus the
-      # browser set, so a Chromium-only run cannot pin a cache that is missing WebKit.
-      # Install once here, before any suite that launches a browser. Always run
-      # install, including on a cache hit: WebKit on ubuntu-latest needs
-      # `install --with-deps` for system packages, which are not part of this cache.
+      - name: Confirm changed blog articles are on the index
+        if: steps.changes.outputs.tier == 'blog'
+        env:
+          CHANGED_FILES: ${{ steps.changes.outputs.files }}
+        run: |
+          node scripts/verify-blog-pages.mjs --changed
+          node --test tests/blog-card-images.test.mjs
       - name: Resolve Playwright version
         id: playwright-version
         if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
+        # Browsers live in ~/.cache/ms-playwright. Key on the version
+        # `npx playwright --version` reports (the copy npm ci installed) plus the
+        # browser set, so a Chromium-only run cannot pin a cache that is missing WebKit.
+        # Install once here, before any suite that launches a browser. Always run
+        # install, including on a cache hit: WebKit on ubuntu-latest needs
+        # `install --with-deps` for system packages, which are not part of this cache.
+        # The blog tier never reaches these steps.
         env:
           TIER: ${{ steps.changes.outputs.tier }}
           BROWSER_TESTS: ${{ steps.changes.outputs.browser_tests }}
@@ -131,7 +155,7 @@ jobs:
             sleep 8
           done
       - name: Save Playwright browsers
-        if: steps.playwright-version.outcome == 'success' && steps.playwright-cache.outputs.cache-hit != 'true' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        if: (steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full') && steps.playwright-version.outcome == 'success' && steps.playwright-cache.outputs.cache-hit != 'true' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
         continue-on-error: true
         uses: actions/cache/save@v4
         with:
