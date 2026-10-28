@@ -25,6 +25,20 @@ import SiteFooter from '../../components/SiteFooter.astro';
         </header>
         <p id="journal-status" class="journal-status" role="status" aria-live="polite">Loading stories…</p>
         <section id="journal-entries" class="journal-entries" aria-label="Stories">
+        <!-- DRAFT (studio-tracker #256): unpublished. TJ sets the publish date: replace the span with <time datetime="YYYY-MM-DD">Month D, YYYY</time> and move this card to the top. -->
+        <article class="journal-entry" data-static-story>
+          <header>
+            <h2><a href="/blog/designing-the-tag-gallery-hex-rooms/">Designing a Honeycomb Gallery, One Diagram at a Time</a></h2>
+            <span>Publish date to be set</span>
+          </header>
+          <a class="journal-image-link" href="/blog/designing-the-tag-gallery-hex-rooms/" aria-label="Read Designing a Honeycomb Gallery, One Diagram at a Time">
+            <img src="/blog/designing-the-tag-gallery-hex-rooms/banner.webp" alt="Four panels cropped from versions 1 to 4 of the tag gallery floor plan, from plain hex rooms to a pavilion with courtyards" loading="lazy" decoding="async">
+          </a>
+          <div class="journal-copy">
+            <p>How the tags on my paintings became a walkable honeycomb of hex rooms, courtyards and fountains, told through four versions of one floor plan and the change requests between them.</p>
+            <p><a href="/blog/designing-the-tag-gallery-hex-rooms/">Read the story →</a></p>
+          </div>
+        </article>
         <article class="journal-entry" data-static-story>
           <header>
             <h2><a href="/blog/el-salvador-sunrises-sunsets/">Sunrise and Sunset at Bitcoin Beach: My El Salvador Paintings</a></h2>

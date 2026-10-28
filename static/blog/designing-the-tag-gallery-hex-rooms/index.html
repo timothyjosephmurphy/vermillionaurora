@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Designing a Honeycomb Gallery, One Diagram at a Time | TJ Murphy</title>
+  <meta name="description" content="How the tags on my paintings became a walkable honeycomb of hex rooms, courtyards and fountains, told through four versions of one floor plan and the change requests between them.">
+  <link rel="canonical" href="https://tjm.art/blog/designing-the-tag-gallery-hex-rooms/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TJ Murphy">
+  <meta property="og:title" content="Designing a Honeycomb Gallery, One Diagram at a Time">
+  <meta property="og:description" content="How the tags on my paintings became a walkable honeycomb of hex rooms, courtyards and fountains, told through four versions of one floor plan and the change requests between them.">
+  <meta property="og:url" content="https://tjm.art/blog/designing-the-tag-gallery-hex-rooms/">
+  <meta property="og:image" content="https://tjm.art/blog/designing-the-tag-gallery-hex-rooms/social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Four panels cropped from versions 1 to 4 of the tag gallery floor plan, from plain hex rooms to a pavilion with courtyards">
+  <!-- DRAFT: add article:published_time when TJ sets the publish date -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Designing a Honeycomb Gallery, One Diagram at a Time">
+  <meta name="twitter:description" content="How the tags on my paintings became a walkable honeycomb of hex rooms, courtyards and fountains, told through four versions of one floor plan and the change requests between them.">
+  <meta name="twitter:image" content="https://tjm.art/blog/designing-the-tag-gallery-hex-rooms/social.jpg">
+  <meta name="theme-color" content="#f5f0e8">
+  <link href="/fonts/fonts.css" rel="stylesheet">
+  <style>
+    :root{--paper:#f5f0e8;--ink:#2c2924;--muted:#6f685e;--red:#9c3e32;--line:#d8cfc2;--gold:#c5a46d}
+    *{box-sizing:border-box}
+    html{background:var(--paper)}
+    body{margin:0;color:var(--ink);font:16px/1.78 Inter,system-ui,sans-serif;background:radial-gradient(ellipse at 80% 0%,#eadfcf 0,transparent 34rem),var(--paper)}
+    a{color:inherit}
+    .topbar{max-width:1200px;margin:auto;padding:24px clamp(20px,5vw,68px);display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase}
+    .topbar a{text-decoration:none}.brand{font-weight:600;color:var(--red)}
+    .hero{max-width:1000px;margin:auto;padding:clamp(56px,9vw,112px) 24px 56px;text-align:center}
+    h1,h2{font-family:"Cormorant Garamond",Georgia,serif}
+    h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:500;line-height:.98;letter-spacing:-.035em;max-width:900px;margin:0 auto 26px}
+    .byline{color:var(--muted);font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;margin:0}
+    .article{max-width:808px;padding:0 24px 100px;margin:auto}
+    h2{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;font-weight:500;margin:64px 0 22px;letter-spacing:-.02em}
+    p{margin:0 0 1.25em}
+    .article p a{color:var(--red);text-underline-offset:3px}
+    figure.photo{margin:36px 0;background:#e9e0d4}
+    figure.photo img{display:block;width:100%;height:auto}
+    figure.photo.portrait img{width:auto;max-width:100%;max-height:82vh;margin:auto}
+    footer{border-top:1px solid var(--line);max-width:1200px;margin:auto;padding:28px 24px 42px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:.78rem}
+    @media(max-width:700px){.topbar{padding:17px 20px}.hero{padding:56px 20px 40px}.article{padding:0 19px 66px}figure.photo{margin:28px -19px}footer{padding:22px 20px;flex-direction:column}}
+    figure.photo{max-width:50%;margin-left:auto;margin-right:auto}
+    @media(max-width:640px){figure.photo{max-width:none;margin-left:-19px;margin-right:-19px}}
+    .photo-row{display:grid;gap:14px;margin:36px auto;max-width:720px;align-items:center}.photo-row-2{grid-template-columns:repeat(2,1fr)}.photo-row-3{grid-template-columns:repeat(3,1fr)}.photo-row figure.photo{max-width:none;margin:0}.photo-row figure.photo img,.photo-row figure.photo.portrait img{width:100%;max-height:none}
+    @media(max-width:640px){.photo-row{gap:8px;margin:28px 0}.photo-row-3{grid-template-columns:repeat(2,1fr)}.photo-row figure.photo{margin:0}}
+    @media(max-width:360px){.photo-row-3{grid-template-columns:1fr}}
+      figure.plan{max-width:none;margin:36px 0}figure.plan img{border:1px solid var(--line)}figure.banner{max-width:none;margin:0 0 44px}
+    figcaption{padding:10px 14px;font-size:.82rem;line-height:1.5;color:var(--muted);background:var(--paper)}
+    .step{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--red);margin:0 0 6px}
+    blockquote{margin:24px 0;padding:4px 0 4px 20px;border-left:3px solid var(--gold);color:#4a443b}blockquote p{margin:0 0 .6em}
+    @media(max-width:640px){figure.plan{margin:28px -19px}}
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Article navigation"><a class="brand" href="/">TJM.art · Vermillion Aurora Productions</a><a href="/blog/">← Stories from the studio</a></nav>
+  <header class="hero">
+    <h1>How I Etched a Brass Plate with a Silhouette Cameo and Ferric Chloride</h1>
+    <p class="byline">By TJ Murphy · <span>PUBLISH DATE TBD (TJ to set)</span></p>
+  </header>
+  <main class="article">
+    <figure class="photo banner"><img src="/blog/designing-the-tag-gallery-hex-rooms/banner.webp" alt="Four panels cropped from versions 1 to 4 of the tag gallery floor plan, from plain hex rooms to a pavilion with courtyards" width="1600" height="800" decoding="async"></figure>
+    <p>I tag every painting I make: where it was painted, who is in it, what it's about. A while ago I started wondering if those tags could become the floor plan of a gallery. Mexico paintings in one room, Burning Man in another, and rooms whose tags overlap sitting next to each other, so walking from one to the next feels natural.</p>
+    <p>There is no 3D build yet. I asked for a labeled, high-resolution diagram first, and we went through four versions of it before I was happy. Here is each version, with the notes I gave between them.</p>
+    <h2>Version 1: a honeycomb sorted by tags</h2>
+    <p class="step">My first request</p>
+    <blockquote>
+      <p>Hexagonal rooms in different sizes, clustered by how much their tags overlap. Treat it as an optimization: put paintings with related tags as close together as possible. A room can hold more than one related tag. The whole thing should be a loop with no dead ends. Add a minimap that shows where the player is. And before anything gets built, show me a labeled diagram at full resolution.</p>
+    </blockquote>
+    <p>Here's how the plan works, in plain words. Every pair of tags gets a score for how often they show up on the same paintings. Festival and Bass Coast share a lot, while Mexico and Seattle share almost nothing. Tags that score high together are grouped into rooms, so one room can be "Burning Man, Festival, Burning Man Temple 2022" instead of three thin rooms. Then the rooms are shuffled around a honeycomb with simulated annealing: start with a random arrangement and keep trying small swaps. A swap that puts similar rooms next to each other is kept, a few bad swaps are accepted early so it doesn't get stuck, and it gets pickier as it cools.</p>
+    <figure class="photo plan"><img src="/blog/designing-the-tag-gallery-hex-rooms/plan-v1.webp" alt="Version 1 of the floor plan: hex rooms of different sizes joined by short corridors around an entrance hall" width="1800" height="1054" loading="lazy" decoding="async"><figcaption>Version 1. Hex rooms clustered by tag, joined by corridors, with an entrance hall for the gates and checkout.</figcaption></figure>
+    <h2>Version 2: light and airy</h2>
+    <p class="step">My notes on v1</p>
+    <blockquote>
+      <p>It works, but it feels like a maze of closed boxes. I want it light and airy: open-air courtyards with fountains set between the rooms, open colonnade hallways that look into them, and high ceilings. Take each room's wall colour from its own paintings and put a centerpiece in the middle of every room. Make the middle a central pavilion with the checkout and the gates to my other galleries, plus a "coming soon" gate for a future concert hall. Hang triptychs in one row, in order, and the four Burning Man Temple paintings as a 2x2 grid. No blank walls anywhere, and let rooms grow or shrink with how many paintings they hold.</p>
+    </blockquote>
+    <p>The wall colour for each room is a light tint of the strongest colour that keeps showing up across its paintings. Hallway windows look into the courtyards, so the room walls stay free for art.</p>
+    <figure class="photo plan"><img src="/blog/designing-the-tag-gallery-hex-rooms/plan-v2.webp" alt="Version 2 of the floor plan: a central pavilion with rooms and open-air courtyards in a honeycomb" width="1800" height="1259" loading="lazy" decoding="async"><figcaption>Version 2. A central pavilion, rooms tinted from their paintings, and courtyards with fountains between them.</figcaption></figure>
+    <h2>Version 3: courtyards you can walk through</h2>
+    <p class="step">My notes on v2</p>
+    <blockquote>
+      <p>The courtyards are nice to look at, but I want to use them. Let me step out between the columns, walk around the fountains, and cut across to the other side.</p>
+    </blockquote>
+    <p>So each courtyard got a fountain with a ring path around it, paths out to every colonnade edge, and planting beds tucked into the corners away from the paths. The pavilion sits in the centre with six courtyards around it and twelve rooms in an outer ring, each room sized to its paintings.</p>
+    <figure class="photo plan"><img src="/blog/designing-the-tag-gallery-hex-rooms/plan-v3.webp" alt="Version 3 of the floor plan: pavilion ringed by six walkable courtyards and twelve rooms" width="1800" height="1194" loading="lazy" decoding="async"><figcaption>Version 3. Walkable courtyards around the pavilion, with twelve rooms in an outer ring.</figcaption></figure>
+    <h2>Version 4: tighter, and the murals come outside</h2>
+    <p class="step">My notes on v3</p>
+    <blockquote>
+      <p>This looks pretty good, but the walk from the pavilion out to the rooms is too long and the inner courtyards are bigger than they need to be. Shrink them, let the room walls touch each other, and shorten the walk. I also want my two murals outside, each on its own courtyard wall at full size: the Friends Club mural with the festival rooms, and the cormorant garden mural with the animal rooms. Run the Neural Dance simulation as a live projection near the festival rooms. And put the brass plaques next to the murals, enlarged by the same amount so the text is readable.</p>
+    </blockquote>
+    <p>The pavilion became an outer ring of columns with an inner round wall that holds the gates. The Friends Club plate goes beside its mural, and the cormorant label and the eagle plate go by the cormorant mural. The photos of the plaques were taken at an angle, so they were cropped and straightened first, then enlarged 3x, all by the same amount so they keep their real proportions. At 3x the smallest lines on a plate are about 12 mm tall in the gallery, which is easy to read from a normal standing distance, and they hang at eye height.</p>
+    <figure class="photo plan"><img src="/blog/designing-the-tag-gallery-hex-rooms/plan-v4.webp" alt="Version 4 of the floor plan: tighter courtyards, touching rooms, murals and plaques outside" width="1800" height="1223" loading="lazy" decoding="async"><figcaption>Version 4. Smaller inner courtyards, rooms that touch, and the two murals with their plaques on courtyard walls.</figcaption></figure>
+    <p>The numbers moved the right way:</p>
+    <ul>
+      <li>Average walk from the pavilion to a room: 24.2 m, down from 34.3 m in v3.</li>
+      <li>Dead ends: 0. Every route is part of a loop.</li>
+      <li>Blank room-wall segments: 0 of 95.</li>
+    </ul>
+    <h2>What's next</h2>
+    <p>The next step is to walk it. Once I sign off on the tags and the diagram, this plan becomes a 3D gallery you can explore, with the minimap, the gates, and every painting at its true size. I'll share it when it's ready.</p>
+    <p>You can see more of my work at <a href="https://tjm.art">tjm.art</a>.</p>
+    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <section class="email-signup" aria-labelledby="blog-email-heading"><h2 id="blog-email-heading">Studio notes by email</h2><p>New paintings go to subscribers first, a few times a year. Unsubscribe anytime.</p><form action="https://buttondown.com/api/emails/embed-subscribe/timothyjosephmurphy" method="post" target="_blank" class="email-signup-form"><label for="blog-email">Email address</label><div class="email-signup-row"><input type="email" name="email" id="blog-email" autocomplete="email" required placeholder="you@example.com"><input type="hidden" name="embed" value="1"><button type="submit" class="button button-solid">Subscribe</button></div></form></section>
+    <style>.email-signup{max-width:640px;margin:48px auto;padding:24px;border:1px solid var(--line,#d7ccba);border-radius:12px;background:#fffcf6}.email-signup h2{margin:0 0 8px;font-size:1.8rem}.email-signup p{margin:0 0 14px;line-height:1.6}.email-signup label{display:block;font-size:.8rem;margin-bottom:6px}.email-signup-row{display:flex;gap:10px;flex-wrap:wrap}.email-signup input[type=email]{flex:1 1 220px;min-height:44px;padding:10px 12px;border:1px solid #cdbfae;border-radius:6px;font:inherit}</style>
+  </main>
+  <footer><span>© Vermillion Aurora Productions</span><a href="/blog/">Back to Stories from the Studio</a></footer>
+</body>
+</html>
