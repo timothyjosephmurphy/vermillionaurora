@@ -2,9 +2,12 @@
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import {olderWorkGroups,olderWorkTitle,olderWorkPreview,olderWorkAlt,originalPrice} from '../../../catalog/older-work-products.mjs';
+import {olderWorkGalleryTiles,olderWorkPaintingCount} from '../../data/older-work-gallery.mjs';
 import {byId} from '../../../catalog/catalog.mjs';
 import {printsFromLabel,showBuy} from '../../data/card-commerce.mjs';
-const count=olderWorkGroups.reduce((n,g)=>n+g.members.length,0);
+const tiles=olderWorkGalleryTiles();
+const count=olderWorkPaintingCount(tiles);
+const sets=tiles.length;
 import {catalogVersion} from '../../../catalog/catalog.mjs';
 const description='Older paintings by TJ Murphy: portraits, landscapes and studies, shown in the groups they were photographed in, with fine-art prints.';
 ---
@@ -22,16 +25,24 @@ const description='Older paintings by TJ Murphy: portraits, landscapes and studi
   <nav class="archive-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a><span>/</span><span aria-current="page">Older Work</span></nav>
   <header class="archive-intro"><p class="eyebrow dark">From the studio</p><h1>Older Work</h1>
     <p>Portraits, landscapes and studies from earlier years. Paintings photographed together are shown together, each set on one page. Originals and fine-art prints are available.</p>
-    <p class="archive-count">{count} paintings in {olderWorkGroups.length} {olderWorkGroups.length===1?'set':'sets'}</p>
+    <p class="archive-count">{count} paintings in {sets} {sets===1?'set':'sets'}</p>
   </header>
   <ul class="archive-grid older-work-grid" aria-label="Older Work">
-    {olderWorkGroups.map((g,i)=>{const p=byId[g.id],prints=printsFromLabel(p),buy=showBuy(p);return <li class="archive-card card-tile" data-product-id={g.id} data-prints-from={prints||undefined} data-buy={buy?'true':'false'}>
-      <a href={`/products/${g.id}/`}>
-        <div class="archive-image"><img src={olderWorkPreview(g,480)} srcset={[480,960,1600].map(w=>`${olderWorkPreview(g,w)} ${w}w`).join(', ')} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 960px) 45vw, 30vw" width={g.preview?.width??g.master.widthPx} height={g.preview?.height??g.master.heightPx} alt={olderWorkAlt(g)} loading={i<3?'eager':'lazy'} decoding="async"/></div>
-        <div class="archive-caption"><h2>{olderWorkTitle(g)}</h2>{g.members.length>1&&<p>{g.members.length} paintings</p>}
-          <p class="card-buy-row">{prints?<span class="card-prints-from">{prints}</span>:<span class="card-prints-from">{(()=>{const ps=g.members.map(originalPrice).filter(Boolean).map(x=>Number(x.amount));return ps.length?(g.members.length===1?`Original $${ps[0]}`:`Originals from $${Math.min(...ps)}`):'';})()}</span>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>Buy</span></p></div>
+    {tiles.map((tile,i)=>{
+      const group=tile.kind==='group'?tile.group:null;
+      const p=group?byId[group.id]:tile.product;
+      const prints=printsFromLabel(p),buy=showBuy(p);
+      const priceNote=group?(()=>{const ps=group.members.map(originalPrice).filter(Boolean).map(x=>Number(x.amount));return ps.length?(group.members.length===1?`Original $${ps[0]}`:`Originals from $${Math.min(...ps)}`):'';})():'';
+      return <li class="archive-card card-tile" data-product-id={p.id} data-prints-from={prints||undefined} data-buy={buy?'true':'false'}>
+      <a href={`/products/${p.id}/`}>
+        <div class="archive-image">{group
+          ? <img src={olderWorkPreview(group,480)} srcset={[480,960,1600].map(w=>`${olderWorkPreview(group,w)} ${w}w`).join(', ')} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 960px) 45vw, 30vw" width={group.preview?.width??group.master.widthPx} height={group.preview?.height??group.master.heightPx} alt={olderWorkAlt(group)} loading={i<3?'eager':'lazy'} decoding="async"/>
+          : <img src={p.image.src} width={p.image.width} height={p.image.height} alt={p.image.alt||p.title} loading={i<3?'eager':'lazy'} decoding="async"/>}
+        </div>
+        <div class="archive-caption"><h2>{group?olderWorkTitle(group):p.title}</h2>{group&&group.members.length>1&&<p>{group.members.length} paintings</p>}
+          <p class="card-buy-row">{prints?<span class="card-prints-from">{prints}</span>:<span class="card-prints-from">{priceNote}</span>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>Buy</span></p></div>
       </a>
-    </li>})}
+    </li>;})}
   </ul>
   <p class="archive-back"><a href="/gallery/">← Return to the main gallery</a></p>
 </main><SiteFooter/></div>
