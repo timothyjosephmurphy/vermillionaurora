@@ -698,16 +698,20 @@
    "bitcoiners"
   ],
   "book-art-c04c7e48687fe35e65f5": [
-   "bitcoiners"
+   "bitcoiners",
+   "el-salvador"
   ],
   "book-art-d6e03f6907615dac3797": [
-   "bitcoiners"
+   "bitcoiners",
+   "bounty-of-satoshi"
   ],
   "book-art-ec22daff29e72f16eb76": [
-   "bitcoiners"
+   "bitcoiners",
+   "bounty-of-satoshi"
   ],
   "book-art-43a3f16ac35df7262254": [
-   "bitcoiners"
+   "bitcoiners",
+   "bounty-of-satoshi"
   ],
   "book-art-e4bbfe556c3c847d9c90": [
    "bitcoiners"
@@ -722,16 +726,19 @@
    "bitcoiners"
   ],
   "book-art-4d53927ad111f0259402": [
-   "bitcoiners"
+   "bitcoiners",
+   "el-salvador"
   ],
   "book-art-4afb5cab4bdbe1ff6845": [
-   "bitcoiners"
+   "bitcoiners",
+   "el-salvador"
   ],
   "book-art-b57fc2205e7bce68d524": [
    "bitcoiners"
   ],
   "book-art-b38b9ae1893908d604da": [
-   "bitcoiners"
+   "bitcoiners",
+   "el-salvador"
   ],
   "book-art-1fb8762b7bf8fce0d0f9": [
    "brekkie-bitcoin-b",
@@ -747,10 +754,12 @@
    "bitcoiners"
   ],
   "book-art-504e3fafdacd7c9bbcd0": [
-   "bitcoiners"
+   "bitcoiners",
+   "cape-town"
   ],
   "book-art-4a0bb9cdd6c404c4e77c": [
-   "bitcoiners"
+   "bitcoiners",
+   "cape-town"
   ],
   "book-art-0ee2717bc04e65d0507e": [
    "bitcoiners"
@@ -1001,7 +1010,8 @@
    "bitcoiners"
   ],
   "painting-lightburst": [
-   "bounty-of-satoshi"
+   "bounty-of-satoshi",
+   "bitcoiners"
   ],
   "hope-the-vermillion-aurora": [
    "bitcoiners"
