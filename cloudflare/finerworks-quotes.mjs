@@ -8,7 +8,7 @@ import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
 import {quoteFramedSelections} from './finerworks-framing.mjs';
 import {sameFrame} from '../catalog/framing.mjs';
-import {EDITION_LAYOUT,BORDERED_LAYOUT,BORDERED_BORDER_IN} from '../catalog/edition-layout.mjs';
+import {EDITION_LAYOUT,LEGACY_EDITION_LAYOUT,BORDERED_LAYOUT,BORDERED_BORDER_IN} from '../catalog/edition-layout.mjs';
 // No order creation, payment, email or Shippo calls. Wholesale totals remain server-side.
 const codePattern=/^(\d+)M(\d+)M(\d+)S(\d+(?:\.\d+)?)X(\d+(?:\.\d+)?)$/;
 const clean=(value,max,required=true)=>{
@@ -35,7 +35,8 @@ export function groupPrintProducts(items,po) {
     if(!item||typeof item.id!=='string'||ids.has(item.id)||item.provider!=='finerworks'||!codePattern.test((item.mat?item.baseSku:item.sku)||'')||!/^[A-Za-z0-9._-]{1,160}$/.test(item.sku||'')||!Number.isSafeInteger(item.quantity)||item.quantity<1||item.quantity>10)throw Error('Invalid FinerWorks print selection');
     ids.add(item.id);
     const [, , , ,w,h]=(item.mat?item.baseSku:item.sku).match(codePattern);
-    const inset=item.layout===EDITION_LAYOUT&&item.sizeBasis==='image-proportional'&&item.layoutApproved===true;
+    // Paid orders stay on the 1/8 inch sheet (v1). New sales use the 1 inch sheet (v2). Both embed white inside the style 8 file, so the image is smaller than the paper code.
+    const inset=(item.layout===EDITION_LAYOUT||item.layout===LEGACY_EDITION_LAYOUT)&&item.sizeBasis==='image-proportional'&&item.layoutApproved===true;
     const imageFits=inset?[item.imageSize?.width,item.imageSize?.height].every(n=>Number.isFinite(n)&&n>0)&&item.imageSize.width<Number(w)&&item.imageSize.height<Number(h):Number(w)===item.imageSize?.width&&Number(h)===item.imageSize?.height;
     if(borderedItem(item)){
       // FinerWorks adds the outer border: the product code names the print size and the sheet is 1" larger.
