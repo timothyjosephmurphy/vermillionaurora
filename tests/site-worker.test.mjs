@@ -18,11 +18,38 @@ test('nothing moves while the flag is off, except www.tjm.art to the apex',()=>{
   assert.equal(loc('https://tjm.art/about/',on),null);
   assert.deepEqual(loc('https://www.tjm.art/commissions/?a=1',off),[301,'https://tjm.art/commissions/?a=1']);
 });
-test('the retired gallery room soft-points at the hex gallery; /play/ is not cut (studio-tracker #771)', async () => {
+test('production /play entry is the hex gallery; Quake files and R2 covers stay put', async () => {
   const { GALLERY_3D_URL } = await import('../src/data/gallery-entry.mjs');
-  const env = { ...off, ASSETS: { fetch: r => new Response('asset:' + new URL(r.url).pathname) } };
-  assert.equal(await (await worker.fetch(new Request('https://tjm.art/play/'), env)).text(), 'asset:/play/');
+  const { HEX_PLAY_ORIGIN } = await import('../worker/play-gallery.mjs');
+  assert.equal(GALLERY_3D_URL, 'https://tjm.art/play/');
+  const seen = [];
+  const env = {
+    ...off,
+    ASSETS: { fetch: r => new Response('asset:' + new URL(r.url).pathname, { status: new URL(r.url).pathname.startsWith('/play/pbr/') ? 404 : 200 }) },
+    HEX_FETCH: async (input, init) => {
+      const href = typeof input === 'string' ? input : input.url;
+      seen.push([href, init?.redirect]);
+      if (String(href).endsWith('/play/index.html')) {
+        return new Response(null, { status: 302, headers: { location: HEX_PLAY_ORIGIN + '/play/?from=index' } });
+      }
+      return new Response('hex-body', { status: 200, headers: { 'content-type': 'text/html; charset=utf-8', 'content-encoding': 'gzip', 'content-length': '99' } });
+    },
+  };
+  const entry = await worker.fetch(new Request('https://tjm.art/play/?key=layout'), env);
+  assert.equal(entry.status, 200);
+  assert.equal(await entry.text(), 'hex-body');
+  assert.equal(entry.headers.get('content-encoding'), null);
+  assert.deepEqual(seen[0], [HEX_PLAY_ORIGIN + '/play/?key=layout', 'manual']);
+  assert.equal(await (await worker.fetch(new Request('https://tjm.art/play'), env)).text(), 'hex-body');
+  const rewritten = await worker.fetch(new Request('https://tjm.art/play/index.html'), env);
+  assert.equal(rewritten.status, 302);
+  assert.equal(rewritten.headers.get('location'), 'https://tjm.art/play/?from=index');
   assert.equal(await (await worker.fetch(new Request('https://tjm.art/play/orsay/'), env)).text(), 'asset:/play/orsay/');
+  assert.equal(await (await worker.fetch(new Request('https://tjm.art/play/to-cart.html?from=tags&items=a'), env)).text(), 'asset:/play/to-cart.html');
+  assert.equal(await (await worker.fetch(new Request('https://tjm.art/play/pbr/floor_diff.webp'), env)).text(), 'hex-body');
+  const holo = await worker.fetch(new Request('https://tjm.art/play/holo/still.jpg?v=1'), env);
+  assert.equal(holo.status, 301);
+  assert.equal(holo.headers.get('Location'), 'https://img.tjm.art/play/holo/still.jpg?v=1');
   for (const path of ['/gallery/room/', '/gallery/room']) {
     const r = await worker.fetch(new Request('https://tjm.art' + path + '?from=home'), env);
     assert.equal(r.status, 301, path);
@@ -32,6 +59,7 @@ test('the retired gallery room soft-points at the hex gallery; /play/ is not cut
   const rules = fs.readFileSync('static/_redirects', 'utf8').split('\n').map(l => l.trim().split(/\s+/)).filter(l => l[0] && !l[0].startsWith('#'));
   for (const path of ['/gallery/room/', '/gallery/room']) assert.deepEqual(rules.find(l => l[0] === path)?.slice(1), [GALLERY_3D_URL, '301']);
   for (const path of ['/play', '/play/', '/play/index.html']) assert.equal(rules.find(l => l[0] === path), undefined, path);
+  assert.equal(rules.some(l => (l[1] || '').includes('tjm-tag-gallery-preview.pages.dev')), false);
 });
 test('other requests are served by the assets binding',async()=>{
   const env={...off,ASSETS:{fetch:r=>new Response('asset:'+new URL(r.url).pathname)}};
@@ -120,7 +148,7 @@ const workerFirst=async()=>{
   return config.assets.run_worker_first;
 };
 test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
-  const {QUICKBOOKS_API,TESTIMONIALS_API,TESTIMONIALS_PAGE,NEWSLETTER_PATHS,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX,CATALOG_WORKER_FIRST,CART_API,STICKERS_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
+  const {QUICKBOOKS_API,TESTIMONIALS_API,TESTIMONIALS_PAGE,NEWSLETTER_PATHS,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX,CATALOG_WORKER_FIRST,CART_API,STICKERS_API,SHOP_REDIRECTS,PLAY_WORKER_FIRST}=await import('../worker/site.mjs');
   const patterns=await workerFirst();
   assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
   assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
@@ -128,10 +156,11 @@ test('run_worker_first lists exactly the routes the Worker serves, so static fil
   // Every route the Worker handles runs the Worker first.
   for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',...TESTIMONIALS_PAGE,...NEWSLETTER_PATHS,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'tj'])assert.ok(matches(path),path+' must run the Worker');
   // Every pattern is a route the Worker actually handles (no stray patterns).
-  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',STICKERS_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'*',TESTIMONIALS_API+'*',...TESTIMONIALS_PAGE,...NEWSLETTER_PATHS,...CATALOG_WORKER_FIRST]);
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',STICKERS_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'*',TESTIMONIALS_API+'*',...TESTIMONIALS_PAGE,...NEWSLETTER_PATHS,...CATALOG_WORKER_FIRST,...PLAY_WORKER_FIRST]);
   for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.
+  for(const path of ['/play','/play/','/play/assets/index.js','/play/orsay/'])assert.ok(matches(path),path+' must run the Worker');
   for(const path of ['/about/','/_astro/index.abc.css','/display/a-123-160.webp','/gallery-images/a.jpg','/product-media/el-zonte/room-1-2400.webp','/robots.txt','/sitemap.xml','/catalog/version.json','/print-editions/a.jpg','/print-masters/a.jpg','/quickbooks/','/quickbooks/disconnected/','/testimonials/api','/testimonial-manager/','/originals-manager/','/inventory/','/.well-known/security.txt','/favicon.ico','/site.webmanifest','/404.html','/nope/'])assert.ok(!matches(path),path+' must not invoke the Worker');
 });
 test('assets keep their routing settings and the service binding is unchanged',async()=>{

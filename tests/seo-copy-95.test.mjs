@@ -65,13 +65,13 @@ test('/play shell title and start-screen H1 use gallery wording', () => {
   assert.equal(manifest.short_name, 'TJM Gallery');
 });
 
-test('dungeon wording is gone from buyer return chips; 3D gallery returns use the hex soft-point (studio-tracker #771)', () => {
+test('dungeon wording is gone from buyer return chips; 3D gallery returns use production /play/', () => {
   const hex = { show: true, label: '← Back to 3D gallery', href: GALLERY_3D_URL };
-  const previewId = new URL(GALLERY_3D_URL).hostname.split('.')[0];
   const hidden = { show: false, label: '← Back to the gallery', href: '/gallery/' };
-  assert.equal(previewId, 'preview-251');
+  assert.equal(GALLERY_3D_URL, 'https://tjm.art/play/');
+  assert.doesNotMatch(GALLERY_3D_URL, /pages\.dev|preview-251/);
   assert.deepEqual(playReturn({ search: '?from=tags' }), hex);
-  assert.deepEqual(playReturn({ search: `?from=${previewId}` }), hex);
+  assert.deepEqual(playReturn({ search: '?from=preview-251' }), hex);
   assert.deepEqual(playReturn({ search: '?from=tags', playState: true, referrer: 'https://tjm.art/play/' }), hex);
   assert.deepEqual(playReturn({ search: '?from=play', playState: true }), hex);
   assert.deepEqual(playReturn({ search: '?from=play' }), hex);
@@ -82,8 +82,9 @@ test('dungeon wording is gone from buyer return chips; 3D gallery returns use th
   assert.deepEqual(playReturn({ referrer: 'https://tjm.art/gallery/' }), hidden);
   assert.deepEqual(playReturn({ search: '?from=home' }), hidden);
   for (const visit of [{ search: '?from=tags' }, { search: '?from=play' }, { playState: true }, { referrer: 'https://tjm.art/play/' }]) {
-    assert.equal(playReturn(visit).href, GALLERY_3D_URL);
+    assert.equal(playReturn(visit).href, 'https://tjm.art/play/');
     assert.notEqual(playReturn(visit).href, '/play/?resume=1');
+    assert.doesNotMatch(playReturn(visit).href, /pages\.dev/);
   }
   const layout = fs.readFileSync('src/layouts/ProductLayout.astro', 'utf8');
   assert.match(layout, /← Back to the gallery/);
@@ -104,6 +105,8 @@ test('dungeon wording is gone from buyer return chips; 3D gallery returns use th
   for (const post of ['static/blog/my-week-in-art-oct-11-17-2026/index.html', 'static/blog/3d-gallery-to-relay-gate/index.html', 'static/blog/el-salvador-sunrises-sunsets/index.html']) {
     const html = fs.readFileSync(post, 'utf8');
     assert.match(html, new RegExp(GALLERY_3D_LABEL), post);
+    assert.ok(html.includes(GALLERY_3D_URL), post);
+    assert.doesNotMatch(html, /tjm-tag-gallery-preview\.pages\.dev/, post);
     assert.doesNotMatch(html, /step into the dungeon|take me to the dungeon/i, post);
   }
 });
