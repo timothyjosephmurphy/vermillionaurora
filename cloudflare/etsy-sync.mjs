@@ -203,8 +203,9 @@ export async function etsyListingAdmin(request, env, session, now = Date.now()) 
     return reconcileOriginals(env, token, record, {dryRun: input.dryRun !== false});
   }
   const works = requested(input);
-  if (path === '/etsy/listings/verify') return verify(env, token, record, works, input.kind);
   const kind = kindOf(input);
+  if (kind === 'print' && works.some(work => !work.variants?.length)) throw Error('Prints are held until the 1 inch margin has a FinerWorks quote.');
+  if (path === '/etsy/listings/verify') return verify(env, token, record, works, input.kind);
   if (path === '/etsy/listings/activate') return activate(env, token, record, works, kind);
   const setup = await shopSetup(env, token);
   let sync = indexOf(record);

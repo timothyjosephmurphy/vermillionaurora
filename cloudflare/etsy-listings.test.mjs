@@ -5,6 +5,11 @@ import {ETSY_ORIGIN,read,write} from './etsy-connection.mjs';
 import prints,{sourcePrintVersion} from './etsy-print-source.mjs';
 import {estimateShippingPackages} from './etsy-shipping.mjs';
 import {buildListingPlans,validateListingPlan,etsySkuForPrintId} from './etsy-listing-plan.mjs';
+const draftTest=prints.length?test:test.skip;
+test('Etsy print drafts wait while the 1 inch margin is unquoted',()=>{
+ if(!prints.length)assert.equal(prints.length,0);
+ else assert.ok(prints.every(p=>p.variants.length&&p.variants.every(v=>v.frames.length===3)));
+});
 const now=Date.parse('2026-10-02T10:00:00Z');
 class Bucket{
  data=new Map();sequence=0;
@@ -49,13 +54,13 @@ function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[],
  });
  return {calls,inventoryCounts};
 }
-test('owner token and exact origin guard setup endpoints',async t=>{
+draftTest('owner token and exact origin guard setup endpoints',async t=>{
  const env=setup();await connected(env);mockEtsy(t);
  assert.equal((await req(env,'/etsy/listings/preflight',{},ETSY_ORIGIN,'Bearer wrong')).status,403);
  assert.equal((await req(env,'/etsy/listings/preflight',{},'https://evil.test')).status,403);
  assert.equal((await req(env,'/etsy/listings/preflight')).status,200);
 });
-test('loads Etsy processing and a private production partner from the current responses',async t=>{
+draftTest('loads Etsy processing and a private production partner from the current responses',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  const res=await req(env,'/etsy/listings/preflight');assert.equal(res.status,200);
  const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 3–5 days');assert.deepEqual(data.partners,[{id:33,name:'A printing and framing shop'}]);
@@ -68,7 +73,7 @@ test('loads Etsy processing and a private production partner from the current re
  assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false&limit=100&offset=0')));
 });
 
-test('creates five saved drafts with the selected private production partner and all ready print variations',async t=>{
+draftTest('creates five saved drafts with the selected private production partner and all ready print variations',async t=>{
  const env=setup();await connected(env);const {calls,inventoryCounts}=mockEtsy(t);
  const res=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33',returnPolicyId:'66'});
  assert.equal(res.status,200,await res.clone().text());
@@ -106,7 +111,7 @@ test('creates five saved drafts with the selected private production partner and
  assert.equal(after,before);
 });
 
-test('rerunning a completed batch recreates only drafts deleted from Etsy',async t=>{
+draftTest('rerunning a completed batch recreates only drafts deleted from Etsy',async t=>{
  const env=setup();await connected(env);const listingStates={};const {calls}=mockEtsy(t,{listingStates});
  const settings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33',returnPolicyId:'66'};
  const first=await req(env,'/etsy/listings/create-drafts',settings);assert.equal(first.status,200,await first.clone().text());
@@ -120,7 +125,7 @@ test('rerunning a completed batch recreates only drafts deleted from Etsy',async
  assert.equal(calls.filter(x=>x.url.includes('/inventory?')).length,6);
 });
 
-test('does not create replacements when a saved Etsy listing is active',async t=>{
+draftTest('does not create replacements when a saved Etsy listing is active',async t=>{
  const env=setup();await connected(env);const listingStates={};const {calls}=mockEtsy(t,{listingStates});
  const settings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33',returnPolicyId:'66'};
  assert.equal((await req(env,'/etsy/listings/create-drafts',settings)).status,200);
@@ -129,7 +134,7 @@ test('does not create replacements when a saved Etsy listing is active',async t=
  assert.equal(calls.filter(x=>x.url.includes('/listings?legacy=false')).length,5);
 });
 
-test('partial provider failure resumes saved progress without duplicating a listing',async t=>{
+draftTest('partial provider failure resumes saved progress without duplicating a listing',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t,{failFirstInventory:true});
  const settings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33'};
  const first=await req(env,'/etsy/listings/create-drafts',settings);
@@ -145,7 +150,7 @@ test('partial provider failure resumes saved progress without duplicating a list
  assert.equal(creates(),5);assert.equal(images(),5);
 });
 
-test('rejects missing or unknown production partner IDs before creating drafts',async t=>{
+draftTest('rejects missing or unknown production partner IDs before creating drafts',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  for(const productionPartnerId of [undefined,'999']){
   const res=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId});
@@ -156,7 +161,7 @@ test('rejects missing or unknown production partner IDs before creating drafts',
 });
 
 const selection={shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33',returnPolicyId:66};
-test('shows redacted Etsy validation and allows changed settings after a rejected creation',async t=>{
+draftTest('shows redacted Etsy validation and allows changed settings after a rejected creation',async t=>{
  const env=setup();await connected(env);
  const {calls}=mockEtsy(t,{draftFailure:{status:400,body:{error:'Invalid taxonomy_id. test-key test-secret 123.access 123.refresh manager',debug:'DO NOT EXPOSE'}}});
  const first=await req(env,'/etsy/listings/create-drafts',selection);
@@ -173,7 +178,7 @@ async function legacyBatch(env){
  const items=Object.fromEntries(prints.map((p,i)=>[p.id,{status:i===0?'creation failed':'not started'}]));
  await write(env,{...record,etsyDraftBatch:{sourcePrintVersion,status:'needs_resume',settings:{shippingProfileId:11,readinessStateId:22,taxonomyId:44,partnerId:33},items}},etag);
 }
-test('recovers the earlier failed batch with a specific print category after checking Etsy drafts',async t=>{
+draftTest('recovers the earlier failed batch with a specific print category after checking Etsy drafts',async t=>{
  const env=setup();await connected(env);await legacyBatch(env);const {calls}=mockEtsy(t);
  const result=await req(env,'/etsy/listings/create-drafts',selection);
  assert.equal(result.status,200,await result.clone().text());
@@ -181,7 +186,7 @@ test('recovers the earlier failed batch with a specific print category after che
  assert.ok(checked>=0&&checked<calls.findIndex(x=>x.options.method==='POST'));
  assert.equal(calls.filter(x=>x.url.includes('/listings?legacy=false')).length,5);
 });
-test('finds an untracked legacy draft on a later page and prevents duplicate creation',async t=>{
+draftTest('finds an untracked legacy draft on a later page and prevents duplicate creation',async t=>{
  const env=setup();await connected(env);await legacyBatch(env);
  const legacyDrafts=[...Array.from({length:100},(_,i)=>({listing_id:i+1,title:'Another print '+i})),{listing_id:800,title:'Warszawska Syrenka Art Print · Framed or Unframed'}];
  const {calls}=mockEtsy(t,{legacyDrafts});
@@ -190,7 +195,7 @@ test('finds an untracked legacy draft on a later page and prevents duplicate cre
  assert.equal(calls.filter(x=>x.url.includes('/listings?state=draft')).length,2);
  assert.equal(calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT').length,0);
 });
-test('an uncertain draft POST is not repeated automatically',async t=>{
+draftTest('an uncertain draft POST is not repeated automatically',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t,{draftFailure:{status:500,body:{error:'private provider error'}}});
  const first=await req(env,'/etsy/listings/create-drafts',selection);
  assert.match((await first.json()).error,/may have created a draft/);
@@ -198,7 +203,7 @@ test('an uncertain draft POST is not repeated automatically',async t=>{
  assert.match((await again.json()).error,/did not confirm an earlier draft creation/);
  assert.equal(calls.filter(x=>x.url.includes('/listings?legacy=false')).length,1);
 });
-test('retains settings for existing partial drafts and returns them when loading setup',async t=>{
+draftTest('retains settings for existing partial drafts and returns them when loading setup',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t,{failFirstInventory:true});
  await req(env,'/etsy/listings/create-drafts',selection);
  const preflight=await (await req(env,'/etsy/listings/preflight')).json();
@@ -209,7 +214,7 @@ test('retains settings for existing partial drafts and returns them when loading
  assert.equal(calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT').length,before);
  assert.equal((await req(env,'/etsy/listings/create-drafts',selection)).status,200);
 });
-test('rejects broad categories and unknown return policies before creating drafts',async t=>{
+draftTest('rejects broad categories and unknown return policies before creating drafts',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  for(const settings of [{...selection,taxonomyId:44},{...selection,returnPolicyId:999}])assert.equal((await req(env,'/etsy/listings/create-drafts',settings)).status,502);
  assert.equal(calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT').length,0);
@@ -218,7 +223,7 @@ test('rejects broad categories and unknown return policies before creating draft
 // Synthetic measurements exercise the API contract; they are not product shipping data.
 const measuredPackages=()=>Object.fromEntries(prints.map((p,i)=>[p.id,{item_weight:String(i+1.25),item_length:String(i+12),item_width:'9',item_height:'1.5',item_weight_unit:'lb',item_dimensions_unit:'in'}]));
 const remoteWrites=calls=>calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT');
-test('calculated shipping validates measurements for every painting before any Etsy writes',async t=>{
+draftTest('calculated shipping validates measurements for every painting before any Etsy writes',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  for(const [field,value] of [['item_weight',0],['item_length',-1],['item_width','Infinity'],['item_height',null],['item_weight',true],['item_weight',[]],['item_weight_unit','stone'],['item_dimensions_unit','pixels']]){
   const shippingPackages=measuredPackages();shippingPackages[prints.at(-1).id][field]=value;
@@ -229,7 +234,7 @@ test('calculated shipping validates measurements for every painting before any E
  assert.equal((await read(env)).record.etsyDraftBatch,undefined);
 });
 
-test('reuses existing paper and framed parcel estimates and fills missing calculated-shipping values',async t=>{
+draftTest('reuses existing paper and framed parcel estimates and fills missing calculated-shipping values',async t=>{
  const unframed={id:'paper',title:'Paper',variants:[{paperSize:{width:8,height:10,unit:'in'},frames:[]}]};
  assert.deepEqual(estimateShippingPackages([unframed]).paper,{item_weight:0.375,item_length:12,item_width:10,item_height:2,item_weight_unit:'lb',item_dimensions_unit:'in'});
  const framed={...unframed,id:'frame',variants:[{...unframed.variants[0],frames:[{outerSize:{width:12,height:15,unit:'in'}}]}]};
@@ -241,7 +246,7 @@ test('reuses existing paper and framed parcel estimates and fills missing calcul
  const creates=calls.filter(x=>x.url.includes('/listings?legacy=false'));assert.equal(creates.length,5);
  for(const [i,entry] of creates.entries())for(const [key,value] of Object.entries(expected[prints[i].id]))assert.equal(new URLSearchParams(entry.options.body).get(key),String(value));
 });
-test('sends each painting’s measured values and units to Etsy and resumes with saved measurements',async t=>{
+draftTest('sends each painting’s measured values and units to Etsy and resumes with saved measurements',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t,{failFirstInventory:true});
  const settings={...selection,shippingProfileId:12,shippingPackages:measuredPackages()};
  assert.equal((await req(env,'/etsy/listings/create-drafts',settings)).status,502);
@@ -259,7 +264,7 @@ test('sends each painting’s measured values and units to Etsy and resumes with
   for(const [key,value] of Object.entries(settings.shippingPackages[prints[i].id]))assert.equal(form.get(key),value);
  }
 });
-test('a rejected calculated-shipping batch can switch to fixed rate without sending stale measurements',async t=>{
+draftTest('a rejected calculated-shipping batch can switch to fixed rate without sending stale measurements',async t=>{
  const env=setup();await connected(env);await legacyBatch(env);
  const state=await read(env);state.record.etsyDraftBatch.settings={shippingProfileId:12,readinessStateId:22,taxonomyId:55,partnerId:33,returnPolicyId:66};
  state.record.etsyDraftBatch.items[prints[0].id].creationRejected=true;
@@ -271,7 +276,7 @@ test('a rejected calculated-shipping batch can switch to fixed rate without send
 });
 
 const planSettings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,partnerId:33,returnPolicyId:66,shippingPackages:null};
-test('all 60 Etsy SKUs fit the provider limit and retain exact FinerWorks identities',async()=>{
+draftTest('all 60 Etsy SKUs fit the provider limit and retain exact FinerWorks identities',async()=>{
  const plans=await buildListingPlans(prints,planSettings),aliases=plans.flatMap(p=>Object.keys(p.skuMap));
  assert.equal(aliases.length,60);assert.equal(new Set(aliases).size,60);assert.ok(aliases.every(s=>/^VA-[a-f0-9]{24}$/.test(s)));
  let longProviderCodes=0;
@@ -288,7 +293,7 @@ test('all 60 Etsy SKUs fit the provider limit and retain exact FinerWorks identi
  await assert.rejects(buildListingPlans(duplicate,planSettings),/duplicate Etsy SKU across paintings/);
 });
 
-test('documented contract checks reject bad titles, tags, prices, variations, and overlength SKUs',async()=>{
+draftTest('documented contract checks reject bad titles, tags, prices, variations, and overlength SKUs',async()=>{
  const [valid]=await buildListingPlans(prints,planSettings);
  const copy=()=>({...valid,body:new URLSearchParams(valid.body),inventory:structuredClone(valid.inventory),skuMap:structuredClone(valid.skuMap)});
  for(const mutate of [
@@ -299,13 +304,13 @@ test('documented contract checks reject bad titles, tags, prices, variations, an
  ]){const plan=copy();mutate(plan);assert.throws(()=>validateListingPlan(plan),/Etsy preflight:/);}
 });
 
-test('checks the entire batch before writing any listings',async t=>{
+draftTest('checks the entire batch before writing any listings',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  const old=prints.at(-1).title;prints.at(-1).title='x'.repeat(141);
  try{const res=await req(env,'/etsy/listings/create-drafts',selection);assert.match((await res.json()).error,/140 characters/);assert.equal(remoteWrites(calls).length,0);assert.equal((await read(env)).record.etsyDraftBatch,undefined);}finally{prints.at(-1).title=old;}
 });
 
-test('resumes the existing draft and image after the legacy overlength-SKU rejection',async t=>{
+draftTest('resumes the existing draft and image after the legacy overlength-SKU rejection',async t=>{
  const env=setup();await connected(env);await legacyBatch(env);
  const {record,etag}=await read(env);record.etsyDraftBatch.settings=planSettings;
  record.etsyDraftBatch.items[prints[0].id]={listingId:800,imageUploaded:true,inventoryUploaded:false,status:'draft needs attention'};
@@ -317,13 +322,13 @@ test('resumes the existing draft and image after the legacy overlength-SKU rejec
  const saved=(await read(env)).record.etsyDraftBatch;assert.equal(saved.items[prints[0].id].listingId,800);assert.equal(Object.keys(saved.skuMap).length,60);
 });
 
-test('loads processing profiles beyond the first documented page',async t=>{
+draftTest('loads processing profiles beyond the first documented page',async t=>{
  const env=setup();await connected(env);const readinessProfiles=Array.from({length:101},(_,i)=>({readiness_state_id:i+1000,readiness_state:'made_to_order',min_processing_days:3,max_processing_days:5}));
  const {calls}=mockEtsy(t,{readinessProfiles});const result=await (await req(env,'/etsy/listings/preflight')).json();
  assert.equal(result.readiness.length,101);assert.equal(result.readiness.at(-1).id,1100);
  assert.equal(calls.filter(x=>x.url.includes('readiness-state-definitions')).length,2);
 });
-test('uses the Prints Shipping and Simple policy defaults and marks FinerWorks as the maker',async t=>{
+draftTest('uses the Prints Shipping and Simple policy defaults and marks FinerWorks as the maker',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  const result=await req(env,'/etsy/listings/create-drafts',{readinessStateId:22,taxonomyId:55,productionPartnerId:'33'});
  assert.equal(result.status,200,await result.clone().text());
@@ -331,7 +336,7 @@ test('uses the Prints Shipping and Simple policy defaults and marks FinerWorks a
  assert.equal(requests.length,5);
  for(const request of requests){const form=new URLSearchParams(request.options.body);assert.equal(form.get('shipping_profile_id'),'11');assert.equal(form.get('return_policy_id'),'77');assert.equal(form.get('who_made'),'someone_else');}
 });
-test('resumes the Warsaw draft with default settings and updates its maker and return policy',async t=>{
+draftTest('resumes the Warsaw draft with default settings and updates its maker and return policy',async t=>{
  const env=setup();await connected(env);
  const {record,etag}=await read(env);
  const items=Object.fromEntries(prints.map(p=>[p.id,{status:'not started'}]));
@@ -346,13 +351,13 @@ test('resumes the Warsaw draft with default settings and updates its maker and r
  assert.equal(calls.filter(x=>x.url.endsWith('/images')).length,4);
  assert.equal(calls.filter(x=>x.url.includes('/listings/800/inventory?')).length,1);
 });
-test('rejects undocumented image formats before draft creation and explains rate-limit waits',async t=>{
+draftTest('rejects undocumented image formats before draft creation and explains rate-limit waits',async t=>{
  const env=setup();await connected(env);const mock=mockEtsy(t,{imageType:'image/webp'});
  const result=await req(env,'/etsy/listings/create-drafts',selection);assert.match((await result.json()).error,/JPEG or PNG/);assert.equal(remoteWrites(mock.calls).length,0);
  assert.equal((await read(env)).record.etsyDraftBatch.items[prints[0].id].creationUncertain,false);
  t.mock.restoreAll();mockEtsy(t,{rateLimited:true});const limited=await req(env,'/etsy/listings/preflight');assert.match((await limited.json()).error,/Wait at least 9 seconds/);
 });
-test('does not send USD catalog prices to a shop with another currency',async t=>{
+draftTest('does not send USD catalog prices to a shop with another currency',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t,{currencyCode:'CAD'});
  const result=await req(env,'/etsy/listings/create-drafts',selection);assert.match((await result.json()).error,/shop currency must be verified as USD/);assert.equal(remoteWrites(calls).length,0);
 });

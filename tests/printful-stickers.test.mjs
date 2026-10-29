@@ -14,15 +14,13 @@ test('sticker order sits beside print order on the starter paintings only', () =
   for (const [slug, title] of starters) {
     const $ = page(slug);
     assert.equal($('h1').first().text(), title);
-    const print = $('.product-print-action');
     const sticker = $('.product-sticker-action');
-    assert.equal(print.length, 1, slug);
+    assert.equal($('[data-print-open]').length, 0, slug);
+    assert.match($('.product-print-availability').text(), /not yet available/);
     assert.equal(sticker.length, 1, slug);
     assert.equal(sticker.parent().attr('class'), 'product-edition-actions');
     assert.equal(sticker.parent().parent().attr('class'), 'product-purchase-actions');
-    assert.equal(sticker.prev().is('.product-print-action'), true, slug);
     assert.equal(sticker.find('[data-sticker-open]').text(), 'Order a sticker');
-    assert.equal(print.find('[data-print-open]').text(), 'Buy a print');
     assert.equal($('[data-sticker-dialog]').length, 1);
     assert.equal($('[data-sticker-form]').attr('action'), '/checkout/stickers/order');
     assert.match($('script[src="/payments/stickers.js"]').attr('src') || '', /stickers\.js/);

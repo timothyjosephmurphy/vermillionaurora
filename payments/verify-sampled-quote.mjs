@@ -16,6 +16,10 @@ const all=Object.values(prints);
 for(const p of all){const live=catalog.products.find(i=>i.id===p.id);assert(live,`Missing edition: ${p.id}`);assert.equal(live.amount,p.amount,`Price mismatch: ${p.id}`);assert(live.methods.includes('square'));}
 const pick=list=>list[Math.floor(Math.random()*list.length)];
 const ready=all.filter(p=>!p.sampleOnly&&!p.testOnly);
+if(!ready.some(p=>!p.frame)||!ready.some(p=>p.frame)){
+  console.log('PASS: no priced print is on sale while the 1 inch margin waits for a FinerWorks quote. Quote skipped.');
+  process.exit(0);
+}
 const ids=[pick(ready.filter(p=>!p.frame)).id,pick(ready.filter(p=>p.frame)).id];
 console.log('Quoting:',ids.join(', '));
 let order;

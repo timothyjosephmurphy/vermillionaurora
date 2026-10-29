@@ -126,8 +126,8 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
 
 test('book print files preserve native resolution and use content-addressed R2 assets',()=>{
   assert.equal(Object.keys(bookPrints).length,54); // +1: Sunrise on Rainier from Denny Blaine carries the book-art-9ae2… prints (Oct 20 2026)
-  assert.equal(Object.values(bookPrints).reduce((count,art)=>count+Object.keys(art.variants).length,0),111); // +2 variants (full, medium) on the same listing
-  assert(Object.values(bookPrints).every(art=>art.enabled));
+  assert.equal(Object.values(bookPrints).reduce((count,art)=>count+Object.keys(art.variants).length,0),162);
+  assert(Object.values(bookPrints).every(art=>art.enabled===false));
   for(const product of bookProducts){
     const art=bookPrints[product.id];
     if(!art)continue;
@@ -137,13 +137,10 @@ test('book print files preserve native resolution and use content-addressed R2 a
       assert(option.resolution.dpi>=300);
       assert(option.asset.layoutSpec.content.width<=source.widthPx);
       assert(option.asset.layoutSpec.content.height<=source.heightPx);
-      // Frames keep the padded R2 edition; the unframed outer-border crop of it is a site edition file.
-      const padded=art.variants[option.key].asset;
-      assert.equal(padded.url,`https://media.vermillionaurora.com/images/book-galleries/v1/prints/${padded.sha256}.jpg`);
-      assert.equal(option.asset.editionSha256,padded.sha256);
+      assert.equal(option.asset.layout,'full-image-white-border-v2');
       assert.equal(option.asset.url,`https://vermillionaurora.com/print-editions/${option.asset.sha256}.jpg`);
-      for(const framed of option.frameOptions)assert.equal(framed.asset.url,padded.url);
-      if(art.enabled)assert(option.ready,option.reasons.join(', '));
+      assert(option.asset.layoutSpec.content.left>=300&&option.asset.layoutSpec.content.top>=300);
+      assert.equal(option.ready,false);
     }
   }
 });

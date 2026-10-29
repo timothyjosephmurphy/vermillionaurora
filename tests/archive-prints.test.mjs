@@ -19,14 +19,13 @@ test('all 54 archive masters retain exact bytes and offer native-resolution edit
     assert.equal(art.source.sha256,recipe.sha256);
     const bytes=await readFile(new URL('../static'+new URL(art.source.url).pathname,import.meta.url));
     assert.equal(createHash('sha256').update(bytes).digest('hex'),recipe.sha256);
-    assert(art.enabled&&!art.testOnly&&!art.sampleOnly);
-    const base=Object.values(readyPrints).filter(v=>v.productId===recipe.id&&!v.mat&&!v.frame);
-    assert(base.length>0,recipe.id);
-    for(const v of base){
-      assert(v.imageSize.width*300<=art.source.widthPx+1&&v.imageSize.height*300<=art.source.heightPx+1);
-      assert(v.imageSize.width<v.paperSize.width&&v.imageSize.height<v.paperSize.height);
-      assert(Math.min(v.paperSize.width,v.paperSize.height)>=4);
-      for(const finish of ['black','white','natural'])assert(readyPrints[`${v.id}-frame-${finish}`],`${v.id} ${finish}`);
+    assert.equal(art.enabled,false);assert(!art.testOnly&&!art.sampleOnly);
+    assert.equal(Object.values(readyPrints).filter(v=>v.productId===recipe.id).length,0);
+    for(const v of Object.values(art.variants)){
+      assert(v.asset.imageWidthIn*300<=art.source.widthPx+1&&v.asset.imageHeightIn*300<=art.source.heightPx+1);
+      assert(v.asset.imageWidthIn<v.asset.paperWidthIn&&v.asset.imageHeightIn<v.asset.paperHeightIn);
+      assert(v.asset.layoutSpec.content.left>=300&&v.asset.layoutSpec.content.top>=300);
+      assert.equal(v.frameOptions,undefined);
     }
     assert.equal(wallArtworks.filter(a=>a.id===recipe.id).length,1,recipe.id);
   }

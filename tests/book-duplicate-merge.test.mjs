@@ -10,7 +10,8 @@ import olderWorkProducts from '../catalog/older-work-products.mjs';
 import collections from '../catalog/collections.json' with {type:'json'};
 import {canonicalArtwork,sectionArtworkIds} from '../src/data/canonical-artworks.mjs';
 import {PRODUCT_RENAMES,renamedProductPath} from '../worker/product-renames.mjs';
-import {readyPrints} from '../catalog/prints.mjs';
+import {config} from '../catalog/prints.mjs';
+import bookPrints from '../catalog/book-prints.json' with {type:'json'};
 
 // TJ, Oct 2026: "Merge the duplicates and keep the book titles" (17 pairs, then 9 more). Each book scan below is the same painting as a
 // catalog page. The catalog page survives (it carries the stock record, cart/PayPal identity and slug-derived
@@ -118,11 +119,10 @@ test('merged duplicates: each painting shows once and feeds list only the surviv
     assert(sitemap.includes(`https://tjm.art/products/${slug}/`),slug);
     assert(feed.products.some(p=>p.id===slug),slug);
   }
-  // Book prints of merged scans (Girl Tuning Guitar, Ukraine) stay purchasable under their unchanged print IDs.
+  // Book print sheets exist, and stay out of the public catalog until the 1 inch margin is quoted.
   for(const scan of ['book-art-1708a7dca996aca40e6c','book-art-82ab8d65fb50fe0d096a']){
-    const ids=Object.keys(readyPrints).filter(id=>id.startsWith(`print-${scan}-`));
-    assert(ids.length>0,scan);
-    for(const id of ids)assert(feed.prints.some(p=>p.id===id),id);
+    assert(Object.keys(bookPrints[scan]?.variants||{}).length>0,scan);
+    assert(!feed.prints.some(p=>p.id.startsWith(`print-${scan}-`)),scan);
   }
 });
 
@@ -130,7 +130,7 @@ test('Father Paul and My Dad, Paul Murphy are one painting: the archive page wit
   const slug='archived-painting-img-1608',dad=archiveProducts.find(p=>p.id===slug);
   assert.equal(dad.title,'My Dad, Paul Murphy');
   assert.equal(dad.listing.status,'not-for-sale');
-  assert(Object.values(readyPrints).some(p=>p.productId===slug),'prints stay for sale');
+  assert.equal(config.artworks[slug]?.enabled,false);
   assert(!products.some(p=>p.id==='painting-portrait-with-scarf'||p.title==='Father Paul'));
   assert.equal(canonicalArtwork['book-art-82127d1886ae57d5cb6e'],slug);
   for(const from of ['/products/painting-portrait-with-scarf/','/products/painting-portrait-with-scarf','/products/book-art-82127d1886ae57d5cb6e/','/products/book-art-82127d1886ae57d5cb6e'])

@@ -49,7 +49,7 @@ async function quote(productId){
     assert(sameMat(q.mat,mat));assert(sameFrame(q.frame,frame));
     assert.equal(publishedFramedPrice(q,q.sku,variant.amount),q.amount);
     variant.frameOptions||={};
-    variant.frameOptions[q.frameKey]={sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.amount,unframedAmount:q.unframedAmount,pricingRule:q.pricingRule,quotedAt:q.quotedAt,asset:{...asset,productCode:q.sku,mat:q.mat,frame:q.frame,layoutReview:'full-image-white-border-mat-overlap'}};
+    variant.frameOptions[q.frameKey]={sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.amount,unframedAmount:q.unframedAmount,pricingRule:q.pricingRule,quotedAt:q.quotedAt,asset:{...asset,productCode:q.sku,mat:q.mat,frame:q.frame,layoutReview:'full-image-white-border-v2-mat-overlap'}};
     report.variants.push(q);
   }
   console.log(`Verified custom frames: ${productId}`);
