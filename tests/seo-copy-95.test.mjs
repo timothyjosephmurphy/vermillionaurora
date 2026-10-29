@@ -65,14 +65,26 @@ test('/play shell title and start-screen H1 use gallery wording', () => {
   assert.equal(manifest.short_name, 'TJM Gallery');
 });
 
-test('dungeon wording is gone from buyer return chips; Quake resume stays on /play (studio-tracker #771)', () => {
-  const quake = { show: true, label: '← Back to 3D gallery', href: '/play/?resume=1' };
+test('dungeon wording is gone from buyer return chips; 3D gallery returns use the hex soft-point (studio-tracker #771)', () => {
   const hex = { show: true, label: '← Back to 3D gallery', href: GALLERY_3D_URL };
-  assert.deepEqual(playReturn({ search: '?from=play' }), quake);
-  assert.deepEqual(playReturn({ referrer: 'https://tjm.art/play/orsay/' }), quake);
-  assert.deepEqual(playReturn({ playState: true }), quake);
+  const previewId = new URL(GALLERY_3D_URL).hostname.split('.')[0];
+  const hidden = { show: false, label: '← Back to the gallery', href: '/gallery/' };
+  assert.equal(previewId, 'preview-251');
+  assert.deepEqual(playReturn({ search: '?from=tags' }), hex);
+  assert.deepEqual(playReturn({ search: `?from=${previewId}` }), hex);
+  assert.deepEqual(playReturn({ search: '?from=tags', playState: true, referrer: 'https://tjm.art/play/' }), hex);
+  assert.deepEqual(playReturn({ search: '?from=play', playState: true }), hex);
+  assert.deepEqual(playReturn({ search: '?from=play' }), hex);
+  assert.deepEqual(playReturn({ referrer: 'https://tjm.art/play/orsay/' }), hex);
+  assert.deepEqual(playReturn({ playState: true }), hex);
   assert.deepEqual(playReturn({ referrer: 'https://preview-251.tjm-tag-gallery-preview.pages.dev/play/' }), hex);
-  assert.deepEqual(playReturn({ referrer: 'https://tjm.art/gallery/' }), { show: false, label: '← Back to the gallery', href: '/gallery/' });
+  assert.deepEqual(playReturn({ referrer: 'https://preview-251.tjm-tag-gallery-preview.pages.dev/' }), hex);
+  assert.deepEqual(playReturn({ referrer: 'https://tjm.art/gallery/' }), hidden);
+  assert.deepEqual(playReturn({ search: '?from=home' }), hidden);
+  for (const visit of [{ search: '?from=tags' }, { search: '?from=play' }, { playState: true }, { referrer: 'https://tjm.art/play/' }]) {
+    assert.equal(playReturn(visit).href, GALLERY_3D_URL);
+    assert.notEqual(playReturn(visit).href, '/play/?resume=1');
+  }
   const layout = fs.readFileSync('src/layouts/ProductLayout.astro', 'utf8');
   assert.match(layout, /← Back to the gallery/);
   assert.doesNotMatch(layout, /Dungeon/);
