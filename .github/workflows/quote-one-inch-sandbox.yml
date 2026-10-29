@@ -1,0 +1,25 @@
+name: Deploy sandbox for one-inch print quotes
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Deploy sandbox Worker with this catalog
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
