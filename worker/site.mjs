@@ -4,7 +4,8 @@
 // QuickBooks API, the testimonials API and the original-inventory API (forwarded to the checkout Worker),
 // the testimonials page (approved quotes inlined for crawlers), newsletter signup (Buttondown plus one
 // at-cost print code, forwarded to the checkout Worker) and the
-// Apple Pay merchant-id file. Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
+// Apple Pay merchant-id file, and /play (hex gallery proxy; Quake files that still exist stay on assets).
+// Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
 //
 // Host-level redirects now live at the Cloudflare edge (zone Redirect Rules, see docs/static-bypass-zone-rules.md):
 // www.tjm.art -> tjm.art, http://tjm.art -> https, and vermillionaurora.com (and www) -> tjm.art with the
@@ -18,7 +19,8 @@ import { catalogResponse, CATALOG_PATHS } from './catalog-pages.mjs';
 import { catalogAdmin } from './catalog-admin.mjs';
 import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
 import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
-export { TESTIMONIALS_PAGE };
+import { playGallery, PLAY_WORKER_FIRST } from './play-gallery.mjs';
+export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*', '/catalog/products.json', '/catalog-admin', '/catalog-admin/*'];
 
@@ -133,6 +135,9 @@ export default {
     const redirect = hostRedirect(request, env);
     if (redirect) return redirect;
     const url = new URL(request.url);
+    // /play entry is the hex gallery. Quake files that still exist are served from assets
+    // inside playGallery; holo and book covers stay on the R2 redirects.
+    if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return playGallery(request, env);
     if (QUICKBOOKS_API.has(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : new Response('QuickBooks connection unavailable', { status: 503 });
     }
@@ -158,7 +163,7 @@ export default {
     if (url.pathname === NOSTR_JSON_PATH) return nostrJson();
     if (url.pathname.startsWith(LNURLP_PREFIX)) return lnurlp(url.pathname.slice(LNURLP_PREFIX.length));
     // One painting wall: the older framed print wall moved to the all-paintings wall.
-    // The old 3D room entry soft-points at the hex gallery (studio-tracker #771). tjm.art/play stays up until #772.
+    // The old 3D room entry joins the production hex gallery at /play/.
     if (/^\/gallery\/room\/?$/.test(url.pathname)) {
       const dest = new URL(GALLERY_3D_URL);
       dest.search = url.search;
