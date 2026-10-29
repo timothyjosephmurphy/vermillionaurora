@@ -29,27 +29,21 @@ try {
   });
   await page.goto(`${origin}/products/painting-shoreline-at-dusk/`);
   const purchase = page.locator('.product-purchase-actions');
-  const print = purchase.locator('[data-print-open]');
   const sticker = purchase.locator('[data-sticker-open]');
   await sticker.waitFor();
-  assert.equal(await print.textContent(), 'Buy a print');
+  assert.equal(await purchase.locator('[data-print-open]').count(), 0);
+  assert.match(await page.locator('.product-print-availability').allTextContents().then((lines) => lines.join(' ')), /Prints not yet available/);
   assert.equal(await sticker.textContent(), 'Order a sticker');
-  const beside = await purchase.evaluate((section) => {
-    const printButton = section.querySelector('[data-print-open]');
+  const grouped = await purchase.evaluate((section) => {
     const stickerButton = section.querySelector('[data-sticker-open]');
-    const printBox = printButton.getBoundingClientRect();
-    const stickerBox = stickerButton.getBoundingClientRect();
-    const sideBySide = Math.abs(printBox.top - stickerBox.top) < 8 && stickerBox.left > printBox.right - 1;
-    const stackedWithPrint = Math.abs(stickerBox.left - printBox.left) < 8 && stickerBox.top > printBox.bottom - 1;
-    return { grouped: printButton.closest('.product-edition-actions') === stickerButton.closest('.product-edition-actions'), nextToPrint: sideBySide || stackedWithPrint };
+    return stickerButton.closest('.product-edition-actions')?.parentElement === section && !section.querySelector('[data-print-open]');
   });
-  assert.equal(beside.grouped, true);
-  assert.equal(beside.nextToPrint, true);
+  assert.equal(grouped, true);
   await purchase.screenshot({ path: path.join(shots, 'dawn-order-controls.png') });
   await sticker.click();
   const dialog = page.locator('[data-sticker-dialog]');
   await dialog.waitFor();
-  assert.equal(await page.locator('[data-print-dialog]').evaluate((element) => element.open), false);
+  assert.equal(await page.locator('[data-print-dialog]').count(), 0);
   await dialog.locator('input[name=name]').fill('A Collector');
   await dialog.locator('input[name=email]').fill('collector@example.com');
   await dialog.locator('input[name=address1]').fill('123 Test St');
@@ -71,9 +65,8 @@ try {
   await page.goto(`${origin}/products/honeybadger-and-cub-with-genesis-block/`);
   await page.locator('[data-sticker-open]').waitFor();
   const stacked = await page.locator('.product-purchase-actions').evaluate((section) => {
-    const printBox = section.querySelector('[data-print-open]').getBoundingClientRect();
     const stickerBox = section.querySelector('[data-sticker-open]').getBoundingClientRect();
-    return stickerBox.top > printBox.bottom - 1 && stickerBox.width > 200 && section.getBoundingClientRect().width <= window.innerWidth;
+    return !section.querySelector('[data-print-open]') && stickerBox.width > 200 && section.getBoundingClientRect().width <= window.innerWidth;
   });
   assert.equal(stacked, true);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), true);
@@ -83,7 +76,7 @@ try {
   await page.goto(`${origin}/products/el-zonte-before-dawn/`);
   assert.equal(await page.locator('[data-sticker-open]').count(), 0);
   assert.equal(await page.locator('h1').textContent(), 'El Zonte Before Dawn');
-  console.log('PASS: sticker order sits beside print order and the preview does not call Printful');
+  console.log('PASS: sticker order stays available while prints are held, and the preview does not call Printful');
 } finally {
   await browser.close();
 }
