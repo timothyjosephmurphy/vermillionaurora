@@ -22,6 +22,8 @@ import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 import { playGallery, PLAY_WORKER_FIRST } from './play-gallery.mjs';
 export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
+export const COMMISSION_API = '/api/commission';
+export const COMMISSION_PATHS = [COMMISSION_API, '/commission-privacy', '/inventory/status'];
 export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*', '/catalog/products.json', '/catalog-admin', '/catalog-admin/*'];
 
 export const LEGACY_HOSTS = new Set(['vermillionaurora.com', 'www.vermillionaurora.com']);
@@ -138,6 +140,10 @@ export default {
     // /play entry is the hex gallery. Quake files that still exist are served from assets
     // inside playGallery; holo and book covers stay on the R2 redirects.
     if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return playGallery(request, env);
+    // Commission form + privacy API, same-origin on tjm.art (Safe Browsing: no PII posted to workers.dev).
+    if (COMMISSION_PATHS.includes(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
+      return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Commission form is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    }
     if (QUICKBOOKS_API.has(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : new Response('QuickBooks connection unavailable', { status: 503 });
     }

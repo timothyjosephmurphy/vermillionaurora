@@ -3,6 +3,8 @@ Disallow: /cart/
 Disallow: /catalog-admin/
 Disallow: /commission-manager/
 Disallow: /testimonial-manager/
+Disallow: /originals-manager/
+Disallow: /quickbooks/
 Disallow: /print-preview/
 Disallow: /print-test/
 

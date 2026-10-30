@@ -8,7 +8,7 @@ import PolicyLayout from '../../layouts/PolicyLayout.astro';
 <p id="manager-status" role="status" aria-live="polite"></p><div id="manager-records"></div><button type="button" id="manager-more" hidden>Load more</button>
 <p>Match the request ID to the commission notification email. Set an agreed review date when accepting a commission, then record the actual completion or cancellation date. Image deletion is scheduled 90 days later. Delete any older email attachments and local working copies separately. Keep only necessary transaction records.</p>
 <script>
-const api='https://vermillion-commissions.timothyjosephmurphy.workers.dev/commission-privacy';
+const api='/commission-privacy';
 const $=id=>document.getElementById(id);
 let token='',cursor=null,mode='list';
 const status=$('manager-status'),records=$('manager-records');
