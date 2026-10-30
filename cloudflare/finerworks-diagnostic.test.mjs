@@ -11,13 +11,13 @@ test('edition quotes use approved paper geometry and expose retail prices only',
     const body=JSON.parse(init.body);calls.push(url);
     if(url.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8,9]}]);
     if(url.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0,bleed_amt:0.06},{id:9,name:'1/2" Extra Border Added',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0.5,bleed_amt:0}]);
-    // Unframed editions quote FinerWorks' outer-border style at the print (image) size.
-    assert(url.endsWith('get_prices'));assert.deepEqual(body.products.map(p=>p.product_sku),['5M144M9S4.5X4.26']);
+    // Style 8 sheets for painting 55: full, medium, and small, with the 1 inch margin inside the file.
+    assert(url.endsWith('get_prices'));assert.deepEqual(body.products.map(p=>p.product_sku),['5M144M8S6.51X6.27','5M144M8S5.38X5.2','5M144M8S4.25X4.13']);
     return Response.json(body.products.map(p=>({...p,product_code:p.product_sku,product_price:7,total_price:7})));
   });
   const r=await finerworksDiagnostic(req({task:'edition-prices',productIds:['paul-murphy-painting-55'],width:100,assetUrl:'https://example.com/injected.jpg'}),env,catalog);
   assert.equal(r.status,200);const data=await r.json();assert.equal(data.ordersSubmitted,false);assert.equal(data.readOnly,true);
-  assert.equal(data.variants.length,1);assert.equal(data.variants[0].amount,'25.00');assert(!JSON.stringify(data).includes('productionCost'));assert(!calls.some(c=>c.includes('order')));
+  assert.equal(data.variants.length,3);assert.ok(data.variants.every(v=>v.amount==='25.00'));assert(!JSON.stringify(data).includes('productionCost'));assert(!calls.some(c=>c.includes('order')));
 });
 afterEach(()=>{globalThis.fetch=originalFetch;});
 test('rejects unauthenticated diagnostics before calling provider',async()=>{

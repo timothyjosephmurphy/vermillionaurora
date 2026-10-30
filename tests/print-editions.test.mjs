@@ -6,49 +6,45 @@ import sharp from 'sharp';
 import config from '../catalog/prints.json' with {type:'json'};
 import products from '../catalog/products.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
-import {editionLayouts,EDITION_LAYOUT,BORDERED_LAYOUT} from '../catalog/edition-layout.mjs';
+import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN,BORDERED_LAYOUT} from '../catalog/edition-layout.mjs';
 import {printOptions} from '../catalog/print-sizing.mjs';
 import {groupPrintProducts} from '../cloudflare/finerworks-quotes.mjs';
 const paintings=products.filter(p=>p.artist==='Paul Murphy');
-test('all 38 paintings have 112 image-proportional, uncropped, 300-DPI layouts',()=>{
+test('all 38 paintings use a 1 inch style 8 sheet and are priced from a live FinerWorks quote',()=>{
+  assert.equal(EDITION_BORDER_IN,1);assert.equal(EDITION_LAYOUT,'full-image-white-border-v2');
   assert.equal(paintings.length,38);let count=0;
   for(const p of paintings){
-    const art=config.artworks[p.id];assert.equal(art.sizing,'image-proportional');assert.equal(art.sizingApproved,true);
+    const art=config.artworks[p.id];assert.equal(art.sizing,'image-proportional');assert.equal(art.sizingApproved,true);assert.equal(art.enabled,true);
     const options=printOptions(p,config,papers);assert(options.length);
     for(const o of options){
-      count++;assert.equal(o.testOnly,false);assert.equal(o.sampleOnly,false);
-      // Unframed: FinerWorks adds a 1/2" outer border; the code names the print size, the sheet is 1" larger.
-      assert.equal(o.asset.layout,BORDERED_LAYOUT);assert.match(o.paper.sku,/^5M144M9S/);
-      assert(o.resolution.dpi>=300);assert(o.print.width>=4&&o.print.height>=4);
-      assert.equal(o.paper.width,Math.round((o.print.width+1)*100)/100);assert.equal(o.paper.height,Math.round((o.print.height+1)*100)/100);
-      assert(o.image.width<=o.print.width&&o.image.height<=o.print.height);
-      const c=o.layoutSpec.crop,s=art.source;
-      assert(c.width<=s.widthPx&&c.height<=s.heightPx);
-      // Crop-only from the padded edition: at most one hundredth of an inch, no aspect-ratio stretch.
-      assert(Math.abs(c.width-c.height*s.widthPx/s.heightPx)<4.5);
+      count++;assert.equal(o.testOnly,false);assert.equal(o.sampleOnly,false);assert(o.ready,`${o.id}: ${o.reasons.join(', ')}`);
+      assert.equal(o.asset.layout,EDITION_LAYOUT);assert.match(o.paper.sku,/^5M144M8S/);assert.equal(o.print,undefined);
+      assert(o.resolution.dpi>=300);
+      const spec=o.asset.layoutSpec,edge=Math.ceil(EDITION_BORDER_IN*spec.dpi);
+      assert(spec.content.left>=edge&&spec.content.top>=edge);
+      assert(spec.widthPx-spec.content.left-spec.content.width>=edge&&spec.heightPx-spec.content.top-spec.content.height>=edge);
       assert(o.image.width<o.paper.width&&o.image.height<o.paper.height);
       assert.equal(o.frameOptions.length,3);
       for(const framed of o.frameOptions){
-        // Frames keep the padded borderless edition under the mat, at their existing price.
         assert(framed.ready,`${framed.id}: ${framed.reasons.join(', ')}`);
-        assert.equal(framed.asset.sha256,o.asset.editionSha256);assert.notEqual(framed.asset.url,o.asset.url);
         assert.match(framed.baseSku,/^5M144M8S/);
-        assert(framed.mat.window.width<o.paper.width&&framed.mat.window.height<o.paper.height);
-        assert(framed.mat.outer.width>=framed.mat.window.width+2&&framed.mat.outer.height>=framed.mat.window.height+2);
         assert.equal(framed.unframedAmount,art.variants[o.key].amount);assert(Number(framed.amount)>Number(framed.unframedAmount));
+        assert.equal(framed.mat.window.width,o.paper.width);assert.equal(framed.mat.window.height,o.paper.height);
+        assert(framed.mat.outer.width>=framed.mat.window.width+2&&framed.mat.outer.height>=framed.mat.window.height+2);
       }
-      if(art.enabled)assert(o.ready,`${p.id}/${o.key}: ${o.reasons.join(', ')}`);
     }
   }
-  assert.equal(count,112);
+  assert.equal(count,114);
 });
-test('#55 keeps one resolution-limited size now that its 12 × 10 in original is measured',()=>{
+test('#55 fits three sizes once the 1 inch margin clears the 4 inch minimum',()=>{
   const p=paintings.find(p=>p.id.endsWith('-55'));assert.deepEqual(p.dimensions,{width:12,height:10,unit:'in'});
-  const options=printOptions(p,config,papers);assert.equal(options.length,1);
-  assert.deepEqual(options[0].paper,{width:5.5,height:5.26,unit:'in',provider:'finerworks',paper:'watercolor-bright-white',sku:'5M144M9S4.5X4.26'});
-  assert.deepEqual(options[0].print,{width:4.5,height:4.26,unit:'in'});
-  assert.equal(options[0].frameOptions[0].baseSku,'5M144M8S4.76X4.52');
-  assert(Math.abs(options[0].image.width-4.5)<.02);assert(Math.abs(options[0].image.height-4.27)<.02);
+  const art=config.artworks[p.id],choices=editionLayouts(art.source,p.dimensions,300,art.layoutOptions);
+  const options=printOptions(p,config,papers);assert.equal(options.length,3);
+  for(const o of options){
+    const choice=choices.find(c=>c.key===o.key);
+    assert.equal(o.paper.sku,`5M144M8S${choice.paper.width}X${choice.paper.height}`);
+    assert(o.paper.width>=o.image.width+1.9&&o.paper.height>=o.image.height+1.9);
+  }
 });
 test('orientation does not alter original data, invalid metadata fails closed',()=>{
   const source={widthPx:3600,heightPx:4500},original={width:15,height:12,unit:'in'},copy=structuredClone(original);
@@ -59,7 +55,7 @@ test('orientation does not alter original data, invalid metadata fails closed',(
 });
 test('unapproved, changed and sample-exemption assets cannot become editions',()=>{
   const p=paintings[0];
-  for(const mutate of [a=>a.sizingApproved=false,a=>a.variants.full.asset.approved=false,a=>a.variants.full.asset.layoutApproved=false,a=>a.variants.full.asset.sourceSha256='0'.repeat(64),a=>a.variants.full.asset.layoutSpec.content.left++,a=>a.variants.full.asset.sampleOnly=true,a=>a.variants.full.asset.url='https://vermillionaurora.com/other.jpg',a=>delete a.variants.full.bordered,a=>a.variants.full.bordered.asset.layoutSpec.crop.left++,a=>a.variants.full.bordered.asset.editionSha256='0'.repeat(64),a=>a.variants.full.bordered.sku='5M144M8S1X1',a=>a.variants.full.bordered.asset.url='https://vermillionaurora.com/other.jpg',a=>a.variants.full.bordered.amount='1.00']){
+  for(const mutate of [a=>a.sizingApproved=false,a=>a.variants.full.asset.approved=false,a=>a.variants.full.asset.layoutApproved=false,a=>a.variants.full.asset.sourceSha256='0'.repeat(64),a=>a.variants.full.asset.layoutSpec.content.left++,a=>a.variants.full.asset.sampleOnly=true,a=>a.variants.full.asset.url='https://vermillionaurora.com/other.jpg',a=>a.variants.full.sku='5M144M8S1X1',a=>a.variants.full.amount='1.00']){
     const c=structuredClone(config);c.artworks[p.id].enabled=true;mutate(c.artworks[p.id]);
     assert.equal(printOptions(p,c,papers).find(o=>o.key==='full').ready,false);
   }
@@ -74,26 +70,22 @@ test('bordered unframed layout names the print size; the 1" larger sheet and ima
   assert.equal(groupPrintProducts([item],'test')[0].product_sku,item.sku);
   for(const alter of [i=>i.layoutApproved=false,i=>delete i.printSize,i=>i.imageSize.width=4.6,i=>i.paperSize.width=4.5,i=>i.paperSize.height=5.27,i=>i.sku='5M144M9S4.5X4.27',i=>i.mat={id:1,key:'snow-white'}]){const changed=structuredClone(item);alter(changed);assert.throws(()=>groupPrintProducts([changed],'test'));}
 });
-test('bordered files are exact crops of the padded editions, with white only as an equal small-print margin',async()=>{
-  let checked=0;
+test('new sells do not keep a style 9 crop, and the frozen order manifest still names the old sheets',async()=>{
+  const frozen=JSON.parse(await readFile(new URL('../catalog/frozen-order-editions.json',import.meta.url),'utf8'));
+  assert.equal(frozen.borderIn,0.125);assert.equal(frozen.layout,'full-image-white-border-v1');
+  assert(frozen.editions.length>=147);assert(frozen.bookBordered.length>=111);
   for(const art of Object.values(config.artworks))for(const v of Object.values(art.variants||{})){
-    if(!v.bordered||checked>=12)continue;checked++;
-    const {asset}=v.bordered,spec=asset.layoutSpec;
-    const bytes=await readFile(new URL('../static/print-editions/'+asset.sha256+'.jpg',import.meta.url));
-    assert.equal(createHash('sha256').update(bytes).digest('hex'),asset.sha256);assert.equal(asset.editionSha256,v.asset.sha256);
-    assert.equal(spec.widthPx,Math.round(asset.printWidthIn*300));assert.equal(spec.heightPx,Math.round(asset.printHeightIn*300));
-    assert(spec.crop.left>=v.asset.layoutSpec.content.left&&spec.crop.top>=v.asset.layoutSpec.content.top);
-    assert(spec.crop.left+spec.crop.width<=v.asset.layoutSpec.content.left+v.asset.layoutSpec.content.width);
-    const m=spec.content;assert(Math.abs(m.left-(spec.widthPx-m.left-m.width))<=1&&Math.abs(m.top-(spec.heightPx-m.top-m.height))<=1&&Math.abs(m.left-m.top)<=1);
+    assert.equal(v.bordered,undefined);
+    assert.equal(v.asset.layout,EDITION_LAYOUT);
+    assert.match(v.amount,/^\d+\.\d{2}$/);assert.deepEqual(Object.keys(v.frameOptions).sort(),['black','natural','white']);
   }
-  assert.equal(checked,12);
 });
 test('every generated print file matches its approved hash, paper dimensions and white safety edge',async()=>{
   for(const p of products.filter(p=>config.artworks[p.id]?.sizing==='image-proportional'))for(const {asset} of Object.values(config.artworks[p.id].variants)){
     const bytes=await readFile(new URL('../static/print-editions/'+asset.sha256+'.jpg',import.meta.url));
     assert.equal(createHash('sha256').update(bytes).digest('hex'),asset.sha256);
     const metadata=await sharp(bytes).metadata();assert.equal(metadata.width,asset.layoutSpec.widthPx);assert.equal(metadata.height,asset.layoutSpec.heightPx);
-    const edge=await sharp(bytes).extract({left:0,top:0,width:metadata.width,height:4}).raw().toBuffer();assert(edge.every(v=>v>=250));
+    const band=Math.min(80,metadata.height);const edge=await sharp(bytes).extract({left:0,top:0,width:metadata.width,height:band}).raw().toBuffer();assert(edge.every(v=>v>=250));
   }
 });
 test('group composites never print larger than the physical set (layoutOptions.setDimensions)', () => {

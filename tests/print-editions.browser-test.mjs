@@ -7,7 +7,7 @@ import {collections} from '../catalog/catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
 const editions=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('book-art-'));
-const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,147);assert.equal(editions.filter(p=>!p.frame).length,376);assert.equal(editions.filter(p=>p.frame).length,1128);
+const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,148);assert.equal(editions.filter(p=>!p.frame).length,407);assert.equal(editions.filter(p=>p.frame).length,1221);
 const available=editions.map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal','bitcoin']}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try {
@@ -56,7 +56,7 @@ try {
       assert(await dialog.evaluate(el=>el.scrollWidth<=el.clientWidth+1));
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
       if(id.endsWith('-55')){
-        assert.equal(variants.length,1);assert.match(await page.locator('[data-print-dimensions]').textContent(),/Image: 4.5 × 4.3 in · Paper: 5.5 × 5.3/);
+        assert.equal(variants.length,3);await page.locator('input[value="print-paul-murphy-painting-55-full"]').check();await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);assert.match(await page.locator('[data-print-dimensions]').textContent(),/Image: 4.5 × 4.3 in · Paper: 6.5 × 6.3/);await page.locator(`input[value="${variants.at(-1).id}"]`).check();
         await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth>0;});
         await dialog.screenshot({path:`/tmp/paul-55-${width}.png`});
       }

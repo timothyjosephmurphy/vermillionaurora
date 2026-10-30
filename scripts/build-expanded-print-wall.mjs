@@ -1,12 +1,6 @@
 import {writeFile} from 'node:fs/promises';
-import {byId,collections} from '../catalog/catalog.mjs';
-import {readyPrints} from '../catalog/prints.mjs';
-const ids=new Set(collections.gallery.map(p=>p.product)),largest=new Map(),gap=2.6,targetWidth=300;
-for(const p of Object.values(readyPrints)){
-  if(p.testOnly||p.sampleOnly||p.frame?.key!=='black'||byId[p.productId]?.artist!=='TJ Murphy'||!ids.has(p.productId))continue;
-  const previous=largest.get(p.productId);
-  if(!previous||p.frame.size.width*p.frame.size.height>previous.frame.size.width*previous.frame.size.height)largest.set(p.productId,p);
-}
+import {largestBlackFrames} from '../catalog/print-wall-frames.mjs';
+const largest=largestBlackFrames(),gap=2.6,targetWidth=300;
 const round=n=>Math.round(n*10000)/10000;
 const rectangles=[...largest.values()].map(p=>({id:p.productId,width:round(p.frame.size.width+2*p.frame.mouldingWidth),height:round(p.frame.size.height+2*p.frame.mouldingWidth)})).sort((a,b)=>b.height-a.height||b.width-a.width||a.id.localeCompare(b.id));
 const rows=[];let row=[],used=0;

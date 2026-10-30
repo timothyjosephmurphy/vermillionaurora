@@ -237,7 +237,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
   if (hero && !hero.hasAttribute('data-featured-hero')) hero.hidden = true;
   const description = box.previousElementSibling?.querySelector('p');
   // Preserve print-ordering guidance while keeping the hint on other galleries.
-  if (description && grid.classList.contains('exhibition-grid') && !/prints are available/i.test(description.textContent)) description.textContent = 'Swipe to browse or choose a thumbnail.';
+  if (description && grid.classList.contains('exhibition-grid') && !/prints are available|1 inch white margin/i.test(description.textContent)) description.textContent = 'Swipe to browse or choose a thumbnail.';
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, {threshold:0.1}).observe(box);
   show(0); updatePlay();
   let refreshFilter;

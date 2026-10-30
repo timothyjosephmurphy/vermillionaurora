@@ -27,7 +27,17 @@ export async function finerworksDiagnostic(request,env,products) {
       const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
       if(!product||art?.sizing!=='image-proportional'||art.sizingApproved!==true)return reply({error:'Choose a configured artwork edition'},400);
       const options=printOptions(product,config,papers),materials=await finerworksMaterials(env),variants=[];
-      if(!options.length||options.some(o=>!o.ready))throw Error('The unframed edition must be ready before framing');
+      if(!options.length||options.some(o=>!o.asset?.sha256||!o.paper?.sku))throw Error('The unframed edition must be ready before framing');
+      // A sheet waiting for its first quote has no saved retail. Price that sheet here and use it as the unframed amount.
+      if(options.some(o=>!o.amount)){
+        const sheetPrices=await finerworksPrices(env,[...new Set(options.map(o=>o.paper.sku))]);
+        for(const o of options){
+          if(o.amount)continue;
+          const q=sheetPrices.find(p=>p.code===o.paper.sku);
+          if(!q?.ok||q.quantity!==1||q.shippingIncluded!==false||q.taxIncluded!==false)throw Error('An exact edition price could not be verified');
+          o.amount=printRetailPrice(q.productionCost);
+        }
+      }
       for(const option of options){
         const quoted=await quoteFramedOptions(env,materials,option,['black','white','natural'],art.variants[option.key]?.frameOptions);
         for(const q of quoted)variants.push({productId:product.id,key:option.key,frameKey:q.frame.key,sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.pricing.recommendedAmount,unframedAmount:option.amount,pricingRule:q.pricing.ruleId,quotedAt:q.quotedAt,sourceSha256:art.source.sha256,assetSha256:option.asset.sha256});

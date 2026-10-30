@@ -1,4 +1,4 @@
-import {editionLayouts,EDITION_LAYOUT,borderedLayout,BORDERED_LAYOUT} from './edition-layout.mjs';
+import {editionLayouts,EDITION_LAYOUT,editionBorderIn,borderedLayout,BORDERED_LAYOUT} from './edition-layout.mjs';
 import {finerworksProductCode} from './finerworks-products.mjs';
 import {publishedPrintPrice} from './print-pricing.mjs';
 import {printAssetUrl} from '../cloudflare/print-asset-policy.mjs';
@@ -20,9 +20,10 @@ export function editionOptions(product,config,papers) {
     return withBorderedUnframed(padded,choice,art,stock,variant);
   });
 }
-// Mats and frames keep the padded borderless edition (the mat covers its edge) and its price.
-// The unframed sale uses FinerWorks' outer-border style with a crop of the padded file's image.
+// Mats and frames use the same padded sheet as the unframed sale. The mat overlaps its white edge.
+// Style 9 adds only 1/2 inch and crops an embedded margin, so a 1 inch sheet stays on style 8.
 function withBorderedUnframed(padded,choice,art,stock,variant) {
+  if((editionBorderIn(art.layoutOptions)||0)>=1)return padded;
   const b=borderedLayout(choice);
   if(!b||!stock?.borderedStyle)return padded;
   const saved=variant.bordered||{},asset=saved.asset,reasons=padded.reasons.filter(r=>r!=='Retrieve and approve the FinerWorks retail price');

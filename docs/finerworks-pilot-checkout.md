@@ -10,15 +10,18 @@ $25 / $45 / $75, one copy and one size per painting. The page and cart disclose
 that these are real paid samples, not finished editions. Product pages now offer
 three portrait sizes, unframed or with black, white, or natural wood framing.
 The confirmed 12-wide by 15-high measurements replace the reversed dimensions.
-Current files are cropped to fill the paper without added white margins. See
-`print-framing.md` for the exact crop and preservation of previous order files.
+The retired portrait sample files are cropped to fill the paper without added
+white margins, and the two already-paid sample sheets stay byte-for-byte at
+their original URLs. Current edition prints are separate: they use a 1.00 inch
+white margin on style 8. See `print-framing.md`.
 
 The approved images are built deterministically to `/print-samples/<sha256>.jpg`
 on the production website. Deployment checks their bytes and matching page/catalog
 before enabling API purchases. Sandbox images remain isolated by URL policy.
-`sampleOnly` and explicit `liveSampleApproved` preserve the normal quality gate;
-runtime `LIVE_PRINT_SAMPLE_ENABLED` and 24 exact `PRINT_CHECKOUT_IDS` limit the
-release. `testOnly` files remain blocked from all live fulfillment. Mat variants
+`sampleOnly` and explicit `liveSampleApproved` preserve the normal quality gate.
+`PRINT_CHECKOUT_ALL` sells every ready print. `PRINT_CHECKOUT_IDS` is empty while
+the 1 inch sheets wait for a FinerWorks quote; it is not a second allowlist.
+`testOnly` files remain blocked from all live fulfillment. Mat variants
 remain unavailable pending their separate layout approval.
 
 The live test uses normal cart, PayPal, Washington DOR sales tax, ledger, R2 archive and emails.

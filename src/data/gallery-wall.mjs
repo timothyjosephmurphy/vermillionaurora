@@ -1,18 +1,13 @@
 import layout from '../../catalog/gallery-wall-layout.json' with {type:'json'};
-import {byId,collections,urlFor} from '../../catalog/catalog.mjs';
-import {readyPrints,config,printVersion} from '../../catalog/prints.mjs';
+import {byId,urlFor} from '../../catalog/catalog.mjs';
+import {config,printVersion} from '../../catalog/prints.mjs';
+import {largestBlackFrames} from '../../catalog/print-wall-frames.mjs';
 
 export const WALL_UNIT=8;
 export const wallSize={width:(layout.width+24)*WALL_UNIT,height:(layout.height+24)*WALL_UNIT};
 export const wallPrintVersion=printVersion;
 export const wallThumbnailWidths=[320,960,1920];
-const galleryIds=new Set(collections.gallery.map(p=>p.product));
-const largest=new Map();
-for(const p of Object.values(readyPrints)){
-  if(p.testOnly||p.sampleOnly||p.frame?.key!=='black'||byId[p.productId]?.artist!=='TJ Murphy'||!galleryIds.has(p.productId))continue;
-  const old=largest.get(p.productId);
-  if(!old||p.frame.size.width*p.frame.size.height>old.frame.size.width*old.frame.size.height)largest.set(p.productId,p);
-}
+const largest=largestBlackFrames();
 // The coordinates are measured inches, never a CSS grid that can resize the art.
 if(largest.size!==layout.artworks.length||new Set(layout.artworks.map(p=>p.id)).size!==largest.size)throw Error('Review the print wall layout for the current print collection');
 export const wallArtworks=layout.artworks.map(position=>{

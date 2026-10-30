@@ -1,5 +1,5 @@
 import {products} from '../../catalog/catalog.mjs';
-import {readyPrints} from '../../catalog/prints.mjs';
+import {proposals, config} from '../../catalog/prints.mjs';
 import olderWork from '../../catalog/older-work.json' with {type:'json'};
 import {canonicalArtwork} from './canonical-artworks.mjs';
 // Every TJ Murphy work is drawn to scale: by the painting's measured size when known, otherwise by its
@@ -7,11 +7,15 @@ import {canonicalArtwork} from './canonical-artworks.mjs';
 // works with neither a size nor a print are only listed.
 export const isPainting=p=>p.type==='painting'&&!p.bookGallery&&['TJ Murphy','Paul Murphy'].includes(p.artist);
 const sized=p=>Number(p.dimensions?.width)>0&&Number(p.dimensions?.height)>0&&['in','cm'].includes(p.dimensions.unit);
+// Prepared sheet image size, including prints held for a quote. The wall still draws them to scale.
 const largestPrint=new Map();
-for(const v of Object.values(readyPrints)){
-  if(v.frame||v.testOnly||v.sampleOnly||!v.imageSize)continue;
-  const o=largestPrint.get(v.productId);
-  if(!o||v.imageSize.width*v.imageSize.height>o.imageSize.width*o.imageSize.height)largestPrint.set(v.productId,v);
+for(const {product, options} of proposals){
+  if(config.artworks[product.id]?.sizing!=='image-proportional')continue;
+  for(const option of options){
+    if(option.testOnly||option.sampleOnly||!option.image)continue;
+    const current=largestPrint.get(product.id);
+    if(!current||option.image.width*option.image.height>current.imageSize.width*current.imageSize.height)largestPrint.set(product.id,{imageSize:option.image});
+  }
 }
 const byId=new Map(products.map(p=>[p.id,p]));
 // An Older Work set whose every painting has its own page is already on the wall painting by painting.

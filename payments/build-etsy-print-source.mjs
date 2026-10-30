@@ -1,6 +1,6 @@
 import {writeFile} from 'node:fs/promises';
 import {products} from '../catalog/catalog.mjs';
-import {readyPrints,printVersion} from '../catalog/prints.mjs';
+import {readyPrints,printVersion,config} from '../catalog/prints.mjs';
 
 const selected=[
   'warszawska-syrenka',
@@ -24,7 +24,10 @@ const output=selected.map(productId=>{
     });
     return [{key,label,price:base.amount,sku:base.sku,paperSize:base.paperSize,frames}];
   });
-  if(!variants.length)throw Error('No ready print variants for '+productId);
+  if(!variants.length){
+    if(config.artworks[productId]?.enabled===false){console.log('Skipping Etsy print draft; held for a 1 inch margin quote: '+productId);return null;}
+    throw Error('No ready print variants for '+productId);
+  }
   return {
     id:product.id,title:product.title,artist:product.artist,year:product.year||null,
     medium:product.medium||'Watercolor pastel',surface:product.surface||null,
@@ -32,7 +35,7 @@ const output=selected.map(productId=>{
     image:{src:product.image.src,alt:product.image.alt},
     variants
   };
-});
+}).filter(Boolean);
 await writeFile(new URL('../cloudflare/etsy-print-source.mjs',import.meta.url),
   `// Generated from the approved print catalog. Do not edit by hand.\nexport const sourcePrintVersion=${JSON.stringify(printVersion)};\nexport default ${JSON.stringify(output,null,2)};\n`);
 console.log(`Built Etsy print source for ${output.length} paintings.`);
@@ -45,9 +48,13 @@ const syncOutput = syncIds.map(productId => {
   const product = products.find(item => item.id === productId && item.type === 'painting');
   if (!product) throw Error('Missing Etsy sync artwork ' + productId);
   if (/punto/i.test(product.title + ' ' + (product.story || []).join(' '))) throw Error('Punto spelling in ' + productId);
+  const held = config.artworks[productId]?.enabled === false;
   const variants = sizeOrder.flatMap(([key, label]) => {
     const base = readyPrints[`print-${productId}-${key}`];
-    if (!base) throw Error('Missing ready print ' + productId + ' ' + key);
+    if (!base) {
+      if (held) return [];
+      throw Error('Missing ready print ' + productId + ' ' + key);
+    }
     if (base.paper !== 'Watercolor Bright White') throw Error('Unexpected print paper for ' + productId + ': ' + base.paper);
     const frames = frameOrder.map(([frameKey, frameLabel]) => {
       const option = readyPrints[`print-${productId}-${key}-frame-${frameKey}`];
@@ -64,6 +71,7 @@ const syncOutput = syncIds.map(productId => {
     dimensions: product.dimensions, image: {src: product.image.src, alt: product.image.alt},
     ...(product.gallery?.[0]?.alt ? {roomAlt: product.gallery[0].alt} : {}),
     variants,
+    ...(variants.length ? {} : {printsHeld: true}),
     original: {
       price: product.listing.price.amount,
       currency: product.listing.price.currency,

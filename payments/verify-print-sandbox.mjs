@@ -45,7 +45,9 @@ try {
   assert.equal(health.mode,'sandbox');assert.equal(health.release,process.env.DEPLOYED_SHA);
   const provider=await read('/checkout/prints/health');assert.equal(provider.provider,'finerworks');assert.equal(provider.enabled,true);assert.equal(provider.readOnly,false);
   const cart=await read('/checkout/cart/catalog');
-  if(!Object.values(config.artworks).some(a=>a.sampleOnly||a.testOnly)){
+  if(!Object.values(config.artworks).some(a=>a.enabled&&a.sizing==='image-proportional')){
+    console.log('PASS: edition prints are held for the 1 inch margin quote. Supplier price checks skipped; no payment or order submitted.');
+  }else if(!Object.values(config.artworks).some(a=>a.sampleOnly||a.testOnly)){
     assert(!process.argv.includes('--test-orders'),'The low-resolution pilot is retired; this edition audit never submits print orders');
     const expected=Object.values(prints),listed=cart.products.filter(p=>p.type==='print');
     assert.deepEqual(listed.map(p=>p.id).sort(),expected.map(p=>p.id).sort());

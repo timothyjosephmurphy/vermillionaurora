@@ -78,6 +78,7 @@ function story(work) {
 }
 
 export function printDescription(work) {
+  if (!work.variants?.length) throw Error('Prints are held until the 1 inch margin has a FinerWorks quote.');
   const prices = work.variants.map(variant => variant.label + ' (' + variant.paperSize.width + ' × ' + variant.paperSize.height + ' in): $' + variant.price + ' unframed; Black frame $' + variant.frames[0].price + ', White frame $' + variant.frames[1].price + ', Natural wood frame $' + variant.frames[2].price + '.').join('\n');
   return story(work) + '\n\n' + printLine(work) + '\n\n' + prices;
 }
@@ -93,7 +94,8 @@ function form(entries) {
 }
 
 export async function buildSyncPrintPlan(work, settings) {
-  if (!work.variants?.length || work.variants.some(variant => variant.frames?.length !== 3)) throw Error('Each synced print needs three frame options.');
+  if (!work.variants?.length) throw Error('Prints are held until the 1 inch margin has a FinerWorks quote.');
+  if (work.variants.some(variant => variant.frames?.length !== 3)) throw Error('Each synced print needs three frame options.');
   const products = [], skuMap = {};
   for (const size of work.variants) {
     const choices = [{key: null, name: 'Unframed', price: size.price, sku: size.sku}, ...size.frames.map(frame => ({...frame, name: frame.label}))];

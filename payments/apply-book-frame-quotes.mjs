@@ -21,7 +21,7 @@ for(const q of report.variants){
   const frame=frameFinish(frames.frames.find(f=>f.key===q.frameKey),frames.glazing,mat);
   assert(sameMat(q.mat,mat));assert(sameFrame(q.frame,frame));
   variant.frameOptions||={};
-  variant.frameOptions[q.frameKey]={sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.amount,unframedAmount:q.unframedAmount,pricingRule:q.pricingRule,quotedAt:q.quotedAt,asset:{...asset,productCode:q.sku,mat:q.mat,frame:q.frame,layoutReview:'full-image-white-border-mat-overlap'}};
+  variant.frameOptions[q.frameKey]={sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.amount,unframedAmount:q.unframedAmount,pricingRule:q.pricingRule,quotedAt:q.quotedAt,asset:{...asset,productCode:q.sku,mat:q.mat,frame:q.frame,layoutReview:'full-image-white-border-v2-mat-overlap'}};
 }
 assert.equal(expected.size,0);await writeFile(url,JSON.stringify(artworks,null,2)+'\n');
 console.log(`Applied ${report.variants.length} current frame quotes to ${ids.length} enabled book paintings.`);

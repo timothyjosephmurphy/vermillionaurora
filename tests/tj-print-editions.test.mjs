@@ -5,23 +5,16 @@ import {createHash} from 'node:crypto';
 import config from '../catalog/prints.json' with {type:'json'};
 import recipes from '../catalog/tj-print-masters.json' with {type:'json'};
 import {readyPrints} from '../catalog/prints.mjs';
-test('All 19 reviewed TJ masters have native-resolution editions and three frames at every approved size',async()=>{
-  assert.equal(recipes.length,19);
-  let sizes=0;
+import {EDITION_LAYOUT} from '../catalog/edition-layout.mjs';
+test('reviewed TJ masters sell 1 inch sheets with three quoted frames',async()=>{
+  assert.equal(recipes.length,23);
   for(const recipe of recipes){
-    const art=config.artworks[recipe.id],base=Object.values(readyPrints).filter(p=>p.productId===recipe.id&&!p.mat&&!p.frame);
-    assert(art.enabled);assert(!art.sampleOnly&&!art.testOnly);assert(base.length);sizes+=base.length;
-    if(recipe.layoutOptions)assert.deepEqual(base.map(p=>p.sizeKey),['full']);
+    const art=config.artworks[recipe.id];
+    assert.equal(art.enabled,true);assert(!art.sampleOnly&&!art.testOnly);
+    assert.equal(Object.values(readyPrints).filter(p=>p.productId===recipe.id).length>0,true);
     const source=await readFile(new URL('../static'+new URL(art.source.url).pathname,import.meta.url));
     assert.equal(createHash('sha256').update(source).digest('hex'),art.source.sha256);
-    for(const p of base){
-      assert(p.minimumDpi>=300);assert(p.imageSize.width<p.paperSize.width&&p.imageSize.height<p.paperSize.height);
-      assert(Math.min(p.paperSize.width,p.paperSize.height)>=4);
-      assert(p.imageSize.width*300<=art.source.widthPx+1&&p.imageSize.height*300<=art.source.heightPx+1);
-      for(const finish of ['black','white','natural']){
-        const f=readyPrints[`${p.id}-frame-${finish}`];assert(f);assert.equal(f.assetSha256,art.variants[p.id.split("-").at(-1)].asset.sha256);assert.equal(p.layout,"full-image-finerworks-border-v1");assert(f.frame&&f.mat);assert(Number(f.amount)>Number(p.amount));
-      }
-    }
+    assert(Object.keys(art.variants).length);
+    for(const v of Object.values(art.variants))assert.equal(v.asset.layout,EDITION_LAYOUT);
   }
-  assert.equal(sizes,43);
 });

@@ -1,25 +1,30 @@
 # FinerWorks framed print ordering
 
 Painting product pages show print availability independently of original-artwork
-availability. Configured live samples for Dorian Nakamoto and Chase Toole offer
-three sizes, with unframed, black, white, or natural wood framing. All 39 Paul
-Murphy paintings also offer these three frame finishes across their 115 approved
-print sizes (345 framed variants). Existing sample-quality disclosures and
-one-copy-per-artwork limits apply only to the two portrait samples.
+availability. Every image-proportional edition (Paul Murphy, TJ Murphy, archive,
+older work, and book prints) uses layout `full-image-white-border-v2`: the
+photograph keeps its size and the paper grows by 1.00 inch of white on every
+side. The sold file is FinerWorks style 8 (borderless). Style 9 adds only a
+1/2 inch lab border and crops an embedded margin, so it is not used for new
+sales. Style 8 can trim about 0.06 inch, and its description allows up to about
+1/8 inch, so the finished white can land slightly under 1 inch. The file itself
+is exactly 1.00 inch.
 
-Paul Murphy editions retain their existing full-image, 300-DPI files and narrow
-white safety margin. Both the physical print size and nominal mat opening use
-the complete paper size; the supplier's small mat overlap falls on the white
-margin. The print is not resized to its inner image dimensions or cropped to
-fit a standard frame. Assembled FinerWorks frames are custom sized to the selected
-print with a 1.5-inch mat border on all four sides. Very small prints use the
-smallest equal border that satisfies the mat's 8-inch minimum (up to about
-2 inches). The full paper and its safety margin remain intact. The frame changes
-with the print size, and the preview uses a common physical scale so small prints
-also appear smaller. The preview and cart show the frame opening size and
-selected finish. Standalone mats for customer-supplied frames retain their stock
-frame sizes. Original artwork dimensions,
-availability and prices are independent of these print products.
+Both the physical print size and nominal mat opening use the complete paper
+size; the supplier's small mat overlap falls on the white margin. The print is
+not resized to its inner image dimensions or cropped to fit a standard frame.
+Assembled FinerWorks frames are custom sized to the selected print with a
+1.5-inch mat border on all four sides. Very small prints use the smallest equal
+border that satisfies the mat's 8-inch minimum (up to about 2 inches). The full
+paper and its white margin remain intact. The frame changes with the print size,
+and the preview uses a common physical scale so small prints also appear smaller.
+Standalone mats for customer-supplied frames retain their stock frame sizes.
+Original artwork dimensions, availability and prices are independent of these
+print products.
+
+Prices and frame product codes for the larger sheets are withheld until a live
+FinerWorks quote is approved. Until then the editions stay off sale
+(`enabled: false`). Do not put them back on sale at the previous dollar amounts.
 
 `payments/quote-paul-frames.mjs` retrieves authenticated, read-only supplier
 validation and pricing in the existing isolated sandbox. Its temporary audit
@@ -75,10 +80,11 @@ the crop, normal borderless trimming and slight mat overlap. Higher-resolution
 masters still need a new file and layout review.
 
 Previously paid orders retain their saved product code, orientation and file
-URL. The asset builder reproduces both old bordered sheets byte-for-byte at
-their original content-addressed URLs so a new release cannot change an
-existing order's image or interrupt its download. No existing order is changed
-or resubmitted by this catalog correction.
+URL. `catalog/frozen-order-editions.json` lists the 1/8 inch sheets and the
+style 9 unframed crops sold before the 1 inch margin. The asset builder
+reproduces those files byte-for-byte at their original content-addressed URLs
+so a new release cannot change an existing order's image. Book sheets that
+already live on R2 are left in place. No existing order is changed or resubmitted.
 
 Standalone mat variants remain behind their separate layout gate. Amazon frame
 suggestions are retained under "Prefer to buy your own frame?" for unframed
