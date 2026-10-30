@@ -3,7 +3,7 @@
  const nodes=[...document.querySelectorAll('[data-product-id]')];
  const ids=[...new Set(nodes.map(node=>node.dataset.productId))];
  if(!ids.length)return;
- const endpoint='https://vermillion-commissions.timothyjosephmurphy.workers.dev/inventory/status';
+ const endpoint='/inventory/status';
  const labels={available:'Available',inquiry:'Available by inquiry',reserved:'Temporarily reserved',sold:'Sold',unavailable:'Not currently available','not-for-sale':'Not for sale',retired:'Unavailable'};
  const availableTrack=document.querySelector('[data-available-paintings]');
  const collectorTrack=document.querySelector('[data-collector-paintings]');

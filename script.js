@@ -70,7 +70,7 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
       if(!product)return;
       if(message && !message.value)message.value='Hello, I’m interested in '+product.title+'.\n\n';
       if(!purchaseSlug || product.listing?.status!=='available')return;
-      const response=await fetch('https://vermillion-commissions.timothyjosephmurphy.workers.dev/inventory/status?ids='+encodeURIComponent(product.id),{cache:'no-store'});
+      const response=await fetch('/inventory/status?ids='+encodeURIComponent(product.id),{cache:'no-store'});
       if(!response.ok || (await response.json()).availability?.[product.id]!=='available')return;
       const price=new Intl.NumberFormat('en-US',{style:'currency',currency:product.listing.price.currency,maximumFractionDigits:2}).format(Number(product.listing.price.amount));
       form.querySelector('[name="inquiryType"]').value='purchase';
@@ -109,7 +109,7 @@ typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded',
     form.querySelector('.deposit-offer')?.remove();
     if (!/^[a-z0-9-]+$/.test(packageId || '')) return;
     try {
-      const response = await fetch('https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart/catalog', { cache: 'no-store' });
+      const response = await fetch('/checkout/cart/catalog', { cache: 'no-store' });
       const catalog = response.ok ? await response.json() : null;
       const deposit = catalog?.enabled && catalog.products?.find(p => p.id === 'deposit-' + packageId && p.methods?.length);
       if (!deposit) return;

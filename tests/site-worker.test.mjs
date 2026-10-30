@@ -148,7 +148,7 @@ const workerFirst=async()=>{
   return config.assets.run_worker_first;
 };
 test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
-  const {QUICKBOOKS_API,TESTIMONIALS_API,TESTIMONIALS_PAGE,NEWSLETTER_PATHS,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX,CATALOG_WORKER_FIRST,CART_API,STICKERS_API,SHOP_REDIRECTS,PLAY_WORKER_FIRST}=await import('../worker/site.mjs');
+  const {QUICKBOOKS_API,TESTIMONIALS_API,TESTIMONIALS_PAGE,NEWSLETTER_PATHS,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX,CATALOG_WORKER_FIRST,CART_API,STICKERS_API,SHOP_REDIRECTS,PLAY_WORKER_FIRST,COMMISSION_PATHS}=await import('../worker/site.mjs');
   const patterns=await workerFirst();
   assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
   assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
@@ -156,7 +156,7 @@ test('run_worker_first lists exactly the routes the Worker serves, so static fil
   // Every route the Worker handles runs the Worker first.
   for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',...TESTIMONIALS_PAGE,...NEWSLETTER_PATHS,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'tj'])assert.ok(matches(path),path+' must run the Worker');
   // Every pattern is a route the Worker actually handles (no stray patterns).
-  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',STICKERS_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'*',TESTIMONIALS_API+'*',...TESTIMONIALS_PAGE,...NEWSLETTER_PATHS,...CATALOG_WORKER_FIRST,...PLAY_WORKER_FIRST]);
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',STICKERS_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'*',TESTIMONIALS_API+'*',...TESTIMONIALS_PAGE,...NEWSLETTER_PATHS,...CATALOG_WORKER_FIRST,...PLAY_WORKER_FIRST,...COMMISSION_PATHS]);
   for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.
@@ -266,4 +266,14 @@ test('site worker keeps logs: wrangler.jsonc enables observability like the chec
   assert.equal(site.observability?.enabled,true);
   assert.equal(site.observability?.logs?.enabled,true);
   assert.equal(site.observability?.logs?.invocation_logs,true);
+});
+test('commission form, privacy and inventory APIs are same-origin on tjm.art (no workers.dev form posts)',async()=>{
+  const seen=[];const env={...off,ASSETS:{fetch:()=>new Response('asset')},CHECKOUT:{fetch:r=>{seen.push([r.method,new URL(r.url).pathname]);return Response.json({success:true});}}};
+  for(const [m,p] of [['POST','/api/commission'],['POST','/commission-privacy'],['GET','/inventory/status']])assert.equal((await worker.fetch(new Request('https://tjm.art'+p,{method:m,body:m==='POST'?'name=a':undefined}),env)).status,200);
+  assert.deepEqual(seen,[['POST','/api/commission'],['POST','/commission-privacy'],['GET','/inventory/status']]);
+  assert.equal((await worker.fetch(new Request('https://tjm.art/api/commission',{method:'POST',body:'x'}),{...env,CHECKOUT:undefined})).status,503);
+});
+test('homepage and commissions forms post to tjm.art, never workers.dev',async()=>{
+  const {readFileSync}=await import('node:fs');
+  for(const f of ['src/pages/index.astro','src/pages/commissions/index.astro','src/pages/commission-manager/index.astro','script.js','catalog/availability.js'])assert.doesNotMatch(readFileSync(f,'utf8'),/vermillion-commissions[^'"]*workers\.dev/,f);
 });
