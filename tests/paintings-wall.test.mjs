@@ -104,8 +104,7 @@ test('hang sets stay contiguous, triptychs are one row, and the four temples are
   assert(!byId.has('archived-painting-19')&&!byId.has('archived-painting-20'));
   const eagle=products.find(p=>p.id==='painting-portrait-with-hat');
   assert.equal(eagle.listing.status,'sold');assert.equal(eagle.listing.price,null);
-  const eaglePrints=printOptions(eagle,config,papers);
-  assert(eaglePrints.length&&eaglePrints.every(o=>!o.ready&&o.asset.layout==='full-image-white-border-v2'),'the 1 inch sheet is prepared and held until quoted');
+  assert(printOptions(eagle,config,papers).some(o=>o.ready&&!o.testOnly),'prints stay for sale the way other sold originals do');
   const eagleArt=byId.get('painting-portrait-with-hat');
   assert.equal(eagleArt.status,'sold');assert.equal(eagleArt.statusLabel,'Sold');assert.equal(eagleArt.buy,false);
   const forest=['older-work-forest-triptych-original-2','older-work-forest-triptych-original-1','older-work-forest-triptych-original-3'];

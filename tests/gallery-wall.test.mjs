@@ -2,11 +2,11 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {wallArtworks,wallLayout,wallSize,WALL_UNIT} from '../src/data/gallery-wall.mjs';
 import {byId,collections} from '../catalog/catalog.mjs';
-import {largestBlackFrames} from '../catalog/print-wall-frames.mjs';
+import {readyPrints} from '../catalog/prints.mjs';
 import {fitView,paintingView,inspectionView,zoomAt,constrainView,screenRect,imageSource,focusArtwork,panelPosition} from '../src/scripts/gallery-wall-math.mjs';
 const near=(a,b)=>assert(Math.abs(a-b)<.001,`${a} differs from ${b}`);
 test('every main-gallery TJ print appears once at its largest ready black-frame size',()=>{
-  const expected=[...largestBlackFrames().values()];
+  const expected=Object.values(readyPrints).filter(p=>!p.testOnly&&!p.sampleOnly&&p.frame?.key==='black'&&byId[p.productId]?.artist==='TJ Murphy'&&collections.gallery.some(c=>c.product===p.productId));
   assert.equal(wallArtworks.length,77);assert.equal(new Set(wallArtworks.map(a=>a.id)).size,77);
   assert.deepEqual(new Set(wallArtworks.map(a=>a.id)),new Set(expected.map(p=>p.productId)));
   for(const art of wallArtworks){

@@ -38,7 +38,7 @@ try{
   await page.locator('[data-print-options]').screenshot({path:`/tmp/matting-${width}.png`});
   await finish.selectOption('none');
   assert(!(await page.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size'));
-  assert.match(await page.locator('[data-print-total]').textContent(),/Price pending/);
+  assert.match(await page.locator('[data-print-total]').textContent(),/Print: \$25.00/);
  }
  simulatedSale=true;await page.goto(origin+'/print-preview/painting-portrait-in-green/');
  await page.locator('input[value$="-small"]').check();await page.locator('[data-print-finish]').selectOption('snow-white');

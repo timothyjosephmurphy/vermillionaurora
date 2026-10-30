@@ -10,14 +10,14 @@ import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN,BORDERED_LAYOUT} from '.
 import {printOptions} from '../catalog/print-sizing.mjs';
 import {groupPrintProducts} from '../cloudflare/finerworks-quotes.mjs';
 const paintings=products.filter(p=>p.artist==='Paul Murphy');
-test('all 38 paintings use a 1 inch style 8 sheet and stay off sale until quoted',()=>{
+test('all 38 paintings use a 1 inch style 8 sheet and are priced from a live FinerWorks quote',()=>{
   assert.equal(EDITION_BORDER_IN,1);assert.equal(EDITION_LAYOUT,'full-image-white-border-v2');
   assert.equal(paintings.length,38);let count=0;
   for(const p of paintings){
-    const art=config.artworks[p.id];assert.equal(art.sizing,'image-proportional');assert.equal(art.sizingApproved,true);assert.equal(art.enabled,false);
+    const art=config.artworks[p.id];assert.equal(art.sizing,'image-proportional');assert.equal(art.sizingApproved,true);assert.equal(art.enabled,true);
     const options=printOptions(p,config,papers);assert(options.length);
     for(const o of options){
-      count++;assert.equal(o.testOnly,false);assert.equal(o.sampleOnly,false);assert.equal(o.ready,false);
+      count++;assert.equal(o.testOnly,false);assert.equal(o.sampleOnly,false);assert(o.ready,`${o.id}: ${o.reasons.join(', ')}`);
       assert.equal(o.asset.layout,EDITION_LAYOUT);assert.match(o.paper.sku,/^5M144M8S/);assert.equal(o.print,undefined);
       assert(o.resolution.dpi>=300);
       const spec=o.asset.layoutSpec,edge=Math.ceil(EDITION_BORDER_IN*spec.dpi);
@@ -26,8 +26,9 @@ test('all 38 paintings use a 1 inch style 8 sheet and stay off sale until quoted
       assert(o.image.width<o.paper.width&&o.image.height<o.paper.height);
       assert.equal(o.frameOptions.length,3);
       for(const framed of o.frameOptions){
-        assert.equal(framed.ready,false);
+        assert(framed.ready,`${framed.id}: ${framed.reasons.join(', ')}`);
         assert.match(framed.baseSku,/^5M144M8S/);
+        assert.equal(framed.unframedAmount,art.variants[o.key].amount);assert(Number(framed.amount)>Number(framed.unframedAmount));
         assert.equal(framed.mat.window.width,o.paper.width);assert.equal(framed.mat.window.height,o.paper.height);
         assert(framed.mat.outer.width>=framed.mat.window.width+2&&framed.mat.outer.height>=framed.mat.window.height+2);
       }
@@ -76,7 +77,7 @@ test('new sells do not keep a style 9 crop, and the frozen order manifest still 
   for(const art of Object.values(config.artworks))for(const v of Object.values(art.variants||{})){
     assert.equal(v.bordered,undefined);
     assert.equal(v.asset.layout,EDITION_LAYOUT);
-    assert.equal(v.amount,undefined);assert.equal(v.frameOptions,undefined);
+    assert.match(v.amount,/^\d+\.\d{2}$/);assert.deepEqual(Object.keys(v.frameOptions).sort(),['black','natural','white']);
   }
 });
 test('every generated print file matches its approved hash, paper dimensions and white safety edge',async()=>{

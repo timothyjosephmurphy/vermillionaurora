@@ -127,7 +127,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
 test('book print files preserve native resolution and use content-addressed R2 assets',()=>{
   assert.equal(Object.keys(bookPrints).length,54); // +1: Sunrise on Rainier from Denny Blaine carries the book-art-9ae2… prints (Oct 20 2026)
   assert.equal(Object.values(bookPrints).reduce((count,art)=>count+Object.keys(art.variants).length,0),162);
-  assert(Object.values(bookPrints).every(art=>art.enabled===false));
+  assert(Object.values(bookPrints).every(art=>art.enabled===true));
   for(const product of bookProducts){
     const art=bookPrints[product.id];
     if(!art)continue;
@@ -140,7 +140,7 @@ test('book print files preserve native resolution and use content-addressed R2 a
       assert.equal(option.asset.layout,'full-image-white-border-v2');
       assert.equal(option.asset.url,`https://vermillionaurora.com/print-editions/${option.asset.sha256}.jpg`);
       assert(option.asset.layoutSpec.content.left>=300&&option.asset.layoutSpec.content.top>=300);
-      assert.equal(option.ready,false);
+      assert(option.ready,option.reasons.join(', '));
     }
   }
 });

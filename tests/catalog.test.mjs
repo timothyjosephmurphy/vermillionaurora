@@ -263,7 +263,7 @@ test('homepage featured carousel leads with Sunrise in El Zonte (Large), Meditat
  assert(fs.existsSync('gallery-images/moonlit-water.jpg'),'old Moonrise photo stays in place');
  const page=load(fs.readFileSync('dist/products/painting-moonlit-water/index.html','utf8'));
  assert.equal(page('h1').text(),'Moonrise Over the Cascades');
- assert.match(page('.product-print-availability').text(),/not yet available/);
+ assert(page('[data-print-options], [data-print-purchase], .print-options').length>0||/Prints from/.test(page.html()),'Moonrise page offers prints');
 });
 test('homepage featured carousel leads with Hope and Sunset at Kihei on Maui, once each, new photos',()=>{
  const trackIds=[];

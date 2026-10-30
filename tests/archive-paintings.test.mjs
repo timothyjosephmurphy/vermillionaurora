@@ -68,8 +68,8 @@ test('archive gallery and all painting pages render and are discoverable',()=>{
     const page=load(fs.readFileSync(`dist/products/${p.id}/index.html`,'utf8'));
     assert.equal(page('h1').text(),p.title);
     assert.equal(page('.product-availability').text(),p.listing.status==='available'?'Available':p.archive.originalWithdrawn?'Not for sale':'Archived painting');
-    assert.equal(page('[data-print-open]').length,0);
-    assert.match(page('.product-print-availability').text(),/not yet available/);
+    assert.equal(page('.product-purchase-actions').length,1);
+    assert.equal(page('[data-print-open]').length,1,'Every archive painting has purchasable print editions');
     assert.equal(page('[data-original-purchase]').length,p.listing.status==='available'?1:0);
     assert.equal(page('.product-back').attr('href'),'/gallery/archived/');
     assert(page('.painting-image-trigger img').attr('srcset'));

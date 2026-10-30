@@ -76,11 +76,19 @@ test('plans use the catalog titles, Punta spelling, and separate print and origi
   assert.equal(originalTitle({title: 'El Zonte Before Dawn', dimensions: {width: 48, height: 24, unit: 'in'}}), 'El Zonte Before Dawn, Original Watercolor Pastel, 48 x 24 in');
 });
 
-test('refuses to sync print drafts while the 1 inch margin is unquoted', async t => {
-  const env = envOf(); await connected(env); mock(t);
+test('updates the two existing print drafts and creates only the missing one', async t => {
+  const env = envOf(); await connected(env); const calls = mock(t);
   const res = await req(env, '/etsy/listings/sync', {kind: 'print', productIds: ['painting-shoreline-at-dusk', 'el-zonte-at-sunrise', 'el-zonte-before-dawn']});
-  assert.equal(res.status, 502);
-  assert.match((await res.json()).error, /1 inch margin/);
+  assert.equal(res.status, 200, await res.clone().text());
+  const data = await res.json();
+  assert.deepEqual(data.results.map(item => item.listingId), [4587311664, 4587305955, 777]);
+  assert.deepEqual(data.results.map(item => item.created), [false, false, true]);
+  const creates = calls.filter(call => call.url.includes('/listings?legacy=false'));
+  assert.equal(creates.length, 1);
+  assert.equal(new URLSearchParams(creates[0].options.body).get('title'), 'El Zonte Before Dawn Art Print · Framed or Unframed');
+  assert.equal(new URLSearchParams(creates[0].options.body).get('price'), String(Math.min(...SYNC_WORKS.find(work => work.id === 'el-zonte-before-dawn').variants.map(variant => Number(variant.price)))));
+  assert.equal(calls.filter(call => call.url.includes('/inventory')).length, 3);
+  assert.equal(calls.some(call => call.url.includes('4587311534')), false);
 });
 
 test('creates original drafts at the site price plus the Etsy uplift and can publish them explicitly', async t => {
@@ -110,8 +118,13 @@ test('creates original drafts at the site price plus the Etsy uplift and can pub
 test('publishes only the requested print listings', async t => {
   const env = envOf(); await connected(env); const calls = mock(t);
   const res = await req(env, '/etsy/listings/activate', {kind: 'print', productIds: ['el-zonte-at-sunrise']});
-  assert.equal(res.status, 502);
-  assert.match((await res.json()).error, /1 inch margin/);
+  assert.equal(res.status, 200, await res.clone().text());
+  const data = await res.json();
+  assert.equal(data.results[0].state, 'active');
+  assert.equal(data.results[0].listingId, 4587305955);
+  const patches = calls.filter(call => call.options.method === 'PATCH');
+  assert.equal(patches.length, 1);
+  assert.equal(new URLSearchParams(patches[0].options.body).get('state'), 'active');
 });
 
 test('rejects paintings outside the Etsy sync list', async t => {
@@ -141,7 +154,13 @@ test('Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over 
     assert.equal(original.get('tags').split(',').at(-1), 'original painting');
     assert.ok(original.get('description').includes(ending), id);
     assert.doesNotMatch(original.get('description'), /\d+\s*×\s*\d+\s*in/);
-    assert.equal(work.printsHeld, true);
-    await assert.rejects(() => buildSyncPrintPlan(work, settings), /1 inch margin/);
+    const print = (await buildSyncPrintPlan(work, settings)).body;
+    assert.equal(print.get('title'), work.title + ' Art Print · Framed or Unframed');
+    assert.equal(print.get('tags').split(',').length, 13);
+    assert.equal(print.get('tags').split(',').at(-1), 'art print');
+    assert.match(print.get('description'), /printed on Watercolor Bright White fine art paper/);
+    assert.doesNotMatch(print.get('description'), /finerworks/i);
+    assert.equal(print.get('price'), String(Math.min(...work.variants.map(v => Number(v.price)))));
+    for (const v of work.variants) assert.ok(print.get('description').includes(`(${v.paperSize.width} × ${v.paperSize.height} in): $${v.price} unframed`), id);
   }
 });

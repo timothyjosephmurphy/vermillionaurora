@@ -108,7 +108,7 @@ const crumb = productCrumb(p);
         <a class="older-original-thumb" href={href}><img src={`${o.display.base}-480.webp`} width={o.display.width} height={o.display.height} alt={`${o.name}, a painting by TJ Murphy`} loading="lazy" decoding="async"/></a>
         <div><a class="older-original-name" href={href}>{o.name.replace(/^TJ /,'')}</a><p>{o.dimensions?`${o.dimensions.width} × ${o.dimensions.height} in · `:''}{sold?'Sold':avail?`$${Number(o.price.amount)}`:statusLabel(o.product)}</p></div>
         {avail?<a class="button button-solid older-original-buy" href={href}>Buy</a>:<a class="older-original-view" href={href}>View</a>}</li>;})}</ul></section>}
-      {painting&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
+      {painting&&!p.archive&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
       {painting&&!p.bookGallery&&p.listing.status==='sold'&&<section class="sold-next-steps" aria-label="Next steps for a sold painting">
         <p>This original has found its home. I can paint something in the same spirit for you.</p>
         <a class="button button-solid" href="/commissions/">Commission something similar</a>
