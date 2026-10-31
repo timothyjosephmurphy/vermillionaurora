@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Your cart | TJ Murphy</title>
+<script src="/payments/cart.js" defer></script>
+</head><body>
+<main class="container cart-page" data-cart-page>
+  <script type="application/json" id="cart-display-index">__INDEX__</script>
+  <h1>Your cart</h1>
+  <a class="back-to-dungeon" href="/gallery/" hidden>← Back to the gallery</a>
+  <p data-cart-notice>Loading your cart…</p>
+  <section data-order-panel hidden><h2 id="order-title">Checking payment</h2><p data-order-message></p><p data-order-reference></p><div data-order-items></div><dl data-order-breakdown></dl><p data-order-total></p><div data-order-tracking></div>
+    <div class="cart-order-actions"><a data-order-resume hidden>Continue payment</a><button data-order-check type="button">Check payment status</button><button data-order-cancel type="button" hidden>Cancel checkout</button><button data-order-back type="button" hidden>Return to cart</button><button data-order-print type="button" hidden>Print confirmation</button></div>
+  </section>
+  <div data-cart-layout hidden>
+    <div data-cart-items></div>
+    <p data-cart-reservation hidden></p>
+    <p data-cart-hold-note hidden>Originals are held for 15 minutes after you add them to your cart. Complete checkout before the hold expires.</p>
+    <p class="eyebrow">Art for your space</p><h2>Order summary</h2>
+    <dl><div><dt>Artwork subtotal</dt><dd data-cart-subtotal>—</dd></div><div><dt>Shipping</dt><dd data-cart-shipping>Calculated below</dd></div><div><dt>Tax</dt><dd data-cart-tax>Calculated below</dd></div><div><dt>Total</dt><dd data-cart-total>—</dd></div></dl>
+    <form data-cart-form>
+      <fieldset><legend data-cart-legend>Contact &amp; delivery</legend>
+        <p data-cart-deposit-note hidden>Deposit</p>
+        <label>Email<input type="email" name="email" required/></label>
+        <label data-cart-address>Full name<input name="name" required/></label>
+        <label data-cart-address>Street<input name="street1" required/></label>
+        <label data-cart-address>City<input name="city" required/></label>
+        <label data-cart-address>Country<select name="country" required><option value="US" selected>United States</option></select></label>
+        <div data-cart-address><label><span data-cart-region-label>State</span><input name="state" required/></label><label><span data-cart-postal-label>ZIP</span><input name="zip" required/></label></div>
+        <datalist id="cart-regions"></datalist>
+        <script type="application/json" id="cart-address-rules">{"regions":{"US":["WA"]},"required":["US"],"regionLabels":{"US":"State"},"postalLabels":{"US":"ZIP code"},"postal":["US"]}</script>
+        <p data-cart-duties hidden>Duties</p>
+        <p data-cart-code-note hidden></p>
+      </fieldset>
+      <button type="submit" data-cart-quote>Calculate shipping &amp; tax</button>
+    </form>
+    <div data-cart-payments hidden><p data-cart-payment-help></p><div data-cart-methods></div><div data-square-card-box hidden><div data-square-card></div></div></div>
+  </div>
+  <div data-cart-empty hidden><h2>A place for the work you love.</h2></div>
+</main>
+<script type="module">
+  import { playReturn } from '/src/data/play-return.mjs';
+  const link = document.querySelector('.back-to-dungeon');
+  const choice = playReturn({ search: location.search, referrer: document.referrer, playState: false });
+  link.textContent = choice.label;
+  link.href = choice.href;
+  link.hidden = !choice.show;
+</script>
+</body></html>
