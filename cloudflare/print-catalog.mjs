@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="0f422485f44f0daf11e2";
+export const printVersion="c55930b8ed15b22e4a0b";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -114806,24 +114806,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "175.00",
     "currency": "USD",
-    "sku": "5M144M8S16X25.61",
+    "sku": "5M144M8S16X25.48",
     "scale": 1,
     "imageSize": {
-      "width": 13.9967,
-      "height": 23.61,
+      "width": 14,
+      "height": 23.48,
       "unit": "in"
     },
     "paperSize": {
       "width": 16,
-      "height": 25.61,
+      "height": 25.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-    "assetSha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+    "assetSha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -114847,24 +114847,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "289.00",
     "currency": "USD",
-    "sku": "5M144M8S16X25DD61F1S19X28DD61J1S16X25DD61G1",
+    "sku": "5M144M8S16X25DD48F1S19X28DD48J1S16X25DD48G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.9967,
-      "height": 23.61,
+      "width": 14,
+      "height": 23.48,
       "unit": "in"
     },
     "paperSize": {
       "width": 16,
-      "height": 25.61,
+      "height": 25.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-    "assetSha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+    "assetSha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -114884,17 +114884,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 19,
-        "height": 28.61,
+        "height": 28.48,
         "unit": "in"
       },
       "window": {
         "width": 16,
-        "height": 25.61,
+        "height": 25.48,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S16X25.61",
+    "baseSku": "5M144M8S16X25.48",
     "frame": {
       "key": "black",
       "id": 1,
@@ -114905,7 +114905,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 19,
-        "height": 28.61,
+        "height": 28.48,
         "unit": "in"
       },
       "glazing": {
@@ -114924,24 +114924,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "289.00",
     "currency": "USD",
-    "sku": "5M144M8S16X25DD61F2S19X28DD61J1S16X25DD61G1",
+    "sku": "5M144M8S16X25DD48F2S19X28DD48J1S16X25DD48G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.9967,
-      "height": 23.61,
+      "width": 14,
+      "height": 23.48,
       "unit": "in"
     },
     "paperSize": {
       "width": 16,
-      "height": 25.61,
+      "height": 25.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-    "assetSha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+    "assetSha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -114961,17 +114961,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 19,
-        "height": 28.61,
+        "height": 28.48,
         "unit": "in"
       },
       "window": {
         "width": 16,
-        "height": 25.61,
+        "height": 25.48,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S16X25.61",
+    "baseSku": "5M144M8S16X25.48",
     "frame": {
       "key": "white",
       "id": 2,
@@ -114982,7 +114982,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 19,
-        "height": 28.61,
+        "height": 28.48,
         "unit": "in"
       },
       "glazing": {
@@ -115001,24 +115001,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "311.00",
     "currency": "USD",
-    "sku": "5M144M8S16X25DD61F7S19X28DD61J1S16X25DD61G1",
+    "sku": "5M144M8S16X25DD48F7S19X28DD48J1S16X25DD48G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.9967,
-      "height": 23.61,
+      "width": 14,
+      "height": 23.48,
       "unit": "in"
     },
     "paperSize": {
       "width": 16,
-      "height": 25.61,
+      "height": 25.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-    "assetSha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+    "assetSha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115038,17 +115038,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 19,
-        "height": 28.61,
+        "height": 28.48,
         "unit": "in"
       },
       "window": {
         "width": 16,
-        "height": 25.61,
+        "height": 25.48,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S16X25.61",
+    "baseSku": "5M144M8S16X25.48",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -115059,7 +115059,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 19,
-        "height": 28.61,
+        "height": 28.48,
         "unit": "in"
       },
       "glazing": {
@@ -115078,24 +115078,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S12.5X19.7",
+    "sku": "5M144M8S12.5X19.61",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.4933,
-      "height": 17.7,
+      "width": 10.5,
+      "height": 17.61,
       "unit": "in"
     },
     "paperSize": {
       "width": 12.5,
-      "height": 19.7,
+      "height": 19.61,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-    "assetSha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+    "assetSha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115119,24 +115119,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "188.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD5X19DD7F1S15DD5X22DD7J1S12DD5X19DD7G1",
+    "sku": "5M144M8S12DD5X19DD61F1S15DD5X22DD61J1S12DD5X19DD61G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.4933,
-      "height": 17.7,
+      "width": 10.5,
+      "height": 17.61,
       "unit": "in"
     },
     "paperSize": {
       "width": 12.5,
-      "height": 19.7,
+      "height": 19.61,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-    "assetSha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+    "assetSha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115156,17 +115156,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 15.5,
-        "height": 22.7,
+        "height": 22.61,
         "unit": "in"
       },
       "window": {
         "width": 12.5,
-        "height": 19.7,
+        "height": 19.61,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S12.5X19.7",
+    "baseSku": "5M144M8S12.5X19.61",
     "frame": {
       "key": "black",
       "id": 1,
@@ -115177,7 +115177,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 15.5,
-        "height": 22.7,
+        "height": 22.61,
         "unit": "in"
       },
       "glazing": {
@@ -115196,24 +115196,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "188.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD5X19DD7F2S15DD5X22DD7J1S12DD5X19DD7G1",
+    "sku": "5M144M8S12DD5X19DD61F2S15DD5X22DD61J1S12DD5X19DD61G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.4933,
-      "height": 17.7,
+      "width": 10.5,
+      "height": 17.61,
       "unit": "in"
     },
     "paperSize": {
       "width": 12.5,
-      "height": 19.7,
+      "height": 19.61,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-    "assetSha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+    "assetSha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115233,17 +115233,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 15.5,
-        "height": 22.7,
+        "height": 22.61,
         "unit": "in"
       },
       "window": {
         "width": 12.5,
-        "height": 19.7,
+        "height": 19.61,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S12.5X19.7",
+    "baseSku": "5M144M8S12.5X19.61",
     "frame": {
       "key": "white",
       "id": 2,
@@ -115254,7 +115254,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 15.5,
-        "height": 22.7,
+        "height": 22.61,
         "unit": "in"
       },
       "glazing": {
@@ -115273,24 +115273,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "206.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD5X19DD7F7S15DD5X22DD7J1S12DD5X19DD7G1",
+    "sku": "5M144M8S12DD5X19DD61F7S15DD5X22DD61J1S12DD5X19DD61G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.4933,
-      "height": 17.7,
+      "width": 10.5,
+      "height": 17.61,
       "unit": "in"
     },
     "paperSize": {
       "width": 12.5,
-      "height": 19.7,
+      "height": 19.61,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-    "assetSha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+    "assetSha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115310,17 +115310,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 15.5,
-        "height": 22.7,
+        "height": 22.61,
         "unit": "in"
       },
       "window": {
         "width": 12.5,
-        "height": 19.7,
+        "height": 19.61,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S12.5X19.7",
+    "baseSku": "5M144M8S12.5X19.61",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -115331,7 +115331,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 15.5,
-        "height": 22.7,
+        "height": 22.61,
         "unit": "in"
       },
       "glazing": {
@@ -115350,24 +115350,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9X13.8",
+    "sku": "5M144M8S9X13.74",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.9967,
-      "height": 11.8,
+      "width": 7,
+      "height": 11.74,
       "unit": "in"
     },
     "paperSize": {
       "width": 9,
-      "height": 13.8,
+      "height": 13.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-    "assetSha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+    "assetSha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115391,24 +115391,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S9X13DD8F1S12X16DD8J1S9X13DD8G1",
+    "sku": "5M144M8S9X13DD74F1S12X16DD74J1S9X13DD74G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.9967,
-      "height": 11.8,
+      "width": 7,
+      "height": 11.74,
       "unit": "in"
     },
     "paperSize": {
       "width": 9,
-      "height": 13.8,
+      "height": 13.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-    "assetSha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+    "assetSha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115428,17 +115428,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12,
-        "height": 16.8,
+        "height": 16.74,
         "unit": "in"
       },
       "window": {
         "width": 9,
-        "height": 13.8,
+        "height": 13.74,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X13.8",
+    "baseSku": "5M144M8S9X13.74",
     "frame": {
       "key": "black",
       "id": 1,
@@ -115449,7 +115449,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12,
-        "height": 16.8,
+        "height": 16.74,
         "unit": "in"
       },
       "glazing": {
@@ -115468,24 +115468,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S9X13DD8F2S12X16DD8J1S9X13DD8G1",
+    "sku": "5M144M8S9X13DD74F2S12X16DD74J1S9X13DD74G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.9967,
-      "height": 11.8,
+      "width": 7,
+      "height": 11.74,
       "unit": "in"
     },
     "paperSize": {
       "width": 9,
-      "height": 13.8,
+      "height": 13.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-    "assetSha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+    "assetSha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115505,17 +115505,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12,
-        "height": 16.8,
+        "height": 16.74,
         "unit": "in"
       },
       "window": {
         "width": 9,
-        "height": 13.8,
+        "height": 13.74,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X13.8",
+    "baseSku": "5M144M8S9X13.74",
     "frame": {
       "key": "white",
       "id": 2,
@@ -115526,7 +115526,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12,
-        "height": 16.8,
+        "height": 16.74,
         "unit": "in"
       },
       "glazing": {
@@ -115545,24 +115545,24 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "121.00",
     "currency": "USD",
-    "sku": "5M144M8S9X13DD8F7S12X16DD8J1S9X13DD8G1",
+    "sku": "5M144M8S9X13DD74F7S12X16DD74J1S9X13DD74G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.9967,
-      "height": 11.8,
+      "width": 7,
+      "height": 11.74,
       "unit": "in"
     },
     "paperSize": {
       "width": 9,
-      "height": 13.8,
+      "height": 13.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-    "assetSha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-    "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+    "assetSha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+    "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
@@ -115582,17 +115582,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12,
-        "height": 16.8,
+        "height": 16.74,
         "unit": "in"
       },
       "window": {
         "width": 9,
-        "height": 13.8,
+        "height": 13.74,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X13.8",
+    "baseSku": "5M144M8S9X13.74",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -115603,7 +115603,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12,
-        "height": 16.8,
+        "height": 16.74,
         "unit": "in"
       },
       "glazing": {

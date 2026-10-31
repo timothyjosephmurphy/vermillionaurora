@@ -14144,36 +14144,36 @@
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
       "source": {
-        "url": "https://vermillionaurora.com/print-masters/e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd.jpg",
+        "url": "https://vermillionaurora.com/print-masters/daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652.jpg",
         "widthPx": 4567,
-        "heightPx": 7703,
-        "sha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd"
+        "heightPx": 7660,
+        "sha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652"
       },
       "variants": {
         "full": {
-          "sku": "5M144M8S16X25.61",
+          "sku": "5M144M8S16X25.48",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-            "sha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-            "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-            "productCode": "5M144M8S16X25.61",
-            "imageWidthIn": 13.9967,
-            "imageHeightIn": 23.61,
+            "url": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+            "sha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+            "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+            "productCode": "5M144M8S16X25.48",
+            "imageWidthIn": 14,
+            "imageHeightIn": 23.48,
             "paperWidthIn": 16,
-            "paperHeightIn": 25.61,
+            "paperHeightIn": 25.48,
             "approved": true,
             "layoutApproved": true,
             "layout": "full-image-white-border-v2",
             "layoutSpec": {
               "dpi": 300,
               "widthPx": 4800,
-              "heightPx": 7683,
+              "heightPx": 7644,
               "content": {
                 "left": 300,
                 "top": 300,
-                "width": 4199,
-                "height": 7083
+                "width": 4200,
+                "height": 7044
               }
             }
           },
@@ -14182,20 +14182,20 @@
           "quotedAt": "2026-10-30T00:25:02.876Z",
           "frameOptions": {
             "black": {
-              "sku": "5M144M8S16X25DD61F1S19X28DD61J1S16X25DD61G1",
-              "baseSku": "5M144M8S16X25.61",
+              "sku": "5M144M8S16X25DD48F1S19X28DD48J1S16X25DD48G1",
+              "baseSku": "5M144M8S16X25.48",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 19,
-                  "height": 28.61,
+                  "height": 28.48,
                   "unit": "in"
                 },
                 "window": {
                   "width": 16,
-                  "height": 25.61,
+                  "height": 25.48,
                   "unit": "in"
                 },
                 "id": 1
@@ -14210,7 +14210,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 19,
-                  "height": 28.61,
+                  "height": 28.48,
                   "unit": "in"
                 },
                 "glazing": {
@@ -14224,26 +14224,26 @@
               "quotedAt": "2026-10-30T00:25:02.876Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-                "sha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S16X25DD61F1S19X28DD61J1S16X25DD61G1",
-                "imageWidthIn": 13.9967,
-                "imageHeightIn": 23.61,
+                "url": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+                "sha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S16X25DD48F1S19X28DD48J1S16X25DD48G1",
+                "imageWidthIn": 14,
+                "imageHeightIn": 23.48,
                 "paperWidthIn": 16,
-                "paperHeightIn": 25.61,
+                "paperHeightIn": 25.48,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 4800,
-                  "heightPx": 7683,
+                  "heightPx": 7644,
                   "content": {
                     "left": 300,
                     "top": 300,
-                    "width": 4199,
-                    "height": 7083
+                    "width": 4200,
+                    "height": 7044
                   }
                 },
                 "mat": {
@@ -14252,12 +14252,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 19,
-                    "height": 28.61,
+                    "height": 28.48,
                     "unit": "in"
                   },
                   "window": {
                     "width": 16,
-                    "height": 25.61,
+                    "height": 25.48,
                     "unit": "in"
                   },
                   "id": 1
@@ -14272,7 +14272,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 19,
-                    "height": 28.61,
+                    "height": 28.48,
                     "unit": "in"
                   },
                   "glazing": {
@@ -14284,20 +14284,20 @@
               }
             },
             "natural": {
-              "sku": "5M144M8S16X25DD61F7S19X28DD61J1S16X25DD61G1",
-              "baseSku": "5M144M8S16X25.61",
+              "sku": "5M144M8S16X25DD48F7S19X28DD48J1S16X25DD48G1",
+              "baseSku": "5M144M8S16X25.48",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 19,
-                  "height": 28.61,
+                  "height": 28.48,
                   "unit": "in"
                 },
                 "window": {
                   "width": 16,
-                  "height": 25.61,
+                  "height": 25.48,
                   "unit": "in"
                 },
                 "id": 1
@@ -14312,7 +14312,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 19,
-                  "height": 28.61,
+                  "height": 28.48,
                   "unit": "in"
                 },
                 "glazing": {
@@ -14326,26 +14326,26 @@
               "quotedAt": "2026-10-30T00:25:02.876Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-                "sha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S16X25DD61F7S19X28DD61J1S16X25DD61G1",
-                "imageWidthIn": 13.9967,
-                "imageHeightIn": 23.61,
+                "url": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+                "sha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S16X25DD48F7S19X28DD48J1S16X25DD48G1",
+                "imageWidthIn": 14,
+                "imageHeightIn": 23.48,
                 "paperWidthIn": 16,
-                "paperHeightIn": 25.61,
+                "paperHeightIn": 25.48,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 4800,
-                  "heightPx": 7683,
+                  "heightPx": 7644,
                   "content": {
                     "left": 300,
                     "top": 300,
-                    "width": 4199,
-                    "height": 7083
+                    "width": 4200,
+                    "height": 7044
                   }
                 },
                 "mat": {
@@ -14354,12 +14354,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 19,
-                    "height": 28.61,
+                    "height": 28.48,
                     "unit": "in"
                   },
                   "window": {
                     "width": 16,
-                    "height": 25.61,
+                    "height": 25.48,
                     "unit": "in"
                   },
                   "id": 1
@@ -14374,7 +14374,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 19,
-                    "height": 28.61,
+                    "height": 28.48,
                     "unit": "in"
                   },
                   "glazing": {
@@ -14386,20 +14386,20 @@
               }
             },
             "white": {
-              "sku": "5M144M8S16X25DD61F2S19X28DD61J1S16X25DD61G1",
-              "baseSku": "5M144M8S16X25.61",
+              "sku": "5M144M8S16X25DD48F2S19X28DD48J1S16X25DD48G1",
+              "baseSku": "5M144M8S16X25.48",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 19,
-                  "height": 28.61,
+                  "height": 28.48,
                   "unit": "in"
                 },
                 "window": {
                   "width": 16,
-                  "height": 25.61,
+                  "height": 25.48,
                   "unit": "in"
                 },
                 "id": 1
@@ -14414,7 +14414,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 19,
-                  "height": 28.61,
+                  "height": 28.48,
                   "unit": "in"
                 },
                 "glazing": {
@@ -14428,26 +14428,26 @@
               "quotedAt": "2026-10-30T00:25:02.876Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72.jpg",
-                "sha256": "40afc4bcf07ec83db4407956a37eb1ff0a0ff74904ad6f9b8a07d2229fff8f72",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S16X25DD61F2S19X28DD61J1S16X25DD61G1",
-                "imageWidthIn": 13.9967,
-                "imageHeightIn": 23.61,
+                "url": "https://vermillionaurora.com/print-editions/729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa.jpg",
+                "sha256": "729fabf656a69b7b074eb9d8d4d80e608b1f2cc1e019a82a01a3ce7f1fe1dcfa",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S16X25DD48F2S19X28DD48J1S16X25DD48G1",
+                "imageWidthIn": 14,
+                "imageHeightIn": 23.48,
                 "paperWidthIn": 16,
-                "paperHeightIn": 25.61,
+                "paperHeightIn": 25.48,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 4800,
-                  "heightPx": 7683,
+                  "heightPx": 7644,
                   "content": {
                     "left": 300,
                     "top": 300,
-                    "width": 4199,
-                    "height": 7083
+                    "width": 4200,
+                    "height": 7044
                   }
                 },
                 "mat": {
@@ -14456,12 +14456,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 19,
-                    "height": 28.61,
+                    "height": 28.48,
                     "unit": "in"
                   },
                   "window": {
                     "width": 16,
-                    "height": 25.61,
+                    "height": 25.48,
                     "unit": "in"
                   },
                   "id": 1
@@ -14476,7 +14476,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 19,
-                    "height": 28.61,
+                    "height": 28.48,
                     "unit": "in"
                   },
                   "glazing": {
@@ -14490,29 +14490,29 @@
           }
         },
         "medium": {
-          "sku": "5M144M8S12.5X19.7",
+          "sku": "5M144M8S12.5X19.61",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-            "sha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-            "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-            "productCode": "5M144M8S12.5X19.7",
-            "imageWidthIn": 10.4933,
-            "imageHeightIn": 17.7,
+            "url": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+            "sha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+            "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+            "productCode": "5M144M8S12.5X19.61",
+            "imageWidthIn": 10.5,
+            "imageHeightIn": 17.61,
             "paperWidthIn": 12.5,
-            "paperHeightIn": 19.7,
+            "paperHeightIn": 19.61,
             "approved": true,
             "layoutApproved": true,
             "layout": "full-image-white-border-v2",
             "layoutSpec": {
               "dpi": 300,
               "widthPx": 3750,
-              "heightPx": 5910,
+              "heightPx": 5883,
               "content": {
-                "left": 301,
+                "left": 300,
                 "top": 300,
-                "width": 3148,
-                "height": 5310
+                "width": 3150,
+                "height": 5283
               }
             }
           },
@@ -14521,20 +14521,20 @@
           "quotedAt": "2026-10-30T00:25:03.887Z",
           "frameOptions": {
             "black": {
-              "sku": "5M144M8S12DD5X19DD7F1S15DD5X22DD7J1S12DD5X19DD7G1",
-              "baseSku": "5M144M8S12.5X19.7",
+              "sku": "5M144M8S12DD5X19DD61F1S15DD5X22DD61J1S12DD5X19DD61G1",
+              "baseSku": "5M144M8S12.5X19.61",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 15.5,
-                  "height": 22.7,
+                  "height": 22.61,
                   "unit": "in"
                 },
                 "window": {
                   "width": 12.5,
-                  "height": 19.7,
+                  "height": 19.61,
                   "unit": "in"
                 },
                 "id": 1
@@ -14549,7 +14549,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 15.5,
-                  "height": 22.7,
+                  "height": 22.61,
                   "unit": "in"
                 },
                 "glazing": {
@@ -14563,26 +14563,26 @@
               "quotedAt": "2026-10-30T00:25:03.887Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-                "sha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S12DD5X19DD7F1S15DD5X22DD7J1S12DD5X19DD7G1",
-                "imageWidthIn": 10.4933,
-                "imageHeightIn": 17.7,
+                "url": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+                "sha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S12DD5X19DD61F1S15DD5X22DD61J1S12DD5X19DD61G1",
+                "imageWidthIn": 10.5,
+                "imageHeightIn": 17.61,
                 "paperWidthIn": 12.5,
-                "paperHeightIn": 19.7,
+                "paperHeightIn": 19.61,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 3750,
-                  "heightPx": 5910,
+                  "heightPx": 5883,
                   "content": {
-                    "left": 301,
+                    "left": 300,
                     "top": 300,
-                    "width": 3148,
-                    "height": 5310
+                    "width": 3150,
+                    "height": 5283
                   }
                 },
                 "mat": {
@@ -14591,12 +14591,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 15.5,
-                    "height": 22.7,
+                    "height": 22.61,
                     "unit": "in"
                   },
                   "window": {
                     "width": 12.5,
-                    "height": 19.7,
+                    "height": 19.61,
                     "unit": "in"
                   },
                   "id": 1
@@ -14611,7 +14611,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 15.5,
-                    "height": 22.7,
+                    "height": 22.61,
                     "unit": "in"
                   },
                   "glazing": {
@@ -14623,20 +14623,20 @@
               }
             },
             "natural": {
-              "sku": "5M144M8S12DD5X19DD7F7S15DD5X22DD7J1S12DD5X19DD7G1",
-              "baseSku": "5M144M8S12.5X19.7",
+              "sku": "5M144M8S12DD5X19DD61F7S15DD5X22DD61J1S12DD5X19DD61G1",
+              "baseSku": "5M144M8S12.5X19.61",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 15.5,
-                  "height": 22.7,
+                  "height": 22.61,
                   "unit": "in"
                 },
                 "window": {
                   "width": 12.5,
-                  "height": 19.7,
+                  "height": 19.61,
                   "unit": "in"
                 },
                 "id": 1
@@ -14651,7 +14651,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 15.5,
-                  "height": 22.7,
+                  "height": 22.61,
                   "unit": "in"
                 },
                 "glazing": {
@@ -14665,26 +14665,26 @@
               "quotedAt": "2026-10-30T00:25:03.887Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-                "sha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S12DD5X19DD7F7S15DD5X22DD7J1S12DD5X19DD7G1",
-                "imageWidthIn": 10.4933,
-                "imageHeightIn": 17.7,
+                "url": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+                "sha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S12DD5X19DD61F7S15DD5X22DD61J1S12DD5X19DD61G1",
+                "imageWidthIn": 10.5,
+                "imageHeightIn": 17.61,
                 "paperWidthIn": 12.5,
-                "paperHeightIn": 19.7,
+                "paperHeightIn": 19.61,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 3750,
-                  "heightPx": 5910,
+                  "heightPx": 5883,
                   "content": {
-                    "left": 301,
+                    "left": 300,
                     "top": 300,
-                    "width": 3148,
-                    "height": 5310
+                    "width": 3150,
+                    "height": 5283
                   }
                 },
                 "mat": {
@@ -14693,12 +14693,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 15.5,
-                    "height": 22.7,
+                    "height": 22.61,
                     "unit": "in"
                   },
                   "window": {
                     "width": 12.5,
-                    "height": 19.7,
+                    "height": 19.61,
                     "unit": "in"
                   },
                   "id": 1
@@ -14713,7 +14713,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 15.5,
-                    "height": 22.7,
+                    "height": 22.61,
                     "unit": "in"
                   },
                   "glazing": {
@@ -14725,20 +14725,20 @@
               }
             },
             "white": {
-              "sku": "5M144M8S12DD5X19DD7F2S15DD5X22DD7J1S12DD5X19DD7G1",
-              "baseSku": "5M144M8S12.5X19.7",
+              "sku": "5M144M8S12DD5X19DD61F2S15DD5X22DD61J1S12DD5X19DD61G1",
+              "baseSku": "5M144M8S12.5X19.61",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 15.5,
-                  "height": 22.7,
+                  "height": 22.61,
                   "unit": "in"
                 },
                 "window": {
                   "width": 12.5,
-                  "height": 19.7,
+                  "height": 19.61,
                   "unit": "in"
                 },
                 "id": 1
@@ -14753,7 +14753,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 15.5,
-                  "height": 22.7,
+                  "height": 22.61,
                   "unit": "in"
                 },
                 "glazing": {
@@ -14767,26 +14767,26 @@
               "quotedAt": "2026-10-30T00:25:03.887Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57.jpg",
-                "sha256": "e6d6cf7dc7a1dd87031593532644a88521a689d9813abf1441240de0eaeb4a57",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S12DD5X19DD7F2S15DD5X22DD7J1S12DD5X19DD7G1",
-                "imageWidthIn": 10.4933,
-                "imageHeightIn": 17.7,
+                "url": "https://vermillionaurora.com/print-editions/c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31.jpg",
+                "sha256": "c2cfd40346fe27f0021c6b394da848799d2f65b128d704009ee42441dc5fba31",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S12DD5X19DD61F2S15DD5X22DD61J1S12DD5X19DD61G1",
+                "imageWidthIn": 10.5,
+                "imageHeightIn": 17.61,
                 "paperWidthIn": 12.5,
-                "paperHeightIn": 19.7,
+                "paperHeightIn": 19.61,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 3750,
-                  "heightPx": 5910,
+                  "heightPx": 5883,
                   "content": {
-                    "left": 301,
+                    "left": 300,
                     "top": 300,
-                    "width": 3148,
-                    "height": 5310
+                    "width": 3150,
+                    "height": 5283
                   }
                 },
                 "mat": {
@@ -14795,12 +14795,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 15.5,
-                    "height": 22.7,
+                    "height": 22.61,
                     "unit": "in"
                   },
                   "window": {
                     "width": 12.5,
-                    "height": 19.7,
+                    "height": 19.61,
                     "unit": "in"
                   },
                   "id": 1
@@ -14815,7 +14815,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 15.5,
-                    "height": 22.7,
+                    "height": 22.61,
                     "unit": "in"
                   },
                   "glazing": {
@@ -14829,29 +14829,29 @@
           }
         },
         "small": {
-          "sku": "5M144M8S9X13.8",
+          "sku": "5M144M8S9X13.74",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-            "sha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-            "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-            "productCode": "5M144M8S9X13.8",
-            "imageWidthIn": 6.9967,
-            "imageHeightIn": 11.8,
+            "url": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+            "sha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+            "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+            "productCode": "5M144M8S9X13.74",
+            "imageWidthIn": 7,
+            "imageHeightIn": 11.74,
             "paperWidthIn": 9,
-            "paperHeightIn": 13.8,
+            "paperHeightIn": 13.74,
             "approved": true,
             "layoutApproved": true,
             "layout": "full-image-white-border-v2",
             "layoutSpec": {
               "dpi": 300,
               "widthPx": 2700,
-              "heightPx": 4140,
+              "heightPx": 4122,
               "content": {
                 "left": 300,
                 "top": 300,
-                "width": 2099,
-                "height": 3540
+                "width": 2100,
+                "height": 3522
               }
             }
           },
@@ -14860,20 +14860,20 @@
           "quotedAt": "2026-10-30T00:25:05.713Z",
           "frameOptions": {
             "black": {
-              "sku": "5M144M8S9X13DD8F1S12X16DD8J1S9X13DD8G1",
-              "baseSku": "5M144M8S9X13.8",
+              "sku": "5M144M8S9X13DD74F1S12X16DD74J1S9X13DD74G1",
+              "baseSku": "5M144M8S9X13.74",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 12,
-                  "height": 16.8,
+                  "height": 16.74,
                   "unit": "in"
                 },
                 "window": {
                   "width": 9,
-                  "height": 13.8,
+                  "height": 13.74,
                   "unit": "in"
                 },
                 "id": 1
@@ -14888,7 +14888,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 12,
-                  "height": 16.8,
+                  "height": 16.74,
                   "unit": "in"
                 },
                 "glazing": {
@@ -14902,26 +14902,26 @@
               "quotedAt": "2026-10-30T00:25:05.713Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-                "sha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S9X13DD8F1S12X16DD8J1S9X13DD8G1",
-                "imageWidthIn": 6.9967,
-                "imageHeightIn": 11.8,
+                "url": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+                "sha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S9X13DD74F1S12X16DD74J1S9X13DD74G1",
+                "imageWidthIn": 7,
+                "imageHeightIn": 11.74,
                 "paperWidthIn": 9,
-                "paperHeightIn": 13.8,
+                "paperHeightIn": 13.74,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 2700,
-                  "heightPx": 4140,
+                  "heightPx": 4122,
                   "content": {
                     "left": 300,
                     "top": 300,
-                    "width": 2099,
-                    "height": 3540
+                    "width": 2100,
+                    "height": 3522
                   }
                 },
                 "mat": {
@@ -14930,12 +14930,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 12,
-                    "height": 16.8,
+                    "height": 16.74,
                     "unit": "in"
                   },
                   "window": {
                     "width": 9,
-                    "height": 13.8,
+                    "height": 13.74,
                     "unit": "in"
                   },
                   "id": 1
@@ -14950,7 +14950,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 12,
-                    "height": 16.8,
+                    "height": 16.74,
                     "unit": "in"
                   },
                   "glazing": {
@@ -14962,20 +14962,20 @@
               }
             },
             "natural": {
-              "sku": "5M144M8S9X13DD8F7S12X16DD8J1S9X13DD8G1",
-              "baseSku": "5M144M8S9X13.8",
+              "sku": "5M144M8S9X13DD74F7S12X16DD74J1S9X13DD74G1",
+              "baseSku": "5M144M8S9X13.74",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 12,
-                  "height": 16.8,
+                  "height": 16.74,
                   "unit": "in"
                 },
                 "window": {
                   "width": 9,
-                  "height": 13.8,
+                  "height": 13.74,
                   "unit": "in"
                 },
                 "id": 1
@@ -14990,7 +14990,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 12,
-                  "height": 16.8,
+                  "height": 16.74,
                   "unit": "in"
                 },
                 "glazing": {
@@ -15004,26 +15004,26 @@
               "quotedAt": "2026-10-30T00:25:05.713Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-                "sha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S9X13DD8F7S12X16DD8J1S9X13DD8G1",
-                "imageWidthIn": 6.9967,
-                "imageHeightIn": 11.8,
+                "url": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+                "sha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S9X13DD74F7S12X16DD74J1S9X13DD74G1",
+                "imageWidthIn": 7,
+                "imageHeightIn": 11.74,
                 "paperWidthIn": 9,
-                "paperHeightIn": 13.8,
+                "paperHeightIn": 13.74,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 2700,
-                  "heightPx": 4140,
+                  "heightPx": 4122,
                   "content": {
                     "left": 300,
                     "top": 300,
-                    "width": 2099,
-                    "height": 3540
+                    "width": 2100,
+                    "height": 3522
                   }
                 },
                 "mat": {
@@ -15032,12 +15032,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 12,
-                    "height": 16.8,
+                    "height": 16.74,
                     "unit": "in"
                   },
                   "window": {
                     "width": 9,
-                    "height": 13.8,
+                    "height": 13.74,
                     "unit": "in"
                   },
                   "id": 1
@@ -15052,7 +15052,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 12,
-                    "height": 16.8,
+                    "height": 16.74,
                     "unit": "in"
                   },
                   "glazing": {
@@ -15064,20 +15064,20 @@
               }
             },
             "white": {
-              "sku": "5M144M8S9X13DD8F2S12X16DD8J1S9X13DD8G1",
-              "baseSku": "5M144M8S9X13.8",
+              "sku": "5M144M8S9X13DD74F2S12X16DD74J1S9X13DD74G1",
+              "baseSku": "5M144M8S9X13.74",
               "mat": {
                 "key": "snow-white",
                 "name": "Snow White",
                 "color": "#fff",
                 "outer": {
                   "width": 12,
-                  "height": 16.8,
+                  "height": 16.74,
                   "unit": "in"
                 },
                 "window": {
                   "width": 9,
-                  "height": 13.8,
+                  "height": 13.74,
                   "unit": "in"
                 },
                 "id": 1
@@ -15092,7 +15092,7 @@
                 "mouldingWidth": 0.88,
                 "size": {
                   "width": 12,
-                  "height": 16.8,
+                  "height": 16.74,
                   "unit": "in"
                 },
                 "glazing": {
@@ -15106,26 +15106,26 @@
               "quotedAt": "2026-10-30T00:25:05.713Z",
               "asset": {
                 "provider": "finerworks",
-                "url": "https://vermillionaurora.com/print-editions/4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506.jpg",
-                "sha256": "4e7c1177e359e55a272f44f9fcfcd848520f39d1734c89a38b3aabb81051f506",
-                "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
-                "productCode": "5M144M8S9X13DD8F2S12X16DD8J1S9X13DD8G1",
-                "imageWidthIn": 6.9967,
-                "imageHeightIn": 11.8,
+                "url": "https://vermillionaurora.com/print-editions/7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d.jpg",
+                "sha256": "7a2a94f7ced6d19a78afdbec8934bb6555b76cfa47d7eba25bb313d539d9962d",
+                "sourceSha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+                "productCode": "5M144M8S9X13DD74F2S12X16DD74J1S9X13DD74G1",
+                "imageWidthIn": 7,
+                "imageHeightIn": 11.74,
                 "paperWidthIn": 9,
-                "paperHeightIn": 13.8,
+                "paperHeightIn": 13.74,
                 "approved": true,
                 "layoutApproved": true,
                 "layout": "full-image-white-border-v2",
                 "layoutSpec": {
                   "dpi": 300,
                   "widthPx": 2700,
-                  "heightPx": 4140,
+                  "heightPx": 4122,
                   "content": {
                     "left": 300,
                     "top": 300,
-                    "width": 2099,
-                    "height": 3540
+                    "width": 2100,
+                    "height": 3522
                   }
                 },
                 "mat": {
@@ -15134,12 +15134,12 @@
                   "color": "#fff",
                   "outer": {
                     "width": 12,
-                    "height": 16.8,
+                    "height": 16.74,
                     "unit": "in"
                   },
                   "window": {
                     "width": 9,
-                    "height": 13.8,
+                    "height": 13.74,
                     "unit": "in"
                   },
                   "id": 1
@@ -15154,7 +15154,7 @@
                   "mouldingWidth": 0.88,
                   "size": {
                     "width": 12,
-                    "height": 16.8,
+                    "height": 16.74,
                     "unit": "in"
                   },
                   "glazing": {
