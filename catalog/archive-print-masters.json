@@ -258,10 +258,14 @@
   {
     "id": "archived-painting-248",
     "title": "Painting #248",
-    "url": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
-    "sha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+    "url": "https://vermillionaurora.com/print-masters/daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652.jpg",
+    "sha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
     "widthPx": 4567,
-    "heightPx": 7703
+    "heightPx": 7660,
+    "derivedFrom": {
+      "sha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+      "edit": "crop 43px black strip from top; no other change"
+    }
   },
   {
     "id": "archived-painting-247",

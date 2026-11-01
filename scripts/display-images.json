@@ -2555,22 +2555,22 @@
    {
     "w": 160,
     "src": "/display/archived-painting-248-160.webp",
-    "bytes": 7608
+    "bytes": 7592
    },
    {
     "w": 480,
     "src": "/display/archived-painting-248-480.webp",
-    "bytes": 77640
+    "bytes": 70842
    },
    {
     "w": 960,
     "src": "/display/archived-painting-248-960.webp",
-    "bytes": 261188
+    "bytes": 261354
    },
    {
     "w": 1600,
     "src": "/display/archived-painting-248-1600.webp",
-    "bytes": 567742
+    "bytes": 563822
    }
   ]
  },
