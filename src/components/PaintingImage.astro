@@ -112,6 +112,8 @@ const count = gallery.length + 1;
 <style>
   .product-media { min-width: 0; }
   .painting-image-trigger { display: block; cursor: zoom-in; width: fit-content; max-width: 100%; }
+  /* ArtworkImage renders the <img>. A scoped img selector never matches it, so the height attribute would stretch the painting. */
+  :global(.painting-image-trigger img) { width: auto; height: auto; max-width: 100%; max-height: 75vh; object-fit: contain; }
   .painting-image-trigger:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; }
   .painting-image-hint { display: flex; align-items: center; justify-content: flex-end; gap: .4rem; margin-top: .65rem; color: var(--muted); font-size: .75rem; }
   .painting-image-hint span { font-size: 1.3rem; line-height: 1; }
@@ -124,10 +126,11 @@ const count = gallery.length + 1;
   .product-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0f0d0b; border-radius: 4px; }
   .product-video figcaption { margin-top: .6rem; font-size: .875rem; color: var(--muted); }
   @media (max-width: 600px) { .product-thumb { width: 64px; height: 64px; } }
+  @media (max-width: 800px) { :global(.painting-image-trigger img) { max-height: 65vh; } }
   .painting-lightbox { position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh; max-width: none; max-height: none; margin: 0; border: 0; padding: max(76px, calc(env(safe-area-inset-top) + 64px)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); background: rgba(15, 13, 11, .97); color: #fff; overflow: hidden; cursor: zoom-out; }
   .painting-lightbox[open] { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); place-items: center; }
   .painting-lightbox::backdrop { background: #0f0d0b; }
-  .painting-lightbox img { width: auto; height: auto; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; object-fit: contain; cursor: default; }
+  :global(.painting-lightbox img) { width: auto; height: auto; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; object-fit: contain; cursor: default; }
   .painting-lightbox-close { position: absolute; top: max(12px, env(safe-area-inset-top)); right: max(16px, env(safe-area-inset-right)); display: flex; align-items: center; gap: .65rem; min-height: 44px; padding: .4rem .85rem; border: 1px solid #8d8074; border-radius: 6px; background: #302b27; color: #fff; cursor: pointer; font-size: .875rem; }
   .painting-lightbox-close span { font-size: 1.6rem; line-height: 1; }
   .painting-lightbox-close:hover { background: #494139; }
