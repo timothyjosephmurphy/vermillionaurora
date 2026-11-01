@@ -3,17 +3,18 @@
 (() => {
   const API=location.hostname==='tjm.art'?'/checkout/cart':'https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart';
   const REQUEST=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
-  const CART='va-cart-v1',ATTEMPT='va-cart-order-v1',HOLD='va-cart-reservation-v1',MAX=12;
+  const CART='va-cart-v1',ATTEMPT='va-cart-order-v1',HOLD='va-cart-reservation-v1',DISPLAY='va-cart-display-v1',MAX=12;
   const read=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
   const write=(key,value)=>{try{if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const clean=value=>Array.isArray(value)?[...new Map(value.filter(x=>x&&/^[a-z0-9-]+$/.test(x.id||'')&&Number.isSafeInteger(x.quantity)&&x.quantity>=1&&x.quantity<=(x.id.startsWith('print-')?10:1)).map(x=>[x.id,{id:x.id,quantity:x.quantity,...(/^(deposit|balance)-/.test(x.id)&&REQUEST.test(x.requestId||'')?{requestId:x.requestId}:{})}])).values()].slice(0,MAX):[];
-  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve(),awaitingBitcoinRedirect=false;
+  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve(),awaitingBitcoinRedirect=false,availabilitySettled=false,productFilePromise=null;
   const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
   const money=value=>`$${Number(value).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
   const api=async(action,body)=>{
     const response=await fetch(`${API}/${action}`,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(action==='hold'?10000:60000)}:{signal:AbortSignal.timeout(15000)});
     const value=await response.json();if(!response.ok){const error=Error(value.error||'Checkout is temporarily unavailable.');error.data=value;throw error;}return value;
   };
+  // Started immediately so checkout can catch up, but the cart page must not wait on it to paint.
   const capabilitiesPromise=api('catalog').catch(()=>null);
   window.vaCartReady=capabilitiesPromise;
   const counts=()=>document.querySelectorAll('[data-cart-count]').forEach(el=>{const count=(buyOnly?clean(read(CART)):cart).reduce((n,i)=>n+i.quantity,0);el.textContent=String(count);el.closest('a')?.setAttribute('aria-label',`Cart ${count} item${count===1?'':'s'}`);});
@@ -50,6 +51,85 @@
     return holdQueue;
   }
   function saveCart(){persistCart();return syncHold(cart);}
+  // Display records only. Quotes, holds and totals still come from the server.
+  function safeSrc(src){
+    if(typeof src!=='string')return '';
+    if(src.startsWith('/')&&!src.startsWith('//'))return src;
+    try{const url=new URL(src);if(url.protocol==='https:'&&/(^|\.)tjm\.art$/.test(url.hostname))return url.href;}catch{}
+    return '';
+  }
+  function safeImage(image){const src=safeSrc(image?.src);return src?{src,alt:typeof image.alt==='string'?image.alt.slice(0,300):''}:undefined;}
+  function moneyAmount(value){return typeof value==='string'&&/^\d+\.\d{2}$/.test(value)?value:undefined;}
+  function seedDisplay(){
+    // The cart page inlines title, price and image for paintings. The hex gallery only hands off ids.
+    try{
+      const data=JSON.parse(document.getElementById('cart-display-index')?.textContent||'[]');
+      if(Array.isArray(data))for(const item of data){
+        if(!item||!/^[a-z0-9-]+$/.test(item.id||'')||typeof item.title!=='string'||!item.title)continue;
+        const amount=moneyAmount(item.amount),image=safeImage({src:item.image,alt:item.alt||item.title});
+        meta[item.id]={id:item.id,title:item.title,type:'painting',amount,image,listing:amount?{price:{amount,currency:'USD'}}:undefined};
+      }
+    }catch{}
+    const saved=read(DISPLAY);
+    if(!saved||typeof saved!=='object'||Array.isArray(saved))return;
+    for(const [id,item] of Object.entries(saved)){
+      if(!/^[a-z0-9-]+$/.test(id)||!item||typeof item.title!=='string'||!item.title||meta[id]?.title)continue;
+      const amount=moneyAmount(item.amount);
+      const record={id,title:item.title.slice(0,200),type:item.type==='print'?'print':item.type==='deposit'?'deposit':'painting',amount,image:safeImage(item.image),preview:safeImage(item.preview),listing:amount?{price:{amount,currency:'USD'}}:undefined};
+      if(record.type==='print'&&item.imageSize&&item.paperSize&&[item.imageSize.width,item.imageSize.height,item.paperSize.width,item.paperSize.height].every(n=>Number.isFinite(Number(n)))){
+        record.imageSize={width:Number(item.imageSize.width),height:Number(item.imageSize.height)};
+        record.paperSize={width:Number(item.paperSize.width),height:Number(item.paperSize.height)};
+        if(typeof item.productId==='string'&&/^[a-z0-9-]+$/.test(item.productId))record.productId=item.productId;
+      }
+      meta[id]=record;
+    }
+  }
+  function rememberDisplay(){
+    const slim={};
+    for(const line of cart){
+      const item=meta[line.id];if(!item?.title)continue;
+      const amount=moneyAmount(item.amount)||moneyAmount(item.listing?.price?.amount);
+      slim[line.id]={id:line.id,title:item.title,type:item.type,amount,image:safeImage(item.image),preview:safeImage(item.preview),productId:item.productId,imageSize:item.imageSize,paperSize:item.paperSize};
+    }
+    write(DISPLAY,Object.keys(slim).length?slim:null);
+  }
+  function lineReady(line){
+    const info=meta[line.id];if(!info?.title)return false;
+    if(line.id.startsWith('print-')||info.type==='print')return !!(info.imageSize&&info.paperSize);
+    if(/^(deposit|balance)-/.test(line.id)||info.type==='deposit')return !!(info.commission&&info.amount);
+    return true;
+  }
+  function absorbCatalog(){
+    for(const product of capabilities?.products||[]){
+      if(product.type!=='print'&&product.type!=='deposit')continue;
+      const prev=meta[product.id]||{};
+      meta[product.id]={...prev,...product,image:prev.image||safeImage(product.preview)};
+    }
+  }
+  function loadProductFile(){
+    if(productFilePromise)return productFilePromise;
+    // Full shop file (~850KB, including every print). Never on the path that paints lines already described.
+    productFilePromise=(async()=>{
+      try{
+        const response=await fetch('/catalog/products.json');if(!response.ok)return;
+        const data=await response.json();
+        for(const item of [...(data.products||[]),...(data.prints||[])]){
+          if(!item||!/^[a-z0-9-]+$/.test(item.id||''))continue;
+          const prev=meta[item.id];
+          meta[item.id]=prev?{...prev,...item,image:item.image||prev.image,preview:prev.preview||item.preview,title:item.title||prev.title,amount:item.amount||prev.amount}:item;
+        }
+        rememberDisplay();
+      }catch{productFilePromise=null;}
+    })();
+    return productFilePromise;
+  }
+  function needsProductFile(){
+    const params=new URLSearchParams(location.search);
+    const ids=[...cart.map(line=>line.id),params.get('buy')].filter(Boolean);
+    // ?from=tags is only a return link. Described lines do not need the ~2MB products file.
+    if(!ids.length)return false;
+    return ids.some(id=>!meta[id]?.title)||ids.some(id=>id.startsWith('print-')&&!(meta[id]?.paperSize&&meta[id]?.imageSize));
+  }
   document.addEventListener('DOMContentLoaded',async()=>{
     const nav=document.querySelector('.main-nav');
     if(nav&&!nav.querySelector('[data-cart-link]')){const a=node('a',undefined,'cart-nav');a.href='/cart/';a.dataset.cartLink='';a.append(node('span','Cart '));const count=node('span',String(cart.length),'cart-count');count.dataset.cartCount='';a.append(count,cartPaymentIcons());nav.append(a);}counts();
@@ -59,14 +139,10 @@
     const earlyArea=document.querySelector('[data-cart-product]');let queuedClick=null,cartReady=false;
     const queueClick=event=>{if(cartReady)return;const b=event.target.closest('[data-cart-buy],[data-cart-add]');if(!b)return;event.preventDefault();event.stopImmediatePropagation();queuedClick=b.matches('[data-cart-buy]')?'[data-cart-buy]':'[data-cart-add]';b.setAttribute('aria-busy','true');};
     earlyArea?.addEventListener('click',queueClick,true);
+    if(root){seedDisplay();holdSession=read(HOLD);await initializePage(root);return;}
     capabilities=await capabilitiesPromise;
     holdSession=read(HOLD);
-    if(!root&&cart.length&&capabilities?.enabled)try{await syncHold(cart);}catch{}
-    if(root) {
-      // An empty cart has nothing to describe, so skip the ~850KB catalog download.
-      if(cart.length||location.search||location.hash)try{const r=await fetch('/catalog/products.json');const data=await r.json();meta=Object.fromEntries([...data.products,...(data.prints||[])].map(p=>[p.id,p]));}catch{}
-      initializePage(root);
-    }
+    if(cart.length&&capabilities?.enabled)try{await syncHold(cart);}catch{}
     const slug=location.pathname.match(/^\/products\/([a-z0-9-]+)\/?$/)?.[1];
     const area=document.querySelector('[data-cart-product]');
     // Preserve old payment return handlers, including outstanding Bitcoin invoices.
@@ -317,9 +393,9 @@
       if(amount)subtotal+=Number(amount)*line.quantity;
       const row=node('article',undefined,'cart-line'),link=node('a');link.href=isDeposit?'/commissions/':`/products/${details?.productId||line.id}/`;
       if(p?.image||details?.preview){const img=node('img');img.src=(p?.image||details.preview).src;img.alt=p?.title||details.title;link.append(img);}row.append(link);
-      const info=node('div'),title=node('h2'),titleLink=node('a',p?.title||live?.title||'Unavailable artwork');titleLink.href=link.href;title.append(titleLink);info.append(title,node('p',isPrint?`Fine-art print · Image ${inches(details.imageSize.width)} × ${inches(details.imageSize.height)} in · Paper ${inches(details.paperSize.width)} × ${inches(details.paperSize.height)} in${details.mat?` · ${details.mat.name} · Mat / frame ${inches(details.mat.outer.width)} × ${inches(details.mat.outer.height)} in`:""}`:isDeposit?(details.commission.stage==='balance'?`Commission balance · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Final payment before the finished work ships${line.requestId?' · Linked to your commission request':''}`:`Commission deposit · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Balance due before the finished work ships${line.requestId?' · Linked to your commission request':''}`):'Original artwork · Quantity 1'),node('p',amount?money(Number(amount)*line.quantity):'Price unavailable','cart-line-price'));
+      const info=node('div'),title=node('h2'),titleLink=node('a',p?.title||live?.title||(availabilitySettled?'Unavailable artwork':''));titleLink.href=link.href;title.append(titleLink);info.append(title,node('p',isPrint?`Fine-art print · Image ${inches(details.imageSize.width)} × ${inches(details.imageSize.height)} in · Paper ${inches(details.paperSize.width)} × ${inches(details.paperSize.height)} in${details.mat?` · ${details.mat.name} · Mat / frame ${inches(details.mat.outer.width)} × ${inches(details.mat.outer.height)} in`:""}`:isDeposit?(details.commission.stage==='balance'?`Commission balance · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Final payment before the finished work ships${line.requestId?' · Linked to your commission request':''}`:`Commission deposit · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Balance due before the finished work ships${line.requestId?' · Linked to your commission request':''}`):'Original artwork · Quantity 1'),node('p',amount?money(Number(amount)*line.quantity):'Price unavailable','cart-line-price'));
       if(isPrint&&details.frame)info.append(node('p',`${details.frame.name} frame · ${details.frame.glazing.name} acrylic · Assembled by FinerWorks`,'cart-frame-description'));
-      if(!eligible(line.id)){invalid=true;info.append(node('p',live?.status==='sold'?'Sold':live?.status==='reserved'?'Temporarily reserved':'Checkout unavailable — please inquire','cart-line-unavailable'));}
+      if(availabilitySettled&&!eligible(line.id)){invalid=true;info.append(node('p',live?.status==='sold'?'Sold':live?.status==='reserved'?'Temporarily reserved':'Checkout unavailable — please inquire','cart-line-unavailable'));}
       if(details?.sampleOnly)info.append(node('p','Low-resolution sample · Real printed order · One copy','cart-footnote'));
       if(isPrint&&!details.sampleOnly)printChoices(info,line);if(isPrint&&!details.sampleOnly){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart().catch(error=>announce(error.message));invalidate();render();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart().catch(error=>announce(`The item was removed here, but its reservation could not be updated yet: ${error.message}`));invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
     }
@@ -331,8 +407,9 @@
     layout.hidden=!cart.length||active;root.querySelector('[data-cart-empty]').hidden=!!cart.length||active;
     updateQuoteButton();
     if(!applyDepositMode())updatePaymentControls(false);
-    if(!active){announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');}
+    if(!active){if(availabilitySettled)announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');else announce('');}
   }
+  function renderSettled(){availabilitySettled=true;rememberDisplay();render();}
   function showQuote(q){
     const codeNote=document.querySelector('[data-cart-code-note]');
     if(codeNote){const coded=(q.quote?.items||[]).filter(i=>i.listAmount);codeNote.hidden=!coded.length;
@@ -386,7 +463,7 @@
     current=null;pendingOrder=null;quoted=null;awaitingBitcoinRedirect=false;clearTimeout(timer);orderPanel.hidden=true;history.replaceState(null,'','/cart/');
     let message='Your cart is ready. Calculate shipping and tax to continue.';
     try{if(!capabilities)capabilities=await api('catalog');await syncHold(cart);}catch(error){message=error.message;}
-    invalidate();render();announce(message);quoteFeedback.textContent=message;
+    invalidate();renderSettled();announce(message);quoteFeedback.textContent=message;
   }
   function showOrder(){
     if(!current)return;orderPanel.hidden=false;layout.hidden=true;root.querySelector('[data-cart-empty]').hidden=true;
@@ -423,8 +500,6 @@
     const methodsHost=root.querySelector('[data-cart-methods]');
     if(methodsHost&&!root.querySelector('[data-cart-wallets]')){const wallets=node('div',undefined,'cart-wallets');wallets.dataset.cartWallets='';wallets.hidden=true;const label=node('p','Express checkout','cart-wallets-label');const buttons=node('div',undefined,'cart-wallet-buttons');buttons.dataset.walletButtons='';wallets.append(label,buttons,node('p','or','cart-wallets-or'));methodsHost.before(wallets);}
     const params=new URLSearchParams(location.search),buy=params.get('buy');
-    // Buy now is a one-item checkout; existing cart contents remain for a later order.
-    if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;const requestId=params.get('request');cart=[{id:buy,quantity:1,...(/^(deposit|balance)-/.test(buy)&&REQUEST.test(requestId||'')?{requestId}:{})}]; /* view only; do not overwrite a saved multi-item cart */}
     const addressChanged=()=>{if(quoted)invalidate();else updateQuoteButton();};
     form.addEventListener('input',addressChanged);form.addEventListener('change',addressChanged);
     applyCountry();form.querySelector('select[name="country"]')?.addEventListener('change',applyCountry);
@@ -447,7 +522,7 @@
           else if(!holdSession){holdSession={holdId:result.orderId,key:restored.key};write(HOLD,holdSession);}
           capabilities=null;
         }
-        if(!capabilities)capabilities=await api('catalog').catch(()=>{throw Error('Availability could not be refreshed. Click Calculate shipping & tax to try again.');});
+        if(!capabilities){capabilities=await capabilitiesPromise;if(!capabilities)capabilities=await api('catalog').catch(()=>{throw Error('Availability could not be refreshed. Click Calculate shipping & tax to try again.');});}
         if(!capabilities?.enabled)throw Error('Checkout is temporarily unavailable. Please try again or contact TJ.');
         await syncHold(cart);
         const unavailable=cart.find(item=>!eligible(item.id));if(unavailable)throw Error('An item is no longer available for checkout. Review the items in your cart.');
@@ -460,10 +535,20 @@
     root.querySelector('[data-order-print]').addEventListener('click',()=>window.print());
     root.querySelector('[data-order-back]').addEventListener('click',async()=>{
       write(ATTEMPT,null);write(HOLD,null);holdSession=null;heldIds=new Set();current=null;quoted=null;pendingOrder=null;buyOnly=null;clearTimeout(timer);orderPanel.hidden=true;history.replaceState(null,'','/cart/');cart=clean(read(CART));
-      try{capabilities=await api('catalog');await syncHold(cart);}catch{capabilities=null;}invalidate();render();root.querySelector('h1').focus();
+      try{capabilities=await api('catalog');await syncHold(cart);}catch{capabilities=null;}invalidate();renderSettled();root.querySelector('h1').focus();
     });
+    // Gallery handoff (?from=tags) only adds ids. Paint those lines from the page index
+    // before the checkout catalog, the full products file, or the hold refresh return.
+    // Buy-now and order links still wait: their view depends on that catalog.
+    const deferPaint=params.has('order')||params.has('buy');
+    if(!deferPaint&&(!cart.length||cart.every(lineReady)))render();
+    capabilities=await capabilitiesPromise;
+    absorbCatalog();
+    if(needsProductFile())await loadProductFile();
+    // Buy now is a one-item checkout; existing cart contents remain for a later order.
+    if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;const requestId=params.get('request');cart=[{id:buy,quantity:1,...(/^(deposit|balance)-/.test(buy)&&REQUEST.test(requestId||'')?{requestId}:{})}]; /* view only; do not overwrite a saved multi-item cart */}
     const saved=read(ATTEMPT),id=params.get('order');
-    if(id&&(!saved||saved.orderId!==id)){render();announce('This order belongs to another browser session. Please contact TJ with your order reference if you have paid.');return;}
+    if(id&&(!saved||saved.orderId!==id)){renderSettled();announce('This order belongs to another browser session. Please contact TJ with your order reference if you have paid.');return;}
     if(saved){
       try{
         const result=await api('status',saved),restored={...result,key:saved.key};
@@ -474,13 +559,13 @@
           history.replaceState(null,'','/cart/');
         }else{
           current=null;
-          if(pending(restored)){pendingOrder=restored;render();showPendingNotice(restored,buy);}
-          else {write(ATTEMPT,null);write(HOLD,null);holdSession=null;heldIds=new Set();await syncHold(cart);render();}
+          if(pending(restored)){pendingOrder=restored;renderSettled();showPendingNotice(restored,buy);}
+          else {write(ATTEMPT,null);write(HOLD,null);holdSession=null;heldIds=new Set();await syncHold(cart);renderSettled();}
         }
       }catch(error){
-        current=null;pendingOrder={...saved};render();showPendingNotice(pendingOrder,buy,'The existing order status could not be checked ('+error.message+').');
+        current=null;pendingOrder={...saved};renderSettled();showPendingNotice(pendingOrder,buy,'The existing order status could not be checked ('+error.message+').');
       }
-    }else {try{await syncHold(cart);}catch(error){announce(error.message);}render();}
+    }else {try{await syncHold(cart);}catch(error){announce(error.message);}renderSettled();}
     document.addEventListener('visibilitychange',()=>{if(!document.hidden&&pending(current))updateOrder();});
   }
 })();
