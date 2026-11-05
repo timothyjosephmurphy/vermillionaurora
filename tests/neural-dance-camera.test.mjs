@@ -9,6 +9,7 @@ import {
   videoConstraints,
   videoFrameReady,
   APPEAR_MS,
+  CALIBRATION_MARKERS,
   CANVAS_H,
   CANVAS_W,
   CLEAR_MS,
@@ -22,10 +23,12 @@ import {
   blobSettings,
   cameraChoices,
   clientToNormalized,
+  cornersFromMarkerCenters,
   createMarkerTracker,
   detectPinkBlobs,
   detectionSize,
   downsampleRgba,
+  findCalibrationMarkers,
   homographyFromNormalized,
   isPink,
   markersFromFrame,
@@ -296,6 +299,45 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
   close(click.y, 0.75, 1e-9, 'click y');
   const dancers = toDancerMarkers([{id: 2, x: 10, y: 20}, {id: 0, x: 1, y: 1}]);
   assert.deepEqual(dancers, [{id: 2, x: 10, y: 20, type: 1}]);
+});
+
+test('calibration markers recover the stage corners from a white field', () => {
+  const width = 160;
+  const height = 90;
+  const data = new Uint8ClampedArray(width * height * 4);
+  data.fill(255);
+  const marks = CALIBRATION_MARKERS.map((marker, i) => ({
+    x: marker.x,
+    y: marker.y,
+    rgb: [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0]][i]
+  }));
+  for (const mark of marks) {
+    const cx = Math.round(mark.x * width);
+    const cy = Math.round(mark.y * height);
+    for (let y = cy - 4; y <= cy + 4; y++) {
+      for (let x = cx - 4; x <= cx + 4; x++) {
+        const i = (y * width + x) * 4;
+        data[i] = mark.rgb[0];
+        data[i + 1] = mark.rgb[1];
+        data[i + 2] = mark.rgb[2];
+      }
+    }
+  }
+  const centers = findCalibrationMarkers(data, width, height);
+  assert.ok(centers);
+  const missing = data.slice();
+  for (let i = 0; i < missing.length; i += 4) if (missing[i] === 255 && missing[i + 1] === 255 && missing[i + 2] === 0) missing[i + 2] = 255;
+  assert.equal(findCalibrationMarkers(missing, width, height), null);
+  const corners = cornersFromMarkerCenters(centers.map(c => ({x: c.x + 0.5, y: c.y + 0.5})), width, height);
+  assert.ok(corners);
+  close(corners[0].x, 0, 0.04, 'tl x');
+  close(corners[0].y, 0, 0.04, 'tl y');
+  close(corners[1].x, 1, 0.04, 'tr x');
+  close(corners[1].y, 0, 0.04, 'tr y');
+  close(corners[2].x, 1, 0.04, 'br x');
+  close(corners[2].y, 1, 0.04, 'br y');
+  close(corners[3].x, 0, 0.04, 'bl x');
+  close(corners[3].y, 1, 0.04, 'bl y');
 });
 
 test('Continuity Camera constraints omit resolution and play after loadedmetadata', async () => {

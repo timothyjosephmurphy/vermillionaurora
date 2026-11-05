@@ -48,6 +48,16 @@ test('the live page is a full-screen stage with room music and camera, and no si
   assert.match(page, /data-live="collapse"/);
   assert.match(page, /data-live="preview"/);
   assert.match(page, /data-live="reveal"/);
+  assert.match(page, /data-live="exit-align"/);
+  assert.match(page, /Exit align/);
+  assert.match(page, /data-cal-pattern/);
+  assert.match(page, /Fine-tune corners/);
+  assert.match(page, /position:fixed;inset:0/);
+  assert.doesNotMatch(page, /grid-template-areas:"tools tools" "camera stage" "sliders sliders"/);
+  assert.match(page, /background-color:transparent/);
+  assert.doesNotMatch(page, /\.nd-cal-pattern\{[^}]*background:#fff/);
+  assert.match(show, /findCalibrationMarkers/);
+  assert.match(show, /stopImmediatePropagation/);
   assert.match(page, /Quiet threshold/);
   assert.match(page, /data-control="quiet"/);
   assert.match(page, /aria-label="Quiet threshold"/);
