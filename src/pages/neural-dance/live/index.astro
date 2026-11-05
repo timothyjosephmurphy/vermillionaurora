@@ -14,15 +14,17 @@
 <style is:inline>
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:#000;color:#f4f6fb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-body{--background:#080910;--foreground:#f4f6fb;--viz-series-1:#ff927d;--viz-series-2:#eb92f5;--viz-series-3:#7fe8b3;--viz-series-4:#81b7fc;overflow:hidden;display:grid;height:100dvh;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) minmax(108px,34%);grid-template-areas:"tools tools" "camera stage" "sliders sliders"}
+body{--background:#080910;--foreground:#f4f6fb;--viz-series-1:#ff927d;--viz-series-2:#eb92f5;--viz-series-3:#7fe8b3;--viz-series-4:#81b7fc;overflow:hidden;height:100dvh}
 button,select,input{font:inherit}
 button{cursor:pointer}
-#nd-room-lab{display:contents}
-#nd-room-projector{grid-area:stage;position:relative;width:100%;height:100%;min-height:0;margin:0;background:#080910;overflow:hidden}
+#nd-room-lab{display:block}
+#nd-room-projector{position:fixed;inset:0;z-index:1;width:100vw;height:100dvh;margin:0;background:#080910;overflow:hidden}
 #nd-room-lab [data-stage]{display:block;width:100%;height:100%;background:#080910;touch-action:none}
-.nd-live-bar{grid-area:tools;position:relative;z-index:1000003;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:6px 8px;background:#10121a;border-bottom:1px solid rgba(255,255,255,.14)}
-.nd-live-details{grid-area:sliders;position:relative;z-index:1000003;overflow:auto;padding:8px;background:#0c0e14;border-top:1px solid rgba(255,255,255,.14);min-height:0}
-#nd-camera-mode{grid-area:camera;position:relative;z-index:1000003;display:flex;flex-direction:column;min-width:0;min-height:0;overflow:auto;padding:8px;background:#07080c;border-right:1px solid rgba(255,255,255,.12)}
+.nd-live-chrome{position:fixed;top:0;left:0;right:0;z-index:1000003;max-height:70vh;display:flex;flex-direction:column;pointer-events:none}
+.nd-live-bar,.nd-live-details{pointer-events:auto}
+.nd-live-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:6px 8px;background:rgba(16,18,26,.94);border-bottom:1px solid rgba(255,255,255,.14)}
+.nd-live-details{overflow:auto;max-height:38vh;padding:8px;background:rgba(12,14,20,.92);border-bottom:1px solid rgba(255,255,255,.14)}
+#nd-camera-mode{position:fixed;right:8px;bottom:8px;z-index:1000002;width:min(260px,46vw);max-height:42vh;display:flex;flex-direction:column;overflow:auto;padding:8px;background:rgba(7,8,12,.92);border:1px solid rgba(255,255,255,.16);border-radius:12px}
 .viz-row,.viz-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .viz-controls{align-items:end}
 h1,h2{font-size:16px;margin:0 6px 0 0}
@@ -47,35 +49,30 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{ou
 #nd-room-lab[data-mic="listening"] .meter{display:inline-block}
 .meter i{display:block;height:100%;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left center}
 #nd-room-lab [data-spectrum]{display:block;width:100%;height:56px;background:#05060a;border-radius:10px;margin:0}
-.camera-frame{position:relative;flex:1 1 auto;width:100%;min-height:120px;background:#05060a;border-radius:12px;overflow:hidden;margin:0 0 6px}
+.camera-frame{position:relative;order:-1;width:100%;height:110px;min-height:96px;flex:none;background:#05060a;border-radius:12px;overflow:hidden;margin:0 0 6px}
 #nd-camera-mode [data-preview],#nd-camera-mode [data-overlay]{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#05060a}
 #nd-camera-mode [data-overlay]{touch-action:none;cursor:crosshair}
-.nd-cal-pattern{position:absolute;inset:0;z-index:4;background:#fff}
-.nd-cal-pattern i{position:absolute;width:12%;height:16%;transform:translate(-50%,-50%);border-radius:8px}
+.nd-cal-pattern{position:absolute;inset:0;z-index:4;pointer-events:none;background-color:transparent;border:8px solid #fff;background-image:linear-gradient(to right,rgba(255,255,255,.92) 2px,transparent 2px),linear-gradient(to bottom,rgba(255,255,255,.92) 2px,transparent 2px);background-size:12.5% 12.5%;background-position:center}
+.nd-cal-pattern i{position:absolute;width:11%;height:16%;transform:translate(-50%,-50%);border-radius:6px;box-shadow:0 0 0 3px #fff}
 .nd-cal-pattern [data-cal="red"]{background:#f00;left:14%;top:14%}
 .nd-cal-pattern [data-cal="green"]{background:#0f0;left:86%;top:14%}
 .nd-cal-pattern [data-cal="blue"]{background:#00f;left:86%;top:86%}
 .nd-cal-pattern [data-cal="yellow"]{background:#ff0;left:14%;top:86%}
 .nd-live-reveal{position:fixed;z-index:1000004;top:8px;left:8px;opacity:.7}
-body.nd-live-aligning .nd-live-bar,body.nd-live-aligning .nd-live-details,body.nd-live-aligning #nd-camera-mode{z-index:1000003}
-body.nd-live #nd-room-projector{position:relative !important;inset:auto !important;top:auto !important;left:auto !important;width:100% !important;height:100% !important;margin:0 !important;transform:none !important}
+body.nd-live #nd-room-projector{position:fixed !important;inset:0 !important;top:0 !important;left:0 !important;width:100vw !important;height:100dvh !important;margin:0 !important;transform:none !important}
 body.nd-live-collapsed .nd-live-details{display:none}
-body.nd-live-collapsed{grid-template-rows:auto minmax(0,1fr) 0}
-body.nd-live-hidden .nd-live-bar,body.nd-live-hidden .nd-live-details{display:none}
-body.nd-live-hidden{grid-template-areas:"stage stage" "stage stage" "stage stage"}
-body.nd-live-hidden #nd-camera-mode{position:fixed;left:0;top:0;width:320px;height:180px;transform:translateX(-120vw);overflow:hidden;padding:0;border:0;z-index:1}
+body.nd-live-hidden .nd-live-chrome{display:none}
+body.nd-live-hidden #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:320px;height:180px;max-height:none;transform:translateX(-120vw);overflow:hidden;padding:0;border:0;z-index:1}
 body.nd-live-hidden #nd-camera-mode .viz-row,body.nd-live-hidden #nd-camera-mode .viz-controls,body.nd-live-hidden #nd-camera-mode .mural-help,body.nd-live-hidden #nd-camera-mode .text-small{display:none}
-body.nd-live-preview-off #nd-camera-mode .camera-frame{position:fixed;left:0;top:0;width:320px;height:180px;flex:none;transform:translateX(-120vw);opacity:1;pointer-events:none}
-@media (orientation:portrait) and (max-width:899px){
-  body{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1.15fr) minmax(120px,.85fr) minmax(108px,32%);grid-template-areas:"tools" "stage" "camera" "sliders"}
-  #nd-camera-mode{border-right:0;border-top:1px solid rgba(255,255,255,.12)}
-}
+body.nd-live-preview-off #nd-camera-mode .camera-frame{position:fixed;left:0;top:0;width:240px;height:135px;transform:translateX(-120vw);opacity:1;pointer-events:none}
 @media (max-height:520px){
   .mural-help{display:none}
   h2{font-size:14px}
   .btn,.form-select{padding:6px 8px;font-size:12px}
   .nd-live-bar{gap:4px;padding:4px 6px}
+  .nd-live-details{max-height:34vh}
   #nd-room-lab [data-spectrum]{height:36px}
+  .camera-frame{height:96px}
 }
 </style>
 </head>
@@ -83,6 +80,7 @@ body.nd-live-preview-off #nd-camera-mode .camera-frame{position:fixed;left:0;top
 <h1 class="nd-live-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Neural Dance live</h1>
 <section id="nd-room-lab" data-mic="off" aria-labelledby="room-music-title">
   <div id="nd-room-projector"><canvas class="cursor-interaction" data-add-dancer data-stage width="1000" height="620" role="img" aria-label="Room-music dancers. They move when the microphone hears a kick, bass, snare, or hi-hat."></canvas><div class="nd-cal-pattern" data-cal-pattern hidden><i data-cal="red"></i><i data-cal="green"></i><i data-cal="blue"></i><i data-cal="yellow"></i></div></div>
+  <div class="nd-live-chrome">
   <div id="nd-live-dock" class="nd-live-bar">
       <h2 id="room-music-title">Room music</h2>
       <button class="btn btn-primary" type="button" data-action="play">Start</button>
@@ -97,7 +95,7 @@ body.nd-live-preview-off #nd-camera-mode .camera-frame{position:fixed;left:0;top
       <span data-status role="status" aria-live="polite">Loading room music…</span>
   </div>
     <div class="nd-live-details" data-live-details>
-      <p class="mural-help">Pick the iPhone camera and start it. Press <strong>Listen</strong> and play music. While Listening, a ring around each dancer draws the live waveform of the band it dances to. <strong>Align projector</strong> shows a white field with four colored corners and lines the camera up by itself. <strong>Exit align</strong> leaves that screen. <strong>Fine-tune corners</strong> is the manual four-click fallback. Then turn markers on and stick a pink note on the wall. Quiet threshold keeps room hiss from moving the dancers. Hide controls (or H) clears the projection.</p>
+      <p class="mural-help">The dancers fill the screen. The camera is the small corner preview. Press <strong>Listen</strong> and play music. While Listening, a ring around each dancer draws the live waveform of the band it dances to. <strong>Align projector</strong> lays a grid over the dancers and finds that projection in the camera. <strong>Exit align</strong> leaves that screen. <strong>Fine-tune corners</strong> is the manual four-click fallback. Then turn markers on and stick a pink note on the wall. Quiet threshold keeps room hiss from moving the dancers. Hide controls (or H) clears the projection.</p>
       <div class="viz-controls" data-add-dancer>
         <label class="form-label">New dancer<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Snare</option><option value="3">Hi-hat</option></select></label>
         <label class="form-label">Gravity <output data-value="gravity">2.5×</output><input class="form-range" data-control="gravity" type="range" min="0" max="6" step="0.1" value="2.5" aria-label="Gravity"></label>
@@ -113,6 +111,7 @@ body.nd-live-preview-off #nd-camera-mode .camera-frame{position:fixed;left:0;top
       <canvas data-spectrum width="880" height="96" aria-label="Live microphone levels for kick, bass, mid, and treble"></canvas>
       <div class="viz-row text-small"><span data-legend="0">● Kick<span class="meter"><i data-meter="0"></i></span></span><span data-legend="1">◆ Bass<span class="meter"><i data-meter="1"></i></span></span><span data-legend="2">■ Mid<span class="meter"><i data-meter="2"></i></span></span><span data-legend="3">▲ Treble<span class="meter"><i data-meter="3"></i></span></span><span data-floor>noise floor —</span></div>
     </div>
+  </div>
 </section>
 <section id="nd-camera-mode" data-fine-tune="1" aria-labelledby="camera-mode-title">
   <div class="viz-row"><h2 id="camera-mode-title">Camera</h2><button class="btn btn-primary" type="button" data-action="camera">Use camera</button><button class="btn" type="button" data-action="refresh">Refresh cameras</button><button class="btn" type="button" data-action="calibrate" aria-pressed="false">Fine-tune corners</button><button class="btn" type="button" data-action="markers" aria-pressed="false" disabled>Markers off</button></div>

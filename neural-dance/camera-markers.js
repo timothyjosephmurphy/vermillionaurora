@@ -20,7 +20,7 @@ export const PROJECTION_CORNERS = [
   {x: CANVAS_W, y: CANVAS_H},
   {x: 0, y: CANVAS_H}
 ];
-// Inset colored corners of the white calibration field, in stage units (0–1).
+// Colored corner fiducials drawn over the live dancers, in stage units (0–1).
 // Order matches PROJECTION_CORNERS: top left, top right, bottom right, bottom left.
 export const CALIBRATION_MARKERS = [
   {hue: 0, name: 'red', x: 0.14, y: 0.14},
@@ -129,7 +129,7 @@ export function findCalibrationMarkers(rgba, width, height, markers = CALIBRATIO
   for (const marker of markers) {
     const blobs = detectPinkBlobs(rgba, width, height, {
       hueCenter: marker.hue,
-      hueTolerance: 16,
+      hueTolerance: 10,
       saturationSensitivity: 0.25,
       minBlobSize: 3
     });

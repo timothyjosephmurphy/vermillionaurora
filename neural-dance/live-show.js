@@ -210,7 +210,7 @@ function beginAlign(doc) {
   const camRoot = doc.getElementById('nd-camera-mode');
   if (camRoot && camRoot.neuralDanceCamera) camRoot.neuralDanceCamera.cancelCalibration(true);
   const status = room.querySelector('[data-status]');
-  if (status) status.textContent = 'Aligning. Show the white field to the camera. Exit align leaves this screen.';
+  if (status) status.textContent = 'Aligning. The grid stays on the dancers. Point the camera at the projection. Exit align leaves this screen.';
   const started = typeof performance !== 'undefined' ? performance.now() : Date.now();
   const tick = () => {
     if (!doc.body.classList.contains('nd-live-aligning')) return;

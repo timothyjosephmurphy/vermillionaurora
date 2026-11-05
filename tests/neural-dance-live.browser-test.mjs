@@ -50,11 +50,10 @@ try {
     };
   });
   assert.equal(boxes.header, null);
-  assert.ok(boxes.camera.right <= boxes.stage.x + 4, `camera overlaps stage ${boxes.camera.right} vs ${boxes.stage.x}`);
-  assert.ok(boxes.camera.h > 70 && boxes.stage.h > 70, `short panes camera ${boxes.camera.h} stage ${boxes.stage.h}`);
-  assert.ok(Math.abs(boxes.camera.y - boxes.stage.y) < 8, 'camera and stage are not side by side');
-  assert.ok(boxes.sliders.y >= boxes.stage.bottom - 4, `gravity slider is not below the stage ${boxes.sliders.y} vs ${boxes.stage.bottom}`);
-  assert.ok(boxes.quiet.y < 390 && boxes.quiet.y >= boxes.stage.bottom - 4, `quiet slider not reachable ${boxes.quiet.y}`);
+  assert.ok(boxes.stage.w > 800 && boxes.stage.h > 340, `stage is not full screen ${boxes.stage.w}x${boxes.stage.h}`);
+  assert.ok(boxes.camera.w < 420 && boxes.camera.w < boxes.stage.w * 0.55, `camera is not a small preview ${boxes.camera.w}`);
+  assert.ok(boxes.camera.right > 700 && boxes.camera.bottom > 300, 'camera preview is not in the corner');
+  assert.ok(boxes.bar.y < 30 && boxes.bar.h > 20, 'control bar is not at the top');
   assert.ok(boxes.sliders.h > 10 && boxes.quiet.h > 10);
   assert.equal(boxes.exit, true);
   const hit = await page.evaluate(() => {
@@ -73,16 +72,30 @@ try {
     const r = exit.getBoundingClientRect();
     const top = document.elementFromPoint(r.x + 8, r.y + r.height / 2);
     const slider = document.querySelector('[data-control="gravity"]').getBoundingClientRect();
+    const pattern = document.querySelector('[data-cal-pattern]');
+    const stage = document.getElementById('nd-room-projector').getBoundingClientRect();
+    const canvas = document.querySelector('#nd-room-projector [data-stage]');
     return {
       exitHit: exit.contains(top) || top === exit,
       mapping: document.getElementById('nd-room-lab').classList.contains('is-mapping'),
-      sliderTop: slider.top,
-      stageBottom: document.getElementById('nd-room-projector').getBoundingClientRect().bottom
+      sliderHit: (() => {
+        const s = document.querySelector('[data-control="gravity"]');
+        const sr = s.getBoundingClientRect();
+        const el = document.elementFromPoint(sr.x + 8, sr.y + sr.height / 2);
+        return s.contains(el) || el === s;
+      })(),
+      patternBg: getComputedStyle(pattern).backgroundColor,
+      canvasShown: getComputedStyle(canvas).display !== 'none' && canvas.getBoundingClientRect().width > 800,
+      stageW: stage.width,
+      stageH: stage.height
     };
   });
   assert.equal(during.exitHit, true, 'Exit align is covered');
   assert.equal(during.mapping, false, 'maptastic mapping trapped the page');
-  assert.ok(during.sliderTop >= during.stageBottom - 4);
+  assert.equal(during.sliderHit, true, 'sliders are covered during align');
+  assert.equal(during.canvasShown, true, 'dancers are hidden during align');
+  assert.ok(during.stageW > 800 && during.stageH > 340);
+  assert.ok(during.patternBg === 'rgba(0, 0, 0, 0)' || during.patternBg === 'transparent', `align field is not transparent ${during.patternBg}`);
   await page.screenshot({path: '/opt/cursor/artifacts/neural-dance-live-align.png'});
   await page.click('[data-live="exit-align"]');
   await page.waitForFunction(() => !document.body.classList.contains('nd-live-aligning') && document.querySelector('[data-cal-pattern]').hidden === true);
@@ -91,16 +104,15 @@ try {
   const portrait = await page.evaluate(() => {
     const stage = document.getElementById('nd-room-projector').getBoundingClientRect();
     const camera = document.getElementById('nd-camera-mode').getBoundingClientRect();
-    const details = document.querySelector('.nd-live-details').getBoundingClientRect();
-    return {stageBottom: stage.bottom, cameraTop: camera.top, cameraBottom: camera.bottom, detailsTop: details.top, detailsBottom: details.bottom, cameraH: camera.height};
+    const bar = document.querySelector('.nd-live-bar').getBoundingClientRect();
+    return {stageW: stage.width, stageH: stage.height, cameraW: camera.width, barTop: bar.top};
   });
-  assert.ok(portrait.cameraTop >= portrait.stageBottom - 4, 'portrait should stack the camera under the stage');
-  assert.ok(portrait.detailsTop >= portrait.cameraBottom - 4, `sliders overlap the camera ${portrait.detailsTop} vs ${portrait.cameraBottom}`);
-  assert.ok(portrait.detailsBottom <= 846 && portrait.detailsTop < 844, `slider tray offscreen ${portrait.detailsTop}-${portrait.detailsBottom}`);
+  assert.ok(portrait.stageW > 370 && portrait.stageH > 800, `portrait stage is not full screen ${portrait.stageW}x${portrait.stageH}`);
+  assert.ok(portrait.cameraW < 250, `portrait camera is not a corner preview ${portrait.cameraW}`);
+  assert.ok(portrait.barTop < 20);
   await page.locator('[data-control="quiet"]').scrollIntoViewIfNeeded();
   const quietBox = await page.locator('[data-control="quiet"]').boundingBox();
-  assert.ok(quietBox.y >= 0 && quietBox.y < 844, `quiet slider not reachable in portrait ${quietBox.y}`);
-  assert.ok(portrait.cameraH > 40);
+  assert.ok(quietBox && quietBox.y >= 0 && quietBox.y < 844, `quiet slider not reachable in portrait ${quietBox && quietBox.y}`);
 } finally {
   await browser.close();
   await new Promise(r => server.close(r));
