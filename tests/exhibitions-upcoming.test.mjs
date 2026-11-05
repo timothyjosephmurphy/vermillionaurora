@@ -8,21 +8,11 @@ const page = fs.readFileSync('src/pages/exhibitions/index.astro', 'utf8');
 const signup = fs.readFileSync('src/components/EmailSignup.astro', 'utf8');
 
 test('upcoming shows are the known calendar, soonest first, without invented street addresses', () => {
-  assert.deepEqual(upcoming.map(show => show.id), ['carre-dartistes', 'ghost-gallery-minis', 'waa-sip-and-stroll']);
-  assert.deepEqual(upcoming.map(show => show.start), ['2026-10-30', '2026-11-02', '2026-11-13']);
+  assert.deepEqual(upcoming.map(show => show.id), ['waa-sip-and-stroll']);
+  assert.deepEqual(upcoming.map(show => show.start), ['2026-11-13']);
+  assert.deepEqual(upcoming.map(show => show.title), ['WAA Sip & Stroll']);
 
-  const carre = upcoming[0];
-  assert.equal(carre.title, "Carré d'artistes");
-  assert.match(carre.dates, /Pieces ready by October 30, 2026/);
-  assert.equal(carre.venue, 'Venue to be confirmed');
-
-  const ghost = upcoming[1];
-  assert.equal(ghost.title, 'Ghost Gallery minis');
-  assert.match(ghost.dates, /November 2[–-]5, 2026/);
-  assert.equal(ghost.end, '2026-11-05');
-  assert.match(ghost.venue, /Ghost Gallery, Seattle/);
-
-  const waa = upcoming[2];
+  const waa = upcoming[0];
   assert.equal(waa.title, 'WAA Sip & Stroll');
   assert.match(waa.dates, /Deliver November 13, 2026/);
   assert.match(waa.dates, /pick up November 14, 2026/);
@@ -69,6 +59,8 @@ test('the exhibitions page lists upcoming shows and a Buttondown form above past
   assert.match(signup, /autocomplete="email"/);
   assert.match(signup, /required/);
   assert.match(page, /One print at cost when you join/);
+  assert.match(page, /Woodinville Arts Alliance Sip & Stroll, Bitcoin Film Festival Warsaw, Victrola, and more/);
+  assert.doesNotMatch(page, /Ghost Gallery|Carré|carre-dartistes|ghost-gallery-minis/);
   assert.equal(BUTTONDOWN_USERNAME, 'timothyjosephmurphy');
   assert.equal(newsletterAction, '/newsletter/subscribe');
   assert.match(signup, /action=\{newsletterAction\}/);
