@@ -314,3 +314,41 @@ test('the mural page keeps its controls and loads the wasm core', () => {
   assert.match(copier, /wasm/);
   assert.doesNotMatch(page, /getUserMedia[\s\S]{0,80}video:\s*true/);
 });
+
+test('room music is a mic-only prototype stage after the original simulation', () => {
+  const muralAt = page.indexOf('id="nd-mural-mapped"');
+  const originalAt = page.indexOf('id="original-simulation"');
+  const canvasAt = page.indexOf('id="canvas"');
+  const roomAt = page.indexOf('id="nd-room-lab"');
+  const originalEnd = page.indexOf('</section>', canvasAt);
+  assert.ok(muralAt >= 0 && originalAt > muralAt && canvasAt > originalAt);
+  assert.ok(originalEnd > canvasAt && roomAt > originalEnd, 'room music follows the original prototype');
+
+  const room = page.slice(roomAt, page.indexOf('</script>', roomAt) + '</script>'.length);
+  assert.doesNotMatch(room, /mural-with-silhouettes/);
+  assert.doesNotMatch(room, /data-mural/);
+  assert.doesNotMatch(room, /data-action="audio"/);
+  assert.doesNotMatch(room, /createOscillator/);
+  assert.doesNotMatch(room, /createGain/);
+  assert.doesNotMatch(room, /\.destination/);
+  assert.doesNotMatch(room, /Audio off|Audio on/);
+  assert.doesNotMatch(room, /nd_set_clock\(1\)/);
+  assert.doesNotMatch(room, /setClock\(/);
+  assert.match(room, /nd_set_clock\(0\)/);
+  assert.match(room, /#080910/);
+  assert.match(room, /fillRect/);
+  assert.match(room, /width="1000" height="620"/);
+  assert.match(room, /\[105,185,265\]/);
+  assert.match(room, /rgba\(145,150,180,\.22\)/);
+  assert.doesNotMatch(room, /122\.8/);
+  assert.doesNotMatch(room, /mural-with-silhouettes|1764/);
+  assert.match(room, /data-action="listen"/);
+  assert.match(room, /getUserMedia/);
+  assert.match(room, /Align projector/);
+
+  const mural = page.slice(muralAt, page.indexOf('</section>', muralAt));
+  assert.match(mural, /mural-with-silhouettes/);
+  assert.match(mural, /data-action="audio"/);
+  assert.match(page, /Room music<\/a> at the bottom of the page/);
+  assert.doesNotMatch(page, /Room music<\/a> below/);
+});
