@@ -25,10 +25,18 @@ import {
   markersFromFrame,
   pickCamera,
   projectVideoPoint,
+  blobPhrase,
+  dedupeBlobs,
+  detectStickerBlobs,
+  localWallThreshold,
+  luminanceByte,
+  normalizeDetectionMode,
   readCameraSettings,
   rgbToHsv,
   saturationFloor,
   solveHomography,
+  STICKER_SHAPE,
+  stickerWindowRadius,
   toDancerMarkers,
   writeCameraSettings
 } from '../neural-dance/camera-markers.js';
@@ -82,6 +90,51 @@ function memoryStorage() {
     getItem(key) { return values.has(key) ? values.get(key) : null; },
     setItem(key, value) { values.set(key, String(value)); }
   };
+}
+
+const WALL = [232, 230, 226];
+const INK = [22, 22, 24];
+const VINYL = [100, 100, 104];
+const SOFT_SHADOW = [150, 146, 142];
+
+function dancer(ox, oy) {
+  return (x, y) => {
+    const px = x - ox;
+    const py = y - oy;
+    if (px >= 5 && px < 9 && py >= 0 && py < 4) return true;
+    if (px >= 4 && px < 10 && py >= 4 && py < 12) return true;
+    if (px >= 2 && px < 4 && py >= 1 && py < 8) return true;
+    if (px >= 10 && px < 15 && py >= 5 && py < 7) return true;
+    if (px >= 4 && px < 6 && py >= 12 && py < 20) return true;
+    if (px >= 8 && px < 10 && py >= 12 && py < 20) return true;
+    return false;
+  };
+}
+
+function cShape(ox, oy) {
+  return (x, y) => {
+    const px = x - ox;
+    const py = y - oy;
+    if (px < 0 || py < 0 || px >= 20 || py >= 16) return false;
+    return py < 2 || py >= 14 || px < 2;
+  };
+}
+
+function stair(ox, oy, n) {
+  return (x, y) => {
+    const dx = x - ox;
+    const dy = y - oy;
+    return dx >= 0 && dx < n && dy === dx;
+  };
+}
+
+function paintLayers(width, height, wall, layers) {
+  return paint(width, height, (x, y) => {
+    for (const layer of layers) {
+      if (layer.at(x, y)) return layer.color;
+    }
+    return wall;
+  });
 }
 
 test('homography maps the calibration corners and preserves straight edges', () => {
@@ -270,7 +323,29 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
   assert.equal(saved.hueTolerance, 40);
   assert.equal(saved.saturationSensitivity, 0.7);
   assert.equal(saved.minBlobSize, 24);
+  assert.equal(saved.detectionMode, 'pink');
+  assert.equal(saved.stickerSensitivity, DEFAULTS.stickerSensitivity);
   assert.deepEqual(saved.corners, corners);
+  assert.equal(writeCameraSettings(storage, {
+    deviceId: 'phone',
+    deviceLabel: 'iPhone Camera',
+    corners,
+    hueTolerance: 40,
+    saturationSensitivity: 0.7,
+    minBlobSize: 24,
+    detectionMode: 'stickers',
+    stickerSensitivity: 0.2
+  }), true);
+  const stickersSaved = readCameraSettings(storage);
+  assert.equal(stickersSaved.detectionMode, 'stickers');
+  assert.equal(stickersSaved.stickerSensitivity, 0.2);
+  storage.setItem(STORAGE_KEY, JSON.stringify({detectionMode: 'both', stickerSensitivity: 0.8}));
+  assert.equal(readCameraSettings(storage).detectionMode, 'both');
+  storage.setItem(STORAGE_KEY, JSON.stringify({detectionMode: 'uv', stickerSensitivity: 4}));
+  assert.equal(readCameraSettings(storage).detectionMode, 'pink');
+  assert.equal(readCameraSettings(storage).stickerSensitivity, 1);
+  storage.setItem(STORAGE_KEY, JSON.stringify({stickerSensitivity: -1}));
+  assert.equal(readCameraSettings(storage).stickerSensitivity, 0);
   storage.setItem(STORAGE_KEY, '{');
   assert.equal(readCameraSettings(storage), null);
   storage.setItem(STORAGE_KEY, JSON.stringify({hueTolerance: 999, saturationSensitivity: -2, minBlobSize: 1, corners: [{x: 1, y: 1}]}));
@@ -278,6 +353,8 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
   assert.equal(clamped.hueTolerance, 80);
   assert.equal(clamped.saturationSensitivity, 0);
   assert.equal(clamped.minBlobSize, 4);
+  assert.equal(clamped.detectionMode, 'pink');
+  assert.equal(clamped.stickerSensitivity, DEFAULTS.stickerSensitivity);
   assert.equal(clamped.corners, null);
   const click = clientToNormalized(25, 75, {left: 0, top: 0, width: 100, height: 100});
   close(click.x, 0.25, 1e-9, 'click x');
@@ -296,6 +373,20 @@ test('the neural dance page keeps room controls and adds camera mode', () => {
   assert.match(page, /Hue tolerance/);
   assert.match(page, /Saturation sensitivity/);
   assert.match(page, /Minimum blob size/);
+  assert.match(page, /Sticker sensitivity/);
+  assert.match(page, /data-control="sticker"/);
+  assert.match(page, /data-mode="pink"/);
+  assert.match(page, /data-mode="stickers"/);
+  assert.match(page, /data-mode="both"/);
+  assert.match(page, /aria-label="Detection mode"/);
+  assert.match(page, />Pink</);
+  assert.match(page, />Stickers</);
+  assert.match(page, />Both</);
+  assert.match(camera, /studio-tracker #801/);
+  assert.match(camera, /localWallThreshold/);
+  assert.match(camera, /solidity/);
+  assert.match(camera, /detectionMode/);
+  assert.match(camera, /stickerSensitivity/);
   assert.match(page, /data-preview/);
   assert.match(page, /data-action="calibrate"/);
   assert.match(page, /\/neural-dance\/camera-markers\.js/);
@@ -323,4 +414,123 @@ test('the neural dance page keeps room controls and adds camera mode', () => {
   assert.match(room, /nd_set_gravity/);
   assert.match(room, /nd_set_band_sens/);
   assert.equal(CORNER_STEPS.length, 4);
+});
+
+test('sticker sensitivity follows the local wall and ignores a dark room', () => {
+  assert.equal(normalizeDetectionMode('nope'), 'pink');
+  assert.equal(normalizeDetectionMode('both'), 'both');
+  assert.ok(localWallThreshold(230, 1) > localWallThreshold(230, 0.55));
+  assert.ok(localWallThreshold(230, 0.55) > localWallThreshold(230, 0));
+  assert.equal(localWallThreshold(STICKER_SHAPE.wallFloor - 1, 1), -1);
+  assert.ok(luminanceByte(...INK) < localWallThreshold(luminanceByte(...WALL), 0));
+  assert.ok(luminanceByte(...VINYL) > localWallThreshold(luminanceByte(...WALL), 0));
+  assert.ok(luminanceByte(...VINYL) < localWallThreshold(luminanceByte(...WALL), 0.55));
+  assert.ok(luminanceByte(...SOFT_SHADOW) > localWallThreshold(luminanceByte(...WALL), 0.55));
+  assert.ok(luminanceByte(...SOFT_SHADOW) < localWallThreshold(luminanceByte(...WALL), 1));
+  const width = 120;
+  const height = 90;
+  assert.ok(stickerWindowRadius(width, height) > 15);
+  const frame = paintLayers(width, height, WALL, [
+    {at: dancer(6, 8), color: INK},
+    {at: dancer(48, 8), color: VINYL},
+    {at: dancer(90, 8), color: SOFT_SHADOW}
+  ]);
+  const strict = detectStickerBlobs(frame, width, height, {stickerSensitivity: 0, minBlobSize: 18});
+  const normal = detectStickerBlobs(frame, width, height, {stickerSensitivity: 0.55, minBlobSize: 18});
+  const loose = detectStickerBlobs(frame, width, height, {stickerSensitivity: 1, minBlobSize: 18});
+  assert.equal(strict.length, 1);
+  assert.ok(strict[0].x < 30);
+  assert.equal(normal.length, 2);
+  assert.ok(normal.every(blob => blob.x < 80));
+  assert.equal(loose.length, 3);
+  const dark = paintLayers(width, height, [36, 36, 40], [{at: dancer(48, 30), color: INK}]);
+  assert.equal(detectStickerBlobs(dark, width, height, {stickerSensitivity: 1, minBlobSize: 18}).length, 0);
+  assert.equal(detectStickerBlobs(paint(width, height, () => WALL), width, height, {minBlobSize: 18}).length, 0);
+});
+
+test('sticker shape keeps a dancer and rejects noise, bars, rectangles, and shadows', () => {
+  const width = 160;
+  const height = 100;
+  const frame = paintLayers(width, height, WALL, [
+    {at: dancer(8, 12), color: INK},
+    {at: rect(8, 78, 90, 3), color: INK},
+    {at: rect(70, 8, 14, 16), color: INK},
+    {at: cShape(100, 8), color: INK},
+    {at: stair(108, 40, 22), color: INK},
+    {at: rect(150, 70, 2, 2), color: INK},
+    {at: rect(40, 40, 46, 34), color: INK}
+  ]);
+  const found = detectStickerBlobs(frame, width, height, {stickerSensitivity: 0.55, minBlobSize: 18});
+  assert.equal(found.length, 1);
+  assert.equal(found[0].kind, 'sticker');
+  close(found[0].x, 8 + 7, 4, 'dancer x');
+  close(found[0].y, 12 + 10, 4, 'dancer y');
+  assert.ok(found[0].aspect >= STICKER_SHAPE.minAspect && found[0].aspect <= STICKER_SHAPE.maxAspect);
+  assert.ok(found[0].solidity >= STICKER_SHAPE.minSolidity);
+  assert.ok(found[0].extent >= STICKER_SHAPE.minExtent && found[0].extent <= STICKER_SHAPE.maxExtent);
+  assert.equal(blobPhrase(found, 'stickers'), '1 sticker blob');
+  assert.equal(blobPhrase([{kind: 'pink'}, {kind: 'pink'}, {kind: 'sticker'}], 'both'), '2 pink blobs · 1 sticker blob');
+});
+
+test('a lighting gradient still segments stickers on the dim side of the wall', () => {
+  const width = 120;
+  const height = 90;
+  const bright = [240, 240, 238];
+  const dim = [100, 100, 98];
+  const frame = paint(width, height, (x, y) => {
+    if (dancer(8, 34)(x, y) || dancer(78, 34)(x, y)) return INK;
+    return x < 60 ? bright : dim;
+  });
+  const found = detectStickerBlobs(frame, width, height, {stickerSensitivity: 0.55, minBlobSize: 18});
+  assert.equal(found.length, 2);
+  assert.ok(found.some(blob => blob.x < 40));
+  assert.ok(found.some(blob => blob.x > 80));
+});
+
+test('detection mode chooses pink notes, stickers, or both, then the marker feed', () => {
+  const width = 120;
+  const height = 90;
+  const srcW = 240;
+  const srcH = 180;
+  const pink = hsvToRgb(PINK_HUE, 0.85, 0.95);
+  const note = rect(78, 10, 16, 12);
+  const data = paintLayers(width, height, WALL, [
+    {at: dancer(8, 36), color: INK},
+    {at: note, color: pink}
+  ]);
+  const base = {hueTolerance: 28, saturationSensitivity: 0.55, minBlobSize: 18, stickerSensitivity: 0.55};
+  const pinkOnly = detectPinkBlobs(data, width, height, base);
+  assert.equal(pinkOnly.length, 1);
+  assert.equal(detectStickerBlobs(data, width, height, base).length, 1);
+  const scale = {width, height, scaleX: srcW / width, scaleY: srcH / height};
+  const H = homographyFromNormalized([
+    {x: 0, y: 0}, {x: 1, y: 0}, {x: 1, y: 1}, {x: 0, y: 1}
+  ], srcW, srcH);
+  const frame = {data, width, height};
+  const pinkTracker = createMarkerTracker();
+  markersFromFrame(frame, {...base, detectionMode: 'pink'}, H, scale, pinkTracker, 0);
+  const asPink = markersFromFrame(frame, {...base, detectionMode: 'pink'}, H, scale, pinkTracker, APPEAR_MS);
+  assert.equal(asPink.blobs.length, 1);
+  assert.equal(asPink.blobs[0].kind, 'pink');
+  assert.equal(asPink.markers.length, 1);
+  const asStickers = markersFromFrame(frame, {...base, detectionMode: 'stickers'}, null, scale, createMarkerTracker(), APPEAR_MS);
+  assert.equal(asStickers.blobs.length, 1);
+  assert.equal(asStickers.blobs[0].kind, 'sticker');
+  assert.deepEqual(asStickers.markers, []);
+  const tracker = createMarkerTracker();
+  const early = markersFromFrame(frame, {...base, detectionMode: 'both'}, H, scale, tracker, 0);
+  assert.equal(early.blobs.length, 2);
+  assert.deepEqual(early.markers, []);
+  const late = markersFromFrame(frame, {...base, detectionMode: 'both'}, H, scale, tracker, APPEAR_MS);
+  assert.equal(late.markers.length, 2);
+  assert.deepEqual(late.markers.map(marker => marker.type), [0, 1]);
+  const overlap = dedupeBlobs([
+    {x: 10, y: 10, area: 40, kind: 'pink'},
+    {x: 12, y: 11, area: 30, kind: 'sticker'},
+    {x: 40, y: 10, area: 22, kind: 'sticker'}
+  ], 5);
+  assert.equal(overlap.length, 2);
+  assert.equal(overlap[0].kind, 'pink');
+  assert.equal(overlap[1].kind, 'sticker');
+  assert.equal(overlap[1].x, 40);
 });
