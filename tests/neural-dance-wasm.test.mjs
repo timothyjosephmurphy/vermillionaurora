@@ -262,7 +262,39 @@ test('UV sticker map keeps activation and an external hit uses the same arm path
   assert.equal(dancers(api)[0].id, kick);
 });
 
+test('the built-in clock can be forced off, and listening clears synthetic pulses', async () => {
+  const api = await load();
+  api.nd_clear();
+  api.nd_set_bpm(180);
+  api.nd_add(0, 0, 0);
+  api.nd_add(40, 0, 1);
+  api.nd_set_clock(0);
+  let heard = 0;
+  for (let i = 0; i < 40; i++) heard |= api.nd_update(0.05, 0, 0, 44100, 2048, i * 50);
+  assert.equal(heard, 0);
+  assert.ok(dancers(api)[0].a < 0.2);
+  api.nd_set_clock(1);
+  for (let i = 0; i < 20 && api.nd_pulse_count() === 0; i++) api.nd_update(0.05, 0, 0, 44100, 2048, 3000 + i * 50);
+  assert.ok(api.nd_pulse_count() > 0);
+  const cleared = api.nd_update(0.05, 1, 0, 44100, 2048, 9000);
+  assert.equal(cleared, 0);
+  assert.equal(api.nd_pulse_count(), 0);
+  assert.ok(dancers(api).every(d => d.a < 0.2));
+  let still = 0;
+  for (let i = 0; i < 30; i++) still |= api.nd_update(0.05, 1, 0, 44100, 2048, 9100 + i * 50);
+  assert.equal(still, 0);
+});
+
 test('the mural page keeps its controls and loads the wasm core', () => {
+  const mural = page.slice(page.indexOf('id="nd-mural-mapped"'), page.indexOf('</section>', page.indexOf('id="nd-mural-mapped"')));
+  assert.doesNotMatch(mural, /data-action="listen"/);
+  assert.doesNotMatch(mural, /data-action="align"/);
+  assert.doesNotMatch(mural, /id="nd-projector"/);
+  assert.match(page, /id="nd-room-lab"/);
+  assert.match(page, /Room music/);
+  assert.match(page, /id="nd-room-projector"/);
+  assert.match(page, /data-spectrum/);
+  assert.match(page, /nd_set_clock/);
   assert.match(page, /\/neural-dance\/neural-dance\.wasm/);
   assert.match(page, /data-action="play"/);
   assert.match(page, /data-action="audio"/);
@@ -273,7 +305,7 @@ test('the mural page keeps its controls and loads the wasm core', () => {
   assert.match(page, /Muted/);
   assert.match(page, /No mic/);
   assert.match(page, /Align projector/);
-  assert.match(page, /id="nd-projector"/);
+  assert.match(page, /id="nd-room-projector"/);
   assert.match(page, /maptastic\.js/);
   assert.match(page, /setStickerFeed/);
   assert.match(page, /UV camera/);

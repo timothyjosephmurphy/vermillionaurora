@@ -68,6 +68,7 @@ static float sim_time = 0.f;
 static int low_power = 0;
 static int was_listening = 0;
 static int pending_hits = 0;
+static int clock_on = 1;
 static float sticker_in[MAX_DANCERS * 4];
 
 static int queue[MAX_DANCERS];
@@ -356,6 +357,22 @@ void nd_hit(int type) {
 
 void nd_set_bpm(float next) { bpm = next > 0.f ? next : 0.f; }
 
+// Hard gate for the built-in beat. Listening passes this as well as the
+// per-frame flag, so a missed argument cannot keep the synthetic rhythm.
+void nd_set_clock(int on) {
+  int next = on ? 1 : 0;
+  if (next == clock_on) return;
+  clock_on = next;
+  if (!clock_on) {
+    pulse_count = 0;
+    for (int i = 0; i < count; i++) {
+      dancers[i].a = 0.f;
+      dancers[i].peak = 0.f;
+    }
+    publish();
+  }
+}
+
 void nd_set_low(int on) {
   low_power = on ? 1 : 0;
   int cap = pulse_cap();
@@ -510,22 +527,30 @@ int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft
     received[i] = 0.f;
   }
 
+  if (listening && !was_listening) {
+    // Drop the built-in beat the moment the mic takes over.
+    pulse_count = 0;
+    for (int i = 0; i < count; i++) {
+      dancers[i].a = 0.f;
+      dancers[i].peak = 0.f;
+    }
+    reset_onsets();
+  }
+  was_listening = listening ? 1 : 0;
+
   for (int i = 0; i < count; i++) {
     Dancer* d = &dancers[i];
     d->a -= dt * 1.5f;
     if (d->a < 0.f) d->a = 0.f;
-    d->phase += dt * bpm * (1.f / 60.f) * RATES[d->k];
+    if (clock_on && !listening) d->phase += dt * bpm * (1.f / 60.f) * RATES[d->k];
     d->rest -= dt;
     if (d->rest < 0.f) d->rest = 0.f;
     if (d->phase >= 1.f) {
       d->phase -= 1.f;
       if (d->phase >= 1.f) d->phase -= 1.f;
-      if (!listening) arm(i);
+      if (clock_on && !listening) arm(i);
     }
   }
-
-  if (listening && !was_listening) reset_onsets();
-  was_listening = listening ? 1 : 0;
 
   if (listening && bin_count > 1) {
     int hits[4];
