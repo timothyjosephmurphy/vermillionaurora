@@ -29,6 +29,8 @@ await page.route('**/*',async route=>{
  }
  if(url.pathname==='/inventory/status')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{availability:{[id]:'available'}}});
  if(url.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:squareScript()});
+ // Apple's button script is not the system mark. A small stand-in still upgrades <apple-pay-button> so the cart button stays a visible first control.
+ if(url.hostname==='applepay.cdn-apple.com')return route.fulfill({contentType:'application/javascript',body:`customElements.define('apple-pay-button',class extends HTMLElement{connectedCallback(){if(this.shadowRoot)return;const root=this.attachShadow({mode:'open'});const button=document.createElement('button');button.type='button';button.textContent='Buy with Apple Pay';button.style.cssText='width:100%;height:48px;background:#000;color:#fff;border:0';root.append(button);}});`});
  // Display images live on img.tjm.art (R2); serve the same files from the local build.
   if(url.hostname==='img.tjm.art'){const f='dist'+decodeURIComponent(url.pathname);return fs.existsSync(f)?route.fulfill({body:fs.readFileSync(f),contentType:'image/webp'}):route.fulfill({status:404});}
   if(url.hostname!==new URL(origin).hostname)return route.abort();
@@ -61,15 +63,27 @@ try{
  // Safari-like: Apple Pay and Google Pay; a cancelled Apple Pay sheet starts nothing and keeps the quote.
  wallets='apple,google';appleResult='Cancel';await page.evaluate(()=>localStorage.removeItem('va-cart-order-v1'));
  order={...order,status:'cancelled'};await quote();await page.getByRole('button',{name:'Pay with Apple Pay'}).waitFor();
- assert.equal(await page.locator('[data-wallet-buttons] > *').evaluateAll(els=>els.map(e=>e.className).join(' ')).then(s=>s.indexOf('apple-pay-button')<s.indexOf('google-pay-button')),true,'Apple Pay listed first');
+ await page.waitForFunction(()=>!!document.querySelector('.apple-pay-button')?.shadowRoot);
+ const placed=await page.locator('[data-wallet-buttons] > *').evaluateAll(els=>els.map(e=>({tag:e.tagName,c:e.className,top:e.getBoundingClientRect().top,height:e.getBoundingClientRect().height,width:e.getBoundingClientRect().width})));
+ assert.equal(placed[0].tag,'APPLE-PAY-BUTTON');assert.equal(placed[0].c,'apple-pay-button');
+ assert(placed[0].top<placed[1].top&&placed[1].c.includes('google-pay-button'),'Apple Pay listed first');
+ assert(placed[0].height>=44&&placed[0].width>=200,'Apple Pay button is prominent');
+ assert.equal(await page.locator('.apple-pay-button').getAttribute('buttonstyle'),'black');
+ assert.equal(await page.locator('.apple-pay-button').getAttribute('type'),'buy');
  const before=starts().length;await page.getByRole('button',{name:'Pay with Apple Pay'}).click();
  await page.waitForFunction(()=>/Payment cancelled/.test(document.querySelector('[data-cart-notice]')?.textContent||document.body.textContent));
  assert.equal(starts().length,before);assert(await page.getByRole('button',{name:'Pay with Apple Pay'}).isEnabled());
  appleResult='OK';await quote();await page.getByRole('button',{name:'Pay with Apple Pay'}).click();await page.getByRole('heading',{name:'Confirming your order'}).waitFor();
  assert.equal(starts().at(-1).body.sourceId,'cnon:apple');assert.equal(starts().at(-1).body.method,'square');
+ // Safari-like with only Apple Pay: Google Pay is absent, the Apple Pay button stays visible, and the card form remains.
+ wallets='apple';order={...order,status:'cancelled'};await quote();await page.getByRole('button',{name:'Pay with Apple Pay'}).waitFor();
+ assert.equal(await page.locator('.google-pay-button').count(),0);
+ const alone=await page.locator('.apple-pay-button').boundingBox();
+ assert(alone&&alone.height>=44&&alone.width>=200,'Apple Pay alone is prominent');
+ assert(await page.getByRole('button',{name:'Pay with credit card'}).isEnabled());
  // No wallet support: no express section; the card form is the fallback.
  wallets='none';order={...order,status:'cancelled'};await quote();await page.waitForTimeout(300);
  assert(await page.locator('[data-cart-wallets]').isHidden());assert(await page.getByRole('button',{name:'Pay with credit card'}).isEnabled());
  assert.deepEqual(errors,[]);
- console.log('PASS: wallets only after a server quote, exact quote total/line items, invalidation on edit, Google Pay and Apple Pay tokens via the square start path, cancel keeps the quote, card fallback. All providers mocked.');
+ console.log('PASS: wallets only after a server quote, exact quote total/line items, invalidation on edit, Apple Pay first and prominent when Square allows it, Apple Pay alone, Google Pay and Apple Pay tokens via the square start path, cancel keeps the quote, card fallback. All providers mocked.');
 }finally{await browser.close();}

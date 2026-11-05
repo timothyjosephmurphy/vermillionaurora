@@ -41,6 +41,14 @@ The production deployment checks Square authentication, an active USD location e
 
 Washington sales tax is calculated from the Washington Department of Revenue rate lookup (see `cloudflare/wa-sales-tax.mjs`); other US destinations are not taxed. The public cart does not offer a new PayPal checkout. Saved PayPal order recovery, return handling, and webhooks remain supported. Sandbox cards cannot be used in production; any deliberate live payment uses a real card and has normal fulfillment effects.
 
+## Apple Pay and Google Pay
+
+The cart offers Apple Pay and Google Pay only after a server shipping-and-tax quote, and only when Square's Web Payments SDK accepts that wallet. Apple Pay requires Safari (`ApplePaySession` and a device that can make Apple Pay payments). Chrome, Firefox, and Chrome on iPhone do not expose that API, so they show Google Pay and the card form without an Apple Pay button. When Square reports Apple Pay available, its button is first, above Google Pay.
+
+`tjm.art` serves Square's domain association file at `/.well-known/apple-developer-merchantid-domain-association`. The site worker prefers Square's current copy and falls back to `worker/apple-pay-domain-association.mjs`. `vermillionaurora.com` redirects to `tjm.art`; Apple does not follow that redirect, so the domain registered with Square is `tjm.art`.
+
+To check on an iPhone: open `https://tjm.art/cart/` in Safari, add an available piece, and calculate shipping and tax. Apple Pay should be the black express button above Google Pay (if Google Pay is also available) and above the card form. The Wallet needs a card. If the button is missing in Safari, allow Apple Pay under Settings → Safari → Privacy.
+
 ## Local verification
 
 The focused Square tests are in `cloudflare/test/square-checkout.test.mjs`. The full Worker and browser suites run in the repository release gate.
