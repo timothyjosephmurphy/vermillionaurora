@@ -30,15 +30,9 @@ export const exhibitions = [
     image: '/exhibitions/living-room/images/three-landscapes-in-living-room.jpg', alt: 'Three framed watercolor landscapes hanging side by side in a living room', contain: true },
 ];
 // Upcoming block on /exhibitions/, soonest first.
-// Dates are studio calendar items (studio-tracker #62, #64, #61).
-// Street addresses stay out unless a public listing confirms that date at that door.
-// Carré d'artistes: the card did not give a venue that could be checked, so the
-// venue line is a short placeholder to edit.
+// Dates are studio calendar items. Street addresses stay out unless a public
+// listing confirms that date at that door.
 export const upcoming = [
-  { id: 'carre-dartistes', title: "Carré d'artistes", start: '2026-10-30',
-    dates: 'Pieces ready by October 30, 2026', venue: 'Venue to be confirmed' },
-  { id: 'ghost-gallery-minis', title: 'Ghost Gallery minis', start: '2026-11-02', end: '2026-11-05',
-    dates: 'November 2–5, 2026', venue: 'Ghost Gallery, Seattle' },
   { id: 'waa-sip-and-stroll', title: 'WAA Sip & Stroll', start: '2026-11-13', end: '2026-11-14',
     dates: 'Deliver November 13, 2026 · pick up November 14, 2026',
     venue: 'The Winemakers Reserve, Woodinville, Washington',
