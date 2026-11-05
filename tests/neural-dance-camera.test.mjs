@@ -2,6 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {
+  acquireCameraStream,
+  armPreviewElement,
+  drawVideoFrame,
+  playPreview,
+  videoConstraints,
+  videoFrameReady,
   APPEAR_MS,
   CANVAS_H,
   CANVAS_W,
@@ -35,6 +41,7 @@ import {
 
 const page = readFileSync(new URL('../src/pages/neural-dance/index.astro', import.meta.url), 'utf8');
 const camera = readFileSync(new URL('../neural-dance/camera-markers.js', import.meta.url), 'utf8');
+const roomJs = readFileSync(new URL('../neural-dance/room-lab.js', import.meta.url), 'utf8');
 
 function close(actual, expected, eps, label) {
   assert.ok(Math.abs(actual - expected) <= eps, `${label || ''} ${actual} vs ${expected}`);
@@ -253,6 +260,11 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
   assert.equal(pickCamera(choices, null).label, 'iPhone Camera');
   assert.equal(pickCamera(choices, {deviceId: 'facetime'}).deviceId, 'facetime');
   assert.equal(pickCamera(choices, {deviceId: 'gone', deviceLabel: 'iPhone Camera'}).deviceId, 'phone');
+  const continuity = cameraChoices([
+    {kind: 'videoinput', deviceId: 'facetime', label: 'FaceTime HD Camera'},
+    {kind: 'videoinput', deviceId: 'phone3', label: 'iPhone (3) Camera'}
+  ]);
+  assert.equal(pickCamera(continuity, null).deviceId, 'phone3');
 
   const storage = memoryStorage();
   assert.equal(readCameraSettings(storage), null);
@@ -286,6 +298,91 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
   assert.deepEqual(dancers, [{id: 2, x: 10, y: 20, type: 1}]);
 });
 
+test('Continuity Camera constraints omit resolution and play after loadedmetadata', async () => {
+  const exact = videoConstraints('phone-3', 'exact');
+  assert.deepEqual(exact, {deviceId: {exact: 'phone-3'}});
+  assert.equal('width' in exact || 'height' in exact, false);
+  const ideal = videoConstraints('phone-3', 'ideal');
+  assert.deepEqual(ideal, {deviceId: {ideal: 'phone-3'}});
+  assert.deepEqual(videoConstraints(''), {});
+  assert.doesNotMatch(camera, /ideal:\s*1280/);
+  assert.doesNotMatch(camera, /ideal:\s*720/);
+  assert.match(camera, /loadedmetadata/);
+  assert.match(camera, /playsInline/);
+  assert.match(camera, /drawVideoFrame/);
+
+  const calls = [];
+  const track = {getSettings() { return {deviceId: 'phone-3'}; }, muted: false, readyState: 'live', addEventListener() {}};
+  const stream = {getVideoTracks() { return [track]; }, getTracks() { return [track]; }};
+  const md = {
+    async getUserMedia(constraints) {
+      calls.push(constraints);
+      if (constraints.video && constraints.video.deviceId && constraints.video.deviceId.exact === 'missing') {
+        throw Object.assign(new Error('over'), {name: 'OverconstrainedError'});
+      }
+      if (constraints.audio !== false) throw new Error('audio should stay off');
+      return stream;
+    }
+  };
+  const opened = await acquireCameraStream(md, 'phone-3');
+  assert.equal(opened, stream);
+  assert.equal(calls.length, 1);
+  assert.deepEqual(calls[0], {video: {deviceId: {exact: 'phone-3'}}, audio: false});
+  calls.length = 0;
+  await acquireCameraStream(md, 'missing');
+  assert.equal(calls[0].video.deviceId.exact, 'missing');
+  assert.deepEqual(calls[1].video.deviceId, {ideal: 'missing'});
+  assert.equal('width' in calls[1].video, false);
+  await assert.rejects(
+    () => acquireCameraStream({
+      getUserMedia: async () => { throw Object.assign(new Error('no'), {name: 'NotAllowedError'}); }
+    }, 'phone-3'),
+    err => err.name === 'NotAllowedError'
+  );
+
+  let played = false;
+  const listeners = {};
+  const video = {
+    readyState: 0,
+    videoWidth: 0,
+    videoHeight: 0,
+    paused: true,
+    ended: false,
+    setAttribute() {},
+    addEventListener(name, fn) { listeners[name] = fn; },
+    removeEventListener(name) { delete listeners[name]; },
+    play() {
+      assert.equal(this.readyState >= 1, true, 'play() waits for loadedmetadata');
+      assert.equal(this.videoWidth > 0, true);
+      played = true;
+      this.paused = false;
+      return Promise.resolve();
+    }
+  };
+  const pending = playPreview(video, stream);
+  assert.equal(video.srcObject, stream);
+  assert.equal(video.muted, true);
+  assert.equal(video.playsInline, true);
+  assert.equal(video.autoplay, true);
+  assert.equal(played, false);
+  assert.equal(videoFrameReady(video), false);
+  video.readyState = 1;
+  video.videoWidth = 320;
+  video.videoHeight = 180;
+  listeners.loadedmetadata();
+  await pending;
+  assert.equal(played, true);
+  video.readyState = 2;
+  assert.equal(videoFrameReady(video), true);
+  const drawn = [];
+  assert.equal(drawVideoFrame(video, {drawImage(...args) { drawn.push(args); }}, 160, 90), true);
+  assert.deepEqual(drawn[0], [video, 0, 0, 160, 90]);
+  video.paused = true;
+  assert.equal(drawVideoFrame(video, {drawImage() {}}, 160, 90), false);
+  armPreviewElement(video);
+  assert.equal(video.defaultMuted, true);
+});
+
 test('the neural dance page keeps room controls and adds camera mode', () => {
   const cameraAt = page.indexOf('id="nd-camera-mode"');
   const roomAt = page.indexOf('id="nd-room-lab"');
@@ -316,7 +413,7 @@ test('the neural dance page keeps room controls and adds camera mode', () => {
   assert.match(camera, /nd-camera-mode/);
   assert.match(camera, /studio-tracker #793/);
   assert.doesNotMatch(camera, /video:\s*true/);
-  const room = page.slice(roomAt, roomScriptEnd);
+  const room = page.slice(roomAt, page.indexOf('id="nd-camera-mode"')) + roomJs;
   assert.match(room, /setMarkers/);
   assert.match(room, /function consumeFeed/);
   assert.match(room, /poke\(\)/);

@@ -91,6 +91,7 @@ body.full #nd-mural-mapped{display:none}
 #nd-mural-mapped h2{margin-right:auto}
 </style>
 <script src="/neural-dance/vendor/maptastic.js" is:inline></script>
+<script src="/neural-dance/wave-ring.js" is:inline></script>
 <script is:inline>
 // Mural runtime is neural-dance/neural-dance.wasm (C++): dancer network and pulses.
 // Mic spectrum and the sticker map are inputs. Projector corner-pin is Maptastic.
@@ -105,8 +106,9 @@ const W=882,H=196,R=82;
 let api=null,zoom=1,pan=.5,running=false,audio=false,low=false;
 let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0,pointer=null;
 let ac=null,master=null,voices=new Set(),lastTone=[-99,-99,-99,-99],toneWindow=0,toneCount=0;
-let colors=[],foreground='',background='';const glows=[];
+let colors=[],foreground='',background='';
 let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,stickerFeed=null,mapper=null;
+const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createSession())||{connect(){},release(){},sample(){},stroke(){}};
 const hotUntil=[0,0,0,0];
 const MIC={
   off:{label:'Listen',status:'Mic off',pressed:false},
@@ -126,12 +128,7 @@ function theme(){
   const resolver=document.createElement('span');root.appendChild(resolver);
   function color(token){resolver.style.color='var('+token+')';return getComputedStyle(resolver).color;}
   colors=[1,2,3,4].map(i=>color('--viz-series-'+i));foreground=color('--foreground');background=color('--background');resolver.remove();
-  for(let k=0;k<4;k++){
-    el('[data-legend="'+k+'"]').style.color=colors[k];
-    const sprite=document.createElement('canvas');sprite.width=sprite.height=64;const c=sprite.getContext('2d');
-    const gradient=c.createRadialGradient(32,32,0,32,32,32);gradient.addColorStop(0,colors[k]);gradient.addColorStop(1,'transparent');
-    c.fillStyle=gradient;c.fillRect(0,0,64,64);glows[k]=sprite;
-  }
+  for(let k=0;k<4;k++)el('[data-legend="'+k+'"]').style.color=colors[k];
   still();
 }
 // Manually traced sticker centers, in source-photo pixels (882 x 196).
@@ -178,7 +175,7 @@ function draw(){const f=floats(),base=dancerBase(),ds=api.nd_dancer_stride(),n=a
  const pb=api.nd_pulses()>>>2,pc=api.nd_pulse_count(),ps=api.nd_pulse_stride();
  for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=transformXY(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=transformXY(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=transformXY(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
  for(let i=0;i<n;i++){const o=base+i*ds,p=transformXY(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),radius=(5+11*q)*Math.min(2,zoom);ctx.globalAlpha=rest>0?.4:1;
-  if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}
+  rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);
   ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,3+2*q);
  }
  ctx.restore();ctx.globalAlpha=1;
@@ -188,6 +185,8 @@ function frame(now){raf=0;if(!running||!api)return;if(!onscreen()){stop('Paused 
   if(stickerFeed){try{const sample=stickerFeed.sample();if(Array.isArray(sample))applyStickers(sample);}catch{}}
   const tones=api.nd_update(Math.min(.067,gap/1000),0,0,48000,2048,now);
   if(audio){for(let k=0;k<4;k++)if(tones&(1<<k))tone(k);}
+  if(audio&&ac&&master)rings.connect(ac,master);else rings.release();
+  rings.sample(gap/1000);
   draw();
  }catch{stop('Paused · reset to continue');return;}
  const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);
@@ -276,7 +275,7 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
 <section id="nd-room-lab" data-mic="off" aria-labelledby="room-music-title">
   <div class="viz-row"><h2 id="room-music-title">Room music</h2><button class="btn btn-primary" data-action="play">Start</button><button class="btn" data-action="listen" data-state="off" aria-pressed="false">Listen</button><button class="btn" data-action="align" aria-pressed="false">Align projector</button></div>
   <p class="mural-help">This stage is only for the microphone. It uses the dark prototype canvas: colored dancers and links, with no mural photograph and no built-in rhythm. Select <strong>Start</strong>, then <strong>Listen</strong>, and play music in the room. Dancers move only when the mic hears a kick, bass, snare, or hi-hat. The bars under the stage are the live spectrum, colored by those four bands.</p>
-  <p class="mural-help">Click the stage to add a dancer, drag a marker to move it, or Shift-click to remove one. Gravity, wander, threshold, and peak hold shape the pulses. Per-band sensitivity — kick, bass, snare, and hi-hat — sets how strongly dancers react when the analyzer hears that band. These controls stay on this page only, the same way the other Neural Dance sliders do.</p>
+  <p class="mural-help">Click the stage to add a dancer, drag a marker to move it, or Shift-click to remove one. Gravity, wander, threshold, and peak hold shape the pulses. Per-band sensitivity — kick, bass, snare, and hi-hat — sets how strongly dancers react when the analyzer hears that band. These controls stay on this page only, the same way the other Neural Dance sliders do. While Listening, a ring around each dancer draws the live waveform of the band it dances to. Quiet threshold is how far the sound must rise above the measured noise floor before dancers move. It applies to Listen and to this Room music stage. Near that floor, auto-gain will not boost silence or background noise into motion.</p>
   <p class="mural-help"><strong>Align projector</strong> draws corner handles on this stage only. Drag a handle to skew the stage onto the wall. The mural demo above is not moved or resized. Select <strong>Mapping</strong> when you are done and the handles go away.</p>
   <div class="viz-controls" data-add-dancer>
     <label class="form-label">New dancer<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Snare</option><option value="3">Hi-hat</option></select></label>
@@ -288,10 +287,11 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
     <label class="form-label">Bass sensitivity <output data-value="sens-1">1.00×</output><input class="form-range" data-control="sens" data-band="1" type="range" min="0" max="3" step="0.05" value="1" aria-label="Bass sensitivity"></label>
     <label class="form-label">Snare sensitivity <output data-value="sens-2">1.00×</output><input class="form-range" data-control="sens" data-band="2" type="range" min="0" max="3" step="0.05" value="1" aria-label="Snare sensitivity"></label>
     <label class="form-label">Hi-hat sensitivity <output data-value="sens-3">1.00×</output><input class="form-range" data-control="sens" data-band="3" type="range" min="0" max="3" step="0.05" value="1" aria-label="Hi-hat sensitivity"></label>
+    <label class="form-label">Quiet threshold <output data-value="quiet">0.08</output><input class="form-range" data-control="quiet" type="range" min="0" max="0.4" step="0.01" value="0.08" aria-label="Quiet threshold"></label>
   </div>
   <div id="nd-room-projector"><canvas class="cursor-interaction" data-add-dancer data-stage width="1000" height="620" role="img" aria-label="Room-music dancers on the dark prototype stage. Click to add a dancer. They move only while the microphone hears a matching band."></canvas></div>
   <canvas data-spectrum width="880" height="96" aria-label="Live microphone levels for kick, bass, mid, and treble"></canvas>
-  <div class="viz-row text-small"><span data-legend="0">● Kick<span class="meter"><i data-meter="0"></i></span></span><span data-legend="1">◆ Bass<span class="meter"><i data-meter="1"></i></span></span><span data-legend="2">■ Mid<span class="meter"><i data-meter="2"></i></span></span><span data-legend="3">▲ Treble<span class="meter"><i data-meter="3"></i></span></span><span data-mic role="status" aria-live="polite">Mic off</span><span data-status role="status" aria-live="polite">Loading room music…</span></div>
+  <div class="viz-row text-small"><span data-legend="0">● Kick<span class="meter"><i data-meter="0"></i></span></span><span data-legend="1">◆ Bass<span class="meter"><i data-meter="1"></i></span></span><span data-legend="2">■ Mid<span class="meter"><i data-meter="2"></i></span></span><span data-legend="3">▲ Treble<span class="meter"><i data-meter="3"></i></span></span><span data-mic role="status" aria-live="polite">Mic off</span><span data-floor>noise floor —</span><span data-status role="status" aria-live="polite">Loading room music…</span></div>
 </section>
 <style is:inline>
 #nd-room-lab{--background:#080910;--foreground:#f4f6fb;--viz-series-1:#ff927d;--viz-series-2:#eb92f5;--viz-series-3:#7fe8b3;--viz-series-4:#81b7fc;margin:48px 0 24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
@@ -321,169 +321,12 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
 #nd-room-lab [data-spectrum]{display:block;width:100%;height:96px;background:#05060a;border-radius:10px;margin:0 0 12px}
 #nd-room-lab.is-mapping .viz-row:first-of-type{position:fixed;z-index:1000002;top:12px;left:12px;right:12px;background:#10121a;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.18)}
 </style>
-<script is:inline>
-// Room-music lab: its own WASM instance on the original prototype stage
-// (dark canvas, sacred-geometry field, colored dancers and links).
-// nd_set_clock(0) stays off, so the built-in beat never runs. Dancers move
-// only from live microphone bands. No synth is connected to the speakers.
-// Display AGC scales the spectrum and the four meters only; the mic bytes
-// fed to the wasm onset detector are unchanged.
-(async()=>{
-const root=document.getElementById('nd-room-lab');
-const canvas=root.querySelector('[data-stage]'),ctx=canvas.getContext('2d');
-const spectrum=root.querySelector('[data-spectrum]'),sctx=spectrum.getContext('2d');
-const el=s=>root.querySelector(s);
-const play=el('[data-action="play"]'),listenButton=el('[data-action="listen"]'),alignButton=el('[data-action="align"]'),status=el('[data-status]'),micStatus=el('[data-mic]');
-const W=1000,H=620,R=82;
-function prototypePositions(){
-  let seed=0x5eed;
-  const rand=()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};
-  const CX=500,CY=310,SX=1.18,SY=.72,out=[];
-  for(let i=0;i<24;i++){const a=rand()*Math.PI*2,r=50+rand()*260;out.push([CX+Math.cos(a)*r*SX*.94,CY+Math.sin(a)*r*SY*.94,i%4]);}
-  return out;
-}
-const positions=prototypePositions();
-let api=null,running=false,low=false,allowMap=false,mapper=null;
-let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0;
-let ac=null;
-let colors=[],foreground='',background='';const glows=[];
-let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null;
-const bandSens=[1,1,1,1];
-const hotUntil=[0,0,0,0];
-const MIC={off:{label:'Listen',status:'Mic off',pressed:false},listening:{label:'Listening',status:'Listening',pressed:true},muted:{label:'Muted',status:'Muted',pressed:false},unavailable:{label:'No mic',status:'No microphone',pressed:false}};
-try{
-  const res=await fetch('/neural-dance/neural-dance.wasm');
-  if(!res.ok)throw new Error('missing');
-  api=(await WebAssembly.instantiate(await res.arrayBuffer())).instance.exports;
-  if(typeof api.nd_set_clock!=='function'||typeof api.nd_add!=='function'||typeof api.nd_set_gravity!=='function'||typeof api.nd_set_wander!=='function'||typeof api.nd_set_threshold!=='function'||typeof api.nd_set_peak_hold!=='function'||typeof api.nd_set_band_sens!=='function')throw new Error('exports');
-}catch{status.textContent='Room music unavailable';play.disabled=listenButton.disabled=alignButton.disabled=true;return;}
-function floats(){return new Float32Array(api.memory.buffer);}
-function theme(){
-  const resolver=document.createElement('span');root.appendChild(resolver);
-  function color(token){resolver.style.color='var('+token+')';return getComputedStyle(resolver).color;}
-  colors=[1,2,3,4].map(i=>color('--viz-series-'+i));foreground=color('--foreground');background=color('--background');resolver.remove();
-  for(let k=0;k<4;k++){
-    el('[data-legend="'+k+'"]').style.color=colors[k];
-    const sprite=document.createElement('canvas');sprite.width=sprite.height=64;const c=sprite.getContext('2d');
-    const gradient=c.createRadialGradient(32,32,0,32,32,32);gradient.addColorStop(0,colors[k]);gradient.addColorStop(1,'transparent');
-    c.fillStyle=gradient;c.fillRect(0,0,64,64);glows[k]=sprite;
-  }
-  still();
-}
-function applyStickers(){const n=positions.length;const f=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);positions.forEach(([x,y],i)=>{f[i*4]=i+1;f[i*4+1]=x;f[i*4+2]=y;f[i*4+3]=i%4;});api.nd_set_stickers(n);}
-function report(text){status.textContent=text;}
-function onscreen(){const r=canvas.getBoundingClientRect();return !document.hidden&&r.bottom>0&&r.top<innerHeight&&r.left<innerWidth&&r.right>0&&root.isConnected;}
-function cancel(){clearTimeout(timer);cancelAnimationFrame(raf);timer=raf=0;}
-function stop(text='Paused', releaseMic=false){running=false;cancel();if(releaseMic)disarmMic();else if(ac&&micState!=='listening')ac.suspend().catch(()=>{});play.textContent='Start';report(text);}
-function start(){if(running||!onscreen()||!api)return;cancel();running=true;last=performance.now();started=last;slow=0;play.textContent='Pause';report(micState==='listening'?'Listening':'Running');if(ac&&micState==='listening')ac.resume().catch(()=>{});schedule(0);}
-function schedule(delay){if(running)timer=setTimeout(()=>{timer=0;raf=requestAnimationFrame(frame);},delay);}
-function still(){if(running||raf||!api)return;raf=requestAnimationFrame(()=>{raf=0;draw();drawSpectrum();});}
-function ensureGraph(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw new Error('no audio');if(!ac)ac=new AC();return ac.resume();}
-function holdClock(){api.nd_set_clock(0);}
-function applyMicState(state,text){micState=state;const m=MIC[state];listenButton.textContent=m.label;listenButton.dataset.state=state;listenButton.setAttribute('aria-pressed',m.pressed?'true':'false');root.dataset.mic=state;micStatus.textContent=text||m.status;holdClock();agcReset();if(state!=='listening'){for(let k=0;k<4;k++){const bar=el('[data-meter="'+k+'"]');if(bar)bar.style.transform='scaleX(0)';el('[data-legend="'+k+'"]').classList.remove('is-hot');}}}
-function releaseMicHardware(){const stream=micStream;micStream=null;try{micSource&&micSource.disconnect();}catch{}micSource=null;analyser=null;spec=null;if(stream)stream.getTracks().forEach(t=>{try{t.stop();}catch{}});}
-function disarmMic(){const was=micState;releaseMicHardware();if(was!=='unavailable')applyMicState('off');if(ac)ac.suspend().catch(()=>{});}
-function watchMic(stream){for(const track of stream.getAudioTracks()){track.addEventListener('ended',()=>{if(micStream!==stream)return;releaseMicHardware();applyMicState('unavailable','No microphone');report('No microphone');});}}
-function requestMic(){const md=navigator.mediaDevices;if(!md||!md.getUserMedia)return Promise.reject(Object.assign(new Error('no mic'),{name:'NotFoundError'}));return md.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}}).catch(err=>{if(err&&err.name==='OverconstrainedError')return md.getUserMedia({audio:true});throw err;});}
-function micFailure(err){const denied=err&&(err.name==='NotAllowedError'||err.name==='SecurityError'||err.name==='PermissionDeniedError');applyMicState('unavailable',denied?'Microphone blocked':'No microphone');report(denied?'Microphone blocked':'No microphone');}
-async function startListen(){start();if(!running)return;holdClock();let graph;try{graph=ensureGraph();}catch{applyMicState('unavailable','No microphone');return;}micStatus.textContent='Asking for the microphone';const pending=requestMic();try{await graph;}catch(err){micFailure(err);try{(await pending).getTracks().forEach(t=>t.stop());}catch{}return;}let stream;try{stream=await pending;}catch(err){micFailure(err);return;}if(!running){stream.getTracks().forEach(t=>t.stop());return;}releaseMicHardware();analyser=ac.createAnalyser();analyser.fftSize=2048;analyser.smoothingTimeConstant=0;analyser.minDecibels=-96;analyser.maxDecibels=-24;spec=new Uint8Array(analyser.frequencyBinCount);micSource=ac.createMediaStreamSource(stream);micSource.connect(analyser);micStream=stream;watchMic(stream);applyMicState('listening');}
-function setMicMuted(muted){if(!micStream){applyMicState('off');return;}for(const track of micStream.getAudioTracks())track.enabled=!muted;applyMicState(muted?'muted':'listening');if(!muted)start();}
-async function toggleListen(){if(micPending)return;if(micState==='listening'){setMicMuted(true);return;}if(micState==='muted'){setMicMuted(false);return;}micPending=true;try{await startListen();}finally{micPending=false;}}
-const agcState={gain:1,hist:[]};
-function agcReset(){agcState.gain=1;agcState.hist.length=0;}
-function agcKnee(x){if(!(x>0))return 0;if(x<0.72)return x;return 0.72+0.24*(1-Math.exp(-(x-0.72)/0.28));}
-function agcScale(raw,dt){
-  const step=Math.max(0.001,Math.min(0.1,dt||0.033));
-  let sum=0,n=0,peak=0;
-  for(let k=0;k<4;k++){const v=Math.max(0,+raw[k]||0);if(v>peak)peak=v;if(v>=0.06){sum+=v*v;n++;}}
-  const rms=n?Math.sqrt(sum/n):0;
-  agcState.hist.push({dt:step,rms,peak});
-  let span=0;
-  for(let i=agcState.hist.length-1;i>=0;i--){span+=agcState.hist[i].dt;if(span>1.25){agcState.hist.splice(0,i);break;}}
-  let rSum=0,rW=0,pMax=0;
-  for(const s of agcState.hist){if(s.peak>pMax)pMax=s.peak;if(s.rms>0){rSum+=s.rms*s.dt;rW+=s.dt;}}
-  const winRms=rW?rSum/rW:0;
-  const ref=winRms>0?winRms:(pMax>0.06?pMax*0.5:0);
-  const desired=ref<0.05?1:Math.max(0.25,Math.min(6,0.5/ref));
-  const tau=desired<agcState.gain?0.22:0.8;
-  agcState.gain+=(desired-agcState.gain)*(1-Math.exp(-step/tau));
-  return raw.map(v=>agcKnee((+v||0)*agcState.gain));
-}
-function rawLevels(){const f=floats(),base=api.nd_levels()>>>2;return [0,1,2,3].map(k=>f[base+k]||0);}
-function paintMeters(now,levels){for(let k=0;k<4;k++){const bar=el('[data-meter="'+k+'"]');if(bar)bar.style.transform='scaleX('+(levels[k]||0).toFixed(3)+')';el('[data-legend="'+k+'"]').classList.toggle('is-hot',hotUntil[k]>now);}}
-function drawSpectrum(levels){const w=spectrum.width,h=spectrum.height;sctx.fillStyle='#05060a';sctx.fillRect(0,0,w,h);const names=['Kick','Bass','Mid','Treble'],cols=['#ff927d','#eb92f5','#7fe8b3','#81b7fc'];if(micState!=='listening'||!spec){sctx.fillStyle='#9da5b8';sctx.font='14px sans-serif';sctx.fillText(micState==='muted'?'Muted':'Mic off',12,h/2);return;}
- const lv=levels||rawLevels(),gap=10,bw=(w-gap*5)/4;sctx.font='13px sans-serif';sctx.textAlign='center';
- for(let k=0;k<4;k++){const v=lv[k]||0,x=gap+k*(bw+gap),track=h-28,bh=Math.max(2,v*track);sctx.fillStyle='#171b27';sctx.fillRect(x,8,bw,track);sctx.fillStyle=cols[k];sctx.fillRect(x,8+track-bh,bw,bh);sctx.fillText(names[k],x+bw/2,h-6);}sctx.textAlign='left';
-}
-function shape(k,p,r){ctx.beginPath();if(k===0)ctx.arc(p.x,p.y,r,0,Math.PI*2);else if(k===1){ctx.moveTo(p.x,p.y-r);ctx.lineTo(p.x+r,p.y);ctx.lineTo(p.x,p.y+r);ctx.lineTo(p.x-r,p.y);ctx.closePath();}else if(k===2)ctx.rect(p.x-r*.8,p.y-r*.8,r*1.6,r*1.6);else{ctx.moveTo(p.x,p.y-r);ctx.lineTo(p.x+r,p.y+r);ctx.lineTo(p.x-r,p.y+r);ctx.closePath();}ctx.fill();}
-function sacred(xy){const CX=500,CY=310,SX=1.18,SY=.72;ctx.save();ctx.strokeStyle='rgba(145,150,180,.22)';ctx.lineWidth=1.4;ctx.lineCap='round';
- for(const r of [105,185,265]){ctx.beginPath();for(let i=0;i<=100;i++){const a=i/100*Math.PI*2,p=xy(CX+Math.cos(a)*r*SX,CY+Math.sin(a)*r*SY);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y);}ctx.stroke();}
- for(let a=0;a<Math.PI;a+=Math.PI/4){const p=xy(CX-Math.cos(a)*360,CY-Math.sin(a)*230),q=xy(CX+Math.cos(a)*360,CY+Math.sin(a)*230);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
- ctx.restore();}
-function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stride(),n=api.nd_count();const scale=canvas.width/W,vx=0,vy=canvas.height/2-H*scale/2;const xy=(x,y)=>({x:vx+x*scale,y:vy+y*scale});
- ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle=background||'#080910';ctx.fillRect(0,0,canvas.width,canvas.height);sacred(xy);
- ctx.lineWidth=1.5;ctx.strokeStyle=foreground;
- for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const ia=base+i*ds,ib=base+j*ds,ax=f[ia],ay=f[ia+1],bx=f[ib],by=f[ib+1];if(Math.hypot(ax-bx,ay-by)>R)continue;const activity=Math.min(f[ia+2],f[ib+2]);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=xy(ax,ay),q=xy(bx,by),amp=Math.min(18,Math.abs(bx-ax)*.15),mid=xy(ax+(bx-ax)*.5,ay+(by-ay)*.5-amp);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
- ctx.globalAlpha=1;const pb=api.nd_pulses()>>>2,pc=api.nd_pulse_count(),ps=api.nd_pulse_stride();
- for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=xy(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=xy(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=xy(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
- for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
- ctx.globalAlpha=1;
-}
-function consumeFeed(){if(!root._feed)return;try{const sample=root._feed.sample();if(!Array.isArray(sample))return;const n=Math.min(sample.length,48);if(n){const buf=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);for(let i=0;i<n;i++){const s=sample[i];buf[i*4]=s.id||0;buf[i*4+1]=s.x;buf[i*4+2]=s.y;buf[i*4+3]=s.type|0;}}api.nd_set_stickers(n);}catch{}}
-function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while out of view',true);return;}const begin=performance.now(),gap=now-last;last=now;
- try{
-  consumeFeed();
-  const listening=micState==='listening';
-  holdClock();
-  let bins=0;
-  if(listening&&analyser&&spec){analyser.getByteFrequencyData(spec);bins=Math.min(spec.length,api.nd_spectrum_cap());new Uint8Array(api.memory.buffer,api.nd_spectrum(),bins).set(spec.subarray(0,bins));}
-  const tones=api.nd_update(Math.min(.067,gap/1000),listening?1:0,bins,ac?ac.sampleRate:48000,analyser?analyser.fftSize:2048,now);
-  const levels=listening?agcScale(rawLevels(),gap/1000):rawLevels();
-  if(listening){for(let k=0;k<4;k++)if(tones&(1<<k))hotUntil[k]=now+180;paintMeters(now,levels);}
-  draw();drawSpectrum(levels);
- }catch{stop('Paused');return;}
- const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);
- if(cost>150||slow>=12){low=true;api.nd_set_low(1);stop('Paused to keep the browser responsive');return;}
- if(now-lastReport>1000){report((micState==='listening'?'Listening · ':'')+api.nd_count()+' dancers · '+api.nd_pulse_count()+' pulses');lastReport=now;}
- schedule(Math.max(0,1000/30-cost));
-}
-function projectorLayout(layer){const r=layer.getBoundingClientRect(),w=r.width,h=r.height;layer.dataset.pinWidth=String(Math.round(w));return {id:'nd-room-projector',sourcePoints:[[0,0],[w,0],[w,h],[0,h]],targetPoints:[[r.left,r.top],[r.right,r.top],[r.right,r.bottom],[r.left,r.bottom]]};}
-function enterMapping(layout){allowMap=true;const layer=document.getElementById('nd-room-projector');layer.style.position='fixed';layer.style.display='block';layer.style.top='0px';layer.style.left='0px';layer.style.margin='0px';layer.style.padding='0px';layer.style.width=layer.dataset.pinWidth+'px';mapper.setLayout([layout]);mapper.setConfigEnabled(true);root.classList.add('is-mapping');alignButton.setAttribute('aria-pressed','true');alignButton.textContent='Mapping';}
-function exitMapping(){allowMap=false;if(mapper)mapper.setConfigEnabled(false);const layer=document.getElementById('nd-room-projector');layer.style.position='';layer.style.top='';layer.style.left='';layer.style.margin='';layer.style.padding='';layer.style.display='';layer.style.width='';layer.style.transform='';root.classList.remove('is-mapping');alignButton.setAttribute('aria-pressed','false');alignButton.textContent='Align projector';}
-function toggleAlign(){if(!window.maptastic||!window.maptastic.Maptastic){report('Projector align unavailable');return;}const layer=document.getElementById('nd-room-projector');if(alignButton.getAttribute('aria-pressed')==='true'){exitMapping();return;}const layout=projectorLayout(layer);if(!mapper){try{mapper=new maptastic.Maptastic({autoSave:false,autoLoad:false,labels:false,layers:['nd-room-projector']});const open=mapper.setConfigEnabled.bind(mapper);mapper.setConfigEnabled=on=>{if(on&&!allowMap)return;open(on);};}catch{report('Projector align unavailable');return;}}enterMapping(layout);}
-function mapping(){return alignButton.getAttribute('aria-pressed')==='true';}
-function pointerWorld(e){const r=canvas.getBoundingClientRect(),scale=canvas.width/W,vx=0,vy=canvas.height/2-H*scale/2;const cx=(e.clientX-r.left)*canvas.width/Math.max(1,r.width),cy=(e.clientY-r.top)*canvas.height/Math.max(1,r.height);return {x:(cx-vx)/scale,y:(cy-vy)/scale};}
-function dancerAt(p){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stride(),n=api.nd_count();let id=0,best=18;for(let i=0;i<n;i++){const o=base+i*ds,d=Math.hypot(f[o]-p.x,f[o+1]-p.y);if(d<best){id=f[o+5]|0;best=d;}}return id;}
-function bindSlider(name,apply,format){const input=el('[data-control="'+name+'"]'),out=el('[data-value="'+name+'"]');const sync=draw=>{const v=+input.value;apply(v);if(out)out.textContent=format(v);if(draw)still();};input.addEventListener('input',()=>sync(true));sync(false);}
-bindSlider('gravity',v=>api.nd_set_gravity(v),v=>v.toFixed(1)+'×');
-bindSlider('wander',v=>api.nd_set_wander(v),v=>v.toFixed(2));
-bindSlider('threshold',v=>api.nd_set_threshold(v),v=>(+v).toFixed(2));
-bindSlider('peak',v=>api.nd_set_peak_hold(v),v=>v.toFixed(1)+' s');
-root.querySelectorAll('[data-control="sens"]').forEach(input=>{const band=+input.dataset.band;const out=el('[data-value="sens-'+band+'"]');const sync=draw=>{const v=+input.value;bandSens[band]=v;api.nd_set_band_sens(band,v);if(out)out.textContent=v.toFixed(2)+'×';if(draw)still();};input.addEventListener('input',()=>sync(true));sync(false);});
-canvas.addEventListener('pointerdown',e=>{if(!api||mapping())return;const p=pointerWorld(e);if(p.x<0||p.y<0||p.x>W||p.y>H)return;const near=dancerAt(p);if(e.shiftKey){if(near){api.nd_remove(near);still();}return;}pointer={id:near,x:e.clientX,y:e.clientY,moved:false};try{canvas.setPointerCapture(e.pointerId);}catch{}});
-canvas.addEventListener('pointermove',e=>{if(!pointer||!api)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.id&&pointer.moved){const p=pointerWorld(e);api.nd_move(pointer.id,Math.max(0,Math.min(W,p.x)),Math.max(0,Math.min(H,p.y)));still();}});
-canvas.addEventListener('pointerup',e=>{if(!pointer||!api)return;if(!pointer.id&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H){const kind=+el('[data-control="type"]').value;if(!api.nd_add(p.x,p.y,kind))report('48-dancer limit · remove one to add another');}}pointer=null;still();});
-canvas.addEventListener('pointercancel',()=>{pointer=null;});
-play.onclick=()=>running?stop():start();listenButton.onclick=toggleListen;alignButton.onclick=toggleAlign;
-document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(alignButton.getAttribute('aria-pressed')==='true'){exitMapping();e.stopImmediatePropagation();e.preventDefault();}},true);
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('Paused while out of view',true);});
-window.addEventListener('pagehide',()=>{stop();disarmMic();});
-if('IntersectionObserver' in window)new IntersectionObserver(()=>{if(running&&!onscreen())stop('Paused while out of view',true);}).observe(canvas);
-theme();applyStickers();holdClock();still();report('Ready · '+api.nd_count()+' dancers · mic off');
-root.neuralDance={
-  setStickerFeed(feed){root._feed=feed&&typeof feed.sample==='function'?feed:null;},
-  hit(type){api.nd_hit(type|0);},
-  // studio-tracker #793. Fluorescent markers in projection pixels, or null to keep the current dancers.
-  markers(){return root._markers||null;},
-  setMarkers(list){root._markers=Array.isArray(list)?list.slice(0,48).map(m=>({id:+m.id||0,x:+m.x||0,y:+m.y||0,type:((m.type|0)%4+4)%4})):null;if(!root._markerFeed)root._markerFeed={sample(){return root._markers;}};if(root._markers)root._feed=root._markerFeed;else if(root._feed===root._markerFeed)root._feed=null;return root._markers;},
-  poke(){consumeFeed();still();}
-};
-})();
-</script>
+<script src="/neural-dance/silence-gate.js" is:inline></script>
+<script type="module" src="/neural-dance/room-lab.js" is:inline></script>
 
 <section id="nd-camera-mode" aria-labelledby="camera-mode-title">
-  <div class="viz-row"><h2 id="camera-mode-title">Camera mode</h2><button class="btn btn-primary" type="button" data-action="camera">Use camera</button><button class="btn" type="button" data-action="refresh">Refresh cameras</button><button class="btn" type="button" data-action="calibrate" aria-pressed="false">Calibrate wall</button><button class="btn" type="button" data-action="markers" aria-pressed="false" disabled>Markers off</button></div>
-  <p class="mural-help">An iPhone on Continuity Camera watches the wall. The camera list comes from the browser and includes <strong>iPhone Camera</strong> when the phone is connected. Pick it, then choose <strong>Calibrate wall</strong> and click the four corners of the projected image in the preview: top left, top right, bottom right, bottom left. Pink notes become dancers on the <a href="#nd-room-lab">Room music</a> stage about a second and a half after they go up, and they clear when the note comes down. Hue tolerance, saturation sensitivity, and minimum blob size stay in this browser.</p>
+  <div class="viz-row"><h2 id="camera-mode-title">Camera mode</h2><button class="btn btn-primary" type="button" data-action="camera">Use camera</button><button class="btn" type="button" data-action="refresh">Refresh cameras</button><button class="btn" type="button" data-action="calibrate" aria-pressed="false">Calibrate wall</button><button class="btn" type="button" data-action="markers" aria-pressed="false" disabled>Markers off</button><a class="btn" href="/neural-dance/live/">Live projector</a></div>
+  <p class="mural-help">An iPhone on Continuity Camera watches the wall. The camera list comes from the browser and includes <strong>iPhone Camera</strong> when the phone is connected. Pick it, then choose <strong>Calibrate wall</strong> and click the four corners of the projected image in the preview: top left, top right, bottom right, bottom left. Pink notes become dancers on the <a href="#nd-room-lab">Room music</a> stage about a second and a half after they go up, and they clear when the note comes down. For a wall projection, open the <a href="/neural-dance/live/">full-screen live page</a>: the dancer stage, the microphone, and this camera, with no site header. Hue tolerance, saturation sensitivity, and minimum blob size stay in this browser.</p>
   <div class="viz-controls">
     <label class="form-label">Camera<select class="form-select" data-control="device" aria-label="Camera"><option value="">Choose a camera</option></select></label>
     <label class="form-label">Hue tolerance <output data-value="hue">28°</output><input class="form-range" data-control="hue" type="range" min="5" max="80" step="1" value="28" aria-label="Hue tolerance"></label>
@@ -505,7 +348,7 @@ root.neuralDance={
 #nd-camera-mode .form-label{display:grid;gap:6px;flex:1 1 160px;min-width:0;color:#aab0c0;font-size:14px}
 #nd-camera-mode .form-range{width:100%;margin:0;accent-color:#ff7ad9}
 #nd-camera-mode .btn,#nd-camera-mode .form-select{border:1px solid rgba(255,255,255,.18);background:#171a24;color:#f4f6fb;border-radius:9px;padding:10px 12px;font:inherit}
-#nd-camera-mode .btn{cursor:pointer}
+#nd-camera-mode .btn{cursor:pointer}#nd-camera-mode a.btn{display:inline-block;text-decoration:none}
 #nd-camera-mode .btn:disabled{cursor:default;opacity:.55}
 #nd-camera-mode .btn-primary{background:#3158b8;border-color:#527af0}
 #nd-camera-mode .btn[aria-pressed="true"]{background:#1d6b45;border-color:#3dba7a}
