@@ -91,6 +91,7 @@ body.full #nd-mural-mapped{display:none}
 #nd-mural-mapped h2{margin-right:auto}
 </style>
 <script src="/neural-dance/vendor/maptastic.js" is:inline></script>
+<script src="/neural-dance/wave-ring.js" is:inline></script>
 <script is:inline>
 // Mural runtime is neural-dance/neural-dance.wasm (C++): dancer network and pulses.
 // Mic spectrum and the sticker map are inputs. Projector corner-pin is Maptastic.
@@ -105,8 +106,9 @@ const W=882,H=196,R=82;
 let api=null,zoom=1,pan=.5,running=false,audio=false,low=false;
 let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0,pointer=null;
 let ac=null,master=null,voices=new Set(),lastTone=[-99,-99,-99,-99],toneWindow=0,toneCount=0;
-let colors=[],foreground='',background='';const glows=[];
+let colors=[],foreground='',background='';
 let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,stickerFeed=null,mapper=null;
+const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createSession())||{connect(){},release(){},sample(){},stroke(){}};
 const hotUntil=[0,0,0,0];
 const MIC={
   off:{label:'Listen',status:'Mic off',pressed:false},
@@ -126,12 +128,7 @@ function theme(){
   const resolver=document.createElement('span');root.appendChild(resolver);
   function color(token){resolver.style.color='var('+token+')';return getComputedStyle(resolver).color;}
   colors=[1,2,3,4].map(i=>color('--viz-series-'+i));foreground=color('--foreground');background=color('--background');resolver.remove();
-  for(let k=0;k<4;k++){
-    el('[data-legend="'+k+'"]').style.color=colors[k];
-    const sprite=document.createElement('canvas');sprite.width=sprite.height=64;const c=sprite.getContext('2d');
-    const gradient=c.createRadialGradient(32,32,0,32,32,32);gradient.addColorStop(0,colors[k]);gradient.addColorStop(1,'transparent');
-    c.fillStyle=gradient;c.fillRect(0,0,64,64);glows[k]=sprite;
-  }
+  for(let k=0;k<4;k++)el('[data-legend="'+k+'"]').style.color=colors[k];
   still();
 }
 // Manually traced sticker centers, in source-photo pixels (882 x 196).
@@ -178,7 +175,7 @@ function draw(){const f=floats(),base=dancerBase(),ds=api.nd_dancer_stride(),n=a
  const pb=api.nd_pulses()>>>2,pc=api.nd_pulse_count(),ps=api.nd_pulse_stride();
  for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=transformXY(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=transformXY(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=transformXY(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
  for(let i=0;i<n;i++){const o=base+i*ds,p=transformXY(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),radius=(5+11*q)*Math.min(2,zoom);ctx.globalAlpha=rest>0?.4:1;
-  if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}
+  rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);
   ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,3+2*q);
  }
  ctx.restore();ctx.globalAlpha=1;
@@ -188,6 +185,8 @@ function frame(now){raf=0;if(!running||!api)return;if(!onscreen()){stop('Paused 
   if(stickerFeed){try{const sample=stickerFeed.sample();if(Array.isArray(sample))applyStickers(sample);}catch{}}
   const tones=api.nd_update(Math.min(.067,gap/1000),0,0,48000,2048,now);
   if(audio){for(let k=0;k<4;k++)if(tones&(1<<k))tone(k);}
+  if(audio&&ac&&master)rings.connect(ac,master);else rings.release();
+  rings.sample(gap/1000);
   draw();
  }catch{stop('Paused · reset to continue');return;}
  const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);
@@ -276,7 +275,7 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
 <section id="nd-room-lab" data-mic="off" aria-labelledby="room-music-title">
   <div class="viz-row"><h2 id="room-music-title">Room music</h2><button class="btn btn-primary" data-action="play">Start</button><button class="btn" data-action="listen" data-state="off" aria-pressed="false">Listen</button><button class="btn" data-action="align" aria-pressed="false">Align projector</button></div>
   <p class="mural-help">This stage is only for the microphone. It uses the dark prototype canvas: colored dancers and links, with no mural photograph and no built-in rhythm. Select <strong>Start</strong>, then <strong>Listen</strong>, and play music in the room. Dancers move only when the mic hears a kick, bass, snare, or hi-hat. The bars under the stage are the live spectrum, colored by those four bands.</p>
-  <p class="mural-help">Click the stage to add a dancer, drag a marker to move it, or Shift-click to remove one. Gravity, wander, threshold, and peak hold shape the pulses. Per-band sensitivity — kick, bass, snare, and hi-hat — sets how strongly dancers react when the analyzer hears that band. These controls stay on this page only, the same way the other Neural Dance sliders do.</p>
+  <p class="mural-help">Click the stage to add a dancer, drag a marker to move it, or Shift-click to remove one. Gravity, wander, threshold, and peak hold shape the pulses. Per-band sensitivity — kick, bass, snare, and hi-hat — sets how strongly dancers react when the analyzer hears that band. These controls stay on this page only, the same way the other Neural Dance sliders do. While Listening, a ring around each dancer draws the live waveform of the band it dances to.</p>
   <p class="mural-help"><strong>Align projector</strong> draws corner handles on this stage only. Drag a handle to skew the stage onto the wall. The mural demo above is not moved or resized. Select <strong>Mapping</strong> when you are done and the handles go away.</p>
   <div class="viz-controls" data-add-dancer>
     <label class="form-label">New dancer<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Snare</option><option value="3">Hi-hat</option></select></label>
@@ -346,8 +345,9 @@ const positions=prototypePositions();
 let api=null,running=false,low=false,allowMap=false,mapper=null;
 let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0;
 let ac=null;
-let colors=[],foreground='',background='';const glows=[];
+let colors=[],foreground='',background='';
 let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null;
+const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createSession())||{connect(){},release(){},sample(){},stroke(){}};
 const bandSens=[1,1,1,1];
 const hotUntil=[0,0,0,0];
 const MIC={off:{label:'Listen',status:'Mic off',pressed:false},listening:{label:'Listening',status:'Listening',pressed:true},muted:{label:'Muted',status:'Muted',pressed:false},unavailable:{label:'No mic',status:'No microphone',pressed:false}};
@@ -362,12 +362,7 @@ function theme(){
   const resolver=document.createElement('span');root.appendChild(resolver);
   function color(token){resolver.style.color='var('+token+')';return getComputedStyle(resolver).color;}
   colors=[1,2,3,4].map(i=>color('--viz-series-'+i));foreground=color('--foreground');background=color('--background');resolver.remove();
-  for(let k=0;k<4;k++){
-    el('[data-legend="'+k+'"]').style.color=colors[k];
-    const sprite=document.createElement('canvas');sprite.width=sprite.height=64;const c=sprite.getContext('2d');
-    const gradient=c.createRadialGradient(32,32,0,32,32,32);gradient.addColorStop(0,colors[k]);gradient.addColorStop(1,'transparent');
-    c.fillStyle=gradient;c.fillRect(0,0,64,64);glows[k]=sprite;
-  }
+  for(let k=0;k<4;k++)el('[data-legend="'+k+'"]').style.color=colors[k];
   still();
 }
 function applyStickers(){const n=positions.length;const f=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);positions.forEach(([x,y],i)=>{f[i*4]=i+1;f[i*4+1]=x;f[i*4+2]=y;f[i*4+3]=i%4;});api.nd_set_stickers(n);}
@@ -381,7 +376,7 @@ function still(){if(running||raf||!api)return;raf=requestAnimationFrame(()=>{raf
 function ensureGraph(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw new Error('no audio');if(!ac)ac=new AC();return ac.resume();}
 function holdClock(){api.nd_set_clock(0);}
 function applyMicState(state,text){micState=state;const m=MIC[state];listenButton.textContent=m.label;listenButton.dataset.state=state;listenButton.setAttribute('aria-pressed',m.pressed?'true':'false');root.dataset.mic=state;micStatus.textContent=text||m.status;holdClock();agcReset();if(state!=='listening'){for(let k=0;k<4;k++){const bar=el('[data-meter="'+k+'"]');if(bar)bar.style.transform='scaleX(0)';el('[data-legend="'+k+'"]').classList.remove('is-hot');}}}
-function releaseMicHardware(){const stream=micStream;micStream=null;try{micSource&&micSource.disconnect();}catch{}micSource=null;analyser=null;spec=null;if(stream)stream.getTracks().forEach(t=>{try{t.stop();}catch{}});}
+function releaseMicHardware(){const stream=micStream;micStream=null;rings.release();try{micSource&&micSource.disconnect();}catch{}micSource=null;analyser=null;spec=null;if(stream)stream.getTracks().forEach(t=>{try{t.stop();}catch{}});}
 function disarmMic(){const was=micState;releaseMicHardware();if(was!=='unavailable')applyMicState('off');if(ac)ac.suspend().catch(()=>{});}
 function watchMic(stream){for(const track of stream.getAudioTracks()){track.addEventListener('ended',()=>{if(micStream!==stream)return;releaseMicHardware();applyMicState('unavailable','No microphone');report('No microphone');});}}
 function requestMic(){const md=navigator.mediaDevices;if(!md||!md.getUserMedia)return Promise.reject(Object.assign(new Error('no mic'),{name:'NotFoundError'}));return md.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}}).catch(err=>{if(err&&err.name==='OverconstrainedError')return md.getUserMedia({audio:true});throw err;});}
@@ -426,7 +421,7 @@ function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stri
  for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const ia=base+i*ds,ib=base+j*ds,ax=f[ia],ay=f[ia+1],bx=f[ib],by=f[ib+1];if(Math.hypot(ax-bx,ay-by)>R)continue;const activity=Math.min(f[ia+2],f[ib+2]);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=xy(ax,ay),q=xy(bx,by),amp=Math.min(18,Math.abs(bx-ax)*.15),mid=xy(ax+(bx-ax)*.5,ay+(by-ay)*.5-amp);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
  ctx.globalAlpha=1;const pb=api.nd_pulses()>>>2,pc=api.nd_pulse_count(),ps=api.nd_pulse_stride();
  for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=xy(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=xy(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=xy(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
- for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
+ for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
  ctx.globalAlpha=1;
 }
 function consumeFeed(){if(!root._feed)return;try{const sample=root._feed.sample();if(!Array.isArray(sample))return;const n=Math.min(sample.length,48);if(n){const buf=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);for(let i=0;i<n;i++){const s=sample[i];buf[i*4]=s.id||0;buf[i*4+1]=s.x;buf[i*4+2]=s.y;buf[i*4+3]=s.type|0;}}api.nd_set_stickers(n);}catch{}}
@@ -440,6 +435,8 @@ function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while 
   const tones=api.nd_update(Math.min(.067,gap/1000),listening?1:0,bins,ac?ac.sampleRate:48000,analyser?analyser.fftSize:2048,now);
   const levels=listening?agcScale(rawLevels(),gap/1000):rawLevels();
   if(listening){for(let k=0;k<4;k++)if(tones&(1<<k))hotUntil[k]=now+180;paintMeters(now,levels);}
+  if(listening&&micSource&&ac)rings.connect(ac,micSource);else rings.release();
+  rings.sample(gap/1000);
   draw();drawSpectrum(levels);
  }catch{stop('Paused');return;}
  const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);

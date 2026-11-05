@@ -546,3 +546,56 @@ test('gravity bends a pulse toward a nearby dancer and wander can retarget', asy
   }
   assert.ok(retargeted, 'wander should hand a pulse to the third dancer');
 });
+
+test('each dancer bloom is a radial waveform of that band', () => {
+  const ring = readFileSync(new URL('../neural-dance/wave-ring.js', import.meta.url), 'utf8');
+  new Function(ring)();
+  const {ringGain, radialWavePoint, BAND_HZ} = globalThis.NeuralDanceRings;
+  assert.deepEqual(BAND_HZ, [[40, 120], [120, 300], [300, 2500], [5000, 14000]]);
+  for (let i = 0; i < 3; i++) assert.ok(BAND_HZ[i][1] <= BAND_HZ[i + 1][0]);
+  assert.equal(ringGain(0), 0);
+  assert.equal(ringGain(0.005), 0);
+  assert.equal(ringGain(0.02), 0);
+  assert.equal(ringGain(0.04), 3.5);
+  assert.ok(Math.abs(ringGain(0.5) - 1.4) < 1e-9);
+  const rest = radialWavePoint(0, 0, 10, 0, 0);
+  assert.ok(Math.abs(rest[0] - 10) < 1e-9 && Math.abs(rest[1]) < 1e-9);
+  const hot = radialWavePoint(0, 0, 10, 0, 1);
+  assert.ok(Math.abs(hot[0] - 18.5) < 1e-9 && Math.abs(hot[1]) < 1e-9);
+  const cold = radialWavePoint(0, 0, 10, 0, -2);
+  assert.ok(Math.abs(cold[0] - 1.5) < 1e-9);
+  const up = radialWavePoint(3, 4, 10, Math.PI / 2, 0);
+  assert.ok(Math.abs(up[0] - 3) < 1e-9 && Math.abs(up[1] - 14) < 1e-9);
+  assert.match(ring, /createBiquadFilter/);
+  assert.match(ring, /getFloatTimeDomainData/);
+  assert.match(ring, /type = 'highpass'/);
+  assert.match(ring, /type = 'lowpass'/);
+  assert.doesNotMatch(ring, /agcScale/);
+  assert.doesNotMatch(ring, /\.destination/);
+
+  assert.match(page, /src="\/neural-dance\/wave-ring\.js"/);
+  assert.match(page, /id="bloom"/);
+  assert.match(page, /id="halobloom"/);
+  assert.match(page, /function pulseBloom/);
+  assert.match(page, /function haloBloom/);
+  const muralJs = page.slice(page.indexOf('// Mural runtime'), page.indexOf('id="original-simulation"'));
+  assert.match(muralJs, /NeuralDanceRings\.createSession/);
+  assert.match(muralJs, /rings\.connect\(ac,master\)/);
+  assert.match(muralJs, /rings\.stroke\(ctx,p\.x,p\.y,radius\*2\.15,k,colors\[k\],low\)/);
+  assert.doesNotMatch(muralJs, /drawImage\(glows/);
+  const roomAt = page.indexOf('id="nd-room-lab"');
+  const room = page.slice(roomAt, page.indexOf('</script>', roomAt) + '</script>'.length);
+  assert.match(room, /NeuralDanceRings\.createSession/);
+  assert.match(room, /rings\.connect\(ac,micSource\)/);
+  assert.match(room, /rings\.stroke\(ctx,p\.x,p\.y,radius\*2\.15,k,colors\[k\],low\)/);
+  assert.match(room, /live waveform of the band it dances to/);
+  assert.doesNotMatch(room, /drawImage\(glows/);
+  const frame = room.slice(room.indexOf('function frame'), room.indexOf('function projectorLayout'));
+  assert.ok(frame.indexOf('getByteFrequencyData(spec)') < frame.indexOf('nd_update'));
+  assert.ok(frame.indexOf('nd_update') < frame.indexOf('agcScale'));
+  assert.ok(frame.indexOf('agcScale') < frame.indexOf('rings.sample'));
+  assert.doesNotMatch(frame, /rings\.sample\([^)]*levels/);
+  assert.match(frame, /drawSpectrum\(levels\)/);
+  assert.match(room, /nd_set_gravity/);
+  assert.match(room, /nd_set_band_sens/);
+});
