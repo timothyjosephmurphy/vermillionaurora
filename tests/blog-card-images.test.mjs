@@ -6,6 +6,8 @@ import { readFileSync } from 'node:fs';
 // El Salvador sunrise post image rows. Loaded here so `npm test` runs it
 // without a package.json edit (that file would force the full release-gate tier).
 import './el-salvador-blog-layout.test.mjs';
+// Nostr notes that announce an indexed story. Same reason: keep it out of package.json.
+import './blog-nostr-dedupe.test.mjs';
 
 const FALLBACK = /esperanza-hero|aba277665d/;
 // TEMPORARY: posts that still share the fallback banner. Give each its own
