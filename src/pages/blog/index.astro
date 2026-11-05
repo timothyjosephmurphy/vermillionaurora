@@ -35,7 +35,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
           </a>
           <div class="journal-copy">
             <p>A walkable 3D gallery of all 206 of my current paintings, hung at true size in lit rooms, with courtyards, murals, playful tools, Dad&#x27;s side gallery, and Relay Gate ahead.</p>
-            <p><a href="/blog/walk-my-paintings-3d-gallery/">Read the story →</a></p>
+            <p class="journal-actions"><a href="/blog/walk-my-paintings-3d-gallery/">Read the story →</a><a href="/play/">Walk the gallery now →</a></p>
           </div>
         </article>
         <article class="journal-entry" data-static-story>
@@ -210,6 +210,8 @@ import SiteFooter from '../../components/SiteFooter.astro';
   .journal-copy{grid-column:2;font-size:.93rem;line-height:1.5}
   .journal-copy p{margin:0 0 6px}
   .journal-copy p:first-child{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .journal-actions{display:flex;flex-wrap:wrap;gap:8px 16px}
+  .journal-actions a{text-decoration:underline;text-underline-offset:3px}
   .journal-links{grid-column:2;display:flex;flex-wrap:wrap;gap:14px;font-size:.88rem}
   .journal-links a{text-decoration:underline;text-underline-offset:4px}
   @media(max-width:680px){

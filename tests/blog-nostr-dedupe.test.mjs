@@ -25,6 +25,21 @@ function titles(entries) {
   return entries.map(entry => entry.story?.title || entry.post?.title);
 }
 
+test('the 3D gallery story leads with the play link and its index card keeps both links', () => {
+  const post = readFileSync(new URL('../static/blog/walk-my-paintings-3d-gallery/index.html', import.meta.url), 'utf8');
+  const main = post.slice(post.indexOf('<main class="article">'));
+  const cta = main.indexOf('class="walk-cta"');
+  const figure = main.indexOf('<figure');
+  const firstParagraph = main.indexOf('<p>I set up a 3D gallery');
+  assert.ok(cta >= 0 && cta < figure && figure < firstParagraph);
+  const lead = main.slice(cta, figure);
+  assert.match(lead, /href="https:\/\/tjm\.art\/play"/);
+  assert.match(lead, /Walk the gallery now: tjm\.art\/play/);
+  const card = index.split('<article class="journal-entry" data-static-story>')[1];
+  assert.match(card, /href="\/blog\/walk-my-paintings-3d-gallery\/">Read the story →/);
+  assert.match(card, /href="\/play\/">Walk the gallery now →/);
+});
+
 test('the blog index merges the Nostr feed through the dedupe', () => {
   assert.match(index, /import \{ startJournalFeed \} from '\.\/journal-feed\.mjs'/);
   assert.match(index, /startJournalFeed\(\)/);
