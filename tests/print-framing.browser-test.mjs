@@ -22,6 +22,7 @@ try{
       return route.fulfill({headers,json:{orderId:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key:'b'.repeat(64),status:'quoted',methods:['square'],quote:{items,base:'161.63',shipping:'21.95',tax:'0.00',total:'183.58'}}});
     }
     if(u.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:"window.Square={payments:()=>({card:async()=>({attach:async()=>{},tokenize:async()=>({status:'OK',token:'cnon:test'})})})};"});
+    if(u.hostname==='applepay.cdn-apple.com')return route.fulfill({contentType:'application/javascript',body:''});
     if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
     const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
     if(!fs.existsSync(file))return route.fulfill({status:404});

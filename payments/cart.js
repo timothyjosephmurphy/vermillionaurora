@@ -250,21 +250,46 @@
     return payments.paymentRequest({countryCode:capabilities?.square?.country||'US',currencyCode:'USD',total:{amount:total,label:'TJ Murphy'},
       ...(itemized?{lineItems:lines.map(([label,v])=>({label,amount:walletAmount(v)}))}:{}),requestBillingContact:false,requestShippingContact:false});
   }
+  // Apple Pay JS SDK (1.latest, currently 1.3.x). In Safari it draws the button and leaves the
+  // native ApplePaySession alone. In desktop Chrome, Firefox, and Edge it installs ApplePaySession;
+  // Square's applePay() then succeeds, and tokenize() opens Apple's scan-with-iPhone code. Load the
+  // SDK before asking Square. A failed load still leaves Safari's native session.
+  let applePayButtonSdk=null;
+  function loadApplePayButton(){
+    if(window.ApplePaySession&&customElements.get('apple-pay-button'))return Promise.resolve();
+    if(applePayButtonSdk)return applePayButtonSdk;
+    applePayButtonSdk=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      script.src='https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js';
+      script.async=true;
+      script.onload=()=>resolve();
+      script.onerror=()=>reject(Error('Apple Pay button could not be loaded.'));
+      document.head.append(script);
+    }).catch(error=>{applePayButtonSdk=null;throw error;});
+    return applePayButtonSdk;
+  }
   async function setupWallets(q){
     teardownWallets();
     const generation=walletGeneration,host=root.querySelector('[data-cart-wallets]'),buttons=host?.querySelector('[data-wallet-buttons]');
     if(!host||!q?.quote?.total)return;
+    const appleSdk=loadApplePayButton().catch(()=>{});
     let payments;try{payments=await squarePayments();}catch{return;}
     const current=()=>generation===walletGeneration&&quoted===q;
+    if(!current())return;
+    await appleSdk;
     if(!current())return;
     const shown=()=>{host.hidden=!buttons.children.length;};
     try{
       const applePay=await payments.applePay(walletRequest(payments,q));
       if(!current())return applePay.destroy?.();
       walletInstances.push(applePay);
-      const button=node('button',undefined,'apple-pay-button');button.type='button';button.setAttribute('aria-label','Pay with Apple Pay');button.lang='en';
+      const button=node('apple-pay-button','Pay with Apple Pay','apple-pay-button');
+      button.setAttribute('buttonstyle','black');button.setAttribute('type','buy');button.setAttribute('locale','en-US');
+      button.setAttribute('aria-label','Pay with Apple Pay');button.lang='en';button.setAttribute('role','button');button.tabIndex=0;
       // Apple Pay must open from the click itself, so tokenize before any other await.
-      button.addEventListener('click',()=>{if(busy||!quoted)return;startPayment('square',applePay.tokenize());});
+      const pay=()=>{if(busy||!quoted)return;startPayment('square',applePay.tokenize());};
+      button.addEventListener('click',pay);
+      button.addEventListener('keydown',event=>{if(event.key!=='Enter'&&event.key!==' ')return;event.preventDefault();pay();});
       buttons.prepend(button);shown();
     }catch{}
     try{

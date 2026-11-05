@@ -12,6 +12,7 @@ try {
   await page.route('**/*',async route=>{
     const u=new URL(route.request().url());
     if(u.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:"window.Square={payments:()=>({card:async()=>({attach:async()=>{},tokenize:async()=>({status:'OK',token:'cnon:test'})})})};"});
+    if(u.hostname==='applepay.cdn-apple.com')return route.fulfill({contentType:'application/javascript',body:''});
     if(u.pathname.startsWith('/checkout/cart/')) {
       const action=u.pathname.split('/').at(-1),body=route.request().postDataJSON();calls.push({action,body});
       if(action==='catalog')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'sample-test-'+printVersion,products,square:{applicationId:'sq0idp-test',locationId:'LOCATION',mode:'live'}}});
