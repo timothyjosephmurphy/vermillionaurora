@@ -163,6 +163,15 @@ export const posts = [
     "imageUrl": "https://tjm.art/murals/images/berlin-el-salvador/artist-with-sign.jpeg",
     "productUrl": "/murals/berlin-el-salvador/",
     "xText": "In Berlín, El Salvador, I walked into the Bitcoin Community Center and asked how I could help before the festival. They needed a sign. Borrowed materials, bought paint, used their projector. It hangs at the court by the main square. @BitcoinBerlinSV https://tjm.art/murals/berlin-el-salvador/"
+  },
+  {
+    "id": "campaign-walk-my-paintings-3d-gallery-2026-11-04",
+    "title": "Walk My 206 Paintings in 3D",
+    "scheduledAt": "2026-11-04T19:05:00-08:00",
+    "text": "I set up a 3D gallery where you walk all 206 of my current paintings, hung at true size in lit rooms.\n\nCourtyards. Murals. Dad's side gallery. Buy Scanner, soup thermos, gravity gun, glitter cannon. Pillar of light to check out. Pay with Bitcoin.\n\nAlso https://tjm.art/play",
+    "imageUrl": "https://img.tjm.art/social/gallery-3d-nov-4-2026/02-hex-wall.png",
+    "productUrl": "/blog/walk-my-paintings-3d-gallery/",
+    "xText": "I set up a 3D gallery where you walk all 206 of my current paintings, hung at true size in lit rooms.\n\nCourtyards. Murals. Dad's side gallery. Buy Scanner, soup thermos, gravity gun, glitter cannon. Pillar of light to check out. Pay with Bitcoin.\n\nhttps://tjm.art/blog/walk-my-paintings-3d-gallery/"
   }
 ];
 
