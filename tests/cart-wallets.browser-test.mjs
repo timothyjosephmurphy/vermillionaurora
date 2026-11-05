@@ -4,6 +4,9 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {catalogVersion,byId} from '../catalog/catalog.mjs';
 // Apple Pay / Google Pay: wallets show the exact server quote and reuse the 'square' start path. All providers mocked.
+// The cart loads Apple's JS SDK before payments.applePay(). That SDK is what installs ApplePaySession
+// in desktop Chrome/Firefox so Square can open Apple's scan-with-iPhone sheet. This test stubs that
+// script. It does not draw a QR code.
 const root=path.resolve('dist'),origin='https://vermillionaurora.com',id='painting-portrait-in-green';
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}:{})});
 const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,wallets='google',appleResult='OK';
@@ -68,6 +71,7 @@ try{
  assert.equal(placed[0].tag,'APPLE-PAY-BUTTON');assert.equal(placed[0].c,'apple-pay-button');
  assert(placed[0].top<placed[1].top&&placed[1].c.includes('google-pay-button'),'Apple Pay listed first');
  assert(placed[0].height>=44&&placed[0].width>=200,'Apple Pay button is prominent');
+ assert.equal(await page.locator('[data-wallet-buttons] img, [data-wallet-buttons] canvas').count(),0,'no merchant-drawn QR');
  assert.equal(await page.locator('.apple-pay-button').getAttribute('buttonstyle'),'black');
  assert.equal(await page.locator('.apple-pay-button').getAttribute('type'),'buy');
  const before=starts().length;await page.getByRole('button',{name:'Pay with Apple Pay'}).click();

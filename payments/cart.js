@@ -250,11 +250,13 @@
     return payments.paymentRequest({countryCode:capabilities?.square?.country||'US',currencyCode:'USD',total:{amount:total,label:'TJ Murphy'},
       ...(itemized?{lineItems:lines.map(([label,v])=>({label,amount:walletAmount(v)}))}:{}),requestBillingContact:false,requestShippingContact:false});
   }
-  // Apple's button element draws the mark in shadow DOM. The old CSS -webkit-appearance
-  // button is an empty control, and site button styles (font, border) stop Safari from painting it.
+  // Apple Pay JS SDK (1.latest, currently 1.3.x). In Safari it draws the button and leaves the
+  // native ApplePaySession alone. In desktop Chrome, Firefox, and Edge it installs ApplePaySession;
+  // Square's applePay() then succeeds, and tokenize() opens Apple's scan-with-iPhone code. Load the
+  // SDK before asking Square. A failed load still leaves Safari's native session.
   let applePayButtonSdk=null;
   function loadApplePayButton(){
-    if(customElements.get('apple-pay-button'))return Promise.resolve();
+    if(window.ApplePaySession&&customElements.get('apple-pay-button'))return Promise.resolve();
     if(applePayButtonSdk)return applePayButtonSdk;
     applePayButtonSdk=new Promise((resolve,reject)=>{
       const script=document.createElement('script');
@@ -270,8 +272,11 @@
     teardownWallets();
     const generation=walletGeneration,host=root.querySelector('[data-cart-wallets]'),buttons=host?.querySelector('[data-wallet-buttons]');
     if(!host||!q?.quote?.total)return;
+    const appleSdk=loadApplePayButton().catch(()=>{});
     let payments;try{payments=await squarePayments();}catch{return;}
     const current=()=>generation===walletGeneration&&quoted===q;
+    if(!current())return;
+    await appleSdk;
     if(!current())return;
     const shown=()=>{host.hidden=!buttons.children.length;};
     try{
@@ -286,7 +291,6 @@
       button.addEventListener('click',pay);
       button.addEventListener('keydown',event=>{if(event.key!=='Enter'&&event.key!==' ')return;event.preventDefault();pay();});
       buttons.prepend(button);shown();
-      loadApplePayButton().catch(()=>{});
     }catch{}
     try{
       const googlePay=await payments.googlePay(walletRequest(payments,q));

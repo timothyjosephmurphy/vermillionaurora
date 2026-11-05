@@ -43,11 +43,20 @@ Washington sales tax is calculated from the Washington Department of Revenue rat
 
 ## Apple Pay and Google Pay
 
-The cart offers Apple Pay and Google Pay only after a server shipping-and-tax quote, and only when Square's Web Payments SDK accepts that wallet. Apple Pay requires Safari (`ApplePaySession` and a device that can make Apple Pay payments). Chrome, Firefox, and Chrome on iPhone do not expose that API, so they show Google Pay and the card form without an Apple Pay button. When Square reports Apple Pay available, its button is first, above Google Pay.
+The cart offers Apple Pay and Google Pay only after a server shipping-and-tax quote, and only when Square's Web Payments SDK accepts that wallet. When Apple Pay is accepted, its button is first, above Google Pay. The card form stays available.
+
+Apple Pay on the web has two real paths. Both use Apple's code. The cart does not draw its own QR code.
+
+- **Safari on iPhone, iPad, or Mac.** The button opens the Apple Pay sheet on that device.
+- **Desktop Chrome, Firefox, and Edge.** Apple's Pay JS SDK (`applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js`, version 1.2.0 or later) installs `ApplePaySession` in those browsers. The cart loads that script before `payments.applePay()`. A click calls `tokenize()`, and Apple opens its own "Scan Code with iPhone" sheet (a circular Apple Pay code, not a merchant QR). The buyer scans it with the iPhone camera. iOS 18 or iPadOS 18 or later is required on the phone. Checked live on `tjm.art` from desktop Chrome on 2026-11-05: Square returned an Apple Pay instance, and `tokenize()` opened Apple's scan sheet for `https://tjm.art`.
+
+Square's published Web Payments page still says Apple Pay is Safari-only. Their SDK accepts the session once Apple's script is on the page. On 27 October 2026 a Square developer confirmed that load order on the Square developer forum and said the flow is technically unsupported until Square's docs change: [Apple Pay in Chrome and other non-Safari browsers](https://developer.squareup.com/forums/t/apple-pay-in-chrome-and-other-non-safari-browsers-with-the-web-payments-sdk-apple-pay-js-sdk/28342).
+
+Apple's SDK reports `canMakePayments()` false when `navigator.userAgentData.mobile` is true, so a phone browser does not get the scan sheet. On an iPhone, use Safari for the on-device sheet.
 
 `tjm.art` serves Square's domain association file at `/.well-known/apple-developer-merchantid-domain-association`. The site worker prefers Square's current copy and falls back to `worker/apple-pay-domain-association.mjs`. `vermillionaurora.com` redirects to `tjm.art`; Apple does not follow that redirect, so the domain registered with Square is `tjm.art`.
 
-To check on an iPhone: open `https://tjm.art/cart/` in Safari, add an available piece, and calculate shipping and tax. Apple Pay should be the black express button above Google Pay (if Google Pay is also available) and above the card form. The Wallet needs a card. If the button is missing in Safari, allow Apple Pay under Settings → Safari → Privacy.
+To check: in desktop Chrome or Firefox, open `https://tjm.art/cart/`, add an available piece, calculate shipping and tax, and choose Apple Pay. Apple's scan sheet should appear. On an iPhone, use Safari for the same checkout; the black Apple Pay button should be first, and the Wallet needs a card. If Safari has no button, allow Apple Pay under Settings → Safari → Privacy.
 
 ## Local verification
 
