@@ -348,7 +348,8 @@ export function pickCamera(choices, saved) {
     const byLabel = choices.find(c => c.label === saved.deviceLabel);
     if (byLabel) return byLabel;
   }
-  return choices.find(c => /iPhone\s*Camera/i.test(c.label))
+  // "iPhone Camera" and Continuity Camera's "iPhone (3) Camera".
+  return choices.find(c => /iPhone(?:\s*\(\d+\))?\s*Camera/i.test(c.label))
     || choices.find(c => /iPhone/i.test(c.label))
     || choices[0];
 }
@@ -419,6 +420,108 @@ function memoryOf(storage) {
   }
 }
 
+// Continuity Camera (Safari and Chrome on macOS) delivers a live but black
+// track when width/height are combined with deviceId. Ask for the device only.
+// exact keeps a picked "iPhone (3) Camera" from falling through to the built-in
+// camera. ideal is the fallback when exact is overconstrained. The constraint stays an object.
+export function videoConstraints(deviceId, mode = 'exact') {
+  const video = {};
+  if (deviceId) video.deviceId = mode === 'ideal' ? {ideal: String(deviceId)} : {exact: String(deviceId)};
+  return video;
+}
+
+export function armPreviewElement(video) {
+  if (!video) return video;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.autoplay = true;
+  video.controls = false;
+  if (typeof video.setAttribute === 'function') {
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('autoplay', '');
+    video.setAttribute('webkit-playsinline', '');
+  }
+  return video;
+}
+
+// readyState HAVE_CURRENT_DATA plus a non-zero frame, and the element is actually playing.
+export function videoFrameReady(video) {
+  return !!(video && video.readyState >= 2 && video.videoWidth > 0 && video.videoHeight > 0 && !video.paused && !video.ended);
+}
+
+export function drawVideoFrame(video, ctx, width, height) {
+  if (!videoFrameReady(video) || !ctx || !(width > 0) || !(height > 0)) return false;
+  try {
+    ctx.drawImage(video, 0, 0, width, height);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// Set srcObject, force muted / playsInline / autoplay, and call play() only after loadedmetadata.
+export function playPreview(video, stream) {
+  armPreviewElement(video);
+  video.srcObject = stream;
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => finish(Object.assign(new Error('preview timeout'), {name: 'TimeoutError'})), 8000);
+    let settled = false;
+    const finish = err => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      video.removeEventListener('loadedmetadata', onReady);
+      video.removeEventListener('error', onError);
+      if (err) reject(err);
+      else resolve();
+    };
+    const start = () => {
+      try {
+        const playing = video.play();
+        if (playing && typeof playing.then === 'function') playing.then(() => finish(), finish);
+        else finish();
+      } catch (err) {
+        finish(err);
+      }
+    };
+    const onReady = () => start();
+    const onError = () => finish(Object.assign(new Error('preview error'), {name: 'AbortError'}));
+    if (video.readyState >= 1 && video.videoWidth > 0) start();
+    else {
+      video.addEventListener('loadedmetadata', onReady);
+      video.addEventListener('error', onError);
+    }
+  });
+}
+
+function permissionDenied(err) {
+  return !!(err && (err.name === 'NotAllowedError' || err.name === 'SecurityError' || err.name === 'PermissionDeniedError'));
+}
+
+export async function acquireCameraStream(md, deviceId) {
+  if (!md || typeof md.getUserMedia !== 'function') {
+    throw Object.assign(new Error('camera unavailable'), {name: 'NotFoundError'});
+  }
+  const attempts = [];
+  if (deviceId) {
+    attempts.push(videoConstraints(deviceId, 'exact'));
+    attempts.push(videoConstraints(deviceId, 'ideal'));
+  }
+  attempts.push(videoConstraints(''));
+  let last;
+  for (const video of attempts) {
+    try {
+      return await md.getUserMedia({video, audio: false});
+    } catch (err) {
+      last = err;
+      if (permissionDenied(err)) throw err;
+    }
+  }
+  throw last || Object.assign(new Error('no camera'), {name: 'NotFoundError'});
+}
+
 export function attachCameraMode(root) {
   if (!root || root.dataset.cameraReady === '1') return;
   root.dataset.cameraReady = '1';
@@ -434,6 +537,7 @@ export function attachCameraMode(root) {
   const calibrateButton = root.querySelector('[data-action="calibrate"]');
   const markerButton = root.querySelector('[data-action="markers"]');
   if (!video || !overlay || !select || !hue || !sat || !size) return;
+  armPreviewElement(video);
   const octx = overlay.getContext('2d');
   const scratch = document.createElement('canvas');
   const sctx = scratch.getContext('2d', {willReadFrequently: true});
@@ -562,19 +666,15 @@ export function attachCameraMode(root) {
     for (const choice of choices) select.add(new Option(choice.label, choice.deviceId));
     select.value = choices.some(c => c.deviceId === keep) ? keep : '';
   }
-  function videoConstraints(deviceId) {
-    const video = {width: {ideal: 1280}, height: {ideal: 720}};
-    if (deviceId) video.deviceId = {exact: deviceId};
-    return video;
-  }
   function openedId() {
     const track = stream && stream.getVideoTracks()[0];
     return track && track.getSettings ? (track.getSettings().deviceId || '') : '';
   }
   function fail(err) {
-    const denied = err && (err.name === 'NotAllowedError' || err.name === 'SecurityError' || err.name === 'PermissionDeniedError');
-    say(denied ? 'Camera blocked' : 'No camera');
-    cameraButton.textContent = 'Use camera';
+    const denied = permissionDenied(err);
+    const timeout = err && err.name === 'TimeoutError';
+    say(denied ? 'Camera blocked' : timeout ? 'Camera picture did not start' : 'No camera');
+    if (!stream) cameraButton.textContent = 'Use camera';
   }
   function stopTracks(current) {
     if (!current) return;
@@ -602,11 +702,23 @@ export function attachCameraMode(root) {
   }
   async function open(deviceId) {
     const md = navigator.mediaDevices;
-    const next = await md.getUserMedia({video: videoConstraints(deviceId), audio: false});
-    stopTracks(stream);
+    const next = await acquireCameraStream(md, deviceId);
+    const previous = stream;
+    try {
+      await playPreview(video, next);
+    } catch (err) {
+      stopTracks(next);
+      if (previous && previous !== next) {
+        try { await playPreview(video, previous); } catch { video.srcObject = previous; }
+      } else if (!previous) {
+        video.srcObject = null;
+      }
+      throw err;
+    }
+    if (previous && previous !== next) stopTracks(previous);
     stream = next;
-    video.srcObject = stream;
-    try { await video.play(); } catch { /* the preview element still attaches the stream */ }
+    const track = next.getVideoTracks()[0];
+    if (track) track.addEventListener('unmute', () => { rebuild(); drawOverlay(); });
     startLoop();
     cameraButton.textContent = 'Stop camera';
   }
@@ -665,14 +777,14 @@ export function attachCameraMode(root) {
     }
   }
   function detect(now) {
+    if (!videoFrameReady(video)) return;
     const vw = video.videoWidth;
     const vh = video.videoHeight;
-    if (!vw || !vh) return;
     if (!homography && committed.length === 4) rebuild();
     const scale = detectionSize(vw, vh);
     if (scratch.width !== scale.width) scratch.width = scale.width;
     if (scratch.height !== scale.height) scratch.height = scale.height;
-    sctx.drawImage(video, 0, 0, scale.width, scale.height);
+    if (!drawVideoFrame(video, sctx, scale.width, scale.height)) return;
     const frame = sctx.getImageData(0, 0, scale.width, scale.height);
     const result = markersFromFrame(frame, settings(), markersOn ? homography : null, scale, markersOn ? tracker : idleTracker, now);
     rawBlobs = result.blobs;
@@ -690,8 +802,20 @@ export function attachCameraMode(root) {
   }
   function loop(now) {
     raf = requestAnimationFrame(loop);
-    if (!stream || video.readyState < 2) return;
-    if (now - lastDetect < 100) return;
+    const track = stream && stream.getVideoTracks()[0];
+    if (!stream || !track || track.readyState !== 'live') return;
+    if (track.muted || !videoFrameReady(video)) {
+      if (!draft && now - lastStatus > 800) {
+        lastStatus = now;
+        say('Waiting for a picture from the camera.');
+      }
+      drawOverlay();
+      return;
+    }
+    if (now - lastDetect < 100) {
+      drawOverlay();
+      return;
+    }
     lastDetect = now;
     detect(now);
     drawOverlay();
@@ -705,6 +829,7 @@ export function attachCameraMode(root) {
     if (overlay.width !== vw) overlay.width = vw;
     if (overlay.height !== vh) overlay.height = vh;
     octx.clearRect(0, 0, overlay.width, overlay.height);
+    drawVideoFrame(video, octx, overlay.width, overlay.height);
     const corners = activeCorners();
     if (corners.length) {
       octx.strokeStyle = '#ff7ad9';

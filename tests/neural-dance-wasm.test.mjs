@@ -2,9 +2,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import './neural-dance-camera.test.mjs';
+import './neural-dance-live.test.mjs';
 
 const wasm = readFileSync(new URL('../neural-dance/neural-dance.wasm', import.meta.url));
 const page = readFileSync(new URL('../src/pages/neural-dance/index.astro', import.meta.url), 'utf8');
+const roomJs = readFileSync(new URL('../neural-dance/room-lab.js', import.meta.url), 'utf8');
+
+function roomSource() {
+  const roomAt = page.indexOf('id="nd-room-lab"');
+  const end = page.indexOf('id="nd-camera-mode"');
+  return page.slice(roomAt, end) + roomJs;
+}
 const copier = readFileSync(new URL('../scripts/copy-assets.mjs', import.meta.url), 'utf8');
 
 function load() {
@@ -295,7 +303,8 @@ test('the mural page keeps its controls and loads the wasm core', () => {
   assert.match(page, /Room music/);
   assert.match(page, /id="nd-room-projector"/);
   assert.match(page, /data-spectrum/);
-  assert.match(page, /nd_set_clock/);
+  assert.match(roomJs, /nd_set_clock/);
+  assert.match(page, /\/neural-dance\/room-lab\.js/);
   assert.match(page, /\/neural-dance\/neural-dance\.wasm/);
   assert.match(page, /data-action="play"/);
   assert.match(page, /data-action="audio"/);
@@ -325,7 +334,8 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.ok(muralAt >= 0 && originalAt > muralAt && canvasAt > originalAt);
   assert.ok(originalEnd > canvasAt && roomAt > originalEnd, 'room music follows the original prototype');
 
-  const room = page.slice(roomAt, page.indexOf('</script>', roomAt) + '</script>'.length);
+  const room = roomSource();
+  assert.match(page, /\/neural-dance\/room-lab\.js/);
   assert.doesNotMatch(room, /mural-with-silhouettes/);
   assert.doesNotMatch(room, /data-mural/);
   assert.doesNotMatch(room, /data-action="audio"/);
@@ -358,7 +368,18 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.match(room, /Bass sensitivity/);
   assert.match(room, /Snare sensitivity/);
   assert.match(room, /Hi-hat sensitivity/);
+  assert.match(room, /Quiet threshold/);
+  assert.match(room, /data-control="quiet"/);
+  assert.match(room, /aria-label="Quiet threshold"/);
+  assert.match(room, /noise floor/);
   assert.match(room, /Per-band sensitivity/);
+  assert.match(page, /\/neural-dance\/silence-gate\.js/);
+  assert.match(room, /ndSilenceGate/);
+  assert.match(room, /NeuralDanceRings\.createSession/);
+  assert.match(room, /rings\.connect\(ac,micSource\)/);
+  assert.match(room, /rings\.stroke\(ctx,p\.x,p\.y,radius\*2\.15,k,colors\[k\],low\)/);
+  assert.match(room, /live waveform of the band it dances to/);
+  assert.doesNotMatch(room, /drawImage\(glows/);
   const agcFn = room.indexOf('function agcScale');
   assert.ok(agcFn > 0);
   assert.ok(room.indexOf('api.nd_set_gravity(v)') > agcFn);
@@ -373,43 +394,31 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.doesNotMatch(mural, /agcScale/);
 });
 
-test('room music AGC holds typical band levels near mid scale', () => {
-  const roomAt = page.indexOf('id="nd-room-lab"');
-  const room = page.slice(roomAt, page.indexOf('</script>', roomAt) + '</script>'.length);
-  const start = room.indexOf('const agcState=');
-  const end = room.indexOf('function rawLevels');
-  assert.ok(start > 0 && end > start);
-  const {agcScale, agcReset} = new Function(room.slice(start, end) + '\nreturn {agcScale, agcReset};')();
+test('room music runs the silence gate before the onset detector and rings after it', () => {
+  const room = roomSource();
   const frameAt = room.indexOf('function frame');
   const frame = room.slice(frameAt, room.indexOf('function projectorLayout'));
-  assert.ok(frame.indexOf('nd_update') < frame.indexOf('agcScale'));
+  const peaksAt = frame.indexOf('ndSilenceGate.bandPeaks');
+  const scaleAt = frame.indexOf('agcScale(peaks');
+  const maskAt = frame.indexOf('ndSilenceGate.mask');
+  const updateAt = frame.indexOf('nd_update');
+  const ringsAt = frame.indexOf('rings.sample');
+  assert.ok(peaksAt > 0 && scaleAt > peaksAt && maskAt > scaleAt && updateAt > maskAt && ringsAt > updateAt);
+  assert.match(frame, /listening\?1:0/);
   assert.match(frame, /paintMeters\(now,levels\)/);
   assert.match(frame, /drawSpectrum\(levels\)/);
-
-  function settle(raw, seconds) {
-    agcReset();
-    let levels = raw;
-    for (let t = 0; t < seconds; t += 0.033) levels = agcScale(raw, 0.033);
-    return levels;
-  }
-  const pegged = settle([1, 1, 1, 0.02], 2);
-  const loud = pegged.slice(0, 3);
-  const loudMean = loud.reduce((a, b) => a + b, 0) / loud.length;
-  assert.ok(loudMean > 0.42 && loudMean < 0.58, `pegged mean ${loudMean}`);
-  assert.ok(Math.max(...pegged) < 0.65);
-  assert.ok(pegged[3] < 0.05);
-
-  agcReset();
-  const first = agcScale([1, 1, 1, 0], 0.033);
-  assert.ok(Math.min(...first.slice(0, 3)) > 0.7, 'gain slews instead of jumping');
-  assert.ok(Math.max(...first) < 0.98, 'soft knee, not a hard clip at 1');
-
-  const quiet = settle([0.1, 0.08, 0.12, 0.04], 2);
-  const quietMean = quiet.slice(0, 3).reduce((a, b) => a + b, 0) / 3;
-  assert.ok(quietMean > 0.35 && quietMean < 0.65, `quiet mean ${quietMean}`);
-
-  const silence = settle([0.02, 0.01, 0, 0.015], 2);
-  assert.ok(Math.max(...silence) < 0.05);
+  assert.match(frame, /paintFloor\(true\)/);
+  assert.match(frame, /getByteFrequencyData\(spec\)/);
+  assert.doesNotMatch(frame, /rings\.sample\([^)]*levels/);
+  assert.match(room, /data-action="listen"/);
+  assert.match(room, /ndSilenceGate\.setQuiet/);
+  assert.match(room, /Quiet threshold/);
+  assert.match(page, /src="\/neural-dance\/wave-ring\.js"/);
+  const muralJs = page.slice(page.indexOf('// Mural runtime'), page.indexOf('id="original-simulation"'));
+  assert.match(muralJs, /NeuralDanceRings\.createSession/);
+  assert.match(muralJs, /rings\.connect\(ac,master\)/);
+  assert.match(muralJs, /rings\.stroke\(ctx,p\.x,p\.y,radius\*2\.15,k,colors\[k\],low\)/);
+  assert.doesNotMatch(muralJs, /drawImage\(glows/);
 });
 
 function pulseHeads(api) {
@@ -545,4 +554,35 @@ test('gravity bends a pulse toward a nearby dancer and wander can retarget', asy
     if (pulseHeads(api).some(p => p.b === 2)) retargeted = true;
   }
   assert.ok(retargeted, 'wander should hand a pulse to the third dancer');
+});
+
+test('each dancer bloom is a radial waveform of that band', () => {
+  const ring = readFileSync(new URL('../neural-dance/wave-ring.js', import.meta.url), 'utf8');
+  new Function(ring)();
+  const {ringGain, radialWavePoint, BAND_HZ} = globalThis.NeuralDanceRings;
+  assert.deepEqual(BAND_HZ, [[40, 120], [120, 300], [300, 2500], [5000, 14000]]);
+  for (let i = 0; i < 3; i++) assert.ok(BAND_HZ[i][1] <= BAND_HZ[i + 1][0]);
+  assert.equal(ringGain(0), 0);
+  assert.equal(ringGain(0.005), 0);
+  assert.equal(ringGain(0.02), 0);
+  assert.equal(ringGain(0.04), 3.5);
+  assert.ok(Math.abs(ringGain(0.5) - 1.4) < 1e-9);
+  const rest = radialWavePoint(0, 0, 10, 0, 0);
+  assert.ok(Math.abs(rest[0] - 10) < 1e-9 && Math.abs(rest[1]) < 1e-9);
+  const hot = radialWavePoint(0, 0, 10, 0, 1);
+  assert.ok(Math.abs(hot[0] - 18.5) < 1e-9 && Math.abs(hot[1]) < 1e-9);
+  const cold = radialWavePoint(0, 0, 10, 0, -2);
+  assert.ok(Math.abs(cold[0] - 1.5) < 1e-9);
+  const up = radialWavePoint(3, 4, 10, Math.PI / 2, 0);
+  assert.ok(Math.abs(up[0] - 3) < 1e-9 && Math.abs(up[1] - 14) < 1e-9);
+  assert.match(ring, /createBiquadFilter/);
+  assert.match(ring, /getFloatTimeDomainData/);
+  assert.match(ring, /type = 'highpass'/);
+  assert.match(ring, /type = 'lowpass'/);
+  assert.doesNotMatch(ring, /agcScale/);
+  assert.doesNotMatch(ring, /\.destination/);
+  assert.match(page, /id="bloom"/);
+  assert.match(page, /id="halobloom"/);
+  assert.match(page, /function pulseBloom/);
+  assert.match(page, /function haloBloom/);
 });
