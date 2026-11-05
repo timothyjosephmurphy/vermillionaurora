@@ -5,11 +5,36 @@
 // A miss (hex JS, PBR, plaques) comes from the hex build. /play, /play/ and
 // /play/index.html are always the hex entry, even though the Quake shell file
 // is still in the tree.
+//
+// Messengers unfurl that entry HTML. The share JPEG is a Website file under
+// static/play, so the proxied entry is rewritten onto the current card even
+// while the hex Pages HTML still names an older image.
 export const HEX_PLAY_ORIGIN = 'https://preview-251.tjm-tag-gallery-preview.pages.dev';
 export const PLAY_WORKER_FIRST = ['/play', '/play/*'];
+export const PLAY_SHARE_IMAGE = 'https://tjm.art/play/share-start-2026-11-04.jpg';
+export const PLAY_SHARE_ALT = 'TJM Gallery START courtyard: the outdoor hex 3D gallery where visitors begin, with the Cascades beyond church spires and an exhibitions map on the dome';
 
 const ENTRY = new Set(['/play', '/play/', '/play/index.html']);
 const STRIP_REQUEST = new Set(['cookie', 'authorization', 'host']);
+const SHARE_META = {
+  'og:image': PLAY_SHARE_IMAGE,
+  'og:image:secure_url': PLAY_SHARE_IMAGE,
+  'twitter:image': PLAY_SHARE_IMAGE,
+  'og:image:alt': PLAY_SHARE_ALT,
+  'twitter:image:alt': PLAY_SHARE_ALT,
+};
+
+export function rewritePlayEntryHtml(html) {
+  return html.replace(/<meta\b[^>]*>/gi, (tag) => {
+    const key = tag.match(/\b(?:property|name)\s*=\s*(["'])(og:image(?::secure_url|:alt)?|twitter:image(?::alt)?)\1/i);
+    if (!key) return tag;
+    const value = SHARE_META[key[2].toLowerCase()];
+    if (/\bcontent\s*=/i.test(tag)) {
+      return tag.replace(/\bcontent\s*=\s*(["'])[\s\S]*?\1/i, (_full, quote) => `content=${quote}${value}${quote}`);
+    }
+    return tag.replace(/\s*\/?>$/, ` content="${value}">`);
+  });
+}
 
 export function playR2Redirect(pathname, search = '') {
   const match = /^\/play\/(holo|books)\/(.*)$/.exec(pathname);
@@ -65,7 +90,13 @@ export async function proxyHexPlay(request, fetcher = fetch) {
   // Workers fetch already decompresses. Leaving these on would make the browser decode twice.
   out.delete('content-encoding');
   out.delete('content-length');
-  return new Response(res.body, { status: res.status, statusText: res.statusText, headers: out });
+  const entryHtml = request.method === 'GET'
+    && res.status === 200
+    && ENTRY.has(new URL(request.url).pathname)
+    && (out.get('content-type') || '').toLowerCase().includes('text/html');
+  if (!entryHtml) return new Response(res.body, { status: res.status, statusText: res.statusText, headers: out });
+  const html = await res.text();
+  return new Response(rewritePlayEntryHtml(html), { status: res.status, statusText: res.statusText, headers: out });
 }
 
 const moved = (location) => new Response(null, { status: 301, headers: { Location: location, 'Cache-Control': 'public, max-age=3600' } });
