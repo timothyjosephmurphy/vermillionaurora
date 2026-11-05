@@ -345,6 +345,24 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.match(room, /data-action="listen"/);
   assert.match(room, /getUserMedia/);
   assert.match(room, /Align projector/);
+  assert.match(room, /data-add-dancer/);
+  assert.match(room, /nd_add/);
+  assert.match(room, /nd_set_gravity/);
+  assert.match(room, /nd_set_wander/);
+  assert.match(room, /nd_set_threshold/);
+  assert.match(room, /nd_set_peak_hold/);
+  assert.match(room, /nd_set_band_sens/);
+  assert.match(room, /Peak hold/);
+  assert.match(room, /Kick sensitivity/);
+  assert.match(room, /Bass sensitivity/);
+  assert.match(room, /Snare sensitivity/);
+  assert.match(room, /Hi-hat sensitivity/);
+  assert.match(room, /Per-band sensitivity/);
+  const agcFn = room.indexOf('function agcScale');
+  assert.ok(agcFn > 0);
+  assert.ok(room.indexOf('api.nd_set_gravity(v)') > agcFn);
+  assert.ok(room.indexOf('api.nd_set_band_sens(band,v)') > agcFn);
+  assert.ok(room.indexOf('api.nd_add(p.x,p.y,kind)') > agcFn);
 
   const mural = page.slice(muralAt, page.indexOf('</section>', muralAt));
   assert.match(mural, /mural-with-silhouettes/);
@@ -391,4 +409,139 @@ test('room music AGC holds typical band levels near mid scale', () => {
 
   const silence = settle([0.02, 0.01, 0, 0.015], 2);
   assert.ok(Math.max(...silence) < 0.05);
+});
+
+function pulseHeads(api) {
+  const f = floats(api);
+  const base = api.nd_pulses() >>> 2;
+  const stride = api.nd_pulse_stride();
+  const out = [];
+  for (let i = 0; i < api.nd_pulse_count(); i++) {
+    const o = base + i * stride;
+    out.push({a: f[o], b: f[o + 1], x: f[o + 5], y: f[o + 6]});
+  }
+  return out;
+}
+
+test('a dancer added after the sticker map survives an update', async () => {
+  const api = await load();
+  api.nd_clear();
+  const view = new Float32Array(api.memory.buffer, api.nd_sticker_in(), 4);
+  view[0] = 1;
+  view[1] = 10;
+  view[2] = 12;
+  view[3] = 0;
+  assert.equal(api.nd_set_stickers(1), 1);
+  const id = api.nd_add(80, 40, 2);
+  assert.ok(id > 1);
+  api.nd_update(0.05, 1, 0, SR, FFT, 500);
+  assert.equal(api.nd_count(), 2);
+  const added = dancers(api).find(d => d.id === id);
+  assert.equal(added.x, 80);
+  assert.equal(added.y, 40);
+  assert.equal(added.k, 2);
+});
+
+test('threshold gates whether a neighbor spreads the hit', async () => {
+  async function pulses(threshold) {
+    const api = await load();
+    api.nd_clear();
+    api.nd_set_threshold(threshold);
+    api.nd_set_gravity(0);
+    api.nd_set_wander(0);
+    api.nd_add(0, 0, 0);
+    api.nd_add(40, 0, 1);
+    api.nd_hit(0);
+    api.nd_update(0, 1, 0, SR, FFT, 1000);
+    return api.nd_pulse_count();
+  }
+  const loose = await pulses(0.2);
+  const tight = await pulses(1.4);
+  assert.ok(loose > tight, `loose ${loose} tight ${tight}`);
+  assert.equal(tight, 1);
+});
+
+test('peak hold puts a hot dancer at rest', async () => {
+  const api = await load();
+  api.nd_clear();
+  api.nd_set_peak_hold(0.2);
+  api.nd_set_band_sens(0, 3);
+  api.nd_set_gravity(0);
+  const id = api.nd_add(0, 0, 0);
+  api.nd_hit(0);
+  let rested = false;
+  for (let i = 0; i < 20; i++) {
+    api.nd_update(0.05, 1, 0, SR, FFT, i * 50);
+    if (dancers(api).find(d => d.id === id).rest > 0) rested = true;
+  }
+  assert.ok(rested);
+});
+
+test('band sensitivity scales the reaction and can mute a band', async () => {
+  async function react(sens, attack) {
+    const api = await load();
+    api.nd_clear();
+    api.nd_set_band_sens(0, sens);
+    api.nd_set_band_sens(1, 1);
+    const id = api.nd_add(0, 0, 0);
+    writeSpectrum(api, () => 0);
+    for (let frame = 0; frame < 10; frame++) api.nd_update(0.033, 1, BINS, SR, FFT, frame * 33);
+    fillBand(api, 0, attack);
+    let peak = 0;
+    let heard = 0;
+    for (let frame = 10; frame < 14; frame++) {
+      heard |= api.nd_update(0.033, 1, BINS, SR, FFT, frame * 33);
+      peak = Math.max(peak, dancers(api).find(d => d.id === id).a);
+    }
+    return {peak, heard: heard & 1};
+  }
+  const muted = await react(0, 200);
+  assert.equal(muted.heard, 0);
+  assert.ok(muted.peak < 0.2, `muted ${muted.peak}`);
+  const normal = await react(1, 200);
+  assert.ok(normal.heard);
+  assert.ok(normal.peak > 0.9 && normal.peak < 1.3, `normal ${normal.peak}`);
+  const hot = await react(3, 200);
+  assert.ok(hot.heard);
+  assert.ok(hot.peak > 2.4, `hot ${hot.peak}`);
+  const easy = await react(1, 20);
+  const dull = await react(0.25, 20);
+  assert.ok(easy.heard, 'a modest attack still fires at sensitivity 1');
+  assert.equal(dull.heard, 0);
+});
+
+test('gravity bends a pulse toward a nearby dancer and wander can retarget', async () => {
+  async function run(gravity) {
+    const api = await load();
+    api.nd_clear();
+    api.nd_set_gravity(gravity);
+    api.nd_set_wander(0);
+    api.nd_add(0, 0, 0);
+    api.nd_add(80, 0, 1);
+    api.nd_add(40, 70, 2);
+    api.nd_hit(0);
+    for (let i = 0; i < 10; i++) api.nd_update(0.05, 1, 0, SR, FFT, 1000 + i * 50);
+    const heads = pulseHeads(api);
+    assert.ok(heads.length > 0, 'pulse');
+    return heads[0];
+  }
+  const straight = await run(0);
+  const bent = await run(6);
+  const shift = Math.hypot(bent.x - straight.x, bent.y - straight.y);
+  assert.ok(shift > 1, `shift ${shift} straight ${straight.x},${straight.y} bent ${bent.x},${bent.y}`);
+
+  const api = await load();
+  api.nd_clear();
+  api.nd_set_gravity(0);
+  api.nd_set_wander(0.8);
+  api.nd_add(0, 0, 0);
+  api.nd_add(60, 0, 1);
+  api.nd_add(30, 40, 2);
+  api.nd_hit(0);
+  let retargeted = false;
+  for (let i = 0; i < 40; i++) {
+    api.nd_update(0.067, 1, 0, SR, FFT, 2000 + i * 67);
+    if (pulseHeads(api).some(p => p.b === 2)) retargeted = true;
+  }
+  assert.ok(retargeted, 'wander should hand a pulse to the third dancer');
 });

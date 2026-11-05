@@ -273,8 +273,20 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
 <section id="nd-room-lab" data-mic="off" aria-labelledby="room-music-title">
   <div class="viz-row"><h2 id="room-music-title">Room music</h2><button class="btn btn-primary" data-action="play">Start</button><button class="btn" data-action="listen" data-state="off" aria-pressed="false">Listen</button><button class="btn" data-action="align" aria-pressed="false">Align projector</button></div>
   <p class="mural-help">This stage is only for the microphone. It uses the dark prototype canvas: colored dancers and links, with no mural photograph and no built-in rhythm. Select <strong>Start</strong>, then <strong>Listen</strong>, and play music in the room. Dancers move only when the mic hears a kick, bass, snare, or hi-hat. The bars under the stage are the live spectrum, colored by those four bands.</p>
+  <p class="mural-help">Click the stage to add a dancer, drag a marker to move it, or Shift-click to remove one. Gravity, wander, threshold, and peak hold shape the pulses. Per-band sensitivity — kick, bass, snare, and hi-hat — sets how strongly dancers react when the analyzer hears that band. These controls stay on this page only, the same way the other Neural Dance sliders do.</p>
   <p class="mural-help"><strong>Align projector</strong> draws corner handles on this stage only. Drag a handle to skew the stage onto the wall. The mural demo above is not moved or resized. Select <strong>Mapping</strong> when you are done and the handles go away.</p>
-  <div id="nd-room-projector"><canvas class="cursor-interaction" data-stage width="1000" height="620" role="img" aria-label="Room-music dancers on the dark prototype stage. They move only while the microphone hears a matching band."></canvas></div>
+  <div class="viz-controls" data-add-dancer>
+    <label class="form-label">New dancer<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Snare</option><option value="3">Hi-hat</option></select></label>
+    <label class="form-label">Gravity <output data-value="gravity">2.5×</output><input class="form-range" data-control="gravity" type="range" min="0" max="6" step="0.1" value="2.5" aria-label="Gravity"></label>
+    <label class="form-label">Wander <output data-value="wander">0.25</output><input class="form-range" data-control="wander" type="range" min="0" max="0.8" step="0.05" value="0.25" aria-label="Wander"></label>
+    <label class="form-label">Threshold <output data-value="threshold">1.40</output><input class="form-range" data-control="threshold" type="range" min="1" max="1.9" step="0.05" value="1.4" aria-label="Threshold"></label>
+    <label class="form-label">Peak hold <output data-value="peak">2.8 s</output><input class="form-range" data-control="peak" type="range" min="1" max="6" step="0.1" value="2.8" aria-label="Peak hold"></label>
+    <label class="form-label">Kick sensitivity <output data-value="sens-0">1.00×</output><input class="form-range" data-control="sens" data-band="0" type="range" min="0" max="3" step="0.05" value="1" aria-label="Kick sensitivity"></label>
+    <label class="form-label">Bass sensitivity <output data-value="sens-1">1.00×</output><input class="form-range" data-control="sens" data-band="1" type="range" min="0" max="3" step="0.05" value="1" aria-label="Bass sensitivity"></label>
+    <label class="form-label">Snare sensitivity <output data-value="sens-2">1.00×</output><input class="form-range" data-control="sens" data-band="2" type="range" min="0" max="3" step="0.05" value="1" aria-label="Snare sensitivity"></label>
+    <label class="form-label">Hi-hat sensitivity <output data-value="sens-3">1.00×</output><input class="form-range" data-control="sens" data-band="3" type="range" min="0" max="3" step="0.05" value="1" aria-label="Hi-hat sensitivity"></label>
+  </div>
+  <div id="nd-room-projector"><canvas class="cursor-interaction" data-add-dancer data-stage width="1000" height="620" role="img" aria-label="Room-music dancers on the dark prototype stage. Click to add a dancer. They move only while the microphone hears a matching band."></canvas></div>
   <canvas data-spectrum width="880" height="96" aria-label="Live microphone levels for kick, bass, mid, and treble"></canvas>
   <div class="viz-row text-small"><span data-legend="0">● Kick<span class="meter"><i data-meter="0"></i></span></span><span data-legend="1">◆ Bass<span class="meter"><i data-meter="1"></i></span></span><span data-legend="2">■ Mid<span class="meter"><i data-meter="2"></i></span></span><span data-legend="3">▲ Treble<span class="meter"><i data-meter="3"></i></span></span><span data-mic role="status" aria-live="polite">Mic off</span><span data-status role="status" aria-live="polite">Loading room music…</span></div>
 </section>
@@ -290,6 +302,12 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
 #nd-room-lab .btn[data-state="unavailable"]{border-color:#8a6070}
 #nd-room-lab button:focus-visible{outline:2px solid #9baef0;outline-offset:3px}
 #nd-room-lab .text-small{font-size:14px;color:#aab0c0}
+#nd-room-lab .viz-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px;padding:12px;background:#10121a;border-radius:14px;margin:0 0 12px}
+#nd-room-lab .form-label{display:grid;gap:6px;flex:1 1 150px;min-width:0;color:#aab0c0;font-size:14px}
+#nd-room-lab .form-range{width:100%;margin:0;accent-color:#81b7fc}
+#nd-room-lab .form-select{border:1px solid rgba(255,255,255,.18);background:#171a24;color:#f4f6fb;border-radius:9px;padding:10px 12px;font:inherit}
+#nd-room-lab .viz-controls output{color:#fff;font-variant-numeric:tabular-nums}
+#nd-room-lab input:focus-visible,#nd-room-lab select:focus-visible{outline:2px solid #9baef0;outline-offset:3px}
 #nd-room-lab [data-mic]{color:#d5deff}
 #nd-room-lab [data-legend].is-hot{text-shadow:0 0 10px currentColor}
 #nd-room-lab .meter{display:none;width:64px;height:5px;margin-left:6px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;vertical-align:middle}
@@ -326,14 +344,15 @@ let api=null,running=false,low=false,allowMap=false,mapper=null;
 let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0;
 let ac=null;
 let colors=[],foreground='',background='';const glows=[];
-let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null;
+let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null;
+const bandSens=[1,1,1,1];
 const hotUntil=[0,0,0,0];
 const MIC={off:{label:'Listen',status:'Mic off',pressed:false},listening:{label:'Listening',status:'Listening',pressed:true},muted:{label:'Muted',status:'Muted',pressed:false},unavailable:{label:'No mic',status:'No microphone',pressed:false}};
 try{
   const res=await fetch('/neural-dance/neural-dance.wasm');
   if(!res.ok)throw new Error('missing');
   api=(await WebAssembly.instantiate(await res.arrayBuffer())).instance.exports;
-  if(typeof api.nd_set_clock!=='function')throw new Error('exports');
+  if(typeof api.nd_set_clock!=='function'||typeof api.nd_add!=='function'||typeof api.nd_set_gravity!=='function'||typeof api.nd_set_wander!=='function'||typeof api.nd_set_threshold!=='function'||typeof api.nd_set_peak_hold!=='function'||typeof api.nd_set_band_sens!=='function')throw new Error('exports');
 }catch{status.textContent='Room music unavailable';play.disabled=listenButton.disabled=alignButton.disabled=true;return;}
 function floats(){return new Float32Array(api.memory.buffer);}
 function theme(){
@@ -404,7 +423,7 @@ function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stri
  for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const ia=base+i*ds,ib=base+j*ds,ax=f[ia],ay=f[ia+1],bx=f[ib],by=f[ib+1];if(Math.hypot(ax-bx,ay-by)>R)continue;const activity=Math.min(f[ia+2],f[ib+2]);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=xy(ax,ay),q=xy(bx,by),amp=Math.min(18,Math.abs(bx-ax)*.15),mid=xy(ax+(bx-ax)*.5,ay+(by-ay)*.5-amp);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
  ctx.globalAlpha=1;const pb=api.nd_pulses()>>>2,pc=api.nd_pulse_count(),ps=api.nd_pulse_stride();
  for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=xy(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=xy(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=xy(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
- for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),radius=8+14*q;ctx.globalAlpha=rest>0?.4:1;if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
+ for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
  ctx.globalAlpha=1;
 }
 function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while out of view',true);return;}const begin=performance.now(),gap=now-last;last=now;
@@ -428,6 +447,19 @@ function projectorLayout(layer){const r=layer.getBoundingClientRect(),w=r.width,
 function enterMapping(layout){allowMap=true;const layer=document.getElementById('nd-room-projector');layer.style.position='fixed';layer.style.display='block';layer.style.top='0px';layer.style.left='0px';layer.style.margin='0px';layer.style.padding='0px';layer.style.width=layer.dataset.pinWidth+'px';mapper.setLayout([layout]);mapper.setConfigEnabled(true);root.classList.add('is-mapping');alignButton.setAttribute('aria-pressed','true');alignButton.textContent='Mapping';}
 function exitMapping(){allowMap=false;if(mapper)mapper.setConfigEnabled(false);const layer=document.getElementById('nd-room-projector');layer.style.position='';layer.style.top='';layer.style.left='';layer.style.margin='';layer.style.padding='';layer.style.display='';layer.style.width='';layer.style.transform='';root.classList.remove('is-mapping');alignButton.setAttribute('aria-pressed','false');alignButton.textContent='Align projector';}
 function toggleAlign(){if(!window.maptastic||!window.maptastic.Maptastic){report('Projector align unavailable');return;}const layer=document.getElementById('nd-room-projector');if(alignButton.getAttribute('aria-pressed')==='true'){exitMapping();return;}const layout=projectorLayout(layer);if(!mapper){try{mapper=new maptastic.Maptastic({autoSave:false,autoLoad:false,labels:false,layers:['nd-room-projector']});const open=mapper.setConfigEnabled.bind(mapper);mapper.setConfigEnabled=on=>{if(on&&!allowMap)return;open(on);};}catch{report('Projector align unavailable');return;}}enterMapping(layout);}
+function mapping(){return alignButton.getAttribute('aria-pressed')==='true';}
+function pointerWorld(e){const r=canvas.getBoundingClientRect(),scale=canvas.width/W,vx=0,vy=canvas.height/2-H*scale/2;const cx=(e.clientX-r.left)*canvas.width/Math.max(1,r.width),cy=(e.clientY-r.top)*canvas.height/Math.max(1,r.height);return {x:(cx-vx)/scale,y:(cy-vy)/scale};}
+function dancerAt(p){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stride(),n=api.nd_count();let id=0,best=18;for(let i=0;i<n;i++){const o=base+i*ds,d=Math.hypot(f[o]-p.x,f[o+1]-p.y);if(d<best){id=f[o+5]|0;best=d;}}return id;}
+function bindSlider(name,apply,format){const input=el('[data-control="'+name+'"]'),out=el('[data-value="'+name+'"]');const sync=draw=>{const v=+input.value;apply(v);if(out)out.textContent=format(v);if(draw)still();};input.addEventListener('input',()=>sync(true));sync(false);}
+bindSlider('gravity',v=>api.nd_set_gravity(v),v=>v.toFixed(1)+'×');
+bindSlider('wander',v=>api.nd_set_wander(v),v=>v.toFixed(2));
+bindSlider('threshold',v=>api.nd_set_threshold(v),v=>(+v).toFixed(2));
+bindSlider('peak',v=>api.nd_set_peak_hold(v),v=>v.toFixed(1)+' s');
+root.querySelectorAll('[data-control="sens"]').forEach(input=>{const band=+input.dataset.band;const out=el('[data-value="sens-'+band+'"]');const sync=draw=>{const v=+input.value;bandSens[band]=v;api.nd_set_band_sens(band,v);if(out)out.textContent=v.toFixed(2)+'×';if(draw)still();};input.addEventListener('input',()=>sync(true));sync(false);});
+canvas.addEventListener('pointerdown',e=>{if(!api||mapping())return;const p=pointerWorld(e);if(p.x<0||p.y<0||p.x>W||p.y>H)return;const near=dancerAt(p);if(e.shiftKey){if(near){api.nd_remove(near);still();}return;}pointer={id:near,x:e.clientX,y:e.clientY,moved:false};try{canvas.setPointerCapture(e.pointerId);}catch{}});
+canvas.addEventListener('pointermove',e=>{if(!pointer||!api)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.id&&pointer.moved){const p=pointerWorld(e);api.nd_move(pointer.id,Math.max(0,Math.min(W,p.x)),Math.max(0,Math.min(H,p.y)));still();}});
+canvas.addEventListener('pointerup',e=>{if(!pointer||!api)return;if(!pointer.id&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H){const kind=+el('[data-control="type"]').value;if(!api.nd_add(p.x,p.y,kind))report('48-dancer limit · remove one to add another');}}pointer=null;still();});
+canvas.addEventListener('pointercancel',()=>{pointer=null;});
 play.onclick=()=>running?stop():start();listenButton.onclick=toggleListen;alignButton.onclick=toggleAlign;
 document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(alignButton.getAttribute('aria-pressed')==='true'){exitMapping();e.stopImmediatePropagation();e.preventDefault();}},true);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('Paused while out of view',true);});
