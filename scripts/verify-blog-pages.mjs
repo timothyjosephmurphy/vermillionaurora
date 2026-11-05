@@ -24,12 +24,15 @@ async function main() {
   };
   const storyPaths = html => {
     const $ = load(html);
-    return [...new Set($('[data-static-story] a[href]').map((_, a) => {
-      const url = new URL($(a).attr('href'), site);
-      assert.equal(url.origin, site, 'Static story must link to this website');
-      assert.match(url.pathname, /^\/blog\/[a-z0-9-]+\/$/, 'Expected a blog article route');
-      return url.pathname;
-    }).get())];
+    const paths = new Set();
+    $('[data-static-story]').each((_, article) => {
+      const links = $(article).find('a[href]').toArray().map(anchor => new URL($(anchor).attr('href'), site));
+      for (const url of links) assert.equal(url.origin, site, 'Static story must link to this website');
+      const articles = links.map(url => url.pathname).filter(pathname => /^\/blog\/[a-z0-9-]+\/$/.test(pathname));
+      assert.ok(articles.length, 'Static story card needs a blog article link');
+      for (const pathname of articles) paths.add(pathname);
+    });
+    return [...paths];
   };
 
   const paths = storyPaths(await readFile(resolve(dist, 'blog/index.html'), 'utf8'));
