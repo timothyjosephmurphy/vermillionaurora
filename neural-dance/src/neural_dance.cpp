@@ -37,6 +37,12 @@ struct Pulse {
   int trail_len;
   float trail_x[MAX_TRAIL];
   float trail_y[MAX_TRAIL];
+  // Gravity offset and a one-shot wander curve. The published pulse view
+  // stays 28 floats; these fields only change the head and the trail.
+  float gx, gy, gvx, gvy;
+  int wandered;
+  float sx, sy, cx, cy, tx, ty;
+  unsigned char hit[MAX_DANCERS];
 };
 
 struct Band {
@@ -70,9 +76,19 @@ static int was_listening = 0;
 static int pending_hits = 0;
 static int clock_on = 1;
 static float sticker_in[MAX_DANCERS * 4];
+// Prototype defaults are applied by the page. Zero gravity and wander keep
+// the straight pulse path this runtime shipped with, so existing callers
+// stay put until a slider moves.
+static float gravity_pull = 0.f;
+static float wander_rate = 0.f;
+static float fire_threshold = 1.4f;
+static float peak_hold = 2.8f;
+static float band_sens[4] = {1.f, 1.f, 1.f, 1.f};
+static unsigned rng_state = 0xC0FFEEu;
 
 static int queue[MAX_DANCERS];
 static int qn = 0;
+static int q_cursor = 0;
 static unsigned char emitted[MAX_DANCERS];
 static float received[MAX_DANCERS];
 static int tone_mask = 0;
@@ -226,7 +242,10 @@ static int detect_onsets(int bin_count, float sample_rate, int fft_size, double 
       med = median_of(tmp, bands[b].hist_n);
     }
     bands[b].samples++;
+    float sens = band_sens[b];
     float threshold = bands[b].min_flux + med * bands[b].ratio;
+    if (sens > 0.f) threshold /= sens;
+    else threshold = 1.0e30f;
     if (bands[b].samples > WARMUP && peak > threshold &&
         (now_ms - bands[b].last_ms) >= (double)bands[b].refractory_ms) {
       bands[b].last_ms = now_ms;
@@ -241,16 +260,24 @@ static int detect_onsets(int bin_count, float sample_rate, int fft_size, double 
 }
 
 static void copy_pulse(Pulse* d, const Pulse* s) {
-  d->a = s->a;
-  d->b = s->b;
-  d->k = s->k;
-  d->age = s->age;
-  d->duration = s->duration;
-  d->trail_len = s->trail_len;
-  for (int t = 0; t < MAX_TRAIL; t++) {
-    d->trail_x[t] = s->trail_x[t];
-    d->trail_y[t] = s->trail_y[t];
+  memcpy(d, s, sizeof(Pulse));
+}
+
+static float rnd() {
+  rng_state = rng_state * 1664525u + 1013904223u;
+  return (float)(rng_state >> 8) * (1.f / 16777216.f);
+}
+
+static float nd_exp(float x) {
+  if (x > 4.f) x = 4.f;
+  if (x < -8.f) return 0.f;
+  float term = 1.f;
+  float sum = 1.f;
+  for (int i = 1; i <= 12; i++) {
+    term *= x / (float)i;
+    sum += term;
   }
+  return sum;
 }
 
 static void remove_pulse_at(int index) {
@@ -259,6 +286,33 @@ static void remove_pulse_at(int index) {
 }
 
 static int pulse_cap() { return low_power ? 24 : MAX_PULSES; }
+
+static int pulse_alive(const Pulse* p) {
+  return p->a >= 0 && p->b >= 0 && p->a < count && p->b < count;
+}
+
+static void base_pos(const Pulse* p, float* ox, float* oy) {
+  float t = 0.f;
+  if (p->duration > 0.f) t = clampf(p->age / p->duration, 0.f, 1.f);
+  if (p->wandered) {
+    float u = 1.f - t;
+    *ox = u * u * p->sx + 2.f * u * t * p->cx + t * t * p->tx;
+    *oy = u * u * p->sy + 2.f * u * t * p->cy + t * t * p->ty;
+    return;
+  }
+  if (!pulse_alive(p)) {
+    *ox = 0.f;
+    *oy = 0.f;
+    return;
+  }
+  path_point(dancers[p->a].x, dancers[p->a].y, dancers[p->b].x, dancers[p->b].y, t, ox, oy);
+}
+
+static void head_pos(const Pulse* p, float* ox, float* oy) {
+  base_pos(p, ox, oy);
+  *ox += p->gx;
+  *oy += p->gy;
+}
 
 static void publish() {
   for (int i = 0; i < count; i++) {
@@ -272,12 +326,8 @@ static void publish() {
   }
   for (int i = 0; i < pulse_count; i++) {
     Pulse* p = &pulses[i];
-    float ax = dancers[p->a].x, ay = dancers[p->a].y;
-    float bx = dancers[p->b].x, by = dancers[p->b].y;
-    float t = 0.f;
-    if (p->duration > 0.f) t = clampf(p->age / p->duration, 0.f, 1.f);
-    float hx = ax, hy = ay;
-    path_point(ax, ay, bx, by, t, &hx, &hy);
+    float hx = 0.f, hy = 0.f;
+    head_pos(p, &hx, &hy);
     float* o = pulse_view + i * PULSE_STRIDE;
     o[0] = (float)p->a;
     o[1] = (float)p->b;
@@ -301,12 +351,16 @@ static void enqueue(int index) {
   if (qn < MAX_DANCERS) queue[qn++] = index;
 }
 
-static void arm(int index) {
+static void arm(int index, float sens) {
   Dancer* d = &dancers[index];
-  if (d->rest > 0.f) return;
-  float next = d->a + 0.25f;
-  if (next < 0.95f) next = 0.95f;
-  if (next > 2.f) next = 2.f;
+  if (d->rest > 0.f || !(sens > 0.f)) return;
+  float boost = 0.25f * sens;
+  float next = d->a + boost;
+  float floor_v = 0.95f * sens;
+  if (next < floor_v) next = floor_v;
+  float cap = sens > 1.f ? 2.f * sens : 2.f;
+  if (cap > 8.f) cap = 8.f;
+  if (next > cap) next = cap;
   d->a = next;
   enqueue(index);
 }
@@ -323,6 +377,111 @@ static void spawn_pulse(int ai, int bi, float dist) {
   for (int t = 0; t < MAX_TRAIL; t++) {
     p->trail_x[t] = 0.f;
     p->trail_y[t] = 0.f;
+  }
+  p->gx = p->gy = p->gvx = p->gvy = 0.f;
+  p->wandered = 0;
+  p->sx = p->sy = p->cx = p->cy = p->tx = p->ty = 0.f;
+  memset(p->hit, 0, sizeof(p->hit));
+  if (ai >= 0 && ai < MAX_DANCERS) p->hit[ai] = 1;
+}
+
+static void apply_gravity(Pulse* p, float dt) {
+  if (!(gravity_pull > 0.f) || !(dt > 0.f)) return;
+  float zx, zy;
+  head_pos(p, &zx, &zy);
+  float ax = 0.f, ay = 0.f;
+  for (int i = 0; i < count; i++) {
+    if (p->hit[i]) continue;
+    float dx = dancers[i].x - zx;
+    float dy = dancers[i].y - zy;
+    float d = __builtin_sqrtf(dx * dx + dy * dy);
+    if (d < 4.f || d > 155.f) continue;
+    float fall = 1.f - d / 155.f;
+    float force = gravity_pull * 150.f * fall * fall;
+    ax += dx / d * force;
+    ay += dy / d * force;
+  }
+  float damp = nd_exp(-2.4f * dt);
+  p->gvx = (p->gvx + ax * dt) * damp;
+  p->gvy = (p->gvy + ay * dt) * damp;
+  float gm = __builtin_sqrtf(p->gvx * p->gvx + p->gvy * p->gvy);
+  if (gm > 95.f) {
+    p->gvx = p->gvx / gm * 95.f;
+    p->gvy = p->gvy / gm * 95.f;
+  }
+  p->gx += p->gvx * dt;
+  p->gy += p->gvy * dt;
+  float off = __builtin_sqrtf(p->gx * p->gx + p->gy * p->gy);
+  if (off > 85.f) {
+    p->gx = p->gx / off * 85.f;
+    p->gy = p->gy / off * 85.f;
+  }
+}
+
+static void maybe_wander(Pulse* p, float dt) {
+  if (!(wander_rate > 0.f) || p->wandered || !(dt > 0.f)) return;
+  if (rnd() > wander_rate * dt) return;
+  float hx, hy;
+  head_pos(p, &hx, &hy);
+  int cand[MAX_DANCERS];
+  int nc = 0;
+  for (int i = 0; i < count; i++) {
+    if (i == p->a || i == p->b) continue;
+    float dx = dancers[i].x - hx;
+    float dy = dancers[i].y - hy;
+    if (dx * dx + dy * dy < 190.f * 190.f) cand[nc++] = i;
+  }
+  if (!nc) return;
+  int pick = (int)(rnd() * (float)nc);
+  if (pick < 0 || pick >= nc) pick = 0;
+  int bi = cand[pick];
+  float dx = dancers[bi].x - hx;
+  float dy = dancers[bi].y - hy;
+  float L = __builtin_sqrtf(dx * dx + dy * dy);
+  if (L < 1.f) L = 1.f;
+  float nx = -dy / L;
+  float ny = dx / L;
+  float bend = (rnd() - 0.5f) * 120.f;
+  p->wandered = 1;
+  p->sx = hx;
+  p->sy = hy;
+  p->tx = dancers[bi].x;
+  p->ty = dancers[bi].y;
+  p->cx = (hx + p->tx) * 0.5f + nx * bend;
+  p->cy = (hy + p->ty) * 0.5f + ny * bend;
+  p->b = bi;
+  p->age = 0.f;
+  p->duration = 0.3f + (L * 1.08f) / 170.f;
+  p->gx = p->gy = p->gvx = p->gvy = 0.f;
+  p->trail_len = 0;
+}
+
+static void collide_pulse(Pulse* p, float x, float y) {
+  if (!pulse_alive(p)) return;
+  int src = p->a;
+  float sens = 1.f;
+  if (src >= 0 && src < count) {
+    int k = dancers[src].k;
+    if (k >= 0 && k <= 3) sens = band_sens[k];
+  }
+  if (!(sens > 0.f)) return;
+  for (int i = 0; i < count; i++) {
+    if (p->hit[i]) continue;
+    float dx = dancers[i].x - x;
+    float dy = dancers[i].y - y;
+    if (dx * dx + dy * dy > 18.f * 18.f) continue;
+    p->hit[i] = 1;
+    if (dancers[i].rest > 0.f) continue;
+    float add = 0.48f * sens;
+    float cap = sens > 1.f ? 2.f * sens : 2.f;
+    if (cap > 8.f) cap = 8.f;
+    float next = dancers[i].a + add;
+    if (next > cap) next = cap;
+    dancers[i].a = next;
+    if (dancers[i].a >= fire_threshold && sim_time >= dancers[i].ref) {
+      dancers[i].ref = sim_time + 0.2f;
+      enqueue(i);
+    }
   }
 }
 
@@ -357,6 +516,25 @@ void nd_hit(int type) {
 
 void nd_set_bpm(float next) { bpm = next > 0.f ? next : 0.f; }
 
+static float clampf_param(float v, float lo, float hi) {
+  if (!(v > lo)) return lo;
+  if (v > hi) return hi;
+  return v;
+}
+
+void nd_set_gravity(float v) { gravity_pull = clampf_param(v, 0.f, 6.f); }
+
+void nd_set_wander(float v) { wander_rate = clampf_param(v, 0.f, 0.8f); }
+
+void nd_set_threshold(float v) { fire_threshold = clampf_param(v, 0.2f, 3.f); }
+
+void nd_set_peak_hold(float v) { peak_hold = clampf_param(v, 0.05f, 12.f); }
+
+void nd_set_band_sens(int band, float v) {
+  if (band < 0 || band > 3) return;
+  band_sens[band] = clampf_param(v, 0.f, 4.f);
+}
+
 // Hard gate for the built-in beat. Listening passes this as well as the
 // per-frame flag, so a missed argument cannot keep the synthetic rhythm.
 void nd_set_clock(int on) {
@@ -387,6 +565,7 @@ void nd_clear(void) {
   sim_time = 0.f;
   was_listening = 0;
   pending_hits = 0;
+  rng_state = 0xC0FFEEu;
   reset_onsets();
   for (int i = 0; i < 4; i++) levels[i] = 0.f;
   publish();
@@ -452,6 +631,10 @@ int nd_set_stickers(int n) {
     int nb = pulses[p].b >= 0 && pulses[p].b < count ? remap[pulses[p].b] : -1;
     if (na < 0 || nb < 0) remove_pulse_at(p);
     else {
+      unsigned char next_hit[MAX_DANCERS];
+      memset(next_hit, 0, sizeof(next_hit));
+      for (int i = 0; i < count; i++) if (remap[i] >= 0) next_hit[remap[i]] = pulses[p].hit[i];
+      memcpy(pulses[p].hit, next_hit, sizeof(next_hit));
       pulses[p].a = na;
       pulses[p].b = nb;
     }
@@ -492,6 +675,8 @@ void nd_remove(int id) {
   for (int i = 0; i < pulse_count; i++) {
     if (pulses[i].a > idx) pulses[i].a--;
     if (pulses[i].b > idx) pulses[i].b--;
+    for (int h = idx; h < count - 1; h++) pulses[i].hit[h] = pulses[i].hit[h + 1];
+    pulses[i].hit[count - 1] = 0;
   }
   for (int i = idx; i < count - 1; i++) dancers[i] = dancers[i + 1];
   count--;
@@ -515,6 +700,47 @@ int nd_band_range(int band, float sample_rate, int fft_size, int bin_count) {
   return i0 | (i1 << 16);
 }
 
+static void drain() {
+  int cap_pulses = pulse_cap();
+  while (q_cursor < qn && q_cursor < MAX_DANCERS) {
+    int ai = queue[q_cursor++];
+    if (ai < 0 || ai >= count) continue;
+    int k = dancers[ai].k;
+    if (k >= 0 && k <= 3) tone_mask |= 1 << k;
+    int trails = 0;
+    for (int bi = 0; bi < count; bi++) {
+      if (bi == ai || dancers[bi].rest > 0.f) continue;
+      float dx = dancers[ai].x - dancers[bi].x;
+      float dy = dancers[ai].y - dancers[bi].y;
+      float dist = __builtin_sqrtf(dx * dx + dy * dy);
+      if (dist >= LINK_R) continue;
+      float sens = (k >= 0 && k <= 3) ? band_sens[k] : 1.f;
+      if (!(sens > 0.f)) sens = 0.f;
+      float used = received[bi];
+      float amount = 0.65f - used;
+      float falloff = 0.2f + 0.25f * (1.f - dist / LINK_R);
+      if (falloff < amount) amount = falloff;
+      amount *= sens;
+      if (amount > 0.f) {
+        received[bi] = used + amount;
+        float cap = sens > 1.f ? 2.f * sens : 2.f;
+        if (cap > 8.f) cap = 8.f;
+        float next = dancers[bi].a + amount;
+        if (next > cap) next = cap;
+        dancers[bi].a = next;
+        if (dancers[bi].a >= fire_threshold && sim_time >= dancers[bi].ref) {
+          dancers[bi].ref = sim_time + 0.2f;
+          enqueue(bi);
+        }
+      }
+      if (trails < 2 && pulse_count < cap_pulses) {
+        spawn_pulse(ai, bi, dist);
+        trails++;
+      }
+    }
+  }
+}
+
 int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft_size, double now_ms) {
   setup_bands();
   if (dt < 0.f) dt = 0.f;
@@ -522,6 +748,7 @@ int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft
   sim_time += dt;
   tone_mask = 0;
   qn = 0;
+  q_cursor = 0;
   for (int i = 0; i < count; i++) {
     emitted[i] = 0;
     received[i] = 0.f;
@@ -548,7 +775,7 @@ int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft
     if (d->phase >= 1.f) {
       d->phase -= 1.f;
       if (d->phase >= 1.f) d->phase -= 1.f;
-      if (clock_on && !listening) arm(i);
+      if (clock_on && !listening) arm(i, band_sens[d->k]);
     }
   }
 
@@ -562,43 +789,12 @@ int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft
   if (pending_hits) {
     for (int k = 0; k < 4; k++) {
       if (!(pending_hits & (1 << k))) continue;
-      for (int i = 0; i < count; i++) if (dancers[i].k == k) arm(i);
+      for (int i = 0; i < count; i++) if (dancers[i].k == k) arm(i, band_sens[k]);
     }
     pending_hits = 0;
   }
 
-  int cap_pulses = pulse_cap();
-  for (int qi = 0; qi < qn && qi < MAX_DANCERS; qi++) {
-    int ai = queue[qi];
-    int k = dancers[ai].k;
-    if (k >= 0 && k <= 3) tone_mask |= 1 << k;
-    int trails = 0;
-    for (int bi = 0; bi < count; bi++) {
-      if (bi == ai || dancers[bi].rest > 0.f) continue;
-      float dx = dancers[ai].x - dancers[bi].x;
-      float dy = dancers[ai].y - dancers[bi].y;
-      float dist = __builtin_sqrtf(dx * dx + dy * dy);
-      if (dist >= LINK_R) continue;
-      float used = received[bi];
-      float amount = 0.65f - used;
-      float falloff = 0.2f + 0.25f * (1.f - dist / LINK_R);
-      if (falloff < amount) amount = falloff;
-      if (amount > 0.f) {
-        received[bi] = used + amount;
-        float next = dancers[bi].a + amount;
-        if (next > 2.f) next = 2.f;
-        dancers[bi].a = next;
-        if (dancers[bi].a >= 1.4f && sim_time >= dancers[bi].ref) {
-          dancers[bi].ref = sim_time + 0.2f;
-          enqueue(bi);
-        }
-      }
-      if (trails < 2 && pulse_count < cap_pulses) {
-        spawn_pulse(ai, bi, dist);
-        trails++;
-      }
-    }
-  }
+  drain();
 
   for (int i = 0; i < count; i++) {
     Dancer* d = &dancers[i];
@@ -607,7 +803,7 @@ int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft
       d->peak -= dt * 0.6f;
       if (d->peak < 0.f) d->peak = 0.f;
     }
-    if (d->peak > 2.8f) {
+    if (d->peak > peak_hold) {
       d->rest = 1.6f;
       d->peak = 0.f;
       d->a = 0.4f;
@@ -617,15 +813,19 @@ int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft
   for (int i = pulse_count - 1; i >= 0; i--) {
     Pulse* p = &pulses[i];
     p->age += dt;
-    if (p->age >= p->duration) {
+    if (!pulse_alive(p) || p->age >= p->duration) {
       remove_pulse_at(i);
       continue;
     }
-    float ax = dancers[p->a].x, ay = dancers[p->a].y;
-    float bx = dancers[p->b].x, by = dancers[p->b].y;
-    float t = p->duration > 0.f ? p->age / p->duration : 0.f;
+    maybe_wander(p, dt);
+    if (!pulse_alive(p) || p->age >= p->duration) {
+      remove_pulse_at(i);
+      continue;
+    }
+    apply_gravity(p, dt);
     float qx, qy;
-    path_point(ax, ay, bx, by, t, &qx, &qy);
+    head_pos(p, &qx, &qy);
+    collide_pulse(p, qx, qy);
     if (p->trail_len >= MAX_TRAIL) {
       for (int s = 1; s < MAX_TRAIL; s++) {
         p->trail_x[s - 1] = p->trail_x[s];
@@ -638,6 +838,7 @@ int nd_update(float dt, int listening, int bin_count, float sample_rate, int fft
     p->trail_len++;
   }
 
+  drain();
   publish();
   return tone_mask;
 }
