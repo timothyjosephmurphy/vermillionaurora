@@ -61,6 +61,66 @@ test('production /play entry is the hex gallery; Quake files and R2 covers stay 
   for (const path of ['/play', '/play/', '/play/index.html']) assert.equal(rules.find(l => l[0] === path), undefined, path);
   assert.equal(rules.some(l => (l[1] || '').includes('tjm-tag-gallery-preview.pages.dev')), false);
 });
+test('proxied /play entry HTML advertises the hex START courtyard card; other /play paths do not', async () => {
+  const { playGallery, proxyHexPlay, rewritePlayEntryHtml, PLAY_SHARE_IMAGE, PLAY_SHARE_ALT } = await import('../worker/play-gallery.mjs');
+  const stale = `<!doctype html><html lang="en"><head>
+<meta property="og:title" content="TJM Gallery: walk through TJ Murphy's paintings"><meta property="og:description" content="A playable 3D art gallery.">
+<meta property="og:image" content="https://tjm.art/play/share-start-2026-10-20.jpg"><meta property="og:image:secure_url" content="https://tjm.art/play/share-start-2026-10-20.jpg"><meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Inside TJM Gallery: the torch-lit 3D central hall of TJ Murphy paintings where visitors start, with a hologram of TJ">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://tjm.art/play/share-start-2026-10-20.jpg"><meta name="twitter:image:alt" content="Inside TJM Gallery: the torch-lit 3D central hall of TJ Murphy paintings where visitors start, with a hologram of TJ">
+<meta content="https://preview.example/old.png" property='og:image'>
+<meta name='twitter:image' content='https://tjm.art/play/share-start-2026-10-20.jpg' />
+<meta property="og:image:alt">
+</head><body>keep share-start-2026-10-20.jpg in the document body</body></html>`;
+  const rewritten = rewritePlayEntryHtml(stale);
+  for (const key of ['og:image" content="', 'og:image:secure_url" content="', 'property=\'og:image\'', 'twitter:image\' content=\'']) assert.ok(rewritten.includes(key), key);
+  assert.equal(rewritten.split(PLAY_SHARE_IMAGE).length - 1, 5);
+  assert.equal(rewritten.split(PLAY_SHARE_ALT).length - 1, 3);
+  assert.match(rewritten, /og:image:type" content="image\/jpeg"/);
+  assert.match(rewritten, /og:image:width" content="1200"/);
+  assert.match(rewritten, /og:image:height" content="630"/);
+  assert.match(rewritten, /og:title" content="TJM Gallery: walk through TJ Murphy's paintings"/);
+  assert.match(rewritten, /twitter:card" content="summary_large_image"/);
+  assert.match(rewritten, /keep share-start-2026-10-20\.jpg in the document body/);
+  assert.equal(rewritten.includes('torch-lit'), false);
+  assert.equal(rewritePlayEntryHtml(rewritten), rewritten);
+  const seen = [];
+  const env = {
+    ASSETS: { fetch: (r) => new Response(new URL(r.url).pathname === '/play/share-start-2026-11-04.jpg' ? 'jpeg-bytes' : stale, { status: new URL(r.url).pathname.startsWith('/play/missing/') ? 404 : 200, headers: { 'content-type': new URL(r.url).pathname.endsWith('.jpg') ? 'image/jpeg' : 'text/html' } }) },
+    HEX_FETCH: async (input, init) => {
+      seen.push([String(input), init?.redirect]);
+      return new Response(stale, { status: 200, headers: { 'content-type': 'text/html; charset=utf-8', 'content-encoding': 'gzip', 'content-length': '99' } });
+    },
+  };
+  for (const path of ['/play', '/play/', '/play/index.html']) {
+    const res = await playGallery(new Request('https://tjm.art' + path + '?k=1'), env);
+    const html = await res.text();
+    assert.equal(res.status, 200, path);
+    assert.equal(res.headers.get('content-encoding'), null, path);
+    assert.equal(html.includes(PLAY_SHARE_IMAGE), true, path);
+    assert.equal(html.includes(PLAY_SHARE_ALT), true, path);
+    assert.equal(html.includes('torch-lit'), false, path);
+  }
+  assert.deepEqual(seen.map(row => row[0]), [
+    'https://preview-251.tjm-tag-gallery-preview.pages.dev/play?k=1',
+    'https://preview-251.tjm-tag-gallery-preview.pages.dev/play/?k=1',
+    'https://preview-251.tjm-tag-gallery-preview.pages.dev/play/index.html?k=1',
+  ]);
+  const card = await playGallery(new Request('https://tjm.art/play/share-start-2026-11-04.jpg'), env);
+  assert.equal(await card.text(), 'jpeg-bytes');
+  assert.equal(card.headers.get('content-type'), 'image/jpeg');
+  const quake = await playGallery(new Request('https://tjm.art/play/orsay/'), env);
+  assert.equal(await quake.text(), stale);
+  const miss = await playGallery(new Request('https://tjm.art/play/missing/app.js'), env);
+  assert.equal(await miss.text(), stale);
+  assert.equal(miss.headers.get('content-encoding'), null);
+  const direct = await proxyHexPlay(new Request('https://tjm.art/play/'), env.HEX_FETCH);
+  assert.equal((await direct.text()).includes(PLAY_SHARE_IMAGE), true);
+  const script = await proxyHexPlay(new Request('https://tjm.art/play/assets/main.js'), async () => new Response(stale, { status: 200, headers: { 'content-type': 'application/javascript' } }));
+  assert.equal(await script.text(), stale);
+  const head = await proxyHexPlay(new Request('https://tjm.art/play/', { method: 'HEAD' }), async () => new Response(stale, { status: 200, headers: { 'content-type': 'text/html' } }));
+  assert.equal(await head.text(), stale);
+});
 test('other requests are served by the assets binding',async()=>{
   const env={...off,ASSETS:{fetch:r=>new Response('asset:'+new URL(r.url).pathname)}};
   assert.equal(await (await worker.fetch(new Request('https://vermillionaurora.com/about/'),env)).text(),'asset:/about/');
