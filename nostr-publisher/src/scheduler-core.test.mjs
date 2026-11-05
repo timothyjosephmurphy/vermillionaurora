@@ -11,10 +11,10 @@ const fixture = [
 
 const PUBLISHED = ['launch-warszawska-syrenka-2026-10-03', 'launch-honeybadger-cub-2026-10-06'];
 const EL_ZONTE = 'launch-sunrise-el-zonte-bitcoin-beach-2026-10-08';
-// Pacific wall-clock slots matching the Buffer schedule (Sun Oct 11, then Tue 7 AM / Thu 6 PM / Sat 10 AM, plus the Fri Oct 16 noon testimonial request and Tue Oct 27 10 AM Layers of Sound).
+// Pacific wall-clock slots matching the Buffer schedule (Sun Oct 11, then Tue 7 AM / Thu 6 PM / Sat 10 AM, plus the Fri Oct 16 noon testimonial request, Tue Oct 27 10 AM Layers of Sound, and the Wed Nov 4 7:05 PM 3D gallery).
 const SLOTS = ['2026-10-03 23:00', '2026-10-06 07:00', '2026-10-11 10:00', '2026-10-13 07:00', '2026-10-15 18:00', '2026-10-16 12:00', '2026-10-17 10:00',
   '2026-10-20 07:00', '2026-10-22 18:00', '2026-10-24 10:00', '2026-10-27 07:00', '2026-10-27 10:00', '2026-10-29 18:00', '2026-10-31 10:00',
-  '2026-11-03 07:00', '2026-11-05 18:00', '2026-11-07 10:00'];
+  '2026-11-03 07:00', '2026-11-05 18:00', '2026-11-07 10:00', '2026-11-04 19:05'];
 const pacific = (ms) => {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
     .formatToParts(new Date(ms)).map(({ type, value }) => [type, value]));
@@ -70,10 +70,9 @@ test('after deploy: published entries never repeat and nothing publishes before 
   const delivered = new Set([...PUBLISHED, testPost.id]);
   for (const now of ['2026-10-08T12:00:00-07:00', '2026-10-08T23:05:00-07:00', '2026-10-11T09:59:59-07:00'])
     assert.deepEqual(pendingPosts(posts, testPost, Date.parse(now), activatedAt, delivered), [], now);
-  for (const [index, post] of posts.entries()) {
-    if (index < 2) continue;
+  for (const post of posts.slice(2)) {
     const at = Date.parse(post.scheduledAt);
-    const sent = new Set([...delivered, ...posts.slice(2, index).map(entry => entry.id)]);
+    const sent = new Set([...delivered, ...posts.slice(2).filter(entry => Date.parse(entry.scheduledAt) < at).map(entry => entry.id)]);
     assert.deepEqual(duePosts(posts, at - 1, activatedAt, sent), [], `${post.id} early`);
     assert.deepEqual(duePosts(posts, at, activatedAt, sent).map(entry => entry.id), [post.id]);
   }
@@ -96,9 +95,24 @@ test('Layers of Sound goes out Tue Oct 27 at 10 AM PT with the poster, and Honey
   assert.equal(honeybadger.imageUrl, 'https://tjm.art/gallery-images/honeybadger-and-cub.jpeg');
 });
 
+test('Walk My 206 Paintings in 3D goes out Wed Nov 4 at 7:05 PM PT with the hex wall and one blog link', () => {
+  const post = posts.find(entry => entry.id === 'campaign-walk-my-paintings-3d-gallery-2026-11-04');
+  assert.equal(post.scheduledAt, '2026-11-04T19:05:00-08:00');
+  assert.equal(pacific(Date.parse(post.scheduledAt)), '2026-11-04 19:05');
+  assert.equal(post.title, 'Walk My 206 Paintings in 3D');
+  assert.equal(post.text, "I set up a 3D gallery where you walk all 206 of my current paintings, hung at true size in lit rooms.\n\nCourtyards. Murals. Dad's side gallery. Buy Scanner, soup thermos, gravity gun, glitter cannon. Pillar of light to check out. Pay with Bitcoin.\n\nAlso https://tjm.art/play");
+  assert.equal(post.imageUrl, 'https://img.tjm.art/social/gallery-3d-nov-4-2026/02-hex-wall.png');
+  assert.equal(post.productUrl, '/blog/walk-my-paintings-3d-gallery/');
+  assert.equal(post.xText, "I set up a 3D gallery where you walk all 206 of my current paintings, hung at true size in lit rooms.\n\nCourtyards. Murals. Dad's side gallery. Buy Scanner, soup thermos, gravity gun, glitter cannon. Pillar of light to check out. Pay with Bitcoin.\n\nhttps://tjm.art/blog/walk-my-paintings-3d-gallery/");
+  const content = eventContent(post);
+  assert.equal(content, `${post.text}\n\nhttps://tjm.art/blog/walk-my-paintings-3d-gallery/\n\n${post.imageUrl}`);
+  assert.equal(content.match(/https:\/\/tjm\.art\/blog\/walk-my-paintings-3d-gallery\//g).length, 1);
+  assert.equal(content.match(/https:\/\/tjm\.art\/play/g).length, 1);
+});
+
 test('notes use tjm.art links and images, no X handles, and no duplicated link', () => {
   for (const post of posts) {
-    assert.match(post.imageUrl, /^https:\/\/(?:img\.)?tjm\.art\/[^\s]+\.(jpe?g|webp)$/);
+    assert.match(post.imageUrl, /^https:\/\/(?:img\.)?tjm\.art\/[^\s]+\.(jpe?g|webp|png)$/);
     assert.match(post.productUrl, /^\/[a-z0-9/-]+\/$/);
     const content = eventContent(post);
     assert.ok(!/vermillionaurora\.com/.test(content), post.id);
