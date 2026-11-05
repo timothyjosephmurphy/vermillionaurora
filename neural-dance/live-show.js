@@ -1,5 +1,7 @@
-// Chrome for the full-screen live page: collapse, hide, preview, and fullscreen.
-// The dancer stage and the camera stay in their own modules.
+// Chrome for the full-screen live page: collapse, hide, preview, fullscreen,
+// and automatic projector alignment. The dancer stage and the camera stay in their own modules.
+
+import {ALIGN_TIMEOUT_MS, cornersFromMarkerCenters, findCalibrationMarkers} from './camera-markers.js';
 
 export const LIVE_KEY = 'nd-live-show';
 export const LIVE_DEFAULTS = {collapsed: false, hidden: false, preview: true};
@@ -114,6 +116,12 @@ export function attachLiveShow(doc) {
   if (reveal) reveal.addEventListener('click', () => persist({hidden: false}));
 
   doc.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && doc.body.classList.contains('nd-live-aligning')) {
+      cancelAlign(doc);
+      event.stopImmediatePropagation();
+      event.preventDefault();
+      return;
+    }
     if (typingTarget(event.target)) return;
     const mapping = doc.querySelector('#nd-room-lab [data-action="align"]');
     const aligning = mapping && mapping.getAttribute('aria-pressed') === 'true';
@@ -121,28 +129,115 @@ export function attachLiveShow(doc) {
       persist({hidden: false});
       event.preventDefault();
     }
-    if ((event.key === 'h' || event.key === 'H') && !event.metaKey && !event.ctrlKey && !event.altKey) {
+    if ((event.key === 'h' || event.key === 'H') && !event.metaKey && !event.ctrlKey && !event.altKey && !doc.body.classList.contains('nd-live-aligning')) {
       persist({hidden: !state.hidden});
       event.preventDefault();
     }
-  });
+  }, true);
+
+  const exitAlign = doc.querySelector('[data-live="exit-align"]');
+  if (exitAlign) exitAlign.addEventListener('click', () => cancelAlign(doc));
 
   const room = doc.getElementById('nd-room-lab');
   if (!room) return;
+  const align = room.querySelector('[data-action="align"]');
+  if (align) {
+    align.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (doc.body.classList.contains('nd-live-aligning')) cancelAlign(doc);
+      else beginAlign(doc);
+    }, true);
+  }
   const startStage = () => {
     const play = room.querySelector('[data-action="play"]');
     if (play && play.textContent.trim() === 'Start') play.click();
   };
-  if (room.dataset.roomReady === '1') startStage();
+  const whenReady = () => { startStage(); };
+  if (room.dataset.roomReady === '1') whenReady();
   else if (typeof MutationObserver === 'function') {
     const obs = new MutationObserver(() => {
       if (room.dataset.roomReady === '1') {
         obs.disconnect();
-        startStage();
+        whenReady();
       }
     });
     obs.observe(room, {attributes: true, attributeFilter: ['data-room-ready']});
   }
+}
+
+let alignTimer = 0;
+
+export function cancelAlign(doc) {
+  finishAlign(doc, 'Alignment cancelled.');
+}
+
+function finishAlign(doc, message) {
+  clearTimeout(alignTimer);
+  alignTimer = 0;
+  if (!doc || !doc.body) return;
+  doc.body.classList.remove('nd-live-aligning');
+  const pattern = doc.querySelector('[data-cal-pattern]');
+  if (pattern) pattern.hidden = true;
+  const exit = doc.querySelector('[data-live="exit-align"]');
+  if (exit) exit.hidden = true;
+  const align = doc.querySelector('#nd-room-lab [data-action="align"]');
+  if (align) {
+    align.textContent = 'Align projector';
+    align.setAttribute('aria-pressed', 'false');
+  }
+  if (message) {
+    const status = doc.querySelector('#nd-room-lab [data-status]');
+    if (status) status.textContent = message;
+  }
+}
+
+function beginAlign(doc) {
+  const room = doc.getElementById('nd-room-lab');
+  if (!room) return;
+  clearTimeout(alignTimer);
+  doc.body.classList.add('nd-live-aligning');
+  doc.body.classList.remove('nd-live-hidden');
+  const pattern = doc.querySelector('[data-cal-pattern]');
+  if (pattern) pattern.hidden = false;
+  const exit = doc.querySelector('[data-live="exit-align"]');
+  if (exit) exit.hidden = false;
+  const align = room.querySelector('[data-action="align"]');
+  if (align) {
+    align.textContent = 'Cancel align';
+    align.setAttribute('aria-pressed', 'false');
+  }
+  const camRoot = doc.getElementById('nd-camera-mode');
+  if (camRoot && camRoot.neuralDanceCamera) camRoot.neuralDanceCamera.cancelCalibration(true);
+  const status = room.querySelector('[data-status]');
+  if (status) status.textContent = 'Aligning. Show the white field to the camera. Exit align leaves this screen.';
+  const started = typeof performance !== 'undefined' ? performance.now() : Date.now();
+  const tick = () => {
+    if (!doc.body.classList.contains('nd-live-aligning')) return;
+    const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
+    if (now - started >= ALIGN_TIMEOUT_MS) {
+      finishAlign(doc, 'Could not see the four corners. Use Fine-tune corners.');
+      return;
+    }
+    const cam = camRoot && camRoot.neuralDanceCamera;
+    const frame = cam && cam.grabFrame && cam.grabFrame();
+    if (frame) {
+      const centers = findCalibrationMarkers(frame.data, frame.width, frame.height);
+      if (centers) {
+        const scaled = centers.map(blob => ({
+          x: (blob.x + 0.5) * frame.scale.scaleX,
+          y: (blob.y + 0.5) * frame.scale.scaleY
+        }));
+        const corners = cornersFromMarkerCenters(scaled, frame.videoWidth, frame.videoHeight);
+        if (corners && cam.setNormalizedCorners(corners, 'Aligned from the camera. Turn markers on for pink notes.')) {
+          finishAlign(doc, 'Aligned from the camera. Turn markers on for pink notes.');
+          return;
+        }
+      }
+    }
+    alignTimer = setTimeout(tick, 250);
+  };
+  alignTimer = setTimeout(tick, 200);
 }
 
 if (typeof document !== 'undefined') {

@@ -20,6 +20,15 @@ export const PROJECTION_CORNERS = [
   {x: CANVAS_W, y: CANVAS_H},
   {x: 0, y: CANVAS_H}
 ];
+// Inset colored corners of the white calibration field, in stage units (0–1).
+// Order matches PROJECTION_CORNERS: top left, top right, bottom right, bottom left.
+export const CALIBRATION_MARKERS = [
+  {hue: 0, name: 'red', x: 0.14, y: 0.14},
+  {hue: 120, name: 'green', x: 0.86, y: 0.14},
+  {hue: 240, name: 'blue', x: 0.86, y: 0.86},
+  {hue: 60, name: 'yellow', x: 0.14, y: 0.86}
+];
+export const ALIGN_TIMEOUT_MS = 8000;
 export const DEFAULTS = {
   hueTolerance: 28,
   saturationSensitivity: 0.55,
@@ -113,6 +122,49 @@ export function homographyFromNormalized(corners, videoWidth, videoHeight, dest 
   return solveHomography(src, dest);
 }
 
+// Largest blob of each calibration hue. Coordinates are in the buffer that was passed in.
+export function findCalibrationMarkers(rgba, width, height, markers = CALIBRATION_MARKERS) {
+  if (!rgba || !(width > 0) || !(height > 0) || !markers || markers.length !== 4) return null;
+  const centers = [];
+  for (const marker of markers) {
+    const blobs = detectPinkBlobs(rgba, width, height, {
+      hueCenter: marker.hue,
+      hueTolerance: 16,
+      saturationSensitivity: 0.25,
+      minBlobSize: 3
+    });
+    if (!blobs.length) return null;
+    centers.push({x: blobs[0].x, y: blobs[0].y});
+  }
+  return centers;
+}
+
+// Marker centers in video pixels → normalized images of the four stage corners.
+export function cornersFromMarkerCenters(centers, videoWidth, videoHeight, markers = CALIBRATION_MARKERS) {
+  if (!centers || centers.length !== 4 || !(videoWidth > 0) || !(videoHeight > 0)) return null;
+  const src = [];
+  const dst = [];
+  for (let i = 0; i < 4; i++) {
+    const c = point(centers[i]);
+    const m = markers[i];
+    if (!c || !m) return null;
+    src.push(c);
+    dst.push({x: m.x * CANVAS_W, y: m.y * CANVAS_H});
+  }
+  const inverse = solveHomography(dst, src);
+  if (!inverse) return null;
+  const corners = [];
+  for (const dest of PROJECTION_CORNERS) {
+    const hit = applyHomography(inverse, dest.x, dest.y);
+    if (!hit) return null;
+    const x = hit.x / videoWidth;
+    const y = hit.y / videoHeight;
+    if (x < -0.25 || x > 1.25 || y < -0.25 || y > 1.25) return null;
+    corners.push({x, y});
+  }
+  return corners;
+}
+
 export function projectVideoPoint(H, x, y) {
   const p = applyHomography(H, x, y);
   if (!p) return null;
@@ -140,9 +192,15 @@ export function rgbToHsv(r, g, b) {
   return {h, s: max === 0 ? 0 : d / max, v: max};
 }
 
+function wrapHue(value, fallback) {
+  const v = +value;
+  if (!Number.isFinite(v)) return fallback;
+  return ((v % 360) + 360) % 360;
+}
+
 export function blobSettings(options = {}) {
   return {
-    hueCenter: PINK_HUE,
+    hueCenter: wrapHue(options.hueCenter, PINK_HUE),
     hueTolerance: clamp(options.hueTolerance, 0, 180, DEFAULTS.hueTolerance),
     saturationSensitivity: clamp(options.saturationSensitivity, 0, 1, DEFAULTS.saturationSensitivity),
     minBlobSize: Math.round(clamp(options.minBlobSize, 1, 100000, DEFAULTS.minBlobSize)),
@@ -606,10 +664,10 @@ export function attachCameraMode(root) {
       calibrateButton.textContent = 'Cancel calibration';
       calibrateButton.setAttribute('aria-pressed', 'true');
     } else if (committed.length === 4) {
-      calibrateButton.textContent = 'Recalibrate';
+      calibrateButton.textContent = root.dataset.fineTune === '1' ? 'Fine-tune corners' : 'Recalibrate';
       calibrateButton.setAttribute('aria-pressed', 'false');
     } else {
-      calibrateButton.textContent = 'Calibrate wall';
+      calibrateButton.textContent = root.dataset.fineTune === '1' ? 'Fine-tune corners' : 'Calibrate wall';
       calibrateButton.setAttribute('aria-pressed', 'false');
     }
   }
@@ -919,6 +977,41 @@ export function attachCameraMode(root) {
     }
     drawOverlay();
   });
+  function commitCorners(list, message) {
+    if (!list || list.length !== 4) return false;
+    const next = [];
+    for (const corner of list) {
+      const p = point(corner);
+      if (!p || p.x < -0.25 || p.x > 1.25 || p.y < -0.25 || p.y > 1.25) return false;
+      next.push(p);
+    }
+    committed = next;
+    draft = null;
+    rebuild();
+    persist();
+    syncMarkerButton();
+    say(message || 'Wall aligned from the camera.');
+    drawOverlay();
+    return !!homography || !video.videoWidth;
+  }
+  root.neuralDanceCamera = {
+    setNormalizedCorners(list, message) { return commitCorners(list, message); },
+    cancelCalibration(silent) {
+      draft = null;
+      syncMarkerButton();
+      if (!silent) say(committed.length === 4 ? 'Calibration kept.' : 'Alignment cancelled.');
+      drawOverlay();
+    },
+    grabFrame() {
+      if (!videoFrameReady(video)) return null;
+      const scale = detectionSize(video.videoWidth, video.videoHeight);
+      if (scratch.width !== scale.width) scratch.width = scale.width;
+      if (scratch.height !== scale.height) scratch.height = scale.height;
+      if (!drawVideoFrame(video, sctx, scale.width, scale.height)) return null;
+      const frame = sctx.getImageData(0, 0, scale.width, scale.height);
+      return {data: frame.data, width: scale.width, height: scale.height, scale, videoWidth: video.videoWidth, videoHeight: video.videoHeight};
+    }
+  };
   video.addEventListener('loadedmetadata', () => { rebuild(); drawOverlay(); });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && stream) stopCamera('Camera off');
