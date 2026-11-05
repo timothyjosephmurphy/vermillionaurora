@@ -357,7 +357,13 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.match(room, /Bass sensitivity/);
   assert.match(room, /Snare sensitivity/);
   assert.match(room, /Hi-hat sensitivity/);
+  assert.match(room, /Quiet threshold/);
+  assert.match(room, /data-control="quiet"/);
+  assert.match(room, /aria-label="Quiet threshold"/);
+  assert.match(room, /noise floor/);
   assert.match(room, /Per-band sensitivity/);
+  assert.match(page, /\/neural-dance\/silence-gate\.js/);
+  assert.match(room, /ndSilenceGate/);
   const agcFn = room.indexOf('function agcScale');
   assert.ok(agcFn > 0);
   assert.ok(room.indexOf('api.nd_set_gravity(v)') > agcFn);
@@ -372,43 +378,23 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.doesNotMatch(mural, /agcScale/);
 });
 
-test('room music AGC holds typical band levels near mid scale', () => {
+test('room music runs the silence gate before the onset detector', () => {
   const roomAt = page.indexOf('id="nd-room-lab"');
   const room = page.slice(roomAt, page.indexOf('</script>', roomAt) + '</script>'.length);
-  const start = room.indexOf('const agcState=');
-  const end = room.indexOf('function rawLevels');
-  assert.ok(start > 0 && end > start);
-  const {agcScale, agcReset} = new Function(room.slice(start, end) + '\nreturn {agcScale, agcReset};')();
   const frameAt = room.indexOf('function frame');
   const frame = room.slice(frameAt, room.indexOf('function projectorLayout'));
-  assert.ok(frame.indexOf('nd_update') < frame.indexOf('agcScale'));
+  const peaksAt = frame.indexOf('ndSilenceGate.bandPeaks');
+  const scaleAt = frame.indexOf('agcScale(peaks');
+  const maskAt = frame.indexOf('ndSilenceGate.mask');
+  const updateAt = frame.indexOf('nd_update');
+  assert.ok(peaksAt > 0 && scaleAt > peaksAt && maskAt > scaleAt && updateAt > maskAt);
+  assert.match(frame, /listening\?1:0/);
   assert.match(frame, /paintMeters\(now,levels\)/);
   assert.match(frame, /drawSpectrum\(levels\)/);
-
-  function settle(raw, seconds) {
-    agcReset();
-    let levels = raw;
-    for (let t = 0; t < seconds; t += 0.033) levels = agcScale(raw, 0.033);
-    return levels;
-  }
-  const pegged = settle([1, 1, 1, 0.02], 2);
-  const loud = pegged.slice(0, 3);
-  const loudMean = loud.reduce((a, b) => a + b, 0) / loud.length;
-  assert.ok(loudMean > 0.42 && loudMean < 0.58, `pegged mean ${loudMean}`);
-  assert.ok(Math.max(...pegged) < 0.65);
-  assert.ok(pegged[3] < 0.05);
-
-  agcReset();
-  const first = agcScale([1, 1, 1, 0], 0.033);
-  assert.ok(Math.min(...first.slice(0, 3)) > 0.7, 'gain slews instead of jumping');
-  assert.ok(Math.max(...first) < 0.98, 'soft knee, not a hard clip at 1');
-
-  const quiet = settle([0.1, 0.08, 0.12, 0.04], 2);
-  const quietMean = quiet.slice(0, 3).reduce((a, b) => a + b, 0) / 3;
-  assert.ok(quietMean > 0.35 && quietMean < 0.65, `quiet mean ${quietMean}`);
-
-  const silence = settle([0.02, 0.01, 0, 0.015], 2);
-  assert.ok(Math.max(...silence) < 0.05);
+  assert.match(frame, /paintFloor\(true\)/);
+  assert.match(room, /data-action="listen"/);
+  assert.match(room, /ndSilenceGate\.setQuiet/);
+  assert.match(room, /Quiet threshold/);
 });
 
 function pulseHeads(api) {

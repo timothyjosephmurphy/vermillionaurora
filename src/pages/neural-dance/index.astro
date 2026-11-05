@@ -270,10 +270,11 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
   </section>
 
 
+<script src="/neural-dance/silence-gate.js" is:inline></script>
 <section id="nd-room-lab" data-mic="off" aria-labelledby="room-music-title">
   <div class="viz-row"><h2 id="room-music-title">Room music</h2><button class="btn btn-primary" data-action="play">Start</button><button class="btn" data-action="listen" data-state="off" aria-pressed="false">Listen</button><button class="btn" data-action="align" aria-pressed="false">Align projector</button></div>
   <p class="mural-help">This stage is only for the microphone. It uses the dark prototype canvas: colored dancers and links, with no mural photograph and no built-in rhythm. Select <strong>Start</strong>, then <strong>Listen</strong>, and play music in the room. Dancers move only when the mic hears a kick, bass, snare, or hi-hat. The bars under the stage are the live spectrum, colored by those four bands.</p>
-  <p class="mural-help">Click the stage to add a dancer, drag a marker to move it, or Shift-click to remove one. Gravity, wander, threshold, and peak hold shape the pulses. Per-band sensitivity — kick, bass, snare, and hi-hat — sets how strongly dancers react when the analyzer hears that band. These controls stay on this page only, the same way the other Neural Dance sliders do.</p>
+  <p class="mural-help">Click the stage to add a dancer, drag a marker to move it, or Shift-click to remove one. Gravity, wander, threshold, and peak hold shape the pulses. Per-band sensitivity — kick, bass, snare, and hi-hat — sets how strongly dancers react when the analyzer hears that band. These controls stay on this page only, the same way the other Neural Dance sliders do. Quiet threshold is how far the sound must rise above the measured noise floor before dancers move. It applies to Listen and to this Room music stage. Near that floor, auto-gain will not boost silence or background noise into motion.</p>
   <p class="mural-help"><strong>Align projector</strong> draws corner handles on this stage only. Drag a handle to skew the stage onto the wall. The mural demo above is not moved or resized. Select <strong>Mapping</strong> when you are done and the handles go away.</p>
   <div class="viz-controls" data-add-dancer>
     <label class="form-label">New dancer<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Snare</option><option value="3">Hi-hat</option></select></label>
@@ -285,10 +286,11 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
     <label class="form-label">Bass sensitivity <output data-value="sens-1">1.00×</output><input class="form-range" data-control="sens" data-band="1" type="range" min="0" max="3" step="0.05" value="1" aria-label="Bass sensitivity"></label>
     <label class="form-label">Snare sensitivity <output data-value="sens-2">1.00×</output><input class="form-range" data-control="sens" data-band="2" type="range" min="0" max="3" step="0.05" value="1" aria-label="Snare sensitivity"></label>
     <label class="form-label">Hi-hat sensitivity <output data-value="sens-3">1.00×</output><input class="form-range" data-control="sens" data-band="3" type="range" min="0" max="3" step="0.05" value="1" aria-label="Hi-hat sensitivity"></label>
+    <label class="form-label">Quiet threshold <output data-value="quiet">0.08</output><input class="form-range" data-control="quiet" type="range" min="0" max="0.4" step="0.01" value="0.08" aria-label="Quiet threshold"></label>
   </div>
   <div id="nd-room-projector"><canvas class="cursor-interaction" data-add-dancer data-stage width="1000" height="620" role="img" aria-label="Room-music dancers on the dark prototype stage. Click to add a dancer. They move only while the microphone hears a matching band."></canvas></div>
   <canvas data-spectrum width="880" height="96" aria-label="Live microphone levels for kick, bass, mid, and treble"></canvas>
-  <div class="viz-row text-small"><span data-legend="0">● Kick<span class="meter"><i data-meter="0"></i></span></span><span data-legend="1">◆ Bass<span class="meter"><i data-meter="1"></i></span></span><span data-legend="2">■ Mid<span class="meter"><i data-meter="2"></i></span></span><span data-legend="3">▲ Treble<span class="meter"><i data-meter="3"></i></span></span><span data-mic role="status" aria-live="polite">Mic off</span><span data-status role="status" aria-live="polite">Loading room music…</span></div>
+  <div class="viz-row text-small"><span data-legend="0">● Kick<span class="meter"><i data-meter="0"></i></span></span><span data-legend="1">◆ Bass<span class="meter"><i data-meter="1"></i></span></span><span data-legend="2">■ Mid<span class="meter"><i data-meter="2"></i></span></span><span data-legend="3">▲ Treble<span class="meter"><i data-meter="3"></i></span></span><span data-mic role="status" aria-live="polite">Mic off</span><span data-floor>noise floor —</span><span data-status role="status" aria-live="polite">Loading room music…</span></div>
 </section>
 <style is:inline>
 #nd-room-lab{--background:#080910;--foreground:#f4f6fb;--viz-series-1:#ff927d;--viz-series-2:#eb92f5;--viz-series-3:#7fe8b3;--viz-series-4:#81b7fc;margin:48px 0 24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
@@ -323,8 +325,11 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
 // (dark canvas, sacred-geometry field, colored dancers and links).
 // nd_set_clock(0) stays off, so the built-in beat never runs. Dancers move
 // only from live microphone bands. No synth is connected to the speakers.
-// Display AGC scales the spectrum and the four meters only; the mic bytes
-// fed to the wasm onset detector are unchanged.
+// The silence gate measures a noise floor (low percentile of the input level)
+// for Listen and for this Room music stage. Near that floor the auto-gain is
+// capped and the spectrum is withheld, so silence and background noise are
+// not boosted into dancer motion. Above the quiet threshold the live bytes
+// reach the onset detector unchanged.
 (async()=>{
 const root=document.getElementById('nd-room-lab');
 const canvas=root.querySelector('[data-stage]'),ctx=canvas.getContext('2d');
@@ -349,11 +354,13 @@ const bandSens=[1,1,1,1];
 const hotUntil=[0,0,0,0];
 const MIC={off:{label:'Listen',status:'Mic off',pressed:false},listening:{label:'Listening',status:'Listening',pressed:true},muted:{label:'Muted',status:'Muted',pressed:false},unavailable:{label:'No mic',status:'No microphone',pressed:false}};
 try{
+  if(!globalThis.ndSilenceGate)throw new Error('gate');
   const res=await fetch('/neural-dance/neural-dance.wasm');
   if(!res.ok)throw new Error('missing');
   api=(await WebAssembly.instantiate(await res.arrayBuffer())).instance.exports;
   if(typeof api.nd_set_clock!=='function'||typeof api.nd_add!=='function'||typeof api.nd_set_gravity!=='function'||typeof api.nd_set_wander!=='function'||typeof api.nd_set_threshold!=='function'||typeof api.nd_set_peak_hold!=='function'||typeof api.nd_set_band_sens!=='function')throw new Error('exports');
 }catch{status.textContent='Room music unavailable';play.disabled=listenButton.disabled=alignButton.disabled=true;return;}
+const gate=ndSilenceGate.create();
 function floats(){return new Float32Array(api.memory.buffer);}
 function theme(){
   const resolver=document.createElement('span');root.appendChild(resolver);
@@ -386,26 +393,10 @@ function micFailure(err){const denied=err&&(err.name==='NotAllowedError'||err.na
 async function startListen(){start();if(!running)return;holdClock();let graph;try{graph=ensureGraph();}catch{applyMicState('unavailable','No microphone');return;}micStatus.textContent='Asking for the microphone';const pending=requestMic();try{await graph;}catch(err){micFailure(err);try{(await pending).getTracks().forEach(t=>t.stop());}catch{}return;}let stream;try{stream=await pending;}catch(err){micFailure(err);return;}if(!running){stream.getTracks().forEach(t=>t.stop());return;}releaseMicHardware();analyser=ac.createAnalyser();analyser.fftSize=2048;analyser.smoothingTimeConstant=0;analyser.minDecibels=-96;analyser.maxDecibels=-24;spec=new Uint8Array(analyser.frequencyBinCount);micSource=ac.createMediaStreamSource(stream);micSource.connect(analyser);micStream=stream;watchMic(stream);applyMicState('listening');}
 function setMicMuted(muted){if(!micStream){applyMicState('off');return;}for(const track of micStream.getAudioTracks())track.enabled=!muted;applyMicState(muted?'muted':'listening');if(!muted)start();}
 async function toggleListen(){if(micPending)return;if(micState==='listening'){setMicMuted(true);return;}if(micState==='muted'){setMicMuted(false);return;}micPending=true;try{await startListen();}finally{micPending=false;}}
-const agcState={gain:1,hist:[]};
-function agcReset(){agcState.gain=1;agcState.hist.length=0;}
-function agcKnee(x){if(!(x>0))return 0;if(x<0.72)return x;return 0.72+0.24*(1-Math.exp(-(x-0.72)/0.28));}
-function agcScale(raw,dt){
-  const step=Math.max(0.001,Math.min(0.1,dt||0.033));
-  let sum=0,n=0,peak=0;
-  for(let k=0;k<4;k++){const v=Math.max(0,+raw[k]||0);if(v>peak)peak=v;if(v>=0.06){sum+=v*v;n++;}}
-  const rms=n?Math.sqrt(sum/n):0;
-  agcState.hist.push({dt:step,rms,peak});
-  let span=0;
-  for(let i=agcState.hist.length-1;i>=0;i--){span+=agcState.hist[i].dt;if(span>1.25){agcState.hist.splice(0,i);break;}}
-  let rSum=0,rW=0,pMax=0;
-  for(const s of agcState.hist){if(s.peak>pMax)pMax=s.peak;if(s.rms>0){rSum+=s.rms*s.dt;rW+=s.dt;}}
-  const winRms=rW?rSum/rW:0;
-  const ref=winRms>0?winRms:(pMax>0.06?pMax*0.5:0);
-  const desired=ref<0.05?1:Math.max(0.25,Math.min(6,0.5/ref));
-  const tau=desired<agcState.gain?0.22:0.8;
-  agcState.gain+=(desired-agcState.gain)*(1-Math.exp(-step/tau));
-  return raw.map(v=>agcKnee((+v||0)*agcState.gain));
-}
+function agcReset(){ndSilenceGate.reset(gate);}
+function agcKnee(x){return ndSilenceGate.knee(x);}
+function agcScale(raw,dt){return ndSilenceGate.scale(gate,raw,dt);}
+function paintFloor(listening){const floorEl=el('[data-floor]');if(!floorEl)return;floorEl.textContent=listening?'noise floor '+gate.noiseFloor.toFixed(2)+(gate.open?'':' · quiet'):'noise floor —';}
 function rawLevels(){const f=floats(),base=api.nd_levels()>>>2;return [0,1,2,3].map(k=>f[base+k]||0);}
 function paintMeters(now,levels){for(let k=0;k<4;k++){const bar=el('[data-meter="'+k+'"]');if(bar)bar.style.transform='scaleX('+(levels[k]||0).toFixed(3)+')';el('[data-legend="'+k+'"]').classList.toggle('is-hot',hotUntil[k]>now);}}
 function drawSpectrum(levels){const w=spectrum.width,h=spectrum.height;sctx.fillStyle='#05060a';sctx.fillRect(0,0,w,h);const names=['Kick','Bass','Mid','Treble'],cols=['#ff927d','#eb92f5','#7fe8b3','#81b7fc'];if(micState!=='listening'||!spec){sctx.fillStyle='#9da5b8';sctx.font='14px sans-serif';sctx.fillText(micState==='muted'?'Muted':'Mic off',12,h/2);return;}
@@ -432,15 +423,21 @@ function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while 
   const listening=micState==='listening';
   holdClock();
   let bins=0;
-  if(listening&&analyser&&spec){analyser.getByteFrequencyData(spec);bins=Math.min(spec.length,api.nd_spectrum_cap());new Uint8Array(api.memory.buffer,api.nd_spectrum(),bins).set(spec.subarray(0,bins));}
+  let levels=rawLevels();
+  if(listening&&analyser&&spec){
+    analyser.getByteFrequencyData(spec);
+    const peaks=ndSilenceGate.bandPeaks(spec,ac?ac.sampleRate:48000,analyser.fftSize);
+    levels=agcScale(peaks,gap/1000);
+    bins=Math.min(spec.length,api.nd_spectrum_cap());
+    new Uint8Array(api.memory.buffer,api.nd_spectrum(),bins).set(ndSilenceGate.mask(gate,spec.subarray(0,bins)));
+  }
   const tones=api.nd_update(Math.min(.067,gap/1000),listening?1:0,bins,ac?ac.sampleRate:48000,analyser?analyser.fftSize:2048,now);
-  const levels=listening?agcScale(rawLevels(),gap/1000):rawLevels();
-  if(listening){for(let k=0;k<4;k++)if(tones&(1<<k))hotUntil[k]=now+180;paintMeters(now,levels);}
+  if(listening){for(let k=0;k<4;k++)if(tones&(1<<k))hotUntil[k]=now+180;paintMeters(now,levels);paintFloor(true);}else paintFloor(false);
   draw();drawSpectrum(levels);
  }catch{stop('Paused');return;}
  const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);
  if(cost>150||slow>=12){low=true;api.nd_set_low(1);stop('Paused to keep the browser responsive');return;}
- if(now-lastReport>1000){report((micState==='listening'?'Listening · ':'')+api.nd_count()+' dancers · '+api.nd_pulse_count()+' pulses');lastReport=now;}
+ if(now-lastReport>1000){const floorNote=micState==='listening'?' · noise floor '+gate.noiseFloor.toFixed(2)+(gate.open?'':' · quiet'):'';report((micState==='listening'?'Listening · ':'')+api.nd_count()+' dancers · '+api.nd_pulse_count()+' pulses'+floorNote);lastReport=now;}
  schedule(Math.max(0,1000/30-cost));
 }
 function projectorLayout(layer){const r=layer.getBoundingClientRect(),w=r.width,h=r.height;layer.dataset.pinWidth=String(Math.round(w));return {id:'nd-room-projector',sourcePoints:[[0,0],[w,0],[w,h],[0,h]],targetPoints:[[r.left,r.top],[r.right,r.top],[r.right,r.bottom],[r.left,r.bottom]]};}
@@ -455,6 +452,7 @@ bindSlider('gravity',v=>api.nd_set_gravity(v),v=>v.toFixed(1)+'×');
 bindSlider('wander',v=>api.nd_set_wander(v),v=>v.toFixed(2));
 bindSlider('threshold',v=>api.nd_set_threshold(v),v=>(+v).toFixed(2));
 bindSlider('peak',v=>api.nd_set_peak_hold(v),v=>v.toFixed(1)+' s');
+bindSlider('quiet',v=>ndSilenceGate.setQuiet(gate,v),v=>(+v).toFixed(2));
 root.querySelectorAll('[data-control="sens"]').forEach(input=>{const band=+input.dataset.band;const out=el('[data-value="sens-'+band+'"]');const sync=draw=>{const v=+input.value;bandSens[band]=v;api.nd_set_band_sens(band,v);if(out)out.textContent=v.toFixed(2)+'×';if(draw)still();};input.addEventListener('input',()=>sync(true));sync(false);});
 canvas.addEventListener('pointerdown',e=>{if(!api||mapping())return;const p=pointerWorld(e);if(p.x<0||p.y<0||p.x>W||p.y>H)return;const near=dancerAt(p);if(e.shiftKey){if(near){api.nd_remove(near);still();}return;}pointer={id:near,x:e.clientX,y:e.clientY,moved:false};try{canvas.setPointerCapture(e.pointerId);}catch{}});
 canvas.addEventListener('pointermove',e=>{if(!pointer||!api)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.id&&pointer.moved){const p=pointerWorld(e);api.nd_move(pointer.id,Math.max(0,Math.min(W,p.x)),Math.max(0,Math.min(H,p.y)));still();}});
