@@ -166,7 +166,8 @@ test('room status names simulated dancers and camera stickers on both pages', ()
   assert.match(roomJs, /#7fe8b3/);
   assert.match(roomJs, /#81b7fc/);
   assert.match(roomJs, /#080910/);
-  assert.match(roomJs, /kind==='sticker'\)continue/);
+  assert.match(roomJs, /kind==='sticker'/);
+  assert.match(roomJs, /createRadialGradient/);
   assert.match(roomJs, /12\*scale/);
   for (const source of [page, studio]) {
     assert.match(source, /\/neural-dance\/room-lab\.js/);

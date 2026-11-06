@@ -365,9 +365,12 @@ test('a dark dancer sticker is darker than the local screen and both kinds stay 
   assert.equal(areaScaleFor(160), 1);
   assert.equal(areaScaleFor(48), 1);
   assert.ok(Math.abs(areaScaleFor(480) - 9) < 0.01);
-  assert.ok(Math.abs(stickerDarkRatio(0.5) - 0.85) < 0.001);
-  const width = 80;
-  const height = 60;
+  assert.ok(Math.abs(stickerDarkRatio(0.5) - 0.84) < 0.001);
+  const note = 0.299 * 124 + 0.587 * 91 + 0.114 * 68;
+  const wall = 0.299 * 157 + 0.587 * 117 + 0.114 * 96;
+  assert.ok(note / wall <= stickerDarkRatio(0.5));
+  const width = 160;
+  const height = 120;
   const data = new Uint8ClampedArray(width * height * 4);
   for (let i = 0; i < data.length; i += 4) {
     data[i] = 157;
@@ -375,15 +378,15 @@ test('a dark dancer sticker is darker than the local screen and both kinds stay 
     data[i + 2] = 96;
     data[i + 3] = 255;
   }
-  for (let y = 18; y < 46; y++) {
-    const xs = y < 28 ? [34, 35, 36, 37] : [33, 34, 37, 38];
-    for (const x of xs) {
-      const i = (y * width + x) * 4;
-      data[i] = 124;
-      data[i + 1] = 91;
-      data[i + 2] = 68;
-    }
-  }
+  const paint = (x, y) => {
+    const i = (y * width + x) * 4;
+    data[i] = 124;
+    data[i + 1] = 91;
+    data[i + 2] = 68;
+  };
+  for (let y = 40; y < 52; y++) paint(80, y);
+  for (let x = 74; x < 87; x++) paint(x, 46);
+  for (let y = 52; y < 70; y++) { paint(76, y); paint(84, y); }
   const found = detectStickerBlobs(data, width, height, {stickerSensitivity: 0.5});
   assert.equal(found.length, 1);
   assert.equal(found[0].kind, 'sticker');
