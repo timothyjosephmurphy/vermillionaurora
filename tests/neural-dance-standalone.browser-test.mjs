@@ -75,7 +75,10 @@ try {
     Object.defineProperty(Navigator.prototype, 'standalone', {configurable: true, get: () => true});
   });
   await page.goto(origin + '/neural-dance/', {waitUntil: 'domcontentloaded'});
-  await page.waitForSelector('.site-header');
+  await page.waitForFunction(() => {
+    const header = document.querySelector('.site-header');
+    return !!header && getComputedStyle(header).display === 'none' && document.documentElement.classList.contains('nd-standalone');
+  });
   const standalone = await page.evaluate(() => {
     const header = document.querySelector('.site-header');
     const stage = document.querySelector('#nd-room-projector');
