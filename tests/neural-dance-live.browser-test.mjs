@@ -8,7 +8,7 @@ import {mkdirSync} from 'node:fs';
 
 const root = new URL('..', import.meta.url).pathname;
 const mime = {'.html': 'text/html', '.js': 'text/javascript', '.wasm': 'application/wasm', '.css': 'text/css'};
-const liveHtml = (await readFile(new URL('../src/pages/neural-dance/live/index.astro', import.meta.url), 'utf8')).replace(/^---[\s\S]*?---\n/, '');
+const liveHtml = (await readFile(new URL('../src/pages/neural-dance/live/index.astro', import.meta.url), 'utf8')).replace(/^---[\s\S]*?---\n/, '').replace(/<BaseLayout\b[^>]*\/?>\s*/g, '');
 const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://127.0.0.1');
@@ -31,6 +31,28 @@ const browser = await chromium.launch();
 try {
   const page = await browser.newPage({viewport: {width: 844, height: 390}});
   await page.goto(origin + '/neural-dance/live/', {waitUntil: 'domcontentloaded'});
+  await page.evaluate(() => {
+    document.body.classList.add('nd-live-hidden');
+    const banner = document.querySelector('[data-align-banner]');
+    banner.hidden = false;
+    banner.textContent = 'Aligning camera to projector grid…';
+  });
+  const toast = await page.evaluate(() => {
+    const banner = document.querySelector('[data-align-banner]');
+    const chrome = document.querySelector('.nd-live-chrome');
+    const style = getComputedStyle(banner);
+    return {
+      display: style.display,
+      z: style.zIndex,
+      chrome: getComputedStyle(chrome).display,
+      text: banner.textContent
+    };
+  });
+  assert.notEqual(toast.display, 'none');
+  assert.equal(toast.chrome, 'none');
+  assert.equal(Number(toast.z) > 1000000, true);
+  assert.match(toast.text, /Aligning camera/);
+  await page.evaluate(() => document.body.classList.remove('nd-live-hidden'));
   await page.waitForFunction(() => document.getElementById('nd-room-lab')?.dataset.roomReady === '1');
   const boxes = await page.evaluate(() => {
     const box = sel => {
