@@ -7,7 +7,8 @@
 | Owner | TJ Murphy (`timothyjosephmurphy`) |
 | Timezone | `America/Los_Angeles` (PT) |
 | Compiled | 2026-11-05 ~7:25 PM PT |
-| Span | Friends Club physical precursor / pre-Sep-14 ChatGPT prototype → 2026-11-05 late evening (`[t2228u]`) |
+| Snapshot | ~12:05 AM PT, Nov 6, 2026 |
+| Span | Friends Club physical precursor / pre-Sep-14 ChatGPT prototype → 2026-11-06 ~12:05 AM PT (`[t2239u]`) |
 | Live Library Page | [Neural Dance — Project & Prompt History](https://cursor.com/canvas/store-05a11f8c-ccd8-4d68-bb9b-07aa5e3ea3cb/7b3e910a-e40a-43c9-8718-3e62e8695925) (`canvas_id` `7b3e910a-e40a-43c9-8718-3e62e8695925`) |
 | GitHub history PR | [VA PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795) — `docs/neural-dance-project-history.md` (Era 0/1 and prompts through `[t2215u]` are in this file) |
 | Primary GitHub home | [`vermillionaurora/docs/neural-dance-project-history.md`](https://github.com/timothyjosephmurphy/vermillionaurora/blob/main/docs/neural-dance-project-history.md) (target) |
@@ -42,7 +43,7 @@
 | Optical input | None → **pink Post-it HSV** → + **dark silhouette stickers** (`Track: Both`) with stageEcho / anti-feedback → sticker markers draw a **warm halo** (vinyl threshold from the measured projector photo; pink notes keep the dark pupil) |
 | Install form | Browser demo → iPhone Home Screen PWA mirroring to **XGIMI** in weatherproof pod (Anker Prime) |
 | Next physical | Wall stickers → **wearable blink-code / 2.4 GHz clips** (#818/#819) |
-| 3D / room | Gallery courtyard wall → **Kinoteka Annex two-room** stereo capture → energy-ball Neural Dance (**live** at `/play/?room=neural-dance`) |
+| 3D / room | Gallery courtyard wall → **Kinoteka Annex two-room** stereo capture → energy-ball Neural Dance, then an enclosed wood observation balcony you walk into from Kinoteka (**SHIPPED LIVE** Gallery deploy `868d` at https://tjm.art/play/ and https://tjm.art/play/?room=neural-dance) |
 | Live stats HUD | Total dancers only → **split simulated vs sticker/marker dancers** (`25 dancers (24 sim, 1 sticker) · 37 pulses · noise floor …`) via `bc-045761e2` |
 | Remote witness | — → **opt-in 1–2 fps WebSocket debug relay** to Durable Object (#824; `bc-623cfcbe` building `/neural-dance/debug/` off PR #794) |
 | Dedicated device | iPhone mirroring → backlog plan for **cheap Android** phone as dedicated mic/cam/cast host (#826) |
@@ -62,8 +63,9 @@
 | 2b | Warm halo around dark dancer stickers: vinyl match `luma/surround <= 0.84`, wall mean `>= 35`; sticker markers draw a warm radial halo (pink notes keep the dark pupil) | VA **[PR #801](https://github.com/timothyjosephmurphy/vermillionaurora/pull/801)** · cloud agent **`bc-13a6f15f`** (`cursor/sticker-warm-halo-f4c5`) | **SHIPPED LIVE** — **MERGED** 2026-11-05 ~9:29 PM PT — merge commit [`045403cc1113957ea5ea40bce4f67fef2d0c0e59`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/045403cc1113957ea5ea40bce4f67fef2d0c0e59) |
 | 3 | **Option 1 live debug stream** + `/neural-dance/debug/` viewer (Share live debug → DO WebSocket 1–2 fps frames + telemetry) | **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** · cloud agent **`bc-623cfcbe`** branched off PR #794 | Building next / parallel after #1 (`[t2206u]`–`[t2208u]`) |
 | 2c | Live align chrome, bowtie-quad sanitize, tighter pink, `/live/` Home Screen manifest (`[t2219u]`–`[t2223u]`) | VA **[PR #802](https://github.com/timothyjosephmurphy/vermillionaurora/pull/802)** · cloud agent **`bc-5a22ba68`** (`cursor/neural-dance-live-hotfix-32b3`) | **SHIPPED LIVE** — **MERGED** 2026-11-05 ~11:36 PM PT — merge commit [`ec8f9cc01c03defce7734b992bc93796c522a4a0`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/ec8f9cc01c03defce7734b992bc93796c522a4a0) at https://tjm.art/neural-dance/live/ |
-| Gallery | Kinoteka Annex balcony hallway, symmetric iPhone frustums, wandering dancers (`[t2224u]`–`[t2228u]`) | studio-tracker [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821) follow-up on `/play/neural-dance/` | Follow-up build |
-| Docs | Living project & prompt history (Era 0/1 ChatGPT/Astra forensic + tonight’s prompts) | VA **[PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)** + Library Page `7b3e910a-…` (`[t2198u]`, `[t2214u]`, `[t2219u]`–`[t2228u]`) | Open — prompts through `[t2228u]` are in this file |
+| Gallery | Kinoteka Annex balcony walk-through (`nd-024`, `[t2224u]`–`[t2228u]`, `[t2233u]`) | studio-tracker [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821) · Gallery deploy `868d` | **SHIPPED LIVE** 2026-11-06 ~12:05 AM PT — https://tjm.art/play/ and https://tjm.art/play/?room=neural-dance |
+| Backlog | Volumetric smoke-machine vortices from four projectors (`nd-025`, `[t2236u]`, `[t2239u]`) | [#827](https://github.com/timothyjosephmurphy/studio-tracker/issues/827) | **BACKLOG** |
+| Docs | Living project & prompt history (Era 0/1 ChatGPT/Astra forensic + tonight’s prompts) | VA **[PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)** + Library Page `7b3e910a-…` | Open — snapshot ~12:05 AM PT, Nov 6, 2026; prompts through `[t2239u]`. [PR #800](https://github.com/timothyjosephmurphy/vermillionaurora/pull/800) still queued; do not merge this history PR ahead of it |
 | HOLD | Synchronized single-frame white strobe on capture tick | **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** | **ON HOLD** — do not implement unless TJ activates after #1 live test (`[t2205u]`) |
 | Backlog | Cheap dedicated Android device plan (cam + mic + Cast/USB-C → projector) | **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** | Open (`[t2213u]`) |
 | Backlog | 3D volumetric wave algo | [#823](https://github.com/timothyjosephmurphy/studio-tracker/issues/823) | Open |
@@ -80,7 +82,7 @@
 
 ---
 
-## 4. Nov 5 evening live-room prompts (`[t2187u]`–`[t2228u]`) — append beyond earlier reconstruction
+## 4. Nov 5 evening live-room prompts (`[t2187u]`–`[t2239u]`) — append beyond earlier reconstruction
 
 These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT evening 2026-11-05.
 
@@ -186,9 +188,12 @@ These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT ev
 - **Created / changed:** VA **[PR #802](https://github.com/timothyjosephmurphy/vermillionaurora/pull/802)** **SHIPPED LIVE** / **MERGED** 2026-11-05 ~11:36 PM PT at [`ec8f9cc01c03defce7734b992bc93796c522a4a0`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/ec8f9cc01c03defce7734b992bc93796c522a4a0) (`bc-5a22ba68` on `cursor/neural-dance-live-hotfix-32b3`; pre-merge head [`24745e2e2c3cdff9317de12016dc5d047be810f7`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/24745e2e2c3cdff9317de12016dc5d047be810f7)). Live at https://tjm.art/neural-dance/live/. `body.nd-live-aligning` auto-hides `.nd-live-chrome` and `.nd-live-reveal` and shifts `#nd-camera-mode` offscreen before baseline/grid capture; `isValidAlignmentQuad` enforces strict clockwise convexity and sanitizes poisoned bowtie quads under `nd.camera.v3`; removes `.nd-note-lock` stage pills, switches camera preview accents to cyan `#38bdf8`, and tightens `isPink` (`0.45` default, `wb.rRatio >= 1.08`, `r >= b - 0.05`); moves `[data-align-banner]` to bottom-left with zero per-note toast spam; adds `/neural-dance/live/manifest.webmanifest` (`start_url: "/neural-dance/live/"`).
 - **Evolution:** Live projector room testing caught UI chrome occluding corner fiducials, producing a degenerate crossed bowtie homography whose mirrored controls and stage badges fed back into 250+ phantom pink detections.
 
-### `nd-0090` — `[t2224u]`–`[t2228u]` Kinoteka Annex balcony, camera angles, wandering dancers — **verbatim**
-- **Received:** 2026-11-05 **~10:41–10:51 PM PT**, Studio manager → Gallery.
+### `nd-024` — Kinoteka Annex balcony walk-through — **SHIPPED LIVE**
+- **Prompt-log id:** `nd-0090`
+- **When:** 2026-11-05 **~10:41–11:05 PM PT**
+- **Channel:** Studio manager -> Gallery
 - **Fidelity:** `verbatim`
+- **Status:** **SHIPPED LIVE** — Gallery deploy `868d`, live 2026-11-06 ~12:05 AM PT
 
 `[t2224u]`:
 > Give me the link for the rooms in the Kinoteka Annex.
@@ -205,8 +210,26 @@ These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT ev
 `[t2228u]`:
 > In the annex, I want it such that you walk into a hallway that has windows that look down into these rooms, so you can see it from a balcony view.
 
-- **Created / changed:** Gallery follow-up build on `/play/neural-dance/` ([#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821)): elevated upstairs balcony hallway with panoramic observation windows looking down into Room 1 (Capture) and Room 2 (Energy + *Paradise Dystopia*) with Kinoteka arches upstairs + `Balcony view` preset, symmetric inward iPhone A/B camera frustums whose outer horizontal edges touch the outside walls (`x = ±5 m`) while inner edges intersect across centerline, and floor-wide casual dancer strolling/walking stride.
-- **Evolution:** The Annex demo is watched from an upstairs hallway instead of only from inside the two rooms, with matched camera coverage and dancers that walk the floor.
+`[t2233u]`:
+> Also make it so that when you walk into those rooms, it's a more smooth transition, like you're not leaving one area and going into another, but you're just walking through the same 3D gallery. Can you do it all in 3JS?
+
+- **Created / changed:** **Gallery deploy `868d`** (Cloudflare Pages deployment `9015f78b-3a79-4b55-a8b9-4ee8a9ddafb3`), live 2026-11-06 ~12:05 AM PT on https://tjm.art/play/ and https://tjm.art/play/?room=neural-dance. Bundles `index-2RmIr868d.js`, `main-tWQtr868d.js`, `annex868-r868d.js`, `/play/neural-dance/assets/index-CUeGo-2H.js`. Two open `1.8 × 2.7 m` brass-trimmed 3D doorways in Kinoteka's west wall walk directly onto an enclosed `24.4 m` wood observation balcony (`y = 1.2 m`, zero page reload, `0` added `THREE.Light`s) overlooking sunken Room 1 and Room 2 (`floor y = -2.3 m`), with symmetric `10.0 ft` / `±27.02°` wall-tangent iPhones (`|x| = 5.0 m`), casual floor-strolling dancers (`10–13/14` IDs locked, `0.2–0.4 cm` mean 3D error). Tracker [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821). The same deploy includes the full `/play/` glitch audit (`[t2234u]`): `art/romance-in-yelapa.webp` 503 fix, `.intensity` light gating, pause/blur key-latch clear, duplicate Kinoteka facade box dedupe, frustum-gated canvas uploads, and stale plaque collider snags disabled. ChatGPT prompt recovery template delivered (`[t2230u]`–`[t2231u]`).
+- **Evolution:** The Annex is one continuous Three.js gallery: you walk through doorways onto a balcony that looks down into both rooms, instead of leaving one page and entering another.
+
+### `nd-025` — Smoke-machine volumetric light vortices — **BACKLOG**
+- **When:** 2026-11-05 **~11:11–11:16 PM PT**
+- **Channel:** Studio manager
+- **Fidelity:** `verbatim`
+- **Status:** **BACKLOG**
+
+`[t2236u]`:
+> Is, are there good libraries for creating 3D voxels using light and like stage mist, fog? I wanna create like vortexes swirling through the mist by making the light beams intersect, let's say from four different projectors.
+
+`[t2239u]`:
+> Yeah, I wanna add a card to simulate all of that stuff described in 3JS with fog swirling in a room, and I'd like to model like, not even fog. It's coming out of a smoke machine, it's being dispersed through the room, gradually dissipating.
+
+- **Created / changed:** [studio-tracker#827](https://github.com/timothyjosephmurphy/studio-tracker/issues/827) — Three.js / WebGL2 `Data3DTexture` smoke-machine nozzle jet advection, curl-noise turbulence, and exponential dissipation paired with 4 calibrated projectors using Multiplicative ART inverse ray projection and forward Mie scattering.
+- **Evolution:** Volumetric light stays a backlog card. It does not block the live balcony deploy or the queued debug-stream PR.
 
 ## 5. Prompt → feature map (compact)
 
@@ -231,7 +254,8 @@ These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT ev
 | 2026-11-05 ~7:18 PM | Status HUD: split simulated vs sticker dancers (`[t2215u]`) | `formatDancerCount` e.g. `25 dancers (24 sim, 1 sticker)` on `/neural-dance/` + `/live/` | — | **[PR #799](https://github.com/timothyjosephmurphy/vermillionaurora/pull/799)** MERGED [`b6ebc133f0b748224d0e6c40236b87a8a55f8c6f`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/b6ebc133f0b748224d0e6c40236b87a8a55f8c6f) |
 | 2026-11-05 ~9:29 PM | Warm-halo sticker polish / vinyl threshold | Sticker markers draw a soft warm radial halo; match accepts `luma/surround <= 0.84` when local wall mean `>= 35` (measured RGB(124, 91, 68) on RGB(157, 117, 96)); pink pupil, Both/Pink notes/Dancer stickers, and 480-wide grid unchanged | — | **[PR #801](https://github.com/timothyjosephmurphy/vermillionaurora/pull/801)** **SHIPPED LIVE** [`045403cc1113957ea5ea40bce4f67fef2d0c0e59`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/045403cc1113957ea5ea40bce4f67fef2d0c0e59) |
 | 2026-11-05 ~10:28–10:33 PM | Home Screen without browser chrome; pink toast blocking controls; phantom pink notes; align grid hidden by controls; ETA (`[t2219u]`–`[t2223u]`) | Hide live chrome before grid capture; strict convex quads; tighter `isPink`; `/live/` manifest | — | **[PR #802](https://github.com/timothyjosephmurphy/vermillionaurora/pull/802)** **SHIPPED LIVE** / **MERGED** [`ec8f9cc01c03defce7734b992bc93796c522a4a0`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/ec8f9cc01c03defce7734b992bc93796c522a4a0) |
-| 2026-11-05 ~10:41–10:51 PM | Annex room links, symmetric iPhone angles, wandering dancers, balcony hallway (`[t2224u]`–`[t2228u]`) | Upstairs balcony windows over Room 1 / Room 2; inward frustums; walking stride | [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821) | Gallery `/play/neural-dance/` follow-up |
+| 2026-11-05 ~10:41–11:05 PM | Annex links, symmetric iPhones, wandering dancers, balcony, one continuous 3JS gallery (`nd-024`, `[t2224u]`–`[t2228u]`, `[t2233u]`) | Gallery deploy `868d`: west-wall doorways onto a `24.4 m` balcony over sunken rooms; `±27.02°` iPhones; strolling dancers; `/play/` glitch audit (`[t2234u]`); ChatGPT recovery template (`[t2230u]`–`[t2231u]`) | [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821) | **SHIPPED LIVE** https://tjm.art/play/?room=neural-dance |
+| 2026-11-05 ~11:11–11:16 PM | Voxel mist / smoke-machine vortices from four projectors (`nd-025`, `[t2236u]`, `[t2239u]`) | Three.js `Data3DTexture` nozzle advection + 4-projector Mie card | [#827](https://github.com/timothyjosephmurphy/studio-tracker/issues/827) | **BACKLOG** |
 
 ---
 
@@ -2423,9 +2447,8 @@ _End of master log — compiled 2026-11-05 ~7:08 PM PT. Append only below this l
 - **Ships:** align-time chrome hide, strict clockwise convex quads (`nd.camera.v3`), tighter pink detection, bottom-left align banner, `/neural-dance/live/manifest.webmanifest`
 - **Evolution:** Live projector room testing caught UI chrome occluding corner fiducials, producing a degenerate crossed bowtie homography whose mirrored controls and stage badges fed back into 250+ phantom pink detections.
 
-### Gallery follow-up — Kinoteka Annex balcony (`[t2224u]`–`[t2228u]`)
-- **Where:** `/play/neural-dance/` under studio-tracker [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821) (see `nd-0090`)
-- **Ships (follow-up build):** upstairs balcony hallway with panoramic windows into Room 1 (Capture) and Room 2 (Energy + *Paradise Dystopia*), symmetric inward iPhone A/B frustums (`x = ±5 m`), and dancers that stroll the floor.
+### Gallery — Kinoteka Annex balcony (`nd-024`, `[t2224u]`–`[t2228u]`, `[t2233u]`)
+- **Status:** **SHIPPED LIVE** — Gallery deploy `868d` (see the 12:05 AM PT sync). Tracker [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821).
 
 ---
 
@@ -2439,4 +2462,32 @@ _End of master log — compiled 2026-11-05 ~7:08 PM PT. Append only below this l
 - **Ships:** Align projector clears chrome before baseline (`body.nd-live-aligning` hides `.nd-live-chrome` and `.nd-live-reveal`, shifts `#nd-camera-mode` offscreen with `translateX(-120vw)`; Cancel align via `finishAlign`; baseline waits 2 rAF + `alignSettleMs` default 180). Bowtie quads rejected (`isValidAlignmentQuad` requires clockwise convex order/area/edge ratios; `cornersFromMarkerCenters` returns null on failure; poisoned saved corners replaced with a full-frame quad under `nd.camera.v3`). Optical feedback / warm-wall false pinks: remove `.nd-note-lock` badges; cyan `#38bdf8` overlay accents; tighter `isPink` (sensitivity 0.45, stronger rRatio, reject blue-heavy); defaults hue 32, min blob 22. Stage toasts: `[data-align-banner]` bottom-left; no per-marker detected toasts; mic chip says Mic on. Home Screen `start_url` for `/neural-dance/live/` via `static/neural-dance/live/manifest.webmanifest`.
 - **Touches:** `neural-dance/camera-markers.js`, `neural-dance/live-show.js`, `neural-dance/room-lab.js`, `src/pages/neural-dance/index.astro`, `src/pages/neural-dance/live/index.astro`, `static/neural-dance/live/manifest.webmanifest`, `static/_headers`, `tests/*`, `worker/site.mjs`
 - **Evolution:** Live projector room testing caught UI chrome occluding corner fiducials, producing a degenerate crossed bowtie homography whose mirrored controls and stage badges fed back into phantom pink detections — this hotfix clears the wall for Align, sanitizes bowtie quads, and tightens pink detection so zero-note rooms stay quiet.
-- **Follow-ons still open:** Option 1 live debug stream ([PR #800](https://github.com/timothyjosephmurphy/vermillionaurora/pull/800) / [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824) / `bc-623cfcbe`); this history docs PR ([#795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)); strobe [#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825) **ON HOLD**; Android plan [#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826); Kinoteka Annex balcony follow-up under [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821).
+- **Follow-ons still open:** Option 1 live debug stream ([PR #800](https://github.com/timothyjosephmurphy/vermillionaurora/pull/800) / [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824) / `bc-623cfcbe`) — still queued, do not merge history [PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795) ahead of it; strobe [#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825) **ON HOLD**; Android plan [#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826); smoke-machine voxels [#827](https://github.com/timothyjosephmurphy/studio-tracker/issues/827) **BACKLOG** (`nd-025`). Kinoteka Annex balcony (`nd-024`) **SHIPPED LIVE** as Gallery deploy `868d`.
+
+---
+
+## Releases / deploys — snapshot ~12:05 AM PT, Nov 6, 2026
+
+| When (PT) | Release | Status |
+|-----------|---------|--------|
+| 2026-11-05 ~8:05 PM | [VA PR #794](https://github.com/timothyjosephmurphy/vermillionaurora/pull/794) [`e5b7ef36`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/e5b7ef36b33eb119085de123794d0f38a4ee8007) | **SHIPPED LIVE** |
+| 2026-11-05 ~8:53 PM | [VA PR #799](https://github.com/timothyjosephmurphy/vermillionaurora/pull/799) [`b6ebc133`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/b6ebc133f0b748224d0e6c40236b87a8a55f8c6f) | **SHIPPED LIVE** |
+| 2026-11-05 ~9:29 PM | [VA PR #801](https://github.com/timothyjosephmurphy/vermillionaurora/pull/801) [`045403cc`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/045403cc1113957ea5ea40bce4f67fef2d0c0e59) | **SHIPPED LIVE** |
+| 2026-11-05 ~11:36 PM | [VA PR #802](https://github.com/timothyjosephmurphy/vermillionaurora/pull/802) [`ec8f9cc0`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/ec8f9cc01c03defce7734b992bc93796c522a4a0) | **SHIPPED LIVE** |
+| 2026-11-06 ~12:05 AM | Gallery deploy `868d` (`9015f78b-3a79-4b55-a8b9-4ee8a9ddafb3`) — `nd-024` | **SHIPPED LIVE** — https://tjm.art/play/ · https://tjm.art/play/?room=neural-dance |
+| queued | [VA PR #800](https://github.com/timothyjosephmurphy/vermillionaurora/pull/800) / [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824) live debug stream | **QUEUED** — do not merge history PR #795 ahead of this |
+| backlog | [#827](https://github.com/timothyjosephmurphy/studio-tracker/issues/827) smoke-machine voxels — `nd-025` | **BACKLOG** |
+
+## Release sync — 2026-11-06 ~12:05 AM PT
+
+### Gallery deploy `868d` — Kinoteka Annex balcony (`nd-024`) **SHIPPED LIVE**
+- **Deployment:** Cloudflare Pages `9015f78b-3a79-4b55-a8b9-4ee8a9ddafb3`
+- **Live:** 2026-11-06 ~12:05 AM PT on https://tjm.art/play/ and https://tjm.art/play/?room=neural-dance
+- **Bundles:** `index-2RmIr868d.js`, `main-tWQtr868d.js`, `annex868-r868d.js`, `/play/neural-dance/assets/index-CUeGo-2H.js`
+- **Ships:** Two open `1.8 × 2.7 m` brass-trimmed 3D doorways in Kinoteka's west wall walk directly onto an enclosed `24.4 m` wood observation balcony (`y = 1.2 m`, zero page reload, `0` added `THREE.Light`s) overlooking sunken Room 1 and Room 2 (`floor y = -2.3 m`). Symmetric `10.0 ft` / `±27.02°` wall-tangent iPhones (`|x| = 5.0 m`). Casual floor-strolling dancers (`10–13/14` IDs locked, `0.2–0.4 cm` mean 3D error). `/play/` glitch audit (`[t2234u]`): `art/romance-in-yelapa.webp` 503 fix, `.intensity` light gating, pause/blur key-latch clear, duplicate Kinoteka facade box dedupe, frustum-gated canvas uploads, and stale plaque collider snags disabled.
+- **Also:** ChatGPT prompt recovery template delivered (`[t2230u]`–`[t2231u]`).
+- **Prompts:** `[t2224u]`–`[t2228u]`, `[t2233u]` (see `nd-024`).
+
+### `nd-025` / [#827](https://github.com/timothyjosephmurphy/studio-tracker/issues/827) — **BACKLOG**
+- **When:** 2026-11-05 ~11:11–11:16 PM PT (`[t2236u]`, `[t2239u]`)
+- **Card:** Three.js / WebGL2 `Data3DTexture` smoke-machine nozzle jet advection, curl-noise turbulence, and exponential dissipation paired with 4 calibrated projectors using Multiplicative ART inverse ray projection and forward Mie scattering.
