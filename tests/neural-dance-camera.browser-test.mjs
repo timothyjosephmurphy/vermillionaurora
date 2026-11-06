@@ -103,9 +103,10 @@ try {
     [box.x + 12, box.y + box.height - 12]
   ];
   for (const [x, y] of corners) await page.mouse.click(x, y);
-  await page.click('[data-action="markers"]');
-  await page.waitForFunction(() => Array.isArray(window.__markers) && window.__markers.length === 1, {timeout: 4000});
+  await page.waitForFunction(() => document.querySelector('[data-action="markers"]')?.getAttribute('aria-pressed') === 'true');
+  await page.waitForFunction(() => Array.isArray(window.__markers) && window.__markers.length === 1, null, {timeout: 4000});
   const marker = await page.evaluate(() => window.__markers[0]);
+  assert.equal(marker.kind, 'pink');
   assert.equal(marker.type, 0);
   assert.ok(marker.x > 150 && marker.x < 700, `projected x ${marker.x}`);
   assert.ok(marker.y > 50 && marker.y < 450, `projected y ${marker.y}`);

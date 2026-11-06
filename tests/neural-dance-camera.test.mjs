@@ -13,6 +13,8 @@ import {
   CANVAS_H,
   CANVAS_W,
   CLEAR_MS,
+  LATCH_RADIUS,
+  UI_EXCLUSION_SELECTORS,
   CORNER_STEPS,
   DEFAULTS,
   DETECT_WIDTH,
@@ -32,6 +34,8 @@ import {
   detectPinkMarkers,
   detectStickerBlobs,
   areaScaleFor,
+  markerFrameGate,
+  minBlobEquivalent,
   stickerDarkRatio,
   detectionSize,
   downsampleRgba,
@@ -201,28 +205,32 @@ test('pink blobs use hue tolerance, saturation sensitivity, and minimum size', (
   assert.equal(both.length, 2);
 });
 
-test('a marker appears after about 1.5s and clears once the note is gone', () => {
+test('a confirmed marker latches through misses and clear() is the only way it leaves', () => {
   const tracker = createMarkerTracker();
   assert.equal(APPEAR_MS, 1500);
   assert.ok(CLEAR_MS > 0 && CLEAR_MS < 1000);
+  assert.equal(LATCH_RADIUS >= 64, true);
   assert.deepEqual(tracker.update([{x: 10, y: 10}], 0), []);
   assert.deepEqual(tracker.update([{x: 10, y: 12}], 1499), []);
-  const up = tracker.update([{x: 12, y: 11}], 1500);
+  const up = tracker.update([{x: 12, y: 11, kind: 'sticker'}], 1500);
   assert.equal(up.length, 1);
   assert.equal(up[0].id, 1);
+  assert.equal(up[0].kind, 'sticker');
   close(up[0].x, 12, 1e-9, 'tracked x');
 
   const gone = tracker.update([], 1600);
   assert.equal(gone.length, 1, 'a missed frame keeps the marker');
   assert.equal(gone[0].id, 1);
-  const held = tracker.update([], 1600 + CLEAR_MS - 1);
-  assert.equal(held.length, 1);
-  assert.deepEqual(tracker.update([], 1600 + CLEAR_MS), []);
+  const held = tracker.update([], 1600 + CLEAR_MS * 40);
+  assert.equal(held.length, 1, 'disappearMs does not remove a confirmed marker');
+  assert.equal(held[0].kind, 'sticker');
+  const same = tracker.update([{x: 20, y: 14, kind: 'sticker'}], 9000);
+  assert.deepEqual(same.map(m => m.id), [1]);
 
-  assert.deepEqual(tracker.update([{x: 12, y: 11}], 2000), []);
-  const again = tracker.update([{x: 14, y: 11}], 2000 + APPEAR_MS);
-  assert.equal(again.length, 1);
-  assert.notEqual(again[0].id, 1);
+  const flicker = createMarkerTracker();
+  flicker.update([{x: 4, y: 4}], 0);
+  assert.deepEqual(flicker.update([], CLEAR_MS + 5), []);
+  assert.deepEqual(flicker.stage(), []);
 
   const pair = createMarkerTracker();
   pair.update([{x: 0, y: 0}], 0);
@@ -230,10 +238,27 @@ test('a marker appears after about 1.5s and clears once the note is gone', () =>
   assert.equal(first.length, 1);
   const second = pair.update([{x: 1, y: 0}, {x: 92, y: 2}], APPEAR_MS * 2);
   assert.deepEqual(second.map(m => m.id), [1, 2]);
-  const fading = pair.update([{x: 92, y: 2}], APPEAR_MS * 2 + 10);
-  assert.deepEqual(fading.map(m => m.id), [1, 2]);
-  const oneLeft = pair.update([{x: 92, y: 2}], APPEAR_MS * 2 + 10 + CLEAR_MS);
-  assert.deepEqual(oneLeft.map(m => m.id), [2]);
+  const stillBoth = pair.update([{x: 92, y: 2}], APPEAR_MS * 2 + 10 + CLEAR_MS);
+  assert.deepEqual(stillBoth.map(m => m.id), [1, 2]);
+  pair.clear();
+  assert.deepEqual(pair.update([], APPEAR_MS * 4), []);
+  assert.deepEqual(pair.stage(), []);
+
+  const stage = createMarkerTracker();
+  const latched = stage.commitStage([{id: 4, x: 100, y: 200, kind: 'sticker'}]);
+  assert.equal(latched.length, 1);
+  assert.equal(latched[0].kind, 'sticker');
+  const merged = stage.commitStage([{id: 9, x: 100 + LATCH_RADIUS - 4, y: 210, kind: 'sticker'}]);
+  assert.equal(merged.length, 1, 'a nearby redetection does not spawn a second dot');
+  assert.equal(merged[0].id, latched[0].id);
+  const kept = stage.commitStage([]);
+  assert.equal(kept.length, 1);
+  assert.equal(kept[0].kind, 'sticker');
+  const apart = stage.commitStage([{id: 3, x: 700, y: 40, kind: 'pink'}]);
+  assert.equal(apart.length, 2);
+  assert.deepEqual(apart.map(m => m.kind).sort(), ['pink', 'sticker']);
+  stage.clear();
+  assert.deepEqual(stage.commitStage([]), []);
 });
 
 test('downscaled frames project a stable pink note onto the room canvas', () => {
@@ -258,11 +283,23 @@ test('downscaled frames project a stable pink note onto the room canvas', () => 
   const late = markersFromFrame(frame, DEFAULTS, H, scale, tracker, APPEAR_MS);
   assert.equal(late.markers.length, 1);
   const marker = late.markers[0];
+  assert.equal(marker.kind, 'pink');
   assert.equal(marker.type, 0);
   close(marker.x, (early.blobs[0].x / srcW) * CANVAS_W, 1.5, 'projected x');
   close(marker.y, (early.blobs[0].y / srcH) * CANVAS_H, 1.5, 'projected y');
   assert.ok(marker.x > 200 && marker.x < 450);
   assert.ok(marker.y > 100 && marker.y < 320);
+  const blank = paint(scale.width, scale.height, () => [6, 8, 12]);
+  const occluded = markersFromFrame({data: blank, width: scale.width, height: scale.height}, DEFAULTS, H, scale, tracker, APPEAR_MS + CLEAR_MS * 30);
+  assert.equal(occluded.markers.length, 1, 'an occluded frame keeps the latched dancer');
+  assert.equal(occluded.markers[0].id, marker.id);
+  assert.equal(occluded.markers[0].kind, 'pink');
+  tracker.clear();
+  const cleared = markersFromFrame({data: blank, width: scale.width, height: scale.height}, DEFAULTS, H, scale, tracker, APPEAR_MS + 99999);
+  assert.deepEqual(cleared.markers, []);
+  const preview = markersFromFrame(frame, DEFAULTS, H, scale, createMarkerTracker(), APPEAR_MS, {latch: false});
+  assert.equal(preview.blobs.length, 1);
+  assert.deepEqual(preview.markers, []);
 });
 
 test('camera list keeps an iPhone Camera and settings round-trip', () => {
@@ -368,6 +405,41 @@ test('white balance finds the post-it in both of TJ\'s rooms and ignores the wal
   assert.ok(saturationFloor(0) > 0.4);
 });
 
+test('a 480-wide frame keeps a real post-it at slider 87 and stays quiet on a warm blank wall', () => {
+  assert.ok(Math.abs(areaScaleFor(480) - 9) < 0.01);
+  assert.ok(Math.abs(minBlobEquivalent(87, 480) - 87 / 9) < 1e-9);
+  assert.equal(minBlobEquivalent(18, 48), 18);
+  const width = 480;
+  const height = 360;
+  const bg = [135, 124, 109];
+  const blank = paint(width, height, () => bg);
+  const tuned = {...DEFAULTS, minBlobSize: 87, hueTolerance: 72, saturationSensitivity: 0.63};
+  assert.equal(detectPinkMarkers(blank, width, height, tuned).length, 0, 'warm blank wall');
+  const note = [220, 120, 150];
+  const frame = paint(width, height, (x, y) => x >= 180 && x < 194 && y >= 80 && y < 94 ? note : bg);
+  const found = detectPinkMarkers(frame, width, height, tuned);
+  assert.equal(found.length, 1, '150–220 px note survives min 87');
+  assert.ok(found[0].area >= 150 && found[0].area <= 220);
+  assert.equal(found[0].kind, 'pink');
+  const decoys = [[157, 117, 96], [215, 222, 205], [49, 88, 184], [142, 98, 74]];
+  const mixed = paint(width, height, (x, y) => {
+    if (x >= 180 && x < 194 && y >= 80 && y < 94) return note;
+    const patch = decoys.find((_, index) => x >= 20 + index * 40 && x < 36 + index * 40 && y >= 200 && y < 216);
+    return patch || bg;
+  });
+  assert.equal(detectPinkMarkers(mixed, width, height, DEFAULTS).length, 1, 'default hue ignores warm-wall browns');
+  const gate = markerFrameGate([1, 0, 0, 0, 1, 0, 0, 0, 1], [{x: 0, y: 0, w: 10, h: 10}]);
+  assert.deepEqual(gate.exclude, [{x: 0, y: 0, w: 10, h: 10}]);
+  assert.equal(markerFrameGate(null, gate.exclude).homography, null);
+  assert.equal(markerFrameGate(null, gate.exclude).exclude, null);
+  assert.ok(UI_EXCLUSION_SELECTORS.includes('.nd-live-chrome'));
+  assert.ok(UI_EXCLUSION_SELECTORS.includes('#nd-camera-mode'));
+  assert.match(camera, /markerFrameGate\(homography, uiExclusions\(\)\)/);
+  assert.match(camera, /data-marker-clear/);
+  assert.match(camera, /forgetLatchedMarkers/);
+  assert.match(camera, /armMarkersIfAligned/);
+});
+
 test('a dark dancer sticker is darker than the local screen and both kinds stay in range', () => {
   assert.equal(DETECT_WIDTH, 480);
   assert.equal(areaScaleFor(160), 1);
@@ -386,20 +458,34 @@ test('a dark dancer sticker is darker than the local screen and both kinds stay 
     data[i + 2] = 96;
     data[i + 3] = 255;
   }
-  const paint = (x, y) => {
+  const ink = (x, y) => {
     const i = (y * width + x) * 4;
     data[i] = 124;
     data[i + 1] = 91;
     data[i + 2] = 68;
   };
-  for (let y = 40; y < 52; y++) paint(80, y);
-  for (let x = 74; x < 87; x++) paint(x, 46);
-  for (let y = 52; y < 70; y++) { paint(76, y); paint(84, y); }
+  for (let y = 40; y < 52; y++) ink(80, y);
+  for (let x = 74; x < 87; x++) ink(x, 46);
+  for (let y = 52; y < 70; y++) { ink(76, y); ink(84, y); }
   const found = detectStickerBlobs(data, width, height, {stickerSensitivity: 0.5});
   assert.equal(found.length, 1);
   assert.equal(found[0].kind, 'sticker');
   assert.equal(DEFAULTS.detectionMode, 'both');
   assert.equal(DEFAULTS.markerMode, 'both');
+  const tracker = createMarkerTracker();
+  const H = homographyFromNormalized([{x: 0, y: 0}, {x: 1, y: 0}, {x: 1, y: 1}, {x: 0, y: 1}], width, height);
+  const settings = {...DEFAULTS, minBlobSize: 8};
+  const scale = {scaleX: 1, scaleY: 1};
+  const frame = {data, width, height};
+  assert.equal(markersFromFrame(frame, settings, H, scale, tracker, 0).markers.length, 0);
+  const placed = markersFromFrame(frame, settings, H, scale, tracker, APPEAR_MS);
+  assert.equal(placed.markers.length, 1);
+  assert.equal(placed.markers[0].kind, 'sticker');
+  const hidden = paint(width, height, () => [157, 117, 96]);
+  const stayed = markersFromFrame({data: hidden, width, height}, settings, H, scale, tracker, APPEAR_MS + CLEAR_MS * 20);
+  assert.equal(stayed.markers.length, 1);
+  assert.equal(stayed.markers[0].kind, 'sticker');
+  assert.equal(stayed.markers[0].id, placed.markers[0].id);
 });
 
 test('calibration markers recover the stage corners from a white field', () => {
