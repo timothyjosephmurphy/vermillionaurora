@@ -55,7 +55,7 @@ try {
   await page.click('[data-action="camera"]');
   await page.waitForFunction(() => {
     const video = document.querySelector('[data-preview]');
-    return video && video.videoWidth > 0 && video.readyState >= 2 && video.paused === false && video.muted === true && video.playsInline === true;
+    return video && video.videoWidth > 0 && video.readyState >= 2 && video.paused === false && video.muted === true && video.playsInline === true && video.currentTime > 0;
   });
   const chosen = await page.evaluate(() => {
     const calls = window.__calls;

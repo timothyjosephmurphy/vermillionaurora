@@ -1,11 +1,13 @@
 name: Release gate
 
-# Tiered PR gate (required check: "gate").
-#   blog     (story HTML, blog index, that post's display/social files, blog upload assets): build + article check. No Playwright.
-#   content  (catalog data, images, other static, docs): build + changed pages load.
-#   code     (site code): build + unit tests + browser tests for touched areas + smoke.
-#   print-master (only prints.json/master files for existing paintings): content + 3 sampled sandbox quotes.
-#   full     (checkout, payments, workers, CI, dependencies, or manual runs): the full suite.
+# Tiered PR gate. The required status check is the final job named "gate".
+#   blog     story HTML and that post's display/social files: build + article check. No Playwright.
+#   content  catalog data, images, other static, docs: build + changed pages load.
+#   code     site code: build + unit tests + browser tests for touched areas + smoke.
+#   print-master only prints.json/master files for existing paintings: content + 3 sampled sandbox quotes.
+#   full     checkout, payments, workers, CI, dependencies, or manual runs: the full suite.
+# prepare builds once and uploads dist/. Browser jobs use the Playwright image that matches
+# package-lock.json (browsers and OS libraries are already installed). Checkout is shallow.
 # Testing never takes payment, submits FinerWorks orders, or holds originals.
 on:
   pull_request:
@@ -22,31 +24,51 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  gate:
+  prepare:
     runs-on: ubuntu-latest
-    # Backstop if a cold install is slow. Cached browsers should make later runs short.
-    # A cold Ubuntu 26 WebKit apt install has taken about 50 minutes and then cancelled
-    # the full suite at 60, while the browser tests that had started were still passing.
-    timeout-minutes: 120
+    timeout-minutes: 40
+    outputs:
+      tier: ${{ steps.changes.outputs.tier }}
+      browser_tests: ${{ steps.changes.outputs.browser_tests }}
+      print_quotes: ${{ steps.changes.outputs.print_quotes }}
+      files: ${{ steps.changes.outputs.files }}
+      room: ${{ steps.changes.outputs.room }}
+      chromium_shards: ${{ steps.changes.outputs.chromium_shards }}
+      chromium_shard_total: ${{ steps.changes.outputs.chromium_shard_total }}
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Classify changed paths
         id: changes
+        timeout-minutes: 5
         env:
           GH_TOKEN: ${{ github.token }}
           FORCE_FULL: ${{ github.event_name != 'pull_request' }}
         run: |
+          set -euo pipefail
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             gh api --paginate "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files?per_page=100" --jq '.[].filename' > /tmp/changed.txt || : > /tmp/changed.txt
           else
             : > /tmp/changed.txt
           fi
-          node scripts/ci/classify-changes.mjs < /tmp/changed.txt
-          # The frozen release branch only needs build and config checks.
-          if [ "${{ github.base_ref }}" = "release" ]; then echo "tier=release" >> "$GITHUB_OUTPUT"; fi
-          echo "files<<EOF" >> "$GITHUB_OUTPUT"; head -500 /tmp/changed.txt >> "$GITHUB_OUTPUT"; echo "EOF" >> "$GITHUB_OUTPUT"
+          classified=$(node scripts/ci/classify-changes.mjs < /tmp/changed.txt)
+          printf '%s\n' "$classified"
+          tier=$(printf '%s' "$classified" | node --input-type=module -e "let s='';process.stdin.on('data',d=>s+=d);process.stdin.on('end',()=>process.stdout.write(JSON.parse(s).tier))")
+          if [ "${{ github.base_ref }}" = "release" ]; then
+            tier=release
+            echo "tier=release" >> "$GITHUB_OUTPUT"
+          fi
+          if [ "$tier" = "full" ]; then
+            echo 'chromium_shards=["1","2"]' >> "$GITHUB_OUTPUT"
+            echo 'chromium_shard_total=2' >> "$GITHUB_OUTPUT"
+          else
+            echo 'chromium_shards=["1"]' >> "$GITHUB_OUTPUT"
+            echo 'chromium_shard_total=1' >> "$GITHUB_OUTPUT"
+          fi
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          head -500 /tmp/changed.txt >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -54,10 +76,9 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             cloudflare/test/package-lock.json
-      # Blog publishes skip the Playwright browser download inside npm ci. Other tiers keep
-      # the normal install; their later steps still install the browsers they run.
       - name: Install dependencies without browsers
         if: steps.changes.outputs.tier == 'blog'
+        timeout-minutes: 10
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
         run: |
@@ -70,6 +91,9 @@ jobs:
           done
       - name: Install dependencies
         if: steps.changes.outputs.tier != 'blog'
+        timeout-minutes: 10
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
         run: |
           n=0
           until npm ci; do
@@ -78,10 +102,14 @@ jobs:
             echo "npm ci failed; retrying once"
             sleep 8
           done
-      - run: npm run build
+      - name: Build the site
+        timeout-minutes: 30
+        run: npm run build
       - name: Confirm generated catalogs are committed
+        timeout-minutes: 2
         run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/commission-deposits.mjs cloudflare/print-catalog.mjs cloudflare/etsy-print-source.mjs cloudflare/etsy-sync-source.mjs
       - name: Validate production Worker configuration
+        timeout-minutes: 2
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
@@ -90,93 +118,232 @@ jobs:
             throw new Error('Unexpected production Worker configuration');
           }
           NODE
-      - name: Confirm changed blog articles are on the index
-        if: steps.changes.outputs.tier == 'blog'
+      - name: Upload the built site
+        timeout-minutes: 10
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 1
+          if-no-files-found: error
+
+  unit-and-print:
+    needs: prepare
+    if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'blog' || needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            cloudflare/test/package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 10
         env:
-          CHANGED_FILES: ${{ steps.changes.outputs.files }}
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - name: Download the built site
+        timeout-minutes: 5
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Confirm changed blog articles are on the index
+        if: needs.prepare.outputs.tier == 'blog'
+        timeout-minutes: 5
+        env:
+          CHANGED_FILES: ${{ needs.prepare.outputs.files }}
         run: |
           node scripts/verify-blog-pages.mjs --changed
           node --test tests/blog-card-images.test.mjs
-      - name: Resolve Playwright version
-        id: playwright-version
-        if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
-        # Browsers live in ~/.cache/ms-playwright. Key on the version
-        # `npx playwright --version` reports (the copy npm ci installed) plus the
-        # browser set, so a Chromium-only run cannot pin a cache that is missing WebKit.
-        # Install once here, before any suite that launches a browser. Always run
-        # install, including on a cache hit: WebKit on ubuntu-latest needs
-        # `install --with-deps` for system packages, which are not part of this cache.
-        # The blog tier never reaches these steps.
-        env:
-          TIER: ${{ steps.changes.outputs.tier }}
-          BROWSER_TESTS: ${{ steps.changes.outputs.browser_tests }}
-        run: |
-          version="$(npx playwright --version | tr -d '\r' | awk '{print $NF}')"
-          case "$version" in
-            [0-9]*.[0-9]*.[0-9]*) ;;
-            *) echo "Unexpected Playwright version: $version" >&2; exit 1 ;;
-          esac
-          if [ "$TIER" = "full" ] || { [ "$TIER" = "code" ] && [ -n "$BROWSER_TESTS" ]; }; then
-            browsers=chromium-webkit
-          else
-            browsers=chromium
-          fi
-          echo "version=$version" >> "$GITHUB_OUTPUT"
-          echo "browsers=$browsers" >> "$GITHUB_OUTPUT"
-          echo "cache_key=${RUNNER_OS}-playwright-${version}-${browsers}" >> "$GITHUB_OUTPUT"
-          echo "Playwright $version ($browsers)"
-      - name: Restore Playwright browsers
-        id: playwright-cache
-        if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ steps.playwright-version.outputs.cache_key }}
-          restore-keys: |
-            ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}-
-      - name: Install Chromium
-        if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
-        run: |
-          n=0
-          until npx playwright install --only-shell chromium; do
-            n=$((n+1))
-            if [ "$n" -ge 2 ]; then exit 1; fi
-            echo "Chromium install failed; retrying once"
-            sleep 8
-          done
-      - name: Install WebKit
-        if: steps.changes.outputs.tier == 'full' || (steps.changes.outputs.tier == 'code' && steps.changes.outputs.browser_tests != '')
-        run: |
-          n=0
-          until npx playwright install --with-deps webkit; do
-            n=$((n+1))
-            if [ "$n" -ge 2 ]; then exit 1; fi
-            echo "WebKit install failed; retrying once"
-            sleep 8
-          done
-      - name: Save Playwright browsers
-        if: (steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full') && steps.playwright-version.outcome == 'success' && steps.playwright-cache.outputs.cache-hit != 'true' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
-        continue-on-error: true
-        uses: actions/cache/save@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ steps.playwright-version.outputs.cache_key }}
-      - name: Smoke test home, gallery, product, cart and changed pages
-        if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code'
-        env:
-          CHANGED_FILES: ${{ steps.changes.outputs.files }}
-        run: node tests/smoke.browser-test.mjs
       - name: Run application tests
-        if: steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
+        if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
+        timeout-minutes: 12
         run: npm test
       - name: Run print unit tests
-        if: steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
-        run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
-      - name: Browser tests for touched areas
-        if: steps.changes.outputs.tier == 'code' && steps.changes.outputs.browser_tests != ''
-        run: for t in ${{ steps.changes.outputs.browser_tests }}; do echo "::group::$t"; node "$t"; echo "::endgroup::"; done
-      - name: Deploy sandbox with this catalog (print-master tier)
-        if: steps.changes.outputs.print_quotes == 'true'
+        if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
+        timeout-minutes: 10
+        run: npm run test:print
+      - name: Install Cloudflare Worker test dependencies
+        if: needs.prepare.outputs.tier == 'full'
+        timeout-minutes: 5
+        run: |
+          n=0
+          until npm --prefix cloudflare/test ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - name: Run Cloudflare Worker tests
+        if: needs.prepare.outputs.tier == 'full'
+        timeout-minutes: 10
+        run: npm run test:worker
+
+  browser-chromium:
+    needs: prepare
+    if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'content' || needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.1-noble
+      options: --user root --shm-size=1g
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJSON(needs.prepare.outputs.chromium_shards || '["1"]') }}
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 10
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - name: Download the built site
+        timeout-minutes: 5
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Run Chromium browser tests
+        timeout-minutes: 25
+        env:
+          CHANGED_FILES: ${{ needs.prepare.outputs.files }}
+          TIER: ${{ needs.prepare.outputs.tier }}
+          BROWSER_TESTS: ${{ needs.prepare.outputs.browser_tests }}
+          SHARD: ${{ matrix.shard }}
+          SHARD_TOTAL: ${{ needs.prepare.outputs.chromium_shard_total }}
+        run: |
+          set -euo pipefail
+          if [ "$TIER" = "full" ]; then
+            node tests/run-browser.mjs --shard="${SHARD}/${SHARD_TOTAL}" --engine=chromium
+          else
+            node tests/run-browser.mjs -- tests/smoke.browser-test.mjs $BROWSER_TESTS
+          fi
+      - name: Save browser previews
+        if: always()
+        timeout-minutes: 5
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-previews-chromium-${{ matrix.shard }}
+          path: |
+            /tmp/gallery-wall-*.png
+            /tmp/gallery-room-*.png
+            /tmp/paintings-wall-*.png
+          if-no-files-found: ignore
+          retention-days: 1
+
+  browser-webkit:
+    needs: prepare
+    if: needs.prepare.result == 'success' && needs.prepare.outputs.tier == 'full'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.1-noble
+      options: --user root --shm-size=1g
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 10
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - name: Download the built site
+        timeout-minutes: 5
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Run WebKit browser tests
+        timeout-minutes: 18
+        env:
+          CHANGED_FILES: ${{ needs.prepare.outputs.files }}
+        run: node tests/run-browser.mjs --engine=webkit
+      - name: Save browser previews
+        if: always()
+        timeout-minutes: 5
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-previews-webkit
+          path: |
+            /tmp/gallery-wall-*.png
+            /tmp/gallery-room-*.png
+            /tmp/paintings-wall-*.png
+          if-no-files-found: ignore
+          retention-days: 1
+
+  print-quotes:
+    needs: prepare
+    if: needs.prepare.result == 'success' && needs.prepare.outputs.print_quotes == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Fetch the base commit for catalog comparison
+        timeout-minutes: 5
+        run: git fetch --depth=1 origin "${{ github.base_ref }}"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 10
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - name: Deploy sandbox with this catalog
+        timeout-minutes: 10
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
@@ -184,35 +351,46 @@ jobs:
           wranglerVersion: '4.143.0'
           workingDirectory: cloudflare
           command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
-      - name: Three sampled supplier quotes of the changed painting (read-only)
-        if: steps.changes.outputs.print_quotes == 'true'
+      - name: Three sampled supplier quotes of the changed painting
+        timeout-minutes: 20
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           DEPLOYED_SHA: ${{ github.sha }}
           BASE_REF: origin/${{ github.base_ref }}
         run: node scripts/ci/sample-print-quotes.mjs
-      # ---- Full suite (checkout/payments/worker/CI changes and manual runs) ----
-      # Chromium and WebKit were installed once above when tier == full.
-      - name: Run browser tests
-        if: steps.changes.outputs.tier == 'full'
-        run: npm run test:browser && node tests/smoke.browser-test.mjs
-      - name: Install Cloudflare Worker test dependencies
-        if: steps.changes.outputs.tier == 'full'
-        run: npm --prefix cloudflare/test ci
-      - name: Run Cloudflare Worker tests
-        if: steps.changes.outputs.tier == 'full'
-        run: npm run test:worker
-      - name: Check print framing and print samples
-        if: steps.changes.outputs.tier == 'full'
+
+  gate:
+    name: gate
+    needs: [prepare, unit-and-print, browser-chromium, browser-webkit, print-quotes]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fail unless required jobs succeeded or were skipped
+        timeout-minutes: 2
+        env:
+          PREPARE: ${{ needs.prepare.result }}
+          UNIT: ${{ needs.unit-and-print.result }}
+          CHROMIUM: ${{ needs.browser-chromium.result }}
+          WEBKIT: ${{ needs.browser-webkit.result }}
+          QUOTES: ${{ needs.print-quotes.result }}
         run: |
-          node tests/print-framing.browser-test.mjs
-          node tests/live-print-samples.browser-test.mjs
-      - name: Save browser previews
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browser-previews
-          path: |
-            /tmp/gallery-wall-*.png
-            /tmp/gallery-room-*.png
-          if-no-files-found: ignore
+          node --input-type=module <<'NODE'
+          const results = {
+            prepare: process.env.PREPARE,
+            'unit-and-print': process.env.UNIT,
+            'browser-chromium': process.env.CHROMIUM,
+            'browser-webkit': process.env.WEBKIT,
+            'print-quotes': process.env.QUOTES,
+          };
+          console.log(results);
+          if (results.prepare !== 'success') {
+            console.error('prepare must succeed');
+            process.exit(1);
+          }
+          const bad = Object.entries(results).filter(([, result]) => result !== 'success' && result !== 'skipped');
+          if (bad.length) {
+            console.error('Required jobs did not succeed:', bad);
+            process.exit(1);
+          }
+          NODE

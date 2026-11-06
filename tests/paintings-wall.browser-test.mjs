@@ -24,7 +24,9 @@ function router(state){
     return route.fulfill({body,contentType:mime[path.extname(file)]||'application/octet-stream'});
   };
 }
-for(const engine of [chromium,webkit]){
+const engines=[chromium,webkit].filter(engine=>!process.env.PW_ENGINE||engine.name()===process.env.PW_ENGINE);
+if(!engines.length)throw new Error(`No browser engine matches PW_ENGINE=${process.env.PW_ENGINE}`);
+for(const engine of engines){
   const browser=await engine.launch({headless:true,...(engine===chromium?{args:['--no-sandbox']}:{})});
   try{
     for(const mobile of [false,true]){

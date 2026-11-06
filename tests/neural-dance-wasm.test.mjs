@@ -1,8 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import './neural-dance-camera.test.mjs';
-import './neural-dance-live.test.mjs';
 
 const wasm = readFileSync(new URL('../neural-dance/neural-dance.wasm', import.meta.url));
 const page = readFileSync(new URL('../src/pages/neural-dance/index.astro', import.meta.url), 'utf8');

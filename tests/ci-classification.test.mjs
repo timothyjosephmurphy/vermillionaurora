@@ -77,13 +77,19 @@ test('blog files mixed with catalog, checkout, workers, or CI leave the blog tie
 test('the blog gate does not install or run Playwright',()=>{
   const yml=readFileSync(new URL('../.github/workflows/release-gate.yml',import.meta.url),'utf8');
   assert.match(yml,/Install dependencies without browsers[\s\S]*tier == 'blog'[\s\S]*PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'[\s\S]*npm ci/);
-  const steps=yml.split(/\n      - /).slice(1);
-  const playwright=steps.filter(step=>/playwright|smoke\.browser-test|test:browser/.test(step));
-  assert.ok(playwright.length>=4);
-  for(const step of playwright){
-    const line=step.match(/\n        if: (.+)/)?.[1]||'';
-    assert.match(line,/steps\.changes\.outputs\.tier == '/);
-    assert.equal(line.includes("'blog'"),false,step.slice(0,120));
+  assert.match(yml,/mcr\.microsoft\.com\/playwright:v1\.62\.1-noble/);
+  assert.doesNotMatch(yml,/playwright install/);
+  assert.doesNotMatch(yml,/fetch-depth:\s*0/);
+  assert.match(yml,/^\s*gate:\n(?:.*\n)*?\s*name: gate$/m);
+  assert.match(yml,/if: always\(\)/);
+  const headers=[...yml.matchAll(/^  ([a-z0-9-]+):\s*$/gm)].map(match=>({name:match[1],index:match.index}));
+  for(const job of ['browser-chromium','browser-webkit']){
+    const start=headers.find(header=>header.name===job);
+    const next=headers.find(header=>header.index>start.index);
+    const block=yml.slice(start.index,next?next.index:yml.length);
+    assert.match(block,/needs\.prepare\.outputs\.tier == '/,job);
+    assert.equal(block.includes("'blog'"),false,job);
+    assert.equal(block.includes('fetch-depth: 0'),false,job);
   }
 });
 
