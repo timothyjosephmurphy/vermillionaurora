@@ -195,7 +195,7 @@ try {
   await room.locator('[data-action="play"]').evaluate(button => button.click());
   await room.locator('[data-action="listen"]').evaluate(button => button.click());
   try {
-    await page.waitForFunction(() => document.querySelector('#nd-room-lab [data-mic]')?.textContent === 'Listening', {timeout: 8000});
+    await page.waitForFunction(() => document.querySelector('#nd-room-lab [data-mic]')?.textContent === 'Mic on', {timeout: 8000});
   } catch (error) {
     const info = await page.evaluate(() => {
       const stage = document.querySelector('#nd-room-lab [data-stage]');
@@ -275,7 +275,7 @@ try {
     await live.locator('[data-action="play"]').evaluate(button => button.click());
   }
   await live.locator('[data-action="listen"]').evaluate(button => button.click());
-  await page.waitForFunction(() => document.querySelector('#nd-room-lab [data-mic]')?.textContent === 'Listening', {timeout: 8000});
+  await page.waitForFunction(() => document.querySelector('#nd-room-lab [data-mic]')?.textContent === 'Mic on', {timeout: 8000});
   await page.waitForFunction(() => window.__waveReads() > 20 && window.__biquads() >= 8);
   await page.waitForTimeout(800);
   await armTone(90, 0.9);

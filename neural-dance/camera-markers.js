@@ -5,9 +5,9 @@
 // the marker hook studio-tracker #793 can call. sample() returns
 // [{id, x, y, type}] in projection pixels, or null while the camera is not driving.
 
-// v2 drops poisoned auto-saved cameras (nd.camera.v1 / nd-camera-mode) and zeroed sliders.
-export const STORAGE_KEY = 'nd.camera.v2';
-export const LEGACY_CAMERA_KEYS = ['nd.camera.v1', 'nd-camera-mode'];
+// v3 keeps a back-camera choice and a sane quad, and tightens untouched slider defaults.
+export const STORAGE_KEY = 'nd.camera.v3';
+export const LEGACY_CAMERA_KEYS = ['nd.camera.v2', 'nd.camera.v1', 'nd-camera-mode'];
 export const CANVAS_W = 1000;
 export const CANVAS_H = 620;
 // Raw single-pixel pink, wide enough for both of TJ's measured notes (293.8° and 8.6°).
@@ -37,14 +37,20 @@ export const CALIBRATION_MARKERS = [
 export const ALIGN_TIMEOUT_MS = 8000;
 export const DETECTION_MODES = ['both', 'pink', 'stickers'];
 export const DEFAULTS = {
-  hueTolerance: 48,
-  saturationSensitivity: 0.75,
-  minBlobSize: 18,
+  hueTolerance: 32,
+  saturationSensitivity: 0.45,
+  minBlobSize: 22,
   maxBlobSize: 160,
   detectionMode: 'both',
   markerMode: 'both',
   stickerSensitivity: 0.5
 };
+export const DEFAULT_QUAD = [
+  {x: 0, y: 0},
+  {x: 1, y: 0},
+  {x: 1, y: 1},
+  {x: 0, y: 1}
+];
 export function areaScaleFor(width) {
   const w = Math.max(1, width | 0);
   return Math.max(1, (w / 160) * (w / 160));
@@ -71,11 +77,10 @@ export function saturationFloor(sensitivity) {
   return 0.14 - ((s - 0.75) / 0.25) * (0.14 - 0.06);
 }
 
-// Green absorption of a physical note. Low sensitivity requires 0.26; default 0.16; high 0.10.
+// Green absorption of a physical note. 0 requires ~0.31, default 0.45 requires ~0.24, max 1.0 requires 0.16.
 export function greenAbsorption(sensitivity) {
   const s = clamp(sensitivity, 0, 1, DEFAULTS.saturationSensitivity);
-  if (s <= 0.75) return 0.26 - (s / 0.75) * (0.26 - 0.16);
-  return 0.16 - ((s - 0.75) / 0.25) * (0.16 - 0.10);
+  return Math.max(0.16, 0.305 - s * 0.145);
 }
 
 export function maxBlobCap(width, height, override) {
@@ -177,6 +182,64 @@ export function findCalibrationMarkers(rgba, width, height, markers = CALIBRATIO
   return centers;
 }
 
+function quadEdges(pts) {
+  return [0, 1, 2, 3].map(i => {
+    const a = pts[i];
+    const b = pts[(i + 1) % 4];
+    return {x: b.x - a.x, y: b.y - a.y};
+  });
+}
+
+// [TL, TR, BR, BL]. Normalized quads also need area, edge length, and opposite-edge ratios.
+// Pass {normalized: false} for raw pixel centers, which are checked for order and convexity only.
+export function isValidAlignmentQuad(quad, {
+  minArea = 0.08,
+  maxArea = 1.15,
+  minEdge = 0.15,
+  minOppositeRatio = 0.35,
+  maxOppositeRatio = 2.85,
+  normalized = true
+} = {}) {
+  if (!Array.isArray(quad) || quad.length !== 4) return false;
+  const pts = [];
+  for (const corner of quad) {
+    const p = point(corner);
+    if (!p) return false;
+    if (normalized && (p.x < -0.25 || p.x > 1.25 || p.y < -0.25 || p.y > 1.25)) return false;
+    pts.push(p);
+  }
+  const [tl, tr, br, bl] = pts;
+  if (!(tl.x < tr.x && bl.x < br.x && tl.y < bl.y && tr.y < br.y)) return false;
+  const edges = quadEdges(pts);
+  for (let i = 0; i < 4; i++) {
+    const a = edges[i];
+    const b = edges[(i + 1) % 4];
+    if (!(a.x * b.y - a.y * b.x > 0)) return false;
+  }
+  if (!normalized) return true;
+  let sum = 0;
+  for (let i = 0; i < 4; i++) {
+    const a = pts[i];
+    const b = pts[(i + 1) % 4];
+    sum += a.x * b.y - b.x * a.y;
+  }
+  const area = 0.5 * sum;
+  if (!(area >= minArea && area <= maxArea)) return false;
+  const lengths = edges.map(edge => Math.hypot(edge.x, edge.y));
+  if (lengths.some(length => !(length >= minEdge))) return false;
+  const topOverBottom = lengths[0] / lengths[2];
+  const rightOverLeft = lengths[1] / lengths[3];
+  return topOverBottom >= minOppositeRatio && topOverBottom <= maxOppositeRatio
+    && rightOverLeft >= minOppositeRatio && rightOverLeft <= maxOppositeRatio;
+}
+
+export function sanitizeSettings(settings) {
+  if (!settings || typeof settings !== 'object') return settings;
+  if (settings.corners == null) return settings;
+  if (isValidAlignmentQuad(settings.corners)) return settings;
+  return {...settings, corners: DEFAULT_QUAD.map(p => ({x: p.x, y: p.y}))};
+}
+
 // Marker centers in video pixels → normalized images of the four stage corners.
 export function cornersFromMarkerCenters(centers, videoWidth, videoHeight, markers = CALIBRATION_MARKERS) {
   if (!centers || centers.length !== 4 || !(videoWidth > 0) || !(videoHeight > 0)) return null;
@@ -189,17 +252,16 @@ export function cornersFromMarkerCenters(centers, videoWidth, videoHeight, marke
     src.push(c);
     dst.push({x: m.x * CANVAS_W, y: m.y * CANVAS_H});
   }
+  if (!isValidAlignmentQuad(src, {normalized: false})) return null;
   const inverse = solveHomography(dst, src);
   if (!inverse) return null;
   const corners = [];
   for (const dest of PROJECTION_CORNERS) {
     const hit = applyHomography(inverse, dest.x, dest.y);
     if (!hit) return null;
-    const x = hit.x / videoWidth;
-    const y = hit.y / videoHeight;
-    if (x < -0.25 || x > 1.25 || y < -0.25 || y > 1.25) return null;
-    corners.push({x, y});
+    corners.push({x: hit.x / videoWidth, y: hit.y / videoHeight});
   }
+  if (!isValidAlignmentQuad(corners)) return null;
   return corners;
 }
 
@@ -331,14 +393,15 @@ export function isPink(r, g, b, settings) {
       return hueDistance(adapted.h, settings.hueCenter) <= settings.hueTolerance && adapted.s >= Math.min(floor, 0.12);
     }
     const thresh = greenAbsorption(settings.saturationSensitivity);
-    return wb.rRatio >= 0.98
+    if (wb.rRatio >= 1.08
       && (wb.rRatio - wb.gRatio) >= thresh
-      && (wb.bRatio - wb.gRatio) >= 0.04;
+      && wb.rRatio >= wb.bRatio - 0.05) return true;
   }
   return hueDistance(hsv.h, center) <= settings.hueTolerance
-    && hsv.s >= floor
+    && hsv.s >= Math.max(floor, 0.28)
     && hsv.v >= PINK_VALUE_FLOOR
-    && (r - g) >= 12;
+    && r >= b - 10
+    && (r - g) >= 22;
 }
 
 // Connected components on an already-downscaled RGBA buffer.
@@ -830,15 +893,27 @@ export function pickCamera(choices, saved) {
     || choices[0];
 }
 
-function normalizeCorners(input) {
-  if (!Array.isArray(input) || input.length !== 4) return null;
-  const out = [];
-  for (const corner of input) {
-    const p = point(corner);
-    if (!p || p.x < -0.25 || p.x > 1.25 || p.y < -0.25 || p.y > 1.25) return null;
-    out.push(p);
+function savedCorners(input) {
+  if (input == null) return null;
+  if (!isValidAlignmentQuad(input)) return DEFAULT_QUAD.map(p => ({x: p.x, y: p.y}));
+  return input.map(corner => ({x: +corner.x, y: +corner.y}));
+}
+
+function environmentCamera(data) {
+  const text = `${data && data.deviceLabel || ''} ${data && data.deviceId || ''} ${data && data.facingMode || ''}`;
+  if (/\b(front|user|selfie|facetime)\b/i.test(text)) return false;
+  return /\b(back|rear|environment)\b/i.test(text);
+}
+
+function untouchedSlider(value, min, max, fallback, legacy, previous) {
+  const v = +value;
+  if (!Number.isFinite(v) || v < min) return fallback;
+  const capped = Math.min(max, v);
+  if (!legacy) return capped;
+  for (const old of previous) {
+    if (Math.abs(capped - old) < 1e-6) return fallback;
   }
-  return out;
+  return capped;
 }
 
 function readRaw(storage, key) {
@@ -852,13 +927,6 @@ function readRaw(storage, key) {
   }
 }
 
-// A value below the new minimum was a bricked slider. Restore the working default.
-function sliderValue(value, min, max, fallback) {
-  const v = +value;
-  if (!Number.isFinite(v) || v < min) return fallback;
-  return Math.min(max, v);
-}
-
 export function readCameraSettings(storage) {
   if (!storage) return null;
   let data = readRaw(storage, STORAGE_KEY);
@@ -870,26 +938,38 @@ export function readCameraSettings(storage) {
     }
   }
   if (!data) return null;
-  const userSelected = !legacy && data.userSelected === true;
-  return {
+  const userSelected = legacy ? environmentCamera(data) : data.userSelected === true;
+  const settings = sanitizeSettings({
     deviceId: userSelected && typeof data.deviceId === 'string' ? data.deviceId : '',
     deviceLabel: userSelected && typeof data.deviceLabel === 'string' ? data.deviceLabel : '',
     userSelected,
-    corners: normalizeCorners(data.corners),
-    hueTolerance: sliderValue(data.hueTolerance, 18, 80, DEFAULTS.hueTolerance),
-    saturationSensitivity: sliderValue(data.saturationSensitivity, 0.25, 1, DEFAULTS.saturationSensitivity),
-    minBlobSize: Math.round(clamp(data.minBlobSize, 4, 200, DEFAULTS.minBlobSize)),
+    corners: savedCorners(data.corners),
+    hueTolerance: untouchedSlider(data.hueTolerance, 18, 80, DEFAULTS.hueTolerance, legacy, [48]),
+    saturationSensitivity: untouchedSlider(data.saturationSensitivity, 0.25, 1, DEFAULTS.saturationSensitivity, legacy, [0.75]),
+    minBlobSize: legacy
+      ? Math.round(untouchedSlider(data.minBlobSize, 4, 200, DEFAULTS.minBlobSize, true, [14, 18]))
+      : Math.round(clamp(data.minBlobSize, 4, 200, DEFAULTS.minBlobSize)),
     hueCenter: Number.isFinite(+data.hueCenter) ? wrapHue(data.hueCenter, PINK_HUE) : null,
     detectionMode: normalizeDetectionMode((readRaw(storage, 'nd.markers.v2') || {}).markerMode || (readRaw(storage, 'nd.markers.v2') || {}).detectionMode || data.detectionMode),
     stickerSensitivity: clamp((readRaw(storage, 'nd.markers.v2') || {}).stickerSensitivity ?? data.stickerSensitivity, 0, 1, DEFAULTS.stickerSensitivity)
-  };
+  });
+  const replacedQuad = data.corners != null && !isValidAlignmentQuad(data.corners);
+  if ((legacy || replacedQuad) && typeof storage.setItem === 'function') {
+    writeCameraSettings(storage, settings);
+    if (legacy && typeof storage.removeItem === 'function') {
+      for (const key of LEGACY_CAMERA_KEYS) {
+        try { storage.removeItem(key); } catch { /* already gone */ }
+      }
+    }
+  }
+  return settings;
 }
 
 export function writeCameraSettings(storage, settings) {
   if (!storage || !settings) return false;
   try {
     storage.setItem(STORAGE_KEY, JSON.stringify({
-      v: 2,
+      v: 3,
       userSelected: settings.userSelected === true,
       deviceId: settings.userSelected === true ? (settings.deviceId || '') : '',
       deviceLabel: settings.userSelected === true ? (settings.deviceLabel || '') : '',
@@ -1092,7 +1172,6 @@ export function attachCameraMode(root) {
   let detectionMode = 'both';
   const sticker = root.querySelector('[data-control="sticker"]');
   const modeButtons = Array.from(root.querySelectorAll('[data-mode]'));
-  const announced = new Set();
   const echo = createStageEcho();
   const idleTracker = createMarkerTracker();
   const api = {sample() { return latest; }};
@@ -1197,7 +1276,13 @@ export function attachCameraMode(root) {
     }
     latest = null;
   }
+  function clearNoteLocks() {
+    const stage = document.getElementById('nd-room-projector');
+    if (!stage || !stage.querySelectorAll) return;
+    stage.querySelectorAll('.nd-note-lock').forEach(node => node.remove());
+  }
   function publish(markers) {
+    clearNoteLocks();
     if (!markersOn || !homography) {
       if (driving) stopDriving();
       else latest = null;
@@ -1206,21 +1291,6 @@ export function attachCameraMode(root) {
     if (markers.length) {
       driving = true;
       push(markers);
-      for (const marker of markers) {
-        if (announced.has(marker.id)) continue;
-        announced.add(marker.id);
-        const noteName = marker.kind === 'sticker' ? 'Dancer sticker' : 'Pink note';
-        showStageToast(noteName + ' #' + marker.id + ' detected ✓', 'ok', 4000);
-        const stage = document.getElementById('nd-room-projector');
-        if (!stage) continue;
-        const badge = document.createElement('div');
-        badge.className = 'nd-note-lock';
-        badge.textContent = (marker.kind === 'sticker' ? 'Dancer sticker' : 'Pink note') + ' #' + marker.id + ' ✓';
-        badge.style.left = (marker.x / CANVAS_W * 100) + '%';
-        badge.style.top = (marker.y / CANVAS_H * 100) + '%';
-        stage.appendChild(badge);
-        setTimeout(() => { if (badge.parentNode) badge.remove(); }, 4000);
-      }
       return;
     }
     if (driving) push([]);
@@ -1404,8 +1474,8 @@ export function attachCameraMode(root) {
     drawVideoFrame(video, octx, overlay.width, overlay.height);
     const corners = activeCorners();
     if (corners.length) {
-      octx.strokeStyle = '#ff7ad9';
-      octx.fillStyle = '#ff7ad9';
+      octx.strokeStyle = '#38bdf8';
+      octx.fillStyle = '#38bdf8';
       octx.lineWidth = Math.max(2, vw / 400);
       octx.beginPath();
       corners.forEach((corner, i) => {
@@ -1425,11 +1495,11 @@ export function attachCameraMode(root) {
         octx.fillStyle = '#07080c';
         octx.font = Math.max(12, vw / 50) + 'px sans-serif';
         octx.fillText(String(i + 1), x - 4, y + 4);
-        octx.fillStyle = '#ff7ad9';
+        octx.fillStyle = '#38bdf8';
       });
     }
     for (const blob of rawBlobs) {
-      octx.strokeStyle = blob.kind === 'sticker' ? '#7fe8b3' : '#ffd1ec';
+      octx.strokeStyle = blob.kind === 'sticker' ? '#7fe8b3' : '#38bdf8';
       octx.beginPath();
       octx.arc(blob.x, blob.y, Math.max(8, vw / 80), 0, Math.PI * 2);
       octx.stroke();
@@ -1464,7 +1534,6 @@ export function attachCameraMode(root) {
     }
     markersOn = on;
     tracker = createMarkerTracker();
-    announced.clear();
     echo.clear();
     askedStart = false;
     const room = document.getElementById('nd-room-lab');
@@ -1573,7 +1642,15 @@ export function attachCameraMode(root) {
     }
     draft.push(spot);
     if (draft.length >= 4) {
-      committed = draft.slice(0, 4);
+      const next = draft.slice(0, 4);
+      if (!isValidAlignmentQuad(next)) {
+        draft = null;
+        syncMarkerButton();
+        say('Those corners cross. Click the four projected corners in order.');
+        drawOverlay();
+        return;
+      }
+      committed = next;
       draft = null;
       rebuild();
       persist();
@@ -1585,13 +1662,8 @@ export function attachCameraMode(root) {
     drawOverlay();
   });
   function commitCorners(list, message) {
-    if (!list || list.length !== 4) return false;
-    const next = [];
-    for (const corner of list) {
-      const p = point(corner);
-      if (!p || p.x < -0.25 || p.x > 1.25 || p.y < -0.25 || p.y > 1.25) return false;
-      next.push(p);
-    }
+    if (!isValidAlignmentQuad(list)) return false;
+    const next = list.map(corner => ({x: +corner.x, y: +corner.y}));
     committed = next;
     draft = null;
     rebuild();
@@ -1635,6 +1707,7 @@ export function attachCameraMode(root) {
     if (document.hidden && stream) stopCamera('Camera off');
   });
   window.addEventListener('pagehide', () => stopCamera('Camera off'));
+  clearNoteLocks();
   applySaved(readCameraSettings(memoryOf(null)));
   syncMarkerButton();
   refreshLabels();

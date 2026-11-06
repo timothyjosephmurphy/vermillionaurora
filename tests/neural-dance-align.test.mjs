@@ -70,7 +70,7 @@ test('Align projector starts the camera, enables markers, and keeps the banner o
   const original = global.setTimeout;
   global.setTimeout = (fn) => { queued.push(fn); return queued.length; };
   try {
-    await beginAlign(doc);
+    await beginAlign(doc, {alignSettleMs: 0});
     assert.equal(cam.started, true);
     assert.equal(pattern.hidden, false);
     assert.match(banner.textContent, /Aligning camera to projector grid/);
@@ -93,5 +93,11 @@ test('Align projector starts the camera, enables markers, and keeps the banner o
   const camera = readFileSync(new URL('../neural-dance/camera-markers.js', import.meta.url), 'utf8');
   assert.match(show, /ensureCamera/);
   assert.match(camera, /facingMode: \{ideal: 'environment'\}/);
-  assert.match(camera, /nd\.camera\.v2/);
+  assert.match(camera, /nd\.camera\.v3/);
+  assert.match(show, /alignSettleMs/);
+  assert.match(show, /waitForAlignSettle/);
+  assert.match(page, /data-cancel-align/);
+  assert.match(page, /body\.nd-live-aligning \.nd-live-chrome/);
+  assert.match(page, /translateX\(-120vw\)/);
+  assert.match(page, /bottom:max\(12px, env\(safe-area-inset-bottom, 12px\)\)/);
 });

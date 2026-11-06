@@ -110,7 +110,7 @@ const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createS
 let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null;
 const bandSens=[1,1,1,1];
 const hotUntil=[0,0,0,0];
-const MIC={off:{label:'Listen',status:'Mic off',pressed:false},listening:{label:'Listening',status:'Listening',pressed:true},muted:{label:'Muted',status:'Muted',pressed:false},unavailable:{label:'No mic',status:'No microphone',pressed:false}};
+const MIC={off:{label:'Listen',status:'Mic off',pressed:false},listening:{label:'Listening',status:'Mic on',pressed:true},muted:{label:'Muted',status:'Muted',pressed:false},unavailable:{label:'No mic',status:'No microphone',pressed:false}};
 try{
   if(!globalThis.ndSilenceGate)throw new Error('gate');
   const res=await fetch('/neural-dance/neural-dance.wasm');
@@ -139,7 +139,7 @@ function report(text){status.textContent=text;}
 function onscreen(){const r=canvas.getBoundingClientRect();return !document.hidden&&r.bottom>0&&r.top<innerHeight&&r.left<innerWidth&&r.right>0&&root.isConnected;}
 function cancel(){clearTimeout(timer);cancelAnimationFrame(raf);timer=raf=0;}
 function stop(text='Paused', releaseMic=false){running=false;cancel();if(releaseMic)disarmMic();else if(ac&&micState!=='listening')ac.suspend().catch(()=>{});play.textContent='Start';report(text);}
-function start(){if(running||!onscreen()||!api)return;cancel();running=true;last=performance.now();started=last;slow=0;play.textContent='Pause';report(micState==='listening'?'Listening':'Running');if(ac&&micState==='listening')ac.resume().catch(()=>{});schedule(0);}
+function start(){if(running||!onscreen()||!api)return;cancel();running=true;last=performance.now();started=last;slow=0;play.textContent='Pause';report('Running');if(ac&&micState==='listening')ac.resume().catch(()=>{});schedule(0);}
 function schedule(delay){if(running)timer=setTimeout(()=>{timer=0;raf=requestAnimationFrame(frame);},delay);}
 function still(){if(running||raf||!api)return;raf=requestAnimationFrame(()=>{raf=0;draw();drawSpectrum();});}
 function ensureGraph(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw new Error('no audio');if(!ac)ac=new AC();return ac.resume();}

@@ -221,7 +221,7 @@ test('run_worker_first lists exactly the routes the Worker serves, so static fil
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.
   for(const path of ['/play','/play/','/play/assets/index.js','/play/orsay/'])assert.ok(matches(path),path+' must run the Worker');
-  for(const path of ['/about/','/_astro/index.abc.css','/display/a-123-160.webp','/gallery-images/a.jpg','/product-media/el-zonte/room-1-2400.webp','/robots.txt','/sitemap.xml','/catalog/version.json','/print-editions/a.jpg','/print-masters/a.jpg','/quickbooks/','/quickbooks/disconnected/','/testimonials/api','/testimonial-manager/','/originals-manager/','/inventory/','/.well-known/security.txt','/favicon.ico','/site.webmanifest','/neural-dance/manifest.webmanifest','/404.html','/nope/'])assert.ok(!matches(path),path+' must not invoke the Worker');
+  for(const path of ['/about/','/_astro/index.abc.css','/display/a-123-160.webp','/gallery-images/a.jpg','/product-media/el-zonte/room-1-2400.webp','/robots.txt','/sitemap.xml','/catalog/version.json','/print-editions/a.jpg','/print-masters/a.jpg','/quickbooks/','/quickbooks/disconnected/','/testimonials/api','/testimonial-manager/','/originals-manager/','/inventory/','/.well-known/security.txt','/favicon.ico','/site.webmanifest','/neural-dance/manifest.webmanifest','/neural-dance/live/manifest.webmanifest','/neural-dance/live/','/404.html','/nope/'])assert.ok(!matches(path),path+' must not invoke the Worker');
 });
 test('assets keep their routing settings and the service binding is unchanged',async()=>{
   const fs=await import('node:fs');

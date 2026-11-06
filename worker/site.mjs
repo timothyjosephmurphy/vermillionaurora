@@ -6,7 +6,8 @@
 // at-cost print code, forwarded to the checkout Worker) and the
 // Apple Pay merchant-id file, and /play (hex gallery proxy; Quake files that still exist stay on assets).
 // Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
-// /site.webmanifest and /neural-dance/manifest.webmanifest are not in that list.
+// /site.webmanifest, /neural-dance/manifest.webmanifest, and
+// /neural-dance/live/manifest.webmanifest are not in that list.
 // The assets layer serves them as application/manifest+json (static/_headers sets the
 // Neural Dance type as well) and does not redirect or rewrite them.
 //
