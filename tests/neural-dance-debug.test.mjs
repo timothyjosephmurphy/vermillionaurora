@@ -305,6 +305,17 @@ test('the website Worker forwards debug HTTP and WebSocket upgrades and fails cl
   });
   assert.equal(upgrade, 'websocket');
   assert.equal(forwarded.status, 200);
+  let checkout = null;
+  const viaCheckout = await worker.fetch(new Request('https://tjm.art/api/neural-dance/debug/ws?room=' + session.room + '&role=publisher&secret=' + session.secret, {headers: {Upgrade: 'websocket'}}), {
+    PRIMARY_HOST: 'tjm.art',
+    LEGACY_REDIRECT: 'false',
+    ASSETS: {fetch: () => new Response('asset')},
+    CHECKOUT: {fetch(request) { checkout = [request.headers.get('Upgrade'), new URL(request.url).pathname]; return Response.json({ok: true}); }}
+  });
+  assert.equal(viaCheckout.status, 200);
+  assert.deepEqual(checkout, ['websocket', '/api/neural-dance/debug/ws']);
+  const checkoutSource = fs.readFileSync('cloudflare/commission-worker.js', 'utf8');
+  assert.match(checkoutSource, /path\.startsWith\('\/api\/neural-dance\/debug\/'\)\) return handleNeuralDanceDebug\(request, env\)/);
 });
 
 test('report-only CSP allows the debug socket and the viewer page is noindex', () => {
@@ -321,9 +332,14 @@ test('report-only CSP allows the debug socket and the viewer page is noindex', (
   assert.doesNotMatch(page, /SiteHeader|class="site-header"/);
   assert.match(fs.readFileSync('robots.txt', 'utf8'), /^Disallow: \/neural-dance\/debug\/$/m);
   const config = JSON.parse(fs.readFileSync('wrangler.jsonc', 'utf8'));
-  assert.equal(config.durable_objects.bindings[0].class_name, 'NeuralDanceDebugRoom');
-  assert.equal(config.durable_objects.bindings[0].name, 'NEURAL_DANCE_DEBUG');
-  assert.deepEqual(config.migrations, [{tag: 'neural-dance-debug-v1', new_sqlite_classes: ['NeuralDanceDebugRoom']}]);
+  assert.equal(config.durable_objects, undefined);
+  assert.equal(config.migrations, undefined);
   assert.ok(config.assets.run_worker_first.includes('/api/neural-dance/debug/*'));
+  for (const file of ['cloudflare/wrangler.jsonc', 'cloudflare/wrangler.sandbox.jsonc']) {
+    const checkout = JSON.parse(fs.readFileSync(file, 'utf8'));
+    assert.ok(checkout.durable_objects.bindings.some(binding => binding.name === 'NEURAL_DANCE_DEBUG' && binding.class_name === 'NeuralDanceDebugRoom'), file);
+    assert.ok(checkout.migrations.some(migration => migration.tag === 'neural-dance-debug-v1' && migration.new_sqlite_classes.includes('NeuralDanceDebugRoom')), file);
+  }
+  assert.match(fs.readFileSync('cloudflare/commission-worker.js', 'utf8'), /export \{ NeuralDanceDebugRoom \}/);
   assert.equal(typeof worker.fetch, 'function');
 });
