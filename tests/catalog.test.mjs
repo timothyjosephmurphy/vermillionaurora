@@ -1,4 +1,7 @@
 import test from 'node:test';
+// LCP, hashed assets, and home image budget. Imported so `npm test` runs it
+// without a package.json edit. A glob runner that also lists this file will run it twice.
+import './lcp-assets.test.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {load} from 'cheerio';

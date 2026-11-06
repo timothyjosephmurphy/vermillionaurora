@@ -33,6 +33,11 @@ LEGACY_RULE_EXPRESSION: (http.host eq "vermillionaurora.com" and not starts_with
 
 CACHE_RULE_EXPRESSION: (http.host eq "tjm.art" and http.response.code eq 200 and (starts_with(http.request.uri.path, "/_astro/") or starts_with(http.request.uri.path, "/display/")))
 
+Root stylesheets and first-party scripts are bundled or copied to content-hashed names under `/_astro/`
+(`scripts/hash-head-assets.mjs`), and self-hosted fonts referenced from that bundle are copied there too.
+Successful responses inherit the immutable cache from the expression above. The unhashed files stay deployed
+so an old URL still resolves. `/fonts/*.woff2` requested at the original path is outside this rule.
+
 (The workers.dev preview URL is not covered by the zone rule, so it serves these files with the default cache header.)
 
 ## Static response headers

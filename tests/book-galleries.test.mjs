@@ -82,7 +82,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
     assert.deepEqual($('.painting-list-row').map((_,row)=>$(row).attr('data-product-id')).get(),shown);
     assert.equal($('#available-for-prints').length,1);
     assert($('#available-for-prints').parent().text().includes('Available for prints'));
-    assert.equal($('script[src="/exhibitions/viewer.js"]').length,1);
+    assert.equal($('script').filter((_,el)=>/\/(?:exhibitions\/viewer\.js|_astro\/viewer-[a-f0-9]+\.js)$/.test($(el).attr('src')||'')).length,1);
     assert.equal($('.book-measurement-note').length,0);
     assert(!$('[data-gallery-list]').text().toLowerCase().includes('book measurements'));
     const expected=shown.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||[...originalProducts,...archiveProducts,...olderWorkProducts].find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
@@ -113,7 +113,9 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
     assert(fs.readFileSync('static/_redirects','utf8').includes(`/products/${scan}/ /products/${canonical}/ 301`));
   }
   const devo=bookProducts.find(p=>p.id===friends.artworks[0]);
-  assert.equal(home('.book-section-carousel a[href="/book-galleries/watercolor-portraits-friends/"] img').attr('src'),devo.image.src);
+  const friendsCard=home('.book-section-carousel a[href="/book-galleries/watercolor-portraits-friends/"] img');
+  assert.equal(friendsCard.attr('data-image-src')||friendsCard.attr('src'),devo.image.src);
+  assert.match(friendsCard.attr('src'),/\/home-thumbs\/book-[a-f0-9]+-480\.webp$/);
   const bitcoiners=load(fs.readFileSync('dist/book-galleries/watercolor-portraits-bitcoiners/index.html','utf8'));
   for(const source of manifest.artworks.filter(art=>art.originalProductId)) {
     const row=bitcoiners(`[data-product-id="${source.id}"]`);

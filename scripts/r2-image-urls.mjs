@@ -5,7 +5,12 @@
 // Rollback without R2: IMAGE_ORIGIN=self npm run build (static/display/ is still deployed).
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { IMAGE_ORIGIN, R2_PREFIXES } from './lib/image-keys.mjs';
-if (process.env.IMAGE_ORIGIN === 'self') { console.log('R2 image URLs: skipped (IMAGE_ORIGIN=self)'); process.exit(0); }
+import { hashHeadAssets } from './hash-head-assets.mjs';
+if (process.env.IMAGE_ORIGIN === 'self') {
+  console.log('R2 image URLs: skipped (IMAGE_ORIGIN=self)');
+  await hashHeadAssets();
+  process.exit(0);
+}
 const prefixes = R2_PREFIXES.map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
 // A root-relative or https://tjm.art URL that starts with one of the R2 prefixes, preceded by a
 // quote, paren, whitespace or comma (attribute values, srcset lists, CSS url()).
@@ -26,3 +31,4 @@ for (const rel of all.filter(f => /\.(html|css)$/.test(f) || f === 'portrait-pre
   if (n) { files++; refs += n; await writeFile(file, next); }
 }
 console.log(`R2 image URLs: ${refs} references in ${files} files now use ${IMAGE_ORIGIN}`);
+await hashHeadAssets();

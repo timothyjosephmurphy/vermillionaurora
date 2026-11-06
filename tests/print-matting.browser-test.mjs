@@ -15,7 +15,7 @@ try{
   const file=path.join(root,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');
   if(!fs.existsSync(file))return route.fulfill({status:404});
   let body=fs.readFileSync(file);
-  if(simulatedSale&&url.pathname.endsWith('/payments/cart.js'))return route.fulfill({contentType:'application/javascript',body:`window.vaCartReady=Promise.resolve({version:'test-${printVersion}',products:[{id:'print-painting-portrait-in-green-small-mat-snow-white',status:'available'}]});document.addEventListener('cart:add-print',e=>{sessionStorage.setItem('testMatSelection',JSON.stringify({id:e.detail.id,quantity:e.detail.quantity}));e.detail.onResult({ok:true,message:'Added'});});`});
+  if(simulatedSale&&(/\/payments\/cart\.js$/.test(url.pathname)||/\/_astro\/cart-[a-f0-9]+\.js$/.test(url.pathname)))return route.fulfill({contentType:'application/javascript',body:`window.vaCartReady=Promise.resolve({version:'test-${printVersion}',products:[{id:'print-painting-portrait-in-green-small-mat-snow-white',status:'available'}]});document.addEventListener('cart:add-print',e=>{sessionStorage.setItem('testMatSelection',JSON.stringify({id:e.detail.id,quantity:e.detail.quantity}));e.detail.onResult({ok:true,message:'Added'});});`});
   if(simulatedSale&&url.pathname.startsWith('/print-preview/')&&url.pathname.endsWith('/')){
    const $=load(body.toString()),section=$('[data-print-options]'),options=JSON.parse(section.attr('data-options'));
    for(const o of options){o.ready=true;o.sampleOnly=false;for(const m of o.matOptions){m.ready=true;m.sampleOnly=false;m.amount='45.00';}}

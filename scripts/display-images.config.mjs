@@ -27,6 +27,8 @@ export const SIZES = [
   ['carousel-thumb', '(max-width: 640px) 160px, (max-width: 980px) 240px, 224px'],
   ['featured-slide', '(max-width: 980px) 90vw, 340px'],
   ['portrait-preview', '(max-width: 600px) 80vw, 340px'],
+  // Selected-gallery and other home carousel tiles. 240px keeps a phone (DPR ~2) on the 480w file.
+  ['book-strip-thumb', '(max-width: 700px) 240px, 280px'],
   ['ex-slide', '(max-width: 600px) 75vw, 60vw'],
   ['exhibition-index-grid', '(max-width: 600px) 90vw, 400px'],
   ['books-grid', '(max-width: 600px) 90vw, 320px'],
@@ -35,4 +37,10 @@ export const SIZES = [
 ];
 export const DEFAULT_SIZES = '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px';
 // Page-specific overrides (the gallery list shows small row thumbnails).
-export const PAGE_SIZES = { '/gallery/': { 'gallery-product-image': '64px' }, '/gallery/available/': { 'gallery-product-image': '64px' } };
+export const PAGE_SIZES = {
+  '/gallery/': { 'gallery-product-image': '64px' },
+  '/gallery/available/': { 'gallery-product-image': '64px' },
+  // Home exhibition, mural, book, and gallery tiles are about a phone-width card.
+  // 75vw at DPR 2 selects the 960w file; 240px stays on 480w.
+  '/': { 'ex-slide': '(max-width: 700px) 240px, 280px' },
+};

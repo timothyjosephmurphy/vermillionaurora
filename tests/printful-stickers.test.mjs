@@ -25,7 +25,7 @@ test('sticker order sits beside print order on the starter paintings only', () =
     assert.equal(print.find('[data-print-open]').text(), 'Buy a print');
     assert.equal($('[data-sticker-dialog]').length, 1);
     assert.equal($('[data-sticker-form]').attr('action'), '/checkout/stickers/order');
-    assert.match($('script[src="/payments/stickers.js"]').attr('src') || '', /stickers\.js/);
+    assert.match($('script').filter((_, el) => /stickers(?:-[a-f0-9]+)?\.js$/.test($(el).attr('src') || '')).attr('src') || '', /(?:\/payments\/stickers\.js|\/_astro\/stickers-[a-f0-9]+\.js)$/);
     assert.equal($.html().includes('PRINTFUL_API_TOKEN'), false);
     assert.equal($.html().includes('2.34'), false);
   }

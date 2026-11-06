@@ -227,3 +227,12 @@ body.full .site-header{display:none}
 
 /* #92: the full business name may wrap onto two short lines instead of widening the header. */
 .site-header .brand small{white-space:normal;display:inline-block;max-width:10.5em;line-height:1.25}
+
+/* Cart badge geometry. These used to live only in payments/cart.css, which now loads
+   asynchronously on every page except /cart/. Keeping them here (in the blocking
+   bundle) means the header count and payment icons do not shift when that file arrives. */
+.cart-nav{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.cart-count{display:inline-flex;align-items:center;justify-content:center;min-width:1.4em;height:1.4em;padding:0 4px;border-radius:50%;background:var(--accent);color:#fff;font-size:.75em}
+.cart-payment-icons{display:inline-flex;align-items:center;gap:2px;flex-shrink:0}
+.cart-payment-icons svg{display:block;width:14px;height:14px;flex-shrink:0}
+.cart-bitcoin-icon{color:#f7931a}.cart-lightning-icon{color:#b27306}
