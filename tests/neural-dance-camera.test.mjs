@@ -24,6 +24,9 @@ import {
   cameraChoices,
   clientToNormalized,
   cornersFromMarkerCenters,
+  DEFAULT_QUAD,
+  isValidAlignmentQuad,
+  sanitizeSettings,
   createMarkerTracker,
   detectPinkBlobs,
   detectPinkMarkers,
@@ -41,6 +44,7 @@ import {
   readCameraSettings,
   rgbToHsv,
   saturationFloor,
+  greenAbsorption,
   solveHomography,
   toDancerMarkers,
   writeCameraSettings
@@ -172,8 +176,8 @@ test('pink blobs use hue tolerance, saturation sensitivity, and minimum size', (
   const off = hsvToRgb((PINK_HUE + 35) % 360, 0.9, 0.9);
   assert.equal(isPink(...off, blobSettings({hueTolerance: 28})), false);
   assert.equal(isPink(...off, blobSettings({hueTolerance: 40})), true);
-  assert.equal(isPink(136, 110, 139, blobSettings(DEFAULTS)), true);
-  assert.equal(isPink(253, 169, 155, blobSettings(DEFAULTS)), true);
+  assert.equal(isPink(136, 110, 139, blobSettings(DEFAULTS)), false);
+  assert.equal(isPink(253, 169, 155, blobSettings({...DEFAULTS, hueTolerance: 40})), true);
   assert.equal(isPink(127, 132, 152, blobSettings(DEFAULTS)), false);
   assert.equal(isPink(180, 154, 130, blobSettings(DEFAULTS)), false);
   assert.equal(isPink(90, 180, 220, blobSettings(DEFAULTS)), false);
@@ -325,7 +329,7 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
     {deviceId: 'tj', label: 'TJ iPhone Camera'}
   ];
   assert.equal(pickCamera(mac, null).label, 'TJ iPhone Camera');
-  assert.equal(clamped.corners, null);
+  assert.deepEqual(clamped.corners, DEFAULT_QUAD);
   const click = clientToNormalized(25, 75, {left: 0, top: 0, width: 100, height: 100});
   close(click.x, 0.25, 1e-9, 'click x');
   close(click.y, 0.75, 1e-9, 'click y');
@@ -351,10 +355,14 @@ test('white balance finds the post-it in both of TJ\'s rooms and ignores the wal
     }
     return detectPinkMarkers(data, width, height, DEFAULTS);
   }
-  const cool = frame([127, 132, 152], [136, 110, 139], 6, 6);
+  const cool = frame([127, 132, 152], [235, 115, 155], 6, 6);
   assert.equal(cool.length, 1, 'cool projector post-it');
+  assert.equal(frame([127, 132, 152], [136, 110, 139], 6, 6).length, 0, 'gray cool-wall sample is not a note');
   const warm = frame([180, 154, 130], [253, 169, 155], 24, 12);
   assert.equal(warm.length, 1, 'warm 2700K post-it');
+  assert.ok(Math.abs(greenAbsorption(0.45) - 0.24) < 0.01);
+  assert.equal(greenAbsorption(1), 0.16);
+  assert.ok(greenAbsorption(0) > 0.3);
   assert.ok(Math.abs(saturationFloor(0.75) - 0.14) < 0.02);
   assert.ok(saturationFloor(1) < 0.08);
   assert.ok(saturationFloor(0) > 0.4);
@@ -431,6 +439,112 @@ test('calibration markers recover the stage corners from a white field', () => {
   close(corners[2].y, 1, 0.04, 'br y');
   close(corners[3].x, 0, 0.04, 'bl x');
   close(corners[3].y, 1, 0.04, 'bl y');
+  assert.equal(isValidAlignmentQuad(DEFAULT_QUAD), true);
+  assert.equal(isValidAlignmentQuad(corners), true);
+  const bowtie = [{x: 0.2, y: 0.2}, {x: 0.8, y: 0.8}, {x: 0.8, y: 0.2}, {x: 0.2, y: 0.8}];
+  assert.equal(isValidAlignmentQuad(bowtie), false);
+  assert.equal(cornersFromMarkerCenters(bowtie.map(p => ({x: p.x * width, y: p.y * height})), width, height), null);
+  const crossed = [{x: 30, y: 20}, {x: 40, y: 70}, {x: 120, y: 24}, {x: 110, y: 76}];
+  assert.equal(isValidAlignmentQuad(crossed, {normalized: false}), false);
+  assert.equal(cornersFromMarkerCenters(crossed, width, height), null);
+  assert.deepEqual(sanitizeSettings({corners: bowtie}).corners, DEFAULT_QUAD);
+  assert.equal(sanitizeSettings({deviceId: 'back'}).deviceId, 'back');
+});
+
+test('a warm projector wall and indigo controls are not pink, and a real note still is', () => {
+  const bg = [122, 102, 81];
+  const decoys = [
+    [122, 102, 81],
+    [157, 117, 96],
+    [215, 222, 205],
+    [49, 88, 184],
+    [92, 110, 220],
+    [84, 148, 104],
+    [142, 98, 74]
+  ];
+  for (const color of decoys) {
+    assert.equal(isPink(...color, blobSettings({...DEFAULTS, bg: {r: bg[0], g: bg[1], b: bg[2]}})), false, color.join(','));
+  }
+  const width = 80;
+  const height = 60;
+  const data = paint(width, height, () => bg);
+  const patches = [
+    {at: [4, 4], color: [157, 117, 96]},
+    {at: [28, 4], color: [215, 222, 205]},
+    {at: [52, 4], color: [49, 88, 184]},
+    {at: [4, 28], color: [92, 110, 220]},
+    {at: [28, 28], color: [84, 148, 104]},
+    {at: [52, 28], color: [142, 98, 74]}
+  ];
+  for (const patch of patches) {
+    for (let y = patch.at[1]; y < patch.at[1] + 12; y++) {
+      for (let x = patch.at[0]; x < patch.at[0] + 12; x++) {
+        const i = (y * width + x) * 4;
+        data[i] = patch.color[0];
+        data[i + 1] = patch.color[1];
+        data[i + 2] = patch.color[2];
+      }
+    }
+  }
+  assert.equal(detectPinkMarkers(data, width, height, DEFAULTS).length, 0);
+  const notes = [[235, 115, 155], [210, 110, 128]];
+  for (const note of notes) {
+    assert.equal(isPink(...note, blobSettings(DEFAULTS)), true, note.join(','));
+    const found = detectPinkMarkers(paint(48, 32, (x, y) => x >= 8 && x < 20 && y >= 8 && y < 20 ? note : [140, 112, 88]), 48, 32, DEFAULTS);
+    assert.equal(found.length, 1, note.join(','));
+  }
+});
+
+test('nd.camera.v2 migrates a back camera and drops a bowtie quad and loose defaults', () => {
+  const box = new Map();
+  const legacy = {
+    getItem(key) { return box.has(key) ? box.get(key) : null; },
+    setItem(key, value) { box.set(key, String(value)); },
+    removeItem(key) { box.delete(key); }
+  };
+  legacy.setItem('nd.camera.v2', JSON.stringify({
+    deviceId: 'back',
+    deviceLabel: 'Back Camera',
+    userSelected: true,
+    hueTolerance: 48,
+    saturationSensitivity: 0.75,
+    minBlobSize: 18,
+    corners: [{x: 0.15, y: 0.7}, {x: 0.85, y: 0.82}, {x: 0.7, y: 0.2}, {x: 0.2, y: 0.18}]
+  }));
+  const migrated = readCameraSettings(legacy);
+  assert.equal(migrated.deviceId, 'back');
+  assert.equal(migrated.deviceLabel, 'Back Camera');
+  assert.equal(migrated.hueTolerance, DEFAULTS.hueTolerance);
+  assert.equal(migrated.saturationSensitivity, DEFAULTS.saturationSensitivity);
+  assert.equal(migrated.minBlobSize, DEFAULTS.minBlobSize);
+  assert.deepEqual(migrated.corners, DEFAULT_QUAD);
+  assert.equal(legacy.getItem('nd.camera.v2'), null);
+  assert.equal(JSON.parse(legacy.getItem(STORAGE_KEY)).v, 3);
+  const custom = {
+    getItem(key) { return box.has('custom:' + key) ? box.get('custom:' + key) : null; },
+    setItem(key, value) { box.set('custom:' + key, String(value)); },
+    removeItem(key) { box.delete('custom:' + key); }
+  };
+  custom.setItem('nd.camera.v2', JSON.stringify({
+    deviceId: 'front',
+    deviceLabel: 'Front Camera',
+    hueTolerance: 40,
+    saturationSensitivity: 0.62,
+    minBlobSize: 30,
+    corners: DEFAULT_QUAD
+  }));
+  const kept = readCameraSettings(custom);
+  assert.equal(kept.deviceId, '');
+  assert.equal(kept.hueTolerance, 40);
+  assert.equal(kept.saturationSensitivity, 0.62);
+  assert.equal(kept.minBlobSize, 30);
+  assert.deepEqual(kept.corners, DEFAULT_QUAD);
+  assert.doesNotMatch(camera, /#ff7ad9|#ffd1ec/);
+  assert.doesNotMatch(camera, /detected ✓/);
+  assert.match(page, /value="32"/);
+  assert.match(page, /value="0.45"/);
+  assert.match(page, /value="22"/);
+  assert.match(page, /accent-color:#38bdf8/);
 });
 
 test('Continuity Camera constraints omit resolution and play after loadedmetadata', async () => {

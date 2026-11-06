@@ -62,16 +62,28 @@ test('standalone pages link the Neural Dance manifest once, and other pages keep
     const source = read(page);
     assert.equal(viewportTags(source).length, 1, page);
     assert.match(viewportTags(source)[0], /viewport-fit=cover/);
-    assert.match(source, /manifestHref="\/neural-dance\/manifest\.webmanifest"/);
     assert.equal(manifestLinks(source).length, 0, `${page} should emit its manifest from BaseLayout`);
   }
+  assert.match(read('src/pages/neural-dance/index.astro'), /manifestHref="\/neural-dance\/manifest\.webmanifest"/);
+  assert.match(read('src/pages/neural-dance/live/index.astro'), /manifestHref="\/neural-dance\/live\/manifest\.webmanifest"/);
+  const liveManifest = JSON.parse(read('static/neural-dance/live/manifest.webmanifest'));
+  assert.equal(liveManifest.start_url, '/neural-dance/live/');
+  assert.equal(liveManifest.scope, '/neural-dance/');
+  assert.equal(liveManifest.display, 'standalone');
+  assert.equal(liveManifest.background_color, manifest.background_color);
+  assert.equal(liveManifest.theme_color, manifest.theme_color);
+  assert.deepEqual(liveManifest.icons, manifest.icons);
   assert.doesNotMatch(read('src/pages/index.astro'), /neural-dance\/manifest\.webmanifest/);
 
-  for (const built of ['dist/neural-dance/index.html', 'dist/neural-dance/live/index.html']) {
+  const builtManifests = {
+    'dist/neural-dance/index.html': '/neural-dance/manifest.webmanifest',
+    'dist/neural-dance/live/index.html': '/neural-dance/live/manifest.webmanifest'
+  };
+  for (const [built, href] of Object.entries(builtManifests)) {
     const html = read(built);
     const links = manifestLinks(html);
     assert.equal(links.length, 1, built);
-    assert.match(links[0], /href="\/neural-dance\/manifest\.webmanifest"/);
+    assert.match(links[0], new RegExp(`href="${href.replace(/\//g, '\\/')}"`));
     assert.doesNotMatch(html, /site\.webmanifest/);
     assert.equal(viewportTags(html).length, 1, built);
     assert.match(viewportTags(html)[0], /width=device-width/);
@@ -116,6 +128,7 @@ test('polish does not add a second manifest, and the manifest is not a Worker ro
 
   const headers = read('static/_headers');
   assert.match(headers, /\/neural-dance\/manifest\.webmanifest\r?\n {2}Content-Type: application\/manifest\+json/);
+  assert.match(headers, /\/neural-dance\/live\/manifest\.webmanifest\r?\n {2}Content-Type: application\/manifest\+json/);
   assert.equal(read('dist/_headers'), headers);
   const config = JSON.parse(read('wrangler.jsonc'));
   const patterns = config.assets.run_worker_first.map((pattern) => new RegExp('^' + pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$'));

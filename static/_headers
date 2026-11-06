@@ -4,6 +4,9 @@
 /neural-dance/manifest.webmanifest
   Content-Type: application/manifest+json
 
+/neural-dance/live/manifest.webmanifest
+  Content-Type: application/manifest+json
+
 # studio-tracker #240: the /play gallery frames run inside the /play shell, which already carries Cloudflare Web Analytics.
 # no-transform stops Cloudflare auto-injecting a second beacon into the frame, so each visit counts once.
 /play/g/*

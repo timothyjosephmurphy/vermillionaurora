@@ -3,6 +3,22 @@
 
 import {ALIGN_TIMEOUT_MS, cornersFromMarkerCenters, findCalibrationMarkers, showStageToast} from './camera-markers.js';
 
+export const ALIGN_SETTLE_MS = 180;
+
+function nextFrame() {
+  return new Promise(resolve => {
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(() => resolve());
+    else resolve();
+  });
+}
+
+// Two paints, then a short pause, so the projector frame drops the chrome before the baseline.
+export async function waitForAlignSettle(ms = ALIGN_SETTLE_MS) {
+  await nextFrame();
+  await nextFrame();
+  if (ms > 0) await new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export const LIVE_KEY = 'nd-live-show';
 export const LIVE_DEFAULTS = {collapsed: false, hidden: false, preview: true};
 
@@ -137,6 +153,8 @@ export function attachLiveShow(doc) {
 
   const exitAlign = doc.querySelector('[data-live="exit-align"]');
   if (exitAlign) exitAlign.addEventListener('click', () => cancelAlign(doc));
+  const cancelAlignButton = doc.querySelector('[data-cancel-align]');
+  if (cancelAlignButton) cancelAlignButton.addEventListener('click', () => cancelAlign(doc));
 
   const room = doc.getElementById('nd-room-lab');
   if (!room) return;
@@ -181,6 +199,8 @@ function finishAlign(doc, message) {
   if (pattern) pattern.hidden = true;
   const exit = doc.querySelector('[data-live="exit-align"]');
   if (exit) exit.hidden = true;
+  const cancel = doc.querySelector('[data-cancel-align]');
+  if (cancel) cancel.hidden = true;
   const align = doc.querySelector('#nd-room-lab [data-action="align"]');
   if (align) {
     align.textContent = 'Align projector';
@@ -203,13 +223,15 @@ function nowMs() {
   return typeof performance !== 'undefined' ? performance.now() : Date.now();
 }
 
-export async function beginAlign(doc) {
+export async function beginAlign(doc, options = {}) {
   const room = doc.getElementById('nd-room-lab');
   if (!room || !doc.body) return;
   clearTimeout(alignTimer);
   doc.body.classList.add('nd-live-aligning');
   const exit = doc.querySelector('[data-live="exit-align"]');
   if (exit) exit.hidden = false;
+  const cancel = doc.querySelector('[data-cancel-align]');
+  if (cancel) cancel.hidden = false;
   const align = room.querySelector('[data-action="align"]');
   if (align) {
     align.textContent = 'Cancel align';
@@ -222,6 +244,9 @@ export async function beginAlign(doc) {
   if (cam && cam.ensureCamera) {
     try { await cam.ensureCamera(); } catch { /* the grid still tries */ }
   }
+  if (!doc.body.classList.contains('nd-live-aligning')) return;
+  const settleMs = Number.isFinite(+options.alignSettleMs) ? +options.alignSettleMs : ALIGN_SETTLE_MS;
+  await waitForAlignSettle(settleMs);
   if (!doc.body.classList.contains('nd-live-aligning')) return;
   let baseline = null;
   const before = cam && cam.grabFrame && cam.grabFrame();
