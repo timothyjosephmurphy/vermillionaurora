@@ -45,6 +45,16 @@ export function readRoomSettings(storage) {
   };
 }
 
+// "25 dancers (24 sim, 1 sticker)" — sim is the stage minus live camera tracks.
+// Stickers stay singular only at 1. Pink notes and dancer silhouettes both count.
+export function formatDancerCount(total, markerCount) {
+  const dancers = Math.max(0, Math.round(+total) || 0);
+  const stickers = Math.max(0, Math.round(+markerCount) || 0);
+  const sim = Math.max(0, dancers - stickers);
+  const stickerLabel = stickers + ' ' + (stickers === 1 ? 'sticker' : 'stickers');
+  return dancers + ' dancers (' + sim + ' sim, ' + stickerLabel + ')';
+}
+
 export function writeRoomSettings(storage, settings) {
   const box = memoryOf(storage);
   if (!box || !settings) return false;
@@ -109,6 +119,9 @@ try{
   if(typeof api.nd_set_clock!=='function'||typeof api.nd_add!=='function'||typeof api.nd_set_gravity!=='function'||typeof api.nd_set_wander!=='function'||typeof api.nd_set_threshold!=='function'||typeof api.nd_set_peak_hold!=='function'||typeof api.nd_set_band_sens!=='function')throw new Error('exports');
 }catch{status.textContent='Room music unavailable';play.disabled=listenButton.disabled=alignButton.disabled=true;return;}
 const gate=ndSilenceGate.create();
+rings.gate=gate;
+// A zeroed band slider mutes onsets. The ring stays at unity so that band is still visible.
+rings.sensAt=band=>{const s=bandSens[band];return s>0?s:undefined;};
 function floats(){return new Float32Array(api.memory.buffer);}
 function theme(){
   const live=root.dataset.markersLive==='1';
@@ -163,10 +176,11 @@ function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stri
  for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const ia=base+i*ds,ib=base+j*ds,ax=f[ia],ay=f[ia+1],bx=f[ib],by=f[ib+1];if(Math.hypot(ax-bx,ay-by)>R)continue;const activity=Math.min(f[ia+2],f[ib+2]);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=xy(ax,ay),q=xy(bx,by),amp=Math.min(18,Math.abs(bx-ax)*.15),mid=xy(ax+(bx-ax)*.5,ay+(by-ay)*.5-amp);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
  ctx.globalAlpha=1;const pb=api.nd_pulses()>>>2,pc=api.nd_pulse_count(),ps=api.nd_pulse_stride();
  for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=xy(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=xy(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=xy(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
- for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);ctx.strokeStyle=colors[k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
+ for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);ctx.strokeStyle=colors[k];ctx.lineWidth=2;if(rings.rippling){ctx.globalAlpha*=.42;ctx.lineWidth=1.2;}ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=rest>0?.4:1;ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
  ctx.globalAlpha=1;
  if(root.dataset.markersLive==='1'&&root._markers){ctx.fillStyle='#080910';for(const m of root._markers){if(m.kind==='sticker')continue;const p=xy(m.x,m.y);ctx.beginPath();ctx.arc(p.x,p.y,12*scale,0,Math.PI*2);ctx.fill();}}
 }
+function markerCount(){const feed=root._feed;if(!feed||typeof feed.sample!=='function')return 0;let sample;try{sample=feed.sample();}catch{return 0;}if(!Array.isArray(sample))return 0;let n=0;for(let i=0;i<sample.length&&i<48;i++)if(sample[i])n++;return n;}
 function consumeFeed(){if(!root._feed)return;try{const sample=root._feed.sample();if(!Array.isArray(sample))return;const n=Math.min(sample.length,48);if(n){const buf=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);for(let i=0;i<n;i++){const s=sample[i];buf[i*4]=s.id||0;buf[i*4+1]=s.x;buf[i*4+2]=s.y;buf[i*4+3]=s.type|0;}}api.nd_set_stickers(n);}catch{}}
 function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while out of view',true);return;}const begin=performance.now(),gap=now-last;last=now;
  try{
@@ -190,7 +204,7 @@ function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while 
  }catch{stop('Paused');return;}
  const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);
  if(cost>150||slow>=12){low=true;api.nd_set_low(1);stop('Paused to keep the browser responsive');return;}
- if(now-lastReport>1000){const floorNote=micState==='listening'?' · noise floor '+gate.noiseFloor.toFixed(2)+(gate.open?'':' · quiet'):'';report((micState==='listening'?'Listening · ':'')+api.nd_count()+' dancers · '+api.nd_pulse_count()+' pulses'+floorNote);lastReport=now;}
+ if(now-lastReport>1000){const floorNote=micState==='listening'?' · noise floor '+gate.noiseFloor.toFixed(2)+(gate.open?'':' · quiet'):'';report((micState==='listening'?'Listening · ':'')+formatDancerCount(api.nd_count(),markerCount())+' · '+api.nd_pulse_count()+' pulses'+floorNote);lastReport=now;}
  schedule(Math.max(0,1000/30-cost));
 }
 function projectorLayout(layer){const r=layer.getBoundingClientRect(),w=r.width,h=r.height;layer.dataset.pinWidth=String(Math.round(w));return {id:'nd-room-projector',sourcePoints:[[0,0],[w,0],[w,h],[0,h]],targetPoints:[[r.left,r.top],[r.right,r.top],[r.right,r.bottom],[r.left,r.bottom]]};}
@@ -241,8 +255,9 @@ document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(alignButto
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('Paused while out of view',true);});
 window.addEventListener('pagehide',()=>{stop();disarmMic();});
 if('IntersectionObserver' in window)new IntersectionObserver(()=>{if(running&&!onscreen())stop('Paused while out of view',true);}).observe(canvas);
-theme();applyStickers();holdClock();still();report('Ready · '+api.nd_count()+' dancers · mic off');
+theme();applyStickers();holdClock();still();report('Ready · '+formatDancerCount(api.nd_count(),markerCount())+' · mic off');
 root.neuralDance={
+  formatDancerCount,
   setStickerFeed(feed){root._feed=feed&&typeof feed.sample==='function'?feed:null;},
   hit(type){api.nd_hit(type|0);},
   // studio-tracker #793. Fluorescent markers in projection pixels, or null to keep the current dancers.
