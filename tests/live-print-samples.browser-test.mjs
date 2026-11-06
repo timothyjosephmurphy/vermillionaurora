@@ -2,8 +2,12 @@ import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import sharp from 'sharp';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
+// Edition JPEGs are rebuilt from private print masters. A checkout without those bytes
+// still has to exercise layout, so a missing sheet is a large stand-in, not a 404.
+const standIn=await sharp({create:{width:1600,height:2200,channels:3,background:'#ffffff'}}).jpeg({quality:70}).toBuffer();
 const origin='https://vermillionaurora.com',root=path.resolve('dist'),id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key='b'.repeat(64),products=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),methods:['paypal','square'],status:'available'}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try {
@@ -23,7 +27,7 @@ try {
     }
     if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
     const file=path.join(root,u.pathname,u.pathname.endsWith('/')?'index.html':'');
-    if(!fs.existsSync(file))return route.fulfill({status:404});
+    if(!fs.existsSync(file))return /\.jpe?g$/i.test(u.pathname)?route.fulfill({body:standIn,contentType:'image/jpeg'}):route.fulfill({status:404});
     return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg'})[path.extname(file)]||'application/octet-stream'});
   });
   for(const width of [1280,390]){
