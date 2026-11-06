@@ -33,10 +33,13 @@ export const PROJECTION_CORNERS = [
 // Order matches PROJECTION_CORNERS: top left, top right, bottom right, bottom left.
 export const CALIBRATION_MARKERS = [
   {hue: 0, name: 'red', x: 0.14, y: 0.14},
-  {hue: 120, name: 'green', x: 0.86, y: 0.14},
+  // Teal, not #0f0. A warm projector shifts pure green onto yellow.
+  {hue: 164, name: 'green', x: 0.86, y: 0.14},
   {hue: 240, name: 'blue', x: 0.86, y: 0.86},
   {hue: 60, name: 'yellow', x: 0.14, y: 0.86}
 ];
+export const CALIBRATION_GREEN_HUE_MIN = 75;
+export const CALIBRATION_GREEN_HUE_MAX = 195;
 export const ALIGN_TIMEOUT_MS = 8000;
 export const DETECTION_MODES = ['both', 'pink', 'stickers'];
 export const DEFAULTS = {
@@ -180,24 +183,75 @@ export function homographyFromNormalized(corners, videoWidth, videoHeight, dest 
   return solveHomography(src, dest);
 }
 
-// Largest blob of each calibration hue. Coordinates are in the buffer that was passed in.
+function calibrationBlobOptions(marker, baseline) {
+  const wide = !!(marker && marker.name === 'green');
+  return {
+    hueCenter: wide ? 135 : marker.hue,
+    hueTolerance: wide ? 60 : (Number.isFinite(+marker.hueTolerance) ? +marker.hueTolerance : 28),
+    hueMin: wide ? CALIBRATION_GREEN_HUE_MIN : null,
+    hueMax: wide ? CALIBRATION_GREEN_HUE_MAX : null,
+    minSaturation: 0.25,
+    minBlobSize: 3,
+    valueFloor: 0.35,
+    maxBlobSize: Infinity,
+    disablePinkHeuristics: true,
+    baseline
+  };
+}
+
+function sameCalibrationBlob(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y) < 8;
+}
+
+function inMarkerQuadrant(blob, marker, width, height) {
+  const left = marker.x < 0.5;
+  const top = marker.y < 0.5;
+  return (blob.x < width / 2) === left && (blob.y < height / 2) === top;
+}
+
+function claimCalibrationBlob(blobs, marker, width, height, used) {
+  let best = null;
+  let bestArea = -1;
+  let bestDist = Infinity;
+  const tx = marker.x * width;
+  const ty = marker.y * height;
+  for (const blob of blobs) {
+    if (used.some(other => sameCalibrationBlob(other, blob))) continue;
+    const dist = Math.hypot(blob.x - tx, blob.y - ty);
+    if (blob.area > bestArea || (blob.area === bestArea && dist < bestDist)) {
+      best = blob;
+      bestArea = blob.area;
+      bestDist = dist;
+    }
+  }
+  return best;
+}
+
+// One center per calibration hue. Coordinates are in the buffer that was passed in.
+// Corner blocks are large, so the size cap is lifted. Hue 0 does not use the pink-note
+// rule. The green block accepts cyan through teal (75°..195°) so a warm wall cannot
+// hand it to yellow. When several blobs match, the one in that corner's quadrant wins.
 // baseline, when the same length as rgba, keeps only pixels that changed after the
-// grid appeared. Omit it and detection is the relaxed HSV path (existing tests).
+// grid appeared. Omit it and detection is the HSV path (existing tests).
 export function findCalibrationMarkers(rgba, width, height, markers = CALIBRATION_MARKERS, baseline = null) {
   if (!rgba || !(width > 0) || !(height > 0) || !markers || markers.length !== 4) return null;
   const changed = baseline && baseline.length === rgba.length ? baseline : null;
-  const centers = [];
-  for (const marker of markers) {
-    const blobs = detectPinkBlobs(rgba, width, height, {
-      hueCenter: marker.hue,
-      hueTolerance: 28,
-      minSaturation: 0.25,
-      minBlobSize: 3,
-      valueFloor: 0.35,
-      baseline: changed
-    });
-    if (!blobs.length) return null;
-    centers.push({x: blobs[0].x, y: blobs[0].y});
+  const pools = markers.map(marker => detectPinkBlobs(rgba, width, height, calibrationBlobOptions(marker, changed)));
+  const used = [];
+  const centers = new Array(markers.length);
+  for (let i = 0; i < markers.length; i++) {
+    const quad = pools[i].filter(blob => inMarkerQuadrant(blob, markers[i], width, height));
+    const pick = claimCalibrationBlob(quad, markers[i], width, height, used);
+    if (!pick) continue;
+    used.push(pick);
+    centers[i] = {x: pick.x, y: pick.y};
+  }
+  for (let i = 0; i < markers.length; i++) {
+    if (centers[i]) continue;
+    const pick = claimCalibrationBlob(pools[i], markers[i], width, height, used);
+    if (!pick) return null;
+    used.push(pick);
+    centers[i] = {x: pick.x, y: pick.y};
   }
   return centers;
 }
@@ -332,7 +386,10 @@ export function blobSettings(options = {}) {
     scale: options.scale || null,
     exclude: Array.isArray(options.exclude) ? options.exclude : null,
     customSample: !!options.customSample,
-    maxBlobSize: Number.isFinite(+options.maxBlobSize) ? +options.maxBlobSize : null
+    maxBlobSize: options.maxBlobSize === Infinity ? Infinity : (Number.isFinite(+options.maxBlobSize) ? +options.maxBlobSize : null),
+    disablePinkHeuristics: options.disablePinkHeuristics === true,
+    hueMin: Number.isFinite(options.hueMin) ? +options.hueMin : null,
+    hueMax: Number.isFinite(options.hueMax) ? +options.hueMax : null
   };
 }
 
@@ -400,10 +457,18 @@ export function isPink(r, g, b, settings) {
   const hsv = rgbToHsv(r, g, b);
   const floor = Number.isFinite(settings.minSaturation) ? settings.minSaturation : saturationFloor(settings.saturationSensitivity);
   const center = settings.hueCenter;
-  if (!pinkFamily(center)) {
+  const valueFloor = Number.isFinite(settings.valueFloor) ? settings.valueFloor : VALUE_FLOOR;
+  if (settings.disablePinkHeuristics || !pinkFamily(center)) {
+    if (Number.isFinite(settings.hueMin) && Number.isFinite(settings.hueMax)) {
+      const hue = hsv.h;
+      const inside = settings.hueMin <= settings.hueMax
+        ? hue >= settings.hueMin && hue <= settings.hueMax
+        : hue >= settings.hueMin || hue <= settings.hueMax;
+      return inside && hsv.s >= floor && hsv.v >= valueFloor;
+    }
     return hueDistance(hsv.h, center) <= settings.hueTolerance
       && hsv.s >= floor
-      && hsv.v >= (Number.isFinite(settings.valueFloor) ? settings.valueFloor : VALUE_FLOOR);
+      && hsv.v >= valueFloor;
   }
   const bg = settings.bg;
   if (bg && rgbToHsv(bg.r, bg.g, bg.b).s <= 0.42 && bg.r > 0 && bg.g > 0 && bg.b > 0) {
@@ -503,33 +568,58 @@ export function detectPinkMarkers(rgba, width, height, options = {}) {
   return detectPinkBlobs(rgba, width, height, opts);
 }
 
+export const ECHO_W = 160;
+export const ECHO_H = 100;
+export const ECHO_HOLD_MS = 450;
+
 export function createStageEcho() {
-  const w = 100;
-  const h = 62;
+  const w = ECHO_W;
+  const h = ECHO_H;
   const samples = [];
   const maxR = new Uint8Array(w * h);
   const maxG = new Uint8Array(w * h);
   const maxB = new Uint8Array(w * h);
+  const maxLum = new Uint8Array(w * h);
   let scratch = null;
   let ctx = null;
   function rebuild(now) {
-    const kept = samples.filter(sample => now - sample.t <= 300);
+    const kept = samples.filter(sample => now - sample.t <= ECHO_HOLD_MS);
     samples.length = 0;
     for (const sample of kept) samples.push(sample);
     maxR.fill(0);
     maxG.fill(0);
     maxB.fill(0);
+    maxLum.fill(0);
     for (const sample of samples) {
       for (let i = 0; i < w * h; i++) {
         const o = i * 3;
-        if (sample.rgb[o] > maxR[i]) maxR[i] = sample.rgb[o];
-        if (sample.rgb[o + 1] > maxG[i]) maxG[i] = sample.rgb[o + 1];
-        if (sample.rgb[o + 2] > maxB[i]) maxB[i] = sample.rgb[o + 2];
+        const r = sample.rgb[o];
+        const g = sample.rgb[o + 1];
+        const b = sample.rgb[o + 2];
+        if (r > maxR[i]) maxR[i] = r;
+        if (g > maxG[i]) maxG[i] = g;
+        if (b > maxB[i]) maxB[i] = b;
+        const lum = luminanceByte(r, g, b);
+        if (lum > maxLum[i]) maxLum[i] = lum;
       }
     }
   }
+  function cell(sx, sy) {
+    return {
+      cx: Math.max(0, Math.min(w - 1, Math.round(sx / CANVAS_W * (w - 1)))),
+      cy: Math.max(0, Math.min(h - 1, Math.round(sy / CANVAS_H * (h - 1))))
+    };
+  }
   return {
-    clear() { samples.length = 0; maxR.fill(0); maxG.fill(0); maxB.fill(0); },
+    width: w,
+    height: h,
+    holdMs: ECHO_HOLD_MS,
+    clear() { samples.length = 0; maxR.fill(0); maxG.fill(0); maxB.fill(0); maxLum.fill(0); },
+    ingest(rgb, now) {
+      if (!rgb || rgb.length < w * h * 3) return;
+      samples.push({t: now, rgb});
+      rebuild(now);
+    },
     sample(canvas, now) {
       if (!canvas || !(canvas.width > 0) || typeof document === 'undefined') return;
       if (!scratch) {
@@ -549,39 +639,36 @@ export function createStageEcho() {
       samples.push({t: now, rgb});
       rebuild(now);
     },
-    // Pink, magenta, and coral. Gold (high green) is the safe kick color and is not vetoed.
+    // Warm, pink, coral, and bright stage strokes. ±3 cells is about ±20 stage px,
+    // wide enough for AirPlay plus the camera's delay.
     veto(sx, sy) {
-      const cx = Math.max(0, Math.min(w - 1, Math.round(sx / CANVAS_W * (w - 1))));
-      const cy = Math.max(0, Math.min(h - 1, Math.round(sy / CANVAS_H * (h - 1))));
-      for (let dy = -2; dy <= 2; dy++) {
-        for (let dx = -2; dx <= 2; dx++) {
+      const {cx, cy} = cell(sx, sy);
+      for (let dy = -3; dy <= 3; dy++) {
+        for (let dx = -3; dx <= 3; dx++) {
           const x = cx + dx;
           const y = cy + dy;
           if (x < 0 || y < 0 || x >= w || y >= h) continue;
           const i = y * w + x;
           const r = maxR[i];
           const g = maxG[i];
-          if (r > 35 && (r - g) > 12 && g < 190) return true;
+          const b = maxB[i];
+          const warm = r > 35 && (r - g) > 12 && g < 190;
+          const coral = r > 40 && r > g && r > b && (r - g) > 8;
+          if (warm || coral || maxLum[i] > 30) return true;
         }
       }
       return false;
     },
-    // A dark stage center inside a bright ring is the pink-note pupil, not a vinyl sticker.
+    // A new sticker cannot sit on a bright projected ring or dancer. Latched
+    // markers are not asked again, so the floor dot drawn later does not erase them.
     vetoSticker(sx, sy) {
-      const latest = samples[samples.length - 1];
-      if (!latest) return false;
-      const cx = Math.max(0, Math.min(w - 1, Math.round(sx / CANVAS_W * (w - 1))));
-      const cy = Math.max(0, Math.min(h - 1, Math.round(sy / CANVAS_H * (h - 1))));
-      const center = Math.max(latest.rgb[(cy * w + cx) * 3], latest.rgb[(cy * w + cx) * 3 + 1], latest.rgb[(cy * w + cx) * 3 + 2]);
-      if (center >= 20) return false;
-      for (let dy = -2; dy <= 2; dy++) {
-        for (let dx = -2; dx <= 2; dx++) {
-          if (!dx && !dy) continue;
+      const {cx, cy} = cell(sx, sy);
+      for (let dy = -3; dy <= 3; dy++) {
+        for (let dx = -3; dx <= 3; dx++) {
           const x = cx + dx;
           const y = cy + dy;
           if (x < 0 || y < 0 || x >= w || y >= h) continue;
-          const o = (y * w + x) * 3;
-          if (Math.max(latest.rgb[o], latest.rgb[o + 1], latest.rgb[o + 2]) > 45) return true;
+          if (maxLum[y * w + x] > 30) return true;
         }
       }
       return false;
@@ -681,6 +768,13 @@ export function localWallThreshold(wallLuminance, sensitivity) {
   return wall * stickerDarkRatio(sensitivity);
 }
 
+function isChromaticPink(r, g, b, bg) {
+  if ((r - g) >= 24 && r > b) return true;
+  if (!bg || !(bg.r > 0) || !(bg.g > 0) || !(bg.b > 0)) return false;
+  const balanced = whiteBalance(r, g, b, bg);
+  return balanced.rRatio >= 1.08 && (balanced.rRatio - balanced.gRatio) >= 0.16;
+}
+
 export function detectStickerBlobs(rgba, width, height, options = {}) {
   const w = width | 0;
   const h = height | 0;
@@ -698,6 +792,9 @@ export function detectStickerBlobs(rgba, width, height, options = {}) {
     }
   }
   const gate = {homography: options.homography || null, scale: options.scale || null, exclude: options.exclude || null};
+  const bg = options.bg || frameBackground(rgba, w, h, 8, gate.homography ? (x, y) => stageInside(x, y, gate) : null);
+  const quadBgLum = bg ? luminanceByte(bg.r, bg.g, bg.b) : 0;
+  const quadCut = quadBgLum >= 35 ? quadBgLum * stickerDarkRatio(sensitivity) : 255;
   const mask = new Uint8Array(w * h);
   for (let y = 0; y < h; y++) {
     const y0 = Math.max(0, y - radius);
@@ -709,8 +806,12 @@ export function detectStickerBlobs(rgba, width, height, options = {}) {
       const area = (x1 - x0) * (y1 - y0);
       const sum = integral[y1 * stride + x1] - integral[y0 * stride + x1] - integral[y1 * stride + x0] + integral[y0 * stride + x0];
       const p = (y * w + x) * 4;
-      const lum = luminanceByte(rgba[p], rgba[p + 1], rgba[p + 2]);
-      if (lum <= localWallThreshold(sum / area, sensitivity)) mask[y * w + x] = 1;
+      const r = rgba[p];
+      const g = rgba[p + 1];
+      const b = rgba[p + 2];
+      if (isChromaticPink(r, g, b, bg)) continue;
+      const lum = luminanceByte(r, g, b);
+      if (lum <= localWallThreshold(sum / area, sensitivity) && lum <= quadCut) mask[y * w + x] = 1;
     }
   }
   const scale = areaScaleFor(w);
@@ -946,7 +1047,12 @@ export function markersFromFrame(frame, settings, homography, scale, tracker, no
   if (mode !== 'pink') {
     for (const blob of detectStickerBlobs(frame.data, frame.width, frame.height, shared)) found.push(blob);
   }
-  let videoBlobs = found.map(b => ({
+  const pinkBlobs = found.filter(blob => blob.kind !== 'sticker');
+  const separated = found.filter(blob => {
+    if (blob.kind !== 'sticker') return true;
+    return !pinkBlobs.some(pink => Math.hypot(pink.x - blob.x, pink.y - blob.y) <= 18);
+  });
+  let videoBlobs = separated.map(b => ({
     x: (b.x + 0.5) * scale.scaleX,
     y: (b.y + 0.5) * scale.scaleY,
     area: b.area,
@@ -1581,10 +1687,10 @@ export function attachCameraMode(root) {
     if (!drawVideoFrame(video, sctx, scale.width, scale.height)) return;
     const frame = sctx.getImageData(0, 0, scale.width, scale.height);
     const stage = document.querySelector('#nd-room-lab [data-stage]');
-    if (markersOn && stage) echo.sample(stage, now);
+    if (stage) echo.sample(stage, now);
     const gate = markerFrameGate(homography, uiExclusions());
     const result = markersFromFrame(frame, settings(), gate.homography, scale, markersOn ? tracker : idleTracker, now, {
-      echo: markersOn ? echo : null,
+      echo: gate.homography ? echo : null,
       exclude: gate.exclude,
       latch: markersOn
     });

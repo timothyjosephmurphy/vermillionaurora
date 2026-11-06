@@ -3,6 +3,7 @@
 // the room code and the viewer key.
 
 import {sanitizeDebugPatch} from './debug-protocol.js';
+import {formatDancerCount} from './room-lab.js';
 
 const STAGE_W = 1000;
 const STAGE_H = 620;
@@ -141,6 +142,61 @@ function drawStage(ctx, image, telemetry) {
   paintProjectedStage(ctx, telemetry, ctx.canvas.width, ctx.canvas.height);
 }
 
+function tuningPatch(doc) {
+  const mode = doc.querySelector('[data-debug-mode] [aria-pressed="true"]');
+  const value = (name) => {
+    const input = doc.querySelector('[data-debug-control="' + name + '"]');
+    return input ? +input.value : undefined;
+  };
+  return {
+    markerMode: mode && mode.dataset.mode,
+    noteSensitivity: value('note'),
+    stickerSensitivity: value('sticker'),
+    hueTolerance: value('hue'),
+    minBlobSize: value('size'),
+    quietThreshold: value('quiet'),
+    gravity: value('gravity'),
+    wander: value('wander'),
+    threshold: value('threshold'),
+    peak: value('peak'),
+    type: value('type'),
+    kickSensitivity: value('sens-0'),
+    bassSensitivity: value('sens-1'),
+    snareSensitivity: value('sens-2'),
+    hatSensitivity: value('sens-3')
+  };
+}
+
+function assignControl(doc, name, value) {
+  const input = doc.querySelector('[data-debug-control="' + name + '"]');
+  if (!input || doc.activeElement === input || value == null || !Number.isFinite(+value)) return;
+  input.value = String(value);
+}
+
+export function syncTuning(doc, telemetry) {
+  if (!doc || !telemetry || !telemetry.controls) return;
+  const controls = telemetry.controls;
+  assignControl(doc, 'note', controls.noteSensitivity);
+  assignControl(doc, 'sticker', controls.stickerSensitivity);
+  assignControl(doc, 'hue', controls.hueTolerance);
+  assignControl(doc, 'size', controls.minBlobSize);
+  assignControl(doc, 'quiet', controls.quietThreshold);
+  assignControl(doc, 'gravity', controls.gravity);
+  assignControl(doc, 'wander', controls.wander);
+  assignControl(doc, 'threshold', controls.threshold);
+  assignControl(doc, 'peak', controls.peak);
+  assignControl(doc, 'type', controls.type);
+  const sens = Array.isArray(controls.sens) ? controls.sens : [];
+  for (let i = 0; i < 4; i++) assignControl(doc, 'sens-' + i, sens[i]);
+  const mode = controls.markerMode;
+  const group = doc.querySelector('[data-debug-mode]');
+  if (group && doc.activeElement !== group && !(group.contains && group.contains(doc.activeElement))) {
+    group.querySelectorAll('[data-mode]').forEach(button => {
+      button.setAttribute('aria-pressed', button.dataset.mode === mode ? 'true' : 'false');
+    });
+  }
+}
+
 export function attachDebugViewer(doc) {
   if (!doc || !doc.body || doc.body.dataset.viewerReady === '1') return;
   doc.body.dataset.viewerReady = '1';
@@ -183,6 +239,24 @@ export function attachDebugViewer(doc) {
     const audio = telemetry && telemetry.audio;
     paintMeters(doc, audio);
     fillTable(table, telemetry);
+    const dancersLine = doc.querySelector('[data-debug-dancers]');
+    if (dancersLine) {
+      const stage = telemetry && telemetry.stage || {};
+      const dancers = +stage.dancers || 0;
+      const stickers = stage.stickers != null ? +stage.stickers : ((telemetry && telemetry.markers) || []).length;
+      const pulses = +stage.pulses || 0;
+      dancersLine.textContent = [
+        formatDancerCount(dancers, stickers),
+        pulses + ' pulses',
+        stage.simDancers ? 'sim dancers on' : 'sim dancers cleared',
+        stickers + ' latched',
+        telemetry && telemetry.aligned ? 'aligned' : 'not aligned',
+        stage.aligning ? 'aligning' : 'not aligning',
+        stage.running ? 'running' : 'paused',
+        stage.hidden ? 'controls hidden' : 'controls visible'
+      ].join(' · ');
+    }
+    syncTuning(doc, telemetry);
     if (summary) {
       const rgb = telemetry && telemetry.quadMedianRgb;
       const controls = telemetry && telemetry.controls || {};
@@ -260,17 +334,9 @@ export function attachDebugViewer(doc) {
     if (hover) hover.textContent = 'x ' + x + ' y ' + y + ' · RGB ' + pixel.join(' ') + ' · WB ' + wb.join(' ');
   });
 
-  const send = doc.querySelector('[data-debug-send]');
-  if (send) send.addEventListener('click', () => {
-    const patch = sanitizeDebugPatch({
-      markerMode: doc.querySelector('[data-debug-mode] [aria-pressed="true"]')?.dataset.mode,
-      noteSensitivity: +doc.querySelector('[data-debug-control="note"]').value,
-      stickerSensitivity: +doc.querySelector('[data-debug-control="sticker"]').value,
-      hueTolerance: +doc.querySelector('[data-debug-control="hue"]').value,
-      minBlobSize: +doc.querySelector('[data-debug-control="size"]').value,
-      quietThreshold: +doc.querySelector('[data-debug-control="quiet"]').value
-    });
-    if (!patch) return;
+  function sendPatch(raw, label) {
+    const patch = sanitizeDebugPatch(raw);
+    if (!patch) return false;
     const body = JSON.stringify({type: 'propose_patch', patch});
     let sent = false;
     if (socket && socket.readyState === 1) {
@@ -281,11 +347,31 @@ export function attachDebugViewer(doc) {
       fetch(url, {method: 'POST', headers: {'content-type': 'application/json'}, cache: 'no-store', body: JSON.stringify({patch})}).catch(() => {});
     }
     const note = doc.querySelector('[data-debug-sent]');
-    if (note) note.textContent = 'Tuning sent';
+    if (note) note.textContent = label || 'Tuning sent';
+    return true;
+  }
+  const send = doc.querySelector('[data-debug-send]');
+  if (send) send.addEventListener('click', () => { sendPatch(tuningPatch(doc), 'Tuning sent'); });
+  doc.querySelectorAll('[data-debug-control]').forEach(input => {
+    input.addEventListener('change', () => { sendPatch(tuningPatch(doc), 'Tuning sent'); });
+  });
+  doc.querySelectorAll('[data-debug-action]').forEach(button => {
+    button.addEventListener('click', () => {
+      sendPatch({action: button.dataset.debugAction}, button.textContent.trim());
+    });
+  });
+  if (stage) stage.addEventListener('click', event => {
+    const rect = stage.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const x = (event.clientX - rect.left) / rect.width * STAGE_W;
+    const y = (event.clientY - rect.top) / rect.height * STAGE_H;
+    const typeInput = doc.querySelector('[data-debug-control="type"]');
+    sendPatch({action: 'add-sim', x, y, type: typeInput ? +typeInput.value : 1}, 'Sim dancer sent');
   });
   doc.querySelectorAll('[data-debug-mode] [data-mode]').forEach(button => {
     button.addEventListener('click', () => {
       doc.querySelectorAll('[data-debug-mode] [data-mode]').forEach(other => other.setAttribute('aria-pressed', other === button ? 'true' : 'false'));
+      sendPatch(tuningPatch(doc), 'Tuning sent');
     });
   });
 

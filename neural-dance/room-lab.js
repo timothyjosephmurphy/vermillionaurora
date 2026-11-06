@@ -3,6 +3,66 @@
 // Slider values stay in this browser under nd-room-lab.
 
 export const ROOM_KEY = 'nd-room-lab';
+export const MARKER_ID_BASE = 100000;
+export const DANCER_CAP = 48;
+
+export function markerStickerId(id) {
+  const n = Math.abs(id | 0);
+  return MARKER_ID_BASE + (n > 0 ? n : 1);
+}
+
+// Simulated dancers keep their own ids. Camera markers are offset so a later
+// sticker frame cannot replace a tap-added dancer, or the other way around.
+export function combineDancerStickers(sim, markers, limit = DANCER_CAP) {
+  const cap = Math.max(0, limit | 0);
+  const marks = [];
+  const seen = new Set();
+  for (const marker of markers || []) {
+    if (!marker || marks.length >= cap) continue;
+    const id = markerStickerId(marker.id);
+    if (seen.has(id)) continue;
+    seen.add(id);
+    marks.push({
+      id,
+      x: +marker.x || 0,
+      y: +marker.y || 0,
+      type: ((marker.type | 0) % 4 + 4) % 4,
+      kind: marker.kind === 'sticker' ? 'sticker' : 'pink'
+    });
+  }
+  const sims = [];
+  const room = cap - marks.length;
+  for (const dancer of sim || []) {
+    if (!dancer || sims.length >= room) continue;
+    const id = dancer.id | 0;
+    if (!(id > 0) || id >= MARKER_ID_BASE || seen.has(id)) continue;
+    seen.add(id);
+    sims.push({
+      id,
+      x: +dancer.x || 0,
+      y: +dancer.y || 0,
+      type: ((dancer.type | 0) % 4 + 4) % 4,
+      kind: 'sim'
+    });
+  }
+  return sims.concat(marks);
+}
+
+function simEntry(item) {
+  if (!item || typeof item !== 'object') return null;
+  const id = item.id | 0;
+  const x = +item.x;
+  const y = +item.y;
+  if (!(id > 0) || id >= MARKER_ID_BASE || !Number.isFinite(x) || !Number.isFinite(y)) return null;
+  return {id, x, y, type: ((item.type | 0) % 4 + 4) % 4};
+}
+
+export function simListFromSettings(data) {
+  if (!data || typeof data !== 'object') return null;
+  if (Array.isArray(data.sim)) return data.sim.map(simEntry).filter(Boolean).slice(0, DANCER_CAP);
+  if (data.simDancers === false) return [];
+  return null;
+}
 
 function memoryOf(storage) {
   try {
@@ -41,7 +101,9 @@ export function readRoomSettings(storage) {
     peak: roomNumber(data.peak, 1, 6),
     type: roomNumber(data.type, 0, 3),
     quiet: roomNumber(data.quiet, 0, 0.4),
-    sens
+    sens,
+    sim: simListFromSettings(data),
+    simDancers: Array.isArray(data.sim) ? data.sim.length > 0 : data.simDancers !== false
   };
 }
 
@@ -97,7 +159,9 @@ export function writeRoomSettings(storage, settings) {
       peak: settings.peak,
       type: settings.type,
       quiet: settings.quiet,
-      sens: settings.sens
+      sens: settings.sens,
+      sim: Array.isArray(settings.sim) ? settings.sim.slice(0, DANCER_CAP) : undefined,
+      simDancers: Array.isArray(settings.sim) ? settings.sim.length > 0 : settings.simDancers !== false
     }));
     return true;
   } catch {
@@ -132,6 +196,8 @@ function prototypePositions(){
   return out;
 }
 const positions=prototypePositions();
+let sim=[];
+let nextSimId=1;
 let api=null,running=false,low=false,allowMap=false,mapper=null;
 let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0;
 let ac=null;
@@ -164,7 +230,14 @@ function theme(){
   for(let k=0;k<4;k++){const leg=el('[data-legend="'+k+'"]');if(leg)leg.style.color=colors[k];}
   still();
 }
-function applyStickers(){const n=positions.length;const f=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);positions.forEach(([x,y],i)=>{f[i*4]=i+1;f[i*4+1]=x;f[i*4+2]=y;f[i*4+3]=i%4;});api.nd_set_stickers(n);}
+function rememberSim(list){sim=(list||[]).map(d=>({id:d.id|0,x:+d.x||0,y:+d.y||0,type:((d.type|0)%4+4)%4}));nextSimId=sim.reduce((max,d)=>Math.max(max,d.id),0)+1;if(nextSimId<1)nextSimId=1;}
+function seedSimList(){rememberSim(positions.map(([x,y,type],i)=>({id:i+1,x,y,type})));}
+function syncStickers(){const list=combineDancerStickers(sim,Array.isArray(root._markers)?root._markers:[]);const n=Math.min(list.length,DANCER_CAP);if(n){const buf=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);for(let i=0;i<n;i++){const s=list[i];buf[i*4]=s.id;buf[i*4+1]=s.x;buf[i*4+2]=s.y;buf[i*4+3]=s.type|0;}}api.nd_set_stickers(n);}
+function reportCount(prefix){const text=formatDancerCount(api.nd_count(),markerCount())+' · '+api.nd_pulse_count()+' pulses';report(prefix?prefix+text:text);}
+function paintSimButtons(){root.querySelectorAll('[data-action="sim-dancers"],[data-sim-clear]').forEach(btn=>{btn.textContent='Clear sim dancers';btn.disabled=sim.length===0;btn.setAttribute('aria-pressed',sim.length?'true':'false');});root.querySelectorAll('[data-action="sim-seed"]').forEach(btn=>{btn.textContent='Seed 24 sim dancers';btn.disabled=false;});}
+function clearSim(){sim=[];saveRoomSettings();syncStickers();paintSimButtons();reportCount();still();}
+function seedSim(){seedSimList();saveRoomSettings();syncStickers();paintSimButtons();reportCount();still();}
+function addSimAt(x,y,type){const markers=Array.isArray(root._markers)?root._markers:[];if(combineDancerStickers(sim,markers).length>=DANCER_CAP){report('48-dancer limit · remove one to add another');return 0;}const id=nextSimId++;sim.push({id,x,y,type:((type|0)%4+4)%4});saveRoomSettings();syncStickers();paintSimButtons();reportCount();still();return id;}
 function report(text){status.textContent=text;}
 function onscreen(){const r=canvas.getBoundingClientRect();return !document.hidden&&r.bottom>0&&r.top<innerHeight&&r.left<innerWidth&&r.right>0&&root.isConnected;}
 function cancel(){clearTimeout(timer);cancelAnimationFrame(raf);timer=raf=0;}
@@ -200,6 +273,7 @@ function sacred(xy){const CX=500,CY=310,SX=1.18,SY=.72;ctx.save();ctx.strokeStyl
  ctx.restore();}
 function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stride(),n=api.nd_count();const scale=canvas.width/W,vx=0,vy=canvas.height/2-H*scale/2;const xy=(x,y)=>({x:vx+x*scale,y:vy+y*scale});
  ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle=background||'#080910';ctx.fillRect(0,0,canvas.width,canvas.height);
+ if(document.body&&document.body.classList.contains('nd-live-aligning'))return;
  if(performance.now()<+(root.dataset.ndDarkUntil||0))return;
  sacred(xy);
  ctx.lineWidth=1.5;ctx.strokeStyle=foreground;
@@ -211,7 +285,7 @@ function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stri
  if(root.dataset.markersLive==='1'&&root._markers)paintStageMarkers(ctx,root._markers,xy,scale);
 }
 function markerCount(){const feed=root._feed;if(!feed||typeof feed.sample!=='function')return 0;let sample;try{sample=feed.sample();}catch{return 0;}if(!Array.isArray(sample))return 0;let n=0;for(let i=0;i<sample.length&&i<48;i++)if(sample[i])n++;return n;}
-function consumeFeed(){if(!root._feed)return;try{const sample=root._feed.sample();if(!Array.isArray(sample))return;const n=Math.min(sample.length,48);if(n){const buf=new Float32Array(api.memory.buffer,api.nd_sticker_in(),n*4);for(let i=0;i<n;i++){const s=sample[i];buf[i*4]=s.id||0;buf[i*4+1]=s.x;buf[i*4+2]=s.y;buf[i*4+3]=s.type|0;}}api.nd_set_stickers(n);}catch{}}
+function consumeFeed(){if(!root._feed)return;try{const sample=root._feed.sample();if(!Array.isArray(sample))return;syncStickers();}catch{}}
 function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while out of view',true);return;}const begin=performance.now(),gap=now-last;last=now;
  try{
   consumeFeed();
@@ -248,6 +322,9 @@ function dancerAt(p){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer
 function loadRoomSettings(){
   let saved=null;
   try{saved=readRoomSettings(memoryOf(null));}catch{saved=null;}
+  if(saved&&Array.isArray(saved.sim))rememberSim(saved.sim);
+  else if(saved&&saved.simDancers===false)rememberSim([]);
+  else seedSimList();
   if(!saved)return;
   for(const name of ['gravity','wander','threshold','peak','quiet']){const input=el('[data-control="'+name+'"]');if(input&&Number.isFinite(saved[name]))input.value=String(saved[name]);}
   const type=el('[data-control="type"]');if(type&&Number.isFinite(saved.type))type.value=String(saved.type);
@@ -264,7 +341,9 @@ function saveRoomSettings(){
       peak:+el('[data-control="peak"]').value,
       quiet:+(el('[data-control="quiet"]')||{value:0.08}).value,
       type:type?+type.value:1,
-      sens
+      sens,
+      sim:sim.map(d=>({id:d.id,x:d.x,y:d.y,type:d.type})),
+      simDancers:sim.length>0
     });
   }catch{}
 }
@@ -277,26 +356,37 @@ bindSlider('peak',v=>api.nd_set_peak_hold(v),v=>v.toFixed(1)+' s');
 bindSlider('quiet',v=>ndSilenceGate.setQuiet(gate,v),v=>(+v).toFixed(2));
 root.querySelectorAll('[data-control="sens"]').forEach(input=>{const band=+input.dataset.band;const out=el('[data-value="sens-'+band+'"]');const sync=draw=>{const v=+input.value;bandSens[band]=v;api.nd_set_band_sens(band,v);if(out)out.textContent=v.toFixed(2)+'×';saveRoomSettings();if(draw)still();};input.addEventListener('input',()=>sync(true));sync(false);});
 const typeInput=el('[data-control="type"]');if(typeInput)typeInput.addEventListener('change',()=>saveRoomSettings());
-canvas.addEventListener('pointerdown',e=>{if(!api||mapping())return;const p=pointerWorld(e);if(p.x<0||p.y<0||p.x>W||p.y>H)return;const near=dancerAt(p);if(e.shiftKey){if(near){api.nd_remove(near);still();}return;}pointer={id:near,x:e.clientX,y:e.clientY,moved:false};try{canvas.setPointerCapture(e.pointerId);}catch{}});
-canvas.addEventListener('pointermove',e=>{if(!pointer||!api)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.id&&pointer.moved){const p=pointerWorld(e);api.nd_move(pointer.id,Math.max(0,Math.min(W,p.x)),Math.max(0,Math.min(H,p.y)));still();}});
-canvas.addEventListener('pointerup',e=>{if(!pointer||!api)return;if(!pointer.id&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H){const kind=+el('[data-control="type"]').value;if(!api.nd_add(p.x,p.y,kind))report('48-dancer limit · remove one to add another');}}pointer=null;still();});
+canvas.addEventListener('pointerdown',e=>{if(!api||mapping())return;const p=pointerWorld(e);if(p.x<0||p.y<0||p.x>W||p.y>H)return;const near=dancerAt(p);if(e.shiftKey){if(near&&sim.some(d=>d.id===near)){sim=sim.filter(d=>d.id!==near);saveRoomSettings();syncStickers();paintSimButtons();reportCount();still();}return;}pointer={id:near&&sim.some(d=>d.id===near)?near:0,x:e.clientX,y:e.clientY,moved:false};try{canvas.setPointerCapture(e.pointerId);}catch{}});
+canvas.addEventListener('pointermove',e=>{if(!pointer||!api)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.id&&pointer.moved){const p=pointerWorld(e);const x=Math.max(0,Math.min(W,p.x)),y=Math.max(0,Math.min(H,p.y));const dancer=sim.find(d=>d.id===pointer.id);if(dancer){dancer.x=x;dancer.y=y;}api.nd_move(pointer.id,x,y);still();}});
+canvas.addEventListener('pointerup',e=>{if(!pointer||!api)return;const dragged=pointer.id&&pointer.moved;if(!pointer.id&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H){const kind=+el('[data-control="type"]').value||0;addSimAt(p.x,p.y,kind);}}else if(dragged)saveRoomSettings();pointer=null;still();});
 canvas.addEventListener('pointercancel',()=>{pointer=null;});
 play.onclick=()=>running?stop():start();listenButton.onclick=toggleListen;alignButton.onclick=toggleAlign;
 document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(alignButton.getAttribute('aria-pressed')==='true'){exitMapping();e.stopImmediatePropagation();e.preventDefault();}},true);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('Paused while out of view',true);});
 window.addEventListener('pagehide',()=>{stop();disarmMic();});
 if('IntersectionObserver' in window)new IntersectionObserver(()=>{if(running&&!onscreen())stop('Paused while out of view',true);}).observe(canvas);
-theme();applyStickers();holdClock();still();report('Ready · '+formatDancerCount(api.nd_count(),markerCount())+' · mic off');
+theme();syncStickers();holdClock();still();paintSimButtons();report('Ready · '+formatDancerCount(api.nd_count(),markerCount())+' · mic off');
+root.querySelectorAll('[data-action="sim-dancers"],[data-sim-clear]').forEach(btn=>{btn.addEventListener('click',()=>{if(sim.length)clearSim();});});
+root.querySelectorAll('[data-action="sim-seed"]').forEach(btn=>{btn.addEventListener('click',()=>seedSim());});
+function stageDancers(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stride(),n=api.nd_count(),out=[];for(let i=0;i<n;i++){const o=base+i*ds;out.push({id:f[o+5]|0,x:f[o],y:f[o+1],type:f[o+4]|0});}return out;}
 root.neuralDance={
   formatDancerCount,
   setStickerFeed(feed){root._feed=feed&&typeof feed.sample==='function'?feed:null;},
   hit(type){api.nd_hit(type|0);},
   // studio-tracker #793. Fluorescent markers in projection pixels, or null to keep the current dancers.
   markers(){return root._markers||null;},
-  setMarkers(list){root._markers=Array.isArray(list)?list.slice(0,48).map(m=>({id:+m.id||0,x:+m.x||0,y:+m.y||0,type:((m.type|0)%4+4)%4,kind:m.kind==='sticker'?'sticker':'pink'})):null;if(!root._markerFeed)root._markerFeed={sample(){return root._markers;}};if(root._markers)root._feed=root._markerFeed;else if(root._feed===root._markerFeed)root._feed=null;still();return root._markers;},
+  setMarkers(list){root._markers=Array.isArray(list)?list.slice(0,48).map(m=>({id:+m.id||0,x:+m.x||0,y:+m.y||0,type:((m.type|0)%4+4)%4,kind:m.kind==='sticker'?'sticker':'pink'})):null;if(!root._markerFeed)root._markerFeed={sample(){return root._markers;}};if(root._markers)root._feed=root._markerFeed;else if(root._feed===root._markerFeed)root._feed=null;syncStickers();still();return root._markers;},
   poke(){consumeFeed();still();},
   retint(){theme();},
-  debugAudio(){const listening=micState==='listening';const lv=listening?lastLevels:[0,0,0,0];return {source:listening?'mic':'silent',kick:+lv[0]||0,bass:+lv[1]||0,snare:+lv[2]||0,hat:+lv[3]||0,envelopes:{kick:+lv[0]||0,bass:+lv[1]||0,snare:+lv[2]||0,hat:+lv[3]||0},silenceGate:!listening||!gate.open,noiseFloor:+gate.noiseFloor||0,open:!!(listening&&gate.open),micGain:+gate.gain||0};}
+  redraw(){draw();},
+  clearSim(){clearSim();return sim.length;},
+  seedSim(){seedSim();return sim.length;},
+  addSim(x,y,type){return addSimAt(+x||0,+y||0,type|0);},
+  simList(){return sim.map(d=>({id:d.id,x:d.x,y:d.y,type:d.type}));},
+  stageDancers(){return stageDancers();},
+  simDancers(){return sim.length>0;},
+  debugAudio(){const listening=micState==='listening';const lv=listening?lastLevels:[0,0,0,0];return {source:listening?'mic':'silent',kick:+lv[0]||0,bass:+lv[1]||0,snare:+lv[2]||0,hat:+lv[3]||0,envelopes:{kick:+lv[0]||0,bass:+lv[1]||0,snare:+lv[2]||0,hat:+lv[3]||0},silenceGate:!listening||!gate.open,noiseFloor:+gate.noiseFloor||0,open:!!(listening&&gate.open),micGain:+gate.gain||0};},
+  debugRoom(){return {running,simDancers:sim.length>0,simCount:sim.length,dancers:api.nd_count(),pulses:api.nd_pulse_count(),stickers:markerCount(),markersLive:root.dataset.markersLive==='1'};}
 };
 root.dataset.roomReady='1';
 })();

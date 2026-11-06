@@ -108,6 +108,30 @@ test('debug credentials, the viewer link, and tuning clamps stay unguessable and
   assert.equal(sanitizeDebugPatch({markerMode: 'pink'}).markerMode, 'pink');
   assert.equal(sanitizeDebugPatch({markerMode: 'nope'}), null);
   assert.equal(sanitizeDebugPatch(null), null);
+  assert.equal(session.autoApply, true);
+  const tuned = sanitizeDebugPatch({
+    gravity: 9, wander: -1, threshold: 1.2, peak: 2.2, type: 2.2,
+    kickSensitivity: 1.5, action: 'clear-sim'
+  });
+  assert.equal(tuned.gravity, 6);
+  assert.equal(tuned.wander, 0);
+  assert.equal(tuned.threshold, 1.2);
+  assert.equal(tuned.type, 2);
+  assert.equal(tuned.sens[0], 1.5);
+  assert.equal(tuned.action, 'clear-sim');
+  const tap = sanitizeDebugPatch({action: 'add-sim', x: 1200, y: -4, type: 3});
+  assert.equal(tap.action, 'add-sim');
+  assert.equal(tap.x, 1000);
+  assert.equal(tap.y, 0);
+  assert.equal(tap.type, 3);
+  const debugPage = fs.readFileSync('src/pages/neural-dance/debug/index.astro', 'utf8');
+  assert.match(debugPage, /data-debug-action="align"/);
+  assert.match(debugPage, /data-debug-action="clear-sim"/);
+  assert.match(debugPage, /Seed 24 sim dancers/);
+  assert.match(debugPage, /data-debug-action="reset-camera"/);
+  assert.match(debugPage, /data-debug-control="gravity"/);
+  assert.match(debugPage, /data-debug-control="sens-0"/);
+  assert.match(debugPage, /data-debug-dancers/);
   assert.ok(DEBUG_INTERVAL_MS >= 500 && DEBUG_INTERVAL_MS <= 1000);
   const page = fs.readFileSync('src/pages/neural-dance/live/index.astro', 'utf8');
   assert.match(page, /data-debug-share aria-pressed="false"/);

@@ -43,8 +43,19 @@ export function createDebugCredentials(random) {
   const secret = randomSecret(random);
   let key = randomSecret(random);
   if (key === secret) key = secret.slice(0, -1) + (secret.endsWith('a') ? 'b' : 'a');
-  return {room, secret, key};
+  return {room, secret, key, autoApply: true};
 }
+
+const DEBUG_ACTIONS = new Set([
+  'align', 'cancel-align',
+  'clear-sim', 'sim-off', 'sim-seed', 'sim-on',
+  'add-sim',
+  'clear-markers',
+  'start', 'pause',
+  'markers-on', 'markers-off',
+  'hide-controls', 'show-controls',
+  'reset-camera'
+]);
 
 export function viewerPath(session) {
   return '/neural-dance/debug/?room=' + encodeURIComponent(session.room) + '&key=' + encodeURIComponent(session.key);
@@ -66,5 +77,37 @@ export function sanitizeDebugPatch(input) {
   num('minBlobSize', 4, 200);
   num('maxBlobSize', 16, 400);
   num('quietThreshold', 0, 0.4);
+  num('gravity', 0, 6);
+  num('wander', 0, 0.8);
+  num('threshold', 1, 1.9);
+  num('peak', 1, 6);
+  if (input.type != null && Number.isFinite(+input.type)) out.type = Math.min(3, Math.max(0, Math.round(+input.type)));
+  const sens = [null, null, null, null];
+  let anySens = false;
+  if (Array.isArray(input.sens)) {
+    for (let i = 0; i < 4; i++) {
+      const value = +input.sens[i];
+      if (!Number.isFinite(value)) continue;
+      sens[i] = Math.min(3, Math.max(0, value));
+      anySens = true;
+    }
+  }
+  ['kickSensitivity', 'bassSensitivity', 'snareSensitivity', 'hatSensitivity'].forEach((key, i) => {
+    const value = +input[key];
+    if (!Number.isFinite(value)) return;
+    sens[i] = Math.min(3, Math.max(0, value));
+    anySens = true;
+  });
+  if (anySens) out.sens = sens;
+  if (input.action === 'add-sim') {
+    const x = +input.x;
+    const y = +input.y;
+    if (Number.isFinite(x) && Number.isFinite(y)) {
+      out.action = 'add-sim';
+      out.x = Math.min(1000, Math.max(0, x));
+      out.y = Math.min(620, Math.max(0, y));
+      if (Number.isFinite(+input.type)) out.type = Math.min(3, Math.max(0, Math.round(+input.type)));
+    }
+  } else if (DEBUG_ACTIONS.has(input.action)) out.action = input.action;
   return Object.keys(out).length ? out : null;
 }

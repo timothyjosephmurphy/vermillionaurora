@@ -355,7 +355,7 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.match(room, /getUserMedia/);
   assert.match(room, /Align projector/);
   assert.match(room, /data-add-dancer/);
-  assert.match(room, /nd_add/);
+  assert.match(room, /addSimAt/);
   assert.match(room, /nd_set_gravity/);
   assert.match(room, /nd_set_wander/);
   assert.match(room, /nd_set_threshold/);
@@ -382,7 +382,7 @@ test('room music is a mic-only prototype stage after the original simulation', (
   assert.ok(agcFn > 0);
   assert.ok(room.indexOf('api.nd_set_gravity(v)') > agcFn);
   assert.ok(room.indexOf('api.nd_set_band_sens(band,v)') > agcFn);
-  assert.ok(room.indexOf('api.nd_add(p.x,p.y,kind)') > agcFn);
+  assert.ok(room.indexOf('addSimAt(p.x,p.y,kind)') > agcFn);
 
   const mural = page.slice(muralAt, page.indexOf('</section>', muralAt));
   assert.match(mural, /mural-with-silhouettes/);

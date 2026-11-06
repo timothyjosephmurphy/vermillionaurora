@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {readRoomSettings, writeRoomSettings, ROOM_KEY, formatDancerCount, paintStageMarkers} from '../neural-dance/room-lab.js';
-import {applyLiveShow, readLiveShow, writeLiveShow, LIVE_KEY, LIVE_DEFAULTS} from '../neural-dance/live-show.js';
+import {readRoomSettings, writeRoomSettings, ROOM_KEY, formatDancerCount, paintStageMarkers, combineDancerStickers, markerStickerId} from '../neural-dance/room-lab.js';
+import {applyLiveShow, readLiveShow, writeLiveShow, LIVE_KEY, LIVE_DEFAULTS, ALIGN_SETTLE_MS} from '../neural-dance/live-show.js';
 
 const page = readFileSync(new URL('../src/pages/neural-dance/live/index.astro', import.meta.url), 'utf8');
 const studio = readFileSync(new URL('../src/pages/neural-dance/index.astro', import.meta.url), 'utf8');
@@ -199,6 +199,42 @@ test('room status names simulated dancers and camera stickers on both pages', ()
   assert.ok(fills.includes('#f4fbff'), 'post-it dot is visible');
   assert.equal(fills.includes('#080910'), false);
   assert.equal(strokes.length, 2);
+  assert.equal(ALIGN_SETTLE_MS, 280);
+  assert.match(page, /data-action="sim-dancers"/);
+  assert.match(page, /data-action="sim-seed"/);
+  assert.match(page, /Clear sim dancers/);
+  assert.match(page, /Seed 24 sim dancers/);
+  assert.match(studio, /data-action="sim-dancers"/);
+  assert.match(studio, /Seed 24 sim dancers/);
+  assert.match(roomJs, /combineDancerStickers/);
+  assert.match(roomJs, /addSimAt\(p\.x,p\.y,kind\)/);
+  assert.match(show, /findCalibrationMarkers\(frame\.data, frame\.width, frame\.height, undefined, null\)/);
+  const sim = [{id: 7, x: 12, y: 34, type: 1}];
+  const markers = [{id: 1, x: 400, y: 200, type: 0, kind: 'sticker'}, {id: 2, x: 610, y: 300, type: 2, kind: 'pink'}];
+  const merged = combineDancerStickers(sim, markers);
+  assert.equal(merged.length, 3);
+  assert.equal(merged.find(dancer => dancer.id === 7).x, 12);
+  assert.equal(merged.find(dancer => dancer.id === markerStickerId(1)).x, 400);
+  const moved = combineDancerStickers(sim, markers.map(marker => marker.id === 1 ? {...marker, x: 440} : marker));
+  assert.equal(moved.find(dancer => dancer.id === 7).x, 12);
+  assert.equal(moved.find(dancer => dancer.id === markerStickerId(1)).x, 440);
+  assert.equal(combineDancerStickers([], markers).length, 2);
+  assert.equal(combineDancerStickers(sim, []).length, 1);
+  const box = memory();
+  assert.equal(writeRoomSettings(box, {
+    gravity: 2.5, wander: 0.25, threshold: 1.4, peak: 2.8, type: 1, quiet: 0.08, sens: [1, 1, 1, 1], sim: []
+  }), true);
+  const empty = readRoomSettings(box);
+  assert.deepEqual(empty.sim, []);
+  assert.equal(empty.simDancers, false);
+  assert.equal(writeRoomSettings(box, {
+    gravity: 2.5, wander: 0.25, threshold: 1.4, peak: 2.8, type: 1, quiet: 0.08, sens: [1, 1, 1, 1],
+    sim: [{id: 3, x: 11, y: 22, type: 2}]
+  }), true);
+  const kept = readRoomSettings(box);
+  assert.equal(kept.sim.length, 1);
+  assert.equal(kept.sim[0].x, 11);
+  assert.equal(kept.simDancers, true);
   for (const source of [page, studio]) {
     assert.match(source, /\/neural-dance\/room-lab\.js/);
     assert.match(source, /\/neural-dance\/wave-ring\.js/);
