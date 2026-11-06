@@ -24,8 +24,17 @@ const SHARE_META = {
   'twitter:image:alt': PLAY_SHARE_ALT,
 };
 
+// The hex entry is proxied, so its <html> may omit a language. The static
+// shell under static/play already declares lang="en". robots is left as-is.
+export function ensurePlayLang(html) {
+  return html.replace(/<html\b([^>]*)>/i, (full, attrs) => {
+    if (/\blang\s*=/i.test(attrs)) return full;
+    return `<html lang="en"${attrs}>`;
+  });
+}
+
 export function rewritePlayEntryHtml(html) {
-  return html.replace(/<meta\b[^>]*>/gi, (tag) => {
+  return ensurePlayLang(html).replace(/<meta\b[^>]*>/gi, (tag) => {
     const key = tag.match(/\b(?:property|name)\s*=\s*(["'])(og:image(?::secure_url|:alt)?|twitter:image(?::alt)?)\1/i);
     if (!key) return tag;
     const value = SHARE_META[key[2].toLowerCase()];

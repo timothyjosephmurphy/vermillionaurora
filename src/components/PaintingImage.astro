@@ -13,7 +13,7 @@ const count = gallery.length + 1;
 ---
 <div class="product-media">
 <figure class="product-figure">
-  <a class="painting-image-trigger" href={image.fullSrc||image.src} aria-label={`View ${title} full screen`} aria-haspopup="dialog" aria-controls="painting-lightbox">
+  <a class="painting-image-trigger" href={image.fullSrc||image.src} aria-label={`View full screen: ${title}`} aria-haspopup="dialog" aria-controls="painting-lightbox">
     <ArtworkImage src={image.src} alt={image.alt} width={image.width} height={image.height} fetchpriority="high" />
     <span class="painting-image-hint">View full screen <span aria-hidden="true">⤢</span></span>
   </a>
@@ -69,7 +69,7 @@ const count = gallery.length + 1;
       const d = button.dataset;
       set(main, { srcset: d.srcset, sizes: PRODUCT_SIZES, src: d.src, alt: d.alt, width: d.width, height: d.height });
       set(box, { srcset: null, sizes: null, src: d.full, alt: d.alt, width: d.width, height: d.height });
-      link.setAttribute('href', d.full); link.setAttribute('aria-label', `View photo full screen: ${d.alt}`);
+      link.setAttribute('href', d.full); link.setAttribute('aria-label', `View full screen: ${d.alt}`);
       if (caption) caption.textContent = d.caption || d.alt;
     });
   }

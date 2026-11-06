@@ -10,7 +10,9 @@
     const background = product.querySelector('.product-image');
     const source = image ? image.src : getComputedStyle(background).backgroundImage.replace(/^url\(["']?|["']?\)$/g, '');
     // Carry the responsive WebP candidates so phones download a right-sized image, not the 960px file.
-    return {id:product.dataset.productId||product.dataset.spId||product.dataset.galleryFeature,href:link.href, title:link.textContent, alt:image?.getAttribute('alt')||'', source, srcset:image?.getAttribute('srcset')||'', detail:priceLine(product), printsFrom:product.dataset.printsFrom||'', buy:product.dataset.buy==='true'};
+    const width = Number(image?.getAttribute('width')) || 0;
+    const height = Number(image?.getAttribute('height')) || 0;
+    return {id:product.dataset.productId||product.dataset.spId||product.dataset.galleryFeature,href:link.href, title:link.textContent, alt:image?.getAttribute('alt')||'', source, srcset:image?.getAttribute('srcset')||'', width, height, detail:priceLine(product), printsFrom:product.dataset.printsFrom||'', buy:product.dataset.buy==='true'};
   };
   // The price line ("Watercolor pastel · $600") only, never the card's Buy cue: on cards without prints the price shares its row with the pill.
   function priceLine(product) {
@@ -79,6 +81,8 @@
     slot.image.alt = item.alt || item.title;
     if (item.srcset) slot.image.srcset = item.srcset; else slot.image.removeAttribute('srcset');
     slot.image.src = item.source;
+    if (item.width > 0 && item.height > 0) { slot.image.width = item.width; slot.image.height = item.height; }
+    else { slot.image.removeAttribute('width'); slot.image.removeAttribute('height'); }
     slot.image.hidden = false;
     // Always the same three blocks (title / price / last row) so caption height never changes between slides.
     slot.detail.textContent = item.detail;
@@ -111,6 +115,7 @@
     await decodeImage(probe);
   }
   fill(layers[front], items[index]);
+  fill(layers[1 - front], items[(index + 1) % items.length]);
   showFront();
   const controls = document.createElement('div');
   controls.className = 'featured-controls';
@@ -162,6 +167,7 @@
       pendingSync = false;
       if (items.length) {
         fill(layers[front], items[index]);
+        fill(layers[1 - front], items[(index + 1) % items.length]);
         await decodeImage(layers[front].image);
       }
     }
@@ -198,6 +204,7 @@
     if(busy)pendingSync=true;
     else if(items.length){
       fill(layers[front], items[index]);
+      fill(layers[1 - front], items[(index + 1) % items.length]);
       decodeImage(layers[front].image);
     }
     update();
