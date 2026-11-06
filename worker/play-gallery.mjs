@@ -122,12 +122,15 @@ export async function proxyHexPlay(request, fetcher = fetch) {
   // Workers fetch already decompresses. Leaving these on would make the browser decode twice.
   out.delete('content-encoding');
   out.delete('content-length');
+  const entry = ENTRY.has(new URL(request.url).pathname);
+  // The hex host sends X-Robots-Tag: noindex. Drop it for every entry response,
+  // including HEAD, so the indexable URL is not marked noindex.
+  if (entry) out.delete('x-robots-tag');
   const entryHtml = request.method === 'GET'
     && res.status === 200
-    && ENTRY.has(new URL(request.url).pathname)
+    && entry
     && (out.get('content-type') || '').toLowerCase().includes('text/html');
   if (!entryHtml) return new Response(res.body, { status: res.status, statusText: res.statusText, headers: out });
-  out.delete('x-robots-tag');
   const html = await res.text();
   return new Response(rewritePlayEntryHtml(html), { status: res.status, statusText: res.statusText, headers: out });
 }

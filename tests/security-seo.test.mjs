@@ -69,6 +69,8 @@ test('/play/ entry is indexable with lang and canonical; /play/g frames stay noi
   const indexed = await proxyHexPlay(new Request('https://tjm.art/play/'), async () => new Response(bare, { headers: { 'content-type': 'text/html', 'x-robots-tag': 'noindex, nofollow' } }));
   assert.equal(/noindex/i.test(await indexed.text()), false);
   assert.equal(indexed.headers.get('x-robots-tag'), null);
+  const head = await proxyHexPlay(new Request('https://tjm.art/play/', { method: 'HEAD' }), async () => new Response(null, { headers: { 'content-type': 'text/html', 'x-robots-tag': 'noindex, nofollow' } }));
+  assert.equal(head.headers.get('x-robots-tag'), null);
   const frame = await playGallery(new Request('https://tjm.art/play/g/play/'), { ASSETS: { fetch: () => new Response('<html></html>', { status: 200, headers: { 'content-type': 'text/html' } }) } });
   assert.equal(frame.headers.get('x-robots-tag'), 'noindex, nofollow');
   const asset = await playGallery(new Request('https://tjm.art/play/g/play/app.js'), { ASSETS: { fetch: () => new Response('js', { status: 200, headers: { 'content-type': 'application/javascript' } }) } });
