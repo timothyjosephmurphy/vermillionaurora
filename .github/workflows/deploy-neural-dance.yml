@@ -1,0 +1,51 @@
+name: Deploy Neural Dance
+# Publishes vermillion-neural-dance. tjm.art/neural-dance/* is a zone route
+# pointed at this Worker. /api/neural-dance/debug/ stays on vermillion-commissions.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: neural-dance-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build Neural Dance pages
+        run: node scripts/build-neural-dance-pages.mjs
+      - name: See if this commit should deploy
+        id: release
+        run: |
+          mark=$(tr -d '[:space:]' < DEPLOY || echo no)
+          if [ "$mark" = "yes" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; else echo "go=false" >> "$GITHUB_OUTPUT"; echo "Deploy held. DEPLOY is '$mark'."; fi
+      - name: See if the deploy token is present
+        id: token
+        if: steps.release.outputs.go == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then echo "present=true" >> "$GITHUB_OUTPUT"; else echo "present=false" >> "$GITHUB_OUTPUT"; fi
+      - name: Deploy the Neural Dance Worker
+        if: steps.release.outputs.go == 'true' && steps.token.outputs.present == 'true'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          command: deploy
+          workingDirectory: neural-dance
+      - name: Token still required
+        if: steps.release.outputs.go == 'true' && steps.token.outputs.present != 'true'
+        run: |
+          echo "CLOUDFLARE_API_TOKEN is not set on this repository."
+          echo "Create an account token with Workers Scripts Edit, store it as CLOUDFLARE_API_TOKEN,"
+          echo "and add zone route tjm.art/neural-dance* to Worker vermillion-neural-dance."
+          echo "The debug Durable Object stays on vermillion-commissions."
+          exit 1
