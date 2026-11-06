@@ -162,6 +162,9 @@ jobs:
             echo "npm ci failed; retrying once"
             sleep 8
           done
+      - name: Typecheck Worker bindings
+        timeout-minutes: 5
+        run: npm run typecheck
       - name: Download the built site
         id: dist
         continue-on-error: true

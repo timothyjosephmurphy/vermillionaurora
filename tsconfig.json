@@ -1,0 +1,10 @@
+{
+  // `npm run typecheck` checks both projects. The site project typechecks
+  // worker/*.mjs (checkJs). The checkout project typechecks commission-worker.js
+  // (`// @ts-check`) and the generated Env declarations.
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.site.json" },
+    { "path": "./tsconfig.checkout.json" }
+  ]
+}

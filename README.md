@@ -39,7 +39,7 @@ npm run test:browser
 
 The build validates unique identities, collection references, positive prices, image paths/alt text, book links, artwork measurements, and shipping profiles. It generates `cloudflare/checkout-catalog.mjs` and the public pages from the same catalog hash. Commit the generated Worker catalog with content changes; CI checks it for drift. Browser checks mock all payment providers and exercise desktop/mobile layouts and live availability.
 
-`dist/` is generated and is the only website deployment directory. `scripts/copy-assets.mjs` includes existing public pages, images, and scripts while excluding Worker code, source catalogs, shipping notes, tests, credentials, and the obsolete `public_html/` bundle. `/gallery/inventory.json` and `/payments/paypal-links.json` remain read-only generated compatibility exports. They are no longer editing sources.
+`dist/` is generated and is the only website deployment directory. `scripts/copy-assets.mjs` includes existing public pages, images, and scripts while excluding Worker code, source catalogs, shipping notes, tests, and credentials. The old `public_html/` hosting bundle has been removed; public pages come from `src/pages/`. `/gallery/inventory.json` and `/payments/paypal-links.json` remain read-only generated compatibility exports. They are no longer editing sources.
 
 ## Deployment
 
