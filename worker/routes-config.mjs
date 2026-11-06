@@ -5,12 +5,6 @@
 // Glob patterns (the wrangler list) and the runtime prefixes differ by a trailing
 // star: "/checkout/cart/*" is the asset rule, "/checkout/cart/" is the startsWith
 // check. Keep each pair derived from the same string.
-// The Neural Dance debug glob is owned by worker/neural-dance-debug.mjs so the
-// WebSocket forward and this list cannot drift.
-
-import { NEURAL_DANCE_DEBUG_WORKER_FIRST } from './neural-dance-debug.mjs';
-export { NEURAL_DANCE_DEBUG_WORKER_FIRST };
-
 export const COMMISSION_PATHS = ['/api/commission', '/commission-privacy', '/inventory/status'];
 
 export const QUICKBOOKS_PATHS = ['/quickbooks/connect', '/quickbooks/callback', '/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry', '/quickbooks/costs/preview', '/quickbooks/costs/backfill'];
@@ -46,7 +40,6 @@ export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*
 export const PLAY_WORKER_FIRST = ['/play', '/play/*'];
 
 export const WORKER_FIRST_PATTERNS = [
-  ...NEURAL_DANCE_DEBUG_WORKER_FIRST,
   ...COMMISSION_PATHS,
   ...QUICKBOOKS_PATHS,
   TESTIMONIALS_API_PATTERN,

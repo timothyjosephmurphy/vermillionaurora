@@ -65,7 +65,7 @@ function blocked(failure) {
 }
 
 try {
-  for (const path of ['/cart/', '/play/', '/neural-dance/live/', '/neural-dance/', '/blog/walk-my-paintings-3d-gallery/', '/products/strawberry-point-11/']) {
+  for (const path of ['/cart/', '/play/', '/blog/walk-my-paintings-3d-gallery/', '/products/strawberry-point-11/']) {
     const ctx = await browser.newContext();
     const page = await ctx.newPage();
     const refused = [];
@@ -81,14 +81,6 @@ try {
     if (path === '/play/') {
       await page.waitForFunction(() => document.querySelector('iframe.g')?.contentDocument?.documentElement?.lang === 'en', null, { timeout: 60000 });
     }
-    if (path === '/neural-dance/live/') {
-      await page.waitForFunction(() => document.documentElement.lang === 'en' && document.querySelector('#nd-room-lab [data-stage]'));
-      const wasm = await page.evaluate(async () => {
-        const res = await fetch('/neural-dance/neural-dance.wasm');
-        return res.status;
-      });
-      assert.equal(wasm, 200);
-    }
     if (path === '/blog/walk-my-paintings-3d-gallery/') {
       const posting = await page.evaluate(() => {
         const nodes = [...document.querySelectorAll('script[type="application/ld+json"]')];
@@ -97,10 +89,6 @@ try {
       assert.equal(posting.headline, 'Walk My 206 Paintings in 3D');
       assert.equal(posting.author.name, 'TJ Murphy');
       assert.equal(posting.author.url, 'https://tjm.art/about/');
-    }
-    if (path === '/neural-dance/' || path === '/neural-dance/live/') {
-      const image = await page.locator('meta[property="og:image"]').getAttribute('content');
-      assert.equal(image, 'https://tjm.art/brand/neural-dance-share.jpg');
     }
     if (path === '/products/strawberry-point-11/') {
       const label = await page.locator('a.painting-image-trigger').getAttribute('aria-label');

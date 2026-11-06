@@ -101,14 +101,7 @@ test('blog stories emit BlogPosting JSON-LD and skip the index shape', () => {
   assert.equal(JSON.parse(plain.replace(/^<script type="application\/ld\+json">/, '').replace(/<\/script>$/, '')).dateModified, undefined);
 });
 
-test('Neural Dance pages point at the dedicated share image, and /play keeps lang=en', () => {
-  for (const file of ['src/pages/neural-dance/index.astro', 'src/pages/neural-dance/live/index.astro']) {
-    const html = fs.readFileSync(file, 'utf8');
-    assert.ok(html.includes('https://tjm.art/brand/neural-dance-share.jpg'), file);
-    assert.ok(html.includes('og:image:width" content="1200"') || html.includes('content="1200"'), file);
-    assert.match(html, /twitter:image" content="https:\/\/tjm\.art\/brand\/neural-dance-share\.jpg"/);
-  }
-  assert.match(fs.readFileSync('src/pages/neural-dance/live/index.astro', 'utf8'), /name="robots" content="noindex"/);
+test('/play keeps lang=en and the Neural Dance share image stays public', () => {
   const shell = fs.readFileSync('static/play/index.html', 'utf8');
   assert.match(shell, /<html lang="en">/);
   assert.match(shell, /iframe\.g/);

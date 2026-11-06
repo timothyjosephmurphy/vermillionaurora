@@ -11,8 +11,7 @@ import {squareTestPage,squareTestPageEnabled} from './square-test-page.mjs';
 import printTestAssets from './print-test-assets.generated.mjs';
 import {prints as printCatalog} from './print-catalog-store.mjs';
 import {ensurePrintCatalog} from './print-catalog-asset.mjs';
-import { handleNeuralDanceDebug } from '../worker/neural-dance-debug.mjs';
-export { NeuralDanceDebugRoom } from '../worker/neural-dance-debug.mjs';
+export { NeuralDanceDebugRoom } from './neural-dance-debug-room.mjs';
 export { PaintingStock } from './painting-stock.mjs';
 export { ShippingCheck } from './shipping-check.mjs';
 export { QuickbooksSync } from './quickbooks-sync.mjs';
@@ -23,7 +22,6 @@ export default {
   async fetch(request,env) {
     if (env.CHECKOUT_MODE !== 'sandbox' || env.GITHUB_TOKEN) return new Response('Sandbox isolation failure',{status:503});
     const path=new URL(request.url).pathname;
-    if (path.startsWith('/api/neural-dance/debug/')) return handleNeuralDanceDebug(request, env);
     try { await ensurePrintCatalog(env); }
     catch (error) { console.error('Print catalog load failed', error); return new Response('Checkout is temporarily unavailable.',{status:503,headers:{'Cache-Control':'no-store'}}); }
     if(request.method==='GET'&&Object.hasOwn(printTestAssets,path)) {
