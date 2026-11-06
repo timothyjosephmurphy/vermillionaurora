@@ -5,6 +5,9 @@
 // the marker hook studio-tracker #793 can call. sample() returns
 // [{id, x, y, type}] in projection pixels, or null while the camera is not driving.
 
+import {createPersonOcclusion, emptyOcclusion, gateStickerBlobs, occlusionTelemetry, personInFrame, stickerStagePoints, syncPersonNote} from './src/person-occlusion.js';
+import {createManualStickers, mergeLatchedStickers} from './src/debug-manual-stickers.js';
+
 // v3 keeps a back-camera choice and a sane quad, and tightens untouched slider defaults.
 export const STORAGE_KEY = 'nd.camera.v3';
 export const LEGACY_CAMERA_KEYS = ['nd.camera.v2', 'nd.camera.v1', 'nd-camera-mode'];
@@ -1066,6 +1069,10 @@ export function markersFromFrame(frame, settings, homography, scale, tracker, no
       return !extra.echo.veto(at.x, at.y);
     });
   }
+  if (typeof extra.beforeLatch === 'function') {
+    const next = extra.beforeLatch(videoBlobs);
+    if (Array.isArray(next)) videoBlobs = next;
+  }
   if (extra.latch === false) return {blobs: videoBlobs, markers: []};
   const stable = tracker.update(videoBlobs, now);
   const stageOf = typeof tracker.stage === 'function' ? tracker.stage.bind(tracker) : null;
@@ -1390,6 +1397,9 @@ export function attachCameraMode(root) {
   let driving = false;
   let askedStart = false;
   let tracker = createMarkerTracker();
+  const occlusion = createPersonOcclusion();
+  const manuals = createManualStickers();
+  let lastOcclusion = emptyOcclusion();
   let rawBlobs = [];
   let latest = null;
   let raf = 0;
@@ -1498,6 +1508,17 @@ export function attachCameraMode(root) {
     }
   }
   function stopDriving() {
+    const kept = mergeLatchedStickers([], manuals.list());
+    if (kept.length) {
+      driving = true;
+      latest = kept;
+      const nd = roomApi();
+      if (nd) {
+        nd.setMarkers(kept);
+        if (typeof nd.poke === 'function') nd.poke();
+      }
+      return;
+    }
     if (!driving) {
       latest = null;
       return;
@@ -1512,13 +1533,18 @@ export function attachCameraMode(root) {
     latest = null;
   }
   function publishList(list) {
-    latest = list;
+    const merged = mergeLatchedStickers(Array.isArray(list) ? list : [], manuals.list());
+    latest = merged;
     const nd = roomApi();
     if (!nd) return;
-    nd.setMarkers(list);
+    nd.setMarkers(merged);
     if (typeof nd.poke === 'function') nd.poke();
   }
   function forgetLatchedMarkers() {
+    manuals.clear();
+    occlusion.reset();
+    lastOcclusion = emptyOcclusion();
+    syncPersonNote(document, false);
     tracker.clear();
     echo.clear();
     driving = false;
@@ -1545,14 +1571,20 @@ export function attachCameraMode(root) {
   }
   function publish(markers) {
     clearNoteLocks();
+    const merged = mergeLatchedStickers(Array.isArray(markers) ? markers : [], manuals.list());
     if (!markersOn || !homography) {
+      if (merged.length) {
+        driving = true;
+        push(merged);
+        return;
+      }
       if (driving) stopDriving();
       else latest = null;
       return;
     }
-    if (markers.length) {
+    if (merged.length) {
       driving = true;
-      push(markers);
+      push(merged);
       return;
     }
     if (driving) push([]);
@@ -1587,6 +1619,9 @@ export function attachCameraMode(root) {
     stream = null;
     video.srcObject = null;
     rawBlobs = [];
+    occlusion.reset();
+    lastOcclusion = emptyOcclusion();
+    syncPersonNote(document, false);
     cameraButton.textContent = 'Use camera';
     if (markersOn) setMarkersEnabled(false);
     say(text || 'Camera off');
@@ -1689,14 +1724,38 @@ export function attachCameraMode(root) {
     const stage = document.querySelector('#nd-room-lab [data-stage]');
     if (stage) echo.sample(stage, now);
     const gate = markerFrameGate(homography, uiExclusions());
+    const projectBlob = (blob) => (homography && blob ? projectVideoPoint(homography, blob.x, blob.y) : null);
+    let decision = lastOcclusion;
     const result = markersFromFrame(frame, settings(), gate.homography, scale, markersOn ? tracker : idleTracker, now, {
       echo: gate.homography ? echo : null,
       exclude: gate.exclude,
-      latch: markersOn
+      latch: markersOn,
+      beforeLatch(videoBlobs) {
+        const person = personInFrame(frame.data, frame.width, frame.height, {
+          inside(x, y) {
+            if (!homography) return true;
+            const sx = (x + 0.5) * (scale.scaleX || 1);
+            const sy = (y + 0.5) * (scale.scaleY || 1);
+            const at = applyHomography(homography, sx, sy);
+            return !!(at && at.x >= 0 && at.y >= 0 && at.x <= CANVAS_W && at.y <= CANVAS_H);
+          }
+        });
+        decision = occlusion.observe({
+          person: person.present,
+          stickers: stickerStagePoints(videoBlobs, projectBlob),
+          now
+        });
+        lastOcclusion = decision;
+        syncPersonNote(document, !!decision.note);
+        return gateStickerBlobs(videoBlobs, decision, projectBlob);
+      }
     });
+    if (decision.rescan && markersOn && homography) {
+      tracker.commitStage((decision.latch || []).map(spot => ({x: spot.x, y: spot.y, kind: 'sticker'})));
+    }
     rawBlobs = result.blobs;
     if (root.dataset.debugStream === '1') debugCache = detectionTelemetry(rawBlobs, frame.data, frame.width, frame.height, scale, homography);
-    if (markersOn) publish(result.markers);
+    if (markersOn) publish(decision.rescan && homography ? toDancerMarkers(tracker.stage()) : result.markers);
     if (now - lastStatus > 800) {
       lastStatus = now;
       if (!draft) {
@@ -2011,10 +2070,21 @@ export function attachCameraMode(root) {
         quadMedianRgb: debugCache ? debugCache.quadMedianRgb : null,
         pink: debugCache ? debugCache.pink : [],
         stickers: debugCache ? debugCache.stickers : [],
-        markers: Array.isArray(latest) ? latest.map(m => ({id: m.id, x: m.x, y: m.y, kind: m.kind || 'pink'})) : [],
+        markers: Array.isArray(latest) ? latest.map(m => {
+          const item = {id: m.id, x: m.x, y: m.y, kind: m.kind || 'pink'};
+          if (m.manual) item.manual = true;
+          return item;
+        }) : [],
+        occlusion: occlusionTelemetry(lastOcclusion),
         fps: debugFps,
         controls: current
       };
+    },
+    applyManualSticker(patch) {
+      manuals.apply(patch);
+      const detected = markersOn && homography ? toDancerMarkers(tracker.stage()) : [];
+      publish(detected);
+      return manuals.list();
     },
     applyTuning(patch) {
       if (!patch || typeof patch !== 'object') return;

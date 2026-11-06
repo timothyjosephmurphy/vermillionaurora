@@ -3,6 +3,8 @@
 // the room code and the viewer key.
 
 import {sanitizeDebugPatch} from './debug-protocol.js';
+import {resolveStageTap} from './src/debug-manual-stickers.js';
+import {syncPersonNote} from './src/person-occlusion.js';
 import {formatDancerCount} from './room-lab.js';
 
 const STAGE_W = 1000;
@@ -256,6 +258,7 @@ export function attachDebugViewer(doc) {
         stage.hidden ? 'controls hidden' : 'controls visible'
       ].join(' · ');
     }
+    syncPersonNote(doc, !!(telemetry && telemetry.occlusion && telemetry.occlusion.note));
     syncTuning(doc, telemetry);
     if (summary) {
       const rgb = telemetry && telemetry.quadMedianRgb;
@@ -365,8 +368,9 @@ export function attachDebugViewer(doc) {
     if (!rect.width || !rect.height) return;
     const x = (event.clientX - rect.left) / rect.width * STAGE_W;
     const y = (event.clientY - rect.top) / rect.height * STAGE_H;
-    const typeInput = doc.querySelector('[data-debug-control="type"]');
-    sendPatch({action: 'add-sim', x, y, type: typeInput ? +typeInput.value : 1}, 'Sim dancer sent');
+    const patch = resolveStageTap(telemetry && telemetry.markers, x, y);
+    const label = patch && patch.action === 'remove-manual-sticker' ? 'Manual sticker removed' : 'Manual sticker sent';
+    sendPatch(patch, label);
   });
   doc.querySelectorAll('[data-debug-mode] [data-mode]').forEach(button => {
     button.addEventListener('click', () => {

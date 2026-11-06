@@ -45,6 +45,7 @@ label{display:grid;gap:4px;color:#aab0c0;font-size:13px;min-width:140px;flex:1}
 input[type="range"]{width:100%;accent-color:#81b7fc}
 .mode{display:flex;gap:6px}
 [data-debug-missing]{max-width:640px}
+[data-person-note]{margin:0 0 12px;padding:6px 10px;border-radius:999px;background:#3a3420;color:#f3e2b3;border:1px solid #c9a24a;font-size:13px;width:max-content;max-width:100%}
 [hidden]{display:none !important}
 </style>
 </head>
@@ -54,6 +55,7 @@ input[type="range"]{width:100%;accent-color:#81b7fc}
   <p class="lead" data-debug-missing hidden>This page needs a room code and a viewer key from Share live debug. Nothing is streaming.</p>
   <div data-debug-app hidden>
     <p class="lead">Room <strong data-debug-room></strong>. Camera and stage update about once a second. Hover the camera for the pixel under the pointer.</p>
+    <p data-person-note hidden role="status">person in frame, detection paused</p>
     <div class="frames">
       <section class="frame">
         <h2>Camera (480w)</h2>
@@ -83,7 +85,7 @@ input[type="range"]{width:100%;accent-color:#81b7fc}
     </section>
     <section class="panel">
       <h2>Room actions</h2>
-      <p class="lead">These apply on the projector as soon as you click. Click the projected stage to add one simulated dancer there.</p>
+      <p class="lead">These apply on the projector as soon as you click. Tap the projected stage to add a latched sticker. Tap that sticker again to remove it.</p>
       <div class="controls" data-debug-actions>
         <button class="btn" type="button" data-debug-action="align">Align projector</button>
         <button class="btn" type="button" data-debug-action="cancel-align">Cancel align</button>

@@ -95,6 +95,8 @@ body.nd-live-aligning .nd-live-chrome,body.nd-live-aligning .nd-live-reveal{disp
 body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:320px;height:180px;max-height:none;transform:translateX(-120vw);overflow:hidden;padding:0;border:0;z-index:1;pointer-events:none}
 [data-cancel-align]{position:fixed;bottom:max(10px, env(safe-area-inset-bottom, 10px));left:50%;transform:translateX(-50%);z-index:40;background:#10121a;color:#aab0c0;border:1px solid rgba(255,255,255,0.16);border-radius:999px;font-size:12px;padding:5px 10px}
 [data-cancel-align][hidden]{display:none !important}
+[data-person-note]{position:fixed;top:max(8px, env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:1000012;margin:0;padding:6px 12px;border-radius:999px;background:#3a3420;color:#f3e2b3;border:1px solid #c9a24a;font:600 13px/1.3 Inter,system-ui,sans-serif;pointer-events:none}
+[data-person-note][hidden]{display:none !important}
 @media (max-height:520px){
   h2{font-size:11px}
   .nd-live-bar{gap:4px;padding:3px 6px}
@@ -107,6 +109,7 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
 </head>
 <body class="nd-live nd-live-collapsed">
 <div id="nd-live-toast" data-align-banner hidden></div>
+<p data-person-note hidden role="status">person in frame, detection paused</p>
 <div data-debug-banner hidden><span data-debug-banner-text>Suggested tuning received</span><button class="btn btn-primary" type="button" data-debug-apply>Apply</button><button class="btn" type="button" data-debug-dismiss>Dismiss</button></div>
 <svg data-align-lock-outline hidden viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polygon points="6,6 94,6 94,94 6,94" fill="none" stroke="#3dff9a" stroke-width="1.6"></polygon></svg>
 <h1 class="nd-live-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Neural Dance live</h1>

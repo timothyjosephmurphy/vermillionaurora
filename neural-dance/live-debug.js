@@ -88,6 +88,13 @@ export function collectTelemetry(doc, now = Date.now()) {
     pink: vision.pink || [],
     stickers: vision.stickers || [],
     markers: vision.markers || [],
+    occlusion: vision.occlusion && typeof vision.occlusion === 'object'
+      ? {
+          paused: vision.occlusion.paused === true,
+          settling: vision.occlusion.settling === true,
+          note: typeof vision.occlusion.note === 'string' ? vision.occlusion.note : null
+        }
+      : {paused: false, settling: false, note: null},
     audio: {
       source: audio.source === 'mic' || audio.source === 'track' ? audio.source : 'silent',
       kick: +audio.kick || 0,
@@ -160,6 +167,7 @@ function applyDebugAction(doc, clean) {
   else if ((action === 'clear-sim' || action === 'sim-off') && nd && typeof nd.clearSim === 'function') nd.clearSim();
   else if ((action === 'sim-seed' || action === 'sim-on') && nd && typeof nd.seedSim === 'function') nd.seedSim();
   else if (action === 'add-sim' && nd && typeof nd.addSim === 'function') nd.addSim(clean.x, clean.y, clean.type);
+  else if ((action === 'add-manual-sticker' || action === 'remove-manual-sticker') && camera && typeof camera.applyManualSticker === 'function') camera.applyManualSticker(clean);
   else if (action === 'clear-markers') clickControl(doc, '[data-marker-clear]');
   else if (action === 'start') clickControl(doc, '#nd-room-lab [data-action="play"]', 'Start');
   else if (action === 'pause') clickControl(doc, '#nd-room-lab [data-action="play"]', 'Pause');

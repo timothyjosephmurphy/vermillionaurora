@@ -108,6 +108,26 @@ export function sanitizeDebugPatch(input) {
       out.y = Math.min(620, Math.max(0, y));
       if (Number.isFinite(+input.type)) out.type = Math.min(3, Math.max(0, Math.round(+input.type)));
     }
+  } else if (input.action === 'add-manual-sticker') {
+    const x = +input.x;
+    const y = +input.y;
+    if (Number.isFinite(x) && Number.isFinite(y)) {
+      out.action = 'add-manual-sticker';
+      out.x = Math.min(1000, Math.max(0, x));
+      out.y = Math.min(620, Math.max(0, y));
+      const id = input.id | 0;
+      if (id > 0 && id < 2147483647) out.id = id;
+    }
+  } else if (input.action === 'remove-manual-sticker') {
+    const id = input.id | 0;
+    if (id > 0 && id < 2147483647) {
+      out.action = 'remove-manual-sticker';
+      out.id = id;
+      const x = +input.x;
+      const y = +input.y;
+      if (Number.isFinite(x)) out.x = Math.min(1000, Math.max(0, x));
+      if (Number.isFinite(y)) out.y = Math.min(620, Math.max(0, y));
+    }
   } else if (DEBUG_ACTIONS.has(input.action)) out.action = input.action;
   return Object.keys(out).length ? out : null;
 }

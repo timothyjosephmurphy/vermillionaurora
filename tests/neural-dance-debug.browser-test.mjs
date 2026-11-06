@@ -69,9 +69,13 @@ try {
     panel: document.querySelector('[data-debug-panel]').hidden,
     auto: document.querySelector('[data-debug-auto]').checked,
     sockets: window.__ndWs.length,
-    fetches: window.__ndFetch.length
+    fetches: window.__ndFetch.length,
+    personHidden: document.querySelector('[data-person-note]').hidden,
+    personText: document.querySelector('[data-person-note]').textContent
   }));
   assert.equal(before.pressed, 'false');
+  assert.equal(before.personHidden, true);
+  assert.equal(before.personText, 'person in frame, detection paused');
   assert.equal(before.label, 'Share live debug');
   assert.equal(before.panel, true);
   assert.equal(before.auto, true);
@@ -179,9 +183,27 @@ try {
   const cleared = await page.evaluate(() => window.__ndWs.some(socket => socket.sent.some(body => body.includes('clear-sim'))));
   assert.equal(cleared, true);
   await page.locator('[data-debug-stage]').click({position: {x: 80, y: 60}});
-  const added = await page.evaluate(() => window.__ndWs.some(socket => socket.sent.some(body => body.includes('add-sim'))));
+  const added = await page.evaluate(() => window.__ndWs.some(socket => socket.sent.some(body => body.includes('add-manual-sticker'))));
   assert.equal(added, true);
+  assert.equal(await page.locator('[data-person-note]').isHidden(), true);
   await page.screenshot({path: '/opt/cursor/artifacts/neural-dance-debug-viewer.png'});
+  const stageBox = await page.locator('[data-debug-stage]').boundingBox();
+  const tap = {x: Math.round(stageBox.width * 0.25), y: Math.round(stageBox.height * 0.4)};
+  await page.evaluate(() => {
+    const socket = window.__ndWs.at(-1);
+    socket.onmessage({data: JSON.stringify({
+      type: 'frame',
+      telemetry: {
+        markers: [{id: 500001, x: 250, y: 248, kind: 'sticker', manual: true}],
+        occlusion: {paused: true, note: 'person in frame, detection paused'}
+      }
+    })});
+  });
+  await page.waitForFunction(() => document.querySelector('[data-person-note]').hidden === false);
+  assert.equal((await page.locator('[data-person-note]').innerText()).trim(), 'person in frame, detection paused');
+  await page.locator('[data-debug-stage]').click({position: tap});
+  const removed = await page.evaluate(() => window.__ndWs.some(socket => socket.sent.some(body => body.includes('remove-manual-sticker') && body.includes('500001'))));
+  assert.equal(removed, true);
 
   await page.goto(origin + '/neural-dance/debug/', {waitUntil: 'load'});
   const bare = await page.evaluate(() => ({
