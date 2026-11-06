@@ -20,7 +20,8 @@ import { catalogAdmin } from './catalog-admin.mjs';
 import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
 import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 import { playGallery, PLAY_WORKER_FIRST } from './play-gallery.mjs';
-export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST };
+import { isPrintMasterRequest, servePrintMaster, PRINT_MASTER_WORKER_FIRST } from './print-masters.mjs';
+export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST, PRINT_MASTER_WORKER_FIRST };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const COMMISSION_API = '/api/commission';
 export const COMMISSION_PATHS = [COMMISSION_API, '/commission-privacy', '/inventory/status'];
@@ -137,6 +138,9 @@ export default {
     const redirect = hostRedirect(request, env);
     if (redirect) return redirect;
     const url = new URL(request.url);
+    // Full-resolution print masters are private. This runs before assets, including on the legacy
+    // host that does not redirect /print-masters/. Unsigned requests are 403 and never read R2.
+    if (isPrintMasterRequest(url.pathname)) return servePrintMaster(request, env);
     // /play entry is the hex gallery. Quake files that still exist are served from assets
     // inside playGallery; holo and book covers stay on the R2 redirects.
     if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return playGallery(request, env);

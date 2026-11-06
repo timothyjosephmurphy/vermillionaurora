@@ -6,6 +6,7 @@ import manifest from '../catalog/older-work.json' with {type:'json'};
 import allOlderWork,{olderWorkOriginals} from '../catalog/older-work-products.mjs';
 const olderWork=allOlderWork.filter(p=>p.olderWork);
 import recipes from '../catalog/older-work-print-masters.json' with {type:'json'};
+import {printMasterRecord} from '../scripts/lib/print-master-file.mjs';
 import config from '../catalog/prints.json' with {type:'json'};
 import {printsFromLabel,showBuy} from '../src/data/card-commerce.mjs';
 import {olderWorkGalleryTiles,olderWorkPaintingCount} from '../src/data/older-work-gallery.mjs';
@@ -23,7 +24,8 @@ test('every Older Work painting belongs to exactly one product page',()=>{
 test('Older Work masters are committed, checksummed and quote-only',()=>{
   assert.deepEqual(recipes.map(r=>r.id),manifest.groups.map(g=>g.id));
   for(const r of recipes){
-    assert(fs.existsSync(`static/print-masters/${r.sha256}.jpg`),r.id);
+    const recorded=printMasterRecord(r.sha256);assert.equal(recorded?.sha256,r.sha256,r.id);assert.equal(recorded.bytes>0,true,r.id);
+    const file=`static/print-masters/${r.sha256}.jpg`;if(fs.existsSync(file))assert.equal(fs.statSync(file).size,recorded.bytes,r.id);
     assert.equal(config.artworks[r.id].source.sha256,r.sha256);
     assert.equal(config.artworks[r.id].source.url,r.url);
   }

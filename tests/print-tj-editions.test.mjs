@@ -6,6 +6,7 @@ import config from '../catalog/prints.json' with {type:'json'};
 import recipes from '../catalog/tj-print-masters.json' with {type:'json'};
 import {readyPrints} from '../catalog/prints.mjs';
 import {EDITION_LAYOUT} from '../catalog/edition-layout.mjs';
+import {manifestCoversSource} from '../scripts/lib/print-master-file.mjs';
 test('TJ masters keep native-resolution 1 inch sheets and are priced from a live FinerWorks quote',async()=>{
   assert.equal(recipes.length,23);
   for(const recipe of recipes){
@@ -13,8 +14,8 @@ test('TJ masters keep native-resolution 1 inch sheets and are priced from a live
     assert.equal(art.enabled,true);assert(!art.sampleOnly&&!art.testOnly);
     assert.equal(Object.values(readyPrints).filter(p=>p.productId===recipe.id).length>0,true);
     if(recipe.layoutOptions?.sizeKeys)assert.deepEqual(Object.keys(art.variants),recipe.layoutOptions.sizeKeys);
-    const source=await readFile(new URL('../static'+new URL(art.source.url).pathname,import.meta.url));
-    assert.equal(createHash('sha256').update(source).digest('hex'),art.source.sha256);
+    try{const source=await readFile(new URL('../static'+new URL(art.source.url).pathname,import.meta.url));assert.equal(createHash('sha256').update(source).digest('hex'),art.source.sha256);}
+    catch(error){if(error.code!=='ENOENT')throw error;assert.equal(manifestCoversSource(art.source)?.sha256,art.source.sha256,recipe.id);}
     for(const v of Object.values(art.variants)){
       assert.equal(v.asset.layout,EDITION_LAYOUT);assert.match(v.amount,/^\d+\.\d{2}$/);assert.equal(Object.keys(v.frameOptions).length,3);
       assert(v.asset.layoutSpec.content.left>=300&&v.asset.layoutSpec.content.top>=300);

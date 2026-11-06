@@ -1,27 +1,47 @@
 // Small overview images come from the same untouched masters used at maximum zoom.
 import sharp from 'sharp';
+import {existsSync} from 'node:fs';
 import {readFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {wallArtworks,wallThumbnailWidths,wallSize} from '../src/data/gallery-wall.mjs';
+import {manifestCoversSource,readPrintMasterBytes} from './lib/print-master-file.mjs';
 await mkdir('static/gallery-wall',{recursive:true});
-let cursor=0;
+let cursor=0,skipped=0;
+const previewPaths=art=>wallThumbnailWidths.filter(w=>w<art.sourceWidth).map(width=>`static/gallery-wall/${art.sourceSha256}-${width}.webp`);
 await Promise.all(Array.from({length:3},async()=>{
   while(cursor<wallArtworks.length){
     const art=wallArtworks[cursor++];
     // All current TJ masters are versioned local assets; reject an unreviewed source move.
     if(!/^\/print-masters\/[a-f0-9]{64}\.jpg$/.test(art.fullSrc))throw Error(`Review wall master location: ${art.id}`);
-    const bytes=await readFile(`static${art.fullSrc}`);
+    const bytes=await readPrintMasterBytes(`https://vermillionaurora.com${art.fullSrc}`);
+    if(!bytes){
+      const recorded=manifestCoversSource({url:`https://vermillionaurora.com${art.fullSrc}`,sha256:art.sourceSha256,widthPx:art.sourceWidth,heightPx:art.sourceHeight});
+      if(!recorded)throw Error(`Print master is not in data/print-masters-manifest.json: ${art.id}`);
+      if(!previewPaths(art).every(path=>existsSync(path))){
+        if(process.env.PRINT_EDITIONS_REQUIRED==='1')throw Error(`Gallery-wall previews required for ${art.id}`);
+        console.log(`No gallery-wall preview on disk for ${art.id}`);
+      }
+      skipped++;continue;
+    }
     if(createHash('sha256').update(bytes).digest('hex')!==art.sourceSha256)throw Error(`Changed wall master: ${art.id}`);
     const metadata=await sharp(bytes).metadata();
     const swap=metadata.orientation>=5&&metadata.orientation<=8;
     if((swap?metadata.height:metadata.width)!==art.sourceWidth||(swap?metadata.width:metadata.height)!==art.sourceHeight)throw Error(`Changed wall master dimensions: ${art.id}`);
+    const missing=previewPaths(art).filter(path=>!existsSync(path));
+    if(!missing.length&&process.env.PRINT_MASTER_REBUILD!=='1')continue;
     for(const width of wallThumbnailWidths.filter(w=>w<art.sourceWidth)){
       await sharp(bytes).rotate().resize({width,withoutEnlargement:true}).webp({quality:width<960?82:92,effort:4}).toFile(`static/gallery-wall/${art.sourceSha256}-${width}.webp`);
     }
   }
 }));
-console.log(`Prepared progressive previews for ${wallArtworks.length} gallery-wall prints; full-resolution masters unchanged.`);
+console.log(`Prepared progressive previews for ${wallArtworks.length-skipped} gallery-wall prints; ${skipped} used the print-master manifest.`);
 
+if((skipped||process.env.PRINT_MASTER_REBUILD!=='1')&&existsSync('static/gallery-wall/framed-wall.webp')){
+  console.log('Kept the existing framed-wall preview.');
+}else if(skipped){
+  if(process.env.PRINT_EDITIONS_REQUIRED==='1')throw Error('framed-wall.webp required');
+  console.log('framed-wall.webp was not regenerated.');
+}else{
 // Exact miniature of the measured wall, framed as one artwork for the homepage carousel.
 const scale=Math.min(1412/wallSize.width,752/wallSize.height),left=Math.round((1600-wallSize.width*scale)/2),top=Math.round((880-wallSize.height*scale)/2),composite=[];
 const rectangle=(width,height,color)=>({create:{width,height,channels:4,background:color}});
@@ -34,4 +54,5 @@ for(const art of wallArtworks){
 }
 const background=Buffer.from(`<svg width="1600" height="880"><rect width="1600" height="880" fill="#e8e0d4"/><rect x="18" y="18" width="1564" height="844" rx="2" fill="#262321"/><rect x="32" y="32" width="1536" height="816" fill="#fcfaf5"/><rect x="${left}" y="${top}" width="${wallSize.width*scale}" height="${wallSize.height*scale}" fill="#eee8dd"/></svg>`);
 await sharp(background).composite(composite).webp({quality:91}).toFile('static/gallery-wall/framed-wall.webp');
+}
 
