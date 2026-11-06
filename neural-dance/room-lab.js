@@ -2,6 +2,8 @@
 // One WASM instance, mic Listen, display AGC, and the marker hook camera mode calls.
 // Slider values stay in this browser under nd-room-lab.
 
+import {createBeatClock} from './beat-clock.js';
+
 export const ROOM_KEY = 'nd-room-lab';
 export const MARKER_ID_BASE = 100000;
 export const DANCER_CAP = 48;
@@ -203,6 +205,8 @@ let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0;
 let ac=null;
 let colors=[],foreground='',background='';
 const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createSession())||{connect(){},release(){},sample(){},stroke(){}};
+const beatClock=createBeatClock({now:typeof performance!=='undefined'?performance.now():0});
+const beatReadout=el('[data-beat]');
 let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null,lastLevels=[0,0,0,0];
 const bandSens=[1,1,1,1];
 const hotUntil=[0,0,0,0];
@@ -279,8 +283,11 @@ function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stri
  ctx.lineWidth=1.5;ctx.strokeStyle=foreground;
  for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){const ia=base+i*ds,ib=base+j*ds,ax=f[ia],ay=f[ia+1],bx=f[ib],by=f[ib+1];if(Math.hypot(ax-bx,ay-by)>R)continue;const activity=Math.min(f[ia+2],f[ib+2]);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=xy(ax,ay),q=xy(bx,by),amp=Math.min(18,Math.abs(bx-ax)*.15),mid=xy(ax+(bx-ax)*.5,ay+(by-ay)*.5-amp);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
  ctx.globalAlpha=1;const pb=api.nd_pulses()>>>2,pc=api.nd_pulse_count(),ps=api.nd_pulse_stride();
- for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=xy(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=xy(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=xy(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
- for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);ctx.strokeStyle=colors[k];ctx.lineWidth=2;if(rings.rippling){ctx.globalAlpha*=.42;ctx.lineWidth=1.2;}ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=rest>0?.4:1;ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
+ const beatNow=typeof performance!=='undefined'?performance.now():0;
+ ctx.save();ctx.globalCompositeOperation='lighter';
+ for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){const a=xy(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=xy(f[o+8+j*2],f[o+9+j*2]);if(!low&&j+3>=trail){ctx.globalAlpha=.2;ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=.55*j/trail;ctx.lineWidth=2+j/4;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}const head=xy(f[o+5],f[o+6]);ctx.globalAlpha=.35;ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(head.x,head.y,7,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;ctx.beginPath();ctx.arc(head.x,head.y,3.5,0,Math.PI*2);ctx.fill();}
+ ctx.restore();
+ for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;const flash=beatClock.flash(k,beatNow);ctx.globalAlpha=rest>0?.4:1;rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);ctx.strokeStyle=colors[k];ctx.lineWidth=2;if(rings.rippling){ctx.globalAlpha*=.42;ctx.lineWidth=1.2;}ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();if(flash>0){ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=0.45+0.55*flash;ctx.fillStyle=colors[k]||'#fff';ctx.beginPath();ctx.arc(p.x,p.y,radius*(1.05+0.7*flash),0,Math.PI*2);ctx.fill();ctx.restore();}ctx.globalAlpha=rest>0?.4:1;ctx.fillStyle=colors[k];shape(k,p,4+2*q);if(!low){ctx.globalAlpha=.92;ctx.fillStyle='#f4f6fb';ctx.font='700 11px sans-serif';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText(beatClock.label(k),p.x,p.y-radius-2);ctx.textAlign='left';ctx.textBaseline='alphabetic';}}
  ctx.globalAlpha=1;
  if(root.dataset.markersLive==='1'&&root._markers)paintStageMarkers(ctx,root._markers,xy,scale);
 }
@@ -302,6 +309,8 @@ function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while 
   }
   lastLevels=levels;
   const tones=api.nd_update(Math.min(.067,gap/1000),listening?1:0,bins,ac?ac.sampleRate:48000,analyser?analyser.fftSize:2048,now);
+  if(tones)beatClock.note(tones,now);
+  if(beatReadout){const text=beatClock.readout(now);if(beatReadout.textContent!==text)beatReadout.textContent=text;}
   if(listening){for(let k=0;k<4;k++)if(tones&(1<<k))hotUntil[k]=now+180;paintMeters(now,levels);paintFloor(true);}else paintFloor(false);
   if(listening&&micSource&&ac)rings.connect(ac,micSource);else rings.release();
   rings.sample(gap/1000);

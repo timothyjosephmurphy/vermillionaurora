@@ -152,18 +152,24 @@
         ctx.restore();
         return;
       }
-      ctx.lineWidth = 2.5;
-      ctx.globalAlpha = Math.max(ctx.globalAlpha, 0.92);
       const n = w.length;
-      const stepN = Math.max(1, Math.floor(n / 96));
+      const stepN = low ? Math.max(1, Math.floor(n / 48)) : Math.max(1, Math.floor(n / 96));
+      const path = new Path2D();
       for (let i = 0; i < n; i += stepN) {
         const excursion = waveExcursion(w[i], gain);
         const p = radialWavePoint(x, y, radius, (i / n) * Math.PI * 2, excursion / 0.85);
-        if (i) ctx.lineTo(p[0], p[1]);
-        else ctx.moveTo(p[0], p[1]);
+        if (i) path.lineTo(p[0], p[1]);
+        else path.moveTo(p[0], p[1]);
       }
-      ctx.closePath();
-      ctx.stroke();
+      path.closePath();
+      // Soft additive halo, then the same waveform as a crisp edge. No shadow blur.
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalAlpha = 0.22;
+      ctx.lineWidth = low ? 6 : 11;
+      ctx.stroke(path);
+      ctx.globalAlpha = 0.92;
+      ctx.lineWidth = 2.5;
+      ctx.stroke(path);
       ctx.restore();
     }
 

@@ -57,6 +57,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{ou
 .viz-controls output{color:#fff;font-variant-numeric:tabular-nums}
 .text-small{font-size:11px;color:#aab0c0}
 [data-mic]{color:#d5deff}
+[data-beat]{color:#f4f6fb;font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 [data-legend].is-hot{text-shadow:0 0 10px currentColor}
 .meter{display:none;width:48px;height:5px;margin-left:6px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;vertical-align:middle}
 #nd-room-lab[data-mic="listening"] .meter{display:inline-block}
@@ -126,6 +127,7 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
       <button class="btn" type="button" data-live="hide">Hide controls</button>
       <button class="btn" type="button" data-live="preview" aria-pressed="true">Preview</button>
       <span data-mic role="status" aria-live="polite">Mic off</span>
+      <span data-beat role="status">120 BPM · 1</span>
       <span data-status role="status" aria-live="polite">Loading room music…</span>
   </div>
     <div class="nd-live-details" data-live-details>
