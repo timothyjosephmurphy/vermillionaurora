@@ -136,9 +136,9 @@ jobs:
     needs: prepare
     if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'blog' || needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
     runs-on: ubuntu-latest
-    # dist/ is about 5 GB. A stalled download needs a second attempt, so the job
-    # is longer than the test steps.
-    timeout-minutes: 25
+    # dist/ is about 5 GB, and print tests also need the gitignored files the
+    # build writes under static/print-editions and static/print-samples.
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:
@@ -193,6 +193,12 @@ jobs:
         if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
         timeout-minutes: 15
         run: npm test
+      - name: Build generated print files
+        if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
+        timeout-minutes: 20
+        run: |
+          node scripts/build-pilot-print-assets.mjs
+          node scripts/build-edition-print-assets.mjs
       - name: Run print unit tests
         if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
         timeout-minutes: 10
