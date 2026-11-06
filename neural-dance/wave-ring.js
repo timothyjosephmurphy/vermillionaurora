@@ -7,9 +7,39 @@
 (function (root) {
   const BAND_HZ = [[40, 120], [120, 300], [300, 2500], [5000, 14000]];
 
-  function ringGain(env) {
-    if (!(env > 0.02)) return 0;
-    return Math.min(3.5, 0.7 / env);
+  // Room-mic bands sit around RMS 0.001–0.015 after the 4th-order filters.
+  // A non-gated source (synthetic oscillator, mural tone bus) is open.
+  // Listen passes the silence gate: a closed gate, or a band at the hiss
+  // floor, draws a calm circle instead of jitter.
+  function ringGateOpen(options) {
+    const opts = options || {};
+    if (opts.gateOpen === false) return false;
+    if (opts.gate && opts.gate.open !== true) return false;
+    return true;
+  }
+
+  function ringSens(options) {
+    const opts = options || {};
+    if (opts.sens == null && opts.bandSens == null) return 1;
+    const raw = opts.sens != null ? +opts.sens : +opts.bandSens;
+    if (!Number.isFinite(raw) || !(raw > 0)) return 0;
+    return raw > 3 ? 3 : raw;
+  }
+
+  function ringGain(env, options) {
+    if (!ringGateOpen(options)) return 0;
+    if (!(env > 0.0005)) return 0;
+    const sens = ringSens(options);
+    if (!(sens > 0)) return 0;
+    return Math.min(75, 0.78 / env) * sens;
+  }
+
+  // Soft-limit each sample so a clap cannot invert the ring or leave the stage.
+  function waveExcursion(sample, gain) {
+    const x = (+sample || 0) * (+gain || 0);
+    if (!Number.isFinite(x) || x === 0) return 0;
+    const y = 0.85 * Math.tanh(x / 0.85);
+    return Math.max(-0.85, Math.min(0.85, y));
   }
 
   function radialWavePoint(cx, cy, radius, angle, sample) {
@@ -102,24 +132,33 @@
 
     function stroke(ctx, x, y, radius, band, color, low) {
       const w = waves[band];
-      if (!w || !(radius > 0)) return;
-      const gain = ringGain(env[band] || 0);
+      if (!w || !(radius > 0)) {
+        session.rippling = false;
+        return;
+      }
+      const sens = typeof session.sensAt === 'function' ? session.sensAt(band) : undefined;
+      const gain = ringGain(env[band] || 0, {gate: session.gate, sens});
+      const rippling = !low && gain > 0;
+      session.rippling = rippling;
       ctx.save();
       ctx.beginPath();
       ctx.strokeStyle = color || '#fff';
-      ctx.lineWidth = 1.6;
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
-      if (low || gain === 0) {
+      if (!rippling) {
+        ctx.lineWidth = 1.6;
         ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.stroke();
         ctx.restore();
         return;
       }
+      ctx.lineWidth = 2.5;
+      ctx.globalAlpha = Math.max(ctx.globalAlpha, 0.92);
       const n = w.length;
       const stepN = Math.max(1, Math.floor(n / 96));
       for (let i = 0; i < n; i += stepN) {
-        const p = radialWavePoint(x, y, radius, (i / n) * Math.PI * 2, w[i] * gain);
+        const excursion = waveExcursion(w[i], gain);
+        const p = radialWavePoint(x, y, radius, (i / n) * Math.PI * 2, excursion / 0.85);
         if (i) ctx.lineTo(p[0], p[1]);
         else ctx.moveTo(p[0], p[1]);
       }
@@ -128,8 +167,9 @@
       ctx.restore();
     }
 
-    return {connect, release, sample, stroke};
+    const session = {connect, release, sample, stroke, gate: null, sensAt: null, rippling: false};
+    return session;
   }
 
-  root.NeuralDanceRings = {BAND_HZ, ringGain, radialWavePoint, createSession};
+  root.NeuralDanceRings = {BAND_HZ, ringGain, ringSens, waveExcursion, radialWavePoint, createSession};
 })(typeof window !== 'undefined' ? window : globalThis);
