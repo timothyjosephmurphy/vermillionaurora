@@ -74,7 +74,7 @@ try {
   assert.equal(before.pressed, 'false');
   assert.equal(before.label, 'Share live debug');
   assert.equal(before.panel, true);
-  assert.equal(before.auto, false);
+  assert.equal(before.auto, true);
   assert.equal(before.sockets, 0);
   assert.equal(before.fetches, 0);
 
@@ -107,10 +107,7 @@ try {
       pendingPatch: {id: 1, at: 10, patch: {noteSensitivity: 0.91, quietThreshold: 0.22}}
     })});
   });
-  await page.waitForFunction(() => document.querySelector('[data-debug-banner]').hidden === false);
-  assert.match(await page.locator('[data-debug-banner-text]').innerText(), /Suggested tuning received/);
-  await page.locator('[data-debug-apply]').click();
-  await page.waitForFunction(() => document.querySelector('[data-debug-banner]').hidden === true);
+  await page.waitForFunction(() => document.querySelector('[data-control="sat"]').value === '0.91' && document.querySelector('[data-debug-banner]').hidden === true);
   const applied = await page.evaluate(() => ({
     note: document.querySelector('[data-control="sat"]').value,
     quiet: document.querySelector('[data-control="quiet"]').value,
@@ -119,6 +116,7 @@ try {
   assert.equal(applied.note, '0.91');
   assert.equal(applied.quiet, '0.22');
   assert.equal(applied.size, '22');
+  await page.locator('[data-debug-auto]').uncheck();
 
   await page.evaluate(() => {
     window.__ndWs[0].onmessage({data: JSON.stringify({
@@ -127,6 +125,8 @@ try {
       pendingPatch: {id: 2, at: 11, patch: {minBlobSize: 40}}
     })});
   });
+  await page.waitForFunction(() => document.querySelector('[data-debug-banner]').hidden === false);
+  assert.match(await page.locator('[data-debug-banner-text]').innerText(), /Suggested tuning received/);
   await page.locator('[data-debug-dismiss]').click();
   assert.equal(await page.locator('[data-control="size"]').inputValue(), '22');
   assert.equal(await page.locator('[data-debug-banner]').isHidden(), true);
@@ -171,6 +171,16 @@ try {
   await page.locator('[data-debug-send]').click();
   const proposed = await page.evaluate(() => window.__ndWs.some(socket => socket.sent.some(body => body.includes('propose_patch') && body.includes('noteSensitivity'))));
   assert.equal(proposed, true);
+  assert.equal(await page.locator('[data-debug-action="align"]').count(), 1);
+  assert.equal(await page.locator('[data-debug-action="clear-sim"]').count(), 1);
+  assert.equal(await page.locator('[data-debug-action="sim-seed"]').count(), 1);
+  assert.equal(await page.locator('[data-debug-control="gravity"]').count(), 1);
+  await page.locator('[data-debug-action="clear-sim"]').click();
+  const cleared = await page.evaluate(() => window.__ndWs.some(socket => socket.sent.some(body => body.includes('clear-sim'))));
+  assert.equal(cleared, true);
+  await page.locator('[data-debug-stage]').click({position: {x: 80, y: 60}});
+  const added = await page.evaluate(() => window.__ndWs.some(socket => socket.sent.some(body => body.includes('add-sim'))));
+  assert.equal(added, true);
   await page.screenshot({path: '/opt/cursor/artifacts/neural-dance-debug-viewer.png'});
 
   await page.goto(origin + '/neural-dance/debug/', {waitUntil: 'load'});

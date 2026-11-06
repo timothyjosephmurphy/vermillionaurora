@@ -81,7 +81,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{ou
 [data-align-lock-outline][hidden]{display:none !important}
 .nd-note-lock{position:absolute;z-index:6;transform:translate(-50%,-130%);padding:8px 12px;border-radius:999px;background:#3dba7a;color:#07140c;border:3px solid #ffd76a;font:700 16px/1.2 Inter,system-ui,sans-serif;pointer-events:none;white-space:nowrap}
 .nd-cal-pattern [data-cal="red"]{background:#f00;left:14%;top:14%}
-.nd-cal-pattern [data-cal="green"]{background:#0f0;left:86%;top:14%}
+.nd-cal-pattern [data-cal="green"]{background:#00e5a8;left:86%;top:14%}
 .nd-cal-pattern [data-cal="blue"]{background:#00f;left:86%;top:86%}
 .nd-cal-pattern [data-cal="yellow"]{background:#ff0;left:14%;top:86%}
 .nd-live-reveal{position:fixed;z-index:1000004;top:8px;left:8px;opacity:.7}
@@ -118,6 +118,7 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
       <button class="btn btn-primary" type="button" data-action="play">Start</button>
       <button class="btn" type="button" data-action="listen" data-state="off" aria-pressed="false">Listen</button>
       <button class="btn" type="button" data-action="align" aria-pressed="false">Align projector</button>
+      <button class="btn" type="button" data-action="sim-dancers" data-sim-clear aria-pressed="true">Clear sim dancers</button>
       <button class="btn" type="button" data-camera-flip>Flip camera</button>
       <button class="btn" type="button" data-live="exit-align" hidden>Exit align</button>
       <button class="btn" type="button" data-live="fullscreen">Fullscreen</button>
@@ -139,6 +140,7 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
         <label class="form-label">Snare sensitivity <output data-value="sens-2">1.00×</output><input class="form-range" data-control="sens" data-band="2" type="range" min="0" max="3" step="0.05" value="1" aria-label="Snare sensitivity"></label>
         <label class="form-label">Hi-hat sensitivity <output data-value="sens-3">1.00×</output><input class="form-range" data-control="sens" data-band="3" type="range" min="0" max="3" step="0.05" value="1" aria-label="Hi-hat sensitivity"></label>
         <label class="form-label">Quiet threshold <output data-value="quiet">0.08</output><input class="form-range" data-control="quiet" type="range" min="0" max="0.4" step="0.01" value="0.08" aria-label="Quiet threshold"></label>
+        <button class="btn" type="button" data-action="sim-seed">Seed 24 sim dancers</button>
       </div>
       <canvas data-spectrum width="880" height="96" aria-label="Live microphone levels for kick, bass, mid, and treble"></canvas>
       <div class="viz-row text-small"><span data-legend="0">● Kick<span class="meter"><i data-meter="0"></i></span></span><span data-legend="1">◆ Bass<span class="meter"><i data-meter="1"></i></span></span><span data-legend="2">■ Mid<span class="meter"><i data-meter="2"></i></span></span><span data-legend="3">▲ Treble<span class="meter"><i data-meter="3"></i></span></span><span data-floor>noise floor —</span></div>
@@ -150,7 +152,7 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
   <div class="camera-frame"><video data-preview autoplay muted playsinline aria-label="Live camera preview"></video><canvas data-overlay aria-hidden="true"></canvas></div>
   <div class="viz-row">
     <button class="btn" type="button" data-debug-share aria-pressed="false">Share live debug</button>
-    <label class="text-small"><input type="checkbox" data-debug-auto> Auto-apply live tuning</label>
+    <label class="text-small"><input type="checkbox" data-debug-auto checked> Auto-apply live tuning</label>
   </div>
   <div data-debug-panel hidden>
     <p class="text-small">Room <strong data-debug-code></strong> <a data-debug-link href="/neural-dance/debug/">Viewer</a></p>

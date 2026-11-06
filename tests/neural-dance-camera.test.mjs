@@ -30,6 +30,7 @@ import {
   isValidAlignmentQuad,
   sanitizeSettings,
   createMarkerTracker,
+  createStageEcho,
   detectPinkBlobs,
   detectPinkMarkers,
   detectStickerBlobs,
@@ -449,6 +450,11 @@ test('a dark dancer sticker is darker than the local screen and both kinds stay 
   const note = 0.299 * 124 + 0.587 * 91 + 0.114 * 68;
   const wall = 0.299 * 157 + 0.587 * 117 + 0.114 * 96;
   assert.ok(note / wall <= stickerDarkRatio(0.5));
+  const vinyl = 0.299 * 100 + 0.587 * 104 + 0.114 * 93;
+  const quad = 0.299 * 146 + 0.587 * 139 + 0.114 * 126;
+  assert.ok(Math.abs(quad - 139) < 1.5, 'quad RGB 146 139 126');
+  assert.ok(vinyl / quad <= stickerDarkRatio(0.5));
+  assert.ok(quad / quad > stickerDarkRatio(0.5));
   const width = 160;
   const height = 120;
   const data = new Uint8ClampedArray(width * height * 4);
@@ -460,9 +466,9 @@ test('a dark dancer sticker is darker than the local screen and both kinds stay 
   }
   const ink = (x, y) => {
     const i = (y * width + x) * 4;
-    data[i] = 124;
-    data[i + 1] = 91;
-    data[i + 2] = 68;
+    data[i] = 100;
+    data[i + 1] = 104;
+    data[i + 2] = 93;
   };
   for (let y = 40; y < 52; y++) ink(80, y);
   for (let x = 74; x < 87; x++) ink(x, 46);
@@ -486,6 +492,121 @@ test('a dark dancer sticker is darker than the local screen and both kinds stay 
   assert.equal(stayed.markers.length, 1);
   assert.equal(stayed.markers[0].kind, 'sticker');
   assert.equal(stayed.markers[0].id, placed.markers[0].id);
+});
+
+test('sunlit calibration keeps huge corner blocks and does not trade teal for yellow', () => {
+  const width = 480;
+  const height = 360;
+  const data = new Uint8ClampedArray(width * height * 4);
+  for (let i = 0; i < data.length; i += 4) {
+    data[i] = 146;
+    data[i + 1] = 139;
+    data[i + 2] = 126;
+    data[i + 3] = 255;
+  }
+  const paint = (cx, cy, w, h, rgb) => {
+    for (let y = cy; y < cy + h; y++) {
+      for (let x = cx; x < cx + w; x++) {
+        if (x < 0 || y < 0 || x >= width || y >= height) continue;
+        const i = (y * width + x) * 4;
+        data[i] = rgb[0];
+        data[i + 1] = rgb[1];
+        data[i + 2] = rgb[2];
+      }
+    }
+  };
+  const colors = [[255, 0, 0], [0, 229, 168], [0, 0, 255], [255, 255, 0]];
+  CALIBRATION_MARKERS.forEach((marker, index) => {
+    const cx = Math.round(marker.x * width) - 36;
+    const cy = Math.round(marker.y * height) - 40;
+    paint(cx, cy, 72, 80, colors[index]);
+  });
+  paint(300, 30, 50, 50, [238, 255, 0]);
+  const centers = findCalibrationMarkers(data, width, height);
+  assert.ok(centers, 'large corner blocks are not discarded');
+  CALIBRATION_MARKERS.forEach((marker, index) => {
+    close(centers[index].x, marker.x * width, 40, marker.name + ' x');
+    close(centers[index].y, marker.y * height, 45, marker.name + ' y');
+  });
+  assert.ok(centers[1].x > width / 2 && centers[1].y < height / 2, 'teal stays in the top right');
+  assert.ok(centers[3].x < width / 2 && centers[3].y > height / 2, 'yellow stays in the bottom left');
+  const custom = [
+    {hue: 0, x: 0.2, y: 0.2},
+    {hue: 120, x: 0.8, y: 0.2},
+    {hue: 240, x: 0.8, y: 0.8},
+    {hue: 60, x: 0.2, y: 0.8}
+  ];
+  const small = new Uint8ClampedArray(160 * 90 * 4);
+  small.fill(255);
+  const swatches = [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0]];
+  custom.forEach((marker, index) => {
+    const cx = Math.round(marker.x * 160);
+    const cy = Math.round(marker.y * 90);
+    for (let y = cy - 4; y <= cy + 4; y++) {
+      for (let x = cx - 4; x <= cx + 4; x++) {
+        const i = (y * 160 + x) * 4;
+        small[i] = swatches[index][0];
+        small[i + 1] = swatches[index][1];
+        small[i + 2] = swatches[index][2];
+      }
+    }
+  });
+  assert.ok(findCalibrationMarkers(small, 160, 90, custom));
+});
+
+test('a pink note is not a dark sticker, and a wall pocket beside a bright ring is not either', () => {
+  const wall = [146, 139, 126];
+  const width = 160;
+  const height = 120;
+  const frame = paint(width, height, () => wall);
+  for (let y = 20; y < 36; y++) {
+    for (let x = 20; x < 36; x++) {
+      const i = (y * width + x) * 4;
+      frame[i] = 169;
+      frame[i + 1] = 94;
+      frame[i + 2] = 99;
+    }
+  }
+  assert.equal(detectStickerBlobs(frame, width, height, {stickerSensitivity: 0.5}).length, 0);
+  const cross = (x, y, cx, cy) => (y >= cy && y < cy + 14 && x === cx + 6) || (x >= cx && x < cx + 14 && y === cy + 6);
+  const pocket = paint(width, height, (x, y) => {
+    const bright = x >= 70 && x < 96 && y >= 50 && y < 76 && !cross(x, y, 76, 56);
+    return bright ? [230, 230, 220] : wall;
+  });
+  assert.equal(detectStickerBlobs(pocket, width, height, {stickerSensitivity: 0.5}).length, 0, 'bare wall inside a bright ring is not a sticker');
+  const vinyl = paint(width, height, (x, y) => cross(x, y, 40, 40) ? [100, 104, 93] : wall);
+  const found = detectStickerBlobs(vinyl, width, height, {stickerSensitivity: 0.5});
+  assert.equal(found.length, 1);
+  assert.equal(found[0].kind, 'sticker');
+  const both = paint(width, height, (x, y) => {
+    if (x >= 34 && x < 44 && y >= 30 && y < 40) return [210, 110, 128];
+    if (cross(x, y, 46, 28)) return [100, 104, 93];
+    return wall;
+  });
+  const H = homographyFromNormalized([{x: 0, y: 0}, {x: 1, y: 0}, {x: 1, y: 1}, {x: 0, y: 1}], width, height);
+  const seen = markersFromFrame({data: both, width, height}, {...DEFAULTS, minBlobSize: 8}, H, {scaleX: 1, scaleY: 1}, createMarkerTracker(), 0, {latch: false});
+  assert.equal(seen.blobs.some(blob => blob.kind === 'pink'), true);
+  assert.equal(seen.blobs.some(blob => blob.kind === 'sticker'), false);
+});
+
+test('stage echo holds bright projection long enough to veto nearby stickers', () => {
+  const echo = createStageEcho();
+  assert.equal(echo.width, 160);
+  assert.equal(echo.height, 100);
+  assert.equal(echo.holdMs, 450);
+  const rgb = new Uint8Array(160 * 100 * 3);
+  const cx = Math.round(500 / 1000 * 159);
+  const cy = Math.round(310 / 620 * 99);
+  const o = (cy * 160 + cx) * 3;
+  rgb[o] = 240;
+  rgb[o + 1] = 80;
+  rgb[o + 2] = 90;
+  echo.ingest(rgb, 1000);
+  assert.equal(echo.veto(500, 310), true);
+  assert.equal(echo.vetoSticker(500, 310), true);
+  assert.equal(echo.vetoSticker(20, 20), false);
+  echo.ingest(new Uint8Array(160 * 100 * 3), 1600);
+  assert.equal(echo.vetoSticker(500, 310), false);
 });
 
 test('calibration markers recover the stage corners from a white field', () => {

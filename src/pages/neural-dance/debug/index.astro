@@ -15,7 +15,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;background:#07080c;color:#f4f6fb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 body{min-height:100vh}
-button,input{font:inherit}
+button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:#9baef0}
 main{max-width:1100px;margin:0 auto;padding:20px 16px 40px}
@@ -74,6 +74,7 @@ input[type="range"]{width:100%;accent-color:#81b7fc}
         <div class="meter"><b>Snare</b><i><span data-debug-meter="snare"></span></i></div>
         <div class="meter"><b>Hat</b><i><span data-debug-meter="hat"></span></i></div>
       </div>
+      <p class="summary" data-debug-dancers>Waiting for dancer counts.</p>
       <p class="summary"><span data-debug-source>silent</span> · <span data-debug-gate>Silence gate closed</span> · <span data-debug-floor>noise floor —</span></p>
       <table data-debug-table>
         <thead><tr><th>Kind</th><th>Grid</th><th>Stage</th><th>Area</th><th>RGB</th><th>WB ratio</th></tr></thead>
@@ -81,18 +82,52 @@ input[type="range"]{width:100%;accent-color:#81b7fc}
       </table>
     </section>
     <section class="panel">
+      <h2>Room actions</h2>
+      <p class="lead">These apply on the projector as soon as you click. Click the projected stage to add one simulated dancer there.</p>
+      <div class="controls" data-debug-actions>
+        <button class="btn" type="button" data-debug-action="align">Align projector</button>
+        <button class="btn" type="button" data-debug-action="cancel-align">Cancel align</button>
+        <button class="btn" type="button" data-debug-action="clear-sim">Clear sim dancers</button>
+        <button class="btn" type="button" data-debug-action="sim-seed">Seed 24 sim dancers</button>
+        <button class="btn" type="button" data-debug-action="clear-markers">Clear markers</button>
+        <button class="btn" type="button" data-debug-action="start">Start</button>
+        <button class="btn" type="button" data-debug-action="pause">Pause</button>
+        <button class="btn" type="button" data-debug-action="markers-on">Markers on</button>
+        <button class="btn" type="button" data-debug-action="markers-off">Markers off</button>
+        <button class="btn" type="button" data-debug-action="hide-controls">Hide live controls</button>
+        <button class="btn" type="button" data-debug-action="show-controls">Show live controls</button>
+        <button class="btn" type="button" data-debug-action="reset-camera">Reset camera defaults</button>
+      </div>
+    </section>
+    <section class="panel">
       <h2>Live tuning</h2>
       <div class="controls">
+        <label>Gravity <input data-debug-control="gravity" type="range" min="0" max="6" step="0.1" value="2.5"></label>
+        <label>Wander <input data-debug-control="wander" type="range" min="0" max="0.8" step="0.05" value="0.25"></label>
+        <label>Threshold <input data-debug-control="threshold" type="range" min="1" max="1.9" step="0.05" value="1.4"></label>
+        <label>Peak hold <input data-debug-control="peak" type="range" min="1" max="6" step="0.1" value="2.8"></label>
+        <label>New dancer
+          <select data-debug-control="type">
+            <option value="0">Kick</option>
+            <option value="1" selected>Bass</option>
+            <option value="2">Snare</option>
+            <option value="3">Hi-hat</option>
+          </select>
+        </label>
+        <label>Kick sensitivity <input data-debug-control="sens-0" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Bass sensitivity <input data-debug-control="sens-1" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Snare sensitivity <input data-debug-control="sens-2" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Hi-hat sensitivity <input data-debug-control="sens-3" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Quiet threshold <input data-debug-control="quiet" type="range" min="0" max="0.4" step="0.01" value="0.08"></label>
         <div class="mode" data-debug-mode role="group" aria-label="Track">
           <button class="btn" type="button" data-mode="both" aria-pressed="true">Both</button>
           <button class="btn" type="button" data-mode="pink" aria-pressed="false">Pink notes</button>
           <button class="btn" type="button" data-mode="stickers" aria-pressed="false">Dancer stickers</button>
         </div>
-        <label>Note sensitivity <input data-debug-control="note" type="range" min="0.25" max="1" step="0.01" value="0.75"></label>
+        <label>Note sensitivity <input data-debug-control="note" type="range" min="0.25" max="1" step="0.01" value="0.45"></label>
         <label>Sticker sensitivity <input data-debug-control="sticker" type="range" min="0" max="1" step="0.01" value="0.5"></label>
-        <label>Hue range <input data-debug-control="hue" type="range" min="18" max="80" step="1" value="48"></label>
-        <label>Smallest note <input data-debug-control="size" type="range" min="4" max="200" step="1" value="18"></label>
-        <label>Quiet threshold <input data-debug-control="quiet" type="range" min="0" max="0.4" step="0.01" value="0.08"></label>
+        <label>Hue range <input data-debug-control="hue" type="range" min="18" max="80" step="1" value="32"></label>
+        <label>Smallest note <input data-debug-control="size" type="range" min="4" max="200" step="1" value="22"></label>
         <button class="btn btn-primary" type="button" data-debug-send>Send tuning to room</button>
       </div>
       <p class="summary" data-debug-sent></p>

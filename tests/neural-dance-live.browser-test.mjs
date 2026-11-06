@@ -143,7 +143,12 @@ try {
       locks: document.querySelectorAll('.nd-note-lock').length,
       bannerBottom: bannerStyle.bottom,
       bannerLeft: bannerStyle.left,
-      bannerTop: bannerStyle.top
+      bannerTop: bannerStyle.top,
+      stageDark: (() => {
+        const ctx = canvas.getContext('2d');
+        const px = ctx.getImageData(Math.floor(canvas.width / 2), Math.floor(canvas.height / 2), 1, 1).data;
+        return px[0] < 30 && px[1] < 30 && px[2] < 40;
+      })()
     };
   });
   assert.equal(during.cancelHit, true, 'Cancel align is covered');
@@ -157,12 +162,105 @@ try {
   assert.equal(during.locks, 0);
   assert.ok(during.stageW > 800 && during.stageH > 340);
   assert.ok(during.patternBg === 'rgba(0, 0, 0, 0)' || during.patternBg === 'transparent', `align field is not transparent ${during.patternBg}`);
+  assert.equal(during.stageDark, true, 'dancers stay off the grid while aligning');
   assert.notEqual(during.bannerTop, '16px');
   assert.ok(parseFloat(during.bannerLeft) < 40, `banner is not at the left ${during.bannerLeft}`);
   assert.ok(parseFloat(during.bannerBottom) < 40, `banner is not at the bottom ${during.bannerBottom}`);
   await page.screenshot({path: '/opt/cursor/artifacts/neural-dance-live-align.png'});
   await page.click('[data-cancel-align]');
   await page.waitForFunction(() => !document.body.classList.contains('nd-live-aligning') && document.querySelector('[data-cal-pattern]').hidden === true && document.querySelector('[data-cancel-align]').hidden === true);
+
+  const simCount = () => page.evaluate(() => {
+    const nd = document.getElementById('nd-room-lab').neuralDance;
+    const stage = nd.stageDancers();
+    const sim = nd.simList();
+    const markers = (nd.markers() || []).length;
+    return {
+      sim: sim.length,
+      dancers: stage.length,
+      markers,
+      status: document.querySelector('#nd-room-lab [data-status]').textContent,
+      clear: document.querySelector('[data-action="sim-dancers"]').textContent,
+      disabled: document.querySelector('[data-action="sim-dancers"]').disabled
+    };
+  });
+  const seeded = await simCount();
+  assert.equal(seeded.sim, 24, 'the room opens with 24 simulated dancers');
+  await page.click('[data-action="sim-dancers"]');
+  const cleared = await simCount();
+  assert.equal(cleared.sim, 0);
+  assert.equal(cleared.dancers, 0);
+  assert.equal(cleared.disabled, true);
+  assert.match(cleared.status, /0 dancers \(0 sim, 0 stickers\)/);
+  async function tapStage(fracX, fracY) {
+    return page.evaluate(({fracX, fracY}) => {
+      const canvas = document.querySelector('#nd-room-lab [data-stage]');
+      const rect = canvas.getBoundingClientRect();
+      const clientX = rect.left + rect.width * fracX;
+      const clientY = rect.top + rect.height * fracY;
+      const scale = canvas.width / 1000;
+      const vy = canvas.height / 2 - 620 * scale / 2;
+      const worldX = ((clientX - rect.left) * canvas.width / rect.width) / scale;
+      const worldY = (((clientY - rect.top) * canvas.height / rect.height) - vy) / scale;
+      for (const type of ['pointerdown', 'pointerup']) {
+        canvas.dispatchEvent(new PointerEvent(type, {bubbles: true, clientX, clientY, pointerId: 1}));
+      }
+      const nd = document.getElementById('nd-room-lab').neuralDance;
+      const added = nd.simList()[0];
+      return {worldX, worldY, added};
+    }, {fracX, fracY});
+  }
+  const tapped = await tapStage(0.42, 0.62);
+  assert.ok(tapped.added, 'a tap after clear adds a simulated dancer');
+  assert.ok(Math.abs(tapped.added.x - tapped.worldX) < 2 && Math.abs(tapped.added.y - tapped.worldY) < 2);
+  const withTap = await simCount();
+  assert.equal(withTap.sim, 1);
+  assert.equal(withTap.dancers, 1);
+  assert.equal(withTap.disabled, false);
+  assert.match(withTap.status, /1 dancers \(1 sim, 0 stickers\)/);
+  await page.click('[data-action="sim-dancers"]');
+  assert.equal((await simCount()).sim, 0);
+  await page.evaluate(() => {
+    document.getElementById('nd-room-lab').neuralDance.setMarkers([
+      {id: 1, x: 180, y: 140, type: 0, kind: 'sticker'},
+      {id: 2, x: 760, y: 420, type: 1, kind: 'pink'}
+    ]);
+  });
+  const marked = await simCount();
+  assert.equal(marked.sim, 0);
+  assert.equal(marked.markers, 2);
+  assert.equal(marked.dancers, 2);
+  const tracked = await tapStage(0.33, 0.7);
+  assert.equal(tracked.added.id > 0, true);
+  await page.evaluate(() => {
+    document.getElementById('nd-room-lab').neuralDance.setMarkers([
+      {id: 1, x: 200, y: 160, type: 0, kind: 'sticker'},
+      {id: 2, x: 780, y: 400, type: 1, kind: 'pink'}
+    ]);
+  });
+  const kept = await page.evaluate(() => {
+    const nd = document.getElementById('nd-room-lab').neuralDance;
+    const sim = nd.simList();
+    const stage = nd.stageDancers();
+    return {sim, stage};
+  });
+  assert.equal(kept.sim.length, 1);
+  assert.ok(Math.abs(kept.sim[0].x - tracked.added.x) < 0.01);
+  assert.equal(kept.stage.filter(dancer => dancer.id < 100000).length, 1);
+  assert.equal(kept.stage.filter(dancer => dancer.id >= 100000).length, 2);
+  assert.ok(Math.abs(kept.stage.find(dancer => dancer.id >= 100000 && (dancer.id % 100000) === 1).x - 200) < 0.01);
+  await page.click('[data-action="sim-dancers"]');
+  const onlyMarkers = await page.evaluate(() => {
+    const nd = document.getElementById('nd-room-lab').neuralDance;
+    return {sim: nd.simList().length, stage: nd.stageDancers().map(dancer => dancer.id)};
+  });
+  assert.equal(onlyMarkers.sim, 0);
+  assert.deepEqual(onlyMarkers.stage.filter(id => id < 100000), []);
+  assert.equal(onlyMarkers.stage.filter(id => id >= 100000).length, 2);
+  await page.click('[data-action="sim-seed"]');
+  const restored = await simCount();
+  assert.equal(restored.sim, 24);
+  assert.equal(restored.dancers, 26);
 
   async function panels(width, height) {
     await page.setViewportSize({width, height});

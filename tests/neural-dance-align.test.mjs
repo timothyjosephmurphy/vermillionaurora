@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {CALIBRATION_MARKERS} from '../neural-dance/camera-markers.js';
-import {beginAlign} from '../neural-dance/live-show.js';
+import {ALIGN_SETTLE_MS, beginAlign} from '../neural-dance/live-show.js';
 
 function calibrationFrame() {
   const width = 160;
@@ -100,4 +100,48 @@ test('Align projector starts the camera, enables markers, and keeps the banner o
   assert.match(page, /body\.nd-live-aligning \.nd-live-chrome/);
   assert.match(page, /translateX\(-120vw\)/);
   assert.match(page, /bottom:max\(12px, env\(safe-area-inset-bottom, 12px\)\)/);
+  assert.equal(ALIGN_SETTLE_MS, 280);
+  assert.match(page, /#00e5a8/);
+  assert.match(show, /nd-live-aligning/);
+});
+
+test('alignment falls back when the baseline frame already contains the grid', async () => {
+  const frame = calibrationFrame();
+  const cam = {
+    async ensureCamera() {},
+    grabFrame() { return frame; },
+    setNormalizedCorners() { return true; },
+    setMarkersEnabled(on) { this.markers = on; return on; },
+    cancelCalibration() {}
+  };
+  const classes = new Set();
+  const doc = {
+    body: {classList: {
+      add(name) { classes.add(name); },
+      remove(name) { classes.delete(name); },
+      contains(name) { return classes.has(name); }
+    }},
+    getElementById(id) {
+      if (id === 'nd-room-lab') return {querySelector(sel) { return sel.includes('align') ? {textContent: '', setAttribute() {}} : {textContent: ''}; }};
+      if (id === 'nd-camera-mode') return {neuralDanceCamera: cam};
+      return null;
+    },
+    querySelector(sel) {
+      if (sel.includes('data-align-banner')) return {hidden: true, textContent: '', dataset: {}};
+      if (sel.includes('cal-pattern')) return {hidden: true};
+      if (sel.includes('lock-outline')) return {hidden: true};
+      if (sel.includes('exit-align') || sel.includes('cancel-align')) return {hidden: true};
+      return null;
+    }
+  };
+  const queued = [];
+  const original = global.setTimeout;
+  global.setTimeout = (fn) => { queued.push(fn); return queued.length; };
+  try {
+    await beginAlign(doc, {alignSettleMs: 0});
+    queued.shift()();
+  } finally {
+    global.setTimeout = original;
+  }
+  assert.equal(cam.markers, true);
 });

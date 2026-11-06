@@ -3,7 +3,7 @@
 
 import {ALIGN_TIMEOUT_MS, cornersFromMarkerCenters, findCalibrationMarkers, showStageToast} from './camera-markers.js';
 
-export const ALIGN_SETTLE_MS = 180;
+export const ALIGN_SETTLE_MS = 280;
 
 function nextFrame() {
   return new Promise(resolve => {
@@ -190,11 +190,18 @@ export function cancelAlign(doc) {
   finishAlign(doc, 'Alignment cancelled.');
 }
 
+function redrawStage(doc) {
+  const room = doc && doc.getElementById && doc.getElementById('nd-room-lab');
+  const nd = room && room.neuralDance;
+  if (nd && typeof nd.redraw === 'function') nd.redraw();
+}
+
 function finishAlign(doc, message) {
   clearTimeout(alignTimer);
   alignTimer = 0;
   if (!doc || !doc.body) return;
   doc.body.classList.remove('nd-live-aligning');
+  redrawStage(doc);
   const pattern = doc.querySelector('[data-cal-pattern]');
   if (pattern) pattern.hidden = true;
   const exit = doc.querySelector('[data-live="exit-align"]');
@@ -231,6 +238,7 @@ export async function beginAlign(doc, options = {}) {
   if (!room || !doc.body) return;
   clearTimeout(alignTimer);
   doc.body.classList.add('nd-live-aligning');
+  redrawStage(doc);
   const camAtStart = doc.getElementById('nd-camera-mode');
   const camNow = camAtStart && camAtStart.neuralDanceCamera;
   if (camNow && camNow.setMarkersEnabled) camNow.setMarkersEnabled(false, true);
@@ -273,7 +281,8 @@ export async function beginAlign(doc, options = {}) {
     const frame = cam && cam.grabFrame && cam.grabFrame();
     if (frame) {
       const base = baseline && frame.data && baseline.length === frame.data.length ? baseline : null;
-      const centers = findCalibrationMarkers(frame.data, frame.width, frame.height, undefined, base);
+      let centers = base ? findCalibrationMarkers(frame.data, frame.width, frame.height, undefined, base) : null;
+      if (!centers) centers = findCalibrationMarkers(frame.data, frame.width, frame.height, undefined, null);
       if (centers) {
         const scaled = centers.map(blob => ({
           x: (blob.x + 0.5) * frame.scale.scaleX,

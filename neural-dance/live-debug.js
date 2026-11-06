@@ -5,6 +5,7 @@
 
 import {detectionSize} from './camera-markers.js';
 import {DEBUG_INTERVAL_MS, DEBUG_SESSION_KEY, ROOM_RE, createDebugCredentials, sanitizeDebugPatch, validSecret, viewerPath} from './debug-protocol.js';
+import {beginAlign, cancelAlign} from './live-show.js';
 
 export {DEBUG_INTERVAL_MS, viewerPath};
 export const CAMERA_JPEG_QUALITY = 0.62;
@@ -64,6 +65,14 @@ export function collectTelemetry(doc, now = Date.now()) {
     : {source: 'silent', kick: 0, bass: 0, snare: 0, hat: 0, envelopes: {kick: 0, bass: 0, snare: 0, hat: 0}, silenceGate: true, noiseFloor: 0, open: false, micGain: 0};
   const controls = vision.controls || {};
   const envelopes = audio.envelopes || {kick: audio.kick || 0, bass: audio.bass || 0, snare: audio.snare || 0, hat: audio.hat || 0};
+  const roomState = room && room.neuralDance && typeof room.neuralDance.debugRoom === 'function' ? room.neuralDance.debugRoom() : {};
+  const bodyHas = (name) => !!(doc.body && doc.body.classList && doc.body.classList.contains(name));
+  const sens = [0, 1, 2, 3].map(band => {
+    const input = room && room.querySelector && room.querySelector('[data-control="sens"][data-band="' + band + '"]');
+    if (!input) return null;
+    const value = +input.value;
+    return Number.isFinite(value) ? value : null;
+  });
   return {
     t: now,
     fps: +vision.fps || 0,
@@ -103,9 +112,62 @@ export function collectTelemetry(doc, now = Date.now()) {
       gravity: controlNumber(room, 'gravity'),
       wander: controlNumber(room, 'wander'),
       threshold: controlNumber(room, 'threshold'),
-      peak: controlNumber(room, 'peak')
+      peak: controlNumber(room, 'peak'),
+      type: controlNumber(room, 'type'),
+      sens,
+      simDancers: roomState.simDancers === true,
+      simCount: +roomState.simCount || 0
+    },
+    stage: {
+      dancers: +roomState.dancers || 0,
+      pulses: +roomState.pulses || 0,
+      stickers: roomState.stickers != null ? +roomState.stickers : ((vision.markers || []).length),
+      simCount: +roomState.simCount || 0,
+      simDancers: roomState.simDancers === true,
+      running: !!roomState.running,
+      markersLive: !!roomState.markersLive,
+      aligning: bodyHas('nd-live-aligning'),
+      hidden: bodyHas('nd-live-hidden')
     }
   };
+}
+
+function setControl(root, selector, value, eventName) {
+  if (!root || typeof root.querySelector !== 'function' || value == null || !Number.isFinite(+value)) return;
+  const input = root.querySelector(selector);
+  if (!input) return;
+  input.value = String(value);
+  if (typeof input.dispatchEvent === 'function') input.dispatchEvent(new Event(eventName || 'input', {bubbles: true}));
+}
+
+function clickControl(doc, selector, label) {
+  if (!doc || typeof doc.querySelector !== 'function') return;
+  const node = doc.querySelector(selector);
+  if (!node || typeof node.click !== 'function') return;
+  if (label && String(node.textContent || '').trim() !== label) return;
+  node.click();
+}
+
+function applyDebugAction(doc, clean) {
+  if (!clean || !clean.action) return;
+  const room = doc.getElementById && doc.getElementById('nd-room-lab');
+  const nd = room && room.neuralDance;
+  const camRoot = doc.getElementById && doc.getElementById('nd-camera-mode');
+  const camera = camRoot && camRoot.neuralDanceCamera;
+  const action = clean.action;
+  if (action === 'align' && doc.body && !doc.body.classList.contains('nd-live-aligning')) beginAlign(doc);
+  else if (action === 'cancel-align' && doc.body && doc.body.classList.contains('nd-live-aligning')) cancelAlign(doc);
+  else if ((action === 'clear-sim' || action === 'sim-off') && nd && typeof nd.clearSim === 'function') nd.clearSim();
+  else if ((action === 'sim-seed' || action === 'sim-on') && nd && typeof nd.seedSim === 'function') nd.seedSim();
+  else if (action === 'add-sim' && nd && typeof nd.addSim === 'function') nd.addSim(clean.x, clean.y, clean.type);
+  else if (action === 'clear-markers') clickControl(doc, '[data-marker-clear]');
+  else if (action === 'start') clickControl(doc, '#nd-room-lab [data-action="play"]', 'Start');
+  else if (action === 'pause') clickControl(doc, '#nd-room-lab [data-action="play"]', 'Pause');
+  else if (action === 'markers-on' && camera && typeof camera.setMarkersEnabled === 'function') camera.setMarkersEnabled(true);
+  else if (action === 'markers-off' && camera && typeof camera.setMarkersEnabled === 'function') camera.setMarkersEnabled(false);
+  else if (action === 'hide-controls') clickControl(doc, '[data-live="hide"]');
+  else if (action === 'show-controls') clickControl(doc, '[data-live="reveal"]');
+  else if (action === 'reset-camera') clickControl(doc, '[data-marker-reset]');
 }
 
 export function applyDebugPatch(doc, patch) {
@@ -115,14 +177,17 @@ export function applyDebugPatch(doc, patch) {
   if (camera && camera.neuralDanceCamera && typeof camera.neuralDanceCamera.applyTuning === 'function') {
     camera.neuralDanceCamera.applyTuning(clean);
   }
-  if (clean.quietThreshold != null) {
-    const room = doc.getElementById('nd-room-lab');
-    const quiet = room && room.querySelector('[data-control="quiet"]');
-    if (quiet) {
-      quiet.value = String(clean.quietThreshold);
-      quiet.dispatchEvent(new Event('input', {bubbles: true}));
-    }
+  const room = doc.getElementById('nd-room-lab');
+  setControl(room, '[data-control="quiet"]', clean.quietThreshold, 'input');
+  setControl(room, '[data-control="gravity"]', clean.gravity, 'input');
+  setControl(room, '[data-control="wander"]', clean.wander, 'input');
+  setControl(room, '[data-control="threshold"]', clean.threshold, 'input');
+  setControl(room, '[data-control="peak"]', clean.peak, 'input');
+  setControl(room, '[data-control="type"]', clean.type, 'change');
+  if (Array.isArray(clean.sens)) {
+    clean.sens.forEach((value, band) => setControl(room, '[data-control="sens"][data-band="' + band + '"]', value, 'input'));
   }
+  applyDebugAction(doc, clean);
   return true;
 }
 
@@ -163,7 +228,7 @@ export function attachLiveDebug(doc) {
   let pending = null;
   const cameraCanvas = doc.createElement('canvas');
   const stageCanvas = doc.createElement('canvas');
-  if (auto && session && session.autoApply) auto.checked = true;
+  if (auto && session) auto.checked = session.autoApply === true;
 
   function say(text) {
     if (status) status.textContent = text;
