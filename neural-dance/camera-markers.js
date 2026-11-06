@@ -541,15 +541,16 @@ export function stickerWindow(width) {
   return Math.max(9, Math.round(21 * ((width | 0) / 160))) | 1;
 }
 
-// Default sensitivity 0.5 accepts luma <= localMean * 0.85 (TJ's vinyl is 0.70–0.85).
+// Default sensitivity 0.5 accepts luma <= localMean * 0.84.
+// TJ's vinyl is 0.70–0.85 of the screen around it; 0.84 keeps the darker body.
 export function stickerDarkRatio(sensitivity) {
   const s = clamp(sensitivity, 0, 1, DEFAULTS.stickerSensitivity);
-  return 0.72 + s * 0.26;
+  return 0.70 + s * 0.28;
 }
 
 export function localWallThreshold(wallLuminance, sensitivity) {
   const wall = +wallLuminance;
-  if (!Number.isFinite(wall) || wall < 32) return -1;
+  if (!Number.isFinite(wall) || wall < 35) return -1;
   return wall * stickerDarkRatio(sensitivity);
 }
 
