@@ -6,26 +6,26 @@
 |-------|-------|
 | Owner | TJ Murphy (`timothyjosephmurphy`) |
 | Timezone | `America/Los_Angeles` (PT) |
-| Compiled | 2026-11-05 ~7:08 PM PT; tracker links confirmed 7:11 PM PT (`#824`–`#826`) |
-| Span | 2026-09-14 (`a21f98fd`) → 2026-11-05 evening (`[t2213u]`) |
+| Compiled | 2026-11-05 ~7:25 PM PT |
+| Span | Friends Club physical precursor / pre-Sep-14 ChatGPT prototype → 2026-11-05 evening (`[t2215u]`) |
+| Live Library Page | [Neural Dance — Project & Prompt History](https://cursor.com/canvas/store-05a11f8c-ccd8-4d68-bb9b-07aa5e3ea3cb/7b3e910a-e40a-43c9-8718-3e62e8695925) (`canvas_id` `7b3e910a-e40a-43c9-8718-3e62e8695925`) |
+| GitHub history PR | [VA PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795) — `docs/neural-dance-project-history.md` (Era 0/1 and prompts through `[t2215u]` are in this file) |
 | Primary GitHub home | [`vermillionaurora/docs/neural-dance-project-history.md`](https://github.com/timothyjosephmurphy/vermillionaurora/blob/main/docs/neural-dance-project-history.md) (target) |
 | Tracker home | [`studio-tracker`](https://github.com/timothyjosephmurphy/studio-tracker) Project #1 (TJ Studio) |
 | Live product URLs | [tjm.art/neural-dance/](https://tjm.art/neural-dance/) · [tjm.art/neural-dance/live/](https://tjm.art/neural-dance/live/) · [tjm.art/play/?room=neural-dance](https://tjm.art/play/?room=neural-dance) (Kinoteka Annex) |
-| Companion Library Page | [Neural Dance project & prompt history](https://cursor.com/canvas/store-05a11f8c-ccd8-4d68-bb9b-07aa5e3ea3cb/7b3e910a-e40a-43c9-8718-3e62e8695925) |
-| Companion rebuild sources | `/workspace/nd-history/prompts-timeline.md`, `/workspace/nd-history/repo-and-tracker-history.md` |
 
-> **Fidelity legend:** `verbatim` = TJ’s exact words recovered from chat/transcript · `faithful_paraphrase_via_SM` = Studio manager relay of TJ · `from_tracker` / `from_memory` = reconstructed from issue bodies / shared journal · `from_tracker_and_memory` = both. Every prompt below is labeled.
+> **Fidelity legend:** `verbatim` = TJ’s exact words recovered from chat/transcript · `faithful_paraphrase_via_SM` = Studio manager relay of TJ · `from_tracker` / `from_memory` = reconstructed from issue bodies / shared journal · `from_tracker_and_memory` = both. Every prompt below is labeled. Early forensic history additionally uses `reconstructed_from_initial_code`, `reconstructed_from_commit_diff`, and `creator_recollection_via_writer`; quoted source code / commit messages are not original user prompts.
 
 ---
 
 ## 1. Evolution arc (one glance)
 
-1. **Genesis (Sep 14–24, 2026)** — Portfolio page + mural sim + dancer roles (`a21f98fd` … PR #2).
+1. **Genesis (physical precursor → Sep 30, 2026)** — Friends Club mural + Midjourney dancer stickers; creator-reported ~4-hour ChatGPT-with-Astra browser prototype by Sep 14; portfolio import `a21f98fd`; seven-commit Sep 21 story/photo/safety/rhythm/mapping/layout session; Sep 24 Friends Club link; nine-step Sep 27 dancer-role exploration in **PR #2, CLOSED UNMERGED**. Full evidence and inferred asks: **Era 0 / Era 1** below.
 2. **Astro port & 3D gallery (Oct)** — PR #673; wall/courtyard live sim (#274, #288); Portal-inspired outdoor sticker booth (#283, #306, #307); hex plaque + click-to-add (#761, #762).
 3. **Mic + C++/WASM (Nov 4)** — 4-band room mic + WASM core (#792, #794 → PRs #771, #772, #774).
 4. **Controls + pink Post-it camera (Nov 5 AM)** — Controls restore PR #779; pink markers #793/#795–#798 → PR #780; sound-wave rings + silence gate #799/#800 → PRs #781/#782 folded into standalone `/neural-dance/live/` PR #784; grid-over-dancers Auto-Align PR #786.
 5. **Hardware + Paradise Dystopia + wearables (Nov 5 afternoon)** — XGIMI Vibe One + Anker Prime weatherproof pod; *Paradise Dystopia* painting (#820); wearable LED blink / 2.4 GHz clips (#818, #819, Option 2A JLCPCB pack + prototype audit: copper-pour short risk → prefer off-the-shelf **XIAO nRF52840** / **ESP32-C3-Zero**); Kinoteka Annex two-room 10 ft / 60° stereo shadow-dancers → energy-balls + painting + 4 moving-head spotlights (#821, #822 — **SHIPPED LIVE** Gallery deploy `867`); 3D volumetric wave backlog (#823).
-6. **Live room testing (Nov 5 evening, `[t2187u]`–`[t2213u]`)** — Home Screen PWA, Align HUD banner, 1× Back Camera default, quad-median white-balance + 4-layer optical anti-feedback, `480 px` dark dancer silhouette stickers (#801 / PR #783 folded into unified fast-track **PR #794**), standby white-frame strobe fallback (**tracker [#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** ON HOLD), Option 1 Cloudflare Durable Object WebSocket live debug stream (**tracker [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** queued after PR #794 and the wave-ring fix), waveform-ring mic-gain fix, cheap dedicated Android install plan (**tracker [#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** backlog, `[t2213u]`, 7:11 PM PT), and this living history log (`[t2198u]`, `[t2199u]`, `[t2210u]`).
+6. **Live room testing (Nov 5 evening, `[t2187u]`–`[t2215u]`)** — Home Screen PWA, Align HUD banner, 1× Back Camera default, quad-median white-balance + 4-layer optical anti-feedback, `480 px` dark dancer silhouette stickers (#801 / PR #783 folded into unified fast-track **PR #794**), standby white-frame strobe fallback (**tracker [#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** ON HOLD), Option 1 Cloudflare Durable Object WebSocket live debug stream + `/neural-dance/debug/` viewer (**tracker [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)**, cloud agent `bc-623cfcbe` branched off PR #794), waveform-ring mic-gain + **sim vs sticker dancer stats** (cloud agent `bc-045761e2` branched off PR #794; status like `25 dancers (24 sim, 1 sticker) · 37 pulses · noise floor …`), cheap dedicated Android install plan (**tracker [#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)**), forensic ChatGPT/Astra Era 0–1 reconstruction (`chatgpt-genesis-reconstruction.md` + [PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)), and this living history log (`[t2198u]`–`[t2215u]`).
 
 ---
 
@@ -41,38 +41,40 @@
 | Install form | Browser demo → iPhone Home Screen PWA mirroring to **XGIMI** in weatherproof pod (Anker Prime) |
 | Next physical | Wall stickers → **wearable blink-code / 2.4 GHz clips** (#818/#819) |
 | 3D / room | Gallery courtyard wall → **Kinoteka Annex two-room** stereo capture → energy-ball Neural Dance (**live** at `/play/?room=neural-dance`) |
-| Remote witness | — → **opt-in 1–2 fps WebSocket debug relay** to Durable Object ([#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824), queued after PR #794 and the wave-ring fix) |
-| Install host | iPhone Home Screen PWA → also **cheap dedicated Android device** backlog ([#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826), `[t2213u]`) |
+| Live stats HUD | Total dancers only → **split simulated vs sticker/marker dancers** (`25 dancers (24 sim, 1 sticker) · 37 pulses · noise floor …`) via `bc-045761e2` |
+| Remote witness | — → **opt-in 1–2 fps WebSocket debug relay** to Durable Object (#824; `bc-623cfcbe` building `/neural-dance/debug/` off PR #794) |
+| Dedicated device | iPhone mirroring → backlog plan for **cheap Android** phone as dedicated mic/cam/cast host (#826) |
 
 **Key product files (vermillionaurora):**
 `src/pages/neural-dance/index.astro`, `src/pages/neural-dance/live/index.astro`, `neural-dance/{camera-markers,live-show,room-lab,silence-gate,wave-ring}.js`, `neural-dance/src/neural_dance.cpp`, `neural-dance/vendor/maptastic.js`.
 
 ---
 
-## 3. Tonight’s queue (2026-11-05 ~7:08 PM PT) — authoritative status
+## 3. Tonight’s queue (2026-11-05 ~7:25 PM PT) — authoritative status
 
-| Priority | Item | Tracker / PR | Status |
-|----------|------|--------------|--------|
-| 0 | Kinoteka Annex two-room 3D sim (shadow dancers → energy balls + *Paradise Dystopia* + 4 moving heads) | [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821), [#822](https://github.com/timothyjosephmurphy/studio-tracker/issues/822) | **SHIPPED LIVE** — Gallery deploy `867` at https://tjm.art/play/?room=neural-dance |
-| 1 | Unified `/neural-dance/live/` release: Align banner, Back Camera, pink WB + anti-feedback, Home Screen PWA, **dark dancer silhouette @ 480 px** | VA **PR #794** (fast-track; folds [#801](https://github.com/timothyjosephmurphy/studio-tracker/issues/801) / VA PR #783) | In flight ~15–20 min ETA at scrape time |
-| 2 | Waveform-ring visibility / mic-gain on `/live/` (TJ `[t2209u]`) | bundled with #1 | Investigating in parallel |
-| 3 | **Option 1 live debug stream** (Share live debug → DO WebSocket 1–2 fps frames + telemetry) | **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** | **Queued next** after PR #794 and the wave-ring fix. Option 1 approved (`[t2206u]`–`[t2208u]`) |
+| Priority | Item | Tracker / PR / Agent | Status |
+|----------|------|----------------------|--------|
+| 0 | Kinoteka Annex two-room 3D sim (shadow dancers → energy balls + *Paradise Dystopia* + 4 moving heads) | [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821), [#822](https://github.com/timothyjosephmurphy/studio-tracker/issues/822) | **SHIPPED LIVE** — Gallery deploy `867` at https://tjm.art/play/?room=neural-dance (`[t2212u]` ETA report) |
+| 1 | Unified `/neural-dance/live/` release: Align banner, Back Camera, pink WB + anti-feedback, Home Screen PWA, **dark dancer silhouette @ 480 px** | VA **PR #794** (fast-track; folds [#801](https://github.com/timothyjosephmurphy/studio-tracker/issues/801) / VA PR #783) | In flight / CI — base branch for follow-on agents |
+| 2 | Waveform-ring mic-gain **+ sim vs sticker dancer stats** on `/neural-dance/` and `/neural-dance/live/` (`[t2209u]`, `[t2215u]`) | cloud agent **`bc-045761e2`** branched directly off PR #794 (`room-lab.js` + `wave-ring.js`) | Building — HUD target example: `25 dancers (24 sim, 1 sticker) · 37 pulses · noise floor …` |
+| 3 | **Option 1 live debug stream** + `/neural-dance/debug/` viewer (Share live debug → DO WebSocket 1–2 fps frames + telemetry) | **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** · cloud agent **`bc-623cfcbe`** branched off PR #794 | Building next / parallel after #1 (`[t2206u]`–`[t2208u]`) |
+| Docs | Living project & prompt history (Era 0/1 ChatGPT/Astra forensic + tonight’s prompts) | VA **[PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)** + Library Page `7b3e910a-…` (`[t2198u]`, `[t2214u]`) | Open — Era 0/1 and prompts through `[t2215u]` are in this file |
 | HOLD | Synchronized single-frame white strobe on capture tick | **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** | **ON HOLD** — do not implement unless TJ activates after #1 live test (`[t2205u]`) |
+| Backlog | Cheap dedicated Android device plan (cam + mic + Cast/USB-C → projector) | **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** | Open (`[t2213u]`) |
 | Backlog | 3D volumetric wave algo | [#823](https://github.com/timothyjosephmurphy/studio-tracker/issues/823) | Open |
-| Backlog | Cheap dedicated Android device to run Neural Dance | **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** | **Backlog** — filed 7:11 PM PT (`[t2213u]`) |
 | Deep backlog | Wearable LED Phase 1 / 2 + Option 2A pack audit | [#818](https://github.com/timothyjosephmurphy/studio-tracker/issues/818), [#819](https://github.com/timothyjosephmurphy/studio-tracker/issues/819) | Open — prefer XIAO nRF52840 / ESP32-C3-Zero over flawed custom copper pour |
 
-### New tracker issues filed 2026-11-05 7:11 PM PT
+### New / updated tracker & cloud work this compile (2026-11-05 ~7:08–7:25 PM PT)
 
-Confirmed links (titles as filed). `#824` and `#825` were already in the ~7:08 PM compile; `#826` is the 7:11 PM append.
-
-- **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** — *Neural Dance (/live/): opt-in WebSocket live debug stream (1–2 fps camera/stage frames + telemetry to Durable Object)* — Project #1 item added. TJ chose **Option 1** (`[t2206u]`–`[t2208u]`); queued after PR #794 and the wave-ring fix.
-- **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** — *Neural Dance camera [ON HOLD fallback]: synchronized single-frame white strobe on capture tick for clean board view* — Project #1 item added; labeled `blocked-on-tj`. Verbatim hold from `[t2205u]`; held unless needed.
-- **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** — *Neural Dance hardware/install: plan for running Neural Dance on a cheap dedicated Android device* — Project #1 backlog item added at 7:11 PM PT (`[t2213u]`).
+- **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** — *Neural Dance (/live/): opt-in WebSocket live debug stream (1–2 fps camera/stage frames + telemetry to Durable Object)* — Project #1. TJ chose **Option 1** (`[t2208u]`). Cloud agent **`bc-623cfcbe`** building Durable Object WebSocket + HTTP snapshot + `/neural-dance/debug/` viewer, branched off PR #794.
+- **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** — *Neural Dance camera [ON HOLD fallback]: synchronized single-frame white strobe on capture tick for clean board view* — labeled `blocked-on-tj`. Verbatim hold from `[t2205u]`.
+- **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** — *Neural Dance hardware/install: plan for running Neural Dance on a cheap dedicated Android device* — filed from `[t2213u]`.
+- **`bc-045761e2`** — wave-ring room-mic gain fix **plus** status-line split of simulated vs sticker/marker dancers (`[t2209u]` + `[t2215u]`), branched directly off PR #794.
+- **[PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)** — `docs/neural-dance-project-history.md` only; Era 0/1 and evening prompts through `[t2215u]` are in this file.
 
 ---
 
-## 4. Nov 5 evening live-room prompts (`[t2187u]`–`[t2213u]`) — append beyond earlier reconstruction
+## 4. Nov 5 evening live-room prompts (`[t2187u]`–`[t2215u]`) — append beyond earlier reconstruction
 
 These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT evening 2026-11-05.
 
@@ -114,7 +116,7 @@ These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT ev
 
 ### `nd-0079` — `[t2205u]` White-frame strobe standby — **verbatim**
 > If it becomes necessary, we could make it so that occasionally a white screen is projected for a quick frame, like exactly when the capture of the dancers on the board occurs, so that we could get a clean view of what's on the board. Hold on that until we decide it's necessary as a, if it's not working thing.
-- **Created / changed:** Tracker **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** — *Neural Dance camera [ON HOLD fallback]: synchronized single-frame white strobe on capture tick for clean board view* — **ON HOLD** unless needed (`[t2205u]`).
+- **Created / changed:** Tracker **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** — **ON HOLD**.
 
 ### `nd-0080` — `[t2206u]` Stream to server so agent can witness — **verbatim intent**
 > Also, I'd like to know what it would take to actually stream this to the server as well potentially so that you could witness what's happening in real time.
@@ -125,7 +127,7 @@ These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT ev
 
 ### `nd-0082` — `[t2208u]` Choose Option 1 — **verbatim**
 > Go for option one.
-- **Created / changed:** Tracker **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** — *Neural Dance (/live/): opt-in WebSocket live debug stream (1–2 fps camera/stage frames + telemetry to Durable Object)*. Option 1 approved (`[t2206u]`–`[t2208u]`); queued after PR #794 and the wave-ring fix.
+- **Created / changed:** Tracker **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** — queued next after PR #794 camera/sticker release.
 
 ### `nd-0083` — `[t2209u]` Missing waveform rings — **verbatim**
 > I'm not seeing the waveform-shaped light pulses that we scoped and built earlier in this release. Is that coming up?
@@ -135,12 +137,26 @@ These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT ev
 > Are we, are we paralyzing as much as possible right now?
 - **Created / changed:** Parallel workers for tracker issues, history master doc, waveform fix, Library Page, GitHub PR.
 
-### `nd-0085` — `[t2213u]` Cheap dedicated Android device — **from_tracker** (filed 7:11 PM PT)
-- **Fidelity:** `from_tracker`
-- **Prompt (tracker title):** Plan for running Neural Dance on a cheap dedicated Android device.
-- **Created / changed:** Tracker **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** — *Neural Dance hardware/install: plan for running Neural Dance on a cheap dedicated Android device* — added to backlog at 7:11 PM PT. No implementation in this docs PR.
+### `nd-0085` — `[t2212u]` ETA on finishing all that — **verbatim**
+- **Received:** 2026-11-05 **~7:10 PM PT**.
+> ETA on finishing all that?
+- **Created / changed:** Live multi-stream ETA report covering PR #794 camera/sticker release, waveform-ring fix, history Page/PR #795, and Kinoteka Annex (#821) already **live** announcement.
 
----
+### `nd-0086` — `[t2213u]` Cheap Android device plan — **verbatim**
+- **Received:** 2026-11-05 **~7:11 PM PT**.
+> Add to the backlog, I wanna see a plan for using a cheap Android device to do this.
+- **Created / changed:** Tracker **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** — *Neural Dance hardware/install: plan for running Neural Dance on a cheap dedicated Android device* (dedicated cam + mic + Google Cast / USB-C DP Alt Mode to projector so the iPhone is not the install host).
+
+### `nd-0087` — `[t2214u]` Recover the earlier ChatGPT genesis — **verbatim**
+- **Received:** 2026-11-05 **~7:16 PM PT**, Studio manager conversation.
+> For the project history, go back further into the GitHub details. This was somewhat developed with ChatGPT, so reconstruct, even if you can't find the exact verbatim prompts, the steps that I took to create the initial version.
+- **Created / changed:** Forensic Era 0 / Era 1 reconstruction — Friends Club mural precursor; ~4-hour ChatGPT-with-Astra prototype layers **P0–P9** already present in the Sep 14 **88-line** standalone HTML (`a21f98fd`); Sep 21 seven-commit sprint (`8305ac1f`…`e7fd7670`, including 30/15 fps narrow-window beat-drop fixed by phase-crossing integration + bounded activation queue + 28 manual photo-traced sticker centers); Sep 24 Friends Club mural link (`64ccc62d`); Sep 27 **PR #2 CLOSED UNMERGED** nine-commit dancer-roles experiment (Zoners / Leaders / Followers + exponential diminishing activation gain). Mirrored into this master doc (Era 0 / Era 1 below) and the Library Page; feeds [PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795).
+- **Fidelity:** `verbatim` for TJ’s ask; inferred build steps labeled `reconstructed_from_initial_code` / `reconstructed_from_commit_diff` / `creator_recollection_via_writer`. No original ChatGPT conversation export recovered. PR #2 must stay labeled **closed unmerged**.
+
+### `nd-0088` — `[t2215u]` Split sim vs sticker dancer stats — **verbatim**
+- **Received:** 2026-11-05 **~7:18 PM PT**.
+> Also, for the statistics that it reports, like listening, there are 25 dancers, 37 pulses, noise floor. It should show how many are simulated and how many are from stickers.
+- **Created / changed:** Bundled with the `wave-ring.js` room-mic gain fix on cloud agent **`bc-045761e2`** (branched directly off PR #794) so `/neural-dance/` and `/neural-dance/live/` report e.g. `25 dancers (24 sim, 1 sticker) · 37 pulses · noise floor …`. Also noted: **`bc-623cfcbe`** building [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824) (Option 1 Durable Object WebSocket + HTTP snapshot live debug stream & `/neural-dance/debug/` viewer) branched off PR #794.
 
 ## 5. Prompt → feature map (compact)
 
@@ -160,8 +176,9 @@ These extend the prompt log past `nd-0066` (`[t2199u]`). Times approximate PT ev
 | 2026-11-05 midday | Standalone `/live/` | full-screen page | — | [VA #784](https://github.com/timothyjosephmurphy/vermillionaurora/pull/784) |
 | 2026-11-05 PM | Grid-over-dancers Align | Auto-Align | — | [VA #786](https://github.com/timothyjosephmurphy/vermillionaurora/pull/786) |
 | 2026-11-05 afternoon | Paradise Dystopia + wearables + Annex | painting blog, clip-2a, Annex live | [#820](https://github.com/timothyjosephmurphy/studio-tracker/issues/820), [#818](https://github.com/timothyjosephmurphy/studio-tracker/issues/818), [#819](https://github.com/timothyjosephmurphy/studio-tracker/issues/819), [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821), [#822](https://github.com/timothyjosephmurphy/studio-tracker/issues/822), [#823](https://github.com/timothyjosephmurphy/studio-tracker/issues/823) | [VA #790](https://github.com/timothyjosephmurphy/vermillionaurora/pull/790) (pins, open); Gallery deploy `867` |
-| 2026-11-05 evening | Live-room camera polish + silhouette + history + debug stream | PR #794 bundle; history; #824/#825 | [#801](https://github.com/timothyjosephmurphy/studio-tracker/issues/801), **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)**, **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** | VA PR #783 → #794; history PR pending |
-| 2026-11-05 7:11 PM | Cheap dedicated Android device to run Neural Dance (`[t2213u]`) | backlog plan only | **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** | — |
+| 2026-11-05 evening | Live-room camera polish + silhouette + history + debug stream + Android plan + sim/sticker stats + ChatGPT genesis | PR #794 bundle; wave-ring+stats `bc-045761e2`; #824 `bc-623cfcbe`; history; #825 HOLD; #826 | [#801](https://github.com/timothyjosephmurphy/studio-tracker/issues/801), **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)**, **[#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)**, **[#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)** | VA PR #783 → #794; history **[PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)**; genesis `chatgpt-genesis-reconstruction.md` |
+| 2026-11-05 ~7:16 PM | Reconstruct pre-Grok ChatGPT/Astra steps even without verbatim prompts (`[t2214u]`) | Era 0 P0–P9 + Era 1 Sep 14/21/24/27 (PR #2 unmerged) | — | evidence in §7 Era 0/1 |
+| 2026-11-05 ~7:18 PM | Status HUD: split simulated vs sticker dancers (`[t2215u]`) | `… (N sim, M sticker) …` on `/neural-dance/` + `/live/` | — | `bc-045761e2` off #794 |
 
 ---
 
@@ -629,7 +646,7 @@ Living log of every TJ Murphy request that shaped Neural Dance — verbatim wher
 
 ## 7. Repo & tracker reconstruction (commits, PRs, issues, box artifacts)
 
-The section below is the GitHub/API reconstruction (`repo-and-tracker-history.md`), kept intact as the commit/PR/issue source appendix. **Also include tracker issues filed 2026-11-05 7:11 PM PT:** [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824), [#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825), and [#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826) (not present in the 18:55 PST scrape). Commit SHAs in this appendix were checked against `vermillionaurora` `git log` on 2026-11-06; every referenced commit resolves.
+The section below is the GitHub/API reconstruction (`repo-and-tracker-history.md`), kept intact as the commit/PR/issue source appendix. **Also include newly created tracker issues [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824) and [#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825)** (not present in the 18:55 PST scrape).
 
 ### Embedded: repo-and-tracker-history.md
 
@@ -702,30 +719,447 @@ blob tests/neural-dance-wasm.test.mjs  (22150 B)
 | 2026-11-05 ~17:00 PT | Paradise Dystopia party painting progress + blog with process photos/time-lapse | progress photo saved; blog issue OPEN | #820 | — |
 | 2026-11-05 ~17:12–17:48 PT | Wearable LED blink-code pins (Phase 1) + front-of-backlog interactive demo with 2-iPhone stereo + projected sprites; JLCPCB Option 2A pack | clip-2a hardware/firmware pack on box; pins Three.js app; VA PR #790 OPEN for /neural-dance/pins/ | #818, #821 | #790 |
 | 2026-11-05 evening PT | Align success banner; default Back Camera; pink detection under projector + overhead lights; stop optical feedback loop with projected graphics | In flight via Website agent (WB + slider UX + facingMode environment + projection cancellation); not yet a numbered VA PR at scrape time after #788 | #793 family | pending |
-| 2026-11-05 ~18:50 PT | Make a living project-history document (Page + GitHub) listing prompts→features; keep ongoing; reconstruct from repo | This reconstruction under /workspace/nd-history/; recommended GitHub paths below | — | — |
+| 2026-11-05 ~18:50 PT | Make a living project-history document (Page + GitHub) listing prompts→features; keep ongoing; reconstruct from repo | This living history document; recommended GitHub paths below | — | — |
 
 ## Chronological eras
 
-### Genesis — page + mural sim (2026-09-14 → 2026-09-24)
+### Neural Dance — ChatGPT / Astra / Codex genesis reconstruction
 
-Neural Dance page added to tjm.art portfolio; story copy, silhouette mural photo, mapped mural simulation, resource guards, homepage link moved under Friends Club.
+Reconstructed November 5, 2026 (America/Los_Angeles). Scope: the physical/artistic precursor, the pre-repository prototype, and September 2026 development before Grok Bot. All displayed historical times below are Pacific daylight time (PDT), unless explicitly marked PST. This is a forensic history, not a recovered ChatGPT conversation.
 
-**Commits**
+### Evidence, attribution, and important corrections
 
-- `a21f98fd` 2026-09-14 15:28 PDT — Add neural-dance page to navigation and portfolio
-- `8305ac1f` 2026-09-21 12:32 PDT — Explain Neural Dance motivation, participatory installation, and prototype use
-- `528b02a0` 2026-09-21 12:33 PDT — Add participant silhouette mural photograph to Neural Dance project story
-- `95624dbb` 2026-09-21 12:46 PDT — Protect Neural Dance simulation from runaway browser resource use
-- `a0c5db16` 2026-09-21 12:54 PDT — Restore reliable dancer rhythms and direct bounded neighbor reinforcement
-- `a5c814ce` 2026-09-21 13:12 PDT — Add mapped mural simulation to the bottom of Neural Dance
-- `b7f172c1` 2026-09-21 13:26 PDT — Lead with project explanation and mural simulation on Neural Dance
-- `e7fd7670` 2026-09-21 13:29 PDT — Move project details below mural simulation and remove standalone photo
-- `64ccc62d` 2026-09-24 13:56 PDT — Reorder homepage sections and move Neural Dance link to Friends Club
+- **`verbatim`** means a directly quoted surviving text. A verbatim commit message, code comment, PR body, or later creator recollection is **not** a verbatim original ChatGPT prompt.
+- **`reconstructed_from_commit_diff`** means the likely development ask inferred from an actual change. The ask is a paraphrase, not TJ's recovered words.
+- **`reconstructed_from_initial_code`** means a feature/design layer already present in the first committed prototype. Its prior prompt sequence and timing are unknown; the ordering below explains dependencies, not a proven chat order.
+- **`creator_recollection_via_writer`** means TJ's origin story recorded by Writer or a tracker comment. This establishes the general workflow, not which tool authored each line.
+- The original September 14 file is **one self-contained 88-line HTML document**, with dense JavaScript lines, inline CSS, HTML5 Canvas, and Web Audio. It was not initially an Astro component, WASM module, camera tracker, or room-microphone analyzer.
+- **PR #2 was closed without merging.** Its nine role-exploration commits are a genuine early development branch, but must not be represented as a production release. A populated `merge_commit_sha` on an unmerged PR can be a GitHub test-merge SHA; `merged=false` and `merged_at=null` settle its status.
+- Git records the initial author/committer as **`tj`**, and subsequent September neural-dance commits as **`TimothyJosephMurphy`**. It does **not** identify ChatGPT, Astra, or Codex as those commits' author/committer. Codex-named branches elsewhere in the repository support the tooling context, not line-by-line authorship attribution.
+- The reported **approximately four-hour prototype** is TJ's later recollection, independently preserved in Writer's draft and tracker #34. It cannot be reconstructed as an exact four-hour Git session: Git first receives the already-developed prototype in a single commit.
 
-**PRs**
+### Era 0 — Physical precursor and the pre-repository ChatGPT prototype (by September 14, 2026)
 
-- [PR #2](https://github.com/timothyjosephmurphy/vermillionaurora/pull/2) [CLOSED] merged — — Add dancer roles to Neural Dance
-  - Files: neural-dance/index.html
+#### 0.1 — The actual mural and sticker participation came first
+
+**Evidence:** Writer's `neural-dance-ai-draft.v2.md`, `.v3.md`, `.v4.md`, `.v5-pre-nov5-refresh.md`, and current draft; the September 24 mural-page diff; studio-tracker #34's recorded creator answers.
+
+TJ painted a **40 × 9 ft shipping-container mural at Friends Club in Lillooet, BC**, developed with Paul and Kara and Hi Ed. The mural-page byline preserved in the September 24 diff says **July 20, 2026**. That is a date on TJ's mural notes, not proof of a precise festival or Neural Dance inception date.
+
+The setting is a mountain valley/river, Ed the Spaceman on a raft, and a nature-spirit woman pointing toward a festival scene. TJ cut a few hundred dancer stickers—fairies, fauns, ravers, belly dancers—and participants selected figures that felt like them and put them across the mural. He expected clustering; their scattered placement became part of the appeal.
+
+The earlier reconstructed prompt log preserves TJ's later description of the image-making workflow: “Stickers, for example, were mid-journey images which made unique dancers that different styles people could pick.” **Fidelity:** `verbatim` within the existing prompt-log transcription, not recovered from September ChatGPT. The resulting physical participation, not an AI image alone, is the artistic precursor.
+
+**Reconstructed design step:** turn participants' chosen positions into a visible network of individual influence. The planned next installation would photograph participants dancing, cut their own silhouettes into stickers, find those stickers with a fixed camera, and light them with a projector. The September software models that future installation; it does not establish that the complete physical tracking rig existed then.
+
+#### 0.2 — Translate an experience on the dance floor into an activation model
+
+**Fidelity:** `creator_recollection_via_writer`.
+
+The specific originating observation was: TJ dances to the beat; people around him respond to his movements; they pass that energy to others. In the later draft: “Neurons that wire together fire together. Each one has an activation curve: it takes in a signal, rises, peaks, falls off, and passes some of it along.”
+
+The surviving prompt log also preserves: **“Kara, Hi-Ed. Originally, I used ChatGPT with Astra, and I've moved to Grokbot.”** Treat this as a later recollection, not an original build prompt. Intermediate Writer drafts explicitly questioned Astra versus Astro; tracker #34 later resolved the wording to **Astra** and the build time to **four hours**. Do not silently replace TJ's named tool with the Astro web framework. The source does not establish exactly what Astra was or how it interfaced with ChatGPT.
+
+Tracker #34 provides particularly useful provenance:
+
+- October 18, **3:47:31 PM PDT**, comment `6256123670`: records TJ's dancing → surrounding people → onward activation explanation and activation-curve metaphor.
+- October 22, **4:05:56 PM PDT**, comment `6353277920`: Writer still lists Astra/Astro and duration as open questions.
+- October 22, **4:07:26 PM PDT**, comment `6353299549`: “Neural Dance draft updated with TJ's answers (Astra, four-hour prototype, title approved).” This resolves the previous draft's uncertainty; it does not timestamp the original four hours.
+
+Sources: [creator explanation](https://github.com/timothyjosephmurphy/studio-tracker/issues/34#issuecomment-6256123670), [Astra and duration confirmation](https://github.com/timothyjosephmurphy/studio-tracker/issues/34#issuecomment-6353299549).
+
+#### 0.3 — Reconstruct the initial browser sketch from the artifact, not imaginary chat turns
+
+**Primary artifact:** [`neural-dance/index.html` at `a21f98fd`](https://github.com/timothyjosephmurphy/vermillionaurora/blob/a21f98fd4e7dade778ccabb77fb722d84ce3a32f/neural-dance/index.html).
+
+All of the following layers already exist when Git first sees the simulation. They plausibly reflect iterative refinement with ChatGPT, but **the number of prompts, the exact order, the time each feature was added, and the division between manual editing and AI output are not recoverable**. The following are reconstructed development steps, not literal quotations.
+
+##### Step P0 — Make an immediately runnable visual model
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** model dancers as colored points on an interactive stage that can run as one browser page.
+
+The artifact is titled **Neural Dance Mural**, subtitled **Standalone interactive prototype**, and contains a **1000 × 620 Canvas**. It owns its entire simulation in one immediately invoked JavaScript function under `"use strict"`. There are arrays for `nodes` and `pulses`, and a `Map` for learned `links`; no imports, CDN dependencies, package runtime, backend calls, assets, or framework components are needed for this page. `reset()` places **24 dancers** at random positions around an elliptical floor and cycles through four rhythm kinds.
+
+This supports an already-working portable prototype being integrated into the portfolio, rather than a simulation that first emerged from the portfolio's later framework work.
+
+##### Step P1 — Give each dancer a distinct musical rhythm and visual identity
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** some dancers answer the kick, others bass, mids, or treble; make them identifiable and let a visitor choose the kind of dancer to add.
+
+The type table is `kick:{h:10,m:1}`, `bass:{h:292,m:.5}`, `mid:{h:150,m:1.5}`, `treble:{h:215,m:2}`. Hue 10 is red/orange, 292 magenta/purple, 150 green, and 215 blue. Relative to the BPM clock, the four rate multipliers are **1×, ½×, 1½×, and 2×**. Bass is the default new-dancer type. These are synthesized timing categories, **not live FFT frequency detections**.
+
+The original beat test uses a narrow sampled phase window: `(t*f+(n.id%7)*.047)%1 < .035`, with `.2 s` minimum beat spacing. This implementation detail becomes important during the September 21 performance fix.
+
+##### Step P2 — Build the activation / peak / fatigue / recovery curve
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** dancers accumulate stimulation, light up at a threshold, remain at a peak for a while, get tired, and recover rather than firing endlessly.
+
+Each node already has `a`, `last`, `beat`, `ref`, `tired`, `fatigue`, and `peak`. `fire(n,s)` adds stimulation with fatigue-dependent gain `s*(1-.42*fatigue)`, caps activation at **2**, and fires when activation reaches the default threshold **1.4** outside a **.18-second refractory period**. Ordinary activation falls at **1.7 units/sec**; tired activation falls at **3.1/sec**.
+
+Strong activation above **1.76** accumulates peak time; above **1.56** it accumulates at a slower rate. Default peak stamina is **2.8 seconds**. Exhaustion marks a dancer tired, reduces its activation, and extends its refractory interval; fatigue recovers at **.24/sec**, with a return to activity once it drops below **.2**. A visibly muted dancer and an amber fatigue arc communicate resting state.
+
+**Precision:** the initial node activation decay is linear subtraction, not a general exponential activation law. Exponential velocity/link decay already exists, while **exponentially diminishing incoming activation gain** is added later on the unmerged roles branch.
+
+##### Step P3 — Turn shared timing into strengthened connections
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** nearby dancers who fire together should form stronger visible connections and send waves to other dancers.
+
+The neighbor radius is **135 px**. When two nearby, non-tired nodes both fired within **.14 seconds**, their link gains **.015** per update, capped at **2.2**; each such update also has a **4%** chance of launching pulses both ways. Link strength decays by `w * .996^(dt*60)` and is discarded below **.035**. `spread()` selects at most **two** eligible neighbors in randomized order.
+
+This is a stylized co-activation / Hebbian metaphor, not a trained machine-learning neural network. The initial model combines beat stimulation, thresholding, visual links, traveling pulses, and fatigue; it does not yet have the direct bounded activation queue introduced September 21.
+
+##### Step P4 — Lay the dance floor out as sacred / amphitheater geometry
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** make the mural/floor feel like sacred geometry or a communal amphitheater, and have energy follow that geometry rather than only straight lines.
+
+The coordinate system has center **(500,310)** and ellipse scales **1.18 × .72**. `sacred()` draws elliptical rings at radii **105,185,265**, plus diametric spokes at **π/4** angular increments. `topo()` converts endpoints into floor polar coordinates, interpolates angles via the shortest angular difference and smoothstep `z²(3−2z)`, and bends the radius toward a nearby ring. `plen()` approximates that curved path with **25 samples**.
+
+The code evidences concentric amphitheater-like geometry; it does not contain a separate sacred-geometry preset library.
+
+##### Step P5 — Make pulses moving, accelerating, dissipating objects
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** let a dancer launch an energy pulse that travels, slows, hits another dancer, passes some energy onward, and can keep going past an exhausted dancer.
+
+Pulses store source/target IDs, distance along a path, path length, velocity, strength, age, inherited visual characteristics, a trail, and a hit set. Launch velocity is at least **330 px/sec**, with a **245** boost term. Velocity decays exponentially with **DRAG=2**, but does not fall below **52 px/sec**. A pulse collision radius of **18 px** injects `.48*strength` stimulation; fresh activation may spread onward with **52%** probability, reduced to **.62×** strength. Each collision also attenuates strength by **.9** and speed by **.94**.
+
+A pulse can become a short free-moving segment after meeting a tired endpoint. Edge/wander pulses expire after reaching their path end, or age out after **2.1 seconds**. This is already a multi-mode pulse engine, not merely static blinking circles.
+
+##### Step P6 — Add wandering, gravity, and organic wobble
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** avoid mechanically rigid connections; let some energy wander toward another dancer, curve under local influence, and wobble as it moves.
+
+`maybeWander()` probabilistically redirects an edge pulse, at default rate **.25 × dt**, toward a dancer within **190 px**, using a quadratic Bézier curve with a random sideways bend. `applyGravity()` attracts a pulse toward nearby unhit dancers within **155 px** with force `GRAVITY*150*(1-d/155)²`, default gravity **2.5**; gravity velocity damps with `exp(-2.4*dt)`, caps at **95**, and the displacement caps at **85 px**.
+
+`pos()` adds a normal-to-path sinusoidal wobble plus irregular nested sine modulation. Frequency and amplitude change with speed, and phase/frequency/amplitude/noise can be inherited by descendant pulses. This visual wobble **is not an audio waveform sampled from a microphone** and should not be confused with the November waveform-ring feature.
+
+##### Step P7 — Make the energy legible as bloom, halos, and rainbow tracers
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** make activation and traveling energy look luminous: expanding dancer halos, bright pulse heads, and colored fading trails.
+
+`pulseBloom()` builds a speed/strength-dependent radial gradient; `haloBloom()` responds nonlinearly to node activity (`q^1.35`). Both use additive `lighter` compositing. Pulse heads have bright cores, rings, and blurred glow; the **28-point trail** shifts hue by up to **125 degrees** behind the head, changes width with recency, and uses a per-segment shadow blur. Dancer halos expand as activation rises. Independent **Pulse bloom** and **Halo bloom** controls already exist.
+
+This heavy per-frame visual treatment also helps explain the resource hardening a week later. It proves features were present by September 14, not their exact order of introduction in ChatGPT.
+
+##### Step P8 — Add self-generated sound to audition the network
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+**Reconstructed ask:** hear the network's different rhythms without supplying an audio track or microphone.
+
+A user gesture starts/resumes an `AudioContext` and master gain (default **.48**). The envelopes attack exponentially in **6 ms**. The four synthesized voices are:
+
+- **Kick:** oscillator sweeps **145 → 45 Hz** in `.16 s`, envelope peak `.48`, duration about `.23 s`.
+- **Bass:** **55 Hz sawtooth** through a **225 Hz lowpass**, peak `.14`, about `.28 s`.
+- **Mid:** freshly generated, decaying **.1-second noise** buffer through a **1150 Hz bandpass**, peak `.07`.
+- **Treble:** **1750 Hz triangle**, peak `.045`, about `.07 s`.
+
+This is an audio-generating simulation, not one listening to room music. The original version allocates noise buffers and audio nodes during triggering and lacks the later shared voice budget and explicit disconnect cleanup.
+
+##### Step P9 — Expose the experiment as a control panel
+
+**Fidelity:** `reconstructed_from_initial_code`.
+
+The exact first-commit control surface is:
+
+| Control | Range / initial value |
+|---|---|
+| Start audio / Mute audio | Audio initially off |
+| Volume | 0–1, step .01; **.48 / 48%** |
+| Type | Kick / **Bass** / Mid / Treble |
+| BPM | **70–180**, initially **120** |
+| Gravity | 0–6, step .1; **2.5×** |
+| Wander | 0–.8, step .05; **.25** |
+| Pulse bloom | 0–3, step .1; **1.4×** |
+| Halo bloom | 0–3, step .1; **1.5×** |
+| Threshold | 1–1.9, step .05; **1.4** |
+| Peak hold | 1–6 seconds, step .1; **2.8 s** |
+| Wobble | 0–2.5, step .1; **1×** |
+| Buttons | Seed pulse, Pause, Reset, Fullscreen |
+| Stage interaction | Click adds a dancer; Shift-click removes nearest within 60 px |
+
+**Reconstructed ask:** let TJ tune the network live, seed a wave, try sparse or dense arrangements, and show it full-screen. The code has randomized reset placement, not named saved presets; there is no preset dropdown, no persistence, and no recovered prompt embedded in a comment. The initial JavaScript is densely compacted and contains no substantive narrative build comments. We should not invent ChatGPT instructions from formatting alone.
+
+#### 0.4 — What this proves about the four-hour creation process
+
+By September 14 the finished browser artifact already embodied **different rhythms → activation thresholds → shared firing → connection strengthening → moving energy → fatigue and recovery → organic path physics → luminous rendering → synthesized audio → adjustable UI**. That is the defensible reconstruction of the work TJ accomplished with the earlier tools. The creative cause is documented in his later recollection, while the feature inventory is directly visible in code.
+
+It does **not** prove separate literal prompts for each layer, a precise date for starting the session, or an earlier standalone GitHub repository. “Working prototype in about four hours” should remain a creator-reported duration, not an inference from Git timestamps.
+
+### Era 1 — Portfolio integration and rapid September development
+
+#### 1.1 — September 14: establish the website, then import the developed prototype
+
+| Date and time (PDT) | Commit / event | Finding |
+|---|---|---|
+| Sep 14, **2:51:28 PM** | `1ccb4615` — Initial portfolio site | Initial tree has no `neural-dance` file. Author and committer: `tj`; unsigned. |
+| Sep 14, **2:56:29 PM** | GitHub repository created | Local initial commit predates remote repository creation by a few minutes; normal Git workflow. |
+| Sep 14, **3:23:36 PM** | `d656b332` — Remove Wrangler config, use pure Cloudflare Pages | Hosting adjustment; still no Neural Dance file. Author/committer `tj`; unsigned. |
+| Sep 14, **3:28:03 PM** | [`a21f98fd`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/a21f98fd4e7dade778ccabb77fb722d84ce3a32f) — Add neural-dance page to navigation and portfolio | Adds the entire **88-line** self-contained page and one homepage navigation link. Author/committer `tj`; unsigned. |
+
+**Reconstructed ask (`reconstructed_from_commit_diff`):** add the already-working Neural Dance HTML prototype to the portfolio at `/neural-dance/` and make it discoverable in the navigation.
+
+This is the earliest recoverable repository landing, not proof that the idea or simulation began at 3:28 PM. There is no gradual evolution from an empty neural-dance file in the preceding commits: the physics, effects, sound, and control panel arrive together. The first page autostarts visual animation (`paused=false`) and continues `requestAnimationFrame` drawing even when its update is paused. Audio remains opt-in.
+
+#### 1.2 — September 21: seven commits in 57 minutes and 19 seconds
+
+All seven commits below have matching author and committer names **TimothyJosephMurphy**, identical author/commit timestamps for each commit, and **unsigned** verification status. These identities identify the Git attribution, not a particular assistant. Each changes `neural-dance/index.html`; the photograph commit also adds the image asset. The inferred asks are `reconstructed_from_commit_diff` throughout.
+
+##### 12:32:36 PM PDT — Explain why the work exists (`8305ac1f`)
+
+[Commit](https://github.com/timothyjosephmurphy/vermillionaurora/commit/8305ac1ffa183720744d45157ca70c0efcb7ba76) — **45 additions, 2 deletions**.
+
+**Reconstructed ask:** explain the human-agency motivation, the participatory installation, and what visitors can actually do in the current prototype.
+
+The page gains an SEO description and an extended project story headed **“Showing up and moving, together.”** Its “Why make it?” text explicitly asks what human agency means as AI and automation take over labor and decisions. It describes silhouette photos/stickers, a sacred-geometry stage/amphitheater mural, fixed-camera localization, projector illumination, four musical personalities, nearby reinforcement, and traveling waves. The prototype instructions distinguish the colored-dot, self-synthesizing sketch from the future photo booth/camera/projector installation.
+
+**Evolution:** software experiment becomes a legible artwork proposal, with human choice and position creating the collective work—not a generic AI demo.
+
+##### 12:33:42 PM PDT — Show the physical reference (`528b02a0`)
+
+[Commit](https://github.com/timothyjosephmurphy/vermillionaurora/commit/528b02a0fbf9eafc161aabf6b3acbf5076562b6b) — **9 HTML additions plus image asset**; **1 minute 6 seconds** after the story commit.
+
+**Reconstructed ask:** add the mural photograph with the participant silhouette stickers so people can see the physical setting.
+
+Adds `neural-dance/mural-with-silhouettes.jpeg` and a linked figure declaring **882 × 196** dimensions, with alt text describing a panoramic corrugated-metal mural, dancers, sunset, and flowing figures. Its caption: **“The mural with participant silhouettes—the physical setting for Neural Dance.”** This is initially a static photo in the story, not camera recognition.
+
+##### 12:46:11 PM PDT — Keep the browser responsive (`95624dbb`)
+
+[Commit](https://github.com/timothyjosephmurphy/vermillionaurora/commit/95624dbba2fdf156b6585030b7a11d6170f85b81) — **120 additions, 17 deletions**; **12 minutes 29 seconds** after the photograph.
+
+**Reconstructed ask:** stop the simulation from consuming runaway browser resources, make starting explicit, and give visitors a reliable escape/stop path.
+
+The evidence identifies the risk mechanisms, without proving a specific machine crashed:
+
+- Original unlimited add-dancer interaction plus all-pairs link work; a high pulse ceiling (the original guard permits growth until the count is over 140), 28-point trails, per-trail shadow blur and per-pulse/per-node gradients.
+- Autonomous animation was scheduled continuously, including draws while paused; no offscreen/tab visibility stop or session limit.
+- Unbudgeted sound triggers, repeatedly allocated noise buffers, and missing explicit voice disconnection.
+
+The patch introduces **48 dancers, 48 pulses (24 in low-power mode), 96 learned links, 10 trail points, 8 audio voices**, **24 sounds/sec** and **80 ms/channel** audio throttles. Glow textures are cached in **96 × 96** canvases instead of rebuilt every frame; per-trail/head blur is removed. The page starts paused, requires **Start simulation**, exposes a full-screen emergency stop, pauses on Escape/page hide/offscreen/tab switch, stops after **five minutes**, and supports still rendering without a running loop.
+
+The scheduler aims at **30 FPS**, dropping to **15 FPS** with fewer effects after sustained slow frames; extreme cost or repeated slow frames halts the run. Audio uses a reusable noise buffer, tracked voices, `onended` cleanup, source disconnect, and `AudioContext.suspend()` on stop.
+
+**Evolution:** an exuberant prototype is made safe enough to embed in a portfolio.
+
+##### 12:54:55 PM PDT — Restore rhythmic life without restoring the runaway loop (`a0c5db16`)
+
+[Commit](https://github.com/timothyjosephmurphy/vermillionaurora/commit/a0c5db16a9afe738ac654856766166cb68dfaed9) — **33 additions, 4 deletions**; **8 minutes 44 seconds** after resource hardening.
+
+**Reconstructed ask:** the bounded version must still visibly dance; restore reliable rhythms and let close dancers directly reinforce one another, but keep the safety budgets.
+
+The narrow original **phase < .035** beat sampling remains in the resource-protection commit even though it lowers rendering to 30 or 15 FPS. For treble at 120 BPM, the cycle is .25 seconds and that window is only **8.75 ms**—shorter than either nominal frame interval. Missing beats therefore becomes plausible under the new scheduler. This is a **code-supported explanation**, not a recovered verbatim complaint or measured runtime trace.
+
+The fix integrates each node's phase by `dt*bpm/60*rate` and detects crossing **1** instead of hoping to sample a tiny time window. Beat events now directly cue visible activation (`max(.95,a+.25)`, capped at 2) and emission. A source comment states, verbatim: **“Integrate phase instead of sampling a narrow beat window: works at 15 or 30 FPS.”**
+
+A separate activation queue and per-step emitted-node set provide bounded propagation. Another comment states: **“At most one emission per dancer per step, with bounded incoming reinforcement.”** For each queued source, neighbors within 135 px receive `.2+.25*(1-distance/R)`, with a **.65 incoming budget per neighbor per simulation step**. The queue is capped by the node budget, cleared each step, and fed by threshold crossings. Sound/visual emission and direct stimulation are now explicit rather than relying only on the chance of a rendered pulse colliding.
+
+**Evolution:** recover the original creative requirement—rhythms spreading through a crowd—without making browser workload unbounded.
+
+##### 1:12:02 PM PDT — Map the simulation onto the mural photograph (`a5c814ce`)
+
+[Commit](https://github.com/timothyjosephmurphy/vermillionaurora/commit/a5c814ce5dc41026d265d2856dfd563d54ce5cdc) — **129 additions**; **17 minutes 7 seconds** after the rhythm fix.
+
+**Reconstructed ask:** add another simulation at the bottom that places the activity directly on the actual silhouette stickers in the mural photo.
+
+Adds **Dance across the mural** (`#nd-mural-mapped`) as a **second, independent inline simulation**, not a replacement for the original. Its logical world is **882 × 196 photo pixels**, rendered into a **1764 × 640 canvas** with scale/offset transforms (vertical letterboxing at default zoom). It draws the hidden image `mural-with-silhouettes.jpeg` as the background, then places nodes at **28 hard-coded source-photo coordinates**.
+
+The critical code comments are verbatim: **“Manually traced sticker centers, in source-photo pixels (882 x 196).”** and **“Blurred centers remain approximate; drag markers for individual corrections.”** The mapping is **manual tracing**, not computer vision, real-time tracking, homography, or automatic silhouette segmentation.
+
+Visitors can **drag individual markers**, click to add, Shift-click to remove, reset placement, choose Kick/Bass/Mid/Treble, adjust **70–180 BPM**, zoom **1–3×**, and pan via **View center**. Markers have distinct circle/diamond/square/triangle shapes as well as four colors. The mapped neighbor radius is **82 photo px**; it reuses the bounded queue model, `.65` incoming budget, **48 dancers / 48 pulses / 8 voices / 24 tones per second**, five-minute stop, offscreen pausing, and 30/15 FPS performance guard. It uses simpler bowed paths, short 10-point trails, cached **64 × 64** glows, and a lightweight four-tone synth.
+
+The original sacred-geometry stage remains available separately. The photo stage is not proof that all the original gravity/wander/wobble controls were ported into the mapped simulation.
+
+**Evolution:** an abstract proof of behavior becomes a concrete preview of projected light across the already participatory mural.
+
+##### 1:26:35 PM PDT — Lead with the project and the actual mural (`b7f172c1`)
+
+[Commit](https://github.com/timothyjosephmurphy/vermillionaurora/commit/b7f172c15ed8fa3265d24303dc76cee89fdbcf30) — **41 additions, 30 deletions**; **14 minutes 33 seconds** after mapping.
+
+**Reconstructed ask:** do not make visitors start at the technical dot prototype; lead with the project explanation and the mural simulation, keeping the original below.
+
+Moves the original controls/stage into a later **Explore the original prototype** section (`#original-simulation`). Project introduction/story now leads; the mapped mural stage follows it; the original stage remains below. The static photograph still exists at this intermediate point, repositioned within the story.
+
+**Evolution:** public-facing presentation starts to prioritize the artwork over its tuning panel.
+
+##### 1:29:55 PM PDT — Put the mapped experience before long explanation (`e7fd7670`)
+
+[Commit](https://github.com/timothyjosephmurphy/vermillionaurora/commit/e7fd7670be2b245485243c1324fe473a2f732a49) — **17 additions, 26 deletions**; **3 minutes 20 seconds** after the previous layout change.
+
+**Reconstructed ask:** keep a concise introduction, put the mural simulation immediately next, move the detailed project text below it, and remove the redundant standalone photo.
+
+The final order is **title + short project introduction/credit → mapped mural simulation → Why make it? / intended experience → original prototype**. The standalone linked figure and its CSS are removed, but the same photo remains the mapped simulation's background.
+
+**Evolution:** visitors first experience the living mural rather than scrolling through the proposal or seeing the same image twice. These are two layout revisions within **3 minutes 20 seconds**, not two more physics rebuilds.
+
+#### 1.3 — September 23–24: tie the simulation explicitly to Friends Club
+
+On September 23, **11:39:07 AM PDT**, `aaf3fb1f` adds the Murals page with Friends Club's story and swipe gallery. This is contextual site development, not a new simulation engine.
+
+On September 24, **1:56:22 PM PDT**, [`64ccc62d`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/64ccc62de942828b5242209663c002890c79f976), **TimothyJosephMurphy** as author/committer, unsigned, changes the homepage and mural page (**26 additions/25 deletions on index.html; 1 addition on murals/index.html**).
+
+**Reconstructed ask (`reconstructed_from_commit_diff`):** organize the homepage around the artwork sections, remove Neural Dance as its own main-navigation item, and make the interactive mural demo discoverable from the Friends Club project.
+
+The Friends Club section gains the exact link text **“Explore Neural Dance — the interactive mural projection demo →”**. Homepage navigation/order is reorganized around Gallery, Exhibitions, Murals, Books, Commissions, Film, About, Contact. This is a **contextual connection to the existing festival mural**, not a new unrelated project or a deletion of `/neural-dance/`.
+
+#### 1.4 — September 27: a second rapid session explores dancer personalities (PR #2)
+
+[PR #2: Add dancer roles to Neural Dance](https://github.com/timothyjosephmurphy/vermillionaurora/pull/2), branch **`neural-dance-dancer-roles`**, base **`main`**, opened by **timothyjosephmurphy** at **4:34:51 PM PDT**. Nine commits run from **4:34:39 PM to 5:06:22 PM PDT**: **31 minutes 43 seconds** of observable iteration.
+
+This is **not a `codex/` branch name**. Every commit's author and committer is TimothyJosephMurphy, and each is unsigned. The code is consistent with the earlier AI-assisted workflow described by TJ; the Git identity alone does not prove Codex produced any specific patch.
+
+All nine commits change the same legacy page, implementing behavior in **both the mapped and original simulations**. The following asks are all **`reconstructed_from_commit_diff`**, not recovered September messages.
+
+| Time (Sep 27, PDT) | Commit | Reconstructed development ask and actual change |
+|---|---|---|
+| **4:34:39 PM** | `cf76479f` | Add **Zoners, Leaders, Followers** with a role selector independent of musical channel, visible Z/L/F labels, role gains **1.55 / 1.2 / .5**, and a mixed initial crowd. Zoners answer all four rhythms and reject neighbor activation; leaders amplify nearby influence and select one or two favorites, initially rotated every **16 beats / four measures**; followers exert gentler influence. |
+| **4:42:38 PM** | `7bcc87ee` | Replace fixed four-measure favorite changes with changes **after leader fatigue recovery**. Give leaders longer stamina and followers shorter stamina. In the mapped stage, peak limits become **5.6 s leader / 1.8 s follower**, resting **2.2 / 1.4 s**. In the original stage, limits are **2× / .65×** the Peak hold slider. Zoners are intended never to tire. |
+| **4:45:41 PM** | `4db0c75a` | Explicitly enforce zoner immunity to fatigue and incoming activation; exclude zoners from leader favorites and connections. Apply restrictions to propagation, visual paths, and collisions rather than relying only on a UI description. |
+| **4:50:01 PM** | `576ec7fe` | Try a different zoner personality: hear all rhythms but emit **irregular broadcasts every .8–2.2 seconds to every nearby dancer**, rather than only music-triggered emissions. Extend zoner targeting exceptions while keeping pulse budgets. This experiment is superseded almost immediately. |
+| **4:52:48 PM** | `cec264d3` | Restore **music-timed zoner activation**, but send each emission to **one randomly chosen nearby dancer** instead of broadcasting to every neighbor. Remove the irregular broadcast timer; direct reinforcement follows that chosen target. |
+| **4:55:30 PM** | `45430e66` | Make activation accumulate with **exponentially diminishing gain**, `a = min(2, a + amount*exp(-a/1.35))`, and allow highly activated leaders to emit visual connections to **up to five** neighbors while retaining one/two favorites. This is where that particular nonlinear activation law enters the recovered history. |
+| **5:01:34 PM** | `d8de87e7` | Refine the one-target zoner rule: choose a **nearby target of any role**, including resting/other zoner targets for the visual connection, but do not force resting/zoner recipients into ordinary neighbor activation. Tag zoner pulses so gravity, wandering, incidental collisions, and free continuation cannot turn one intended target into multiple accidental targets. |
+| **5:03:18 PM** | `d055d2e7` | Remove the nearby restriction: zoners may pick **any other dancer anywhere on the floor**. Make their stimulation distance-independent; shorten/cap mapped pulse duration and increase original pulse launch speed in proportion to path length so distant recipients can be reached within lifetime limits. Normal leaders/followers remain local. |
+| **5:06:22 PM** | `cd812d66` | Replace **only an individual tired/missing favorite** while keeping healthy favorites; exclude resting/zoner choices; continue to refresh the leader's favorites after its own recovery. Add per-update `refreshFavorites()` to both simulations. |
+
+The final PR body describes the resulting concept: zoners respond to every channel, never tire, and send music-triggered pulses to one random dancer across the floor; leaders favor one/two eligible local leaders/followers, can fan out to five when strongly activated, and replace tired favorites; followers influence gently and tire quickly. Existing runtime and pulse ceilings remain.
+
+**Validation in the PR body:** inline scripts parse, diff checks pass, and focused checks preserve a healthy favorite while replacing a tired one. **Browser visual QA remained pending.** This is a report in the original PR, not a claim that the reconstruction reran those checks.
+
+**Outcome, not to be lost:** the Cloudflare bot reports the role-branch deployment **failed**, with latest commit `cd812d66`, displayed at **5:06 PM PDT** on September 27. The PR has **no reviews and no inline review comments**. Its only conversation entries are the deployment bot and the owner's closure message, **“Closing as superseded by current site work; reopen if needed.”** It was closed on **October 7, 12:22:11 AM PDT**, **unmerged**. The branch still exists at `cd812d664e7fdfb1b3362655e90a0e519ccd0c8e`.
+
+**Evolution:** this was an early experiment in social personalities and asymmetric influence, preserved as a branch, not evidence those roles were included in the subsequently shipped production simulation.
+
+#### 1.5 — September 25–30 ancillary changes are not new neural-engine milestones
+
+The complete September path history contains **11 mainline commits** touching `neural-dance/`: the initial import, seven September 21 changes, and three later site-wide updates. The role branch contributes **nine more branch-only commits**, not eleven-plus-nine mainline releases.
+
+- **Sep 25, 11:37:04 AM PDT — `322b6b8f`:** unify site navigation / painting availability; neural-dance changes are surrounding page chrome, not a rebuilt simulation.
+- **Sep 28, 1:50:26 PM PDT — `04f7be7c`:** header branding and homepage painting price ordering; touches the Neural Dance header, not core behavior.
+- **Sep 30, 4:42:19 PM PDT — `0e248387`:** exhibition world map / dates / supplied logo; updates Neural Dance branding. This commit is GitHub-verified, unlike the unsigned core genesis commits.
+
+PR #1 touches the Neural Dance header's **Book a commission** destination, not the simulation. PR #19 touches its shared branding. PR #10 introduces **Astro for product templates/catalog** and changes **146 files**, but does not touch the neural-dance page in its changed-file list. The later Neural Dance-specific Astro migration belongs in the subsequent era, not the pre-repo ChatGPT genesis.
+
+### Search coverage and remaining limits
+
+#### Repository, organization, fork, gist, and branch inventory
+
+The built-in GitHub inventory and `gh repo list timothyjosephmurphy --limit 100 --json name,description,createdAt,pushedAt,isPrivate,url` agree on **eight owned repositories**:
+
+| Repository | Created (Pacific local date) | Relevance to an earlier prototype |
+|---|---|---|
+| `taro` | Oct 15, 2022 PDT | Taro daemon-related repository; no Neural Dance candidate in inspected default-branch tree. |
+| `LN_BasedArtFoundry` | Dec 21, 2023 PST | Art/Bitcoin certificate tooling; no Neural Dance candidate in inspected default-branch tree. |
+| `PaeanOfSatoshi` | Mar 25, 2024 PDT | Music project; no Neural Dance candidate in inspected default-branch tree. |
+| `vermillionaurora` | Sep 14, 2026 PDT | Earliest recovered simulation, committed Sep 14. |
+| `studio-tracker` | Oct 18, 2026 PDT | Later task/creator-answer evidence; not an earlier prototype repository. |
+| `relaygate` | Oct 18, 2026 PDT | Later Nostr/gallery work. |
+| `gallery-source` | Oct 23, 2026 PDT | Later private 3D gallery handoff. |
+| `aroundthesound-site` | Oct 24, 2026 PDT | Unrelated guitar studio website. |
+
+No owned standalone `neural-dance`, `friends-club`, `mural`, or `art` repository was returned. None of the eight is marked as a GitHub fork. `gh api user/orgs` returns **no organization memberships**; `gh gist list --limit 50` returns **no gists**. This is an inventory of what the connected account can access now, not proof that deleted/unshared repositories or private local files never existed.
+
+All **622 currently listed vermillionaurora branches** were inventoried across seven pages. Neural Dance-specific candidates include the preserved early **`neural-dance-dancer-roles`**, later **`port-neural-dance`**, and November `cursor/neural-dance-*` / sticker-camera branches. No additional early Neural Dance `codex/...` branch was found in this current inventory. Historical deleted branch names can only be recovered where commits/PRs preserve them.
+
+Cross-repository code-search calls for `neural` and `mural-with-silhouettes` returned no indexed hits—even though the known site contains the work—so **code-search absence was not treated as evidence of absence**. Repository inventory, dated file history, PRs, and older-repository trees are the stronger evidence.
+
+#### Commit and PR coverage
+
+- Read the complete **367-entry mainline commit listing through September 30, 2026 PDT**, including the root and the pre-import hosting change. This is a whole-site inventory, not 367 Neural Dance commits.
+- Fetched all **11 September mainline commits touching `neural-dance/`**, with their full available file patches, plus all **nine PR #2 branch commits** and the first two repository commits. The original 88-line source was fetched separately to avoid relying on patch truncation.
+- Audited **PRs #1–#25**: metadata, bodies, head branches, changed-file patches, commit lists, conversation comments, reviews, and review threads. Inner pagination is complete for the batched conversations/commits; every one of these 25 PRs has **zero submitted reviews and zero review threads**. PR #10's files required a second page (100 + 46).
+- The earliest visible `codex/...` PR heads among #1–#25 are **#20–#25**, beginning with `codex/all-priced-paintings-checkout-20261001`. They concern commerce/checkout, not Neural Dance genesis. Some were created during September 30 Pacific evening although their branch names carry October 1; timezone conversion matters.
+- Read all six local Neural Dance blog-draft versions, the existing prompt log, and all #34 tracker comments. A wider local text-file search of `/workspace/creative/` and `/home/box/agent-data/` identified drafts and later artifact references, but no original ChatGPT export or pre-September-14 source revision was recovered.
+
+**Limits:** the reconstruction does not recover deleted repositories/branches, inaccessible organizations, original ChatGPT/Astra session transcripts, exact original prompts, pre-commit intermediate HTML versions, or a verified assistant authorship for individual September commits. It does not assert a runtime crash from a commit title or treat a failed/unmerged preview as a deployed feature. Earlier stages are supported by creator recollection and the first artifact; later changes are individually traceable to patches.
+
+### Maintainer handoff
+
+The early history should read: **Friends Club physical mural and Midjourney-derived participant stickers → TJ's dance-floor activation metaphor → roughly four-hour ChatGPT-with-Astra browser prototype → September 14 portfolio import → September 21 story/photo/resource-safety/rhythm-fix/photo-mapping/layout session → September 24 Friends Club contextual link → September 27 nine-step personality exploration on an unmerged branch → later Astro/gallery/Grok Bot eras**.
+
+Keep every inferred ask labeled. In particular, do not rewrite P0–P9 as ten recovered user messages, claim the entire artifact was authored after the September 14 commit time, attribute all TimothyJosephMurphy commits to Codex, conflate early pulse wobble with later live waveform rings, or claim PR #2 shipped.
+
+#### Appendices generated from the retrieved metadata
+
+##### A. Complete recovered September Neural Dance commit / signature ledger
+
+| Pacific author time | Commit | Author / committer | Signature | File delta |
+|---|---|---|---|---|
+| 2026-09-14 02:51:28 PM PDT | [`1ccb4615`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/1ccb4615faa9bdbe831cd41ee397c086cae4b21c) | tj / tj | unsigned | Pre-import root/hosting commit; no neural-dance file |
+| 2026-09-14 03:23:36 PM PDT | [`d656b332`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/d656b332308ad797fdf41c021c998735242a47b8) | tj / tj | unsigned | Pre-import root/hosting commit; no neural-dance file |
+| 2026-09-14 03:28:03 PM PDT | [`a21f98fd`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/a21f98fd4e7dade778ccabb77fb722d84ce3a32f) | tj / tj | unsigned | neural-dance/index.html +88 / −0 |
+| 2026-09-21 12:32:36 PM PDT | [`8305ac1f`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/8305ac1ffa183720744d45157ca70c0efcb7ba76) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +45 / −2 |
+| 2026-09-21 12:33:42 PM PDT | [`528b02a0`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/528b02a0fbf9eafc161aabf6b3acbf5076562b6b) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +9 / −0; neural-dance/mural-with-silhouettes.jpeg +0 / −0 |
+| 2026-09-21 12:46:11 PM PDT | [`95624dbb`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/95624dbba2fdf156b6585030b7a11d6170f85b81) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +120 / −17 |
+| 2026-09-21 12:54:55 PM PDT | [`a0c5db16`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/a0c5db16a9afe738ac654856766166cb68dfaed9) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +33 / −4 |
+| 2026-09-21 01:12:02 PM PDT | [`a5c814ce`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/a5c814ce5dc41026d265d2856dfd563d54ce5cdc) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +129 / −0 |
+| 2026-09-21 01:26:35 PM PDT | [`b7f172c1`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/b7f172c15ed8fa3265d24303dc76cee89fdbcf30) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +41 / −30 |
+| 2026-09-21 01:29:55 PM PDT | [`e7fd7670`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/e7fd7670be2b245485243c1324fe473a2f732a49) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +17 / −26 |
+| 2026-09-24 01:56:22 PM PDT | [`64ccc62d`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/64ccc62de942828b5242209663c002890c79f976) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | index.html +26 / −25; murals/index.html +1 / −0 (Friends Club link; no `neural-dance/` file) |
+| 2026-09-25 11:37:04 AM PDT | [`322b6b8f`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/322b6b8fff9a7cee621a88eaec060e1bc76c4ec1) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +27 / −0 |
+| 2026-09-27 04:34:39 PM PDT | [`cf76479f`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/cf76479f2106a73c8f1a9680cdd6918d98beba8b) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +43 / −32 |
+| 2026-09-27 04:42:38 PM PDT | [`7bcc87ee`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/7bcc87eea691b53bf2646583867d7ded240ef981) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +14 / −9 |
+| 2026-09-27 04:45:41 PM PDT | [`4db0c75a`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/4db0c75acf99a467860ae35d74e4e08e098832e6) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +19 / −19 |
+| 2026-09-27 04:50:01 PM PDT | [`576ec7fe`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/576ec7fe31ee67ef983463e8acbabe085e470fcd) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +15 / −13 |
+| 2026-09-27 04:52:48 PM PDT | [`cec264d3`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/cec264d3b22083237dab57da160f2bc8b521ef17) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +11 / −12 |
+| 2026-09-27 04:55:30 PM PDT | [`45430e66`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/45430e6602477d6eb066ed1366aa4b2c553bd07d) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +9 / −7 |
+| 2026-09-27 05:01:34 PM PDT | [`d8de87e7`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/d8de87e7e0220b48e5865bce00e49c7314600cc5) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +7 / −7 |
+| 2026-09-27 05:03:18 PM PDT | [`d055d2e7`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/d055d2e76dd75cb01acdb3a1b9ca46619d36aad7) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +8 / −8 |
+| 2026-09-27 05:06:22 PM PDT | [`cd812d66`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/cd812d664e7fdfb1b3362655e90a0e519ccd0c8e) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +17 / −4 |
+| 2026-09-28 01:50:26 PM PDT | [`04f7be7c`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/04f7be7c894cea6091ed80225f3c2728bcd4c9a0) | TimothyJosephMurphy / TimothyJosephMurphy | unsigned | neural-dance/index.html +2 / −2 |
+| 2026-09-30 04:42:19 PM PDT | [`0e248387`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/0e24838722f149f1e124229df786f9dee161c156) | TimothyJosephMurphy / GitHub | valid | neural-dance/index.html +1 / −1 |
+
+Author and committer timestamps match for the core import, September 21 session, September 24 tie-in, and all nine role commits. Ledger includes sitewide changes because they touch the path, not because they introduced simulation behavior.
+
+##### B. PR #1–#25 provenance audit
+
+| PR | Head branch | Commit count | Conversation comments | Reviews / threads | Neural Dance relevance |
+|---|---|---|---|---|---|
+| [#1](https://github.com/timothyjosephmurphy/vermillionaurora/pull/1) | `commissions-request-form` | 1 | 2 | 0 / 0 | Header commission-link destination only; closed unmerged |
+| [#2](https://github.com/timothyjosephmurphy/vermillionaurora/pull/2) | `neural-dance-dancer-roles` | 9 | 2 | 0 / 0 | Nine-commit personality exploration; closed unmerged |
+| [#3](https://github.com/timothyjosephmurphy/vermillionaurora/pull/3) | `shared-paypal-checkout` | 38 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#4](https://github.com/timothyjosephmurphy/vermillionaurora/pull/4) | `shippo-label-email` | 9 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#5](https://github.com/timothyjosephmurphy/vermillionaurora/pull/5) | `featured-chase-toole` | 1 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#6](https://github.com/timothyjosephmurphy/vermillionaurora/pull/6) | `live-checkout-pilot` | 3 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#7](https://github.com/timothyjosephmurphy/vermillionaurora/pull/7) | `move-film-below-about` | 2 | 0 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#8](https://github.com/timothyjosephmurphy/vermillionaurora/pull/8) | `sales-ledger` | 1 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#9](https://github.com/timothyjosephmurphy/vermillionaurora/pull/9) | `bitcoin-checkout` | 2 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#10](https://github.com/timothyjosephmurphy/vermillionaurora/pull/10) | `catalog-templates` | 2 | 1 | 0 / 0 | Astro product/catalog migration; no neural-dance file in 146 changed files |
+| [#11](https://github.com/timothyjosephmurphy/vermillionaurora/pull/11) | `catalog-release-verification` | 1 | 0 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#12](https://github.com/timothyjosephmurphy/vermillionaurora/pull/12) | `catalog-collection-check` | 1 | 0 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#13](https://github.com/timothyjosephmurphy/vermillionaurora/pull/13) | `painting-image-viewer` | 1 | 0 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#14](https://github.com/timothyjosephmurphy/vermillionaurora/pull/14) | `feature/originals-shopping-cart` | 3 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#15](https://github.com/timothyjosephmurphy/vermillionaurora/pull/15) | `finerworks-matting` | 1 | 0 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#16](https://github.com/timothyjosephmurphy/vermillionaurora/pull/16) | `product-page-purchase-dialog` | 2 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#17](https://github.com/timothyjosephmurphy/vermillionaurora/pull/17) | `berlin-mural-and-purchase-buttons` | 4 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#18](https://github.com/timothyjosephmurphy/vermillionaurora/pull/18) | `bitcoin-film-festival-warsaw` | 1 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#19](https://github.com/timothyjosephmurphy/vermillionaurora/pull/19) | `exhibition-world-map` | 3 | 1 | 0 / 0 | Sitewide header/logo update only |
+| [#20](https://github.com/timothyjosephmurphy/vermillionaurora/pull/20) | `codex/all-priced-paintings-checkout-20261001` | 30 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#21](https://github.com/timothyjosephmurphy/vermillionaurora/pull/21) | `codex/retry-live-checkout-verification-20261001` | 1 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#22](https://github.com/timothyjosephmurphy/vermillionaurora/pull/22) | `codex/fix-cart-resume-and-quote-buttons-20261001` | 17 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#23](https://github.com/timothyjosephmurphy/vermillionaurora/pull/23) | `codex/fix-print-sample-quote-wait-20261001` | 1 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#24](https://github.com/timothyjosephmurphy/vermillionaurora/pull/24) | `codex/route-buy-now-to-full-cart-20261001` | 2 | 0 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+| [#25](https://github.com/timothyjosephmurphy/vermillionaurora/pull/25) | `codex/remove-one-item-notice-20261001` | 2 | 1 | 0 / 0 | No neural-dance changed file; unrelated site/commerce work |
+
+##### C. Reproducible evidence archive
+
+Local evidence filenames retained with the reconstruction (not committed in this docs file): `gh-owned-repos.json`, `repos.json`, `orgs.json`, `gists.txt`, seven unique branch-list responses, `all-mainline-through-sep30-pages.json`, `september-nd-commits.json`, `commit-<sha8>.json` / `.patch`, `original-a21f98fd.html`, `pr2.json`, `pr2-comments.json`, `pr2-commits.json`, `pr-<n>-files.json` (PR #10 has a second page), `early-prs-conversations-and-commits.json`, `issue-34-comments.json`, and older repository trees.
+
+The original PR #2 unified diff and empty review/review-comment responses are additionally available in this run’s tool evidence. The main report does not include provider deployment credentials or require a repository checkout. All GitHub activity in this investigation was read-only; only local documentation/evidence files were written.
 
 ### Astro port + gallery integration (2026-10-07 → 2026-10-30)
 
@@ -900,6 +1334,7 @@ Paradise Dystopia painting progress photo; Option 2A JLCPCB clip pack; #821 pin 
 ### PR #2 — Add dancer roles to Neural Dance
 
 - State: **CLOSED** | Created: 2026-09-27 16:34 PDT | Merged: — | Head: `neural-dance-dancer-roles`
+- **Forensic correction:** CLOSED **UNMERGED**, October 7, 2026 **12:22:11 AM PDT**; nine September 27 branch commits, **4:34:39–5:06:22 PM PDT**. Cloudflare preview failed; owner closed as superseded. Do not count these roles as shipped. Full commit-by-commit reconstruction is in Era 1 above.
 - URL: https://github.com/timothyjosephmurphy/vermillionaurora/pull/2
 - Files (1): neural-dance/index.html
 
@@ -1834,7 +2269,7 @@ Right now, the Neural Dance engine models dancers, gravity/attraction, wander, a
 
 **Open VA PRs:** #783 Detect dancer-silhouette stickers in Neural Dance camera mode, #790 Add the standalone Neural Dance pin simulator at /neural-dance/pins/
 
-**Open tracker issues:** #34, #283, #288, #306, #307, #793, #795, #796, #797, #798, #801, #818, #819, #820, #821, #822, #823, [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824), [#825](https://github.com/timothyjosephmurphy/studio-tracker/issues/825), [#826](https://github.com/timothyjosephmurphy/studio-tracker/issues/826)
+**Open tracker issues:** #34, #283, #288, #306, #307, #793, #795, #796, #797, #798, #801, #818, #819, #820, #821, #822, #823
 
 **Closed tracker issues:** #140, #274, #465, #478, #761, #762, #792, #794, #799, #800
 
@@ -1875,12 +2310,11 @@ _Machine-readable twin: `repo-and-tracker-history.json` in the same folder._
 
 ### Related living surfaces
 
-- This file: `/workspace/nd-history/neural-dance-project-history.md` (box compile path)
+- Canonical GitHub copy: `docs/neural-dance-project-history.md` ([PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795))
 - Brain summary: `/workspace/brain/projects/neural-dance.md`
-- Companion Library Page: https://cursor.com/canvas/store-05a11f8c-ccd8-4d68-bb9b-07aa5e3ea3cb/7b3e910a-e40a-43c9-8718-3e62e8695925
 - Product: https://tjm.art/neural-dance/ · https://tjm.art/neural-dance/live/ · https://tjm.art/play/?room=neural-dance
 - Tracker: https://github.com/timothyjosephmurphy/studio-tracker/issues?q=neural+dance
 
 ---
 
-_End of master log — compiled 2026-11-05 ~7:08 PM PT; `#824` / `#825` / `#826` links confirmed and `#826` appended 7:11 PM PT (`[t2213u]`). Append only below this line going forward (or into §4 / §3 as appropriate)._
+_End of master log — compiled 2026-11-05 ~7:08 PM PT. Append only below this line going forward (or into §4 / §3 as appropriate)._
