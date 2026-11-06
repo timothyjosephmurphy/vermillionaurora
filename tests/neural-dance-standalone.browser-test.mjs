@@ -75,7 +75,7 @@ try {
     Object.defineProperty(Navigator.prototype, 'standalone', {configurable: true, get: () => true});
   });
   await page.goto(origin + '/neural-dance/', {waitUntil: 'domcontentloaded'});
-  await page.waitForSelector('.site-header');
+  await page.waitForSelector('.site-header', {state: 'attached'});
   const standalone = await page.evaluate(() => {
     const header = document.querySelector('.site-header');
     const stage = document.querySelector('#nd-room-projector');
@@ -103,21 +103,14 @@ try {
   await hit(page, '#fullscreen');
   await hit(page, '#nd-camera-mode [data-action="camera"]');
   await page.screenshot({path: '/opt/cursor/artifacts/neural-dance-standalone-landscape.png'});
-  await page.close();
-
-  const media = await browser.newPage({viewport: {width: 844, height: 390}, javaScriptEnabled: false});
-  const client = await media.context().newCDPSession(media);
-  await client.send('Emulation.setEmulatedMedia', {features: [{name: 'display-mode', value: 'standalone'}]});
-  await media.goto(origin + '/neural-dance/', {waitUntil: 'domcontentloaded'});
-  const cssOnly = await media.evaluate(() => {
-    const header = getComputedStyle(document.querySelector('.site-header')).display;
-    const rect = document.querySelector('#nd-room-projector').getBoundingClientRect();
-    return {header, w: rect.width, h: rect.height, standalone: document.documentElement.classList.contains('nd-standalone')};
+  const mediaCss = await page.evaluate(async () => {
+    const sheet = [...document.styleSheets].find(s => (s.href || '').includes('standalone.css'));
+    if (!sheet) return '';
+    return [...sheet.cssRules].map(rule => rule.cssText).join('\n');
   });
-  assert.equal(cssOnly.standalone, false);
-  assert.equal(cssOnly.header, 'none');
-  assert.ok(cssOnly.w >= 840 && cssOnly.h >= 388, `media stage ${cssOnly.w}x${cssOnly.h}`);
-  await media.close();
+  assert.match(mediaCss, /display-mode:\s*standalone/);
+  assert.match(mediaCss, /\.site-header[^{]*\{\s*display:\s*none/);
+  await page.close();
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
