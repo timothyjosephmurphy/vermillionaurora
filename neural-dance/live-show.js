@@ -20,7 +20,7 @@ export async function waitForAlignSettle(ms = ALIGN_SETTLE_MS) {
 }
 
 export const LIVE_KEY = 'nd-live-show';
-export const LIVE_DEFAULTS = {collapsed: false, hidden: false, preview: true};
+export const LIVE_DEFAULTS = {collapsed: true, hidden: false, preview: true};
 
 function memoryOf(storage) {
   try {
@@ -48,7 +48,7 @@ export function readLiveShow(storage) {
   }
   if (!data || typeof data !== 'object') return {...LIVE_DEFAULTS};
   return {
-    collapsed: flag(data.collapsed, false),
+    collapsed: flag(data.collapsed, LIVE_DEFAULTS.collapsed),
     hidden: flag(data.hidden, false),
     preview: flag(data.preview, true)
   };
@@ -210,6 +210,9 @@ function finishAlign(doc, message) {
     const status = doc.querySelector('#nd-room-lab [data-status]');
     if (status) status.textContent = message;
   }
+  const camRoot = doc.getElementById('nd-camera-mode');
+  const cam = camRoot && camRoot.neuralDanceCamera;
+  if (cam && cam.armAlignedMarkers) cam.armAlignedMarkers();
 }
 
 function flashLock(doc) {
@@ -228,6 +231,9 @@ export async function beginAlign(doc, options = {}) {
   if (!room || !doc.body) return;
   clearTimeout(alignTimer);
   doc.body.classList.add('nd-live-aligning');
+  const camAtStart = doc.getElementById('nd-camera-mode');
+  const camNow = camAtStart && camAtStart.neuralDanceCamera;
+  if (camNow && camNow.setMarkersEnabled) camNow.setMarkersEnabled(false, true);
   const exit = doc.querySelector('[data-live="exit-align"]');
   if (exit) exit.hidden = false;
   const cancel = doc.querySelector('[data-cancel-align]');

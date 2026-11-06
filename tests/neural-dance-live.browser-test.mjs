@@ -60,24 +60,52 @@ try {
       const r = el.getBoundingClientRect();
       return {x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom};
     };
+    const overlaps = (a, b) => a.right > b.x + 1 && b.right > a.x + 1 && a.bottom > b.y + 1 && b.bottom > a.y + 1;
+    const chrome = box('.nd-live-chrome');
+    const camera = box('#nd-camera-mode');
     return {
       stage: box('#nd-room-projector'),
-      camera: box('#nd-camera-mode'),
+      camera,
       frame: box('#nd-camera-mode .camera-frame'),
-      sliders: box('[data-control="gravity"]'),
-      quiet: box('[data-control="quiet"]'),
       bar: box('.nd-live-bar'),
+      chrome,
+      overlap: overlaps(chrome, camera),
+      collapsed: document.body.classList.contains('nd-live-collapsed'),
+      help: document.querySelector('#nd-room-lab .mural-help, #nd-camera-mode .mural-help'),
+      tune: document.querySelector('[data-camera-tune]')?.textContent,
       exit: document.querySelector('[data-live="exit-align"]').hidden,
       header: document.querySelector('.site-header, footer')
     };
   });
   assert.equal(boxes.header, null);
+  assert.equal(boxes.help, null);
+  assert.equal(boxes.collapsed, true);
+  assert.equal(boxes.overlap, false, 'collapsed chrome overlaps the camera');
+  assert.equal(boxes.tune, 'Tune');
   assert.ok(boxes.stage.w > 800 && boxes.stage.h > 340, `stage is not full screen ${boxes.stage.w}x${boxes.stage.h}`);
   assert.ok(boxes.camera.w < 420 && boxes.camera.w < boxes.stage.w * 0.55, `camera is not a small preview ${boxes.camera.w}`);
   assert.ok(boxes.camera.right > 700 && boxes.camera.bottom > 300, 'camera preview is not in the corner');
-  assert.ok(boxes.bar.y < 30 && boxes.bar.h > 20, 'control bar is not at the top');
-  assert.ok(boxes.sliders.h > 10 && boxes.quiet.h > 10);
+  assert.ok(boxes.frame.h >= 72 && boxes.frame.h <= 84, `camera preview is not a small thumbnail ${boxes.frame.h}`);
+  assert.ok(boxes.bar.y < 30 && boxes.bar.h > 16, 'control bar is not at the top');
   assert.equal(boxes.exit, true);
+  await page.click('[data-live="collapse"]');
+  await page.click('[data-camera-tune]');
+  const expanded = await page.evaluate(() => {
+    const box = sel => {
+      const el = document.querySelector(sel);
+      const r = el.getBoundingClientRect();
+      return {x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom};
+    };
+    const overlaps = (a, b) => a.right > b.x + 1 && b.right > a.x + 1 && a.bottom > b.y + 1 && b.bottom > a.y + 1;
+    const chrome = box('.nd-live-chrome');
+    const camera = box('#nd-camera-mode');
+    const sliders = box('[data-control="gravity"]');
+    const quiet = box('[data-control="quiet"]');
+    return {overlap: overlaps(chrome, camera), sliders, quiet, tuned: document.getElementById('nd-camera-mode').classList.contains('is-tuned')};
+  });
+  assert.equal(expanded.overlap, false, 'expanded chrome overlaps the camera');
+  assert.equal(expanded.tuned, true);
+  assert.ok(expanded.sliders.h > 10 && expanded.quiet.h > 10);
   const hit = await page.evaluate(() => {
     const slider = document.querySelector('[data-control="gravity"]');
     const r = slider.getBoundingClientRect();
@@ -136,16 +164,44 @@ try {
   await page.click('[data-cancel-align]');
   await page.waitForFunction(() => !document.body.classList.contains('nd-live-aligning') && document.querySelector('[data-cal-pattern]').hidden === true && document.querySelector('[data-cancel-align]').hidden === true);
 
-  await page.setViewportSize({width: 390, height: 844});
-  const portrait = await page.evaluate(() => {
-    const stage = document.getElementById('nd-room-projector').getBoundingClientRect();
-    const camera = document.getElementById('nd-camera-mode').getBoundingClientRect();
-    const bar = document.querySelector('.nd-live-bar').getBoundingClientRect();
-    return {stageW: stage.width, stageH: stage.height, cameraW: camera.width, barTop: bar.top};
-  });
+  async function panels(width, height) {
+    await page.setViewportSize({width, height});
+    return page.evaluate(() => {
+      const box = sel => {
+        const el = document.querySelector(sel);
+        const r = el.getBoundingClientRect();
+        return {x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom, top: r.top};
+      };
+      const overlaps = (a, b) => a.right > b.x + 1 && b.right > a.x + 1 && a.bottom > b.y + 1 && b.bottom > a.y + 1;
+      const chrome = box('.nd-live-chrome');
+      const camera = box('#nd-camera-mode');
+      const stage = box('#nd-room-projector');
+      const bar = box('.nd-live-bar');
+      return {stageW: stage.w, stageH: stage.h, cameraW: camera.w, barTop: bar.top, overlap: overlaps(chrome, camera)};
+    });
+  }
+  await page.click('[data-live="collapse"]');
+  const portrait = await panels(390, 844);
   assert.ok(portrait.stageW > 370 && portrait.stageH > 800, `portrait stage is not full screen ${portrait.stageW}x${portrait.stageH}`);
   assert.ok(portrait.cameraW < 250, `portrait camera is not a corner preview ${portrait.cameraW}`);
   assert.ok(portrait.barTop < 20);
+  assert.equal(portrait.overlap, false, 'portrait chrome overlaps the camera');
+  await page.click('[data-live="collapse"]');
+  const portraitOpen = await panels(390, 844);
+  assert.equal(portraitOpen.overlap, false, 'open portrait chrome overlaps the camera');
+  const phone = await panels(402, 874);
+  assert.equal(phone.overlap, false, '402×874 chrome overlaps the camera');
+  await page.click('[data-live="collapse"]');
+  const phoneClosed = await panels(402, 874);
+  assert.equal(phoneClosed.overlap, false, 'collapsed 402×874 chrome overlaps the camera');
+  await page.setViewportSize({width: 844, height: 390});
+  const landscape = await panels(844, 390);
+  assert.equal(landscape.overlap, false, 'landscape chrome overlaps the camera');
+  await page.setViewportSize({width: 390, height: 844});
+  if (!(await page.evaluate(() => document.body.classList.contains('nd-live-collapsed')))) {
+    await page.click('[data-live="collapse"]');
+  }
+  await page.click('[data-live="collapse"]');
   await page.locator('[data-control="quiet"]').scrollIntoViewIfNeeded();
   const quietBox = await page.locator('[data-control="quiet"]').boundingBox();
   assert.ok(quietBox && quietBox.y >= 0 && quietBox.y < 844, `quiet slider not reachable in portrait ${quietBox && quietBox.y}`);

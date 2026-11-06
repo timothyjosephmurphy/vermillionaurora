@@ -7,6 +7,7 @@ import {CSP_REPORT_ONLY} from '../worker/security-headers.mjs';
 import {DEBUG_INTERVAL_MS, createDebugCredentials, sanitizeDebugPatch, viewerPath} from '../neural-dance/debug-protocol.js';
 import {applyDebugPatch, collectTelemetry, readDebugSession, writeDebugSession} from '../neural-dance/live-debug.js';
 import {detectionTelemetry} from '../neural-dance/camera-markers.js';
+import {paintProjectedStage, stageMarkPlan} from '../neural-dance/debug-viewer.js';
 
 const JPEG = 'AAECAwQFBgcICQoLDA0ODxAREhM=';
 
@@ -139,6 +140,32 @@ test('detection telemetry reports quad RGB, grid points, and luminance ratio', (
   assert.equal(described.pink[0].luminanceRatio, 1);
   assert.equal(described.stickers.length, 1);
   assert.equal(described.detectWidth, 8);
+  const plan = stageMarkPlan({
+    pink: [{stage: [10, 20]}],
+    stickers: [{stage: [30, 40]}],
+    markers: [{x: 30, y: 40, kind: 'sticker'}, {x: 80, y: 90, kind: 'pink'}]
+  });
+  assert.equal(plan.raw.length, 2);
+  assert.equal(plan.latched.length, 2);
+  assert.equal(plan.latched[0].kind, 'sticker');
+  const ops = [];
+  const ctx = {
+    fillStyle: '',
+    strokeStyle: '',
+    lineWidth: 1,
+    beginPath() { ops.push('begin'); },
+    arc() {},
+    fill() { ops.push('fill:' + this.fillStyle); },
+    stroke() { ops.push('stroke:' + this.strokeStyle); }
+  };
+  paintProjectedStage(ctx, {
+    pink: [{stage: [10, 20]}],
+    stickers: [],
+    markers: [{x: 80, y: 90, kind: 'sticker'}]
+  }, 1000, 620);
+  assert.equal(ops.filter(op => op.startsWith('fill:')).length, 1);
+  assert.equal(ops.filter(op => op.startsWith('stroke:')).length, 2);
+  assert.ok(ops.includes('fill:#7fe8b3'));
 });
 
 test('applyDebugPatch writes camera tuning and the quiet threshold', () => {

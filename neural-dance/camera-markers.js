@@ -16,6 +16,9 @@ export const PINK_HUE = 332;
 export const PINK_WB_HUE = 340;
 export const APPEAR_MS = 1500;
 export const CLEAR_MS = 300;
+// Stage pixels. A re-seen note or sticker inside this radius updates the latched dot.
+export const LATCH_RADIUS = 80;
+export const UI_EXCLUSION_SELECTORS = ['#nd-live-dock', '#nd-camera-mode', '.nd-live-chrome'];
 export const DETECT_WIDTH = 480;
 export const VALUE_FLOOR = 0.35;
 export const PINK_VALUE_FLOOR = 0.32;
@@ -54,6 +57,23 @@ export const DEFAULT_QUAD = [
 export function areaScaleFor(width) {
   const w = Math.max(1, width | 0);
   return Math.max(1, (w / 160) * (w / 160));
+}
+
+// Slider pixels are raw area on frames up to 160 wide (the unit tests).
+// On the 480-wide detection grid they are real detection pixels: 87 means 87 px,
+// not 87 × areaScale(480). A 3×3" note is about 150–220 px there.
+export function minBlobEquivalent(minBlobSize, width) {
+  const min = +minBlobSize;
+  const w = width | 0;
+  if (!(w > 160) || !Number.isFinite(min)) return min;
+  return min / areaScaleFor(480);
+}
+
+// Preview and debug use the quad and the UI panels whenever the wall is aligned,
+// including while Markers is still off.
+export function markerFrameGate(homography, exclusions) {
+  if (!homography) return {homography: null, exclude: null};
+  return {homography, exclude: exclusions || []};
 }
 export function normalizeDetectionMode(mode) {
   return DETECTION_MODES.includes(mode) ? mode : 'both';
@@ -463,7 +483,8 @@ export function detectPinkBlobs(rgba, width, height, options = {}) {
         }
       }
       const eq = area / areaScale;
-      if (eq >= settings.minBlobSize && eq <= maxEq) blobs.push({x: sumX / area, y: sumY / area, area, kind: 'pink'});
+      const minEq = minBlobEquivalent(settings.minBlobSize, w);
+      if (eq >= minEq && eq <= maxEq) blobs.push({x: sumX / area, y: sumY / area, area, kind: 'pink'});
     }
   }
   blobs.sort((p, q) => q.area - p.area || p.x - q.x || p.y - q.y);
@@ -778,18 +799,29 @@ export function downsampleRgba(src, srcW, srcH, dstW, dstH) {
   return dst;
 }
 
-// A note must stay up for about 1.5s before it is published. A short hold
-// keeps one missed frame from clearing it; after that the marker is gone.
-export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, matchRadius = 64} = {}) {
+function markerKind(kind) {
+  return kind === 'sticker' ? 'sticker' : 'pink';
+}
+
+// A note must stay up for about 1.5s before it is published. Once that
+// debounce passes, the track is latched: later misses do not remove it.
+// Unconfirmed flickers still expire after clearMs. clear() is the only reset.
+export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, matchRadius = 64, latchRadius = LATCH_RADIUS} = {}) {
   let tracks = [];
+  let latched = [];
   let nextId = 1;
+  function stageCopy() {
+    return latched
+      .map(t => ({id: t.id, x: t.x, y: t.y, kind: markerKind(t.kind)}))
+      .sort((p, q) => p.id - q.id);
+  }
   return {
     update(blobs, now) {
       const incoming = (blobs || [])
         .map(b => {
           const p = point(b);
           if (!p) return null;
-          p.kind = b.kind === 'sticker' ? 'sticker' : 'pink';
+          p.kind = markerKind(b.kind);
           return p;
         })
         .filter(Boolean)
@@ -818,6 +850,8 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
             missingSince: null,
             active: track.active || now - track.seenSince >= appearMs
           });
+        } else if (track.active) {
+          next.push(track);
         } else if (track.missingSince == null) {
           next.push({...track, missingSince: now});
         } else if (now - track.missingSince < clearMs) {
@@ -839,8 +873,50 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
       tracks = next;
       return tracks
         .filter(t => t.active)
-        .map(t => ({id: t.id, x: t.x, y: t.y, kind: t.kind || 'pink'}))
+        .map(t => ({id: t.id, x: t.x, y: t.y, kind: markerKind(t.kind)}))
         .sort((p, q) => p.id - q.id);
+    },
+    // Projected stage points. A hit near a latched dot updates that dot.
+    // Misses leave the latch where it is. Returns every latched marker.
+    commitStage(projected) {
+      for (const marker of projected || []) {
+        const at = point(marker);
+        if (!at) continue;
+        let best = -1;
+        let bestD = latchRadius;
+        for (let i = 0; i < latched.length; i++) {
+          const d = Math.hypot(latched[i].x - at.x, latched[i].y - at.y);
+          if (d <= bestD) {
+            bestD = d;
+            best = i;
+          }
+        }
+        if (best >= 0) {
+          latched[best].x = at.x;
+          latched[best].y = at.y;
+          if (marker.kind === 'sticker' || marker.kind === 'pink') latched[best].kind = markerKind(marker.kind);
+        } else {
+          const usedIds = new Set(latched.map(item => item.id));
+          let id = marker.id | 0;
+          if (!(id > 0) || usedIds.has(id)) id = nextId++;
+          latched.push({id, x: at.x, y: at.y, kind: markerKind(marker.kind)});
+        }
+      }
+      const kept = [];
+      for (const marker of latched) {
+        const near = kept.find(other => Math.hypot(other.x - marker.x, other.y - marker.y) <= latchRadius);
+        if (near) {
+          near.x = marker.x;
+          near.y = marker.y;
+        } else kept.push(marker);
+      }
+      latched = kept;
+      return stageCopy();
+    },
+    stage() { return stageCopy(); },
+    clear() {
+      tracks = [];
+      latched = [];
     }
   };
 }
@@ -884,15 +960,19 @@ export function markersFromFrame(frame, settings, homography, scale, tracker, no
       return !extra.echo.veto(at.x, at.y);
     });
   }
+  if (extra.latch === false) return {blobs: videoBlobs, markers: []};
   const stable = tracker.update(videoBlobs, now);
-  if (!homography) return {blobs: videoBlobs, markers: []};
+  const stageOf = typeof tracker.stage === 'function' ? tracker.stage.bind(tracker) : null;
+  const commit = typeof tracker.commitStage === 'function' ? tracker.commitStage.bind(tracker) : null;
+  if (!homography) return {blobs: videoBlobs, markers: toDancerMarkers(stageOf ? stageOf() : [])};
   const projected = [];
   for (const marker of stable) {
     const p = projectVideoPoint(homography, marker.x, marker.y);
     if (!p) continue;
-    projected.push({id: marker.id, x: p.x, y: p.y});
+    projected.push({id: marker.id, x: p.x, y: p.y, kind: marker.kind === 'sticker' ? 'sticker' : 'pink'});
   }
-  return {blobs: videoBlobs, markers: toDancerMarkers(projected)};
+  const latched = commit ? commit(projected) : projected;
+  return {blobs: videoBlobs, markers: toDancerMarkers(latched)};
 }
 
 export function cameraChoices(devices) {
@@ -1325,6 +1405,33 @@ export function attachCameraMode(root) {
     }
     latest = null;
   }
+  function publishList(list) {
+    latest = list;
+    const nd = roomApi();
+    if (!nd) return;
+    nd.setMarkers(list);
+    if (typeof nd.poke === 'function') nd.poke();
+  }
+  function forgetLatchedMarkers() {
+    tracker.clear();
+    echo.clear();
+    driving = false;
+    if (markersOn) publishList([]);
+    else {
+      latest = null;
+      const nd = roomApi();
+      if (nd) {
+        nd.setMarkers([]);
+        if (typeof nd.poke === 'function') nd.poke();
+        nd.setMarkers(null);
+      }
+    }
+  }
+  function armMarkersIfAligned(quiet) {
+    if (committed.length !== 4 || markersOn) return;
+    if (document.body && document.body.classList.contains('nd-live-aligning')) return;
+    setMarkersEnabled(true, quiet);
+  }
   function clearNoteLocks() {
     const stage = document.getElementById('nd-room-projector');
     if (!stage || !stage.querySelectorAll) return;
@@ -1441,7 +1548,8 @@ export function attachCameraMode(root) {
     }
     persist();
     rebuild();
-    say(committed.length === 4 ? 'Calibrated. Pink notes show on the preview.' : 'Click Calibrate wall, then the four corners of the projection.');
+    armMarkersIfAligned(true);
+    say(committed.length === 4 ? 'Calibrated. Pink notes and stickers hold their place on the floor.' : 'Click Calibrate wall, then the four corners of the projection.');
   }
   async function refreshCameras() {
     const md = navigator.mediaDevices;
@@ -1474,9 +1582,11 @@ export function attachCameraMode(root) {
     const frame = sctx.getImageData(0, 0, scale.width, scale.height);
     const stage = document.querySelector('#nd-room-lab [data-stage]');
     if (markersOn && stage) echo.sample(stage, now);
-    const result = markersFromFrame(frame, settings(), markersOn ? homography : null, scale, markersOn ? tracker : idleTracker, now, {
+    const gate = markerFrameGate(homography, uiExclusions());
+    const result = markersFromFrame(frame, settings(), gate.homography, scale, markersOn ? tracker : idleTracker, now, {
       echo: markersOn ? echo : null,
-      exclude: markersOn && homography ? uiExclusions() : null
+      exclude: gate.exclude,
+      latch: markersOn
     });
     rawBlobs = result.blobs;
     if (root.dataset.debugStream === '1') debugCache = detectionTelemetry(rawBlobs, frame.data, frame.width, frame.height, scale, homography);
@@ -1570,7 +1680,7 @@ export function attachCameraMode(root) {
     const sr = stage.getBoundingClientRect();
     if (!(sr.width > 0) || !(sr.height > 0)) return [];
     const rects = [];
-    for (const sel of ['#nd-live-dock', '#nd-camera-mode', '.nd-live-chrome']) {
+    for (const sel of UI_EXCLUSION_SELECTORS) {
       const node = document.querySelector(sel);
       if (!node || node.hidden) continue;
       const style = getComputedStyle(node);
@@ -1586,22 +1696,25 @@ export function attachCameraMode(root) {
     }
     return rects;
   }
-  function setMarkersEnabled(on) {
+  function setMarkersEnabled(on, quiet) {
     if (on && committed.length !== 4) {
-      say('Calibrate the four wall corners first.');
+      if (!quiet) say('Calibrate the four wall corners first.');
       return;
     }
-    markersOn = on;
+    markersOn = !!on;
     tracker = createMarkerTracker();
     echo.clear();
     askedStart = false;
     const room = document.getElementById('nd-room-lab');
-    if (room) room.dataset.markersLive = on ? '1' : '';
-    if (on) holdDarkStage(150);
-    else if (room && room.neuralDance && room.neuralDance.retint) room.neuralDance.retint();
-    if (!on) stopDriving();
+    if (room) room.dataset.markersLive = markersOn ? '1' : '';
+    if (markersOn) {
+      driving = false;
+      publishList([]);
+      holdDarkStage(150);
+    } else if (room && room.neuralDance && room.neuralDance.retint) room.neuralDance.retint();
+    if (!markersOn) stopDriving();
     syncMarkerButton();
-    say(on ? 'Markers on. A note joins the Room music stage after it has been up for a moment.' : 'Markers off.');
+    if (!quiet) say(markersOn ? 'Markers on. A note stays on the floor once it has been up for a moment.' : 'Markers off.');
   }
   hue.addEventListener('input', () => { refreshLabels(); persist(); });
   sat.addEventListener('input', () => { refreshLabels(); persist(); });
@@ -1662,6 +1775,24 @@ export function attachCameraMode(root) {
     btn.dataset.resetReady = '1';
     btn.addEventListener('click', () => { resetMarkerDefaults(); });
   });
+  document.querySelectorAll('[data-marker-clear]').forEach(btn => {
+    if (btn.dataset.clearReady === '1') return;
+    btn.dataset.clearReady = '1';
+    btn.addEventListener('click', () => {
+      forgetLatchedMarkers();
+      say('Markers cleared.');
+    });
+  });
+  document.querySelectorAll('[data-camera-tune]').forEach(btn => {
+    if (btn.dataset.tuneReady === '1') return;
+    btn.dataset.tuneReady = '1';
+    btn.addEventListener('click', () => {
+      const open = !root.classList.contains('is-tuned');
+      root.classList.toggle('is-tuned', open);
+      btn.setAttribute('aria-pressed', open ? 'true' : 'false');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
   cameraButton.addEventListener('click', () => {
     if (stream) stopCamera('Camera off');
     else startCamera();
@@ -1676,6 +1807,7 @@ export function attachCameraMode(root) {
       return;
     }
     draft = [];
+    forgetLatchedMarkers();
     syncMarkerButton();
     say('Corner 1 of 4 · ' + CORNER_STEPS[0] + ' of the projected wall.');
     drawOverlay();
@@ -1710,12 +1842,8 @@ export function attachCameraMode(root) {
         drawOverlay();
         return;
       }
-      committed = next;
       draft = null;
-      rebuild();
-      persist();
-      syncMarkerButton();
-      say(homography || video.videoWidth ? 'Wall calibrated. Turn markers on when a pink note is up.' : 'Corners saved. Start the camera to finish the mapping.');
+      commitCorners(next, homography || video.videoWidth ? 'Wall calibrated. Markers stay on the floor once they appear.' : 'Corners saved. Start the camera to finish the mapping.');
     } else {
       say('Corner ' + (draft.length + 1) + ' of 4 · ' + CORNER_STEPS[draft.length] + ' of the projected wall.');
     }
@@ -1728,6 +1856,8 @@ export function attachCameraMode(root) {
     draft = null;
     rebuild();
     persist();
+    forgetLatchedMarkers();
+    setMarkersEnabled(true, true);
     syncMarkerButton();
     say(message || 'Wall aligned from the camera.');
     drawOverlay();
@@ -1735,7 +1865,8 @@ export function attachCameraMode(root) {
   }
   root.neuralDanceCamera = {
     setNormalizedCorners(list, message) { return commitCorners(list, message); },
-    setMarkersEnabled(on) { setMarkersEnabled(!!on); return markersOn; },
+    setMarkersEnabled(on, quiet) { setMarkersEnabled(!!on, !!quiet); return markersOn; },
+    armAlignedMarkers() { armMarkersIfAligned(true); return markersOn; },
     async ensureCamera() {
       if (!stream) await startCamera();
       const started = typeof performance !== 'undefined' ? performance.now() : Date.now();

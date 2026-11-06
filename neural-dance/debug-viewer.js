@@ -95,24 +95,50 @@ function drawOverlay(ctx, telemetry, width, height) {
   for (const blob of (telemetry && telemetry.stickers) || []) mark(blob, '#7fe8b3');
 }
 
+export function stageMarkPlan(telemetry) {
+  const raw = [];
+  const latched = [];
+  for (const blob of (telemetry && telemetry.pink) || []) if (blob.stage) raw.push({at: blob.stage, kind: 'pink'});
+  for (const blob of (telemetry && telemetry.stickers) || []) if (blob.stage) raw.push({at: blob.stage, kind: 'sticker'});
+  for (const marker of (telemetry && telemetry.markers) || []) {
+    latched.push({at: [marker.x, marker.y], kind: marker.kind === 'sticker' ? 'sticker' : 'pink'});
+  }
+  return {raw, latched};
+}
+
+export function paintProjectedStage(ctx, telemetry, width, height) {
+  const plan = stageMarkPlan(telemetry);
+  const scaleX = width / STAGE_W;
+  const scaleY = height / STAGE_H;
+  for (const mark of plan.raw) {
+    ctx.beginPath();
+    ctx.strokeStyle = mark.kind === 'sticker' ? '#7fe8b3' : '#ffd1ec';
+    ctx.lineWidth = 2;
+    ctx.arc(mark.at[0] * scaleX, mark.at[1] * scaleY, 8, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+  for (const mark of plan.latched) {
+    const color = mark.kind === 'sticker' ? '#7fe8b3' : '#ffe7b0';
+    const x = mark.at[0] * scaleX;
+    const y = mark.at[1] * scaleY;
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.arc(x, y, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.arc(x, y, 9, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+}
+
 function drawStage(ctx, image, telemetry) {
   ctx.clearRect(0, 0, STAGE_W, STAGE_H);
   ctx.fillStyle = '#080910';
   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   if (image) ctx.drawImage(image, 0, 0, ctx.canvas.width, ctx.canvas.height);
-  const scaleX = ctx.canvas.width / STAGE_W;
-  const scaleY = ctx.canvas.height / STAGE_H;
-  const marks = [];
-  for (const blob of (telemetry && telemetry.pink) || []) if (blob.stage) marks.push({at: blob.stage, color: '#ffd1ec'});
-  for (const blob of (telemetry && telemetry.stickers) || []) if (blob.stage) marks.push({at: blob.stage, color: '#7fe8b3'});
-  for (const marker of (telemetry && telemetry.markers) || []) marks.push({at: [marker.x, marker.y], color: marker.kind === 'sticker' ? '#7fe8b3' : '#ffd1ec'});
-  for (const mark of marks) {
-    ctx.strokeStyle = mark.color;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(mark.at[0] * scaleX, mark.at[1] * scaleY, 8, 0, Math.PI * 2);
-    ctx.stroke();
-  }
+  paintProjectedStage(ctx, telemetry, ctx.canvas.width, ctx.canvas.height);
 }
 
 export function attachDebugViewer(doc) {

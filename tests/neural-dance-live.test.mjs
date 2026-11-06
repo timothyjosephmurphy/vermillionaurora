@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {readRoomSettings, writeRoomSettings, ROOM_KEY, formatDancerCount} from '../neural-dance/room-lab.js';
+import {readRoomSettings, writeRoomSettings, ROOM_KEY, formatDancerCount, paintStageMarkers} from '../neural-dance/room-lab.js';
 import {applyLiveShow, readLiveShow, writeLiveShow, LIVE_KEY, LIVE_DEFAULTS} from '../neural-dance/live-show.js';
 
 const page = readFileSync(new URL('../src/pages/neural-dance/live/index.astro', import.meta.url), 'utf8');
@@ -72,14 +72,24 @@ test('the live page is a full-screen stage with room music and camera, and no si
   assert.match(page, /aria-label="Quiet threshold"/);
   assert.match(page, /data-floor/);
   assert.match(page, /noise floor/);
-  assert.match(page, /live waveform of the band it dances to/);
+  assert.doesNotMatch(page, /class="mural-help"/);
+  assert.doesNotMatch(page, /The dancers fill the screen/);
+  assert.doesNotMatch(page, /Continuity Camera shows up/);
+  assert.match(page, /safe-area-inset-top/);
+  assert.match(page, /data-marker-clear/);
+  assert.match(page, /Clear markers/);
+  assert.match(page, /data-camera-tune/);
+  assert.match(page, />Tune</);
+  assert.match(page, /nd-live-collapsed/);
+  assert.match(page, /height:78px/);
+  assert.match(page, /#nd-camera-mode \.viz-controls\{display:none\}/);
+  assert.match(studio, /class="mural-help"/);
   assert.match(page, /\/neural-dance\/silence-gate\.js/);
   assert.match(page, /\/neural-dance\/wave-ring\.js/);
   assert.match(page, /\/neural-dance\/room-lab\.js/);
   assert.match(page, /\/neural-dance\/camera-markers\.js/);
   assert.match(page, /\/neural-dance\/live-show\.js/);
   assert.match(page, /maptastic\.js/);
-  assert.match(page, /iPhone \(3\) Camera/);
   assert.doesNotMatch(page, /getUserMedia[\s\S]{0,80}video:\s*true/);
   assert.match(show, /requestFullscreen/);
   assert.match(show, /localStorage/);
@@ -169,6 +179,26 @@ test('room status names simulated dancers and camera stickers on both pages', ()
   assert.match(roomJs, /kind==='sticker'/);
   assert.match(roomJs, /createRadialGradient/);
   assert.match(roomJs, /12\*scale/);
+  assert.match(roomJs, /paintStageMarkers\(ctx,root\._markers,xy,scale\)/);
+  assert.match(roomJs, /setMarkers\(list\)\{[\s\S]*still\(\)/);
+  assert.equal(LIVE_DEFAULTS.collapsed, true);
+  const fills = [];
+  const strokes = [];
+  const ctx = {
+    fillStyle: '',
+    strokeStyle: '',
+    lineWidth: 1,
+    createRadialGradient() { return {addColorStop() {}}; },
+    beginPath() {},
+    arc() {},
+    fill() { fills.push(this.fillStyle); },
+    stroke() { strokes.push(this.strokeStyle); }
+  };
+  paintStageMarkers(ctx, [{x: 10, y: 20, kind: 'sticker'}, {x: 40, y: 50, kind: 'pink'}], (x, y) => ({x, y}), 1);
+  assert.ok(fills.includes('#ffe7b0'), 'sticker dot is visible');
+  assert.ok(fills.includes('#f4fbff'), 'post-it dot is visible');
+  assert.equal(fills.includes('#080910'), false);
+  assert.equal(strokes.length, 2);
   for (const source of [page, studio]) {
     assert.match(source, /\/neural-dance\/room-lab\.js/);
     assert.match(source, /\/neural-dance\/wave-ring\.js/);
