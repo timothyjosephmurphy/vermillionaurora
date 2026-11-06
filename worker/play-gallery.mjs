@@ -13,6 +13,7 @@ export const HEX_PLAY_ORIGIN = 'https://preview-251.tjm-tag-gallery-preview.page
 export const PLAY_WORKER_FIRST = ['/play', '/play/*'];
 export const PLAY_SHARE_IMAGE = 'https://tjm.art/play/share-start-2026-11-04.jpg';
 export const PLAY_SHARE_ALT = 'TJM Gallery START courtyard: the outdoor hex 3D gallery where visitors begin, with the Cascades beyond church spires and an exhibitions map on the dome';
+export const PLAY_CANONICAL = 'https://tjm.art/play/';
 
 const ENTRY = new Set(['/play', '/play/', '/play/index.html']);
 const STRIP_REQUEST = new Set(['cookie', 'authorization', 'host']);
@@ -25,7 +26,9 @@ const SHARE_META = {
 };
 
 // The hex entry is proxied, so its <html> may omit a language. The static
-// shell under static/play already declares lang="en". robots is left as-is.
+// shell under static/play already declares lang="en". Google should index
+// https://tjm.art/play/ only: drop noindex on that entry and pin its canonical.
+// /play/g/* frames stay noindex (meta in the static files, X-Robots-Tag here).
 export function ensurePlayLang(html) {
   return html.replace(/<html\b([^>]*)>/i, (full, attrs) => {
     if (/\blang\s*=/i.test(attrs)) return full;
@@ -33,8 +36,28 @@ export function ensurePlayLang(html) {
   });
 }
 
+export function dropPlayNoindex(html) {
+  return html.replace(/<meta\b[^>]*>/gi, (tag) => {
+    if (/\bname\s*=\s*(["'])(?:robots|googlebot)\1/i.test(tag) && /noindex/i.test(tag)) return '';
+    return tag;
+  });
+}
+
+export function ensurePlayCanonical(html) {
+  if (/<link\b[^>]*\brel\s*=\s*(["'])canonical\1/i.test(html)) {
+    return html.replace(/<link\b[^>]*\brel\s*=\s*(["'])canonical\1[^>]*>/gi, (tag) => {
+      if (/\bhref\s*=/i.test(tag)) {
+        return tag.replace(/\bhref\s*=\s*(["'])[\s\S]*?\1/i, (_, quote) => `href=${quote}${PLAY_CANONICAL}${quote}`);
+      }
+      return tag.replace(/\s*\/?>$/, ` href="${PLAY_CANONICAL}">`);
+    });
+  }
+  if (/<\/head>/i.test(html)) return html.replace(/<\/head>/i, `<link rel="canonical" href="${PLAY_CANONICAL}"></head>`);
+  return html;
+}
+
 export function rewritePlayEntryHtml(html) {
-  return ensurePlayLang(html).replace(/<meta\b[^>]*>/gi, (tag) => {
+  return ensurePlayCanonical(dropPlayNoindex(ensurePlayLang(html))).replace(/<meta\b[^>]*>/gi, (tag) => {
     const key = tag.match(/\b(?:property|name)\s*=\s*(["'])(og:image(?::secure_url|:alt)?|twitter:image(?::alt)?)\1/i);
     if (!key) return tag;
     const value = SHARE_META[key[2].toLowerCase()];
@@ -104,8 +127,17 @@ export async function proxyHexPlay(request, fetcher = fetch) {
     && ENTRY.has(new URL(request.url).pathname)
     && (out.get('content-type') || '').toLowerCase().includes('text/html');
   if (!entryHtml) return new Response(res.body, { status: res.status, statusText: res.statusText, headers: out });
+  out.delete('x-robots-tag');
   const html = await res.text();
   return new Response(rewritePlayEntryHtml(html), { status: res.status, statusText: res.statusText, headers: out });
+}
+
+// Frames and their assets are not documents to index. The entry URL is.
+export function withGalleryFrameRobots(response, pathname) {
+  if (!pathname.startsWith('/play/g/')) return response;
+  const headers = new Headers(response.headers);
+  headers.set('X-Robots-Tag', 'noindex, nofollow');
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
 const moved = (location) => new Response(null, { status: 301, headers: { Location: location, 'Cache-Control': 'public, max-age=3600' } });
@@ -118,8 +150,8 @@ export async function playGallery(request, env = {}, fetcher = fetch) {
   if (ENTRY.has(url.pathname)) return proxyHexPlay(request, load);
   if (env.ASSETS) {
     const asset = await env.ASSETS.fetch(request);
-    if (asset.status !== 404) return asset;
+    if (asset.status !== 404) return withGalleryFrameRobots(asset, url.pathname);
     try { await asset.body?.cancel?.(); } catch { /* the 404 page is unused */ }
   }
-  return proxyHexPlay(request, load);
+  return withGalleryFrameRobots(await proxyHexPlay(request, load), url.pathname);
 }

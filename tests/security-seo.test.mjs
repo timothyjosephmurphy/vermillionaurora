@@ -41,13 +41,38 @@ test('Worker HTML responses gain the security headers; asset and JSON responses 
   assert.equal(jpeg.headers.get('Content-Security-Policy-Report-Only'), null);
 });
 
-test('proxied /play entry declares lang=en and does not change robots', () => {
-  const bare = '<!doctype html><html><head><meta name="robots" content="noindex,nofollow"><meta property="og:image" content="https://example.test/old.jpg"></head><body></body></html>';
+test('/play/ entry is indexable with lang and canonical; /play/g frames stay noindex', async () => {
+  const shell = fs.readFileSync('static/play/index.html', 'utf8');
+  assert.match(shell, /<html[^>]*\slang="en"/);
+  assert.match(shell, /rel="canonical" href="https:\/\/tjm\.art\/play\/"/);
+  assert.equal(/noindex/i.test(shell), false);
+  const frames = fs.readdirSync('static/play/g').filter(name => fs.existsSync(`static/play/g/${name}/index.html`));
+  assert.ok(frames.length > 0);
+  for (const id of frames) {
+    const html = fs.readFileSync(`static/play/g/${id}/index.html`, 'utf8');
+    assert.match(html, /name="robots" content="noindex,nofollow"/, id);
+  }
+  const bare = '<!doctype html><html><head><meta name="robots" content="noindex,nofollow"><meta name="googlebot" content="noindex"><link rel="canonical" href="https://preview.example/play/"><meta property="og:image" content="https://example.test/old.jpg"></head><body></body></html>';
   const out = rewritePlayEntryHtml(bare);
   assert.match(out, /<html lang="en">/);
-  assert.match(out, /name="robots" content="noindex,nofollow"/);
+  assert.equal(/noindex/i.test(out), false);
+  assert.match(out, /rel="canonical" href="https:\/\/tjm\.art\/play\/"/);
   assert.equal(ensurePlayLang('<html lang="en" class="play">'), '<html lang="en" class="play">');
   assert.equal(out.includes('example.test/old.jpg'), false);
+  assert.equal(rewritePlayEntryHtml(out), out);
+  const sitemap = fs.readFileSync('scripts/generate-sitemap.mjs', 'utf8');
+  assert.match(sitemap, /noindex/);
+  const skips = html => [...html.matchAll(/<meta\b[^>]*>/gi)].some(([tag]) => /\bname\s*=\s*["']robots["']/i.test(tag) && /noindex/i.test(tag));
+  assert.equal(skips(shell), false);
+  assert.equal(frames.every(id => skips(fs.readFileSync(`static/play/g/${id}/index.html`, 'utf8'))), true);
+  const { playGallery, proxyHexPlay } = await import('../worker/play-gallery.mjs');
+  const indexed = await proxyHexPlay(new Request('https://tjm.art/play/'), async () => new Response(bare, { headers: { 'content-type': 'text/html', 'x-robots-tag': 'noindex, nofollow' } }));
+  assert.equal(/noindex/i.test(await indexed.text()), false);
+  assert.equal(indexed.headers.get('x-robots-tag'), null);
+  const frame = await playGallery(new Request('https://tjm.art/play/g/play/'), { ASSETS: { fetch: () => new Response('<html></html>', { status: 200, headers: { 'content-type': 'text/html' } }) } });
+  assert.equal(frame.headers.get('x-robots-tag'), 'noindex, nofollow');
+  const asset = await playGallery(new Request('https://tjm.art/play/g/play/app.js'), { ASSETS: { fetch: () => new Response('js', { status: 200, headers: { 'content-type': 'application/javascript' } }) } });
+  assert.equal(asset.headers.get('x-robots-tag'), 'noindex, nofollow');
 });
 
 test('blog stories emit BlogPosting JSON-LD and skip the index shape', () => {
