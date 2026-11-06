@@ -9,5 +9,5 @@
   "r2_buckets": [{ "binding": "IMAGES", "bucket_name": "tjm-images" }],
   "services": [{ "binding": "CHECKOUT", "service": "vermillion-commissions" }],
   "vars": { "PRIMARY_HOST": "tjm.art", "LEGACY_REDIRECT": "true" },
-  "observability": { "enabled": true, "logs": { "enabled": true, "invocation_logs": true } }
+  "observability": { "enabled": true, "logs": { "enabled": true, "invocation_logs": true }, "traces": { "enabled": true, "head_sampling_rate": 0.25 } }
 }

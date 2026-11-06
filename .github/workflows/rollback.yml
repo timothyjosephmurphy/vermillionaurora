@@ -1,9 +1,12 @@
 name: Roll back production
 # One-command rollback to the previous Worker version:
 #   gh workflow run rollback.yml -R timothyjosephmurphy/vermillionaurora -f target=checkout
-# Uses CLOUDFLARE_SANDBOX_API_TOKEN (whole-account Workers Scripts Edit), so target=site and
-# target=both roll back the website Worker too.
-# Optionally pin versions: -f site_version=<id> -f checkout_version=<id> (see `wrangler versions list`).
+# Checkout is rolled back before the website so a target=both run moves vermillion-commissions
+# first. Optionally pin versions: -f site_version=<id> -f checkout_version=<id>
+# (see `wrangler versions list`).
+# Token: CLOUDFLARE_PROD_API_TOKEN, falling back to CLOUDFLARE_SANDBOX_API_TOKEN while that
+# secret is empty. Site rollback succeeds only when the selected token can edit vermillionaurora.
+# Permissions: docs/cloudflare-prod-api-token.md
 on:
   workflow_dispatch:
     inputs:
@@ -28,19 +31,30 @@ concurrency:
 jobs:
   rollback:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN || secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
     steps:
+      - name: Show which Cloudflare API token is in use
+        env:
+          PROD_TOKEN_SET: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN != '' }}
+        run: |
+          if [ "$PROD_TOKEN_SET" = "true" ]; then
+            echo "Cloudflare API token source: CLOUDFLARE_PROD_API_TOKEN"
+          else
+            echo "Cloudflare API token source: fallback CLOUDFLARE_SANDBOX_API_TOKEN (CLOUDFLARE_PROD_API_TOKEN is empty). Create it with the permissions in docs/cloudflare-prod-api-token.md."
+          fi
       - name: Roll back the checkout Worker
         if: inputs.target != 'site'
         uses: cloudflare/wrangler-action@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN || secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           command: rollback ${{ inputs.checkout_version }} --name vermillion-commissions --message "Rollback via GitHub Actions run ${{ github.run_id }}" --yes
       - name: Roll back the website Worker
         if: inputs.target != 'checkout'
         uses: cloudflare/wrangler-action@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN || secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           command: rollback ${{ inputs.site_version }} --name vermillionaurora --message "Rollback via GitHub Actions run ${{ github.run_id }}" --yes
       - name: Show live health after rollback

@@ -1,9 +1,14 @@
 name: Deploy production from main
-# Merging to main deploys production directly: Cloudflare Workers Builds deploys the website Worker
-# (vermillionaurora) from main; this workflow waits for that version, then deploys the checkout
-# Worker (vermillion-commissions), followed by sampled, quote-only verification.
+# Merging to main deploys production directly. This workflow publishes the checkout Worker
+# (vermillion-commissions) as soon as the run starts, in parallel with Cloudflare Workers Builds,
+# which deploys the website Worker (vermillionaurora) from main. Verification starts only after
+# checkout /checkout/health reports this commit, then waits for Workers Builds and checks both.
+# Pull request preview URLs stay on Workers Builds: this workflow does not deploy vermillionaurora
+# and does not run on pull_request.
 # The release branch is a frozen backup and no longer deploys anything from this workflow.
 # Roll back with: gh workflow run rollback.yml -f target=checkout
+# Token: CLOUDFLARE_PROD_API_TOKEN, falling back to CLOUDFLARE_SANDBOX_API_TOKEN while that
+# secret is empty. Permissions are listed in docs/cloudflare-prod-api-token.md.
 on:
   push:
     branches: [main]
@@ -22,64 +27,37 @@ env:
   FULL_CHECKS: ${{ inputs.full_checks && '1' || '0' }}
   PRINT_ASSET_SAMPLE: ${{ inputs.full_checks && 'all' || 'sample' }}
 jobs:
-  deploy:
+  deploy-checkout:
+    name: Deploy checkout Worker
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN || secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            cloudflare/test/package-lock.json
-      - name: Install dependencies
-        run: |
-          n=0
-          until npm ci; do
-            n=$((n+1))
-            if [ "$n" -ge 2 ]; then exit 1; fi
-            echo "npm ci failed; retrying once"
-            sleep 8
-          done
-      - run: npm run build
-      - name: Verify generated catalogs and production checkout config
-        run: |
-          git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
-          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.CHECKOUT_MODE!=='live')process.exit(1)"
-      - name: Work out what changed in this push
-        id: changes
+      - name: Show which Cloudflare API token is in use
         env:
-          GH_TOKEN: ${{ github.token }}
+          PROD_TOKEN_SET: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN != '' }}
         run: |
-          before="${{ github.event.before }}"
-          if [ "${{ github.event_name }}" = "push" ] && [ -n "$before" ] && [ "$before" != "0000000000000000000000000000000000000000" ]; then
-            gh api "repos/${{ github.repository }}/compare/$before...${{ github.sha }}" --jq '.files[].filename' > /tmp/changed.txt || : > /tmp/changed.txt
+          if [ "$PROD_TOKEN_SET" = "true" ]; then
+            echo "Cloudflare API token source: CLOUDFLARE_PROD_API_TOKEN"
           else
-            : > /tmp/changed.txt
+            echo "Cloudflare API token source: fallback CLOUDFLARE_SANDBOX_API_TOKEN (CLOUDFLARE_PROD_API_TOKEN is empty). Create it with the permissions in docs/cloudflare-prod-api-token.md."
           fi
-          node scripts/ci/changed-products.mjs < /tmp/changed.txt
+      - name: Verify production checkout config
+        run: node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.CHECKOUT_MODE!=='live')process.exit(1)"
       - name: Prepare and verify private accounting storage
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/prepare-sales-archive.mjs
       - name: Verify commission reference and accounting storage are private
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/verify-commission-privacy.mjs
-      - name: Wait for Workers Builds to publish this website version, then check sampled print files
-        env:
-          CHANGED_PRINT_PRODUCTS: ${{ steps.changes.outputs.print_products }}
-        run: node payments/verify-live-print-assets.mjs
-      - name: Verify published blog cards, articles, and photos
-        if: steps.changes.outputs.blog == 'true' || steps.changes.outputs.unknown == 'true'
-        run: node scripts/verify-blog-pages.mjs --live
       - name: Deploy the checkout Worker with the checked-in checkout settings
         uses: cloudflare/wrangler-action@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN || secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           workingDirectory: cloudflare
           command: deploy --config wrangler.jsonc --var CHECKOUT_RELEASE:${{ github.sha }} --message "main ${{ github.sha }}"
@@ -106,9 +84,66 @@ jobs:
           }
           if(!ready)throw Error('The expected production revision did not become ready');
           NODE
-      - name: Verify live providers without taking payment
+  verify-site:
+    name: Verify website release
+    needs: deploy-checkout
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN || secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            cloudflare/test/package-lock.json
+      - name: Install dependencies
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - run: npm run build
+      - name: Verify generated catalogs and production checkout config
+        run: |
+          git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.CHECKOUT_MODE!=='live')process.exit(1)"
+      - name: Show which Cloudflare API token is in use
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          PROD_TOKEN_SET: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN != '' }}
+        run: |
+          if [ "$PROD_TOKEN_SET" = "true" ]; then
+            echo "Cloudflare API token source: CLOUDFLARE_PROD_API_TOKEN"
+          else
+            echo "Cloudflare API token source: fallback CLOUDFLARE_SANDBOX_API_TOKEN (CLOUDFLARE_PROD_API_TOKEN is empty). Create it with the permissions in docs/cloudflare-prod-api-token.md."
+          fi
+      - name: Work out what changed in this push
+        id: changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          before="${{ github.event.before }}"
+          if [ "${{ github.event_name }}" = "push" ] && [ -n "$before" ] && [ "$before" != "0000000000000000000000000000000000000000" ]; then
+            gh api "repos/${{ github.repository }}/compare/$before...${{ github.sha }}" --jq '.files[].filename' > /tmp/changed.txt || : > /tmp/changed.txt
+          else
+            : > /tmp/changed.txt
+          fi
+          node scripts/ci/changed-products.mjs < /tmp/changed.txt
+      - name: Wait for Workers Builds to publish this website version, then check sampled print files
+        env:
+          CHANGED_PRINT_PRODUCTS: ${{ steps.changes.outputs.print_products }}
+        run: node payments/verify-live-print-assets.mjs
+      - name: Verify published blog cards, articles, and photos
+        if: steps.changes.outputs.blog == 'true' || steps.changes.outputs.unknown == 'true'
+        run: node scripts/verify-blog-pages.mjs --live
+      - name: Verify live providers without taking payment
         run: node payments/verify-production.mjs
       - name: Verify website and API catalog versions agree
         env:

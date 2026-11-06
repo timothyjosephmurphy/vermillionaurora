@@ -22,7 +22,7 @@ export function sampleAssets(){
 export async function verifyLivePrintAssets() {
   const release=await fetch(`${site}/catalog/version.json?release=${catalogVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)});
   assert.equal(release.status,200);
-  assert.equal((await release.json()).version,catalogVersion,'The website must expose the promoted catalog before the API deploy');
+  assert.equal((await release.json()).version,catalogVersion,'The website must expose the promoted catalog');
   const page=await fetch(`${site}/print-test/?release=${printVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)});
   assert.equal(page.status,200);assert((await page.text()).includes(printVersion));
   const catalog=await (await fetch(`${site}/catalog/products.json?prints=${printVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)})).json();
