@@ -117,7 +117,7 @@ export async function finerworksDiagnostic(request,env,products) {
         const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(input.testRunId+option.id)))].map(n=>n.toString(16).padStart(2,'0')).join('');
         const id=`${hash.slice(0,8)}-${hash.slice(8,12)}-4${hash.slice(13,16)}-a${hash.slice(17,20)}-${hash.slice(20,32)}`,recordKey=`tests/finerworks/${id}.json`;
         const previous=await env.SALES_ARCHIVE.get(recordKey);
-        let job=previous?(await previous.json()).job:newFinerWorksJob(env,{id,mode:'sandbox',quote:{address:input.address,printQuote:quote}},[item]);
+        let job=previous?(await previous.json()).job:await newFinerWorksJob(env,{id,mode:'sandbox',quote:{address:input.address,printQuote:quote}},[item]);
         const persist=async next=>{job=next;await env.SALES_ARCHIVE.put(recordKey,JSON.stringify({kind:'unpaid-provider-sandbox-test',id,job}),{httpMetadata:{contentType:'application/json'}});};
         await persist(job);await fulfillFinerWorks(env,job,persist);
         return reply({provider:'finerworks',testMode:true,paymentTaken:false,ordersSubmitted:!!job.providerId,orderId:job.providerId||null,reference:job.request.merchantReference,status:job.status,recordKey,...(job.lastError?{error:job.lastError,diagnostic:job.providerDiagnostic}:{})});

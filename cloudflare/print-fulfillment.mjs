@@ -1,6 +1,6 @@
 import {prodigiEnvironment,prodigiRequest,quotePrints,validateProdigiOrder} from './prodigi-api.mjs';
 import {newFinerWorksJob,fulfillFinerWorks,finerworksFulfillmentRecord} from './finerworks-fulfillment.mjs';
-export function newPrintJob(env,order,items) {
+export async function newPrintJob(env,order,items) {
   if(order.quote?.printQuote?.provider==='finerworks'||items.some(i=>i.provider==='finerworks'))return newFinerWorksJob(env,order,items);
   const q=order.quote,a=q.address,mode=order.mode,key=crypto.randomUUID(),callbackKey=[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
   const origin=mode==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillion-commissions.timothyjosephmurphy.workers.dev';

@@ -1,6 +1,7 @@
 ---
 import ArtworkImage from './ArtworkImage.astro';
 import displayImages from '../../scripts/display-images.json';
+import { publicImageSrc } from '../data/public-image.mjs';
 // gallery: optional extra photos shown as thumbnails after the main painting (e.g. room shots).
 //   [{base, widths, width, height, fallback, alt, caption}] -> `${base}-${w}.avif|webp` and a JPEG fallback.
 // video: optional product video below the photos ({label, caption, poster, width, height, sources:[{src,type,media}]}).
@@ -8,13 +9,15 @@ const { image, title, gallery = [], video = null } = Astro.props;
 const PRODUCT_SIZES = '(max-width: 980px) calc(100vw - 48px), 560px';
 const srcset = (g, ext) => g.widths.map(w => `${g.base}-${w}.${ext} ${Math.min(w, g.width)}w`).join(', ');
 const largest = g => `${g.base}-${g.widths.at(-1)}.webp`;
-const mainThumb = (displayImages[image.src]?.variants || []).find(v => v.w >= 160)?.src || image.src;
+const shown = publicImageSrc(image);
+const full = image.fullSrc && !/print-masters/.test(image.fullSrc) ? image.fullSrc : shown;
+const mainThumb = (displayImages[shown]?.variants || []).find(v => v.w >= 160)?.src || shown;
 const count = gallery.length + 1;
 ---
 <div class="product-media">
 <figure class="product-figure">
-  <a class="painting-image-trigger" href={image.fullSrc||image.src} aria-label={`View full screen: ${title}`} aria-haspopup="dialog" aria-controls="painting-lightbox">
-    <ArtworkImage src={image.src} alt={image.alt} width={image.width} height={image.height} fetchpriority="high" />
+  <a class="painting-image-trigger" href={full} aria-label={`View full screen: ${title}`} aria-haspopup="dialog" aria-controls="painting-lightbox">
+    <ArtworkImage src={shown} alt={image.alt} width={image.width} height={image.height} fetchpriority="high" />
     <span class="painting-image-hint">View full screen <span aria-hidden="true">⤢</span></span>
   </a>
   <figcaption>{image.caption}</figcaption>
@@ -42,7 +45,7 @@ const count = gallery.length + 1;
 </div>
 <dialog id="painting-lightbox" class="painting-lightbox" aria-label={`${title} — full-screen painting`}>
   <button class="painting-lightbox-close" type="button" autofocus>Close <span aria-hidden="true">×</span></button>
-  <ArtworkImage src={image.fullSrc||image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+  <ArtworkImage src={full} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
 </dialog>
 
 <script define:vars={{ PRODUCT_SIZES }}>
