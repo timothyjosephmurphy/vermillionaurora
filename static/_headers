@@ -1,3 +1,9 @@
+# Neural Dance Home Screen manifest. This file is a static asset, not a Worker route,
+# so nothing redirects or rewrites it. .webmanifest is application/manifest+json;
+# the type is repeated here so nosniff cannot treat it as a download.
+/neural-dance/manifest.webmanifest
+  Content-Type: application/manifest+json
+
 # studio-tracker #240: the /play gallery frames run inside the /play shell, which already carries Cloudflare Web Analytics.
 # no-transform stops Cloudflare auto-injecting a second beacon into the frame, so each visit counts once.
 /play/g/*

@@ -50,7 +50,13 @@ const SKIP_STYLE = '<style>.skip-link{position:absolute;left:12px;top:12px;z-ind
 
 export function polish(html) {
   let next = html;
-  if (!/<link\b[^>]*\brel=["'](?:shortcut )?icon["']/i.test(next)) next = next.replace(/<\/head>/i, `${ICONS}</head>`);
+  const hasIcon = /<link\b[^>]*\brel=["'](?:shortcut )?icon["']/i.test(next);
+  const hasManifest = /<link\b[^>]*\brel=["']manifest["']/i.test(next);
+  // A page that already names a manifest (Neural Dance) must not also get /site.webmanifest.
+  if (!hasIcon) {
+    const icons = hasManifest ? ICONS.replace(/<link rel="manifest" href="\/site\.webmanifest\?v=\d+">/, '') : ICONS;
+    next = next.replace(/<\/head>/i, `${icons}</head>`);
+  }
   if (!/<main\b/i.test(next)) return next;
   const skip = next.match(/<a\b[^>]*class=["'][^"']*\bskip-link\b[^"']*["'][^>]*>/i)?.[0];
   const mainTag = next.match(/<main\b[^>]*>/i)[0];

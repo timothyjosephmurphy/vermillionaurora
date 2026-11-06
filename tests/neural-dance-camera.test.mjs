@@ -26,6 +26,10 @@ import {
   cornersFromMarkerCenters,
   createMarkerTracker,
   detectPinkBlobs,
+  detectPinkMarkers,
+  detectStickerBlobs,
+  areaScaleFor,
+  stickerDarkRatio,
   detectionSize,
   downsampleRgba,
   findCalibrationMarkers,
@@ -165,9 +169,15 @@ test('pink blobs use hue tolerance, saturation sensitivity, and minimum size', (
   assert.ok(saturationFloor(1) < saturationFloor(0));
   const dark = hsvToRgb(PINK_HUE, 0.9, 0.1);
   assert.equal(isPink(...dark, blobSettings(DEFAULTS)), false);
-  const red = hsvToRgb(0, 0.9, 0.9);
-  assert.equal(isPink(...red, blobSettings({hueTolerance: 28})), false);
-  assert.equal(isPink(...red, blobSettings({hueTolerance: 40})), true);
+  const off = hsvToRgb((PINK_HUE + 35) % 360, 0.9, 0.9);
+  assert.equal(isPink(...off, blobSettings({hueTolerance: 28})), false);
+  assert.equal(isPink(...off, blobSettings({hueTolerance: 40})), true);
+  assert.equal(isPink(136, 110, 139, blobSettings(DEFAULTS)), true);
+  assert.equal(isPink(253, 169, 155, blobSettings(DEFAULTS)), true);
+  assert.equal(isPink(127, 132, 152, blobSettings(DEFAULTS)), false);
+  assert.equal(isPink(180, 154, 130, blobSettings(DEFAULTS)), false);
+  assert.equal(isPink(90, 180, 220, blobSettings(DEFAULTS)), false);
+  assert.equal(isPink(120, 130, 210, blobSettings(DEFAULTS)), false);
 
   const width = 48;
   const height = 36;
@@ -226,12 +236,12 @@ test('downscaled frames project a stable pink note onto the room canvas', () => 
   const pink = hsvToRgb(330, 0.85, 0.95);
   const srcW = 320;
   const srcH = 180;
-  const full = paint(srcW, srcH, (x, y) => x >= 80 && x < 120 && y >= 40 && y < 80 ? pink : [6, 8, 12]);
+  const full = paint(srcW, srcH, (x, y) => x >= 92 && x < 108 && y >= 52 && y < 68 ? pink : [6, 8, 12]);
   const scale = detectionSize(srcW, srcH);
-  assert.equal(scale.width, DETECT_WIDTH);
-  assert.ok(scale.height < srcH);
-  assert.equal(detectionSize(1920, 1080).width, 160);
-  assert.equal(detectionSize(1920, 1080).height, 90);
+  assert.equal(scale.width, Math.min(DETECT_WIDTH, srcW));
+  assert.ok(scale.height <= srcH);
+  assert.equal(detectionSize(1920, 1080).width, 480);
+  assert.equal(detectionSize(1920, 1080).height, 270);
   const small = downsampleRgba(full, srcW, srcH, scale.width, scale.height);
   const H = homographyFromNormalized(CORNER_STEPS.map((_, i) => PROJECTION_CORNERS[i] && [
     {x: 0, y: 0}, {x: 1, y: 0}, {x: 1, y: 1}, {x: 0, y: 1}
@@ -275,6 +285,7 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
   assert.equal(writeCameraSettings(storage, {
     deviceId: 'phone',
     deviceLabel: 'iPhone Camera',
+    userSelected: true,
     corners,
     hueTolerance: 40,
     saturationSensitivity: 0.7,
@@ -291,14 +302,93 @@ test('camera list keeps an iPhone Camera and settings round-trip', () => {
   storage.setItem(STORAGE_KEY, JSON.stringify({hueTolerance: 999, saturationSensitivity: -2, minBlobSize: 1, corners: [{x: 1, y: 1}]}));
   const clamped = readCameraSettings(storage);
   assert.equal(clamped.hueTolerance, 80);
-  assert.equal(clamped.saturationSensitivity, 0);
+  assert.equal(clamped.saturationSensitivity, DEFAULTS.saturationSensitivity);
   assert.equal(clamped.minBlobSize, 4);
+  assert.equal(clamped.deviceId, '');
+  const poisoned = memoryStorage();
+  poisoned.setItem('nd.camera.v1', JSON.stringify({deviceId: 'front', deviceLabel: 'Front Camera', hueTolerance: 5, saturationSensitivity: 0}));
+  const migrated = readCameraSettings(poisoned);
+  assert.equal(migrated.deviceId, '');
+  assert.equal(migrated.deviceLabel, '');
+  assert.equal(migrated.hueTolerance, DEFAULTS.hueTolerance);
+  assert.equal(migrated.saturationSensitivity, DEFAULTS.saturationSensitivity);
+  const ios = [
+    {deviceId: 'front', label: 'Front Camera'},
+    {deviceId: 'ultra', label: 'Back Ultra Wide Camera'},
+    {deviceId: 'back', label: 'Back Camera'},
+    {deviceId: 'tele', label: 'Back Telephoto Camera'}
+  ];
+  assert.equal(pickCamera(ios, null).label, 'Back Camera');
+  assert.equal(pickCamera(ios, migrated).label, 'Back Camera');
+  const mac = [
+    {deviceId: 'face', label: 'FaceTime HD Camera'},
+    {deviceId: 'tj', label: 'TJ iPhone Camera'}
+  ];
+  assert.equal(pickCamera(mac, null).label, 'TJ iPhone Camera');
   assert.equal(clamped.corners, null);
   const click = clientToNormalized(25, 75, {left: 0, top: 0, width: 100, height: 100});
   close(click.x, 0.25, 1e-9, 'click x');
   close(click.y, 0.75, 1e-9, 'click y');
   const dancers = toDancerMarkers([{id: 2, x: 10, y: 20}, {id: 0, x: 1, y: 1}]);
-  assert.deepEqual(dancers, [{id: 2, x: 10, y: 20, type: 1}]);
+  assert.deepEqual(dancers, [{id: 2, x: 10, y: 20, type: 1, kind: 'pink'}]);
+});
+
+test('white balance finds the post-it in both of TJ\'s rooms and ignores the wall', () => {
+  function frame(bg, note, nx, ny) {
+    const width = 48;
+    const height = 32;
+    const data = new Uint8ClampedArray(width * height * 4);
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        const on = x >= nx && x < nx + 12 && y >= ny && y < ny + 12;
+        const c = on ? note : bg;
+        const i = (y * width + x) * 4;
+        data[i] = c[0];
+        data[i + 1] = c[1];
+        data[i + 2] = c[2];
+        data[i + 3] = 255;
+      }
+    }
+    return detectPinkMarkers(data, width, height, DEFAULTS);
+  }
+  const cool = frame([127, 132, 152], [136, 110, 139], 6, 6);
+  assert.equal(cool.length, 1, 'cool projector post-it');
+  const warm = frame([180, 154, 130], [253, 169, 155], 24, 12);
+  assert.equal(warm.length, 1, 'warm 2700K post-it');
+  assert.ok(Math.abs(saturationFloor(0.75) - 0.14) < 0.02);
+  assert.ok(saturationFloor(1) < 0.08);
+  assert.ok(saturationFloor(0) > 0.4);
+});
+
+test('a dark dancer sticker is darker than the local screen and both kinds stay in range', () => {
+  assert.equal(DETECT_WIDTH, 480);
+  assert.equal(areaScaleFor(160), 1);
+  assert.equal(areaScaleFor(48), 1);
+  assert.ok(Math.abs(areaScaleFor(480) - 9) < 0.01);
+  assert.ok(Math.abs(stickerDarkRatio(0.5) - 0.85) < 0.001);
+  const width = 80;
+  const height = 60;
+  const data = new Uint8ClampedArray(width * height * 4);
+  for (let i = 0; i < data.length; i += 4) {
+    data[i] = 157;
+    data[i + 1] = 117;
+    data[i + 2] = 96;
+    data[i + 3] = 255;
+  }
+  for (let y = 18; y < 46; y++) {
+    const xs = y < 28 ? [34, 35, 36, 37] : [33, 34, 37, 38];
+    for (const x of xs) {
+      const i = (y * width + x) * 4;
+      data[i] = 124;
+      data[i + 1] = 91;
+      data[i + 2] = 68;
+    }
+  }
+  const found = detectStickerBlobs(data, width, height, {stickerSensitivity: 0.5});
+  assert.equal(found.length, 1);
+  assert.equal(found[0].kind, 'sticker');
+  assert.equal(DEFAULTS.detectionMode, 'both');
+  assert.equal(DEFAULTS.markerMode, 'both');
 });
 
 test('calibration markers recover the stage corners from a white field', () => {
@@ -346,7 +436,7 @@ test('Continuity Camera constraints omit resolution and play after loadedmetadat
   assert.equal('width' in exact || 'height' in exact, false);
   const ideal = videoConstraints('phone-3', 'ideal');
   assert.deepEqual(ideal, {deviceId: {ideal: 'phone-3'}});
-  assert.deepEqual(videoConstraints(''), {});
+  assert.deepEqual(videoConstraints(''), {facingMode: {ideal: 'environment'}});
   assert.doesNotMatch(camera, /ideal:\s*1280/);
   assert.doesNotMatch(camera, /ideal:\s*720/);
   assert.match(camera, /loadedmetadata/);
@@ -432,9 +522,14 @@ test('the neural dance page keeps room controls and adds camera mode', () => {
   assert.ok(cameraAt > roomScriptEnd, 'camera mode follows the room music script');
   assert.match(page, /Camera mode/);
   assert.match(page, /iPhone Camera/);
-  assert.match(page, /Hue tolerance/);
-  assert.match(page, /Saturation sensitivity/);
-  assert.match(page, /Minimum blob size/);
+  assert.match(page, /Hue range \(higher = wider color match\)/);
+  assert.match(page, /Note sensitivity \(higher = fainter notes\)/);
+  assert.match(page, /Smallest note size \(lower = detects smaller notes\)/);
+  assert.match(page, /data-camera-flip/);
+  assert.match(page, /Reset defaults/);
+  assert.match(page, /data-mode="both"/);
+  assert.match(page, /Dancer stickers/);
+  assert.match(page, /Sticker sensitivity \(higher = fainter stickers\)/);
   assert.match(page, /data-preview/);
   assert.match(page, /data-action="calibrate"/);
   assert.match(page, /\/neural-dance\/camera-markers\.js/);
