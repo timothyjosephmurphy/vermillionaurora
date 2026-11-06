@@ -118,7 +118,7 @@ try {
   }));
   assert.equal(applied.note, '0.91');
   assert.equal(applied.quiet, '0.22');
-  assert.equal(applied.size, '18');
+  assert.equal(applied.size, '22');
 
   await page.evaluate(() => {
     window.__ndWs[0].onmessage({data: JSON.stringify({
@@ -128,7 +128,7 @@ try {
     })});
   });
   await page.locator('[data-debug-dismiss]').click();
-  assert.equal(await page.locator('[data-control="size"]').inputValue(), '18');
+  assert.equal(await page.locator('[data-control="size"]').inputValue(), '22');
   assert.equal(await page.locator('[data-debug-banner]').isHidden(), true);
 
   await page.goto(origin + shared.href, {waitUntil: 'load'});
