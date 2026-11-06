@@ -3,10 +3,12 @@
 `wrangler.jsonc` (the `vermillionaurora` site worker) enables Workers Logs, matching the checkout worker (`cloudflare/wrangler.jsonc`) and the nostr publisher:
 
 ```jsonc
-"observability": { "enabled": true, "logs": { "enabled": true, "invocation_logs": true } }
+"observability": { "enabled": true, "logs": { "enabled": true, "invocation_logs": true }, "traces": { "enabled": true, "head_sampling_rate": 0.25 } }
 ```
 
-Takes effect on the next deploy (not done here). Logs then appear in the Cloudflare dashboard under Workers & Pages > vermillionaurora > Observability. Sampling is the default (100%). Log volume is small: the worker only runs for the `run_worker_first` routes.
+`observability.enabled` turns on Workers Logs. Traces need their own `observability.traces.enabled`; the top-level flag does not enable them. The site Worker samples traces at 25% (`head_sampling_rate` 0.25). Logs stay at the default 100%. The checkout Worker (`cloudflare/wrangler.jsonc`) uses the same logs settings and samples traces at 10% so the `*/5 * * * *` cron does not dominate the trace volume.
+
+Takes effect on the next deploy of each Worker. Logs and traces then appear in the Cloudflare dashboard under Workers & Pages > vermillionaurora (or vermillion-commissions) > Observability. Site log volume is small: the worker only runs for the `run_worker_first` routes.
 
 ## Alert setup (for TJ; needs a dashboard login, so it was not done in code)
 

@@ -326,6 +326,8 @@ test('site worker keeps logs: wrangler.jsonc enables observability like the chec
   assert.equal(site.observability?.enabled,true);
   assert.equal(site.observability?.logs?.enabled,true);
   assert.equal(site.observability?.logs?.invocation_logs,true);
+  assert.equal(site.observability?.traces?.enabled,true);
+  assert.equal(site.observability?.traces?.head_sampling_rate,0.25);
 });
 test('commission form, privacy and inventory APIs are same-origin on tjm.art (no workers.dev form posts)',async()=>{
   const seen=[];const env={...off,ASSETS:{fetch:()=>new Response('asset')},CHECKOUT:{fetch:r=>{seen.push([r.method,new URL(r.url).pathname]);return Response.json({success:true});}}};

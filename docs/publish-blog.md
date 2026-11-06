@@ -1,6 +1,6 @@
 # Publish a Stories from the Studio post
 
-`main` is production. The ruleset **Protected releases** blocks a direct push and requires a pull request whose **`gate`** check is green on an up-to-date branch. Squash-merge is the publish step. Cloudflare Workers Builds then deploys the website Worker from `main`. `.github/workflows/deploy-production.yml` checks the live article when the push touches the blog.
+`main` is production. The ruleset **Protected releases** blocks a direct push and requires a pull request whose **`gate`** check is green on an up-to-date branch. Squash-merge is the publish step. Cloudflare Workers Builds then deploys the website Worker from `main`. `.github/workflows/deploy-production.yml` deploys the checkout Worker first, waits for that website version, and checks the live article when the push touches the blog.
 
 A pull request that only changes a story uses the **blog** tier of `.github/workflows/release-gate.yml`. That job runs `npm ci` without downloading browsers, `npm run build`, the catalog drift check, and a check that each new `static/blog/<slug>/index.html` is linked from the blog index. It does not install Chromium or WebKit and it does not run Playwright. Checkout, worker, catalog code, and other site changes keep their existing tiers.
 
