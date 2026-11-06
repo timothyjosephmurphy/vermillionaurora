@@ -107,7 +107,7 @@ let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0;
 let ac=null;
 let colors=[],foreground='',background='';
 const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createSession())||{connect(){},release(){},sample(){},stroke(){}};
-let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null;
+let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null,lastLevels=[0,0,0,0];
 const bandSens=[1,1,1,1];
 const hotUntil=[0,0,0,0];
 const MIC={off:{label:'Listen',status:'Mic off',pressed:false},listening:{label:'Listening',status:'Mic on',pressed:true},muted:{label:'Muted',status:'Muted',pressed:false},unavailable:{label:'No mic',status:'No microphone',pressed:false}};
@@ -196,6 +196,7 @@ function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while 
     bins=Math.min(spec.length,api.nd_spectrum_cap());
     new Uint8Array(api.memory.buffer,api.nd_spectrum(),bins).set(ndSilenceGate.mask(gate,spec.subarray(0,bins)));
   }
+  lastLevels=levels;
   const tones=api.nd_update(Math.min(.067,gap/1000),listening?1:0,bins,ac?ac.sampleRate:48000,analyser?analyser.fftSize:2048,now);
   if(listening){for(let k=0;k<4;k++)if(tones&(1<<k))hotUntil[k]=now+180;paintMeters(now,levels);paintFloor(true);}else paintFloor(false);
   if(listening&&micSource&&ac)rings.connect(ac,micSource);else rings.release();
@@ -264,7 +265,8 @@ root.neuralDance={
   markers(){return root._markers||null;},
   setMarkers(list){root._markers=Array.isArray(list)?list.slice(0,48).map(m=>({id:+m.id||0,x:+m.x||0,y:+m.y||0,type:((m.type|0)%4+4)%4,kind:m.kind==='sticker'?'sticker':'pink'})):null;if(!root._markerFeed)root._markerFeed={sample(){return root._markers;}};if(root._markers)root._feed=root._markerFeed;else if(root._feed===root._markerFeed)root._feed=null;return root._markers;},
   poke(){consumeFeed();still();},
-  retint(){theme();}
+  retint(){theme();},
+  debugAudio(){const listening=micState==='listening';const lv=listening?lastLevels:[0,0,0,0];return {source:listening?'mic':'silent',kick:+lv[0]||0,bass:+lv[1]||0,snare:+lv[2]||0,hat:+lv[3]||0,envelopes:{kick:+lv[0]||0,bass:+lv[1]||0,snare:+lv[2]||0,hat:+lv[3]||0},silenceGate:!listening||!gate.open,noiseFloor:+gate.noiseFloor||0,open:!!(listening&&gate.open),micGain:+gate.gain||0};}
 };
 root.dataset.roomReady='1';
 })();

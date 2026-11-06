@@ -600,6 +600,49 @@ export function luminanceByte(r, g, b) {
   return Math.max(0, Math.min(255, Math.round(0.299 * r + 0.587 * g + 0.114 * b)));
 }
 
+function round3(n) {
+  return Math.round(n * 1000) / 1000;
+}
+
+// Compact blob report for the opt-in live debug stream. Grid points are on the
+// downsampled detection frame. Stage points are projector pixels (1000×620).
+export function detectionTelemetry(blobs, rgba, width, height, scale, homography) {
+  const w = width | 0;
+  const h = height | 0;
+  const bg = frameBackground(rgba, w, h, 8, (x, y) => {
+    if (!homography) return true;
+    return stageInside(x, y, {homography, scale: scale || {scaleX: 1, scaleY: 1}, exclude: []});
+  });
+  const wall = bg ? luminanceByte(bg.r, bg.g, bg.b) : 0;
+  const pink = [];
+  const stickers = [];
+  const sx = scale && scale.scaleX ? scale.scaleX : 1;
+  const sy = scale && scale.scaleY ? scale.scaleY : 1;
+  for (const blob of (blobs || []).slice(0, 24)) {
+    const gx = blob.x / sx;
+    const gy = blob.y / sy;
+    const sample = medianPatch(rgba, w, h, Math.round(gx), Math.round(gy), 2);
+    const stagePoint = homography ? projectVideoPoint(homography, blob.x, blob.y) : null;
+    const lum = sample ? luminanceByte(sample.r, sample.g, sample.b) : null;
+    const item = {
+      grid: [round3(gx), round3(gy)],
+      stage: stagePoint ? [round3(stagePoint.x), round3(stagePoint.y)] : null,
+      area: blob.area,
+      rgb: sample ? [sample.r, sample.g, sample.b] : null,
+      luminanceRatio: lum == null || !wall ? null : Math.round((lum / wall) * 1000) / 1000
+    };
+    if (blob.kind === 'sticker') stickers.push(item);
+    else pink.push(item);
+  }
+  return {
+    detectWidth: w,
+    detectHeight: h,
+    quadMedianRgb: bg ? [bg.r, bg.g, bg.b] : null,
+    pink,
+    stickers
+  };
+}
+
 export function stickerWindow(width) {
   return Math.max(9, Math.round(21 * ((width | 0) / 160))) | 1;
 }
@@ -1166,6 +1209,11 @@ export function attachCameraMode(root) {
   let raf = 0;
   let lastDetect = 0;
   let lastStatus = 0;
+  let debugCache = null;
+  let debugFps = 0;
+  let debugFpsFrames = 0;
+  let debugFpsStamp = 0;
+  let maxBlobSize = DEFAULTS.maxBlobSize;
   let choices = [];
   let userPicked = false;
   let hueCenterOverride = null;
@@ -1192,7 +1240,8 @@ export function attachCameraMode(root) {
       hueCenter: hueCenterOverride == null ? undefined : hueCenterOverride,
       detectionMode,
       markerMode: detectionMode,
-      stickerSensitivity: sticker ? +sticker.value : DEFAULTS.stickerSensitivity
+      stickerSensitivity: sticker ? +sticker.value : DEFAULTS.stickerSensitivity,
+      maxBlobSize
     };
   }
   function persist(opts = {}) {
@@ -1430,6 +1479,7 @@ export function attachCameraMode(root) {
       exclude: markersOn && homography ? uiExclusions() : null
     });
     rawBlobs = result.blobs;
+    if (root.dataset.debugStream === '1') debugCache = detectionTelemetry(rawBlobs, frame.data, frame.width, frame.height, scale, homography);
     if (markersOn) publish(result.markers);
     if (now - lastStatus > 800) {
       lastStatus = now;
@@ -1444,6 +1494,15 @@ export function attachCameraMode(root) {
   }
   function loop(now) {
     raf = requestAnimationFrame(loop);
+    if (root.dataset.debugStream === '1') {
+      if (!debugFpsStamp) debugFpsStamp = now;
+      debugFpsFrames++;
+      if (now - debugFpsStamp >= 1000) {
+        debugFps = debugFpsFrames * 1000 / (now - debugFpsStamp);
+        debugFpsFrames = 0;
+        debugFpsStamp = now;
+      }
+    }
     const track = stream && stream.getVideoTracks()[0];
     if (!stream || !track || track.readyState !== 'live') return;
     if (track.muted || !videoFrameReady(video)) {
@@ -1584,6 +1643,7 @@ export function attachCameraMode(root) {
   }
   function resetMarkerDefaults() {
     hueCenterOverride = null;
+    maxBlobSize = DEFAULTS.maxBlobSize;
     hue.value = String(DEFAULTS.hueTolerance);
     sat.value = String(DEFAULTS.saturationSensitivity);
     size.value = String(DEFAULTS.minBlobSize);
@@ -1691,6 +1751,44 @@ export function attachCameraMode(root) {
       syncMarkerButton();
       if (!silent) say(committed.length === 4 ? 'Calibration kept.' : 'Alignment cancelled.');
       drawOverlay();
+    },
+    debugState() {
+      const current = settings();
+      const track = stream && stream.getVideoTracks()[0];
+      const trackSettings = track && track.getSettings ? track.getSettings() : {};
+      const label = current.deviceLabel || (track && track.label) || '';
+      let facing = trackSettings.facingMode || '';
+      if (!facing) {
+        if (/front|user|selfie/i.test(label)) facing = 'user';
+        else if (/back|rear|environment/i.test(label)) facing = 'environment';
+      }
+      return {
+        videoWidth: video.videoWidth || 0,
+        videoHeight: video.videoHeight || 0,
+        detectWidth: debugCache ? debugCache.detectWidth : 0,
+        detectHeight: debugCache ? debugCache.detectHeight : 0,
+        cameraLabel: label,
+        facingMode: facing,
+        quad: committed.length === 4 ? committed.map(p => ({x: p.x, y: p.y})) : null,
+        aligned: committed.length === 4 && !!homography,
+        quadMedianRgb: debugCache ? debugCache.quadMedianRgb : null,
+        pink: debugCache ? debugCache.pink : [],
+        stickers: debugCache ? debugCache.stickers : [],
+        markers: Array.isArray(latest) ? latest.map(m => ({id: m.id, x: m.x, y: m.y, kind: m.kind || 'pink'})) : [],
+        fps: debugFps,
+        controls: current
+      };
+    },
+    applyTuning(patch) {
+      if (!patch || typeof patch !== 'object') return;
+      if (patch.markerMode === 'both' || patch.markerMode === 'pink' || patch.markerMode === 'stickers') detectionMode = patch.markerMode;
+      if (Number.isFinite(+patch.noteSensitivity)) sat.value = String(+patch.noteSensitivity);
+      if (Number.isFinite(+patch.hueTolerance)) hue.value = String(+patch.hueTolerance);
+      if (Number.isFinite(+patch.minBlobSize)) size.value = String(+patch.minBlobSize);
+      if (sticker && Number.isFinite(+patch.stickerSensitivity)) sticker.value = String(+patch.stickerSensitivity);
+      if (Number.isFinite(+patch.maxBlobSize)) maxBlobSize = +patch.maxBlobSize;
+      refreshLabels();
+      persist();
     },
     grabFrame() {
       if (!videoFrameReady(video)) return null;
