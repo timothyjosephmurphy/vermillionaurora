@@ -165,7 +165,7 @@ export async function hashHeadHtml(html, page) {
 
   const blocking = [];
   for (const link of links) {
-    if (link.noscript || !link.href || link.href.startsWith('/_astro/') || link.href === cartHref) continue;
+    if (link.noscript || !link.href || link.href.startsWith('/_astro/') || link.href.startsWith('/neural-dance/') || link.href === cartHref) continue;
     const media = (link.attrs.media || 'all').trim().toLowerCase();
     if (media && media !== 'all') continue;
     const bytes = await readDist(link.href);
