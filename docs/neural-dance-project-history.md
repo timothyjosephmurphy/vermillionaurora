@@ -55,7 +55,7 @@
 | Priority | Item | Tracker / PR / Agent | Status |
 |----------|------|----------------------|--------|
 | 0 | Kinoteka Annex two-room 3D sim (shadow dancers → energy balls + *Paradise Dystopia* + 4 moving heads) | [#821](https://github.com/timothyjosephmurphy/studio-tracker/issues/821), [#822](https://github.com/timothyjosephmurphy/studio-tracker/issues/822) | **SHIPPED LIVE** — Gallery deploy `867` at https://tjm.art/play/?room=neural-dance (`[t2212u]` ETA report) |
-| 1 | Unified `/neural-dance/live/` release: Align banner, Back Camera, pink WB + anti-feedback, Home Screen PWA, **dark dancer silhouette @ 480 px** | VA **PR #794** (fast-track; folds [#801](https://github.com/timothyjosephmurphy/studio-tracker/issues/801) / VA PR #783) | In flight / CI — base branch for follow-on agents |
+| 1 | Unified `/neural-dance/live/` release: Align banner, Back Camera, pink WB + anti-feedback, Home Screen PWA, **dark dancer silhouette @ 480 px** | VA **[PR #794](https://github.com/timothyjosephmurphy/vermillionaurora/pull/794)** (fast-track; folds [#801](https://github.com/timothyjosephmurphy/studio-tracker/issues/801) / VA PR #783) | **MERGED** 2026-11-05 ~8:05 PM PT — merge commit [`e5b7ef36b33eb119085de123794d0f38a4ee8007`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/e5b7ef36b33eb119085de123794d0f38a4ee8007) |
 | 2 | Waveform-ring mic-gain **+ sim vs sticker dancer stats** on `/neural-dance/` and `/neural-dance/live/` (`[t2209u]`, `[t2215u]`) | cloud agent **`bc-045761e2`** branched directly off PR #794 (`room-lab.js` + `wave-ring.js`) | Building — HUD target example: `25 dancers (24 sim, 1 sticker) · 37 pulses · noise floor …` |
 | 3 | **Option 1 live debug stream** + `/neural-dance/debug/` viewer (Share live debug → DO WebSocket 1–2 fps frames + telemetry) | **[#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824)** · cloud agent **`bc-623cfcbe`** branched off PR #794 | Building next / parallel after #1 (`[t2206u]`–`[t2208u]`) |
 | Docs | Living project & prompt history (Era 0/1 ChatGPT/Astra forensic + tonight’s prompts) | VA **[PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)** + Library Page `7b3e910a-…` (`[t2198u]`, `[t2214u]`) | Open — Era 0/1 and prompts through `[t2215u]` are in this file |
@@ -2318,3 +2318,15 @@ _Machine-readable twin: `repo-and-tracker-history.json` in the same folder._
 ---
 
 _End of master log — compiled 2026-11-05 ~7:08 PM PT. Append only below this line going forward (or into §4 / §3 as appropriate)._
+
+---
+
+## Release sync — 2026-11-05 ~8:05 PM PT
+
+### VA [PR #794](https://github.com/timothyjosephmurphy/vermillionaurora/pull/794) MERGED — *Launch Neural Dance as an iPhone app and track the wall*
+- **Merge commit:** [`e5b7ef36b33eb119085de123794d0f38a4ee8007`](https://github.com/timothyjosephmurphy/vermillionaurora/commit/e5b7ef36b33eb119085de123794d0f38a4ee8007)
+- **Merged at:** 2026-11-06T04:05:23Z (2026-11-05 ~8:05 PM PT)
+- **Ships:** Home Screen standalone PWA (`display: standalone`, iOS web-app meta, `viewport-fit=cover`); rear/`environment` camera default + `nd.camera.v2`; pink Post-it white-balance + quad-limited anti-feedback; dark dancer-silhouette stickers (`Track: Both`); Align projector success banner + green lock outline + markers-on.
+- **Touches:** `neural-dance/*`, `src/pages/neural-dance/**`, `static/neural-dance/manifest.webmanifest`, tests
+- **Evolution:** Browser tab demo → installable iPhone stage that fills the phone (incl. when mirrored) and can lock the camera to the projected wall without optical feedback from its own rings.
+- **Follow-ons still open:** wave-ring + sim/sticker stats ([PR #799](https://github.com/timothyjosephmurphy/vermillionaurora/pull/799) / `bc-045761e2`); Option 1 live debug stream ([PR #800](https://github.com/timothyjosephmurphy/vermillionaurora/pull/800) / [#824](https://github.com/timothyjosephmurphy/studio-tracker/issues/824) / `bc-623cfcbe`); history docs ([PR #795](https://github.com/timothyjosephmurphy/vermillionaurora/pull/795)).
