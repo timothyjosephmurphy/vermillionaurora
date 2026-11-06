@@ -136,7 +136,9 @@ jobs:
     needs: prepare
     if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'blog' || needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # dist/ is about 5 GB. A stalled download needs a second attempt, so the job
+    # is longer than the test steps.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -161,7 +163,20 @@ jobs:
             sleep 8
           done
       - name: Download the built site
-        timeout-minutes: 5
+        id: dist
+        continue-on-error: true
+        timeout-minutes: 8
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Clear a partial site download
+        if: steps.dist.outcome == 'failure'
+        timeout-minutes: 2
+        run: rm -rf dist
+      - name: Download the built site again
+        if: steps.dist.outcome == 'failure'
+        timeout-minutes: 12
         uses: actions/download-artifact@v4
         with:
           name: dist
@@ -176,7 +191,7 @@ jobs:
           node --test tests/blog-card-images.test.mjs
       - name: Run application tests
         if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
-        timeout-minutes: 12
+        timeout-minutes: 15
         run: npm test
       - name: Run print unit tests
         if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
@@ -202,7 +217,7 @@ jobs:
     needs: prepare
     if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'content' || needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     container:
       image: mcr.microsoft.com/playwright:v1.62.1-noble
       options: --user root --shm-size=1g
@@ -232,7 +247,20 @@ jobs:
             sleep 8
           done
       - name: Download the built site
-        timeout-minutes: 5
+        id: dist
+        continue-on-error: true
+        timeout-minutes: 8
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Clear a partial site download
+        if: steps.dist.outcome == 'failure'
+        timeout-minutes: 2
+        run: rm -rf dist
+      - name: Download the built site again
+        if: steps.dist.outcome == 'failure'
+        timeout-minutes: 12
         uses: actions/download-artifact@v4
         with:
           name: dist
@@ -269,7 +297,7 @@ jobs:
     needs: prepare
     if: needs.prepare.result == 'success' && needs.prepare.outputs.tier == 'full'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     container:
       image: mcr.microsoft.com/playwright:v1.62.1-noble
       options: --user root --shm-size=1g
@@ -295,13 +323,26 @@ jobs:
             sleep 8
           done
       - name: Download the built site
-        timeout-minutes: 5
+        id: dist
+        continue-on-error: true
+        timeout-minutes: 8
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Clear a partial site download
+        if: steps.dist.outcome == 'failure'
+        timeout-minutes: 2
+        run: rm -rf dist
+      - name: Download the built site again
+        if: steps.dist.outcome == 'failure'
+        timeout-minutes: 12
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
       - name: Run WebKit browser tests
-        timeout-minutes: 18
+        timeout-minutes: 20
         env:
           CHANGED_FILES: ${{ needs.prepare.outputs.files }}
         run: node tests/run-browser.mjs --engine=webkit
