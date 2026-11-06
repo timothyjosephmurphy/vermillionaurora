@@ -48,8 +48,12 @@ test('the live dock shows the beat and the ring keeps an additive waveform', () 
   assert.match(room, /beatClock\.flash/);
   assert.match(room, /beatClock\.label/);
   assert.match(room, /data-beat/);
+  assert.match(ring, /function bloomStroke/);
+  assert.match(ring, /NeuralDanceRings = \{[^}]*bloomStroke/);
   assert.match(ring, /globalCompositeOperation = 'lighter'/);
   assert.match(ring, /lineWidth = 2\.5/);
   assert.match(ring, /new Path2D/);
   assert.doesNotMatch(ring, /shadowBlur/);
+  new Function(ring)();
+  assert.equal(typeof globalThis.NeuralDanceRings.bloomStroke, 'function');
 });

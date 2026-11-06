@@ -42,6 +42,25 @@
     return Math.max(-0.85, Math.min(0.85, y));
   }
 
+  // Additive bloom for any closed or open Path2D. Waveform rings use it.
+  // Silhouette pulses should build a Path2D of the offset contour and call
+  // NeuralDanceRings.bloomStroke(ctx, path, color, lowPower). No shadow blur.
+  function bloomStroke(ctx, path, color, low) {
+    if (!ctx || !path) return;
+    ctx.save();
+    ctx.strokeStyle = color || '#fff';
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.globalAlpha = 0.22;
+    ctx.lineWidth = low ? 6 : 11;
+    ctx.stroke(path);
+    ctx.globalAlpha = 0.92;
+    ctx.lineWidth = 2.5;
+    ctx.stroke(path);
+    ctx.restore();
+  }
+
   function radialWavePoint(cx, cy, radius, angle, sample) {
     const s = sample > 1 ? 1 : sample < -1 ? -1 : sample;
     const r = radius * (1 + s * 0.85);
@@ -162,20 +181,13 @@
         else path.moveTo(p[0], p[1]);
       }
       path.closePath();
-      // Soft additive halo, then the same waveform as a crisp edge. No shadow blur.
-      ctx.globalCompositeOperation = 'lighter';
-      ctx.globalAlpha = 0.22;
-      ctx.lineWidth = low ? 6 : 11;
-      ctx.stroke(path);
-      ctx.globalAlpha = 0.92;
-      ctx.lineWidth = 2.5;
-      ctx.stroke(path);
       ctx.restore();
+      bloomStroke(ctx, path, color, low);
     }
 
     const session = {connect, release, sample, stroke, gate: null, sensAt: null, rippling: false};
     return session;
   }
 
-  root.NeuralDanceRings = {BAND_HZ, ringGain, ringSens, waveExcursion, radialWavePoint, createSession};
+  root.NeuralDanceRings = {BAND_HZ, ringGain, ringSens, waveExcursion, radialWavePoint, bloomStroke, createSession};
 })(typeof window !== 'undefined' ? window : globalThis);
