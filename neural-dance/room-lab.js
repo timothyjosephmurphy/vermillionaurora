@@ -1,6 +1,7 @@
 // Room music runtime shared by /neural-dance/ and /neural-dance/live/.
 // One WASM instance, mic Listen, display AGC, and the marker hook camera mode calls.
 // Slider values stay in this browser under nd-room-lab.
+import {createSilhouetteShow, sanitizeContour} from './src/silhouette.js';
 
 export const ROOM_KEY = 'nd-room-lab';
 export const MARKER_ID_BASE = 100000;
@@ -202,7 +203,9 @@ let api=null,running=false,low=false,allowMap=false,mapper=null;
 let timer=0,raf=0,last=0,started=0,slow=0,lastReport=0;
 let ac=null;
 let colors=[],foreground='',background='';
-const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createSession())||{connect(){},release(){},sample(){},stroke(){}};
+const rings=(typeof NeuralDanceRings==='undefined'?null:NeuralDanceRings.createSession())||{connect(){},release(){},sample(){},stroke(){},waveform(){return null;}};
+const silhouetteShow=createSilhouetteShow();
+if(root.dataset.lightMode==='silhouette')silhouetteShow.setMode('silhouette');
 let micState='off',micPending=false,micStream=null,micSource=null,analyser=null,spec=null,pointer=null,lastLevels=[0,0,0,0];
 const bandSens=[1,1,1,1];
 const hotUntil=[0,0,0,0];
@@ -282,7 +285,10 @@ function draw(){const f=floats(),base=api.nd_dancers()>>>2,ds=api.nd_dancer_stri
  for(let i=0;i<pc;i++){const o=pb+i*ps,k=f[o+2]|0,trail=f[o+7]|0;ctx.strokeStyle=colors[k];for(let j=1;j<trail;j++){ctx.globalAlpha=.6*j/trail;ctx.lineWidth=2+j/4;const a=xy(f[o+8+(j-1)*2],f[o+9+(j-1)*2]),b=xy(f[o+8+j*2],f[o+9+j*2]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=xy(f[o+5],f[o+6]);ctx.fillStyle=colors[k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
  for(let i=0;i<n;i++){const o=base+i*ds,p=xy(f[o],f[o+1]),a=f[o+2],rest=f[o+3],k=f[o+4]|0,q=Math.min(1,a/1.4),boost=Math.min(2.4,Math.max(0,Number.isFinite(bandSens[k])?bandSens[k]:1)),radius=8+14*q*boost;ctx.globalAlpha=rest>0?.4:1;rings.stroke(ctx,p.x,p.y,radius*2.15,k,colors[k],low);ctx.strokeStyle=colors[k];ctx.lineWidth=2;if(rings.rippling){ctx.globalAlpha*=.42;ctx.lineWidth=1.2;}ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=rest>0?.4:1;ctx.fillStyle=colors[k];shape(k,p,4+2*q);}
  ctx.globalAlpha=1;
- if(root.dataset.markersLive==='1'&&root._markers)paintStageMarkers(ctx,root._markers,xy,scale);
+ if(root.dataset.markersLive==='1'&&root._markers){
+  if(silhouetteShow.mode()==='silhouette')silhouetteShow.paint(ctx,root._markers,{xy,now:performance.now(),waveform:band=>typeof rings.waveform==='function'?rings.waveform(band):null,style:root._silhouetteStyle||null,paintDots:list=>paintStageMarkers(ctx,list,xy,scale)});
+  else paintStageMarkers(ctx,root._markers,xy,scale);
+ }
 }
 function markerCount(){const feed=root._feed;if(!feed||typeof feed.sample!=='function')return 0;let sample;try{sample=feed.sample();}catch{return 0;}if(!Array.isArray(sample))return 0;let n=0;for(let i=0;i<sample.length&&i<48;i++)if(sample[i])n++;return n;}
 function consumeFeed(){if(!root._feed)return;try{const sample=root._feed.sample();if(!Array.isArray(sample))return;syncStickers();}catch{}}
@@ -302,6 +308,7 @@ function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while 
   }
   lastLevels=levels;
   const tones=api.nd_update(Math.min(.067,gap/1000),listening?1:0,bins,ac?ac.sampleRate:48000,analyser?analyser.fftSize:2048,now);
+  if(tones)silhouetteShow.beat(now,tones);
   if(listening){for(let k=0;k<4;k++)if(tones&(1<<k))hotUntil[k]=now+180;paintMeters(now,levels);paintFloor(true);}else paintFloor(false);
   if(listening&&micSource&&ac)rings.connect(ac,micSource);else rings.release();
   rings.sample(gap/1000);
@@ -375,7 +382,11 @@ root.neuralDance={
   hit(type){api.nd_hit(type|0);},
   // studio-tracker #793. Fluorescent markers in projection pixels, or null to keep the current dancers.
   markers(){return root._markers||null;},
-  setMarkers(list){root._markers=Array.isArray(list)?list.slice(0,48).map(m=>({id:+m.id||0,x:+m.x||0,y:+m.y||0,type:((m.type|0)%4+4)%4,kind:m.kind==='sticker'?'sticker':'pink'})):null;if(!root._markerFeed)root._markerFeed={sample(){return root._markers;}};if(root._markers)root._feed=root._markerFeed;else if(root._feed===root._markerFeed)root._feed=null;syncStickers();still();return root._markers;},
+  setMarkers(list){root._markers=Array.isArray(list)?list.slice(0,48).map(m=>{const marker={id:+m.id||0,x:+m.x||0,y:+m.y||0,type:((m.type|0)%4+4)%4,kind:m.kind==='sticker'?'sticker':'pink'};const contour=sanitizeContour(m.contour);if(contour)marker.contour=contour;return marker;}):null;if(!root._markerFeed)root._markerFeed={sample(){return root._markers;}};if(root._markers)root._feed=root._markerFeed;else if(root._feed===root._markerFeed)root._feed=null;syncStickers();still();return root._markers;},
+  lightMode(){return silhouetteShow.mode();},
+  setLightMode(mode){const next=silhouetteShow.setMode(mode);root.dataset.lightMode=next;still();return next;},
+  toggleLightMode(){const next=silhouetteShow.toggle();root.dataset.lightMode=next;still();return next;},
+  setSilhouetteStyle(style){root._silhouetteStyle=typeof style==='function'?style:null;still();return !!root._silhouetteStyle;},
   poke(){consumeFeed();still();},
   retint(){theme();},
   redraw(){draw();},

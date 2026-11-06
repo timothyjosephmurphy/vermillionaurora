@@ -167,7 +167,14 @@
       ctx.restore();
     }
 
-    const session = {connect, release, sample, stroke, gate: null, sensAt: null, rippling: false};
+    // Read-only time-domain samples for silhouette pulses. Callers must not write the buffer.
+    function waveform(band) {
+      const index = band | 0;
+      if (index < 0 || index > 3) return null;
+      return waves[index];
+    }
+
+    const session = {connect, release, sample, stroke, waveform, gate: null, sensAt: null, rippling: false};
     return session;
   }
 

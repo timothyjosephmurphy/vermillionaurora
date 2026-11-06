@@ -6,6 +6,8 @@
 // [{id, x, y, type}] in projection pixels, or null while the camera is not driving.
 
 // v3 keeps a back-camera choice and a sane quad, and tightens untouched slider defaults.
+import {projectContour, sanitizeContour, traceContour} from './src/silhouette.js';
+
 export const STORAGE_KEY = 'nd.camera.v3';
 export const LEGACY_CAMERA_KEYS = ['nd.camera.v2', 'nd.camera.v1', 'nd-camera-mode'];
 export const CANVAS_W = 1000;
@@ -868,7 +870,17 @@ export function detectStickerBlobs(rgba, width, height, options = {}) {
       const aspect = bw / bh;
       const extent = area / (bw * bh);
       if (aspect < 0.12 || aspect > 4 || extent > 0.82 || extent < 0.04) continue;
-      blobs.push({x: sumX / area, y: sumY / area, area, kind: 'sticker', aspect, extent});
+      let contour = null;
+      for (let yy = minY; yy <= maxY && !contour; yy++) {
+        for (let xx = minX; xx <= maxX; xx++) {
+          if (!mask[yy * w + xx]) continue;
+          contour = traceContour(mask, w, h, {x: xx, y: yy});
+          break;
+        }
+      }
+      const blob = {x: sumX / area, y: sumY / area, area, kind: 'sticker', aspect, extent};
+      if (contour && contour.length >= 3) blob.contour = contour;
+      blobs.push(blob);
     }
   }
   blobs.sort((p, q) => q.area - p.area || p.x - q.x || p.y - q.y);
@@ -911,9 +923,15 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
   let tracks = [];
   let latched = [];
   let nextId = 1;
+  function stageMarker(t) {
+    const marker = {id: t.id, x: t.x, y: t.y, kind: markerKind(t.kind)};
+    const contour = sanitizeContour(t.contour);
+    if (contour) marker.contour = contour;
+    return marker;
+  }
   function stageCopy() {
     return latched
-      .map(t => ({id: t.id, x: t.x, y: t.y, kind: markerKind(t.kind)}))
+      .map(stageMarker)
       .sort((p, q) => p.id - q.id);
   }
   return {
@@ -923,6 +941,7 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
           const p = point(b);
           if (!p) return null;
           p.kind = markerKind(b.kind);
+          p.contour = sanitizeContour(b.contour);
           return p;
         })
         .filter(Boolean)
@@ -947,6 +966,7 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
             x: incoming[best].x,
             y: incoming[best].y,
             kind: incoming[best].kind || track.kind || 'pink',
+            contour: incoming[best].contour || track.contour || null,
             seenSince: track.seenSince,
             missingSince: null,
             active: track.active || now - track.seenSince >= appearMs
@@ -966,6 +986,7 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
           kind: incoming[i].kind || 'pink',
           x: incoming[i].x,
           y: incoming[i].y,
+          contour: incoming[i].contour || null,
           seenSince: now,
           missingSince: null,
           active: appearMs <= 0
@@ -974,7 +995,12 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
       tracks = next;
       return tracks
         .filter(t => t.active)
-        .map(t => ({id: t.id, x: t.x, y: t.y, kind: markerKind(t.kind)}))
+        .map(t => {
+          const marker = {id: t.id, x: t.x, y: t.y, kind: markerKind(t.kind)};
+          const contour = sanitizeContour(t.contour);
+          if (contour) marker.contour = contour;
+          return marker;
+        })
         .sort((p, q) => p.id - q.id);
     },
     // Projected stage points. A hit near a latched dot updates that dot.
@@ -996,11 +1022,16 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
           latched[best].x = at.x;
           latched[best].y = at.y;
           if (marker.kind === 'sticker' || marker.kind === 'pink') latched[best].kind = markerKind(marker.kind);
+          const contour = sanitizeContour(marker.contour);
+          if (contour) latched[best].contour = contour;
         } else {
           const usedIds = new Set(latched.map(item => item.id));
           let id = marker.id | 0;
           if (!(id > 0) || usedIds.has(id)) id = nextId++;
-          latched.push({id, x: at.x, y: at.y, kind: markerKind(marker.kind)});
+          const created = {id, x: at.x, y: at.y, kind: markerKind(marker.kind)};
+          const contour = sanitizeContour(marker.contour);
+          if (contour) created.contour = contour;
+          latched.push(created);
         }
       }
       const kept = [];
@@ -1009,6 +1040,7 @@ export function createMarkerTracker({appearMs = APPEAR_MS, clearMs = CLEAR_MS, m
         if (near) {
           near.x = marker.x;
           near.y = marker.y;
+          if (marker.contour) near.contour = marker.contour;
         } else kept.push(marker);
       }
       latched = kept;
@@ -1026,7 +1058,10 @@ export function toDancerMarkers(markers) {
   return (markers || []).map(m => {
     const id = m.id | 0;
     const type = Number.isFinite(+m.type) ? (((+m.type) % 4) + 4) % 4 : (((id - 1) % 4) + 4) % 4;
-    return {id, x: +m.x, y: +m.y, type, kind: m.kind === 'sticker' ? 'sticker' : 'pink'};
+    const marker = {id, x: +m.x, y: +m.y, type, kind: m.kind === 'sticker' ? 'sticker' : 'pink'};
+    const contour = sanitizeContour(m.contour);
+    if (contour) marker.contour = contour;
+    return marker;
   }).filter(m => m.id > 0 && Number.isFinite(m.x) && Number.isFinite(m.y));
 }
 
@@ -1052,12 +1087,22 @@ export function markersFromFrame(frame, settings, homography, scale, tracker, no
     if (blob.kind !== 'sticker') return true;
     return !pinkBlobs.some(pink => Math.hypot(pink.x - blob.x, pink.y - blob.y) <= 18);
   });
-  let videoBlobs = separated.map(b => ({
-    x: (b.x + 0.5) * scale.scaleX,
-    y: (b.y + 0.5) * scale.scaleY,
-    area: b.area,
-    kind: b.kind === 'sticker' ? 'sticker' : 'pink'
-  }));
+  let videoBlobs = separated.map(b => {
+    const blob = {
+      x: (b.x + 0.5) * scale.scaleX,
+      y: (b.y + 0.5) * scale.scaleY,
+      area: b.area,
+      kind: b.kind === 'sticker' ? 'sticker' : 'pink'
+    };
+    const contour = sanitizeContour(b.contour);
+    if (contour) {
+      blob.contour = sanitizeContour(contour.map(p => ({
+        x: (p.x + 0.5) * scale.scaleX,
+        y: (p.y + 0.5) * scale.scaleY
+      })));
+    }
+    return blob;
+  });
   if (extra.echo && homography) {
     videoBlobs = videoBlobs.filter(blob => {
       const at = applyHomography(homography, blob.x, blob.y);
@@ -1075,7 +1120,10 @@ export function markersFromFrame(frame, settings, homography, scale, tracker, no
   for (const marker of stable) {
     const p = projectVideoPoint(homography, marker.x, marker.y);
     if (!p) continue;
-    projected.push({id: marker.id, x: p.x, y: p.y, kind: marker.kind === 'sticker' ? 'sticker' : 'pink'});
+    const stageMarker = {id: marker.id, x: p.x, y: p.y, kind: marker.kind === 'sticker' ? 'sticker' : 'pink'};
+    const contour = marker.contour ? projectContour(marker.contour, homography) : null;
+    if (contour) stageMarker.contour = contour;
+    projected.push(stageMarker);
   }
   const latched = commit ? commit(projected) : projected;
   return {blobs: videoBlobs, markers: toDancerMarkers(latched)};

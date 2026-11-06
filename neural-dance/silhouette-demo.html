@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neural Dance silhouette sim</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; background: #080910; color: #f4f6fb; font: 16px/1.5 system-ui, sans-serif; }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 40px; }
+    h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+    p { color: #c5cada; max-width: 68ch; }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+    button { border: 1px solid rgba(255,255,255,.18); background: #3158b8; color: #f4f6fb; border-radius: 9px; padding: 10px 14px; font: inherit; cursor: pointer; }
+    button:focus-visible { outline: 2px solid #9baef0; outline-offset: 3px; }
+    [data-sim-status] { color: #aab0c0; }
+    canvas { display: block; width: 100%; height: auto; background: #080910; border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Silhouette sim</h1>
+    <p>Three stand-in dancers. Silhouette mode projects light on each dancer’s own outline. Pulses leave that outline and carry a stand-in waveform. The outline steps and the arms sway on the beat, then ease back. Dot mode is the old floor mark.</p>
+    <div class="row">
+      <button type="button" data-light-mode aria-pressed="true">Light: silhouette</button>
+      <span data-sim-status role="status">silhouette</span>
+    </div>
+    <canvas data-sim-stage width="1000" height="620" aria-label="Three dancer silhouettes stepping on a beat, with waveform pulses leaving each outline"></canvas>
+  </main>
+  <script type="module">
+    import {createSimDemo} from './src/silhouette-sim.js';
+    createSimDemo(document);
+  </script>
+</body>
+</html>
