@@ -13,7 +13,8 @@
     "test:nostr": "npm --prefix nostr-publisher test",
     "sitemap:lastmod": "node scripts/generate-sitemap.mjs --update",
     "check:tags": "node scripts/check-painting-tags.mjs",
-    "test:room": "node -e 0"
+    "test:room": "node -e 0",
+    "typecheck": "tsc -p tsconfig.site.json --noEmit && tsc -p tsconfig.checkout.json --noEmit && node scripts/check-worker-bindings.mjs"
   },
   "license": "ISC",
   "type": "module",
@@ -23,7 +24,9 @@
   },
   "devDependencies": {
     "cheerio": "1.1.2",
-    "playwright": "1.62.1"
+    "playwright": "1.62.1",
+    "typescript": "5.9.3",
+    "wrangler": "4.143.0"
   },
   "private": true
 }

@@ -73,7 +73,8 @@ export async function cartApi(request, env, ctx) {
   if (!env.CHECKOUT) return Response.json({ error: 'Checkout is temporarily unavailable.' }, { status: 503 });
   const url = new URL(request.url);
   if (request.method !== 'GET' || url.pathname !== CART_CATALOG) return env.CHECKOUT.fetch(request);
-  const cache = globalThis.caches?.default, key = new Request(`${url.origin}${CART_CATALOG}`);
+  // globalThis, not the bare `caches` binding: Node tests have no Cache API.
+  const cache = /** @type {{ caches?: CacheStorage }} */ (globalThis).caches?.default, key = new Request(`${url.origin}${CART_CATALOG}`);
   let cached = cache ? await cache.match(key).catch(() => null) : null;
   if (!cached) {
     const origin = await env.CHECKOUT.fetch(new Request(key.url, { headers: { Accept: 'application/json' } }));

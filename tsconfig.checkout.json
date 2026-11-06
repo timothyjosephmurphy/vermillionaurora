@@ -1,0 +1,34 @@
+{
+  // checkJs stays off for the payment modules. The generated runtime types
+  // flag existing SqlStorageValue uses and production-only var literals.
+  // commission-worker.js opts in with // @ts-check. Binding names are checked
+  // by scripts/check-worker-bindings.mjs against CheckoutEnv.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "lib": ["ES2022"],
+    "types": ["./cloudflare/worker-configuration.d.ts"],
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "cloudflare/worker-configuration.d.ts",
+    "cloudflare/**/*.mjs",
+    "cloudflare/**/*.js",
+    "cloudflare/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "cloudflare/test",
+    "cloudflare/media-index",
+    "cloudflare/**/*.test.mjs"
+  ]
+}

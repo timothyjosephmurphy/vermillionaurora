@@ -1,3 +1,4 @@
+// @ts-check
 import {printCodesApi} from './print-codes.mjs';
 import {commissionForm} from './commission-form.mjs';
 import {commissionPrivacy,purgeCommissionReferences} from './commission-privacy.mjs';
