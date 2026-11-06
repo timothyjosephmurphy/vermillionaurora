@@ -25,7 +25,8 @@ import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
 import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 import { playGallery, PLAY_WORKER_FIRST } from './play-gallery.mjs';
 import { withSiteSecurityHeaders } from './security-headers.mjs';
-export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST };
+import { handleNeuralDanceDebug, NEURAL_DANCE_DEBUG_API, NEURAL_DANCE_DEBUG_WORKER_FIRST, NeuralDanceDebugRoom } from './neural-dance-debug.mjs';
+export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST, NEURAL_DANCE_DEBUG_API, NEURAL_DANCE_DEBUG_WORKER_FIRST, NeuralDanceDebugRoom };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const COMMISSION_API = '/api/commission';
 export const COMMISSION_PATHS = [COMMISSION_API, '/commission-privacy', '/inventory/status'];
@@ -145,6 +146,9 @@ export default {
     // /play entry is the hex gallery. Quake files that still exist are served from assets
     // inside playGallery; holo and book covers stay on the R2 redirects.
     if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return withSiteSecurityHeaders(await playGallery(request, env));
+    // Opt-in Neural Dance debug room. Hosted on this Worker so the WebSocket
+    // upgrade never crosses the checkout service binding. Static /neural-dance/debug/ stays on assets.
+    if (url.pathname.startsWith(NEURAL_DANCE_DEBUG_API)) return handleNeuralDanceDebug(request, env);
     // Commission form + privacy API, same-origin on tjm.art (Safe Browsing: no PII posted to workers.dev).
     if (COMMISSION_PATHS.includes(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Commission form is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });

@@ -66,6 +66,12 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{ou
 .nd-cal-pattern i{position:absolute;width:16%;height:22%;transform:translate(-50%,-50%);border-radius:8px;border:10px solid #000;box-shadow:0 0 0 8px #000,0 0 28px 6px #000}
 [data-align-banner]{position:fixed;top:auto;right:auto;bottom:max(12px, env(safe-area-inset-bottom, 12px));left:max(12px, env(safe-area-inset-left, 12px));transform:none;z-index:1000010;pointer-events:none;opacity:0.92;max-width:min(50vw, 340px);padding:6px 12px;border-radius:999px;background:#10121a;color:#f4f6fb;font:700 13px/1.3 Inter,system-ui,sans-serif;text-align:left;box-shadow:0 12px 40px #000}
 [data-align-banner][hidden]{display:none !important}
+[data-debug-banner]{position:fixed;left:50%;bottom:max(12px, env(safe-area-inset-bottom, 12px));transform:translateX(-50%);z-index:1000020;display:flex;gap:8px;align-items:center;max-width:min(92vw, 640px);padding:10px 12px;border-radius:999px;background:#1a2744;color:#f4f6fb;border:1px solid #527af0;box-shadow:0 10px 30px #000}
+[data-debug-banner][hidden]{display:none !important}
+[data-debug-panel]{display:grid;gap:6px;margin-top:8px}
+[data-debug-panel][hidden]{display:none !important}
+[data-debug-code]{font-variant-numeric:tabular-nums;letter-spacing:.04em;color:#fff}
+[data-debug-link]{color:#9baef0;overflow-wrap:anywhere}
 [data-align-banner][data-kind="ok"]{background:#1d6b45;color:#fff}
 [data-align-banner][data-kind="warn"]{background:#8a5a12;color:#fff}
 [data-align-lock-outline]{position:fixed;inset:0;width:100vw;height:100dvh;z-index:1000008;pointer-events:none}
@@ -100,6 +106,7 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
 </head>
 <body class="nd-live">
 <div id="nd-live-toast" data-align-banner hidden></div>
+<div data-debug-banner hidden><span data-debug-banner-text>Suggested tuning received</span><button class="btn btn-primary" type="button" data-debug-apply>Apply</button><button class="btn" type="button" data-debug-dismiss>Dismiss</button></div>
 <svg data-align-lock-outline hidden viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polygon points="6,6 94,6 94,94 6,94" fill="none" stroke="#3dff9a" stroke-width="1.6"></polygon></svg>
 <h1 class="nd-live-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Neural Dance live</h1>
 <section id="nd-room-lab" data-mic="off" aria-labelledby="room-music-title">
@@ -141,6 +148,14 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
 <section id="nd-camera-mode" data-fine-tune="1" aria-labelledby="camera-mode-title">
   <div class="viz-row"><h2 id="camera-mode-title">Camera</h2><button class="btn btn-primary" type="button" data-action="camera">Use camera</button><button class="btn" type="button" data-camera-flip>Flip camera</button><button class="btn" type="button" data-action="refresh">Refresh cameras</button><button class="btn" type="button" data-action="calibrate" aria-pressed="false">Fine-tune corners</button><button class="btn" type="button" data-action="markers" aria-pressed="false" disabled>Markers off</button><button class="btn" type="button" data-marker-reset>Reset defaults</button></div>
   <div class="camera-frame"><video data-preview autoplay muted playsinline aria-label="Live camera preview"></video><canvas data-overlay aria-hidden="true"></canvas></div>
+  <div class="viz-row">
+    <button class="btn" type="button" data-debug-share aria-pressed="false">Share live debug</button>
+    <label class="text-small"><input type="checkbox" data-debug-auto> Auto-apply live tuning</label>
+  </div>
+  <div data-debug-panel hidden>
+    <p class="text-small">Room <strong data-debug-code></strong> <a data-debug-link href="/neural-dance/debug/">Viewer</a></p>
+    <p class="text-small"><button class="btn" type="button" data-debug-copy>Copy viewer link</button> <span data-debug-status role="status"></span></p>
+  </div>
   <p class="mural-help">Continuity Camera shows up as <strong>iPhone Camera</strong> or <strong>iPhone (3) Camera</strong>. Fine-tune corners clicks the projected image: top left, top right, bottom right, bottom left.</p>
   <div class="viz-controls">
     <label class="form-label">Camera<select class="form-select" data-control="device" aria-label="Camera"><option value="">Choose a camera</option></select></label>
@@ -166,5 +181,6 @@ body.nd-live-aligning #nd-camera-mode{right:auto;bottom:auto;left:0;top:0;width:
 <script type="module" src="/neural-dance/room-lab.js" is:inline></script>
 <script type="module" src="/neural-dance/camera-markers.js" is:inline></script>
 <script type="module" src="/neural-dance/live-show.js" is:inline></script>
+<script type="module" src="/neural-dance/live-debug.js" is:inline></script>
 </body>
 </html>
