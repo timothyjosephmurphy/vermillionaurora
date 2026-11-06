@@ -44,7 +44,7 @@ jobs:
           npm ci
           npm run build
           npm test
-          node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
+          npm run test:print
           npm --prefix cloudflare/test ci
           npm run test:worker
           node --test cloudflare/checkout-readiness.test.mjs

@@ -61,6 +61,10 @@ test('release gate and production deploy retry a failed install once', () => {
     assert.match(yml, /retrying once/, file);
   }
   const gate = fs.readFileSync('.github/workflows/release-gate.yml', 'utf8');
-  assert.match(gate, /until npx playwright install --only-shell chromium/);
-  assert.match(gate, /until npx playwright install --with-deps webkit/);
+  assert.match(gate, /mcr\.microsoft\.com\/playwright:v1\.62\.1-noble/);
+  assert.doesNotMatch(gate, /playwright install --with-deps/);
+  assert.doesNotMatch(gate, /apt-get/);
+  assert.match(gate, /timeout-minutes: 15/);
+  assert.match(gate, /timeout-minutes: 20/);
+  assert.match(gate, /name: gate/);
 });
