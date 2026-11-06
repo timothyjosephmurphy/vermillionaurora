@@ -1,18 +1,29 @@
 // Checkout side of the D1 catalog: before each request the generated catalogs (checkout-catalog.mjs,
-// print-catalog.mjs, etsy-sync-source.mjs) are reset to their built values and the live D1 values are laid on
-// top, in place, so every existing module (quotes, cart, Square/BTCPay/PayPal, /inventory/status, Etsy) reads
-// the same prices the pages show. If D1 is missing, empty or errors, the built values are used unchanged.
+// the print catalog in print-catalog-store.mjs, etsy-sync-source.mjs) are reset to their built values and
+// the live D1 values are laid on top, in place, so every existing module (quotes, cart, Square/BTCPay/PayPal,
+// /inventory/status, Etsy) reads the same prices the pages show. If D1 is missing, empty or errors, the built
+// values are used unchanged. The print snapshot is taken on first use, after the asset loader has installed it.
 import catalog, { inventory } from './checkout-catalog.mjs';
-import prints from './print-catalog.mjs';
+import { prints, printCatalogInstalledVersion } from './print-catalog-store.mjs';
 import syncWorks from './etsy-sync-source.mjs';
 import { readLive } from './catalog-d1.mjs';
-const base = { catalog: structuredClone(catalog), inventory: structuredClone(inventory), prints: structuredClone(prints), works: structuredClone(syncWorks) };
+let base = null;
 let applied = 'built';
 const refill = (target, source) => {
   if (Array.isArray(target)) { target.length = 0; target.push(...structuredClone(source)); return; }
   for (const k of Object.keys(target)) delete target[k]; Object.assign(target, structuredClone(source));
 };
-function reset() { refill(catalog, base.catalog); refill(inventory, base.inventory); refill(prints, base.prints); refill(syncWorks, base.works); applied = 'built'; }
+function built() {
+  if (!base) {
+    if (!printCatalogInstalledVersion()) throw Error('Print catalog is not loaded');
+    base = { catalog: structuredClone(catalog), inventory: structuredClone(inventory), prints: structuredClone(prints), works: structuredClone(syncWorks) };
+  }
+  return base;
+}
+function reset() {
+  const snapshot = built();
+  refill(catalog, snapshot.catalog); refill(inventory, snapshot.inventory); refill(prints, snapshot.prints); refill(syncWorks, snapshot.works); applied = 'built';
+}
 const DEFAULT_PARCEL = { length: 30, width: 4, height: 4, weight: 2 };
 export function overlay(live) {
   reset();

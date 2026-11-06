@@ -15,6 +15,7 @@ import { originalStatusApi } from './original-status.mjs';
 import { runOriginalInventorySync } from './etsy-original-sync.mjs';
 import { catalogVersion } from './checkout-catalog.mjs';
 import { applyCatalogOverlay, catalogSource } from './catalog-overlay.mjs';
+import { ensurePrintCatalog } from './print-catalog-asset.mjs';
 export { SalesLedger } from './sales-ledger.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
 import { bitcoinCheckout, bitcoinWebhook } from './bitcoin-checkout.mjs';
@@ -37,14 +38,22 @@ export default {
     await handleTestimonialEmail(message, env, ctx);
   },
   async scheduled(event,env,ctx) {
-    await applyCatalogOverlay(env);
+    let catalogReady = true;
+    try { await ensurePrintCatalog(env); }
+    catch (error) { catalogReady = false; console.error('Print catalog load failed', error); }
+    if (catalogReady) await applyCatalogOverlay(env);
     if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
     ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); ctx.waitUntil(markAtCostOrders(env).catch(()=>console.error('QuickBooks at-cost marker backfill failed'))); ctx.waitUntil(pollTips(env).catch(()=>console.error('Lightning tip poll failed')));
   },
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
-    // Before the catalog overlay so a debug socket is not blocked on D1.
+    // Before the catalog load so a debug socket is not blocked on the print catalog or D1.
     if (path.startsWith('/api/neural-dance/debug/')) return handleNeuralDanceDebug(request, env);
+    try { await ensurePrintCatalog(env); }
+    catch (error) {
+      console.error('Print catalog load failed', error);
+      return Response.json({ error: 'Checkout is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    }
     // Live catalog (D1) over the built catalog; built values if D1 is unavailable.
     await applyCatalogOverlay(env);
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);

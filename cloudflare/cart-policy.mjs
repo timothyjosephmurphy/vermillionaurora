@@ -1,6 +1,7 @@
 import {PRIMARY_SITE,SITE_ORIGINS} from './site-origins.mjs';
 import catalog, {catalogVersion as originalVersion} from './checkout-catalog.mjs';
-import prints, {printVersion} from './print-catalog.mjs';
+import {prints} from './print-catalog-store.mjs';
+import {printVersion} from './print-catalog-version.mjs';
 import deposits from './commission-deposits.mjs';
 export const catalogVersion=`${originalVersion}-${printVersion}`;
 import {bitcoinOffered} from './bitcoin-api.mjs';

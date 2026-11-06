@@ -5,7 +5,8 @@
 // the testimonials page (approved quotes inlined for crawlers), newsletter signup (Buttondown plus one
 // at-cost print code, forwarded to the checkout Worker) and the
 // Apple Pay merchant-id file, and /play (hex gallery proxy; Quake files that still exist stay on assets).
-// Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
+// Route constants live in worker/routes-config.mjs. scripts/sync-worker-routes.mjs copies them into
+// wrangler.jsonc, and tests/worker-routes.test.mjs fails if that list drifts.
 // /site.webmanifest, /neural-dance/manifest.webmanifest, and
 // /neural-dance/live/manifest.webmanifest are not in that list.
 // The assets layer serves them as application/manifest+json (static/_headers sets the
@@ -21,16 +22,18 @@ import { APPLE_PAY_DOMAIN_ASSOCIATION } from './apple-pay-domain-association.mjs
 import { renamedProductPath } from './product-renames.mjs';
 import { catalogResponse, CATALOG_PATHS } from './catalog-pages.mjs';
 import { catalogAdmin } from './catalog-admin.mjs';
-import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
+import { testimonialsPage } from './testimonials-html.mjs';
 import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
-import { playGallery, PLAY_WORKER_FIRST } from './play-gallery.mjs';
+import { playGallery } from './play-gallery.mjs';
 import { withSiteSecurityHeaders } from './security-headers.mjs';
 import { handleNeuralDanceDebug, NEURAL_DANCE_DEBUG_API, NEURAL_DANCE_DEBUG_WORKER_FIRST } from './neural-dance-debug.mjs';
-export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST, NEURAL_DANCE_DEBUG_API, NEURAL_DANCE_DEBUG_WORKER_FIRST };
+import {
+  COMMISSION_PATHS, CATALOG_WORKER_FIRST, QUICKBOOKS_PATHS, TESTIMONIALS_API, TESTIMONIALS_PAGE, NEWSLETTER_PATHS,
+  ORIGINALS_API, CART_API, STICKERS_API, SHOP_REDIRECTS, APPLE_PAY_ASSOCIATION_PATH, NOSTR_JSON_PATH, LNURLP_PREFIX, PLAY_WORKER_FIRST,
+} from './routes-config.mjs';
+export { TESTIMONIALS_PAGE, TESTIMONIALS_API, PLAY_WORKER_FIRST, NEURAL_DANCE_DEBUG_API, NEURAL_DANCE_DEBUG_WORKER_FIRST, COMMISSION_PATHS, CATALOG_WORKER_FIRST, NEWSLETTER_PATHS, ORIGINALS_API, CART_API, STICKERS_API, SHOP_REDIRECTS, APPLE_PAY_ASSOCIATION_PATH, NOSTR_JSON_PATH, LNURLP_PREFIX };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
-export const COMMISSION_API = '/api/commission';
-export const COMMISSION_PATHS = [COMMISSION_API, '/commission-privacy', '/inventory/status'];
-export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*', '/catalog/products.json', '/catalog-admin', '/catalog-admin/*'];
+export const COMMISSION_API = COMMISSION_PATHS[0];
 
 export const LEGACY_HOSTS = new Set(['vermillionaurora.com', 'www.vermillionaurora.com']);
 export const KEEP_ON_LEGACY = ['/print-editions/', '/print-samples/', '/print-masters/', '/print-test/', '/prints/', '/catalog/'];
@@ -51,26 +54,20 @@ export function hostRedirect(request, env = {}) {
 // QuickBooks owner page, OAuth callback and owner API live in the checkout Worker (vermillion-commissions);
 // they are forwarded through the CHECKOUT service binding so the Intuit redirect URI can be https://tjm.art/quickbooks/callback.
 // The public pages /quickbooks/ and /quickbooks/disconnected/ stay static.
-export const QUICKBOOKS_API = new Set(['/quickbooks/connect', '/quickbooks/callback', '/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry', '/quickbooks/costs/preview', '/quickbooks/costs/backfill']);
+export const QUICKBOOKS_API = new Set(QUICKBOOKS_PATHS);
 
 // Testimonial submission, the approved list, approved photos and the owner moderation API also live in the checkout
 // Worker (private R2 storage); forwarding keeps them same-origin with /testimonials/ and /testimonial-manager/.
-export const TESTIMONIALS_API = '/testimonials/api/';
-
 // Email-list signup and the optional Buttondown webhook. The checkout Worker holds the Buttondown API key,
 // print-code storage and the Gmail identity. Same-origin on tjm.art, like the testimonials API.
-export const NEWSLETTER_PATHS = ['/newsletter/subscribe', '/newsletter/buttondown-webhook'];
 
 // Owner original-status page posts here; the checkout Worker holds stock and the Etsy token.
-export const ORIGINALS_API = '/inventory/originals';
 
 // Cart checkout API, same-origin on tjm.art (no workers.dev round trip). The public catalog GET is edge-cached for
 // 60 s; holds, quotes and payments always reach the checkout Worker, which re-validates price and stock.
-export const CART_API = '/checkout/cart/';
 // Kiss-cut sticker checkout. The website Worker only forwards. The checkout Worker
 // holds PRINTFUL_API_TOKEN. Committed PRINTFUL_STICKERS_MODE=draft still does not call
 // Printful until the painting file is marked fileReady, and this code never confirms.
-export const STICKERS_API = '/checkout/stickers/';
 const CART_CATALOG = '/checkout/cart/catalog';
 export async function cartApi(request, env, ctx) {
   if (!env.CHECKOUT) return Response.json({ error: 'Checkout is temporarily unavailable.' }, { status: 503 });
@@ -92,11 +89,8 @@ export async function cartApi(request, env, ctx) {
 }
 
 // Common shop URLs buyers type.
-export const SHOP_REDIRECTS = { '/shop': '/gallery/available/', '/shop/': '/gallery/available/', '/store': '/gallery/available/', '/store/': '/gallery/available/', '/checkout': '/cart/', '/checkout/': '/cart/' };
-
 // Apple Pay on the Web (Square Web Payments SDK): Apple fetches this file to verify tjm.art. Serve Square's
 // current copy (Square asks sellers to keep it in sync and avoid long caches), falling back to the committed snapshot.
-export const APPLE_PAY_ASSOCIATION_PATH = '/.well-known/apple-developer-merchantid-domain-association';
 const SQUARE_ASSOCIATION_URL = 'https://app.squareup.com/digital-wallets/apple-pay/apple-developer-merchantid-domain-association';
 export async function applePayAssociation(fetcher = fetch) {
   let body = APPLE_PAY_DOMAIN_ASSOCIATION;
@@ -110,7 +104,6 @@ export async function applePayAssociation(fetcher = fetch) {
 
 // NIP-05 (Nostr) identity: tj@tjm.art and _@tjm.art. Served by the Worker so it gets JSON + CORS headers
 // without a static/_headers file and is never caught by trailing-slash handling.
-export const NOSTR_JSON_PATH = '/.well-known/nostr.json';
 export const NOSTR_PUBKEY = '7edfc4a9556797f26adab9d1fd5adbe5f66f174546f8ddeee09502cd532f88cb';
 export function nostrJson() {
   return new Response(JSON.stringify({ names: { tj: NOSTR_PUBKEY, _: NOSTR_PUBKEY } }), {
@@ -120,7 +113,6 @@ export function nostrJson() {
 
 // Lightning address tj@tjm.art, backed by TJ's BTCPay Server (Store > Lightning > Lightning Address 'tj').
 // BTCPay's payRequest JSON is passed through unchanged; its callback issues the invoices.
-export const LNURLP_PREFIX = '/.well-known/lnurlp/';
 export const LNURLP_NAMES = { tj: 'https://pay.tjm.art/.well-known/lnurlp/tj' };
 const LNURLP_HEADERS = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=300' };
 export async function lnurlp(name, fetcher = fetch) {

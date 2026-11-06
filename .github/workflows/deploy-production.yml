@@ -113,7 +113,7 @@ jobs:
       - run: npm run build
       - name: Verify generated catalogs and production checkout config
         run: |
-          git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
+          git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs cloudflare/print-catalog-version.mjs cloudflare/print-assets/print-catalog.json
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.CHECKOUT_MODE!=='live')process.exit(1)"
       - name: Show which Cloudflare API token is in use
         env:
