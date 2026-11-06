@@ -1,8 +1,11 @@
 name: Deploy production from main
-# Merging to main deploys production directly. This workflow publishes the checkout Worker
-# (vermillion-commissions) as soon as the run starts, in parallel with Cloudflare Workers Builds,
+# Merging to main deploys production directly. A push that changes anything outside Neural Dance
+# publishes the checkout Worker (vermillion-commissions) in parallel with Cloudflare Workers Builds,
 # which deploys the website Worker (vermillionaurora) from main. Verification starts only after
 # checkout /checkout/health reports this commit, then waits for Workers Builds and checks both.
+# A push that touches only Neural Dance files skips the site rebuild here. The checkout Worker
+# deploys only when worker/neural-dance-debug.mjs changes. Website pages, scripts, and wasm still
+# publish through Workers Builds, which has no partial asset upload.
 # Pull request preview URLs stay on Workers Builds: this workflow does not deploy vermillionaurora
 # and does not run on pull_request.
 # The release branch is a frozen backup and no longer deploys anything from this workflow.
@@ -27,9 +30,49 @@ env:
   FULL_CHECKS: ${{ inputs.full_checks && '1' || '0' }}
   PRINT_ASSET_SAMPLE: ${{ inputs.full_checks && 'all' || 'sample' }}
 jobs:
+  changes:
+    name: Classify this push
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      tier: ${{ steps.changes.outputs.tier }}
+      deploy_checkout: ${{ steps.changes.outputs.deploy_checkout }}
+      deploy_site: ${{ steps.changes.outputs.deploy_site }}
+      files: ${{ steps.changes.outputs.files }}
+      before: ${{ steps.changes.outputs.before }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Classify changed paths
+        id: changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_FULL: ${{ github.event_name != 'push' && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          before="${{ github.event.before }}"
+          echo "before=$before" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "push" ] && [ -n "$before" ] && [ "$before" != "0000000000000000000000000000000000000000" ]; then
+            gh api "repos/${{ github.repository }}/compare/${before}...${{ github.sha }}" --jq '.files[]?.filename' > /tmp/changed.txt || : > /tmp/changed.txt
+          else
+            : > /tmp/changed.txt
+          fi
+          # The compare API lists at most 300 files. Treat a capped list as unknown and run the full path.
+          if [ "$(wc -l < /tmp/changed.txt | tr -d ' ')" -ge 300 ]; then
+            echo "Compare returned 300 files; running the full production path."
+            FORCE_FULL=true
+          fi
+          FORCE_FULL="$FORCE_FULL" node scripts/ci/classify-changes.mjs < /tmp/changed.txt
+          {
+            echo "files<<EOF"
+            head -500 /tmp/changed.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
   deploy-checkout:
     name: Deploy checkout Worker
-    if: github.ref == 'refs/heads/main'
+    needs: changes
+    if: github.ref == 'refs/heads/main' && needs.changes.outputs.deploy_checkout == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -86,8 +129,8 @@ jobs:
           NODE
   verify-site:
     name: Verify website release
-    needs: deploy-checkout
-    if: github.ref == 'refs/heads/main'
+    needs: [changes, deploy-checkout]
+    if: github.ref == 'refs/heads/main' && needs.changes.outputs.tier != 'neural-dance' && needs.changes.outputs.deploy_site == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -151,3 +194,61 @@ jobs:
         run: node scripts/verify-release.mjs
       - name: Quote one print and one framed print (no payment, no order)
         run: node payments/verify-sampled-quote.mjs
+  verify-neural-dance:
+    name: Verify Neural Dance release
+    needs: [changes, deploy-checkout]
+    if: github.ref == 'refs/heads/main' && needs.changes.outputs.tier == 'neural-dance' && (needs.deploy-checkout.result == 'success' || needs.deploy-checkout.result == 'skipped')
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.1-noble
+      options: --user root --shm-size=1g
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      NEURAL_DANCE_FAST: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 10
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - name: Run Neural Dance unit tests
+        timeout-minutes: 10
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find tests -maxdepth 1 -name 'neural-dance-*.test.mjs' ! -name '*.browser-test.mjs' | sort)
+          if [ "${#files[@]}" -eq 0 ]; then echo "No Neural Dance unit tests"; exit 1; fi
+          node --test "${files[@]}"
+      - name: Run Neural Dance browser tests
+        timeout-minutes: 15
+        run: |
+          set -euo pipefail
+          # rings and standalone load dist/ HTML from the full site build.
+          mapfile -t files < <(find tests -maxdepth 1 -name 'neural-dance-*.browser-test.mjs' ! -name 'neural-dance-rings.browser-test.mjs' ! -name 'neural-dance-standalone.browser-test.mjs' | sort)
+          if [ "${#files[@]}" -eq 0 ]; then echo "No Neural Dance browser tests"; exit 1; fi
+          node tests/run-browser.mjs --engine=chromium -- "${files[@]}"
+      - name: Fetch the previous commit for page comparison
+        if: needs.changes.outputs.deploy_site == 'true' && needs.changes.outputs.before != '' && needs.changes.outputs.before != '0000000000000000000000000000000000000000'
+        timeout-minutes: 5
+        run: git fetch --depth=1 origin "${{ needs.changes.outputs.before }}"
+      - name: Wait until Neural Dance site files are on tjm.art
+        if: needs.changes.outputs.deploy_site == 'true'
+        timeout-minutes: 40
+        env:
+          CHANGED_FILES: ${{ needs.changes.outputs.files }}
+          BASE_SHA: ${{ needs.changes.outputs.before }}
+          SITE_WAIT_TRIES: '480'
+        run: node scripts/ci/verify-neural-dance-live.mjs

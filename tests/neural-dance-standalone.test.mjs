@@ -19,6 +19,8 @@ function one(html, name) {
 
 const manifest = JSON.parse(read('static/neural-dance/manifest.webmanifest'));
 const siteManifest = JSON.parse(read('static/site.webmanifest'));
+// The Neural Dance fast path does not build dist/. The full gate leaves this unset.
+const builtSite = process.env.NEURAL_DANCE_FAST !== '1';
 
 test('Neural Dance manifest is standalone and its icons exist', () => {
   assert.equal(manifest.name, 'Neural Dance');
@@ -36,11 +38,13 @@ test('Neural Dance manifest is standalone and its icons exist', () => {
     const file = icon.src.split('?')[0].replace(/^\//, '');
     assert.equal(siteManifest.icons.some((item) => item.src.split('?')[0] === icon.src.split('?')[0]), true, icon.src);
     assert.ok(fs.existsSync(path.join(root, 'static', file)), file);
-    assert.ok(fs.existsSync(path.join(root, 'dist', file)), `dist/${file}`);
+    if (builtSite) assert.ok(fs.existsSync(path.join(root, 'dist', file)), `dist/${file}`);
   }
-  const built = path.join(root, 'dist/neural-dance/manifest.webmanifest');
-  assert.ok(fs.existsSync(built), 'dist manifest missing');
-  assert.deepEqual(JSON.parse(fs.readFileSync(built, 'utf8')), manifest);
+  if (builtSite) {
+    const built = path.join(root, 'dist/neural-dance/manifest.webmanifest');
+    assert.ok(fs.existsSync(built), 'dist manifest missing');
+    assert.deepEqual(JSON.parse(fs.readFileSync(built, 'utf8')), manifest);
+  }
 });
 
 test('standalone pages link the Neural Dance manifest once, and other pages keep the site manifest', () => {
@@ -75,6 +79,7 @@ test('standalone pages link the Neural Dance manifest once, and other pages keep
   assert.deepEqual(liveManifest.icons, manifest.icons);
   assert.doesNotMatch(read('src/pages/index.astro'), /neural-dance\/manifest\.webmanifest/);
 
+  if (!builtSite) return;
   const builtManifests = {
     'dist/neural-dance/index.html': '/neural-dance/manifest.webmanifest',
     'dist/neural-dance/live/index.html': '/neural-dance/live/manifest.webmanifest'
@@ -129,7 +134,7 @@ test('polish does not add a second manifest, and the manifest is not a Worker ro
   const headers = read('static/_headers');
   assert.match(headers, /\/neural-dance\/manifest\.webmanifest\r?\n {2}Content-Type: application\/manifest\+json/);
   assert.match(headers, /\/neural-dance\/live\/manifest\.webmanifest\r?\n {2}Content-Type: application\/manifest\+json/);
-  assert.equal(read('dist/_headers'), headers);
+  if (builtSite) assert.equal(read('dist/_headers'), headers);
   const config = JSON.parse(read('wrangler.jsonc'));
   const patterns = config.assets.run_worker_first.map((pattern) => new RegExp('^' + pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$'));
   assert.equal(patterns.some((pattern) => pattern.test('/neural-dance/manifest.webmanifest')), false);
