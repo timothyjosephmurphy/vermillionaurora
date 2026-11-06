@@ -9,6 +9,38 @@ const attr = (tag, name) => tag.match(new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)
 const hasTag = (html, key, value) => new RegExp(`<meta\\b(?=[^>]*\\b${key}\\s*=\\s*["']${value}["'])[^>]*>`, 'i').test(html);
 
 const DEFAULT_SHARE_IMAGE = 'https://tjm.art/brand/tj-murphy-share.jpg';
+const BLOG_POST = /^\/blog\/[a-z0-9-]+\/$/;
+
+// BlogPosting on every story page. The static posts already carry title, description,
+// published time, and share image; this is the one place that runs after the build.
+const decode = value => text(String(value))
+  .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+  .replace(/&#(\d+);/g, (_, num) => String.fromCodePoint(Number(num)))
+  .replace(/&quot;/g, '"').replace(/&apos;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+export function blogPostingScript(html, canonical) {
+  if (/"@type"\s*:\s*"BlogPosting"/.test(html)) return '';
+  const headline = decode(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '');
+  const description = decode(attr(html.match(/<meta\b(?=[^>]*\bname=["']description["'])[^>]*>/i)?.[0] || '', 'content'));
+  const published = attr(html.match(/<meta\b(?=[^>]*\bproperty=["']article:published_time["'])[^>]*>/i)?.[0] || '', 'content')
+    || attr(html.match(/<time\b[^>]*>/i)?.[0] || '', 'datetime');
+  const modified = attr(html.match(/<meta\b(?=[^>]*\bproperty=["']article:modified_time["'])[^>]*>/i)?.[0] || '', 'content');
+  const image = attr(html.match(/<meta\b(?=[^>]*\bproperty=["']og:image["'])[^>]*>/i)?.[0] || '', 'content');
+  if (!headline || !description || !published || !image || !canonical) return '';
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline,
+    description,
+    datePublished: published,
+    ...(modified ? { dateModified: modified } : {}),
+    image,
+    author: { '@type': 'Person', name: 'TJ Murphy', url: 'https://tjm.art/about/' },
+    publisher: { '@type': 'Organization', name: 'Vermillion Aurora Productions', url: 'https://tjm.art/' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  };
+  return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
+}
 // Bump ICON_VERSION whenever the favicon/manifest images change so browsers refetch them.
 const ICON_VERSION = '2';
 const ICONS = `<link rel="icon" href="/favicon.ico?v=${ICON_VERSION}" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=${ICON_VERSION}"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=${ICON_VERSION}"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=${ICON_VERSION}"><link rel="manifest" href="/site.webmanifest?v=${ICON_VERSION}">`;
@@ -50,6 +82,13 @@ async function walk(directory) {
     // Every page (including noindex pages and the 404 page) gets the favicon set and a working skip link.
     const polished = polish(html);
     if (polished !== html) { html = polished; await writeFile(file, html); }
+    if (BLOG_POST.test(route)) {
+      const ld = blogPostingScript(html, `${site}${route}`);
+      if (ld) {
+        html = html.replace(/<\/head>/i, `${ld}</head>`);
+        await writeFile(file, html);
+      }
+    }
     if (/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html)) continue;
 
     const title = text(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || 'TJ Murphy');

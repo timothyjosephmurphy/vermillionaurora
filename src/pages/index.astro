@@ -107,7 +107,7 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
                 <a href={`/products/${strawberryId(spHero[0].p)}/`} aria-label={`View ${spHero[0].pr.title}`}><AvifImage src={`${spHero[0].p.display.base}-480.webp`} srcset={spSrcset(spHero[0].p.display)} sizes="(max-width: 980px) 80vw, 340px" width={spHero[0].p.display.width} height={spHero[0].p.display.height} alt={`${spHero[0].pr.title}, a painting by TJ Murphy`} /></a>
               </div>
               <ul class="sp-hero-source" hidden>
-                {spHero.map(({p,pr})=><li class="product-card" data-sp-id={pr.id} data-buy="false"><a class="product-title-link" href={`/products/${pr.id}/`}>{pr.title}</a><img src={`${p.display.base}-480.webp`} srcset={spSrcset(p.display)} alt={`${pr.title}, a painting by TJ Murphy`} loading="lazy"/><div class="product-info"><p>{`Watercolor pastel · ${pr.listing?.status==='available'?priceLabel(pr):statusLabel(pr)}`}</p></div></li>)}
+                {spHero.map(({p,pr})=><li class="product-card" data-sp-id={pr.id} data-buy="false"><a class="product-title-link" href={`/products/${pr.id}/`}>{pr.title}</a><img src={`${p.display.base}-480.webp`} srcset={spSrcset(p.display)} width={p.display.width} height={p.display.height} alt={`${pr.title}, a painting by TJ Murphy`} loading="lazy"/><div class="product-info"><p>{`Watercolor pastel · ${pr.listing?.status==='available'?priceLabel(pr):statusLabel(pr)}`}</p></div></li>)}
               </ul>
             </div>
           </div>

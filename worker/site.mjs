@@ -21,6 +21,7 @@ import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
 import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 import { playGallery, PLAY_WORKER_FIRST } from './play-gallery.mjs';
 import { isPrintMasterRequest, servePrintMaster, PRINT_MASTER_WORKER_FIRST } from './print-masters.mjs';
+import { withSiteSecurityHeaders } from './security-headers.mjs';
 export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST, PRINT_MASTER_WORKER_FIRST };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const COMMISSION_API = '/api/commission';
@@ -143,7 +144,7 @@ export default {
     if (isPrintMasterRequest(url.pathname)) return servePrintMaster(request, env);
     // /play entry is the hex gallery. Quake files that still exist are served from assets
     // inside playGallery; holo and book covers stay on the R2 redirects.
-    if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return playGallery(request, env);
+    if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return withSiteSecurityHeaders(await playGallery(request, env));
     // Commission form + privacy API, same-origin on tjm.art (Safe Browsing: no PII posted to workers.dev).
     if (COMMISSION_PATHS.includes(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Commission form is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
@@ -159,7 +160,7 @@ export default {
     }
     // Approved quotes in the first HTML byte (studio-tracker #102). The API route above stays a forward.
     if (TESTIMONIALS_PAGE.includes(url.pathname) && request.method === 'GET' && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
-      return testimonialsPage(request, env);
+      return withSiteSecurityHeaders(await testimonialsPage(request, env));
     }
     if (url.pathname === ORIGINALS_API && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });
@@ -181,9 +182,9 @@ export default {
     }
     if (/^\/gallery\/wall\/?$/.test(url.pathname)) return Response.redirect(new URL('/gallery/wall/all/' + url.search, url).href, 301);
     // Live catalog (tjm-catalog D1): owner admin, and catalog pages patched at request time (built page on any D1 error).
-    if (/^\/catalog-admin(?:\/|$)/.test(url.pathname)) return catalogAdmin(request, env, ctx);
+    if (/^\/catalog-admin(?:\/|$)/.test(url.pathname)) return withSiteSecurityHeaders(await catalogAdmin(request, env, ctx));
     if (CATALOG_PATHS(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
-      try { return await catalogResponse(request, env, ctx); } catch { return env.ASSETS.fetch(request); }
+      try { return withSiteSecurityHeaders(await catalogResponse(request, env, ctx)); } catch { return env.ASSETS.fetch(request); }
     }
     return env.ASSETS.fetch(request);
   },

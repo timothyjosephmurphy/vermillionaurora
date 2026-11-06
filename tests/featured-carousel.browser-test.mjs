@@ -34,6 +34,8 @@ try {
       return {y: scrollY, wall: wall?.offsetHeight, heroTop: hero.getBoundingClientRect().top, card: document.querySelectorAll('.hero .featured-art').length, sp: [...document.querySelectorAll('.sp-hero-source .product-card')].map(c=>c.dataset.spId),
         overlap: (()=>{const c=document.querySelector('.hero .featured-art').getBoundingClientRect();return [...document.querySelectorAll('.hero-copy h1,.hero-copy .button,.hero-room-link')].some(e=>{const r=e.getBoundingClientRect();return r.left<c.right&&r.right>c.left&&r.top<c.bottom&&r.bottom>c.top;});})(),
         cardHref: document.querySelector('.featured-art .featured-media')?.getAttribute('href'),
+        mediaHrefs: [...document.querySelectorAll('.featured-art .featured-media')].map(a => a.getAttribute('href')),
+        sized: [...document.querySelectorAll('.featured-art img.featured-painting')].map(img => [img.getAttribute('width'), img.getAttribute('height')]),
         slides: JSON.parse(document.querySelector('.hero-slideshow').dataset.heroSlides).length, wallImg: wall.querySelector('img').getAttribute('src'),
         room: document.querySelector('.hero-room-link')?.getAttribute('href'), transition: getComputedStyle(document.querySelector('.hero-slide')).transitionProperty};
     });
@@ -41,6 +43,9 @@ try {
     assert.equal(s.sp.length, 15, `${name}: all Strawberry Point paintings`);
     assert(s.sp.every(id => id.startsWith('strawberry-point-')), `${name}: only Strawberry Point paintings`);
     assert(/^\/products\/strawberry-point-\d+\/$/.test(new URL(s.cardHref, origin).pathname), `${name}: card links to its painting`);
+    assert.equal(s.mediaHrefs.length, 2, `${name}: both featured slides are links`);
+    assert(s.mediaHrefs.every(href => /^\/products\/strawberry-point-\d+\/$/.test(new URL(href, origin).pathname)), `${name}: every featured slide has a painting href`);
+    assert(s.sized.every(([w, h]) => Number(w) > 0 && Number(h) > 0), `${name}: featured paintings declare width and height`);
     assert(!s.overlap, `${name}: card clear of headline/CTA`);
     assert(s.slides >= 2, `${name}: wide paintings queued`);
     assert(s.wall > 200 && Math.abs(s.y - s.wall) <= 2, `${name}: lands below the wall (${s.y} vs ${s.wall})`);

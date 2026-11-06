@@ -47,6 +47,7 @@ async function walk(directory) {
     if (route.split('/').some((part) => redirected.has(part))) continue;
 
     const html = await readFile(file, 'utf8');
+    // /play/ is indexable. /play/g/* frames carry noindex so only the entry URL is listed.
     const hasNoindex = [...html.matchAll(/<meta\b[^>]*>/gi)].some(([tag]) =>
       /\bname\s*=\s*["']robots["']/i.test(tag)
       && /\bcontent\s*=\s*["'][^"']*\bnoindex\b/i.test(tag),

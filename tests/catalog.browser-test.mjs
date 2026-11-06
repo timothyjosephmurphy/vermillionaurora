@@ -100,7 +100,7 @@ try {
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:900});
   await page.goto(origin+'/products/painting-portrait-in-green/');
-  const trigger=page.getByRole('link',{name:'View Chase Toole full screen'}),dialog=page.getByRole('dialog'),image=dialog.locator('img'),close=dialog.getByRole('button',{name:'Close'});
+  const trigger=page.getByRole('link',{name:'View full screen: Chase Toole'}),dialog=page.getByRole('dialog'),image=dialog.locator('img'),close=dialog.getByRole('button',{name:'Close'});
   await trigger.scrollIntoViewIfNeeded();
   const scroll=await page.evaluate(()=>window.scrollY);
   await trigger.click();await dialog.waitFor();
