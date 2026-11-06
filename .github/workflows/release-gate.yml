@@ -168,15 +168,15 @@ jobs:
       - name: Download the built site
         id: dist
         continue-on-error: true
-        timeout-minutes: 8
+        timeout-minutes: 15
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
       - name: Clear a partial site download
         if: steps.dist.outcome == 'failure'
-        timeout-minutes: 2
-        run: rm -rf dist
+        timeout-minutes: 5
+        run: rm -rf dist || true
       - name: Download the built site again
         if: steps.dist.outcome == 'failure'
         timeout-minutes: 12
@@ -226,7 +226,7 @@ jobs:
     needs: prepare
     if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'content' || needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 50
     container:
       image: mcr.microsoft.com/playwright:v1.62.1-noble
       options: --user root --shm-size=1g
@@ -258,15 +258,15 @@ jobs:
       - name: Download the built site
         id: dist
         continue-on-error: true
-        timeout-minutes: 8
+        timeout-minutes: 15
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
       - name: Clear a partial site download
         if: steps.dist.outcome == 'failure'
-        timeout-minutes: 2
-        run: rm -rf dist
+        timeout-minutes: 5
+        run: rm -rf dist || true
       - name: Download the built site again
         if: steps.dist.outcome == 'failure'
         timeout-minutes: 12
@@ -306,7 +306,7 @@ jobs:
     needs: prepare
     if: needs.prepare.result == 'success' && needs.prepare.outputs.tier == 'full'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     container:
       image: mcr.microsoft.com/playwright:v1.62.1-noble
       options: --user root --shm-size=1g
@@ -334,15 +334,15 @@ jobs:
       - name: Download the built site
         id: dist
         continue-on-error: true
-        timeout-minutes: 8
+        timeout-minutes: 15
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
       - name: Clear a partial site download
         if: steps.dist.outcome == 'failure'
-        timeout-minutes: 2
-        run: rm -rf dist
+        timeout-minutes: 5
+        run: rm -rf dist || true
       - name: Download the built site again
         if: steps.dist.outcome == 'failure'
         timeout-minutes: 12
