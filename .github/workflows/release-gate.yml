@@ -1,11 +1,13 @@
 name: Release gate
 
 # Tiered PR gate. The required status check is the final job named "gate".
+#   neural-dance  only Neural Dance pages, scripts, tests, or the checkout debug room:
+#                 Neural Dance unit and browser tests. No site build.
 #   blog     story HTML and that post's display/social files: build + article check. No Playwright.
 #   content  catalog data, images, other static, docs: build + changed pages load.
 #   code     site code: build + unit tests + browser tests for touched areas + smoke.
 #   print-master only prints.json/master files for existing paintings: content + 3 sampled sandbox quotes.
-#   full     checkout, payments, workers, CI, dependencies, or manual runs: the full suite.
+#   full     checkout, payments, workers, CI, dependencies, mixed or unknown diffs, or manual runs: the full suite.
 # prepare builds once and uploads dist/. Browser jobs use the Playwright image that matches
 # package-lock.json (browsers and OS libraries are already installed). Checkout is shallow.
 # Testing never takes payment, submits FinerWorks orders, or holds originals.
@@ -75,6 +77,7 @@ jobs:
           head -500 /tmp/changed.txt >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
+        if: steps.changes.outputs.tier != 'neural-dance'
         with:
           node-version: '22'
           cache: npm
@@ -95,7 +98,7 @@ jobs:
             sleep 8
           done
       - name: Install dependencies
-        if: steps.changes.outputs.tier != 'blog'
+        if: steps.changes.outputs.tier != 'blog' && steps.changes.outputs.tier != 'neural-dance'
         timeout-minutes: 10
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
@@ -108,12 +111,15 @@ jobs:
             sleep 8
           done
       - name: Build the site
+        if: steps.changes.outputs.tier != 'neural-dance'
         timeout-minutes: 30
         run: npm run build
       - name: Confirm generated catalogs are committed
+        if: steps.changes.outputs.tier != 'neural-dance'
         timeout-minutes: 2
         run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/commission-deposits.mjs cloudflare/print-catalog.mjs cloudflare/print-catalog-version.mjs cloudflare/print-assets/print-catalog.json cloudflare/etsy-print-source.mjs cloudflare/etsy-sync-source.mjs
       - name: Validate production Worker configuration
+        if: steps.changes.outputs.tier != 'neural-dance'
         timeout-minutes: 2
         run: |
           node --input-type=module <<'NODE'
@@ -124,6 +130,7 @@ jobs:
           }
           NODE
       - name: Upload the built site
+        if: steps.changes.outputs.tier != 'neural-dance'
         timeout-minutes: 10
         uses: actions/upload-artifact@v4
         with:
@@ -414,9 +421,55 @@ jobs:
           BASE_REF: origin/${{ github.base_ref }}
         run: node scripts/ci/sample-print-quotes.mjs
 
+  neural-dance:
+    needs: prepare
+    if: needs.prepare.result == 'success' && needs.prepare.outputs.tier == 'neural-dance'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.1-noble
+      options: --user root --shm-size=1g
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      NEURAL_DANCE_FAST: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 10
+        run: |
+          n=0
+          until npm ci; do
+            n=$((n+1))
+            if [ "$n" -ge 2 ]; then exit 1; fi
+            echo "npm ci failed; retrying once"
+            sleep 8
+          done
+      - name: Run Neural Dance unit tests
+        timeout-minutes: 10
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find tests -maxdepth 1 -name 'neural-dance-*.test.mjs' ! -name '*.browser-test.mjs' | sort)
+          if [ "${#files[@]}" -eq 0 ]; then echo "No Neural Dance unit tests"; exit 1; fi
+          node --test "${files[@]}"
+      - name: Run Neural Dance browser tests
+        timeout-minutes: 15
+        run: |
+          set -euo pipefail
+          # rings and standalone load dist/ HTML from the full site build.
+          mapfile -t files < <(find tests -maxdepth 1 -name 'neural-dance-*.browser-test.mjs' ! -name 'neural-dance-rings.browser-test.mjs' ! -name 'neural-dance-standalone.browser-test.mjs' | sort)
+          if [ "${#files[@]}" -eq 0 ]; then echo "No Neural Dance browser tests"; exit 1; fi
+          node tests/run-browser.mjs --engine=chromium -- "${files[@]}"
+
   gate:
     name: gate
-    needs: [prepare, unit-and-print, browser-chromium, browser-webkit, print-quotes]
+    needs: [prepare, unit-and-print, browser-chromium, browser-webkit, print-quotes, neural-dance]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -429,6 +482,7 @@ jobs:
           CHROMIUM: ${{ needs.browser-chromium.result }}
           WEBKIT: ${{ needs.browser-webkit.result }}
           QUOTES: ${{ needs.print-quotes.result }}
+          NEURAL: ${{ needs.neural-dance.result }}
         run: |
           node --input-type=module <<'NODE'
           const results = {
@@ -437,6 +491,7 @@ jobs:
             'browser-chromium': process.env.CHROMIUM,
             'browser-webkit': process.env.WEBKIT,
             'print-quotes': process.env.QUOTES,
+            'neural-dance': process.env.NEURAL,
           };
           console.log(results);
           if (results.prepare !== 'success') {
