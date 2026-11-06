@@ -7,7 +7,7 @@
 //
 // The published set is still small and family-heavy, so this is an ItemList of Quotation
 // (a CreativeWork), not Review and not AggregateRating. Star snippets wait on #47.
-export const TESTIMONIALS_PAGE = ['/testimonials', '/testimonials/'];
+export { TESTIMONIALS_PAGE } from './routes-config.mjs';
 
 const ID = /^t-\d{8}-[0-9a-f]{12}$/;
 const PHOTO = /^\/testimonials\/api\/photo\/t-\d{8}-[0-9a-f]{12}\/[0-3]$/;

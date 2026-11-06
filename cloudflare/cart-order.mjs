@@ -1,5 +1,6 @@
 import {DurableObject} from 'cloudflare:workers';
 import {catalogVersion,commonMethods,cartOrigin,publicCartItem} from './cart-policy.mjs';
+import {ensurePrintCatalog} from './print-catalog-asset.mjs';
 import {squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './cart-providers.mjs';
 import {bitcoinApi,bitcoinServer,checkoutUrl} from './bitcoin-api.mjs';
 import {ledgerFor,fulfillmentRecord} from './sales-records.mjs';
@@ -86,6 +87,7 @@ export class CartOrder extends DurableObject {
       ...(d.status==='paid'?{paidAt:d.paidAt,shipments:[...(d.jobs||[]).map(j=>({id:j.quote.slug,trackingNumber:j.trackingNumber||'',trackingUrl:j.trackingUrl||''})),...(d.printJob?.shipments||[])],...(d.printJob?{printStatus:d.printJob.status}:{}),confirmation:d.customerMail?.status||'pending'}:{})};
   }
   async start(method,payment={}) {return this.exclusive(async()=>{
+    await ensurePrintCatalog(this.env);
     let d=this.read();if(!d)throw Error('Order missing');
     if(d.status!=='quoted')return this.result(); // Retries reuse the same attempt, never create a second payment.
     if(Date.now()>d.expiresAt){if(d.heldIds?.length)await this.expireCartHold();else this.save({...d,status:'expired'});return this.result();}

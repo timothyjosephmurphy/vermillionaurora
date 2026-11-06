@@ -112,7 +112,7 @@ jobs:
         run: npm run build
       - name: Confirm generated catalogs are committed
         timeout-minutes: 2
-        run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/commission-deposits.mjs cloudflare/print-catalog.mjs cloudflare/etsy-print-source.mjs cloudflare/etsy-sync-source.mjs
+        run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/commission-deposits.mjs cloudflare/print-catalog.mjs cloudflare/print-catalog-version.mjs cloudflare/print-assets/print-catalog.json cloudflare/etsy-print-source.mjs cloudflare/etsy-sync-source.mjs
       - name: Validate production Worker configuration
         timeout-minutes: 2
         run: |

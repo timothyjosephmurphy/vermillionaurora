@@ -1,5 +1,5 @@
 import catalog from './checkout-catalog.mjs';
-import prints from './print-catalog.mjs';
+import {prints} from './print-catalog-store.mjs';
 import deposits from './commission-deposits.mjs';
 import {publicCartItem} from './cart-policy.mjs';
 import {cartOrigins,cartItems,commonMethods,paymentMethods,cleanEmail,ORDER_ID,ACCESS_KEY,catalogVersion,keyHash} from './cart-policy.mjs';
