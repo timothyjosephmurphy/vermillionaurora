@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Neural Dance silence gate (studio-tracker #800).
 // The noise floor is the low percentile of recent input level, measured only
 // while the gate is closed so a song cannot become the floor. Near that floor

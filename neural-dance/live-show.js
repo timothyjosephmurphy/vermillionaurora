@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Chrome for the full-screen live page: collapse, hide, preview, fullscreen,
 // and automatic projector alignment. The dancer stage and the camera stay in their own modules.
 

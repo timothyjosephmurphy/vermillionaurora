@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Opt-in publisher for /neural-dance/live/ (studio-tracker #824).
 // Off by default: no socket, no timer, no frames. On, a room code and viewer
 // link stay in this tab, and a ~750ms relay sends the camera, the stage, and

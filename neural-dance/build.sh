@@ -1,4 +1,9 @@
 #!/bin/sh
+# Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+# All rights reserved. No use, copying, modification, or distribution
+# without a written license. Contact tj@tjm.art.
+# License: neural-dance/LICENSE
+
 # Rebuild neural-dance/neural-dance.wasm from the C++ mural runtime.
 # Requires clang with the wasm32 target and lld (wasm-ld). The site ships the
 # committed wasm so a normal page build does not need this toolchain.

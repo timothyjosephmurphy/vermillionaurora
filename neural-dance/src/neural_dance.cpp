@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Neural Dance mural runtime (studio-tracker #794).
 // Closed loop: band onsets + a sticker map → this pulse network → a projector.
 // Kick / bass / snare-mid / hi-hat-treble are dancer types 0..3.

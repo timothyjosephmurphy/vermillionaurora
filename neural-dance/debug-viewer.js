@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Desktop viewer for one Neural Dance debug room (studio-tracker #824).
 // The page is unlisted. Nothing is drawn or requested until the URL carries
 // the room code and the viewer key.

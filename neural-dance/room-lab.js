@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Room music runtime shared by /neural-dance/ and /neural-dance/live/.
 // One WASM instance, mic Listen, display AGC, and the marker hook camera mode calls.
 // Slider values stay in this browser under nd-room-lab.

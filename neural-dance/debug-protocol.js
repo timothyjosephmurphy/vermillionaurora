@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Shared Neural Dance live-debug protocol (studio-tracker #824).
 // Pure helpers so the phone, the viewer page, and the Durable Object agree
 // on room codes, secrets, and the tuning fields a viewer is allowed to suggest.

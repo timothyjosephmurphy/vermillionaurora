@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Neural Dance sound-wave rings (studio-tracker #799).
 // Each dancer's bloom is a circle whose radius follows the time-domain
 // waveform of that dancer's band: kick, bass, snare, or hi-hat.

@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Camera mode for the Neural Dance wall.
 // Continuity Camera (an "iPhone Camera" device) watches the projection.
 // Four clicked corners build a homography into the Room music canvas.

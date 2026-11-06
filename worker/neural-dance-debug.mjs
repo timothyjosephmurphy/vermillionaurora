@@ -1,3 +1,8 @@
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+
 // Opt-in Neural Dance live debug room (studio-tracker #824).
 // One Durable Object per unguessable room code. The phone publishes ~1.3 fps
 // JPEG frames and telemetry. A viewer key reads them. A publisher secret writes.
