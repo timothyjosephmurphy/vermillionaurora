@@ -34,7 +34,7 @@ try {
       ctx.fillStyle = '#080910';
       ctx.fillRect(0, 0, 320, 180);
       ctx.fillStyle = 'rgb(242, 36, 139)';
-      ctx.fillRect(80, 40, 70, 50);
+      ctx.fillRect(103, 55, 24, 20);
       requestAnimationFrame(draw);
     };
     draw();
@@ -65,11 +65,13 @@ try {
       exact: exact || null,
       audio: calls.every(c => c.audio === false),
       sized: calls.some(c => c.video && ('width' in c.video || 'height' in c.video)),
+      first: calls[0] && calls[0].video,
       label: document.querySelector('[data-control="device"]').selectedOptions[0].textContent,
       width: video.videoWidth,
       currentTime: video.currentTime
     };
   });
+  assert.deepEqual(chosen.first, {facingMode: {ideal: 'environment'}});
   assert.ok(chosen.exact, 'exact deviceId was requested for iPhone (3) Camera');
   assert.equal(chosen.exact.audio, false);
   assert.equal('width' in chosen.exact.video, false);
@@ -108,6 +110,36 @@ try {
   assert.ok(marker.x > 150 && marker.x < 700, `projected x ${marker.x}`);
   assert.ok(marker.y > 50 && marker.y < 450, `projected y ${marker.y}`);
   assert.ok(await page.evaluate(() => window.__pokes > 0));
+
+  const ios = await browser.newPage({viewport: {width: 900, height: 700}});
+  await ios.addInitScript(() => {
+    localStorage.setItem('nd.camera.v1', JSON.stringify({deviceId: 'front', deviceLabel: 'Front Camera', hueTolerance: 5, saturationSensitivity: 0}));
+  });
+  await ios.goto(origin + '/tests/fixtures/neural-dance-camera.html', {waitUntil: 'load'});
+  await ios.evaluate(() => {
+    const paint = document.createElement('canvas');
+    paint.width = 160;
+    paint.height = 90;
+    const ctx = paint.getContext('2d');
+    ctx.fillStyle = '#111';
+    ctx.fillRect(0, 0, 160, 90);
+    const stream = paint.captureStream(5);
+    navigator.mediaDevices.getUserMedia = async () => stream;
+    navigator.mediaDevices.enumerateDevices = async () => [
+      {kind: 'videoinput', deviceId: 'front', label: 'Front Camera'},
+      {kind: 'videoinput', deviceId: 'ultra', label: 'Back Ultra Wide Camera'},
+      {kind: 'videoinput', deviceId: 'back', label: 'Back Camera'},
+      {kind: 'videoinput', deviceId: 'tele', label: 'Back Telephoto Camera'}
+    ];
+  });
+  await ios.click('[data-action="camera"]');
+  await ios.waitForFunction(() => {
+    const selected = document.querySelector('[data-control="device"]');
+    return selected && selected.selectedOptions[0] && selected.selectedOptions[0].textContent === 'Back Camera';
+  });
+  const picked = await ios.evaluate(() => document.querySelector('[data-control="device"]').selectedOptions[0].textContent);
+  assert.equal(picked, 'Back Camera');
+  await ios.close();
 } finally {
   await browser.close();
   await new Promise(r => server.close(r));

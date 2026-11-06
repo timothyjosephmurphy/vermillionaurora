@@ -1,11 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {readRoomSettings, writeRoomSettings, ROOM_KEY} from '../neural-dance/room-lab.js';
+import {readRoomSettings, writeRoomSettings, ROOM_KEY, formatDancerCount} from '../neural-dance/room-lab.js';
 import {applyLiveShow, readLiveShow, writeLiveShow, LIVE_KEY, LIVE_DEFAULTS} from '../neural-dance/live-show.js';
 
 const page = readFileSync(new URL('../src/pages/neural-dance/live/index.astro', import.meta.url), 'utf8');
+const studio = readFileSync(new URL('../src/pages/neural-dance/index.astro', import.meta.url), 'utf8');
 const show = readFileSync(new URL('../neural-dance/live-show.js', import.meta.url), 'utf8');
+const roomJs = readFileSync(new URL('../neural-dance/room-lab.js', import.meta.url), 'utf8');
 
 function memory() {
   const values = new Map();
@@ -40,9 +42,16 @@ test('the live page is a full-screen stage with room music and camera, and no si
   assert.match(page, /playsinline/);
   assert.match(page, /data-action="calibrate"/);
   assert.match(page, /data-action="camera"/);
-  assert.match(page, /Hue tolerance/);
-  assert.match(page, /Saturation sensitivity/);
-  assert.match(page, /Minimum blob size/);
+  assert.match(page, /Hue range \(higher = wider color match\)/);
+  assert.match(page, /Note sensitivity \(higher = fainter notes\)/);
+  assert.match(page, /Smallest note size \(lower = detects smaller notes\)/);
+  assert.match(page, /data-camera-flip/);
+  assert.match(page, /Reset defaults/);
+  assert.match(page, /data-mode="both"/);
+  assert.match(page, /Dancer stickers/);
+  assert.match(page, /Sticker sensitivity \(higher = fainter stickers\)/);
+  assert.match(page, /data-align-banner/);
+  assert.match(page, /data-align-lock-outline/);
   assert.match(page, /data-live="fullscreen"/);
   assert.match(page, /data-live="hide"/);
   assert.match(page, /data-live="collapse"/);
@@ -134,4 +143,36 @@ test('room sliders and the live chrome round-trip through localStorage', () => {
   assert.equal(texts.collapse['aria-expanded'], 'false');
   assert.equal(texts.preview.textContent, 'Preview off');
   assert.equal(texts.reveal.hidden, false);
+});
+
+test('room status names simulated dancers and camera stickers on both pages', () => {
+  assert.equal(formatDancerCount(25, 0), '25 dancers (25 sim, 0 stickers)');
+  assert.equal(formatDancerCount(25, 1), '25 dancers (24 sim, 1 sticker)');
+  assert.equal(formatDancerCount(25, 2), '25 dancers (23 sim, 2 stickers)');
+  assert.equal(formatDancerCount(1, 1), '1 dancers (0 sim, 1 sticker)');
+  assert.equal(formatDancerCount(3, 5), '3 dancers (0 sim, 5 stickers)');
+  const listening = 'Listening · ' + formatDancerCount(25, 1) + ' · 37 pulses';
+  assert.equal(listening, 'Listening · 25 dancers (24 sim, 1 sticker) · 37 pulses');
+  assert.match(listening, /Listening · /);
+  assert.match(listening, /25 dancers/);
+  assert.match(listening, /pulses/);
+  assert.match(roomJs, /formatDancerCount\(api\.nd_count\(\),markerCount\(\)\)/);
+  assert.match(roomJs, /'Listening · '/);
+  assert.match(roomJs, /rings\.gate=gate/);
+  assert.match(roomJs, /rings\.rippling/);
+  assert.match(roomJs, /rings\.stroke\(ctx,p\.x,p\.y,radius\*2\.15,k,colors\[k\],low\)/);
+  assert.match(roomJs, /#5ce1e6/);
+  assert.match(roomJs, /#ffd166/);
+  assert.match(roomJs, /#7fe8b3/);
+  assert.match(roomJs, /#81b7fc/);
+  assert.match(roomJs, /#080910/);
+  assert.match(roomJs, /kind==='sticker'/);
+  assert.match(roomJs, /createRadialGradient/);
+  assert.match(roomJs, /12\*scale/);
+  for (const source of [page, studio]) {
+    assert.match(source, /\/neural-dance\/room-lab\.js/);
+    assert.match(source, /\/neural-dance\/wave-ring\.js/);
+    assert.match(source, /id="nd-room-lab"/);
+    assert.match(source, /data-status/);
+  }
 });

@@ -8,7 +8,7 @@ import {mkdirSync} from 'node:fs';
 
 const root = new URL('..', import.meta.url).pathname;
 const mime = {'.html': 'text/html', '.js': 'text/javascript', '.wasm': 'application/wasm', '.css': 'text/css'};
-const liveHtml = (await readFile(new URL('../src/pages/neural-dance/live/index.astro', import.meta.url), 'utf8')).replace(/^---[\s\S]*?---\n/, '');
+const liveHtml = (await readFile(new URL('../src/pages/neural-dance/live/index.astro', import.meta.url), 'utf8')).replace(/^---[\s\S]*?---\n/, '').replace(/<BaseLayout\b[^>]*\/?>\s*/g, '');
 const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://127.0.0.1');
@@ -31,6 +31,28 @@ const browser = await chromium.launch();
 try {
   const page = await browser.newPage({viewport: {width: 844, height: 390}});
   await page.goto(origin + '/neural-dance/live/', {waitUntil: 'domcontentloaded'});
+  await page.evaluate(() => {
+    document.body.classList.add('nd-live-hidden');
+    const banner = document.querySelector('[data-align-banner]');
+    banner.hidden = false;
+    banner.textContent = 'Aligning camera to projector grid…';
+  });
+  const toast = await page.evaluate(() => {
+    const banner = document.querySelector('[data-align-banner]');
+    const chrome = document.querySelector('.nd-live-chrome');
+    const style = getComputedStyle(banner);
+    return {
+      display: style.display,
+      z: style.zIndex,
+      chrome: getComputedStyle(chrome).display,
+      text: banner.textContent
+    };
+  });
+  assert.notEqual(toast.display, 'none');
+  assert.equal(toast.chrome, 'none');
+  assert.equal(Number(toast.z) > 1000000, true);
+  assert.match(toast.text, /Aligning camera/);
+  await page.evaluate(() => document.body.classList.remove('nd-live-hidden'));
   await page.waitForFunction(() => document.getElementById('nd-room-lab')?.dataset.roomReady === '1');
   const boxes = await page.evaluate(() => {
     const box = sel => {
@@ -66,39 +88,53 @@ try {
   await page.screenshot({path: '/opt/cursor/artifacts/neural-dance-live-landscape.png'});
 
   await page.click('[data-action="align"]');
-  await page.waitForFunction(() => document.body.classList.contains('nd-live-aligning') && document.querySelector('[data-cal-pattern]').hidden === false && document.querySelector('[data-live="exit-align"]').hidden === false);
+  await page.waitForFunction(() => document.body.classList.contains('nd-live-aligning') && document.querySelector('[data-cal-pattern]').hidden === false && document.querySelector('[data-cancel-align]').hidden === false);
   const during = await page.evaluate(() => {
-    const exit = document.querySelector('[data-live="exit-align"]');
-    const r = exit.getBoundingClientRect();
-    const top = document.elementFromPoint(r.x + 8, r.y + r.height / 2);
-    const slider = document.querySelector('[data-control="gravity"]').getBoundingClientRect();
+    const cancel = document.querySelector('[data-cancel-align]');
+    const r = cancel.getBoundingClientRect();
+    const top = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
     const pattern = document.querySelector('[data-cal-pattern]');
     const stage = document.getElementById('nd-room-projector').getBoundingClientRect();
     const canvas = document.querySelector('#nd-room-projector [data-stage]');
+    const video = document.querySelector('#nd-camera-mode [data-preview]');
+    const camera = document.getElementById('nd-camera-mode');
+    const banner = document.querySelector('[data-align-banner]');
+    const bannerStyle = getComputedStyle(banner);
     return {
-      exitHit: exit.contains(top) || top === exit,
+      cancelHit: cancel.contains(top) || top === cancel,
+      chrome: getComputedStyle(document.querySelector('.nd-live-chrome')).display,
+      reveal: getComputedStyle(document.querySelector('.nd-live-reveal')).display,
+      cameraTransform: getComputedStyle(camera).transform,
+      videoDisplay: getComputedStyle(video).display,
+      videoMounted: !!video.parentNode,
       mapping: document.getElementById('nd-room-lab').classList.contains('is-mapping'),
-      sliderHit: (() => {
-        const s = document.querySelector('[data-control="gravity"]');
-        const sr = s.getBoundingClientRect();
-        const el = document.elementFromPoint(sr.x + 8, sr.y + sr.height / 2);
-        return s.contains(el) || el === s;
-      })(),
       patternBg: getComputedStyle(pattern).backgroundColor,
       canvasShown: getComputedStyle(canvas).display !== 'none' && canvas.getBoundingClientRect().width > 800,
       stageW: stage.width,
-      stageH: stage.height
+      stageH: stage.height,
+      locks: document.querySelectorAll('.nd-note-lock').length,
+      bannerBottom: bannerStyle.bottom,
+      bannerLeft: bannerStyle.left,
+      bannerTop: bannerStyle.top
     };
   });
-  assert.equal(during.exitHit, true, 'Exit align is covered');
+  assert.equal(during.cancelHit, true, 'Cancel align is covered');
+  assert.equal(during.chrome, 'none', 'chrome stays up during align');
+  assert.equal(during.reveal, 'none');
+  assert.match(during.cameraTransform, /matrix|translate/);
+  assert.notEqual(during.videoDisplay, 'none');
+  assert.equal(during.videoMounted, true);
   assert.equal(during.mapping, false, 'maptastic mapping trapped the page');
-  assert.equal(during.sliderHit, true, 'sliders are covered during align');
   assert.equal(during.canvasShown, true, 'dancers are hidden during align');
+  assert.equal(during.locks, 0);
   assert.ok(during.stageW > 800 && during.stageH > 340);
   assert.ok(during.patternBg === 'rgba(0, 0, 0, 0)' || during.patternBg === 'transparent', `align field is not transparent ${during.patternBg}`);
+  assert.notEqual(during.bannerTop, '16px');
+  assert.ok(parseFloat(during.bannerLeft) < 40, `banner is not at the left ${during.bannerLeft}`);
+  assert.ok(parseFloat(during.bannerBottom) < 40, `banner is not at the bottom ${during.bannerBottom}`);
   await page.screenshot({path: '/opt/cursor/artifacts/neural-dance-live-align.png'});
-  await page.click('[data-live="exit-align"]');
-  await page.waitForFunction(() => !document.body.classList.contains('nd-live-aligning') && document.querySelector('[data-cal-pattern]').hidden === true);
+  await page.click('[data-cancel-align]');
+  await page.waitForFunction(() => !document.body.classList.contains('nd-live-aligning') && document.querySelector('[data-cal-pattern]').hidden === true && document.querySelector('[data-cancel-align]').hidden === true);
 
   await page.setViewportSize({width: 390, height: 844});
   const portrait = await page.evaluate(() => {

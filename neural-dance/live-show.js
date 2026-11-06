@@ -1,7 +1,23 @@
 // Chrome for the full-screen live page: collapse, hide, preview, fullscreen,
 // and automatic projector alignment. The dancer stage and the camera stay in their own modules.
 
-import {ALIGN_TIMEOUT_MS, cornersFromMarkerCenters, findCalibrationMarkers} from './camera-markers.js';
+import {ALIGN_TIMEOUT_MS, cornersFromMarkerCenters, findCalibrationMarkers, showStageToast} from './camera-markers.js';
+
+export const ALIGN_SETTLE_MS = 180;
+
+function nextFrame() {
+  return new Promise(resolve => {
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(() => resolve());
+    else resolve();
+  });
+}
+
+// Two paints, then a short pause, so the projector frame drops the chrome before the baseline.
+export async function waitForAlignSettle(ms = ALIGN_SETTLE_MS) {
+  await nextFrame();
+  await nextFrame();
+  if (ms > 0) await new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export const LIVE_KEY = 'nd-live-show';
 export const LIVE_DEFAULTS = {collapsed: false, hidden: false, preview: true};
@@ -137,6 +153,8 @@ export function attachLiveShow(doc) {
 
   const exitAlign = doc.querySelector('[data-live="exit-align"]');
   if (exitAlign) exitAlign.addEventListener('click', () => cancelAlign(doc));
+  const cancelAlignButton = doc.querySelector('[data-cancel-align]');
+  if (cancelAlignButton) cancelAlignButton.addEventListener('click', () => cancelAlign(doc));
 
   const room = doc.getElementById('nd-room-lab');
   if (!room) return;
@@ -181,6 +199,8 @@ function finishAlign(doc, message) {
   if (pattern) pattern.hidden = true;
   const exit = doc.querySelector('[data-live="exit-align"]');
   if (exit) exit.hidden = true;
+  const cancel = doc.querySelector('[data-cancel-align]');
+  if (cancel) cancel.hidden = true;
   const align = doc.querySelector('#nd-room-lab [data-action="align"]');
   if (align) {
     align.textContent = 'Align projector';
@@ -192,45 +212,73 @@ function finishAlign(doc, message) {
   }
 }
 
-function beginAlign(doc) {
+function flashLock(doc) {
+  const outline = doc.querySelector('[data-align-lock-outline]');
+  if (!outline) return;
+  outline.hidden = false;
+  setTimeout(() => { outline.hidden = true; }, 2500);
+}
+
+function nowMs() {
+  return typeof performance !== 'undefined' ? performance.now() : Date.now();
+}
+
+export async function beginAlign(doc, options = {}) {
   const room = doc.getElementById('nd-room-lab');
-  if (!room) return;
+  if (!room || !doc.body) return;
   clearTimeout(alignTimer);
   doc.body.classList.add('nd-live-aligning');
-  doc.body.classList.remove('nd-live-hidden');
-  const pattern = doc.querySelector('[data-cal-pattern]');
-  if (pattern) pattern.hidden = false;
   const exit = doc.querySelector('[data-live="exit-align"]');
   if (exit) exit.hidden = false;
+  const cancel = doc.querySelector('[data-cancel-align]');
+  if (cancel) cancel.hidden = false;
   const align = room.querySelector('[data-action="align"]');
   if (align) {
     align.textContent = 'Cancel align';
     align.setAttribute('aria-pressed', 'false');
   }
+  showStageToast('Aligning camera to projector grid…', 'busy', 0, doc);
   const camRoot = doc.getElementById('nd-camera-mode');
-  if (camRoot && camRoot.neuralDanceCamera) camRoot.neuralDanceCamera.cancelCalibration(true);
+  const cam = camRoot && camRoot.neuralDanceCamera;
+  if (cam && cam.cancelCalibration) cam.cancelCalibration(true);
+  if (cam && cam.ensureCamera) {
+    try { await cam.ensureCamera(); } catch { /* the grid still tries */ }
+  }
+  if (!doc.body.classList.contains('nd-live-aligning')) return;
+  const settleMs = Number.isFinite(+options.alignSettleMs) ? +options.alignSettleMs : ALIGN_SETTLE_MS;
+  await waitForAlignSettle(settleMs);
+  if (!doc.body.classList.contains('nd-live-aligning')) return;
+  let baseline = null;
+  const before = cam && cam.grabFrame && cam.grabFrame();
+  if (before && before.data) baseline = before.data;
+  const pattern = doc.querySelector('[data-cal-pattern]');
+  if (pattern) pattern.hidden = false;
   const status = room.querySelector('[data-status]');
-  if (status) status.textContent = 'Aligning. The grid stays on the dancers. Point the camera at the projection. Exit align leaves this screen.';
-  const started = typeof performance !== 'undefined' ? performance.now() : Date.now();
+  if (status) status.textContent = 'Aligning camera to projector grid…';
+  const started = nowMs();
   const tick = () => {
     if (!doc.body.classList.contains('nd-live-aligning')) return;
-    const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
-    if (now - started >= ALIGN_TIMEOUT_MS) {
-      finishAlign(doc, 'Could not see the four corners. Use Fine-tune corners.');
+    if (nowMs() - started >= ALIGN_TIMEOUT_MS) {
+      const miss = 'Couldn\'t see all 4 grid corners — check camera aim or tap Fine-tune corners';
+      showStageToast(miss, 'warn', 5000, doc);
+      finishAlign(doc, miss);
       return;
     }
-    const cam = camRoot && camRoot.neuralDanceCamera;
     const frame = cam && cam.grabFrame && cam.grabFrame();
     if (frame) {
-      const centers = findCalibrationMarkers(frame.data, frame.width, frame.height);
+      const base = baseline && frame.data && baseline.length === frame.data.length ? baseline : null;
+      const centers = findCalibrationMarkers(frame.data, frame.width, frame.height, undefined, base);
       if (centers) {
         const scaled = centers.map(blob => ({
           x: (blob.x + 0.5) * frame.scale.scaleX,
           y: (blob.y + 0.5) * frame.scale.scaleY
         }));
         const corners = cornersFromMarkerCenters(scaled, frame.videoWidth, frame.videoHeight);
-        if (corners && cam.setNormalizedCorners(corners, 'Aligned from the camera. Turn markers on for pink notes.')) {
-          finishAlign(doc, 'Aligned from the camera. Turn markers on for pink notes.');
+        if (corners && cam.setNormalizedCorners(corners, 'Camera aligned to grid.')) {
+          if (cam.setMarkersEnabled) cam.setMarkersEnabled(true);
+          showStageToast('✓ Camera aligned to grid! Pink-note tracking active', 'ok', 4000, doc);
+          flashLock(doc);
+          finishAlign(doc, '✓ Camera aligned to grid! Pink-note tracking active');
           return;
         }
       }

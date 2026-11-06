@@ -58,6 +58,10 @@
       {
         "name": "QUICKBOOKS",
         "class_name": "QuickbooksSync"
+      },
+      {
+        "name": "NEURAL_DANCE_DEBUG",
+        "class_name": "NeuralDanceDebugRoom"
       }
     ]
   },
@@ -90,6 +94,12 @@
       "tag": "quickbooks-sync-v1",
       "new_sqlite_classes": [
         "QuickbooksSync"
+      ]
+    },
+    {
+      "tag": "neural-dance-debug-v1",
+      "new_sqlite_classes": [
+        "NeuralDanceDebugRoom"
       ]
     }
   ],

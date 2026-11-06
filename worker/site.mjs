@@ -6,6 +6,10 @@
 // at-cost print code, forwarded to the checkout Worker) and the
 // Apple Pay merchant-id file, and /play (hex gallery proxy; Quake files that still exist stay on assets).
 // Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
+// /site.webmanifest, /neural-dance/manifest.webmanifest, and
+// /neural-dance/live/manifest.webmanifest are not in that list.
+// The assets layer serves them as application/manifest+json (static/_headers sets the
+// Neural Dance type as well) and does not redirect or rewrite them.
 //
 // Host-level redirects now live at the Cloudflare edge (zone Redirect Rules, see docs/static-bypass-zone-rules.md):
 // www.tjm.art -> tjm.art, http://tjm.art -> https, and vermillionaurora.com (and www) -> tjm.art with the
@@ -21,7 +25,8 @@ import { TESTIMONIALS_PAGE, testimonialsPage } from './testimonials-html.mjs';
 import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 import { playGallery, PLAY_WORKER_FIRST } from './play-gallery.mjs';
 import { withSiteSecurityHeaders } from './security-headers.mjs';
-export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST };
+import { handleNeuralDanceDebug, NEURAL_DANCE_DEBUG_API, NEURAL_DANCE_DEBUG_WORKER_FIRST } from './neural-dance-debug.mjs';
+export { TESTIMONIALS_PAGE, PLAY_WORKER_FIRST, NEURAL_DANCE_DEBUG_API, NEURAL_DANCE_DEBUG_WORKER_FIRST };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const COMMISSION_API = '/api/commission';
 export const COMMISSION_PATHS = [COMMISSION_API, '/commission-privacy', '/inventory/status'];
@@ -141,6 +146,16 @@ export default {
     // /play entry is the hex gallery. Quake files that still exist are served from assets
     // inside playGallery; holo and book covers stay on the R2 redirects.
     if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return withSiteSecurityHeaders(await playGallery(request, env));
+    // Opt-in Neural Dance debug room. The Durable Object lives on the checkout
+    // Worker, which is published with `wrangler deploy` and can apply a SQLite
+    // migration. This Worker's preview path is `wrangler versions upload`, which
+    // refuses a new migration. The service binding forwards the WebSocket upgrade.
+    // Static /neural-dance/debug/ stays on assets.
+    if (url.pathname.startsWith(NEURAL_DANCE_DEBUG_API)) {
+      if (env.NEURAL_DANCE_DEBUG) return handleNeuralDanceDebug(request, env);
+      if (!env.CHECKOUT) return Response.json({ error: 'Live debug is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+      return env.CHECKOUT.fetch(request);
+    }
     // Commission form + privacy API, same-origin on tjm.art (Safe Browsing: no PII posted to workers.dev).
     if (COMMISSION_PATHS.includes(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Commission form is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
