@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "vermillion-neural-dance" generated at 2026-11-06T22:47:48.215Z.

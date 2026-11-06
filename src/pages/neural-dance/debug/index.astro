@@ -1,0 +1,143 @@
+---
+// Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+// All rights reserved. No use, copying, modification, or distribution
+// without a written license. Contact tj@tjm.art.
+// License: neural-dance/LICENSE
+// Unlisted diagnostic viewer for one opt-in Neural Dance debug room.
+// No site header. The room code and viewer key live in the query string.
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Neural Dance debug | TJ Murphy</title>
+<meta name="description" content="Private live view of a Neural Dance camera and projector." />
+<link href="/fonts/fonts.css" rel="stylesheet">
+<style is:inline>
+*{box-sizing:border-box}
+html,body{margin:0;background:#07080c;color:#f4f6fb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{min-height:100vh}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:#9baef0}
+main{max-width:1100px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:28px;font-weight:560;margin:0 0 6px}
+h2{font-size:15px;font-weight:600;margin:0 0 8px;color:#c5cada}
+p{line-height:1.45}
+.lead{color:#aab0c0;margin-top:0}
+.frames{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.frame{flex:1 1 420px;max-width:560px;background:#10121a;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:10px}
+.frame canvas{display:block;width:100%;height:auto;background:#05060a;border-radius:12px}
+.btn{border:1px solid rgba(255,255,255,.18);background:#171a24;color:#f4f6fb;border-radius:9px;padding:7px 10px}
+.btn-primary{background:#3158b8;border-color:#527af0}
+.btn[aria-pressed="true"]{background:#1d6b45;border-color:#3dba7a}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid #9baef0;outline-offset:3px}
+.panel{margin-top:16px;padding:12px;background:#10121a;border:1px solid rgba(255,255,255,.12);border-radius:16px}
+.summary,.hover{color:#d5deff;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.meters{display:grid;gap:6px;margin:10px 0}
+.meter{display:flex;align-items:center;gap:8px;color:#aab0c0}
+.meter b{display:inline-block;width:52px;font-weight:550}
+.meter i{display:block;height:8px;width:160px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
+.meter i span{display:block;height:100%;width:100%;background:#81b7fc;transform:scaleX(0);transform-origin:left center}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.1)}
+th{color:#aab0c0;font-weight:550}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+label{display:grid;gap:4px;color:#aab0c0;font-size:13px;min-width:140px;flex:1}
+input[type="range"]{width:100%;accent-color:#81b7fc}
+.mode{display:flex;gap:6px}
+[data-debug-missing]{max-width:640px}
+[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<main>
+  <h1>Neural Dance debug</h1>
+  <p class="lead" data-debug-missing hidden>This page needs a room code and a viewer key from Share live debug. Nothing is streaming.</p>
+  <div data-debug-app hidden>
+    <p class="lead">Room <strong data-debug-room></strong>. Camera and stage update about once a second. Hover the camera for the pixel under the pointer.</p>
+    <div class="frames">
+      <section class="frame">
+        <h2>Camera (480w)</h2>
+        <canvas data-debug-camera width="480" height="253" aria-label="Live camera frame with the homography quad and detected blobs"></canvas>
+        <p class="hover" data-debug-hover>Hover the camera for RGB and the white-balance ratio.</p>
+      </section>
+      <section class="frame">
+        <h2>Projected stage</h2>
+        <canvas data-debug-stage width="480" height="270" aria-label="What the projector is drawing, with detected markers"></canvas>
+      </section>
+    </div>
+    <section class="panel">
+      <h2>Telemetry</h2>
+      <p class="summary" data-debug-summary>Waiting for a frame.</p>
+      <div class="meters" aria-label="Audio meters">
+        <div class="meter"><b>Kick</b><i><span data-debug-meter="kick"></span></i></div>
+        <div class="meter"><b>Bass</b><i><span data-debug-meter="bass"></span></i></div>
+        <div class="meter"><b>Snare</b><i><span data-debug-meter="snare"></span></i></div>
+        <div class="meter"><b>Hat</b><i><span data-debug-meter="hat"></span></i></div>
+      </div>
+      <p class="summary" data-debug-dancers>Waiting for dancer counts.</p>
+      <p class="summary"><span data-debug-source>silent</span> · <span data-debug-gate>Silence gate closed</span> · <span data-debug-floor>noise floor —</span></p>
+      <table data-debug-table>
+        <thead><tr><th>Kind</th><th>Grid</th><th>Stage</th><th>Area</th><th>RGB</th><th>WB ratio</th></tr></thead>
+        <tbody><tr><td colspan="6">No blobs in the latest frame.</td></tr></tbody>
+      </table>
+    </section>
+    <section class="panel">
+      <h2>Room actions</h2>
+      <p class="lead">These apply on the projector as soon as you click. Click the projected stage to add one simulated dancer there.</p>
+      <div class="controls" data-debug-actions>
+        <button class="btn" type="button" data-debug-action="align">Align projector</button>
+        <button class="btn" type="button" data-debug-action="cancel-align">Cancel align</button>
+        <button class="btn" type="button" data-debug-action="clear-sim">Clear sim dancers</button>
+        <button class="btn" type="button" data-debug-action="sim-seed">Seed 24 sim dancers</button>
+        <button class="btn" type="button" data-debug-action="clear-markers">Clear markers</button>
+        <button class="btn" type="button" data-debug-action="start">Start</button>
+        <button class="btn" type="button" data-debug-action="pause">Pause</button>
+        <button class="btn" type="button" data-debug-action="markers-on">Markers on</button>
+        <button class="btn" type="button" data-debug-action="markers-off">Markers off</button>
+        <button class="btn" type="button" data-debug-action="hide-controls">Hide live controls</button>
+        <button class="btn" type="button" data-debug-action="show-controls">Show live controls</button>
+        <button class="btn" type="button" data-debug-action="reset-camera">Reset camera defaults</button>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Live tuning</h2>
+      <div class="controls">
+        <label>Gravity <input data-debug-control="gravity" type="range" min="0" max="6" step="0.1" value="2.5"></label>
+        <label>Wander <input data-debug-control="wander" type="range" min="0" max="0.8" step="0.05" value="0.25"></label>
+        <label>Threshold <input data-debug-control="threshold" type="range" min="1" max="1.9" step="0.05" value="1.4"></label>
+        <label>Peak hold <input data-debug-control="peak" type="range" min="1" max="6" step="0.1" value="2.8"></label>
+        <label>New dancer
+          <select data-debug-control="type">
+            <option value="0">Kick</option>
+            <option value="1" selected>Bass</option>
+            <option value="2">Snare</option>
+            <option value="3">Hi-hat</option>
+          </select>
+        </label>
+        <label>Kick sensitivity <input data-debug-control="sens-0" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Bass sensitivity <input data-debug-control="sens-1" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Snare sensitivity <input data-debug-control="sens-2" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Hi-hat sensitivity <input data-debug-control="sens-3" type="range" min="0" max="3" step="0.05" value="1"></label>
+        <label>Quiet threshold <input data-debug-control="quiet" type="range" min="0" max="0.4" step="0.01" value="0.08"></label>
+        <div class="mode" data-debug-mode role="group" aria-label="Track">
+          <button class="btn" type="button" data-mode="both" aria-pressed="true">Both</button>
+          <button class="btn" type="button" data-mode="pink" aria-pressed="false">Pink notes</button>
+          <button class="btn" type="button" data-mode="stickers" aria-pressed="false">Dancer stickers</button>
+        </div>
+        <label>Note sensitivity <input data-debug-control="note" type="range" min="0.25" max="1" step="0.01" value="0.45"></label>
+        <label>Sticker sensitivity <input data-debug-control="sticker" type="range" min="0" max="1" step="0.01" value="0.5"></label>
+        <label>Hue range <input data-debug-control="hue" type="range" min="18" max="80" step="1" value="32"></label>
+        <label>Smallest note <input data-debug-control="size" type="range" min="4" max="200" step="1" value="22"></label>
+        <button class="btn btn-primary" type="button" data-debug-send>Send tuning to room</button>
+      </div>
+      <p class="summary" data-debug-sent></p>
+    </section>
+  </div>
+</main>
+<script type="module" src="/neural-dance/debug-viewer.js" is:inline></script>
+</body>
+</html>

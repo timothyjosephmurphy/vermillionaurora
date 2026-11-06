@@ -1,0 +1,46 @@
+Neural Dance
+Copyright (c) 2026 TJ Murphy / Vermillion Aurora Productions
+All rights reserved.
+
+TJ Murphy, sole proprietorship Vermillion Aurora Productions, owns the
+Neural Dance software and assets covered by this file.
+
+Covered material
+----------------
+
+This file applies to the Neural Dance material in this repository:
+
+- src/pages/neural-dance/
+- neural-dance/, except neural-dance/vendor/
+- worker/neural-dance-debug.mjs
+- Neural Dance tests: tests/neural-dance-*.mjs,
+  tests/neural-dance-*.browser-test.mjs, and
+  tests/fixtures/neural-dance-camera.html
+
+That includes the C++ mural runtime, the committed neural-dance.wasm built
+from it, and the images and scripts in those paths.
+
+Other files in this repository, including the rest of the tjm.art website,
+are outside this file.
+
+Reservation of rights
+---------------------
+
+No use, copying, modification, or distribution of the covered material is
+permitted without a written license from TJ Murphy.
+
+The covered material is proprietary. It is not source-available. Access to
+this repository is not a license.
+
+Contact tj@tjm.art. A summary for venues and partners is in
+COMMERCIAL-LICENSE.md. Source code is shared only under a written agreement.
+
+Third-party components
+----------------------
+
+Files in neural-dance/vendor/ keep the license shipped in those files.
+Dependency notices are in THIRD_PARTY_NOTICES.md. This file does not
+relicense third-party components.
+
+This file reserves rights. It is not legal advice. Have a lawyer review it,
+and any written license, before you rely on either.

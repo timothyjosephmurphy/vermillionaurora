@@ -1,0 +1,8 @@
+{
+  "name": "neural-dance",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-pages.mjs"
+  }
+}
