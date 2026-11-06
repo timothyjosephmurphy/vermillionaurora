@@ -24,7 +24,7 @@ Create an [account API token](https://developers.cloudflare.com/fundamentals/api
 
 Editor on those two Workers covers every Workers API call these workflows make:
 
-- `wrangler deploy` of `vermillion-commissions` from `cloudflare/wrangler.jsonc` (script, cron triggers, settings, version message, `CHECKOUT_RELEASE`). Durable Object classes (`PaintingStock`, `SalesLedger`, `BitcoinOrder`, `CartOrder`, `QuickbooksSync`) and the Images binding follow the Worker permission. They do not have a separate token permission. [Durable Objects permissions](https://developers.cloudflare.com/workers/authorization/durable-objects/).
+- `wrangler deploy` of `vermillion-commissions` from `cloudflare/wrangler.jsonc` (script, cron triggers, settings, version message, `CHECKOUT_RELEASE`). Durable Object classes (`PaintingStock`, `SalesLedger`, `BitcoinOrder`, `CartOrder`, `QuickbooksSync`, `NeuralDanceDebugRoom`) and the Images binding follow the Worker permission. They do not have a separate token permission. [Durable Objects permissions](https://developers.cloudflare.com/workers/authorization/durable-objects/).
 - Worker secret upload of `QBO_CLIENT_ID` and `QBO_CLIENT_SECRET` during that deploy.
 - `PUT` and `DELETE` `https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-commissions/secrets` for the temporary `CHECKOUT_AUDIT_TOKEN` in `payments/verify-production.mjs`.
 - `wrangler rollback --name vermillion-commissions` and `wrangler rollback --name vermillionaurora`.
