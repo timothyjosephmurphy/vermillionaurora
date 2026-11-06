@@ -9,6 +9,8 @@ import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN,BORDERED_LAYOUT} from '../catalog/edition-layout.mjs';
 import {printOptions} from '../catalog/print-sizing.mjs';
 import {groupPrintProducts} from '../cloudflare/finerworks-quotes.mjs';
+import {existsSync} from 'node:fs';
+import {printMasterRecord} from '../scripts/lib/print-master-file.mjs';
 const paintings=products.filter(p=>p.artist==='Paul Murphy');
 test('all 38 paintings use a 1 inch style 8 sheet and are priced from a live FinerWorks quote',()=>{
   assert.equal(EDITION_BORDER_IN,1);assert.equal(EDITION_LAYOUT,'full-image-white-border-v2');
@@ -82,7 +84,9 @@ test('new sells do not keep a style 9 crop, and the frozen order manifest still 
 });
 test('every generated print file matches its approved hash, paper dimensions and white safety edge',async()=>{
   for(const p of products.filter(p=>config.artworks[p.id]?.sizing==='image-proportional'))for(const {asset} of Object.values(config.artworks[p.id].variants)){
-    const bytes=await readFile(new URL('../static/print-editions/'+asset.sha256+'.jpg',import.meta.url));
+    const file=new URL('../static/print-editions/'+asset.sha256+'.jpg',import.meta.url);
+    if(!existsSync(file)){assert.equal(printMasterRecord(asset.sourceSha256)?.sha256,asset.sourceSha256,`${p.id} ${asset.sha256}`);continue;}
+    const bytes=await readFile(file);
     assert.equal(createHash('sha256').update(bytes).digest('hex'),asset.sha256);
     const metadata=await sharp(bytes).metadata();assert.equal(metadata.width,asset.layoutSpec.widthPx);assert.equal(metadata.height,asset.layoutSpec.heightPx);
     const band=Math.min(80,metadata.height);const edge=await sharp(bytes).extract({left:0,top:0,width:metadata.width,height:band}).raw().toBuffer();assert(edge.every(v=>v>=250));

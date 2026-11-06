@@ -1,7 +1,7 @@
 import {finerworksRequest} from './finerworks-api.mjs';
 import {finerworksRecipient,groupPrintProducts,quoteFinerWorksPrints} from './finerworks-quotes.mjs';
 import {moneyCents} from '../catalog/print-pricing.mjs';
-import {printAssetUrl,printThumbnailUrl} from './print-asset-policy.mjs';
+import {fulfillmentImage} from './print-master-sign.mjs';
 
 const terminal=new Set(['complete','review','cancelled','test-complete']);
 const reference=/^va-cart-[0-9a-f]{32}-prints$/;
@@ -10,7 +10,7 @@ export function finerworksOrderingReady(env,mode=env.CHECKOUT_MODE) {
     !!env.FINERWORKS_WEB_API_KEY&&!!env.FINERWORKS_APP_KEY&&
     (mode==='sandbox'||!!env.FINERWORKS_PAYMENT_TOKEN&&env.FINERWORKS_PAYMENT_TOKEN!=='xxxx');
 }
-export function newFinerWorksJob(env,order,items) {
+export async function newFinerWorksJob(env,order,items) {
   // The provider rejects the 51-character UUID reference. Keep all UUID bits in 47 characters.
   const q=order.quote,mode=order.mode,po=`va-cart-${String(order.id||'').replaceAll('-','')}-prints`;
   if(!finerworksOrderingReady(env,mode)||!reference.test(po)||q.printQuote?.provider!=='finerworks'||q.printQuote.mode!==mode||
@@ -18,9 +18,10 @@ export function newFinerWorksJob(env,order,items) {
   groupPrintProducts(items,po);
   const callbackKey=[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
   const origin=mode==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
+  const images=await Promise.all(items.map(item=>fulfillmentImage(env,item.assetUrl,mode)));
   const request={merchantReference:po,orders:[{order_po:po,order_key:null,recipient:finerworksRecipient(q.address,po),
-    order_items:items.map(item=>({product_order_po:po,product_sku:item.sku,product_qty:item.quantity,
-      product_title:item.title.slice(0,50),product_image:{product_url_file:printAssetUrl(item.assetUrl,mode),product_url_thumbnail:printThumbnailUrl(item.assetUrl,mode)}})),
+    order_items:items.map((item,index)=>({product_order_po:po,product_sku:item.sku,product_qty:item.quantity,
+      product_title:item.title.slice(0,50),product_image:images[index]})),
     shipping_code:q.printQuote.shippingMethod,test_mode:mode==='sandbox',
     webhook_order_status_url:`${origin}/checkout/prints/callback?order=${order.id}&key=${callbackKey}`}],validate_only:false};
   // Payment credentials are attached only at the provider boundary, never persisted.
@@ -65,7 +66,10 @@ export async function fulfillFinerWorks(env,job,persist) {
     next={...next,status:'creating',attemptedAt:Date.now()};await persist(next);
     try {
       const {merchantReference,...body}=next.request;
-      const result=await finerworksRequest(env,'/v3/submit_orders_v2',{...body,payment_token:job.mode==='sandbox'?'xxxx':env.FINERWORKS_PAYMENT_TOKEN});
+      // Sign at submission so FinerWorks has the full lifetime, including a retry of a saved job.
+      const fresh=await Promise.all(next.items.map(item=>fulfillmentImage(env,item.assetUrl,next.mode)));
+      const orders=body.orders.map(order=>({...order,order_items:order.order_items.map((item,index)=>({...item,product_image:fresh[index]}))}));
+      const result=await finerworksRequest(env,'/v3/submit_orders_v2',{...body,orders,payment_token:job.mode==='sandbox'?'xxxx':env.FINERWORKS_PAYMENT_TOKEN});
       const row=parseOrder(next,result,{submitted:true});
       next=statusUpdate(next,row);await persist(next);return terminal.has(next.status);
     } catch(error) {

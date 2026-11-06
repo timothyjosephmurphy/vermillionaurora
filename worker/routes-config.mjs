@@ -39,6 +39,8 @@ export const LNURLP_PATTERN = `${LNURLP_PREFIX}*`;
 export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*', '/catalog/products.json', '/catalog-admin', '/catalog-admin/*'];
 export const PLAY_WORKER_FIRST = ['/play', '/play/*'];
 
+export const PRINT_MASTER_WORKER_FIRST = ['/print-masters/*', '/api/print-master/*'];
+
 export const WORKER_FIRST_PATTERNS = [
   ...COMMISSION_PATHS,
   ...QUICKBOOKS_PATHS,
@@ -54,4 +56,5 @@ export const WORKER_FIRST_PATTERNS = [
   LNURLP_PATTERN,
   ...CATALOG_WORKER_FIRST,
   ...PLAY_WORKER_FIRST,
+  ...PRINT_MASTER_WORKER_FIRST,
 ];

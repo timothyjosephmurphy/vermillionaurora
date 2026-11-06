@@ -61,7 +61,7 @@ test('framed checkout uses the complete configured code through pricing, shippin
   await assert.rejects(quoteFinerWorksPrints(env,[{...item,amount:'25.00'}],address),/cost changed/);
   await assert.rejects(quoteFinerWorksPrints(env,[{...item,amount:'140.00'}],address),/cost changed/);
   assert.throws(()=>groupPrintProducts([{...item,frame:{...item.frame,size:{width:8,height:10}}}],'test'),/frame/);
-  const job=newFinerWorksJob(env,{id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',mode:'sandbox',quote:{address,printQuote:quote}},[item]);
+  const job=await newFinerWorksJob(env,{id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',mode:'sandbox',quote:{address,printQuote:quote}},[item]);
   assert.equal(job.request.orders[0].order_items[0].product_sku,sku);assert.deepEqual(finerworksFulfillmentRecord(job).items[0].frame,item.frame);
   assert.equal(publicCartItem(item).frame.glazing.name,'Premium Clear');assert.equal(publicCartItem(item).frame.name,'Black');
 });

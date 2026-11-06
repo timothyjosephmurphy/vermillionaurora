@@ -165,7 +165,7 @@ export class CartOrder extends DurableObject {
     const jobs=d.squareSandboxNoFulfillment?[]:d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
     const prints=d.squareSandboxNoFulfillment?[]:d.quote.items.filter(i=>i.type==='print').map(({listAmount,priceCode,...i})=>listAmount?{...i,amount:listAmount}:i);
     let printJob=d.squareSandboxNoFulfillment?undefined:d.printJob;
-    if(prints.length&&!printJob)try {printJob=newPrintJob(this.env,d,prints);}catch {
+    if(prints.length&&!printJob)try {printJob=await newPrintJob(this.env,d,prints);}catch {
       // A configuration change after approval must never prevent recording payment.
       printJob={provider:d.quote.printQuote?.provider||prints[0].provider,status:'review',mode:d.mode,items:prints,shipments:[],
         request:{merchantReference:`va-cart-${d.id}-prints`},quotedProductionCost:d.quote.printQuote?.productionCost,quotedShipping:d.quote.printQuote?.shipping,

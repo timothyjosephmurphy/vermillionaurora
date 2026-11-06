@@ -87,7 +87,17 @@ export async function keyHash(key) { return [...new Uint8Array(await crypto.subt
 function printBitcoinOffered(env) {
   try {const u=new URL(env.BTCPAY_URL);return env.CHECKOUT_MODE==='live'&&env.BTCPAY_CHECKOUT_ENABLED==='true'&&u.protocol==='https:'&&!u.username&&!u.password&&!!env.BTCPAY_STORE_ID&&!!env.BTCPAY_API_KEY&&!!env.BTCPAY_WEBHOOK_SECRET&&!!env.BITCOIN_ORDERS;}catch{return false;}
 }
+function publicPreview(preview) {
+  if (!preview || typeof preview !== 'object') return preview;
+  const src = String(preview.src || '');
+  if (!/\/print-masters\//.test(src)) return preview;
+  const full = preview.fullSrc && !/print-masters/.test(String(preview.fullSrc)) ? preview.fullSrc : '';
+  const next = {...preview};
+  if (full) next.src = full;
+  else delete next.src;
+  return next;
+}
 export function publicCartItem(item) {
   const {id,type,productId,title,amount,quantity,imageSize,paperSize,paper,preview,mat,frame,sampleOnly,commission,listAmount,priceCode}=item;
-  return {id,type,title,amount,quantity,...(listAmount?{listAmount,priceCode}:{}),...(type==='deposit'&&commission?{commission}:{}),...(type==='print'?{productId,imageSize,paperSize,paper,preview,...(sampleOnly?{sampleOnly:true}:{}),...(mat?{mat:{name:mat.name,outer:mat.outer,window:mat.window}}:{}),...(frame?{frame:{name:frame.name,size:frame.size,glazing:{name:frame.glazing.name}}}:{})}:{})};
+  return {id,type,title,amount,quantity,...(listAmount?{listAmount,priceCode}:{}),...(type==='deposit'&&commission?{commission}:{}),...(type==='print'?{productId,imageSize,paperSize,paper,preview:publicPreview(preview),...(sampleOnly?{sampleOnly:true}:{}),...(mat?{mat:{name:mat.name,outer:mat.outer,window:mat.window}}:{}),...(frame?{frame:{name:frame.name,size:frame.size,glazing:{name:frame.glazing.name}}}:{})}:{})};
 }

@@ -20,7 +20,10 @@ test('every main-gallery TJ print appears once at its largest ready black-frame 
     const scaleMax=Math.min((pw+tolerance)/art.sourceWidth,(ph+tolerance)/art.sourceHeight);
     assert(scaleMin<=scaleMax,`Uncropped source proportions within pixel rounding: ${art.id}`);
     assert(art.imageWidth<art.width-2*art.frameWidth&&art.imageHeight<art.height-2*art.frameWidth,'Entire image fits within the mat');
-    assert.equal(art.sources.at(-1).src,art.fullSrc);assert.equal(art.sources.at(-1).width,art.sourceWidth);
+    if(/\/print-masters\//.test(art.fullSrc)){
+      assert(art.sources.length&&art.sources.every(s=>!/print-masters/.test(s.src)),art.id);
+      assert(art.sources.at(-1).width<art.sourceWidth,art.id);
+    }else{assert.equal(art.sources.at(-1).src,art.fullSrc);assert.equal(art.sources.at(-1).width,art.sourceWidth);}
     assert.match(art.href,/^\/products\/[a-z0-9-]+\/$/);
   }
 });

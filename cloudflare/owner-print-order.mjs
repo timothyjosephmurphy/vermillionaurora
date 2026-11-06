@@ -34,7 +34,7 @@ export async function ownerPrintOrder(request,env){
   if(input.submit!==true)return reply({dryRun:true,printId:items[0].id,title:items[0].title,sku:items[0].sku,mode:quote.mode,...costs(quote)});
   if(!finerworksOrderingReady(env)||!env.SALES_ARCHIVE)return reply({error:'FinerWorks ordering is not enabled'},409);
   const id=crypto.randomUUID();
-  let job=newFinerWorksJob(env,{id,mode:env.CHECKOUT_MODE,quote:{address:input.address,printQuote:quote}},items);
+  let job=await newFinerWorksJob(env,{id,mode:env.CHECKOUT_MODE,quote:{address:input.address,printQuote:quote}},items);
   const persist=async next=>{job=next;await env.SALES_ARCHIVE.put(recordKey,JSON.stringify({kind:'owner-print-resubmit',replaces:input.replaces,id,job}),{httpMetadata:{contentType:'application/json'}});};
   await persist(job);await fulfillFinerWorks(env,job,persist);
   return reply({orderId:job.providerId||null,reference:job.request.merchantReference,status:job.status,title:items[0].title,...costs(quote),...(job.lastError?{error:job.lastError}:{}),...(job.reason?{reason:job.reason}:{})});

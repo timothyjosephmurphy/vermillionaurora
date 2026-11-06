@@ -24,11 +24,12 @@ import { testimonialsPage } from './testimonials-html.mjs';
 import { GALLERY_3D_URL } from '../src/data/gallery-entry.mjs';
 import { playGallery } from './play-gallery.mjs';
 import { withSiteSecurityHeaders } from './security-headers.mjs';
+import { isPrintMasterRequest, servePrintMaster, PRINT_MASTER_WORKER_FIRST } from './print-masters.mjs';
 import {
   COMMISSION_PATHS, CATALOG_WORKER_FIRST, QUICKBOOKS_PATHS, TESTIMONIALS_API, TESTIMONIALS_PAGE, NEWSLETTER_PATHS,
   ORIGINALS_API, CART_API, STICKERS_API, SHOP_REDIRECTS, APPLE_PAY_ASSOCIATION_PATH, NOSTR_JSON_PATH, LNURLP_PREFIX, PLAY_WORKER_FIRST,
 } from './routes-config.mjs';
-export { TESTIMONIALS_PAGE, TESTIMONIALS_API, PLAY_WORKER_FIRST, COMMISSION_PATHS, CATALOG_WORKER_FIRST, NEWSLETTER_PATHS, ORIGINALS_API, CART_API, STICKERS_API, SHOP_REDIRECTS, APPLE_PAY_ASSOCIATION_PATH, NOSTR_JSON_PATH, LNURLP_PREFIX };
+export { TESTIMONIALS_PAGE, TESTIMONIALS_API, PLAY_WORKER_FIRST, COMMISSION_PATHS, CATALOG_WORKER_FIRST, NEWSLETTER_PATHS, ORIGINALS_API, CART_API, STICKERS_API, SHOP_REDIRECTS, APPLE_PAY_ASSOCIATION_PATH, NOSTR_JSON_PATH, LNURLP_PREFIX, PRINT_MASTER_WORKER_FIRST };
 // Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
 export const COMMISSION_API = COMMISSION_PATHS[0];
 
@@ -133,6 +134,9 @@ export default {
     const redirect = hostRedirect(request, env);
     if (redirect) return redirect;
     const url = new URL(request.url);
+    // Full-resolution print masters are private. This runs before assets, including on the legacy
+    // host that does not redirect /print-masters/. Unsigned requests are 403 and never read R2.
+    if (isPrintMasterRequest(url.pathname)) return servePrintMaster(request, env);
     // /play entry is the hex gallery. Quake files that still exist are served from assets
     // inside playGallery; holo and book covers stay on the R2 redirects.
     if (url.pathname === '/play' || url.pathname.startsWith('/play/')) return withSiteSecurityHeaders(await playGallery(request, env));

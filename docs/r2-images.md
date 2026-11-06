@@ -33,6 +33,32 @@ edge. A D1 painting row can therefore hold e.g. `display_keys = ["display/x-ab12
 `Cache-Control: public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800`:
 a year at the edge (purged on swap), one day in browsers. Not `immutable`, because swaps reuse names.
 
+## Private print masters
+
+Full-resolution files in `static/print-masters/` are not public and are not part of the git checkout.
+They belong in the private R2 bucket `tjm-print-masters` (Worker binding `PRINT_MASTERS` on the
+website Worker). That bucket has no img.tjm.art custom domain. `GET` or `HEAD /print-masters/*`
+without a valid `exp` and `sig` returns 403. FinerWorks still receives the approved bordered
+edition URL (`/print-editions/<sha>.jpg`). When `PRINT_MASTER_SIGNING_SECRET` is set on the checkout
+Worker, that URL is sent with an HMAC-SHA256 query string good for 48 hours (maximum 72).
+
+`static/display/` stays in git. Live `/display/*` already 301s to img.tjm.art, and the build, catalog
+checks, and cart `data-image-src` still read the committed display files.
+
+Before merging the cutover, create the bucket and upload every master from `origin/main` (the tree
+that still contains the files). Dry-run first; it does not contact R2:
+
+```
+node scripts/sync-print-masters-to-r2.mjs --from-git origin/main --dry-run
+node scripts/sync-print-masters-to-r2.mjs --from-git origin/main
+node scripts/sync-print-masters-to-r2.mjs --from-git origin/main --verify
+```
+
+Set the same `PRINT_MASTER_SIGNING_SECRET` on `vermillionaurora` and `vermillion-commissions`.
+A production website build (`PRINT_EDITIONS_REQUIRED=1`) rebuilds the edition JPEGs from those R2
+objects when `R2_ACCESS_KEY_ID` and `R2_SECRET_ACCESS_KEY` are present. Without the bytes it fails
+instead of deploying a site that dropped the print files.
+
 ## Scripts
 
 - `node scripts/sync-images-r2.mjs [--force]` uploads `static/display/` (and
