@@ -5,11 +5,6 @@ interface SiteSecrets {
 	CATALOG_ADMIN_PASSWORD: string;
 	/** Optional stand-in for the hex gallery fetch. Not a deployed binding. */
 	HEX_FETCH?: Fetcher;
-	/**
-	 * The debug room lives on the checkout Worker. The site Worker forwards
-	 * /api/neural-dance/debug/* unless this binding is present.
-	 */
-	NEURAL_DANCE_DEBUG?: DurableObjectNamespace;
 }
 interface SiteEnv extends SiteSecrets {}
 declare namespace Cloudflare {

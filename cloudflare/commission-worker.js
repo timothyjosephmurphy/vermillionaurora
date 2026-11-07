@@ -31,8 +31,7 @@ import { pollTips } from './btcpay-tips.mjs';
 import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestimonialVideos } from './testimonials.mjs';
 import { handleTestimonialEmail } from './testimonial-reply.mjs';
 import { newsletterApi } from './newsletter.mjs';
-import { handleNeuralDanceDebug } from '../worker/neural-dance-debug.mjs';
-export { NeuralDanceDebugRoom } from '../worker/neural-dance-debug.mjs';
+export { NeuralDanceDebugRoom } from './neural-dance-debug-room.mjs';
 export default {
   // Cloudflare Email Routing (stories@reply.tjm.art). Does not run for ordinary HTTP requests.
   async email(message, env, ctx) {
@@ -49,7 +48,6 @@ export default {
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
     // Before the catalog load so a debug socket is not blocked on the print catalog or D1.
-    if (path.startsWith('/api/neural-dance/debug/')) return handleNeuralDanceDebug(request, env);
     try { await ensurePrintCatalog(env); }
     catch (error) {
       console.error('Print catalog load failed', error);

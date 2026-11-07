@@ -1,20 +1,10 @@
 // Classifies changed files (one per line on stdin) into a PR gate tier and writes GitHub outputs.
-//   neural-dance - only Neural Dance pages, scripts, tests, docs, or the checkout debug room:
-//                  Neural Dance tests. No site rebuild. Checkout deploys only for the debug room.
 //   blog     - a story publish only: build + the new article is on the index. No Playwright.
 //   content  - catalog data, images, other static assets, docs: build + changed pages load.
 //   code     - site code: unit tests + browser tests for touched areas + smoke.
 //   full     - checkout/payments/worker/CI/dependency changes, manual runs, unknown diffs: the full suite.
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
-
-// Pages, scripts, wasm, and manifests that Workers Builds publishes inside dist/.
-// C++ sources and build.sh are not on the site until the committed wasm changes.
-const neuralSite=[/^neural-dance\/(?!src\/|build\.sh$)/,/^src\/pages\/neural-dance\//,/^static\/neural-dance\//,/^static\/brand\/neural-dance-share\.jpg$/];
-// The debug Durable Object runs on vermillion-commissions. The website Worker
-// only forwards /api/neural-dance/debug/ and does not bind the class.
-const neuralCheckout=/^worker\/neural-dance-debug\.mjs$/;
-const neuralAllow=[...neuralSite,/^neural-dance\/src\//,/^neural-dance\/build\.sh$/,/^tests\/neural-dance-[^/]+\.mjs$/,/^tests\/fixtures\/neural-dance-/,/^scripts\/render-neural-dance-share\.mjs$/,/^docs\/neural-dance-project-history\.md$/,neuralCheckout];
 
 export function classifyChangeSet(files, env=process.env) {
 files=[...files];
@@ -45,11 +35,8 @@ const printMaster=[/^catalog\/prints\.json$/,/^catalog\/[a-z-]*print-masters\.js
 let tier;
 const printOnly=files.length>0&&files.includes('catalog/prints.json')&&files.every(f=>printMaster.some(r=>r.test(f)));
 const blogShaped=files.length>0&&files.every(f=>blogAllow.some(r=>r.test(f)))&&files.some(f=>blogAnchor.test(f));
-const neuralOnly=files.length>0&&files.every(f=>neuralAllow.some(r=>r.test(f)));
-// Unknown, manual, and huge diffs stay on the full suite. Neural Dance is only
-// when every file is in the allowlist, so a mixed change keeps today's tier.
+// Unknown, manual, and huge diffs stay on the full suite.
 if(env.FORCE_FULL==='true'||!files.length||files.length>=3000)tier='full';
-else if(neuralOnly)tier='neural-dance';
 else if(printOnly)tier='content';
 else if(files.some(f=>full.some(r=>r.test(f))))tier='full';
 else if(blogShaped)tier='blog';
@@ -61,22 +48,8 @@ for(const f of files){
   for(const [r,tests] of areas)if(r.test(f))for(const t of tests){if(t==='ROOM')room=true;else if(fs.existsSync(t))browser.add(t);}
 }
 const blog=files.some(f=>/(^|\/)blog(\/|-)/.test(f));
-const fast=tier==='neural-dance';
-const out={tier,print_quotes:String(tier==='content'&&printOnly),browser_tests:[...browser].join(' '),room:String(room),blog:String(blog),count:String(files.length),deploy_checkout:String(!fast||files.some(f=>neuralCheckout.test(f))),deploy_site:String(!fast||files.some(f=>neuralSite.some(r=>r.test(f))))};
+const out={tier,print_quotes:String(tier==='content'&&printOnly),browser_tests:[...browser].join(' '),room:String(room),blog:String(blog),count:String(files.length),deploy_checkout:'true',deploy_site:'true'};
 return out;
-}
-
-// Verbatim files Workers Builds copies into dist/. Astro pages are not byte-identical.
-export function neuralDanceAssetUrl(file) {
-  if(!neuralSite.some(rule=>rule.test(file)))return '';
-  if(file.startsWith('neural-dance/'))return 'https://tjm.art/'+file;
-  if(file.startsWith('static/'))return 'https://tjm.art/'+file.slice('static/'.length);
-  return '';
-}
-export function neuralDancePageUrl(file) {
-  const match=/^src\/pages\/neural-dance\/(?:(.+)\/)?index\.astro$/.exec(file);
-  if(!match)return '';
-  return 'https://tjm.art/neural-dance/'+(match[1]?match[1]+'/':'');
 }
 
 const invoked=process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href;

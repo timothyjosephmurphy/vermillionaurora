@@ -36,7 +36,7 @@ test('tsconfig projects and the typecheck script stay wired', () => {
 });
 
 test('generated Env types cover wrangler bindings and secret augmentations', () => {
-  for (const name of ['ASSETS', 'CATALOG_DB', 'CHECKOUT', 'IMAGES', 'PRIMARY_HOST', 'LEGACY_REDIRECT', 'CATALOG_ADMIN_PASSWORD', 'HEX_FETCH', 'NEURAL_DANCE_DEBUG']) {
+  for (const name of ['ASSETS', 'CATALOG_DB', 'CHECKOUT', 'IMAGES', 'PRIMARY_HOST', 'LEGACY_REDIRECT', 'CATALOG_ADMIN_PASSWORD', 'HEX_FETCH']) {
     assert.equal(site.has(name), true, name);
   }
   for (const name of ['ASSETS', 'CATALOG_DB', 'COMMISSION_UPLOADS', 'SALES_ARCHIVE', 'IMAGES', 'PAINTING_STOCK', 'SALES_LEDGER', 'BITCOIN_ORDERS', 'CART_ORDERS', 'QUICKBOOKS', 'NEURAL_DANCE_DEBUG', 'SQUARE_ACCESS_TOKEN', 'BTCPAY_API_KEY', 'BTCPAY_STORE_ID', 'BTCPAY_WEBHOOK_SECRET', 'FINERWORKS_APP_KEY', 'FINERWORKS_PAYMENT_TOKEN', 'FINERWORKS_WEB_API_KEY', 'SHIPPO_TOKEN', 'CATALOG_ADMIN_PASSWORD', 'TESTIMONIAL_REPLY_ADDRESS']) {

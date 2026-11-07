@@ -58,9 +58,6 @@ index.html
 links/index.html
 murals/berlin-el-salvador/index.html
 murals/index.html
-neural-dance/debug/index.html
-neural-dance/index.html
-neural-dance/live/index.html
 originals-manager/index.html
 play/bilbao/index.html
 play/fb/inapp/index.html
