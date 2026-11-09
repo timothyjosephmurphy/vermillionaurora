@@ -4,23 +4,26 @@ import {readFileSync} from 'node:fs';
 import {CSP_REPORT_ONLY} from '../worker/security-headers.mjs';
 import {curateTestimonials, receivedLabel, renderCuratedTestimonial, testimonials, testimonialPins} from '../src/data/testimonials.mjs';
 
-const CHRIS_VIDEO = 'https://img.tjm.art/testimonials/chris-flanders/chris-flanders-720p.mp4';
-const CHRIS_POSTER = 'https://img.tjm.art/testimonials/chris-flanders/chris-flanders-poster.jpg';
+const CHRIS_VIDEO = 'https://img.tjm.art/testimonials/chris-flanders/chris-flanders-portrait-720.mp4';
+const CHRIS_POSTER = 'https://img.tjm.art/testimonials/chris-flanders/chris-flanders-portrait-poster.jpg';
+const CHRIS_QUOTE = "This beautiful work of art is a portrait TJ painted of me. I love it. It's an excellent likeness and has TJ's unique style and artistic expression, and I love having a one-of-a-kind original in my living room.";
+const LANDSCAPE_CLIP = /chris-flanders-(?:720p|1080p)\.mp4|chris-flanders-poster\./;
 
 const consent = (extra = {}) => ({publish: true, name: true, photo: false, selfie: false, city: false, map: false, video: false, ...extra});
 
-test('Chris Flanders is a landscape video card with no quote, city or map pin', () => {
+test('Chris Flanders is a portrait video card with his quote and no city or map pin', () => {
   assert.equal(testimonials.length, 1);
   const chris = testimonials[0];
   assert.equal(chris.id, '2026-11-chris-flanders');
   assert.equal(chris.name, 'Chris Flanders');
   assert.equal(chris.received, '2026-11-08');
   assert.equal(receivedLabel(chris.received), 'November 8, 2026');
-  assert.equal(chris.quote, '');
+  assert.equal(chris.quote, CHRIS_QUOTE);
   assert.equal(chris.city, '');
   assert.equal(chris.pin, null);
-  assert.equal(chris.painting, '');
-  assert.deepEqual(chris.video, {src: CHRIS_VIDEO, type: 'video/mp4', poster: CHRIS_POSTER, width: 1280, height: 720});
+  assert.equal(chris.painting, 'Portrait commission');
+  assert.equal(chris.paintingHref, '');
+  assert.deepEqual(chris.video, {src: CHRIS_VIDEO, type: 'video/mp4', poster: CHRIS_POSTER, width: 720, height: 1280});
   assert.deepEqual(testimonialPins, []);
 
   const html = renderCuratedTestimonial(chris);
@@ -28,21 +31,27 @@ test('Chris Flanders is a landscape video card with no quote, city or map pin', 
   assert.match(video, /\bcontrols\b/);
   assert.match(video, /\bplaysinline\b/);
   assert.match(video, /\bpreload="metadata"/);
-  assert.match(video, /\bwidth="1280"/);
-  assert.match(video, /\bheight="720"/);
+  assert.match(video, /\bwidth="720"/);
+  assert.match(video, /\bheight="1280"/);
   assert.match(video, new RegExp(`poster="${CHRIS_POSTER.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`));
   assert.doesNotMatch(video, /\bautoplay\b/);
   assert.doesNotMatch(video, /\bmuted\b/);
-  assert.match(html, /class="testimonial-video testimonial-video-landscape"/);
+  assert.match(html, /class="testimonial-video testimonial-video-portrait"/);
+  assert.doesNotMatch(html, /testimonial-video-landscape/);
   assert.match(html, new RegExp(`<source src="${CHRIS_VIDEO.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}" type="video/mp4">`));
-  assert.match(html, /<strong>Chris Flanders<\/strong><br><time datetime="2026-11-08">November 8, 2026<\/time>/);
-  assert.equal(html.includes('<blockquote>'), false);
+  assert.match(html, /<strong>Chris Flanders<\/strong><br><time datetime="2026-11-08">November 8, 2026<\/time><br>Portrait commission/);
+  assert.match(html, new RegExp(`<blockquote><p>“${CHRIS_QUOTE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}”<\\/p><\\/blockquote>`));
   assert.equal(html.includes('·'), false);
-  assert.match(html, /aria-label="Video from Chris Flanders"/);
+  assert.match(html, /aria-label="Video from Chris Flanders about “Portrait commission”"/);
+  assert.doesNotMatch(html, LANDSCAPE_CLIP);
+  const curated = readFileSync(new URL('../src/data/testimonials.json', import.meta.url), 'utf8');
+  assert.doesNotMatch(curated, LANDSCAPE_CLIP);
 
   const page = readFileSync(new URL('../src/pages/testimonials.astro', import.meta.url), 'utf8');
   assert.match(page, /testimonials\.map\(renderCuratedTestimonial\)/);
-  assert.match(page, /\.testimonial-video\.testimonial-video-landscape video\{[^}]*aspect-ratio:16\/9/);
+  assert.match(page, /\.testimonial-video\.testimonial-video-portrait video\{[^}]*aspect-ratio:9\/16/);
+  assert.match(page, /\.testimonial-video\.testimonial-video-portrait video\{[^}]*max-height:70vh/);
+  assert.match(page, /\.testimonial-video\.testimonial-video-portrait video\{[^}]*margin-inline:auto/);
 });
 
 test('curated entries keep quote cards and refuse a video without consent or an off-host file', () => {
@@ -76,7 +85,7 @@ test('curated entries keep quote cards and refuse a video without consent or an 
   assert.equal(hiddenPlace.pin, null);
   assert.equal(hiddenPlace.photo, '/testimonials/images/jane-painting.webp');
 
-  const baseVideo = {src: CHRIS_VIDEO, type: 'video/mp4', poster: CHRIS_POSTER, width: 1280, height: 720};
+  const baseVideo = {src: CHRIS_VIDEO, type: 'video/mp4', poster: CHRIS_POSTER, width: 720, height: 1280};
   const unpublished = curateTestimonials([{id: '2026-11-chris-flanders', name: 'Chris Flanders', video: baseVideo, consent: consent({publish: false, video: true})}]);
   assert.deepEqual(unpublished, []);
   const noVideoConsent = curateTestimonials([{id: '2026-11-chris-flanders', name: 'Chris Flanders', video: baseVideo, consent: consent()}]);

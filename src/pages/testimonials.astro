@@ -216,8 +216,10 @@ const reviews = testimonials.filter(t => t.quote).map(t => ({ '@type':'Review', 
     [data-video-only][hidden],.video-field [hidden]{display:none!important}
     .testimonial-video{margin:0 0 12px}
     .testimonial-video video{display:block;width:100%;max-height:75vh;border-radius:9px;background:#1d1a17}
-    /* Landscape clips reserve 16:9 before the file arrives, so the poster does not push the name down. */
+    /* Reserve the ratio before the file arrives, so the poster does not push the name down. */
     .testimonial-video.testimonial-video-landscape video{height:auto;aspect-ratio:16/9;max-height:none;object-fit:contain}
+    /* Portrait stays phone-sized: 9:16, capped, and centered in a wide card. */
+    .testimonial-video.testimonial-video-portrait video{width:min(100%, 320px, calc(70vh * 9 / 16));height:auto;max-height:70vh;aspect-ratio:9/16;margin-inline:auto;object-fit:contain}
     .testimonial-video .video-fallback{font-size:.82rem;color:var(--muted);margin:6px 0 0}
     .form-thanks{background:#fffcf6;border:1px solid var(--line);border-radius:22px;padding:1.5rem;line-height:1.7}.form-thanks h3{font:600 2rem/1.1 "Cormorant Garamond",serif;margin:0 0 8px}
     /* Owner convenience link: bottom of the content, right-aligned, small and low-contrast gray (not an overlay). */

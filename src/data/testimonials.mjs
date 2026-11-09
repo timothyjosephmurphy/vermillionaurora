@@ -62,11 +62,12 @@ export function curateTestimonials(list) {
   });
 }
 
-const landscape16x9 = video => video.width > 0 && video.height > 0 && Math.abs(video.width / video.height - 16 / 9) < 0.01;
+const nearRatio = (video, width, height) => video.width > 0 && video.height > 0 && Math.abs(video.width / video.height - width / height) < 0.01;
+const videoFrameClass = video => nearRatio(video, 9, 16) ? ' testimonial-video-portrait' : nearRatio(video, 16, 9) ? ' testimonial-video-landscape' : '';
 
 // Same card shape as the approved-submission cards in worker/testimonials-html.mjs.
-// Landscape video reserves a 16:9 box (width/height plus aspect-ratio) so the poster does not shift the page.
-// preload="metadata", controls and playsinline; nothing autoplays.
+// Width and height plus aspect-ratio reserve the box so the poster does not shift the page.
+// A 9:16 player is capped and centered. preload="metadata", controls and playsinline; nothing autoplays.
 export function renderCuratedTestimonial(t) {
   const parts = [];
   if (t.photo) {
@@ -79,8 +80,7 @@ export function renderCuratedTestimonial(t) {
     const label = `Video from ${t.name}${t.painting ? ` about “${t.painting}”` : ''}`;
     const poster = video.poster ? ` poster="${esc(video.poster)}"` : '';
     const dims = video.width && video.height ? ` width="${video.width}" height="${video.height}"` : '';
-    const wide = landscape16x9(video) ? ' testimonial-video-landscape' : '';
-    parts.push(`<figure class="testimonial-video${wide}"><video controls playsinline preload="metadata" aria-label="${esc(label)}"${dims}${poster}><source src="${esc(video.src)}" type="${esc(video.type)}"></video><p class="video-fallback" hidden>This video can’t play in this browser. Try Safari or another device, or <a href="${esc(video.src)}">open the video file</a>.</p></figure>`);
+    parts.push(`<figure class="testimonial-video${videoFrameClass(video)}"><video controls playsinline preload="metadata" aria-label="${esc(label)}"${dims}${poster}><source src="${esc(video.src)}" type="${esc(video.type)}"></video><p class="video-fallback" hidden>This video can’t play in this browser. Try Safari or another device, or <a href="${esc(video.src)}">open the video file</a>.</p></figure>`);
   }
   if (t.quote) parts.push(`<blockquote><p>${esc(`“${t.quote}”`)}</p></blockquote>`);
   let meta = `<strong>${esc(t.name)}</strong>`;
