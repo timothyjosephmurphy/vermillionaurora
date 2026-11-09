@@ -3,6 +3,7 @@
 // the generated SiteEnv and Cloudflare.Env interfaces.
 interface SiteSecrets {
 	CATALOG_ADMIN_PASSWORD: string;
+	PRINT_MASTER_SIGNING_SECRET?: string;
 	/** Optional stand-in for the hex gallery fetch. Not a deployed binding. */
 	HEX_FETCH?: Fetcher;
 }
