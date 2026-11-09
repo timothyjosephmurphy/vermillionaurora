@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "2026-11-chris-flanders",
+    "name": "Chris Flanders",
+    "anonymous": false,
+    "received": "2026-11-08",
+    "video": {
+      "src": "https://img.tjm.art/testimonials/chris-flanders/chris-flanders-720p.mp4",
+      "type": "video/mp4",
+      "poster": "https://img.tjm.art/testimonials/chris-flanders/chris-flanders-poster.jpg",
+      "width": 1280,
+      "height": 720
+    },
+    "consent": {
+      "publish": true,
+      "name": true,
+      "photo": false,
+      "selfie": false,
+      "city": false,
+      "map": false,
+      "video": true
+    }
+  }
+]
