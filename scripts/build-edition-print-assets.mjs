@@ -12,6 +12,7 @@ import bookPrints from '../catalog/book-prints.json' with {type:'json'};
 import {borderedEdition} from './bordered-edition.mjs';
 import {renderEditionSheet} from './render-edition-sheet.mjs';
 import {reproduceFrozenPrints} from './reproduce-frozen-print-editions.mjs';
+import {manifestCoversSource,readPrintMasterBytes} from './lib/print-master-file.mjs';
 // --prepare-bordered records the unframed outer-border files without changing any padded edition.
 // --prepare-one-inch rebuilds every edition at the 1 inch margin and withholds prices until quoted.
 const prepareBordered=process.argv.includes('--prepare-bordered');
@@ -23,15 +24,21 @@ const tjIds=prepareTJ?JSON.parse(await readFile(new URL(prepareOlder?'catalog/ol
 // --only=id,id limits a preparation run to replaced or new masters so other approved files stay untouched.
 const only=process.argv.find(a=>a.startsWith('--only='))?.slice(7).split(',');
 const selected=products.filter(p=>prepareOneInch?config.artworks[p.id]?.sizing==='image-proportional':prepareTJ?tjIds.includes(p.id):prepare?p.artist==='Paul Murphy':config.artworks[p.id]?.sizing==='image-proportional').filter(p=>!only||only.includes(p.id));
-let cursor=0,count=0;
+let cursor=0,count=0,skippedMasters=0;
 await Promise.all(Array.from({length:4},async()=>{
   while(cursor<selected.length){
     const product=selected[cursor++],old=config.artworks[product.id];
     const sourceUrl=old?.source?.url||product.image.src,u=new URL(sourceUrl);
     const localMaster=u.origin==='https://vermillionaurora.com'&&/^\/print-masters\/[a-f0-9]{64}\.jpg$/.test(u.pathname);
     if((!localMaster&&u.origin!=='https://media.vermillionaurora.com')||u.username||u.password||u.search||u.hash)throw Error('Use an approved edition source');
-    let bytes=localMaster?await readFile(new URL('static'+u.pathname,root)):undefined;
+    let bytes=localMaster?await readPrintMasterBytes(sourceUrl):undefined;
     if(!bytes&&old?.source?.sha256)try{bytes=await readFile(new URL(`${old.source.sha256}.jpg`,cache));}catch{}
+    if(!bytes&&localMaster){
+      const recorded=manifestCoversSource(old?.source);
+      if(!recorded)throw Error(`Print master is not in data/print-masters-manifest.json: ${product.id}`);
+      if(process.env.PRINT_EDITIONS_REQUIRED==='1')throw Error(`Print master bytes required to rebuild edition files: ${product.id}`);
+      skippedMasters++;console.log(`Manifest-only print master ${product.id}; edition JPEG not regenerated`);continue;
+    }
     if(!bytes)bytes=await fetchBytes(sourceUrl,`Could not download approved print source: ${product.id}`);
     const sha256=digest(bytes);
     if(old?.source?.sha256&&old.source.sha256!==sha256)throw Error(`Print source changed: ${product.id}`);
@@ -130,4 +137,5 @@ if(prepareOneInch){
 }else if(prepareBordered)await writeFile(new URL('catalog/book-prints.json',root),JSON.stringify(bookPrints,null,2)+'\n');
 if(prepare&&!prepareOneInch){config.artworks=Object.fromEntries(Object.entries(config.artworks).sort(([a],[b])=>a.localeCompare(b)));await writeFile(new URL('catalog/prints.json',root),JSON.stringify(config,null,2)+'\n');}
 await reproduceFrozenPrints(root);
+if(skippedMasters)console.log(`Skipped pixel rebuild for ${skippedMasters} print masters recorded in data/print-masters-manifest.json`);
 console.log(`Verified ${count} one-inch print files for ${selected.length} artworks and ${books.length} book editions; no source images cropped or enlarged.`);

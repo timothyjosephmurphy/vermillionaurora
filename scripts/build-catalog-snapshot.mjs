@@ -7,6 +7,7 @@ import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { products, catalogVersion } from '../catalog/catalog.mjs';
 import checkout, { inventory } from '../cloudflare/checkout-catalog.mjs';
 import prints, { printVersion } from '../cloudflare/print-catalog.mjs';
+import { publicImageSrc } from '../src/data/public-image.mjs';
 const map = JSON.parse(await readFile('scripts/display-images.json', 'utf8'));
 // Only part of static/display/ is still committed (the rest lives in R2 only, studio-tracker#55);
 // scripts/display-files.json lists every display file name in the tjm-images bucket.
@@ -27,7 +28,7 @@ const paintings = products.map(p => ({
   priceFrom: !!p.listing?.price?.from,
   parcel: checkout[p.id]?.parcel || null,
   status: inventory[p.id]?.status ?? p.listing?.status ?? null,
-  image: p.image ? { src: p.image.src, alt: p.image.alt || '', width: p.image.width || null, height: p.image.height || null } : null,
+  image: p.image ? { src: publicImageSrc(p.image), alt: p.image.alt || '', width: p.image.width || null, height: p.image.height || null } : null,
   images: keysFor(p)
 }));
 const editions = Object.values(prints).filter(e => !e.testOnly).map(e => ({

@@ -24,6 +24,7 @@ interface CheckoutSecrets {
 	GOOGLE_CLIENT_SECRET: string;
 	GOOGLE_REFRESH_TOKEN: string;
 	INVENTORY_ADMIN_TOKEN: string;
+	PRINT_MASTER_SIGNING_SECRET?: string;
 	PRINTFUL_API_TOKEN: string;
 	PRINTFUL_STORE_ID: string;
 	PRODIGI_API_KEY: string;

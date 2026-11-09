@@ -9,6 +9,7 @@ import collections from '../catalog/collections.json' with {type:'json'};
 import {readyPrints,config} from '../catalog/prints.mjs';
 import {wallArtworks} from '../src/data/gallery-wall.mjs';
 import {roomArtworks} from '../src/data/gallery-room.mjs';
+import {manifestCoversSource} from '../scripts/lib/print-master-file.mjs';
 
 test('all 54 archive masters retain exact bytes and offer native-resolution editions with three verified frames',async()=>{
   assert.equal(recipes.length,54);
@@ -17,8 +18,9 @@ test('all 54 archive masters retain exact bytes and offer native-resolution edit
     // A master is the exact photo, or a recorded crop of it (derivedFrom names the photo it was cut from).
     assert.equal(recipe.derivedFrom?.sha256??recipe.sha256,p.front.sha256,recipe.id);
     assert.equal(art.source.sha256,recipe.sha256);
-    const bytes=await readFile(new URL('../static'+new URL(art.source.url).pathname,import.meta.url));
-    assert.equal(createHash('sha256').update(bytes).digest('hex'),recipe.sha256);
+    const masterPath=new URL('../static'+new URL(art.source.url).pathname,import.meta.url);
+    try{const bytes=await readFile(masterPath);assert.equal(createHash('sha256').update(bytes).digest('hex'),recipe.sha256);}
+    catch(error){if(error.code!=='ENOENT')throw error;assert.equal(manifestCoversSource(art.source)?.sha256,recipe.sha256,recipe.id);}
     assert(art.enabled&&!art.testOnly&&!art.sampleOnly);
     const base=Object.values(readyPrints).filter(v=>v.productId===recipe.id&&!v.mat&&!v.frame);
     assert(base.length>0,recipe.id);

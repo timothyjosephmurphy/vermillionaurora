@@ -9,6 +9,7 @@ import {editionLayouts, LEGACY_EDITION_BORDER_IN} from '../catalog/edition-layou
 import {borderedEdition} from './bordered-edition.mjs';
 import {renderEditionSheet} from './render-edition-sheet.mjs';
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
+import {manifestCoversSource,readPrintMasterBytes} from './lib/print-master-file.mjs';
 const digest = b => createHash('sha256').update(b).digest('hex');
 const run = promisify(execFile);
 async function download(url) {
@@ -35,8 +36,13 @@ export async function reproduceFrozenPrints(root) {
     const sourceUrl = edition.source.url;
     const u = new URL(sourceUrl);
     const localMaster = u.origin === 'https://vermillionaurora.com' && /^\/print-masters\/[a-f0-9]{64}\.jpg$/.test(u.pathname);
-    let bytes = localMaster ? await readFile(new URL('static' + u.pathname, root)).catch(() => undefined) : undefined;
+    let bytes = localMaster ? await readPrintMasterBytes(sourceUrl) : undefined;
     if (!bytes) try { bytes = await readFile(new URL(`${edition.source.sha256}.jpg`, cache)); } catch {}
+    if (!bytes && localMaster && manifestCoversSource(edition.source)) {
+      if (process.env.PRINT_EDITIONS_REQUIRED === '1') throw Error(`Print master bytes required to rebuild a frozen edition: ${edition.id}`);
+      console.log(`Manifest-only frozen source ${edition.id}; pre-1-inch JPEG not regenerated`);
+      continue;
+    }
     if (!bytes) bytes = await download(sourceUrl);
     if (digest(bytes) !== edition.source.sha256) throw Error(`Frozen print source changed: ${edition.id}`);
     await writeFile(new URL(`${edition.source.sha256}.jpg`, cache), bytes);

@@ -9,7 +9,9 @@ cloudflare/print-test-assets.generated.mjs
 public/print-samples/
 static/print-samples/
 static/print-editions/
-static/gallery-wall/
+# Public gallery-wall previews are generated from the print masters. The masters themselves
+# are not in git; they live in the private tjm-print-masters bucket.
+/static/print-masters/
 .cache/
 
 # Deep-zoom wall previews (1920/2880 px) live only in R2 (img.tjm.art); rebuild with scripts/build-paintings-wall-assets.mjs

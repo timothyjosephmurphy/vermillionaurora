@@ -12,11 +12,11 @@ const host = `${R2_ACCOUNT}.r2.cloudflarestorage.com`;
 const sha = d => createHash('sha256').update(d).digest('hex');
 const hmac = (k, d) => createHmac('sha256', k).update(d).digest();
 const enc = s => encodeURIComponent(s).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase());
-async function r2(method, key = '', { body = '', headers = {}, query = {} } = {}) {
+async function r2(method, key = '', { body = '', headers = {}, query = {}, bucket = R2_BUCKET } = {}) {
   const id = process.env.R2_ACCESS_KEY_ID, secret = process.env.R2_SECRET_ACCESS_KEY;
   if (!id || !secret) throw new Error('R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY not set');
   const now = new Date().toISOString().replace(/[-:]|\.\d{3}/g, ''), day = now.slice(0, 8);
-  const path = `/${R2_BUCKET}/${key.split('/').map(enc).join('/')}`;
+  const path = `/${bucket}/${key.split('/').map(enc).join('/')}`;
   const qs = Object.keys(query).sort().map(k => `${enc(k)}=${enc(query[k])}`).join('&');
   const h = { host, 'x-amz-date': now, 'x-amz-content-sha256': sha(body), ...Object.fromEntries(Object.entries(headers).map(([k, v]) => [k.toLowerCase(), v])) };
   const names = Object.keys(h).sort();
@@ -30,9 +30,13 @@ async function r2(method, key = '', { body = '', headers = {}, query = {} } = {}
   if (!res.ok && !(method === 'HEAD' && res.status === 404)) throw new Error(`R2 ${method} ${key}: ${res.status} ${(await res.text()).slice(0, 200)}`);
   return res;
 }
-export const contentType = k => ({ webp: 'image/webp', jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', avif: 'image/avif', mp4: 'video/mp4' })[k.split('.').pop().toLowerCase()] || 'application/octet-stream';
-export const putObject = (key, body, cacheControl = CACHE_IMAGES) => r2('PUT', key, { body, headers: { 'content-type': contentType(key), 'cache-control': cacheControl } });
-export const headObject = async key => { const r = await r2('HEAD', key); return r.status === 404 ? null : { size: +r.headers.get('content-length'), etag: r.headers.get('etag') }; };
+export const contentType = k => ({ webp: 'image/webp', jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', tif: 'image/tiff', tiff: 'image/tiff', avif: 'image/avif', mp4: 'video/mp4' })[k.split('.').pop().toLowerCase()] || 'application/octet-stream';
+export const putObject = (key, body, cacheControl = CACHE_IMAGES, { bucket = R2_BUCKET, headers = {} } = {}) => r2('PUT', key, { body, bucket, headers: { 'content-type': contentType(key), 'cache-control': cacheControl, ...headers } });
+export const headObject = async (key, bucket = R2_BUCKET) => {
+  const r = await r2('HEAD', key, { bucket });
+  return r.status === 404 ? null : { size: +r.headers.get('content-length'), etag: r.headers.get('etag'), sha256: r.headers.get('x-amz-meta-sha256') || '' };
+};
+export const getObject = async (key, bucket = R2_BUCKET) => Buffer.from(await (await r2('GET', key, { bucket })).arrayBuffer());
 export async function listKeys(prefix) {
   const out = new Map(); let token;
   do {

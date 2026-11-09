@@ -18,6 +18,9 @@ export const wallArtworks=layout.artworks.map(position=>{
   if(Math.abs(position.width-width)>.001||Math.abs(position.height-height)>.001)throw Error(`Review changed print wall frame dimensions: ${product.id}`);
   const url=new URL(source.url),fullSrc=url.origin==='https://vermillionaurora.com'?url.pathname:source.url;
   const variants=wallThumbnailWidths.filter(w=>w<source.widthPx).map(width=>({width,src:`/gallery-wall/${source.sha256}-${width}.webp`}));
+  // The untouched master stays available to the print build. Browsers only receive the public derivatives.
+  const sources=/\/print-masters\//.test(fullSrc)?variants:[...variants,{width:source.widthPx,src:fullSrc}];
+  if(!sources.length)throw Error(`No public wall image for ${product.id}`);
   return {
     id:product.id,title:product.title,href:urlFor(product),printHref:`${urlFor(product)}#print-options`,
     printId:print.id,price:print.amount,currency:print.currency,frameSize:frame.size,paperSize:print.paperSize,
@@ -25,7 +28,7 @@ export const wallArtworks=layout.artworks.map(position=>{
     x:(position.x+12)*WALL_UNIT,y:(position.y+12)*WALL_UNIT,width:width*WALL_UNIT,height:height*WALL_UNIT,
     imageWidth:print.imageSize.width*WALL_UNIT,imageHeight:print.imageSize.height*WALL_UNIT,
     fullSrc,sourceSha256:source.sha256,sourceWidth:source.widthPx,sourceHeight:source.heightPx,
-    sources:[...variants,{width:source.widthPx,src:fullSrc}],
+    sources,
     description:`${product.medium||'Watercolor'}${product.year?` · ${product.year}`:''}`
   };
 });

@@ -4,6 +4,8 @@ import {readyPrints,printVersion} from '../catalog/prints.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 import { products, catalogVersion, statusLabel } from '../catalog/catalog.mjs';
 import { canonicalArtwork } from '../src/data/canonical-artworks.mjs';
+import { publicImageSrc } from '../src/data/public-image.mjs';
+const publicImage = image => image && publicImageSrc(image) === image.src ? image : image && {...image, src: publicImageSrc(image)};
 // Book scans merged into a catalog painting 301 to it; public feeds list only the surviving page.
 const listed=products.filter(p=>!Object.hasOwn(canonicalArtwork,p.id));
 
@@ -30,10 +32,10 @@ for(const entry of await readdir('.', {withFileTypes:true})) if(entry.isFile() &
 await mkdir('dist/payments',{recursive:true});
 await mkdir('dist/catalog',{recursive:true});
 await copyFile('catalog/availability.js','dist/catalog/availability.js');
-await writeFile('dist/catalog/products.json',JSON.stringify({version:catalogVersion,printVersion,prints:Object.values(readyPrints).filter(p=>!p.testOnly).map(p=>publicCartItem({...p,quantity:1})),products:listed.map(p=>({id:p.id,slug:p.slug,title:p.title,type:p.type,listing:p.listing,image:p.image}))}));
+await writeFile('dist/catalog/products.json',JSON.stringify({version:catalogVersion,printVersion,prints:Object.values(readyPrints).filter(p=>!p.testOnly).map(p=>publicCartItem({...p,quantity:1})),products:listed.map(p=>({id:p.id,slug:p.slug,title:p.title,type:p.type,listing:p.listing,image:publicImage(p.image)}))}));
 await writeFile('dist/catalog/version.json',JSON.stringify({version:catalogVersion,products:products.length}));
 // Read-only compatibility export for existing links and integrations. Never edit it.
-await writeFile('dist/gallery/inventory.json',JSON.stringify({paintings:listed.filter(p=>p.type==='painting').map(p=>({A:p.slug,B:p.title,C:p.listing.price?.amount||'0',D:p.listing.price?.currency||'USD',E:statusLabel(p),F:p.dimensions?.width||'',G:p.dimensions?.height||'',H:p.dimensions?.unit||'',I:p.medium||'',J:p.surface||'',K:p.year||'',L:p.framing||'',M:p.story.join('\n\n'),O:`https://vermillionaurora.com/products/${p.slug}/`,P:p.image.src,image:p.image.src}))}));
+await writeFile('dist/gallery/inventory.json',JSON.stringify({paintings:listed.filter(p=>p.type==='painting').map(p=>({A:p.slug,B:p.title,C:p.listing.price?.amount||'0',D:p.listing.price?.currency||'USD',E:statusLabel(p),F:p.dimensions?.width||'',G:p.dimensions?.height||'',H:p.dimensions?.unit||'',I:p.medium||'',J:p.surface||'',K:p.year||'',L:p.framing||'',M:p.story.join('\n\n'),O:`https://vermillionaurora.com/products/${p.slug}/`,P:publicImageSrc(p.image),image:publicImageSrc(p.image)}))}));
 console.log(`Public assets copied; catalog ${catalogVersion}`);
 
 // All public pages, including the remaining static pages, share cart navigation/assets.
