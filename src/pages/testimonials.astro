@@ -2,17 +2,18 @@
 import MailIcon from '../components/MailIcon.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { testimonials, testimonialPins } from '../data/testimonials.mjs';
+import { renderCuratedTestimonial, testimonials, testimonialPins } from '../data/testimonials.mjs';
 import { ld, person } from '../data/structured-data.mjs';
 import { PUBLISH_NOTICE, PUBLISH_NOTICE_VERSION } from '../../cloudflare/testimonial-notice.mjs';
 const pinSeed = JSON.stringify(testimonialPins.map(({id, city, lat, lng}) => ({id, city, lat, lng}))).replace(/</g, '\\u003c');
-// Hand-curated entries (src/data/testimonials.json) render at build time. Approved submissions are written
-// into this HTML by the website Worker on each GET (worker/testimonials-html.mjs) from
-// /testimonials/api/approved, so a crawler sees the quotes and an approval needs no rebuild.
+// Hand-curated entries (src/data/testimonials.json) render at build time, including a video when there
+// is no quote. Approved submissions are written into this HTML by the website Worker on each GET
+// (worker/testimonials-html.mjs) from /testimonials/api/approved, so a crawler sees the quotes and an
+// approval needs no rebuild.
 // Keep data-testimonial-list and data-has-testimonials: the Worker and testimonials-page.js both use them.
-// Hand-curated entries can carry Review markup with no rating. Approved quotes use Quotation in the Worker
-// (no AggregateRating; star snippets wait on studio-tracker #47).
-const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Person',name:t.name}, reviewBody:t.quote, itemReviewed:{'@type':'VisualArtwork',name:t.painting||'Painting by TJ Murphy',creator:{'@id':person['@id']}} }));
+// Hand-curated entries with words can carry Review markup with no rating. Approved quotes use Quotation
+// in the Worker (no AggregateRating; star snippets wait on studio-tracker #47).
+const reviews = testimonials.filter(t => t.quote).map(t => ({ '@type':'Review', author:{'@type':'Person',name:t.name}, reviewBody:t.quote, itemReviewed:{'@type':'VisualArtwork',name:t.painting||'Painting by TJ Murphy',creator:{'@id':person['@id']}} }));
 ---
 <!doctype html>
 <html lang="en">
@@ -47,18 +48,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
 
       <section class="testimonials-wall" aria-labelledby="wall-heading" data-has-testimonials hidden={testimonials.length === 0}>
         <h2 id="wall-heading" class="visually-hidden">What collectors say</h2>
-        <ul class="testimonial-list" data-testimonial-list>
-          {testimonials.map(t => (
-            <li class="testimonial" id={t.id}>
-              {t.photo && <img class="testimonial-photo" src={t.photo} alt={`${t.painting || 'Painting by TJ Murphy'} in ${t.name === 'A collector' ? 'a collector' : t.name + '’s'} home`} loading="lazy" decoding="async" />}
-              <blockquote><p>“{t.quote}”</p></blockquote>
-              <p class="testimonial-meta">
-                {t.selfie && <img class="testimonial-selfie" src={t.selfie} alt="" width="48" height="48" loading="lazy" decoding="async" />}
-                <span><strong>{t.name}</strong>{t.city && <> · {t.city}</>}{t.painting && <><br />{t.paintingHref ? <a href={t.paintingHref}>{t.painting}</a> : t.painting}</>}</span>
-              </p>
-            </li>
-          ))}
-        </ul>
+        <ul class="testimonial-list" data-testimonial-list set:html={testimonials.map(renderCuratedTestimonial).join('')} />
       </section>
 
       <section id="share" class="testimonial-share" aria-labelledby="share-heading">
@@ -226,6 +216,10 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     [data-video-only][hidden],.video-field [hidden]{display:none!important}
     .testimonial-video{margin:0 0 12px}
     .testimonial-video video{display:block;width:100%;max-height:75vh;border-radius:9px;background:#1d1a17}
+    /* Reserve the ratio before the file arrives, so the poster does not push the name down. */
+    .testimonial-video.testimonial-video-landscape video{height:auto;aspect-ratio:16/9;max-height:none;object-fit:contain}
+    /* Portrait stays phone-sized: 9:16, capped, and centered in a wide card. */
+    .testimonial-video.testimonial-video-portrait video{width:min(100%, 320px, calc(70vh * 9 / 16));height:auto;max-height:70vh;aspect-ratio:9/16;margin-inline:auto;object-fit:contain}
     .testimonial-video .video-fallback{font-size:.82rem;color:var(--muted);margin:6px 0 0}
     .form-thanks{background:#fffcf6;border:1px solid var(--line);border-radius:22px;padding:1.5rem;line-height:1.7}.form-thanks h3{font:600 2rem/1.1 "Cormorant Garamond",serif;margin:0 0 8px}
     /* Owner convenience link: bottom of the content, right-aligned, small and low-contrast gray (not an overlay). */

@@ -151,7 +151,11 @@ City, state and country text (e.g. “Seattle, WA, USA” or “Warsaw, Poland�
 
 ## Hand-curated entries (optional)
 `src/data/testimonials.json` still works for entries added by hand (rendered at build time). Nothing appears unless
-`consent.publish` is `true`.
+`consent.publish` is `true` and the entry has a quote or a video. A video is shown only when `consent.video` is
+`true`. Its `src` (and poster, when there is one) must be an `https://img.tjm.art/` URL. The player uses that file
+with `preload="metadata"`, `playsinline` and `controls`, and does not autoplay. A 16:9 or 9:16 `width` and `height` reserve
+the box so the poster does not shift the card. A portrait player is capped at 320px and 70vh and centered. `received` (`YYYY-MM-DD`) is shown under the name. Leave city, lat,
+lng and `consent.map` off when the place is unknown. Do not invent a quote; a video can stand on its own.
 
 ```json
 {
