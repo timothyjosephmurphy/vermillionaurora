@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "2026-11-chris-flanders",
+    "name": "Chris Flanders",
+    "anonymous": false,
+    "painting": "Portrait commission",
+    "received": "2026-11-08",
+    "quote": "This beautiful work of art is a portrait TJ painted of me. I love it. It's an excellent likeness and has TJ's unique style and artistic expression, and I love having a one-of-a-kind original in my living room.",
+    "video": {
+      "src": "https://img.tjm.art/testimonials/chris-flanders/chris-flanders-portrait-720.mp4",
+      "type": "video/mp4",
+      "poster": "https://img.tjm.art/testimonials/chris-flanders/chris-flanders-portrait-poster.jpg",
+      "width": 720,
+      "height": 1280
+    },
+    "consent": {
+      "publish": true,
+      "name": true,
+      "photo": false,
+      "selfie": false,
+      "city": false,
+      "map": false,
+      "video": true
+    }
+  }
+]
