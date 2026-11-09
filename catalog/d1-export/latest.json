@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "meta": {
-  "rev": "1600"
+  "rev": "1601"
  },
  "paintings": [
   {
@@ -1210,15 +1210,15 @@
    "medium": null,
    "surface": null,
    "year": null,
-   "width": null,
-   "height": null,
-   "unit": null,
+   "width": 24,
+   "height": 24,
+   "unit": "in",
    "description": "Michael Saylor @saylor from TJ Murphy’s watercolor art books.",
-   "price_amount": null,
+   "price_amount": "1000.00",
    "currency": "USD",
-   "parcel_json": null,
+   "parcel_json": "{\"length\":24,\"width\":4,\"height\":4,\"weight\":1.125}",
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-11-09T19:21:36.403Z"
   },
   {
    "id": "book-art-0a80f9a5da0d39edc80f",
@@ -2559,15 +2559,15 @@
    "medium": null,
    "surface": null,
    "year": null,
-   "width": null,
-   "height": null,
-   "unit": null,
+   "width": 12,
+   "height": 15,
+   "unit": "in",
    "description": "Nico @BITVOLT from TJ Murphy’s watercolor art books.",
-   "price_amount": null,
+   "price_amount": "200.00",
    "currency": "USD",
-   "parcel_json": null,
+   "parcel_json": "{\"length\":12,\"width\":4,\"height\":4,\"weight\":0.5}",
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-11-09T19:21:36.403Z"
   },
   {
    "id": "book-art-7bce6e3509027d1f7a0b",
@@ -3699,15 +3699,15 @@
    "medium": null,
    "surface": null,
    "year": null,
-   "width": null,
-   "height": null,
-   "unit": null,
+   "width": 24,
+   "height": 24,
+   "unit": "in",
    "description": "Nick Szabo @NickSzabo4 from TJ Murphy’s watercolor art books.",
-   "price_amount": null,
+   "price_amount": "1000.00",
    "currency": "USD",
-   "parcel_json": null,
+   "parcel_json": "{\"length\":24,\"width\":4,\"height\":4,\"weight\":1.125}",
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-11-09T19:21:36.403Z"
   },
   {
    "id": "book-art-e589c9375e23d1de4748",
@@ -44393,9 +44393,9 @@
   },
   {
    "product_id": "book-art-0735a5fb0eb1c613b658",
-   "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-11-09T19:21:36.403Z"
   },
   {
    "product_id": "book-art-0a80f9a5da0d39edc80f",
@@ -44819,9 +44819,9 @@
   },
   {
    "product_id": "book-art-7a498f39e7a66a2e8eb5",
-   "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-11-09T19:21:36.403Z"
   },
   {
    "product_id": "book-art-7bce6e3509027d1f7a0b",
@@ -45179,9 +45179,9 @@
   },
   {
    "product_id": "book-art-e4bbfe556c3c847d9c90",
-   "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-11-09T19:21:36.403Z"
   },
   {
    "product_id": "book-art-e589c9375e23d1de4748",
