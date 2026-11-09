@@ -39,7 +39,8 @@ test('the 3D gallery story leads with the play link and its index card keeps bot
   assert.match(court, /alt="Bitcoiner walls in the 3D gallery"/);
   assert.match(court, /walk-206-btc-court-282d150e11-960\.webp/);
   assert.match(court, /You can pay with Bitcoin/);
-  const card = index.split('<article class="journal-entry" data-static-story>')[1];
+  const card = index.split('<article class="journal-entry" data-static-story>').find(block => block.includes('/blog/walk-my-paintings-3d-gallery/'));
+  assert.ok(card);
   assert.match(card, /href="\/blog\/walk-my-paintings-3d-gallery\/">Read the story →/);
   assert.match(card, /href="\/play\/">Walk the gallery now →/);
 });
