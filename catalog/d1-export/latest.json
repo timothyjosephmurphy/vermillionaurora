@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "meta": {
-  "rev": "1601"
+  "rev": "1602"
  },
  "paintings": [
   {
@@ -7199,11 +7199,11 @@
    "height": null,
    "unit": null,
    "description": "Read Reflections on Time: twelve poems by Paul Michael Murphy, illustrated with watercolors by Timothy Joseph Murphy.",
-   "price_amount": null,
+   "price_amount": "40.00",
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-11-11T03:03:57.332Z"
   },
   {
    "id": "rice-paddies-in-vietnam",
@@ -7750,11 +7750,11 @@
    "height": null,
    "unit": null,
    "description": "A collection of landscapes exploring changing skies, shorelines, and reflected light. By TJ Murphy. Available on Amazon.",
-   "price_amount": null,
+   "price_amount": "40.00",
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-11-11T03:03:57.332Z"
   },
   {
    "id": "watercolor-portraits",
@@ -7769,11 +7769,11 @@
    "height": null,
    "unit": null,
    "description": "A collection of portraits exploring expression, rich color, and the texture of watercolor pastel. By TJ Murphy. Available on Amazon.",
-   "price_amount": null,
+   "price_amount": "40.00",
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-11-11T03:03:57.332Z"
   }
  ],
  "editions": [
@@ -46282,6 +46282,12 @@
    "updated_at": "2026-10-30T02:35:28.904Z"
   },
   {
+   "product_id": "reflections-on-time",
+   "status": "available",
+   "note": "site checkout $40",
+   "updated_at": "2026-11-11T03:03:57.332Z"
+  },
+  {
    "product_id": "rice-paddies-in-vietnam",
    "status": "not-for-sale",
    "note": null,
@@ -46448,6 +46454,18 @@
    "status": "available",
    "note": "repo sync",
    "updated_at": "2026-10-30T02:35:28.904Z"
+  },
+  {
+   "product_id": "watercolor-landscapes",
+   "status": "available",
+   "note": "site checkout $40",
+   "updated_at": "2026-11-11T03:03:57.332Z"
+  },
+  {
+   "product_id": "watercolor-portraits",
+   "status": "available",
+   "note": "site checkout $40",
+   "updated_at": "2026-11-11T03:03:57.332Z"
   }
  ]
 }
