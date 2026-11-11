@@ -28,6 +28,8 @@ interface CheckoutSecrets {
 	PRINTFUL_API_TOKEN: string;
 	PRINTFUL_STORE_ID: string;
 	PRODIGI_API_KEY: string;
+	// Full "Basic …" Authorization header value for https://open.api.rpiprint.com. Never log it.
+	RPI_API_KEY: string;
 	QBO_CLIENT_ID: string;
 	QBO_CLIENT_SECRET: string;
 	QBO_TIP_CUSTOMER: string;
