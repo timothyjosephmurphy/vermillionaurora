@@ -40,6 +40,7 @@ export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*
 export const PLAY_WORKER_FIRST = ['/play', '/play/*'];
 
 export const PRINT_MASTER_WORKER_FIRST = ['/print-masters/*', '/api/print-master/*'];
+export const CSP_REPORT_PATHS = ['/csp-report'];
 
 export const WORKER_FIRST_PATTERNS = [
   ...COMMISSION_PATHS,
@@ -57,4 +58,5 @@ export const WORKER_FIRST_PATTERNS = [
   ...CATALOG_WORKER_FIRST,
   ...PLAY_WORKER_FIRST,
   ...PRINT_MASTER_WORKER_FIRST,
+  ...CSP_REPORT_PATHS,
 ];
