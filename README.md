@@ -69,7 +69,7 @@ Sales no longer mutate GitHub files, and the live Worker no longer requires a re
 
 PayPal checkout has been removed; cards go through Square. BTCPay accepts on-chain Bitcoin and Lightning for the two $20 portrait pilots: Chase Toole and Dorian Nakamoto. Existing estimated parcels are carried forward explicitly, including the owner-authorized portrait envelope. Verify each physical parcel before adding more products to the production allowlists. No new payment methods, shipping profiles, or live purchases are enabled by this migration.
 
-Use shared checkout for new original-art sales. Books continue to Amazon, commissions continue to inquiries, and paintings without measurements remain inquiry-only.
+Use shared checkout for new original-art sales and for the three art books, which are printed to order. Commissions continue to inquiries, and paintings without measurements remain inquiry-only.
 
 
 ## Blog card images

@@ -1,6 +1,7 @@
 import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { rateItem } from './shippo-rate.mjs';
-import {catalogVersion as cartVersion} from './cart-policy.mjs';
+import {catalogVersion as cartVersion, holdsStock} from './cart-policy.mjs';
+import {quoteBookShipping} from './rpi-books.mjs';
 import {quotePrints} from './print-provider.mjs';
 import {applyCode} from './print-codes.mjs';
 import {salesTax} from './wa-sales-tax.mjs';
@@ -45,10 +46,11 @@ export async function priceCart(env,items,input,email,code=null) {
   }
   const address=cleanAddress(input),shipments=[];
   // Each original is packed separately. No speculative combined-parcel dimensions.
-  for(const item of items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))shipments.push(await priceShipment(env,item.id,address));
+  for(const item of items.filter(holdsStock))shipments.push(await priceShipment(env,item.id,address));
+  const bookItems=items.filter(i=>i.type==='book'),bookQuote=bookItems.length?await quoteBookShipping(env,bookItems,address,email):null;
   const printItems=items.filter(i=>i.type==='print'),printQuote=printItems.length?await quotePrints(env,printItems,address):null;
   // A code reprices only after the provider has validated the listed retail prices.
   if(code){items=applyCode(items,code,printQuote?.unitCosts);if(printQuote)delete printQuote.unitCosts;}
-  const totals=await calculateTax(items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0)+(printQuote?cents(printQuote.shipping):0));
-  return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...(code?{printCode:{kind:code.kind,hash:code.hash,...(code.kind==='collector'&&/^[A-Z2-9]{4}$/.test(code.suffix||'')?{suffix:code.suffix}:{})}}:{}),...totals,quotedAt:Date.now()};
+  const totals=await calculateTax(items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0)+(printQuote?cents(printQuote.shipping):0)+(bookQuote?cents(bookQuote.shipping):0));
+  return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...(bookQuote?{bookQuote:{provider:'rpi',classification:bookQuote.classification,shipping:bookQuote.shipping,carrier:bookQuote.carrier,service:bookQuote.service}}:{}),...(code?{printCode:{kind:code.kind,hash:code.hash,...(code.kind==='collector'&&/^[A-Z2-9]{4}$/.test(code.suffix||'')?{suffix:code.suffix}:{})}}:{}),...totals,quotedAt:Date.now()};
 }

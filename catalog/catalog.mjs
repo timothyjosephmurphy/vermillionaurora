@@ -62,7 +62,15 @@ export function validateCatalog(items=products, groups=collections) {
     if(price && (!/^\d+\.\d{2}$/.test(price.amount) || Number(price.amount)<=0 || price.currency!=='USD')) fail(p,'positive USD price with two decimal places required');
     if(p.listing?.status==='available' && !price) fail(p,'available artwork needs a price');
     if(p.dimensions && (!['in','cm'].includes(p.dimensions.unit) || !['width','height'].every(k=>Number.isFinite(p.dimensions[k])&&p.dimensions[k]>0))) fail(p,'invalid dimensions');
-    if(p.type==='book' && (!p.book?.pdfUrl?.startsWith('https://') || !p.book.purchaseUrl?.startsWith('https://www.amazon.com/'))) fail(p,'book URLs missing');
+    if(p.type==='book') {
+      const rpi=p.book?.rpi;
+      if(!p.book?.pdfUrl?.startsWith('https://')) fail(p,'book PDF missing');
+      if(p.book.purchaseUrl) fail(p,'book purchases stay on this site');
+      if(!rpi||!/^VA-[A-Z0-9-]+$/.test(rpi.sku||'')) fail(p,'book print SKU missing');
+      if(!Number.isInteger(rpi.pageCount)||rpi.pageCount<20||rpi.pageCount>550||rpi.pageCount%2) fail(p,'book page count must be an even number in range');
+      for(const key of ['coverUrl','gutsUrl']) if(!rpi[key]?.startsWith('https://img.tjm.art/print-books/')) fail(p,'book print file URL missing');
+      if(p.listing?.status!=='available'||p.listing?.price?.amount!=='40.00'||p.listing?.price?.currency!=='USD') fail(p,'book price must be 40.00 USD');
+    }
     if(p.checkout?.mode==='integrated') {
       const s=p.checkout.shipping;
       if(!price || !p.dimensions || !s || !['length','width','height','weight'].every(k=>Number.isFinite(s[k])&&s[k]>0) || !['flat','tube'].includes(s.packaging) || !['estimated','verified'].includes(s.verification)) fail(p,'explicit shipping profile and price required');

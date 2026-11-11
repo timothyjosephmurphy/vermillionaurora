@@ -26,6 +26,7 @@ const addressRules=JSON.stringify({regions:REGION_CODES,required:[...REGION_REQU
     <section class="cart-artworks" aria-label="Selected artworks"><div data-cart-items></div><p class="cart-footnote" data-cart-reservation hidden></p><p class="cart-footnote" data-cart-hold-note hidden>Originals are held for 15 minutes after you add them to your cart. Complete checkout before the hold expires.</p></section>
     <aside class="cart-checkout" aria-labelledby="checkout-title"><p class="eyebrow dark">Art for your space</p><h2 id="checkout-title">Order summary</h2>
       <dl class="cart-totals"><div><dt>Artwork subtotal</dt><dd data-cart-subtotal>—</dd></div><div><dt>Shipping</dt><dd data-cart-shipping>Calculated below</dd></div><div><dt>Tax</dt><dd data-cart-tax>Calculated below</dd></div><div class="cart-total"><dt>Total <small>USD</small></dt><dd data-cart-total>—</dd></div></dl>
+      <p class="cart-bitcoin-note">You can pay with Bitcoin.</p>
       <form data-cart-form>
         <fieldset><legend data-cart-legend>Contact &amp; delivery</legend><p class="cart-footnote" data-cart-deposit-note hidden>Commission deposits need only your email: no delivery address and no sales tax. The address and any tax are handled with the final payment.</p>
           <label>Email<input type="email" name="email" autocomplete="email" maxlength="254" required/></label>
@@ -40,7 +41,7 @@ const addressRules=JSON.stringify({regions:REGION_CODES,required:[...REGION_REQU
           <script type="application/json" id="cart-address-rules" set:html={addressRules}></script>
           <details data-cart-address class="cart-code-toggle"><summary>Have a code?</summary><label>Discount code<input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label></details>
           <p class="cart-footnote" data-cart-code-note hidden></p>
-          <p data-cart-address class="cart-footnote">We ship worldwide, except to sanctioned destinations. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order. If checkout can’t quote your destination, <a href="/commissions/?quote=shipping#form">request a quote (Bitcoin welcome)</a>.</p>
+          <p data-cart-address class="cart-footnote">We ship worldwide, except to sanctioned destinations. Prints ship from the print lab, separately from originals. Printed books ship to the United States and Canada. The shipping total covers every package in your order. You can pay with Bitcoin. If checkout can’t quote your destination, <a href="/commissions/?quote=shipping#form">request a quote (Bitcoin welcome)</a>.</p>
           <p class="cart-footnote" data-cart-duties hidden>{DUTIES_NOTE}</p>
         </fieldset>
         <p class="cart-footnote">Your details are used to quote and fulfill this order. <a href="/privacy/">How your information is handled</a>.</p>
@@ -51,7 +52,7 @@ const addressRules=JSON.stringify({regions:REGION_CODES,required:[...REGION_REQU
       <p class="cart-footnote cart-help">A question about your order? <a href="/#contact">Contact TJ</a>.</p>
     </aside>
   </div>
-  <div class="cart-empty" data-cart-empty hidden><h2>A place for the work you love.</h2><p>Explore the paintings and add an available original or print to begin your collection.</p><a class="button button-solid" href="/gallery/">Explore the paintings</a></div>
+  <div class="cart-empty" data-cart-empty hidden><h2>A place for the work you love.</h2><p>Explore the paintings and add an available original, print, or book to begin your collection. You can pay with Bitcoin.</p><a class="button button-solid" href="/gallery/">Explore the paintings</a> <a class="button button-ghost" href="/books/">Browse the books</a></div>
 </main><SiteFooter/></div>
 <script>
   import { playReturn } from '../../data/play-return.mjs';

@@ -1,5 +1,5 @@
 import {PRIMARY_SITE,SITE_ORIGINS} from './site-origins.mjs';
-import catalog, {catalogVersion as originalVersion} from './checkout-catalog.mjs';
+import catalog, {books, catalogVersion as originalVersion} from './checkout-catalog.mjs';
 import {prints} from './print-catalog-store.mjs';
 import {printVersion} from './print-catalog-version.mjs';
 import deposits from './commission-deposits.mjs';
@@ -22,9 +22,12 @@ export const listed=(list,id)=>!!list?.split(',').map(s=>s.trim()).includes(id);
 // generated, server-owned catalog to scale past Wrangler's 5.1 kB text-binding
 // limit. This flag never admits an ID absent from the generated print catalog.
 export const printCheckoutListed=(env,id)=>env.PRINT_CHECKOUT_ALL==='true'?Object.hasOwn(prints,id):listed(env.PRINT_CHECKOUT_IDS,id);
+// Originals are unique and reserved. Prints, deposits, and print-on-demand books are not.
+export const holdsStock=item=>!!item&&item.type!=='print'&&item.type!=='deposit'&&item.type!=='book';
 export function paymentMethods(env,id) {
   if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
   const print=Object.hasOwn(prints,id)?prints[id]:null;
+  const book=Object.hasOwn(books,id)?books[id]:null;
   if(!['live','sandbox'].includes(env.CHECKOUT_MODE))return [];
   if(Object.hasOwn(deposits,id))return depositMethods(env);
   if(print) {
@@ -33,6 +36,8 @@ export function paymentMethods(env,id) {
     if(env.PRINT_CHECKOUT_ENABLED!=='true'||!printCheckoutListed(env,id))return [];
     if(print.provider==='finerworks') {if(!finerworksOrderingReady(env))return [];}
     else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.CHECKOUT_MODE)return [];
+  } else if(book) {
+    if(typeof env.RPI_API_KEY!=='string'||!env.RPI_API_KEY.startsWith('Basic '))return [];
   } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!Object.hasOwn(catalog,id)||catalog[id].available===false)return [];
   const methods=[];
   if(print?!print.sampleOnly&&printBitcoinOffered(env):bitcoinOffered(env,id))methods.push('bitcoin');
@@ -73,6 +78,11 @@ export function cartItems(input) {
       const p=prints[line.id];
       if(p.sampleOnly){if(line.quantity!==1||sampleArtworks.has(p.productId))throw Error('Choose one sample size and one copy per painting.');sampleArtworks.add(p.productId);}
       return {...prints[line.id],quantity:line.quantity};
+    }
+    if(Object.hasOwn(books,line.id)) {
+      if(!Number.isSafeInteger(line.quantity)||line.quantity<1||line.quantity>10)throw Error('Choose between 1 and 10 copies of each book.');
+      const book=books[line.id];
+      return {id:line.id,type:'book',quantity:line.quantity,title:book.title,amount:book.amount,sku:book.sku};
     }
     if(line.quantity!==1||!Object.hasOwn(catalog,line.id)||catalog[line.id].available===false)throw Error('An item is unavailable or its quantity is invalid.');
     return {id:line.id,type:'original',quantity:1,title:catalog[line.id].title,amount:catalog[line.id].amount};

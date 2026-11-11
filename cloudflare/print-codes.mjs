@@ -42,7 +42,7 @@ export function applyCode(items,code,unitCosts) {
       if(!Number.isSafeInteger(cost)||cost<=0)throw Error('Print cost unavailable for this code');
       return {...item,listAmount:item.amount,amount:(cost/100).toFixed(2),priceCode:code.kind};
     }
-    if(code.kind==='owner'&&item.type!=='deposit')return {...item,listAmount:item.amount,amount:'0.00',priceCode:'owner'};
+    if(code.kind==='owner'&&item.type==='original')return {...item,listAmount:item.amount,amount:'0.00',priceCode:'owner'};
     return item;
   });
 }
