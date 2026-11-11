@@ -146,6 +146,64 @@ test('production-cost sources: placed print orders and finished labels only; dep
   assert.deepEqual(costSources({ ...base, jobs: [ready, { status: 'waiting' }] }), []);
   const [labels] = costSources({ ...base, jobs: [ready, { status: 'review' }] });
   assert.equal(labels.type, 'label'); assert.equal(labels.labels.length, 1); assert.equal(labels.labels[0].quoted, '20.00');
+  const book = { provider: 'rpi', status: 'pending', customerOrderId: base.id, quotedShipping: '6.99', request: { shippingClassification: 'standard' }, items: [{ id: 'watercolor-landscapes', sku: 'VA-LANDSCAPES-8511-HC', quantity: 1 }] };
+  assert.equal(costSources({ ...base, bookJob: book }).some(s => s.type === 'book'), false);
+  const [books] = costSources({ ...base, bookJob: { ...book, status: 'in-production', providerOrderId: 'ord_test', attemptedAt: Date.parse('2026-10-02T22:50:00Z'), costs: { production: '19.34', shipping: '6.99', tax: '2.04' } } });
+  assert.equal(books.type, 'book'); assert.equal(books.vendor, 'rpi'); assert.equal(books.orderId, `cart:${base.id}`);
+  assert.deepEqual(books.quoted, { production: '19.34', shipping: '6.99', tax: '2.04' });
+  const { costId, costDocNumber, validateCost, purchasePayload } = await import('./quickbooks-core.mjs');
+  assert.equal(costId(books.orderId, 'book'), costId(books.orderId, 'book'));
+  assert.equal(costDocNumber(books.orderId, 'book'), `VB-${base.id.replace(/[^A-Za-z0-9]/g, '').slice(0, 18)}`);
+  assert.notEqual(costDocNumber(books.orderId, 'book'), costDocNumber(books.orderId, 'print'));
+  validateCost(books);
+  const payload = purchasePayload(books, { placedAt: books.placedAt, totalCents: 2837, amountSource: 'actual', memo: 'rpi', lines: [{ account: 'cogsPrints', cents: 1934, description: 'Book printing' }, { account: 'cogsPrints', cents: 204, description: 'Sales tax charged by RPI' }, { account: 'cogsShipping', cents: 699, description: 'Book shipping' }] }, { cardAccountId: '9', vendorId: '12', accounts: { cogsPrints: '20', cogsShipping: '21' } });
+  assert.equal(payload.DocNumber, costDocNumber(books.orderId, 'book'));
+  assert.equal(payload.PaymentType, 'CreditCard');
+  assert.deepEqual(payload.Line.map(l => [l.Amount, l.AccountBasedExpenseLineDetail.AccountRef.value]), [[19.34, '20'], [2.04, '20'], [6.99, '21']]);
+});
+
+test('RPI book costs use the reported print and shipping amounts and never create an order', async () => {
+  const { costSources, resolveCost, CostPending, ACTUAL_WAIT_MS } = await import('./quickbooks-costs.mjs');
+  const id = '9a8b7c6d-1111-4222-8333-444455556666';
+  const orderId = `cart:${id}`;
+  const request = { currency: 'USD', shippingClassification: 'standard', destination: { country: 'US' }, orderItems: [{ sku: 'VA-LANDSCAPES-8511-HC', quantity: 1 }] };
+  const [cost] = costSources({ id, status: 'paid', mode: 'live', paidAt: '2026-10-02T22:48:12.197Z', jobs: [], bookJob: { provider: 'rpi', status: 'in-production', customerOrderId: id, providerOrderId: 'ord_test', attemptedAt: Date.parse('2026-10-02T22:50:00Z'), quotedShipping: '6.99', request, items: [] } });
+  const paths = [];
+  const previous = globalThis.fetch;
+  globalThis.fetch = async (input, init = {}) => {
+    const url = new URL(input);
+    paths.push(`${init.method || 'GET'} ${url.pathname}`);
+    assert.equal(url.origin, 'https://open.api.rpiprint.com');
+    assert.notEqual(url.pathname, '/orders/create');
+    if (url.pathname === `/orders/${id}`) return Response.json({ order: { customerOrderId: id, status: 'RECEIVED' }, pricing: { itemsTotal: 19.34, shippingTotal: 6.99, taxesTotal: 2.04, currency: 'USD' } });
+    throw Error(`unexpected ${url.pathname}`);
+  };
+  try {
+    const resolved = await resolveCost({ RPI_API_KEY: 'Basic dGVzdA==' }, cost);
+    const again = await resolveCost({ RPI_API_KEY: 'Basic dGVzdA==' }, cost);
+    assert.equal(resolved.amountSource, 'actual');
+    assert.equal(resolved.totalCents, 2837);
+    assert.deepEqual(resolved.lines.map(l => [l.account, l.cents]), [['cogsPrints', 1934], ['cogsPrints', 204], ['cogsShipping', 699]]);
+    assert.deepEqual(again.lines, resolved.lines);
+    assert.deepEqual(paths, [`GET /orders/${id}`, `GET /orders/${id}`]);
+  } finally { globalThis.fetch = previous; }
+  globalThis.fetch = async (input, init = {}) => {
+    const url = new URL(input);
+    paths.push(`${init.method || 'GET'} ${url.pathname}`);
+    assert.notEqual(url.pathname, '/orders/create');
+    if ((init.method || 'GET') === 'GET') return Response.json({ order: { customerOrderId: id }, pricing: { itemsTotal: 0, shippingTotal: 0, taxesTotal: 0 } });
+    const body = JSON.parse(init.body);
+    assert.equal(url.pathname, '/orders/pricing/estimate');
+    assert.equal(body.customerOrderId, undefined);
+    return Response.json({ productionPrice: 19.34, shippingPrice: 6.99, shippingTax: 0.73, itemsPricing: [{ totalTaxAmount: 2.04 }], currency: 'USD' });
+  };
+  try {
+    await assert.rejects(resolveCost({ RPI_API_KEY: 'Basic dGVzdA==' }, cost, { now: Date.parse(cost.placedAt) + 1000 }), CostPending);
+    const quoted = await resolveCost({ RPI_API_KEY: 'Basic dGVzdA==' }, { ...cost, quoted: { production: null, shipping: null, tax: null } }, { now: Date.parse(cost.placedAt) + ACTUAL_WAIT_MS + 1000 });
+    assert.equal(quoted.amountSource, 'quoted');
+    assert.deepEqual(quoted.lines.map(l => l.cents), [1934, 277, 699]);
+    assert.equal(paths.includes('POST /orders/create'), false);
+  } finally { globalThis.fetch = previous; }
 });
 
 // ---------- At-cost (collector) print code marker ----------

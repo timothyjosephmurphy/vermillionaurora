@@ -335,7 +335,7 @@ export class QuickbooksSync extends DurableObject {
     if (!id) {
       try { id = (await client.create('Vendor', { DisplayName: name, CompanyName: name })).Id; }
       catch (error) {
-        if (error.faultCode === '6240') throw new QboError(`The name "${name}" is already used by a customer or employee in QuickBooks; set QBO_${key === 'shippo' ? 'LABEL' : 'PRINT'}_VENDOR to another name`, { kind: 'validation', tid: error.tid });
+        if (error.faultCode === '6240') throw new QboError(`The name "${name}" is already used by a customer or employee in QuickBooks; set ${VENDOR_DEFAULTS[key]?.env || 'QBO_PRINT_VENDOR'} to another name`, { kind: 'validation', tid: error.tid });
         throw error;
       }
     }

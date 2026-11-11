@@ -222,7 +222,8 @@ export const ACCOUNT_DEFAULTS = {
 export const VENDOR_DEFAULTS = {
   finerworks: { env: 'QBO_PRINT_VENDOR', name: 'FinerWorks' },
   prodigi: { env: 'QBO_PRINT_VENDOR', name: 'Prodigi' },
-  shippo: { env: 'QBO_LABEL_VENDOR', name: 'Shippo' }
+  shippo: { env: 'QBO_LABEL_VENDOR', name: 'Shippo' },
+  rpi: { env: 'QBO_RPI_VENDOR', name: 'RPI Print' }
 };
 export const vendorName = (env, key) => qboName(env[VENDOR_DEFAULTS[key].env] || VENDOR_DEFAULTS[key].name);
 export const costSyncEnabled = env => syncEnabled(env) && env.QBO_COST_SYNC_ENABLED === 'true';
@@ -310,11 +311,12 @@ export function withAtCostMarker(note, printCode) {
 }
 export const depositAccountKey = receipt => receipt.provider === 'btcpay' ? 'bitcoin' : 'square';
 
-// Production-cost Purchases: one per order per vendor. VP- = print lab, VL- = shipping labels (21-character DocNumber limit).
-export const costDocNumber = (orderId, type) => `${type === 'label' ? 'VL' : 'VP'}-${String(orderId).replace(/^cart:/, '').replace(/[^A-Za-z0-9]/g, '').slice(0, 18)}`;
+// Production-cost Purchases: one per order per cost type. VP- = print lab, VL- = shipping labels, VB- = RPI books
+// (21-character DocNumber limit). A cart can contain both a print and a book, so the book purchase cannot reuse VP-.
+export const costDocNumber = (orderId, type) => `${type === 'label' ? 'VL' : type === 'book' ? 'VB' : 'VP'}-${String(orderId).replace(/^cart:/, '').replace(/[^A-Za-z0-9]/g, '').slice(0, 18)}`;
 export const costId = (orderId, type) => `${orderId}:${type}`;
 export function validateCost(cost) {
-  if (!cost || cost.kind !== 'cost' || !['print', 'label'].includes(cost.type)) throw new QboError('Not a production cost', { kind: 'validation' });
+  if (!cost || cost.kind !== 'cost' || !['print', 'label', 'book'].includes(cost.type)) throw new QboError('Not a production cost', { kind: 'validation' });
   if (typeof cost.orderId !== 'string' || !/^cart:[A-Za-z0-9-]{1,80}$/.test(cost.orderId)) throw new QboError('Missing order id', { kind: 'validation' });
   if (!VENDOR_DEFAULTS[cost.vendor]) throw new QboError(`Unknown vendor ${cost.vendor}`, { kind: 'validation' });
   return cost;
