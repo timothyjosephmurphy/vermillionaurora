@@ -1,6 +1,8 @@
-// Production costs for QuickBooks: what the print lab (FinerWorks, legacy Prodigi) and the label service (Shippo) charged
-// the owner's card for one website order. Read-only against the vendors; QuickBooks writes happen in the sync Durable Object.
+// Production costs for QuickBooks: what the print lab (FinerWorks, legacy Prodigi), RPI books, and the label
+// service (Shippo) charged the owner's card for one website order. Read-only against the vendors; QuickBooks
+// writes happen in the sync Durable Object.
 import { finerworksRequest } from './finerworks-api.mjs';
+import { rpiBookCharges, rpiEstimateCharges } from './rpi-books.mjs';
 import { QboError, docNumberFor, costDocNumber } from './quickbooks-core.mjs';
 
 const DAY = 24 * 3600 * 1000;
@@ -34,6 +36,14 @@ export function costSources(order) {
       labels: labels.map(j => ({ slug: j.quote?.slug || '', title: j.quote?.title || '', transactionId: j.transactionId, rateId: j.quote?.rateId || '',
         quoted: j.quote?.shipping ?? null, carrier: j.quote?.carrier || '', service: j.quote?.service || '', trackingNumber: j.trackingNumber || '' })) });
   }
+  const book = order.bookJob;
+  if (book?.provider === 'rpi' && PLACED_PRINT.has(book.status) && book.customerOrderId) {
+    sources.push({ ...base, type: 'book', vendor: 'rpi', customerOrderId: book.customerOrderId, providerOrderId: book.providerOrderId || '',
+      placedAt: iso(book.attemptedAt) || base.paidAt,
+      quoted: { production: book.costs?.production ?? null, shipping: book.costs?.shipping ?? book.quotedShipping ?? null, tax: book.costs?.tax ?? null },
+      request: book.request || null,
+      items: (book.items || []).map(i => ({ id: i.id, sku: i.sku, quantity: i.quantity })) });
+  }
   return sources;
 }
 
@@ -48,6 +58,19 @@ function allocateQuoted(totalCents, quoted) {
   return { production: totalCents - ship - taxed, shipping: ship, tax: taxed };
 }
 
+function bookLines(cost, parts) {
+  const ref = `RPI order ${cost.customerOrderId}`;
+  return [
+    { account: 'cogsPrints', cents: parts.production, description: `Book printing — ${ref}` },
+    { account: 'cogsPrints', cents: parts.tax || 0, description: `Sales tax charged by RPI — ${ref}` },
+    { account: 'cogsShipping', cents: parts.shipping, description: `Book shipping — ${ref}` }
+  ].filter(l => l.cents > 0);
+}
+function bookParts(charges) {
+  const production = cents(charges?.production), shipping = cents(charges?.shipping), tax = cents(charges?.tax || '0.00');
+  if (!Number.isFinite(production) || production <= 0 || !Number.isFinite(shipping) || shipping < 0 || !Number.isFinite(tax) || tax < 0) return null;
+  return { production, shipping, tax, total: production + shipping + tax };
+}
 function printLines(cost, vendorLabel, parts) {
   const ref = `${vendorLabel} order ${cost.providerOrderId}`;
   return [
@@ -123,6 +146,24 @@ export async function resolveCost(env, cost, { now = Date.now() } = {}) {
     if (!Number.isFinite(quotedTotal) || quotedTotal <= 0) throw new QboError('No vendor charge or quoted lab cost is available', { kind: 'validation' });
     return { placedAt: cost.placedAt, totalCents: quotedTotal, amountSource: 'quoted', lines: printLines(cost, vendorLabel, allocateQuoted(quotedTotal, cost.quoted)),
       memo: `${memoBase}; ${memoRef}; QUOTED lab cost — ${vendorLabel} did not report the charged amount, check the card statement.` };
+  }
+  if (cost.type === 'book') {
+    const memoRef = `RPI order ${cost.customerOrderId}`;
+    let charges = null, failure = '';
+    try { charges = await rpiBookCharges(env, cost.customerOrderId); }
+    catch (error) { failure = error.message; }
+    const actual = bookParts(charges);
+    if (actual) return { placedAt: cost.placedAt, totalCents: actual.total, amountSource: 'actual', lines: bookLines(cost, actual),
+      memo: `${memoBase}; ${memoRef}; amounts are the print, shipping and tax RPI reported for this order.` };
+    if (young) throw new CostPending(`RPI has not reported the charged amount yet${failure ? ` (${failure})` : ''}`);
+    let quoted = bookParts(cost.quoted);
+    if (!quoted && cost.request) {
+      try { quoted = bookParts(await rpiEstimateCharges(env, cost.request)); }
+      catch (error) { failure = error.message; }
+    }
+    if (!quoted) throw new QboError(`No RPI print or shipping cost is available${failure ? ` (${failure})` : ''}`, { kind: 'validation' });
+    return { placedAt: cost.placedAt, totalCents: quoted.total, amountSource: 'quoted', lines: bookLines(cost, quoted),
+      memo: `${memoBase}; ${memoRef}; QUOTED RPI cost — the order did not report a charge, check the card statement.` };
   }
   // Shipping labels bought through Shippo for originals.
   const lines = []; let quotedAny = false, failure = '';

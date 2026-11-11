@@ -23,7 +23,7 @@ function safeMessage(data, fallback) {
 // Allow-list: shipping estimates and order create/read. No cancel, no other host.
 async function rpiRequest(env, method, path, body) {
   if (method !== 'GET' && method !== 'POST') throw Error('Unexpected RPI request');
-  if (path !== '/orders/shipping/estimate' && path !== '/orders/create' && !/^\/orders\/[A-Za-z0-9-]{1,40}$/.test(path)) throw Error('Unexpected RPI request');
+  if (path !== '/orders/shipping/estimate' && path !== '/orders/pricing/estimate' && path !== '/orders/create' && !/^\/orders\/[A-Za-z0-9-]{1,40}$/.test(path)) throw Error('Unexpected RPI request');
   const response = await fetch(`${ORIGIN}${path}`, {
     method,
     redirect: 'manual',
@@ -158,20 +158,54 @@ export function newRpiBookJob(env, order, items) {
   };
 }
 
+function dollar(value) {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value.toFixed(2) : null;
+}
+// Print cost is the item total. Shipping and tax are separate so QuickBooks can use the existing cost accounts.
+export function rpiChargeLines(data) {
+  const pricing = data?.pricing || {};
+  const production = dollar(pricing.itemsTotal);
+  const shipping = dollar(pricing.shippingTotal);
+  const tax = dollar(pricing.taxesTotal ?? 0) || '0.00';
+  if (!production || Number(production) <= 0 || shipping === null) return null;
+  return {production, shipping, tax};
+}
 function applyFound(job, data) {
   const order = data?.order;
   if (!order || order.customerOrderId !== job.customerOrderId) throw Error('RPI returned a different order');
   const stage = String(order.status || '');
   const status = stage === 'SHIPPED' ? 'complete' : stage === 'CANCELLED' ? 'cancelled' : FAILED.has(stage) ? 'review' : 'in-production';
   const reason = status === 'review' ? `RPI reported ${stage}. The customer payment is recorded. Review this order before placing another.` : status === 'cancelled' ? 'RPI cancelled this order. Review the payment.' : '';
+  const charges = rpiChargeLines(data);
   return {
     ...job,
     providerOrderId: order.orderPublicId || job.providerOrderId || '',
     stage,
     status,
+    ...(charges ? {costs: charges} : {}),
     ...(reason ? {reason} : {}),
     updatedAt: Date.now()
   };
+}
+// Read-only. Never creates an order.
+export async function rpiBookCharges(env, customerOrderId) {
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(customerOrderId || '')) throw Error('RPI order id is not a site order id');
+  const result = await rpiRequest(env, 'GET', `/orders/${customerOrderId}`);
+  if (result.status !== 200) throw Error(`RPI order lookup failed (${result.status})`);
+  return rpiChargeLines(result.data);
+}
+// Read-only price of the saved order. The estimate endpoint does not create an order.
+export async function rpiEstimateCharges(env, request) {
+  const body = {currency: 'USD', shippingClassification: request?.shippingClassification, destination: request?.destination, orderItems: request?.orderItems};
+  const result = await rpiRequest(env, 'POST', '/orders/pricing/estimate', body);
+  if (result.status !== 200) throw Error(`RPI pricing estimate failed (${result.status})`);
+  const data = result.data || {};
+  const itemTax = (data.itemsPricing || []).reduce((sum, item) => sum + (Number(item?.totalTaxAmount) || 0), 0);
+  const production = dollar(data.productionPrice);
+  const shipping = dollar(data.shippingPrice);
+  const tax = dollar((Number(data.shippingTax) || 0) + itemTax);
+  if (!production || Number(production) <= 0 || shipping === null || tax === null) return null;
+  return {production, shipping, tax};
 }
 
 async function lookup(env, customerOrderId) {
