@@ -11,7 +11,7 @@ This branch implements a guest cart for original paintings. It has not been depl
 - Buy now checks out the selected original while preserving other cart selections.
 - One US delivery address and contact email, separately priced parcels, one tax calculation, and one payment with PayPal or Bitcoin/Lightning when enabled for every selected item.
 - One order confirmation with all purchased items, plus a printable confirmation page. Successful payment removes only the purchased items from the cart.
-- Inquiry-only works, commissions and Amazon books keep their existing flows.
+- Inquiry-only works and commissions keep their existing flows. Art books use this checkout and are printed to order.
 
 ## Review images
 

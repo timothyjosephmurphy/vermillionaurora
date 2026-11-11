@@ -5258,13 +5258,25 @@
       "height": 900
     },
     "author": "Poems by Paul Michael Murphy \u00b7 Art by TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "40.00",
+        "currency": "USD"
+      }
+    },
     "story": [
       "Twelve poems illustrated with watercolors, each accompanied by a song sung by Suno."
     ],
     "book": {
-      "purchaseUrl": "https://www.amazon.com/Reflections-Time-Paul-Michael-Murphy/dp/B0DRSS4RFT/",
       "pdfUrl": "https://media.vermillionaurora.com/images/Art-book-Reflections-on-time/Reflections-on-time-6x9-web.pdf",
-      "pdfSize": "3 MB"
+      "pdfSize": "3 MB",
+      "rpi": {
+        "sku": "VA-REFLECTIONS-6X9-SC",
+        "pageCount": 36,
+        "coverUrl": "https://img.tjm.art/print-books/rpi-161/Reflections-on-Time-front-cover-15ee187ffed4.pdf",
+        "gutsUrl": "https://img.tjm.art/print-books/rpi-161/Reflections-on-Time-interior-36pp-bleed-8a80a27e52a6.pdf"
+      }
     },
     "card": {
       "eyebrow": "Illustrated poetry book",
@@ -5714,7 +5726,7 @@
     "slug": "watercolor-landscapes",
     "type": "book",
     "title": "Watercolor Landscapes",
-    "description": "A collection of landscapes exploring changing skies, shorelines, and reflected light. By TJ Murphy. Available on Amazon.",
+    "description": "A collection of landscapes exploring changing skies, shorelines, and reflected light. By TJ Murphy. Hardcover, printed to order.",
     "eyebrow": "Art book",
     "artist": "TJ Murphy",
     "image": {
@@ -5724,13 +5736,25 @@
       "height": 939
     },
     "author": "By TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "40.00",
+        "currency": "USD"
+      }
+    },
     "story": [
       "Watercolor landscapes of changing skies, shorelines, and reflected light."
     ],
     "book": {
-      "purchaseUrl": "https://www.amazon.com/dp/B0FVSWZM5Y",
       "pdfUrl": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes-book-web.pdf",
-      "pdfSize": "11 MB"
+      "pdfSize": "11 MB",
+      "rpi": {
+        "sku": "VA-LANDSCAPES-8511-HC",
+        "pageCount": 76,
+        "coverUrl": "https://img.tjm.art/print-books/rpi-161/Watercolor-Landscapes-cover-wrap-dc2a2ade829d.pdf",
+        "gutsUrl": "https://img.tjm.art/print-books/rpi-161/Landscapes-interior-76pp-bleed-7b17e9f177d7.pdf"
+      }
     },
     "card": {
       "eyebrow": "Art book \u00b7 TJ Murphy",
@@ -5742,7 +5766,7 @@
     "slug": "watercolor-portraits",
     "type": "book",
     "title": "Watercolor Portraits",
-    "description": "A collection of portraits exploring expression, rich color, and the texture of watercolor pastel. By TJ Murphy. Available on Amazon.",
+    "description": "A collection of portraits exploring expression, rich color, and the texture of watercolor pastel. By TJ Murphy. Hardcover, printed to order.",
     "eyebrow": "Art book",
     "artist": "TJ Murphy",
     "image": {
@@ -5752,13 +5776,25 @@
       "height": 939
     },
     "author": "By TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "40.00",
+        "currency": "USD"
+      }
+    },
     "story": [
       "Expressive portraits in rich color and textured watercolor pastel."
     ],
     "book": {
-      "purchaseUrl": "https://www.amazon.com/dp/B0FK2J7XX9",
       "pdfUrl": "https://media.vermillionaurora.com/images/Art-Book-Portraits/Portraits-art-book-web.pdf",
-      "pdfSize": "13 MB"
+      "pdfSize": "13 MB",
+      "rpi": {
+        "sku": "VA-PORTRAITS-8511-HC",
+        "pageCount": 80,
+        "coverUrl": "https://img.tjm.art/print-books/rpi-161/Watercolor-Portraits-cover-wrap-76644f357941.pdf",
+        "gutsUrl": "https://img.tjm.art/print-books/rpi-161/Portraits-interior-80pp-bleed-76113b653d34.pdf"
+      }
     },
     "card": {
       "eyebrow": "Art book \u00b7 TJ Murphy",

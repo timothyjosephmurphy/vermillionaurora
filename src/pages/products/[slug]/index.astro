@@ -68,7 +68,20 @@ const crumb = productCrumb(p);
     <img class="book-cover" {...p.image} fetchpriority="high" />
     <div class="book-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1 id="book-title">{p.title}</h1><p class="book-author">{p.author}</p>
       {p.story.map(text=><p class="book-description">{text}</p>)}
-      <div class="book-actions"><a class="button button-solid" href={p.book.purchaseUrl} target="_blank" rel="noopener noreferrer">Buy on Amazon ↗</a><a class="button button-ghost" href="#read-book">Read the book</a></div><p class="book-purchase-note">Pricing and formats on Amazon.</p>
+      <div data-cart-product>
+        <div class="book-actions">
+          <label class="book-quantity">Quantity <input data-cart-qty type="number" min="1" max="10" step="1" value="1" inputmode="numeric" aria-label={`Quantity of ${p.title}`} /></label>
+          <button type="button" class="button button-solid" data-cart-buy>Buy now</button>
+          <button type="button" class="cart-text-link" data-cart-add>Add to cart</button>
+          <a class="button button-ghost" href="#read-book">Read the book</a>
+          <a class="button button-solid" data-purchase-inquiry href="mailto:tj@tjm.art?subject=Book%20order" hidden>Email to order</a>
+        </div>
+        <p class="product-detail-price">{priceLabel(p)}</p>
+        <p class="book-pay-note">You can pay with Bitcoin.</p>
+        <p class="product-pay-line">Pay with Bitcoin / Lightning (BTCPay) or card.</p>
+        <p class="book-purchase-note">Printed to order and shipped to you. Shipping and tax are calculated at checkout.</p>
+        <p class="cart-product-message" data-cart-added role="status" aria-live="polite"></p>
+      </div>
       <ProductShare product={p}/>
     </div>
   </section>
@@ -131,7 +144,7 @@ const crumb = productCrumb(p);
   {availablePrints.length>0&&<PrintPurchaseDialog product={p}/>}
   {sticker&&<StickerPurchaseDialog product={p} offer={sticker}/>}
 </main>}
-<style is:global>.older-originals-list{margin:26px 0}.older-originals-list h2{font:600 1.6rem/1.2 'Cormorant Garamond',serif;margin:0 0 10px}.older-originals-list ul{list-style:none;margin:0;padding:0}.older-originals-list li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #e3d9ce}.older-original-thumb{display:block;background:#f1ece4;border-radius:3px}.older-original-thumb img{display:block;width:72px;height:72px;object-fit:contain;padding:4px}.older-original-name{color:inherit;font-weight:600}.older-originals-list li p{margin:2px 0 0;font-size:.88rem;color:#665b52}.older-originals-list .older-original-buy{padding:8px 18px;min-height:0}.older-original-view{color:#a34528;font-size:.9rem}</style>
+<style is:global>.book-quantity{display:inline-flex;align-items:center;gap:8px;margin:0 12px 8px 0;font-size:.95rem}.book-quantity input{width:4.5rem;padding:6px 8px}.book-pay-note,.book-card-price{margin:.35rem 0}.older-originals-list{margin:26px 0}.older-originals-list h2{font:600 1.6rem/1.2 'Cormorant Garamond',serif;margin:0 0 10px}.older-originals-list ul{list-style:none;margin:0;padding:0}.older-originals-list li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #e3d9ce}.older-original-thumb{display:block;background:#f1ece4;border-radius:3px}.older-original-thumb img{display:block;width:72px;height:72px;object-fit:contain;padding:4px}.older-original-name{color:inherit;font-weight:600}.older-originals-list li p{margin:2px 0 0;font-size:.88rem;color:#665b52}.older-originals-list .older-original-buy{padding:8px 18px;min-height:0}.older-original-view{color:#a34528;font-size:.9rem}</style>
 </ProductLayout>
 
 

@@ -13,6 +13,25 @@ import {lowestPrintPrice} from '../src/data/card-commerce.mjs';
 import {printOptions,config,papers} from '../catalog/prints.mjs';
 import {stickerOffer} from '../catalog/printful-stickers.mjs';
 import {publicImageSrc} from '../src/data/public-image.mjs';
+test('art books sell on this site at $40 with checkout and no Amazon link',()=>{
+  for(const id of ['watercolor-landscapes','watercolor-portraits','reflections-on-time']){
+    const p=byId[id];
+    assert.equal(p.listing.price.amount,'40.00');
+    assert.equal(p.book.purchaseUrl,undefined);
+    assert.match(p.book.rpi.coverUrl,/^https:\/\/img\.tjm\.art\/print-books\/rpi-161\//);
+    assert.match(p.book.rpi.gutsUrl,/^https:\/\/img\.tjm\.art\/print-books\/rpi-161\//);
+    const $=load(fs.readFileSync(`dist/products/${id}/index.html`,'utf8'));
+    assert.equal($('a[href*="amazon."]').length,0,id);
+    assert.equal($('[data-cart-buy]').text(),'Buy now');
+    assert.match($('main').text(),/You can pay with Bitcoin/);
+    assert.match($('script[type="application/ld+json"]').text(),/"price":"40\.00"/);
+    assert.doesNotMatch($('script[type="application/ld+json"]').text(),/amazon/i);
+  }
+  for(const path of ['books/index.html','index.html']){
+    const $=load(fs.readFileSync(`dist/${path}`,'utf8'));
+    assert.equal($('#books a[href*="amazon."], .books-page a[href*="amazon."]').length,0,path);
+  }
+});
 test('every product renders at its stable URL with matching content and checkout price',()=>{
  assert.equal(catalogVersion,workerVersion);
  for(const p of products){const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));assert.equal($('h1').text(),p.title);assert.equal($('meta[name=catalog-version]').attr('content'),catalogVersion);assert.equal($('link[rel=canonical]').attr('href'),`https://tjm.art/products/${p.slug}/`);for(const paragraph of p.story)assert.ok($('main').text().includes(paragraph),p.slug);if(p.image)assert.equal(($('main img, main svg[data-image-src]').first().attr('data-image-src') || $('main img, main svg[data-image-src]').first().attr('src')),publicImageSrc(p.image));if(checkout[p.id]){assert.equal(checkout[p.id].amount,p.listing.price.amount);assert.equal($('.product-detail-price').text(),priceLabel(p));}}

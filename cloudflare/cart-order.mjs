@@ -1,5 +1,5 @@
 import {DurableObject} from 'cloudflare:workers';
-import {catalogVersion,commonMethods,cartOrigin,publicCartItem} from './cart-policy.mjs';
+import {catalogVersion,commonMethods,cartOrigin,publicCartItem,holdsStock} from './cart-policy.mjs';
 import {ensurePrintCatalog} from './print-catalog-asset.mjs';
 import {squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './cart-providers.mjs';
 import {bitcoinApi,bitcoinServer,checkoutUrl} from './bitcoin-api.mjs';
@@ -10,6 +10,7 @@ import {costSources} from './quickbooks-costs.mjs';
 import {newShippingJob,fulfillSale} from './shipping-fulfillment.mjs';
 import {sendCartEmail} from './cart-email.mjs';
 import {newPrintJob,fulfillPrints,printFulfillmentRecord} from './print-fulfillment.mjs';
+import {newRpiBookJob,fulfillRpiBooks,rpiFulfillmentRecord} from './rpi-books.mjs';
 
 const CART_HOLD_MS=15*60_000;
 
@@ -44,14 +45,14 @@ export class CartOrder extends DurableObject {
     // A completed payment attempt keeps its identity even when invoice recovery
     // cleared provider fields. A new reservation must use a new coordinator.
     if(d&&['expired','cancelled','unavailable'].includes(d.status)&&(d.method||d.providerId||d.createAttemptedAt))throw Error('Checkout has already started.');
-    const previous=d?.heldIds||d?.quote?.items.filter(i=>(i.type!=='print'&&i.type!=='deposit')).map(i=>i.id)||[];
-    const target=[...new Set(items.filter(i=>(i.type!=='print'&&i.type!=='deposit')).map(i=>i.id))].sort();
+    const previous=d?.heldIds||d?.quote?.items.filter(i=>(holdsStock(i))).map(i=>i.id)||[];
+    const target=[...new Set(items.filter(i=>(holdsStock(i))).map(i=>i.id))].sort();
     const union=[...new Set([...previous,...target])].sort();
     const now=Date.now();
     d=this.save({id,keyHash,status:'holding',heldIds:union,targetHeldIds:target,createdAt:d?.createdAt||now,expiresAt:now+CART_HOLD_MS});
     await this.schedule(CART_HOLD_MS);
     const added=[];
-    for(const item of items.filter(i=>(i.type!=='print'&&i.type!=='deposit')&&!previous.includes(i.id))) {
+    for(const item of items.filter(i=>(holdsStock(i))&&!previous.includes(i.id))) {
       if(!await this.stock(item.id).reserveCart(id)) {
         for(const reserved of added)await this.stock(reserved).releaseCart(id);
         const restored=this.save({...d,status:previous.length?'holding':'unavailable',heldIds:previous,targetHeldIds:undefined,expiresAt:previous.length?now+CART_HOLD_MS:now});
@@ -79,12 +80,12 @@ export class CartOrder extends DurableObject {
     return {orderId:d.id,status:d.status,expiresAt:d.expiresAt,method:d.method,methods:d.methods,
       ...((['pending','processing'].includes(d.status)||d.method==='bitcoin'&&['settling','paid'].includes(d.status))&&d.url?{url:d.url}:{}),
       ...(d.quote?{quote:{items:d.quote.items.map(publicCartItem),base:d.quote.base,shipping:d.quote.shipping,tax:d.quote.tax,total:d.quote.total,...(d.quote.salesTax?{taxRate:d.quote.salesTax.rate}:{}),
-        shipments:[...d.quote.shipments.map(s=>({id:s.slug,title:s.title,shipping:s.shipping,carrier:s.carrier,service:s.service})),...(d.quote.printQuote?[{id:'prints',title:'Fine-art prints',shipping:d.quote.printQuote.shipping,carrier:d.quote.printQuote.carrier,service:d.quote.printQuote.service}]:[])]},
+        shipments:[...d.quote.shipments.map(s=>({id:s.slug,title:s.title,shipping:s.shipping,carrier:s.carrier,service:s.service})),...(d.quote.printQuote?[{id:'prints',title:'Fine-art prints',shipping:d.quote.printQuote.shipping,carrier:d.quote.printQuote.carrier,service:d.quote.printQuote.service}]:[]),...(d.quote.bookQuote?[{id:'books',title:'Printed books',shipping:d.quote.bookQuote.shipping,carrier:d.quote.bookQuote.carrier,service:d.quote.bookQuote.service}]:[])]},
         }:{}),
       ...(d.heldIds?{heldIds:d.heldIds}:{}),
       ...(d.unavailable?{unavailable:d.unavailable}:{}),
       ...(d.paymentError?{paymentError:d.paymentError}:{}),...(d.squareSandboxNoFulfillment?{sandboxTestOnly:true}:{}),
-      ...(d.status==='paid'?{paidAt:d.paidAt,shipments:[...(d.jobs||[]).map(j=>({id:j.quote.slug,trackingNumber:j.trackingNumber||'',trackingUrl:j.trackingUrl||''})),...(d.printJob?.shipments||[])],...(d.printJob?{printStatus:d.printJob.status}:{}),confirmation:d.customerMail?.status||'pending'}:{})};
+      ...(d.status==='paid'?{paidAt:d.paidAt,shipments:[...(d.jobs||[]).map(j=>({id:j.quote.slug,trackingNumber:j.trackingNumber||'',trackingUrl:j.trackingUrl||''})),...(d.printJob?.shipments||[])],...(d.printJob?{printStatus:d.printJob.status}:{}),...(d.bookJob?{bookStatus:d.bookJob.status}:{}),confirmation:d.customerMail?.status||'pending'}:{})};
   }
   async start(method,payment={}) {return this.exclusive(async()=>{
     await ensurePrintCatalog(this.env);
@@ -102,7 +103,7 @@ export class CartOrder extends DurableObject {
       ...(method==='square'?{squareMode:this.env.SQUARE_MODE,squareLocationId:this.env.SQUARE_LOCATION_ID,squareSourceId:payment.sourceId,
         squareAttempt:(d.squareAttempt||0)+1,squareIdempotencyKey:`${d.id}-${String((d.squareAttempt||0)+1).padStart(2,'0')}`,paymentError:undefined}:{}),
       ...(method==='bitcoin'?{server:bitcoinServer(this.env),storeId:this.env.BTCPAY_STORE_ID}:{})});
-    for(const item of d.quote.items.filter(i=>(i.type!=='print'&&i.type!=='deposit'))) {
+    for(const item of d.quote.items.filter(i=>(holdsStock(i)))) {
       if(!await this.stock(item.id).ownsCart(d.id)&&!await this.stock(item.id).reserveCart(d.id)) {
         this.save({...d,status:'releasing',releaseStatus:'unavailable',unavailable:item.id});await this.releaseAll();return this.result();
       }
@@ -133,7 +134,7 @@ export class CartOrder extends DurableObject {
   async releaseAll() {
     const d=this.read();
     // releaseCart is conditional on the coordinator identity. Never unlock another buyer.
-    for(const id of new Set([...(d.heldIds||[]),...(d.quote?.items.filter(i=>(i.type!=='print'&&i.type!=='deposit')).map(i=>i.id)||[])]))await this.stock(id).releaseCart(d.id);
+    for(const id of new Set([...(d.heldIds||[]),...(d.quote?.items.filter(i=>(holdsStock(i))).map(i=>i.id)||[])]))await this.stock(id).releaseCart(d.id);
     await this.codeOrder(d)?.codeRelease(d.id);
     this.save({...d,status:d.releaseStatus||'cancelled'});
     if(d.method==='bitcoin'&&d.providerId)await this.schedule(15*60000);else await this.ctx.storage.deleteAlarm();
@@ -151,7 +152,7 @@ export class CartOrder extends DurableObject {
     let d=this.read();
     if(d.captureId&&d.captureId!==captureId)throw Error('Conflicting capture');
     // Check every lock before any item is sold; incomplete commits are replayable.
-    for(const i of d.quote.items.filter(i=>(i.type!=='print'&&i.type!=='deposit'))) {
+    for(const i of d.quote.items.filter(i=>(holdsStock(i)))) {
       const row=await this.stock(i.id).order();
       if(row?.orderId!==`cart:${d.id}`||!['cart-held','sold'].includes(row.state)||(row.state==='sold'&&row.captureId!==captureId)) {
         this.save({...d,status:'review',reason:'A received payment no longer owns every original. Review payment before fulfillment.'});await this.reviewNotice();return;
@@ -159,7 +160,7 @@ export class CartOrder extends DurableObject {
     }
     await this.schedule();
     d=this.save({...d,status:'settling',captureId,details,paidAt:d.paidAt||details.paidAt||new Date().toISOString()});
-    for(const i of d.quote.items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))if(!await this.stock(i.id).completeCart(d.id,captureId))throw Error('Could not complete inventory');
+    for(const i of d.quote.items.filter(i=>(holdsStock(i))))if(!await this.stock(i.id).completeCart(d.id,captureId))throw Error('Could not complete inventory');
     const code=this.codeOrder(d);
     if(code&&!d.codeRedeemed){d=this.save({...d,codeRedeemed:true,...(await code.codeRedeem(d.id)?{}:{codeConflict:true})});}
     const jobs=d.squareSandboxNoFulfillment?[]:d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
@@ -171,7 +172,13 @@ export class CartOrder extends DurableObject {
         request:{merchantReference:`va-cart-${d.id}-prints`},quotedProductionCost:d.quote.printQuote?.productionCost,quotedShipping:d.quote.printQuote?.shipping,
         reason:'The payment is recorded, but print fulfillment settings changed. Review before placing a print order.'};
     }
-    this.save({...d,status:'paid',jobs,...(printJob?{printJob}:{})});await this.schedule(1000);
+    const bookLines=d.squareSandboxNoFulfillment?[]:d.quote.items.filter(i=>i.type==='book');
+    let bookJob=d.squareSandboxNoFulfillment?undefined:d.bookJob;
+    if(bookLines.length&&!bookJob)try {bookJob=newRpiBookJob(this.env,d,bookLines);}catch(error) {
+      bookJob={provider:'rpi',status:'review',mode:d.mode,customerOrderId:d.id,items:bookLines.map(i=>({id:i.id,sku:i.sku,quantity:i.quantity,title:i.title,amount:i.amount})),
+        request:{customerOrderId:d.id},reason:`The payment is recorded, but the book order could not be prepared. ${error.message}`};
+    }
+    this.save({...d,status:'paid',jobs,...(printJob?{printJob}:{}),...(bookJob?{bookJob}:{})});await this.schedule(1000);
   }
   validateBitcoin(d,invoice) {
     if(this.env.CHECKOUT_MODE!==d.mode||bitcoinServer(this.env)!==d.server||this.env.BTCPAY_STORE_ID!==d.storeId||
@@ -276,15 +283,17 @@ export class CartOrder extends DurableObject {
   receipt() {
     const d=this.read(),q=d.quote,details=d.details||{};
     const shipments=(d.jobs||[]).map(job=>({id:job.quote.slug,...fulfillmentRecord({published:true,tax_recorded:d.taxRecorded},job)}));
-    const printStatus=d.printJob?.status;
+    const printStatus=d.printJob?.status,bookStatus=d.bookJob?.status;
     const originalReady=shipments.length===0||shipments.every(s=>s.labelStatus==='ready');
     const originalReview=shipments.some(s=>s.labelStatus==='review');
     const printReady=!d.printJob||printStatus==='complete'||d.mode==='sandbox'&&printStatus==='test-complete';
     const printReview=['review','cancelled'].includes(printStatus);
-    const labelStatus=originalReview||printReview?'review':(originalReady&&printReady)?'ready':'pending';
+    const bookReady=!d.bookJob||bookStatus==='complete';
+    const bookReview=['review','cancelled','failed'].includes(bookStatus);
+    const labelStatus=originalReview||printReview||bookReview?'review':(originalReady&&printReady&&bookReady)?'ready':'pending';
     return {schemaVersion:3,id:`payment:${d.captureId}`,kind:'sale',mode:d.mode,source:'checkout',provider:d.method==='bitcoin'?'btcpay':d.method==='square'?'square':'paypal',
       transactionId:d.captureId,orderId:`cart:${d.id}`,parentTransactionId:'',status:'COMPLETED',paidAt:d.paidAt,recordedAt:d.paidAt,
-      title:q.items.map(i=>i.title).join('; '),slug:'',currency:'USD',items:q.items,shipments,...(d.printJob?{printFulfillment:printFulfillmentRecord(d.printJob)}:{}),itemAmount:q.base,shipping:q.shipping,tax:q.tax,gross:q.total,
+      title:q.items.map(i=>i.title).join('; '),slug:'',currency:'USD',items:q.items,shipments,...(d.printJob?{printFulfillment:printFulfillmentRecord(d.printJob)}:{}),...(d.bookJob?{bookFulfillment:rpiFulfillmentRecord(d.bookJob)}:{}),itemAmount:q.base,shipping:q.shipping,tax:q.tax,gross:q.total,
       ...(d.method==='paypal'?{paypalFee:details.fee??null,paypalNet:details.net??null}:{}),providerFee:details.fee??null,feeCurrency:details.feeCurrency||'',netCurrency:details.netCurrency||'',
       ...(q.printCode?{printCode:{kind:q.printCode.kind,hash:q.printCode.hash.slice(0,12),...(q.printCode.kind==='collector'&&q.printCode.suffix?{suffix:q.printCode.suffix}:{})},listAmount:q.items.reduce((s,i)=>s+Number(i.listAmount||i.amount)*(i.quantity||1),0).toFixed(2)}:{}),
       buyerName:q.address?.name||'',buyerEmail:q.email,shippingAddress:q.address,...(q.salesTax?{salesTax:q.salesTax}:{}),
@@ -296,7 +305,7 @@ export class CartOrder extends DurableObject {
   async archiveSale() {
     const d=this.read();if(d?.status!=='paid')return {recorded:false};
     const receipt=this.receipt();await ledgerFor(this.env,receipt).record(receipt);
-    await this.env.SALES_ARCHIVE.put(`orders/${d.mode}/${d.id}.json`,JSON.stringify({receipt,fulfillment:d.jobs,printFulfillment:d.printJob,confirmation:d.customerMail},null,2),{httpMetadata:{contentType:'application/json'}});
+    await this.env.SALES_ARCHIVE.put(`orders/${d.mode}/${d.id}.json`,JSON.stringify({receipt,fulfillment:d.jobs,printFulfillment:d.printJob,bookFulfillment:d.bookJob,confirmation:d.customerMail},null,2),{httpMetadata:{contentType:'application/json'}});
     return {recorded:true,period:d.paidAt.slice(0,7)};
   }
   async fulfill() {
@@ -325,13 +334,24 @@ export class CartOrder extends DurableObject {
         if(job.status==='complete')await this.mail('printShipmentMail','print-shipped');
       }catch{done=false;}
     }
+    if(this.read().bookJob) {
+      try {
+        const complete=await fulfillRpiBooks(this.env,this.read().bookJob,async bookJob=>{this.save({...this.read(),bookJob});await this.ctx.storage.sync();});
+        if(!complete)done=false;
+        const job=this.read().bookJob;
+        if(['review','cancelled','failed'].includes(job.status)&&!this.read().bookReviewNoted){
+          this.save({...this.read(),bookReviewNoted:true,reason:this.read().reason||job.reason||'The book order needs review.'});
+          try{await this.reviewNotice();}catch(error){console.error('Book review notice failed',this.read().id,error.message);done=false;}
+        }
+      }catch{done=false;}
+    }
     if(this.read().quote.items.some(i=>i.type==='deposit'))try{await this.mail('depositSellerMail','deposit-seller');}catch{done=false;}
     try{await this.mail('customerMail','confirmation');}catch{done=false;}
     // QuickBooks production costs: queued once the lab order is placed / labels are bought, only for sales already sent to QuickBooks.
     if(this.read().quickbooksQueued&&costSyncEnabled(this.env))try{await this.queueQuickbooksCosts();}catch(error){console.error('QuickBooks cost queue failed',d.id,error.message);done=false;}
     try{await this.archiveSale();}catch{done=false;}
     if(done)await this.ctx.storage.deleteAlarm();
-    else if(this.read().printJob)await this.schedule(15*60000);
+    else if(this.read().printJob||this.read().bookJob)await this.schedule(15*60000);
   }
   quickbooksCostSources(){return costSources(this.read());}
   async queueQuickbooksCosts() {
