@@ -142,7 +142,8 @@ test('home featured slides are real links with sized images, and product labels 
 
 test('report-only CSP names a reporting endpoint (Safari) and the Worker collects reports', async () => {
   assert.match(CSP_REPORT_ONLY, /(?:^|; )report-to csp-endpoint(?:;|$)/);
-  assert.match(CSP_REPORT_ONLY, /(?:^|; )report-uri \/csp-report(?:;|$)/);
+  // Cloudflare rejects any _headers line over 2000 characters (code 100324) and fails the deploy.
+  for (const line of headersFile.split(/\r?\n/)) assert.ok(line.length <= 2000, `_headers line is ${line.length} characters`);
   assert.equal(SITE_SECURITY_HEADERS['Reporting-Endpoints'], 'csp-endpoint="/csp-report"');
   assert.ok(headersFile.includes('Reporting-Endpoints: csp-endpoint="/csp-report"'));
   const env = { PRIMARY_HOST: 'tjm.art', ASSETS: { fetch: () => new Response('asset', { status: 404 }) } };

@@ -26,7 +26,7 @@ export const PERMISSIONS_POLICY = 'camera=(self), microphone=(self), geolocation
 export const CSP_REPORT_ONLY = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://web.squarecdn.com https://sandbox.web.squarecdn.com https://js.squareup.com https://js.squareupsandbox.com https://applepay.cdn-apple.com https://static.cloudflareinsights.com https://unpkg.com https://cdn.jsdelivr.net",
-  "style-src 'self' 'unsafe-inline' https://unpkg.com https://web.squarecdn.com https://sandbox.web.squarecdn.com https://*.squarecdn.com",
+  "style-src 'self' 'unsafe-inline' https://unpkg.com https://*.squarecdn.com",
   "img-src 'self' data: blob: https://img.tjm.art https://media.vermillionaurora.com https://vermillionaurora.com https://i.ytimg.com https://tile.openstreetmap.org https://*.squareup.com https://*.squareupsandbox.com https://*.squarecdn.com https://static.cloudflareinsights.com",
   "font-src 'self' data: https://*.squarecdn.com",
   "media-src 'self' blob: mediastream: data: https://img.tjm.art https://media.vermillionaurora.com",
@@ -39,8 +39,8 @@ export const CSP_REPORT_ONLY = [
   "form-action 'self' https://pay.tjm.art https://*.squareup.com",
   "object-src 'none'",
   // Safari logs an error for a report-only policy with nowhere to send reports. report-to names the
-  // Reporting-Endpoints group below; report-uri covers browsers without the Reporting API.
-  `report-uri ${CSP_REPORT_PATH}`,
+  // Reporting-Endpoints group. Cloudflare rejects _headers lines over 2000 characters, so the policy
+  // stays compact: *.squarecdn.com already covers web. and sandbox.web.squarecdn.com in style-src.
   `report-to ${CSP_REPORT_GROUP}`,
 ].join('; ');
 
