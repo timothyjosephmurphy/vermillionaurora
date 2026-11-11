@@ -1,7 +1,7 @@
 // Quote and preflight checks; --test-orders also exercises unbilled sandbox fulfillment.
 // The encrypted artifact is the only output containing supplier costs/diagnostics.
 import {randomBytes,createCipheriv,publicEncrypt} from 'node:crypto';
-import {readFileSync,writeFileSync} from 'node:fs';
+import {existsSync,readFileSync,writeFileSync} from 'node:fs';
 import {gzipSync} from 'node:zlib';
 import assert from 'node:assert/strict';
 import config from '../catalog/prints.json' with {type:'json'};
@@ -53,10 +53,26 @@ try {
     assert.deepEqual(listed.map(p=>p.id).sort(),expected.map(p=>p.id).sort());
     assert(listed.every(p=>p.methods.includes('square')&&!p.methods.includes('paypal')&&!p.sampleOnly));
     const {createHash}=await import('node:crypto');
-    for(const art of Object.values(config.artworks).filter(a=>a.enabled))for(const v of Object.values(art.variants)){
-      const file=readFileSync(new URL('../static'+new URL(v.asset.url).pathname,import.meta.url));
-      assert.equal(createHash('sha256').update(file).digest('hex'),v.asset.sha256);
-    }
+    // Since #796 the build only regenerates edition JPEGs whose print master is on disk; the others are
+    // recorded in data/print-masters-manifest.json and stay published at their immutable URL. Hash the
+    // local file when the build produced one, otherwise the published file, so every variant is checked.
+    const assets=[...new Map(Object.values(config.artworks).filter(a=>a.enabled).flatMap(art=>Object.values(art.variants)).map(v=>[v.asset.url,v.asset])).values()];
+    let next=0,fetched=0;
+    await Promise.all(Array.from({length:6},async()=>{while(next<assets.length){
+      const asset=assets[next++],url=new URL(asset.url);
+      assert(url.origin==='https://vermillionaurora.com'&&/^\/print-editions\/[a-f0-9]{64}\.jpg$/.test(url.pathname),`Unexpected edition asset location: ${asset.url}`);
+      const local=new URL('../static'+url.pathname,import.meta.url);
+      let file;
+      if(existsSync(local))file=readFileSync(local);
+      else{
+        let response;
+        for(let attempt=0;attempt<3&&!response?.ok;attempt++)response=await fetch(asset.url,{signal:AbortSignal.timeout(30000)}).catch(()=>null);
+        assert.equal(response?.status,200,`Published edition file missing: ${asset.url}`);
+        file=Buffer.from(await response.arrayBuffer());fetched++;
+      }
+      assert.equal(createHash('sha256').update(file).digest('hex'),asset.sha256,`Edition file hash mismatch: ${asset.url}`);
+    }}));
+    console.log(`Verified ${assets.length} edition files (${fetched} from the published site, the rest from this build).`);
     installed=true;await cloudflare('PUT','',{name,text:secret,type:'secret_text'});
     report.credentialsOk=(await verify({task:'credentials'})).credentialsOk;assert(report.credentialsOk);
     const ids=['painting-portrait-in-green','painting-portrait-in-gold'];

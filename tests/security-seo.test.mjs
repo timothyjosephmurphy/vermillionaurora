@@ -139,3 +139,21 @@ test('home featured slides are real links with sized images, and product labels 
   }
   assert.deepEqual(size, { width: 1200, height: 630 });
 });
+
+test('report-only CSP names a reporting endpoint (Safari) and the Worker collects reports', async () => {
+  assert.match(CSP_REPORT_ONLY, /(?:^|; )report-to csp-endpoint(?:;|$)/);
+  assert.match(CSP_REPORT_ONLY, /(?:^|; )report-uri \/csp-report(?:;|$)/);
+  assert.equal(SITE_SECURITY_HEADERS['Reporting-Endpoints'], 'csp-endpoint="/csp-report"');
+  assert.ok(headersFile.includes('Reporting-Endpoints: csp-endpoint="/csp-report"'));
+  const env = { PRIMARY_HOST: 'tjm.art', ASSETS: { fetch: () => new Response('asset', { status: 404 }) } };
+  const report = await worker.fetch(new Request('https://tjm.art/csp-report', { method: 'POST', headers: { 'content-type': 'application/csp-report' }, body: JSON.stringify({ 'csp-report': { 'violated-directive': 'frame-src', 'blocked-uri': 'https://example.test/x.pdf', 'document-uri': 'https://tjm.art/' } }) }), env);
+  assert.equal(report.status, 204);
+  assert.equal((await worker.fetch(new Request('https://tjm.art/csp-report'), env)).status, 405);
+  assert.equal((await worker.fetch(new Request('https://tjm.art/csp-report', { method: 'POST', headers: { 'content-type': 'text/plain' }, body: 'x' }), env)).status, 415);
+});
+
+test('the "Read the book" PDF frame from media.vermillionaurora.com is allowed', () => {
+  const frameSrc = CSP_REPORT_ONLY.split('; ').find(d => d.startsWith('frame-src '));
+  assert.ok(frameSrc.split(' ').includes('https://media.vermillionaurora.com'));
+  assert.ok(headersFile.includes(frameSrc));
+});

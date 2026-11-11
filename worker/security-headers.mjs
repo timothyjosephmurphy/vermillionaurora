@@ -12,6 +12,10 @@ export const HSTS = 'max-age=31536000; includeSubDomains';
 export const CONTENT_TYPE_OPTIONS = 'nosniff';
 export const REFERRER_POLICY = 'strict-origin-when-cross-origin';
 export const FRAME_OPTIONS = 'SAMEORIGIN';
+// The book pages embed the "Read the book" PDF from media.vermillionaurora.com in an iframe (frame-src).
+export const CSP_REPORT_PATH = '/csp-report';
+export const CSP_REPORT_GROUP = 'csp-endpoint';
+export const REPORTING_ENDPOINTS = `${CSP_REPORT_GROUP}="${CSP_REPORT_PATH}"`;
 export const PERMISSIONS_POLICY = 'camera=(self), microphone=(self), geolocation=()';
 
 // Audited from src/, static/, worker/, payments/cart.js, and neural-dance/:
@@ -27,13 +31,17 @@ export const CSP_REPORT_ONLY = [
   "font-src 'self' data: https://*.squarecdn.com",
   "media-src 'self' blob: mediastream: data: https://img.tjm.art https://media.vermillionaurora.com",
   "connect-src 'self' wss://tjm.art ws://localhost:* ws://127.0.0.1:* blob: data: https://img.tjm.art https://media.vermillionaurora.com https://pay.tjm.art https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev https://vermillion-commissions.timothyjosephmurphy.workers.dev https://*.squareup.com https://*.squareupsandbox.com https://*.squarecdn.com https://pci-connect.squareup.com https://pci-connect.squareupsandbox.com https://applepay.cdn-apple.com https://*.apple.com https://cloudflareinsights.com https://static.cloudflareinsights.com https://tile.openstreetmap.org https://cdn.jsdelivr.net",
-  "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://www.google.com https://pay.tjm.art https://web.squarecdn.com https://sandbox.web.squarecdn.com https://connect.squareup.com https://connect.squareupsandbox.com https://*.squareup.com https://*.apple.com",
+  "frame-src 'self' https://media.vermillionaurora.com https://www.youtube-nocookie.com https://www.youtube.com https://www.google.com https://pay.tjm.art https://web.squarecdn.com https://sandbox.web.squarecdn.com https://connect.squareup.com https://connect.squareupsandbox.com https://*.squareup.com https://*.apple.com",
   "worker-src 'self' blob:",
   "child-src 'self' blob:",
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self' https://pay.tjm.art https://*.squareup.com",
   "object-src 'none'",
+  // Safari logs an error for a report-only policy with nowhere to send reports. report-to names the
+  // Reporting-Endpoints group below; report-uri covers browsers without the Reporting API.
+  `report-uri ${CSP_REPORT_PATH}`,
+  `report-to ${CSP_REPORT_GROUP}`,
 ].join('; ');
 
 export const SITE_SECURITY_HEADERS = {
@@ -43,6 +51,7 @@ export const SITE_SECURITY_HEADERS = {
   'X-Frame-Options': FRAME_OPTIONS,
   'Permissions-Policy': PERMISSIONS_POLICY,
   'Content-Security-Policy-Report-Only': CSP_REPORT_ONLY,
+  'Reporting-Endpoints': REPORTING_ENDPOINTS,
 };
 
 // HTML the Worker constructs. Existing X-Frame-Options (catalog admin DENY) and
@@ -59,5 +68,26 @@ export function withSiteSecurityHeaders(response) {
   if (!headers.has('X-Frame-Options')) headers.set('X-Frame-Options', FRAME_OPTIONS);
   headers.set('Permissions-Policy', PERMISSIONS_POLICY);
   headers.set('Content-Security-Policy-Report-Only', CSP_REPORT_ONLY);
+  headers.set('Reporting-Endpoints', REPORTING_ENDPOINTS);
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
+// Collector for report-only CSP violations: logs a compact summary (visible in Worker traces) and
+// answers 204. Never echoes the body, never stores it, and caps what it reads.
+export async function handleCspReport(request) {
+  if (request.method !== 'POST') return new Response(null, { status: 405, headers: { Allow: 'POST' } });
+  const type = (request.headers.get('content-type') || '').toLowerCase();
+  if (!/application\/(csp-report|reports\+json|json)/.test(type)) return new Response(null, { status: 415 });
+  try {
+    const text = (await request.text()).slice(0, 16384);
+    const parsed = JSON.parse(text);
+    const reports = (Array.isArray(parsed) ? parsed.map(r => r?.body) : [parsed?.['csp-report']]).filter(Boolean).slice(0, 10);
+    for (const r of reports) {
+      const directive = r.effectiveDirective || r['effective-directive'] || r['violated-directive'] || '';
+      const blocked = String(r.blockedURL || r['blocked-uri'] || '').slice(0, 200);
+      const page = String(r.documentURL || r['document-uri'] || '').split(/[?#]/)[0].slice(0, 200);
+      console.log(JSON.stringify({ csp: 'report-only', directive, blocked, page }));
+    }
+  } catch { /* Malformed reports are ignored. */ }
+  return new Response(null, { status: 204 });
 }
