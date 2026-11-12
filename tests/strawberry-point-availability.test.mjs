@@ -21,9 +21,13 @@ test('show originals are not for sale and the rest keep their prices', () => {
     assert.equal(original(product), 'Not currently available · Ghost Gallery Holiday Mini');
     assert.equal(product.facts.find(fact => fact.label === 'Prints').value, 'Archival prints on watercolor paper, never larger than the original');
   }
-  assert.equal(byIndex(3).listing.status, 'inquiry');
-  assert.equal(byIndex(3).listing.price, null);
-  assert.equal(original(byIndex(3)), 'Not yet for sale · inquire');
+  const third = byIndex(3);
+  assert.equal(third.listing.status, 'available');
+  assert.equal(third.listing.price.amount, '450.00');
+  assert.equal(third.checkout.mode, 'integrated');
+  assert.equal(original(third), 'Available · $450');
+  assert.equal(third.dimensions.width, 15);
+  assert.equal(third.dimensions.height, 15);
   const prices = { 7: '75.00', 8: '100.00', 9: '100.00', 10: '100.00', 11: '200.00', 12: '200.00', 13: '200.00', 14: '200.00', 15: '100.00' };
   for (const [index, amount] of Object.entries(prices)) {
     const product = byIndex(Number(index));

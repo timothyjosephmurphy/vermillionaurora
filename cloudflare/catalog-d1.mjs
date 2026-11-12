@@ -114,27 +114,32 @@ async function syncBuiltEditionPricesOnce(db, printVersion, built) {
 }
 // Built listing status is what the pages and checkout catalog publish. Copy it onto D1 rows that
 // still say they came from the repo or from a catalog-admin toggle, once per catalog version.
+// A null D1 price removes that original from checkout, so the built checkout price is copied too.
 // A status row with any other note is an intentional override and is left alone.
 let paintingStatusSync = null;
 const REPO_STATUS_NOTES = new Set(['repo sync', 'catalog-admin']);
-export async function syncBuiltPaintingStatuses(db, catalogVersion, inventory) {
+export async function syncBuiltPaintingStatuses(db, catalogVersion, inventory, checkout = {}) {
   if (!db || !catalogVersion || !inventory || !Object.keys(inventory).length) return { updated: 0, skipped: true };
   if (paintingStatusSync) return paintingStatusSync;
-  paintingStatusSync = syncBuiltPaintingStatusesOnce(db, catalogVersion, inventory).finally(() => { paintingStatusSync = null; });
+  paintingStatusSync = syncBuiltPaintingStatusesOnce(db, catalogVersion, inventory, checkout).finally(() => { paintingStatusSync = null; });
   return paintingStatusSync;
 }
-async function syncBuiltPaintingStatusesOnce(db, catalogVersion, inventory) {
+async function syncBuiltPaintingStatusesOnce(db, catalogVersion, inventory, checkout) {
   const marked = await db.prepare("SELECT value FROM meta WHERE key='catalog_version'").first();
   if (marked?.value === catalogVersion) return { updated: 0, skipped: true };
   const live = await readLive(db, { force: true });
   const at = now();
   const update = db.prepare('UPDATE status SET status=?, note=?, updated_at=? WHERE product_id=? AND status=?');
+  const updatePrice = db.prepare('UPDATE paintings SET price_amount=?, updated_at=? WHERE id=?');
   const stmts = [];
   for (const [id, item] of Object.entries(inventory)) {
     const row = live.status.get(id);
-    if (!row || !item?.status || row.status === item.status) continue;
+    if (!row || !item?.status) continue;
     if (row.note && !REPO_STATUS_NOTES.has(row.note)) continue;
-    stmts.push(update.bind(item.status, 'repo sync', at, id, row.status));
+    if (row.status !== item.status) stmts.push(update.bind(item.status, 'repo sync', at, id, row.status));
+    const amount = checkout?.[id]?.amount;
+    const painting = live.paintings.get(id);
+    if (amount && painting && painting.price_amount !== amount) stmts.push(updatePrice.bind(amount, at, id));
   }
   for (let i = 0; i < stmts.length; i += 100) await db.batch(stmts.slice(i, i + 100));
   if (stmts.length) await bumpRev(db, 'painting-status', null, { catalogVersion, updated: stmts.length });

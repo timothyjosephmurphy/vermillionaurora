@@ -14,7 +14,7 @@ export {CartOrder} from './cart-order.mjs';
 import { inventoryStatus } from './inventory-api.mjs';
 import { originalStatusApi } from './original-status.mjs';
 import { runOriginalInventorySync } from './etsy-original-sync.mjs';
-import { catalogVersion, inventory } from './checkout-catalog.mjs';
+import checkoutCatalog, { catalogVersion, inventory } from './checkout-catalog.mjs';
 import { applyCatalogOverlay, catalogSource } from './catalog-overlay.mjs';
 import { syncBuiltEditionPrices, syncBuiltPaintingStatuses } from './catalog-d1.mjs';
 import { ensurePrintCatalog } from './print-catalog-asset.mjs';
@@ -40,7 +40,7 @@ async function syncBuiltCatalog(env) {
   try {
     const prices = await syncBuiltEditionPrices(env.CATALOG_DB, printVersion, Object.values(prints));
     if (prices?.updated) console.log('Synced built print prices into the live catalog', prices.updated);
-    const statuses = await syncBuiltPaintingStatuses(env.CATALOG_DB, catalogVersion, inventory);
+    const statuses = await syncBuiltPaintingStatuses(env.CATALOG_DB, catalogVersion, inventory, checkoutCatalog);
     if (statuses?.updated) console.log('Synced built original availability into the live catalog', statuses.updated);
   } catch (error) {
     console.error('Built catalog sync failed', error instanceof Error ? error.message : error);
