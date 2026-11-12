@@ -77,3 +77,38 @@ export async function syncFromSnapshot(db, snap, { ids = [], missing = true } = 
   if (stmts.length) await bumpRev(db, 'sync', null, { paintings: [...done], editions });
   return { paintings: done.size, editions, statements: stmts.length };
 }
+// Repo print prices are the approved FinerWorks retail. Checkout overlays D1 on top of the built
+// catalog, and a framed quote is refused unless that amount matches the supplier to the cent.
+// When the built print catalog version changes, copy those amounts into existing edition rows.
+// Admin edits made after that sync stay until the next print catalog version.
+let editionPriceSync = null;
+export function editionAmountChanges(liveEditions, built) {
+  const changes = [];
+  for (const edition of built || []) {
+    if (!edition?.id || typeof edition.amount !== 'string' || !/^\d+\.\d{2}$/.test(edition.amount)) continue;
+    const row = liveEditions.get(edition.id);
+    if (row && row.amount !== edition.amount) changes.push({ id: edition.id, amount: edition.amount, before: row.amount });
+  }
+  return changes;
+}
+export async function syncBuiltEditionPrices(db, printVersion, built) {
+  if (!db || !printVersion) return { updated: 0, skipped: true };
+  if (editionPriceSync) return editionPriceSync;
+  editionPriceSync = syncBuiltEditionPricesOnce(db, printVersion, built).finally(() => { editionPriceSync = null; });
+  return editionPriceSync;
+}
+async function syncBuiltEditionPricesOnce(db, printVersion, built) {
+  if (!built?.length) return { updated: 0, skipped: true };
+  const marked = await db.prepare("SELECT value FROM meta WHERE key='print_version'").first();
+  if (marked?.value === printVersion) return { updated: 0, skipped: true };
+  const live = await readLive(db, { force: true });
+  const changes = editionAmountChanges(live.editions, built);
+  const at = now();
+  const update = db.prepare('UPDATE editions SET amount=?, updated_at=? WHERE id=? AND amount=?');
+  const stmts = changes.map(change => update.bind(change.amount, at, change.id, change.before));
+  for (let i = 0; i < stmts.length; i += 100) await db.batch(stmts.slice(i, i + 100));
+  if (changes.length) await bumpRev(db, 'edition-prices', null, { printVersion, updated: changes.length });
+  await db.batch([db.prepare("INSERT INTO meta (key, value) VALUES ('print_version', ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value").bind(printVersion)]);
+  resetCache();
+  return { updated: changes.length, skipped: false };
+}
