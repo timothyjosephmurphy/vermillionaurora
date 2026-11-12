@@ -4,7 +4,7 @@
   "description": "Static website for Vermillion Aurora Productions, with an art portfolio and commission/contact interface. Neural Dance is https://tjm.art/neural-dance/.",
   "scripts": {
     "dev": "npm run build && astro preview",
-    "build": "node scripts/build-pilot-print-assets.mjs && node scripts/build-edition-print-assets.mjs && node scripts/build-gallery-wall-assets.mjs && node payments/build-print-catalog.mjs && node payments/build-etsy-print-source.mjs && node payments/build-checkout-catalog.mjs && astro build && node scripts/copy-assets.mjs && node scripts/build-catalog-snapshot.mjs && node scripts/responsive-images.mjs && node scripts/enrich-html-seo.mjs && node scripts/r2-image-urls.mjs && node scripts/generate-sitemap.mjs && node scripts/verify-blog-pages.mjs",
+    "build": "node scripts/render-blog-pages.mjs && node scripts/build-pilot-print-assets.mjs && node scripts/build-edition-print-assets.mjs && node scripts/build-gallery-wall-assets.mjs && node payments/build-print-catalog.mjs && node payments/build-etsy-print-source.mjs && node payments/build-checkout-catalog.mjs && astro build && node scripts/copy-assets.mjs && node scripts/build-catalog-snapshot.mjs && node scripts/responsive-images.mjs && node scripts/enrich-html-seo.mjs && node scripts/r2-image-urls.mjs && node scripts/generate-sitemap.mjs && node scripts/verify-blog-pages.mjs",
     "preview": "astro preview",
     "test": "node scripts/run-unit.mjs",
     "test:print": "node scripts/run-print.mjs",

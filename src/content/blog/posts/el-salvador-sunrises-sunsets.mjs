@@ -1,0 +1,173 @@
+export const post = {
+  slug: 'el-salvador-sunrises-sunsets',
+  headMeta: `<title>Sunrise and Sunset at Bitcoin Beach: My El Salvador Paintings | TJ Murphy</title>
+  <meta name="description" content="Watercolor pastel sunrises and sunsets from El Zonte, Bitcoin Beach, and the El Salvador coast. I flew there for the reference photos and painted every piece by hand.">
+  <link rel="canonical" href="https://tjm.art/blog/el-salvador-sunrises-sunsets/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TJ Murphy">
+  <meta property="og:title" content="Sunrise and Sunset at Bitcoin Beach: My El Salvador Paintings">
+  <meta property="og:description" content="Watercolor pastel sunrises and sunsets from El Zonte, Bitcoin Beach, and the El Salvador coast. I flew there for the reference photos and painted every piece by hand.">
+  <meta property="og:url" content="https://tjm.art/blog/el-salvador-sunrises-sunsets/">
+  <meta property="og:image" content="https://img.tjm.art/social/el-salvador-sunrises-sunsets-5d8f81103e.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="El Zonte at Dawn: watercolor pastel of the shoreline at sunrise, round stones in the foreground, pale surf, a dark headland on the left, and a pink and gold sky">
+  <meta property="article:published_time" content="2026-10-26">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sunrise and Sunset at Bitcoin Beach: My El Salvador Paintings">
+  <meta name="twitter:description" content="Watercolor pastel sunrises and sunsets from El Zonte, Bitcoin Beach, and the El Salvador coast. I flew there for the reference photos and painted every piece by hand.">
+  <meta name="twitter:image" content="https://img.tjm.art/social/el-salvador-sunrises-sunsets-5d8f81103e.jpg">
+  <meta name="theme-color" content="#fff">
+  <link href="/fonts/fonts.css" rel="stylesheet">
+  `,
+  css: `
+    :root{--paper:#fff;--ink:#2c2924;--muted:#6f685e;--red:#9c3e32;--line:#d8cfc2;--gold:#c5a46d}
+    *{box-sizing:border-box}
+    html{background:var(--paper)}
+    body{margin:0;color:var(--ink);font:16px/1.78 Inter,system-ui,sans-serif;background:#fff}
+    a{color:inherit}
+    .topbar{max-width:1200px;margin:auto;padding:24px clamp(20px,5vw,68px);display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase}
+    .topbar a{text-decoration:none}.brand{font-weight:600;color:var(--red)}
+    .hero{max-width:1000px;margin:auto;padding:clamp(56px,9vw,112px) 24px 56px;text-align:center}
+    h1,h2{font-family:"Cormorant Garamond",Georgia,serif}
+    h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:500;line-height:.98;letter-spacing:-.035em;max-width:900px;margin:0 auto 26px}
+    .byline{color:var(--muted);font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;margin:0}
+    .article{max-width:808px;padding:0 24px 100px;margin:auto}
+    h2{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;font-weight:500;margin:64px 0 22px;letter-spacing:-.02em}
+    p{margin:0 0 1.25em}
+    .article ul{margin:0 0 1.25em;padding-left:1.25em}
+    .article li{margin:0 0 .4em}
+    .article p a,.article li a{color:var(--red);text-underline-offset:3px}
+    /* Lead stays modest. Every other painting sits in a row of small figures. */
+    figure.photo{width:min(100%,480px);margin:28px auto;background:transparent}
+    figure.photo img{display:block;width:100%;height:auto;max-height:280px;object-fit:contain;object-position:center bottom}
+    figure.photo > a{display:block}
+    figure.photo figcaption{font:italic .92rem/1.35 "Cormorant Garamond",Georgia,serif;color:var(--muted);padding:6px 2px 0;text-align:center}
+    figure.photo figcaption a{color:var(--red);text-underline-offset:3px}
+    .painting-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:16px 14px;margin:8px 0 32px}
+    .painting-row figure.photo{width:min(200px,46%);max-width:200px;min-width:0;margin:0}
+    /* Three portraits share one row. 46% is a two-up width and wraps the third on a phone. */
+    .painting-row.triple{flex-wrap:nowrap}
+    .painting-row.triple figure.photo{flex:1 1 0;width:auto;max-width:200px}
+    .painting-row figure.photo.wide{width:min(340px,46%);max-width:340px}
+    .painting-row.quad figure.photo{flex:1 1 140px;width:auto;max-width:172px}
+    .painting-row figure.photo img{max-height:240px}
+    .painting-row figure.photo.wide img{max-height:210px}
+    .painting-row.quad figure.photo img{max-height:200px}
+    footer{border-top:1px solid var(--line);max-width:1200px;margin:auto;padding:28px 24px 42px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:.78rem}
+    @media(max-width:700px){.topbar{padding:17px 20px}.hero{padding:56px 20px 40px}.article{padding:0 19px 66px}figure.photo{margin:20px auto}.painting-row{gap:14px 10px;margin:4px 0 26px}.painting-row.triple{column-gap:8px}.painting-row figure.photo{margin:0}.painting-row figure.photo.panorama{width:100%;max-width:none;flex:1 1 100%}footer{padding:22px 20px;flex-direction:column}}
+  `,
+  headRest: `
+`,
+  between: `
+  <header class="hero">
+    <h1>Sunrise and Sunset at Bitcoin Beach: My El Salvador Paintings</h1>
+    <p class="byline">By TJ Murphy · <time datetime="2026-10-26">October 26, 2026</time></p>
+  </header>
+  `,
+  main: `
+    <p>I woke before dawn at El Zonte, sat down to meditate, and watched the sun come up over surfers paddling out through the waves. The beach is made of big round stones, and every time a wave hit, they tumbled and rumbled. I took a lot of photos that morning. I've been painting from them ever since.</p>
+    <figure class="photo">
+      <a href="https://tjm.art/products/painting-shoreline-at-dusk/"><img loading="eager" src="/display/el-zonte-at-dawn-2026-b6bb92e78d-960.webp" srcset="/display/el-zonte-at-dawn-2026-b6bb92e78d-160.webp 160w, /display/el-zonte-at-dawn-2026-b6bb92e78d-960.webp 960w, /display/el-zonte-at-dawn-2026-b6bb92e78d-1600.webp 1600w" sizes="(max-width: 700px) 92vw, 480px" width="1600" height="757" alt="El Zonte shoreline at dawn by TJ Murphy" fetchpriority="high" decoding="async"></a>
+      <figcaption><a href="https://tjm.art/products/painting-shoreline-at-dusk/">El Zonte at Dawn</a></figcaption>
+    </figure>
+    <h2>Why this beach</h2>
+    <p>I wanted to make something that represented Bitcoin culture and its symbols without being so on the nose as to make big orange B's and hooded Satoshis, though those things are great, and I appreciate them. El Zonte is Bitcoin Beach, the place where the phenomenon started. El Salvador was a pioneer in accepting Bitcoin, and it all began at a small surf town on the Pacific. I can't think of anything more fundamental to Bitcoin culture than that stretch of sand, so I painted the sky above it.</p>
+    <div class="painting-row">
+      <figure class="photo">
+        <a href="https://tjm.art/products/painting-clouds-over-water/"><img src="/display/clouds-over-water-7c8beab564-320.webp" srcset="/display/clouds-over-water-7c8beab564-160.webp 160w, /display/clouds-over-water-7c8beab564-320.webp 320w" sizes="(max-width: 700px) 46vw, 200px" width="320" height="536" alt="El Salvador by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/painting-clouds-over-water/">El Salvador</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/book-art-103c2ba59ca485e56a86/"><img src="https://media.vermillionaurora.com/images/book-galleries/v1/103c2ba59ca485e56a86.webp" width="363" height="641" alt="El Salvador" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/book-art-103c2ba59ca485e56a86/">El Salvador, page 45 (1 of 2)</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/book-art-ac338ff3806b66917b3c/"><img src="https://media.vermillionaurora.com/images/book-galleries/v1/ac338ff3806b66917b3c.webp" sizes="(max-width: 700px) 46vw, 200px" width="1000" height="594" alt="Untitled — El Salvador, page 38" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/book-art-ac338ff3806b66917b3c/">Untitled — El Salvador, page 38</a></figcaption>
+      </figure>
+    </div>
+    <h2>My first trip</h2>
+    <p>El Salvador was my first trip for a Bitcoin conference, and my first time in the country. That was 2022. I stayed at a beach resort at Atami, north of El Zonte, with cabanas on the sand and cushioned daybeds in the shade. I took a surf lesson, ate at a restaurant up on a cliff, and photographed the sunsets.</p>
+    <p>I painted three of them later, from my photos. <em>Sunset from Atami, El Salvador</em> #1, #2 and #3 are very similar scenes, and I like seeing them side by side: the same horizon with the light changing each time.</p>
+    <div class="painting-row triple">
+      <figure class="photo">
+        <a href="https://tjm.art/products/archived-painting-246/"><img src="/display/archived-painting-246-960.webp" srcset="/display/archived-painting-246-160.webp 160w, /display/archived-painting-246-480.webp 480w, /display/archived-painting-246-960.webp 960w, /display/archived-painting-246-1600.webp 1600w" sizes="(max-width: 700px) 30vw, 200px" width="1600" height="2828" alt="A sunset over ocean water and a terrace railing" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/archived-painting-246/">Sunset from Atami, El Salvador #1</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/archived-painting-248/"><img src="/display/archived-painting-248-960.webp" srcset="/display/archived-painting-248-160.webp 160w, /display/archived-painting-248-480.webp 480w, /display/archived-painting-248-960.webp 960w, /display/archived-painting-248-1600.webp 1600w" sizes="(max-width: 700px) 30vw, 200px" width="1600" height="2684" alt="Yellow light breaking through clouds above the sea" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/archived-painting-248/">Sunset from Atami, El Salvador #2</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/archived-painting-247/"><img src="/display/archived-painting-247-960.webp" srcset="/display/archived-painting-247-160.webp 160w, /display/archived-painting-247-480.webp 480w, /display/archived-painting-247-960.webp 960w, /display/archived-painting-247-1600.webp 1600w" sizes="(max-width: 700px) 30vw, 200px" width="1600" height="2467" alt="A golden sunset reflected on the sea beside a curved terrace" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/archived-painting-247/">Sunset from Atami, El Salvador #3</a></figcaption>
+      </figure>
+    </div>
+    <div class="painting-row">
+      <figure class="photo wide">
+        <a href="https://tjm.art/products/book-art-e3293c73dbb01f94b39b/"><img src="https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp" sizes="(max-width: 700px) 46vw, 340px" width="1000" height="794" alt="El Salvador" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/book-art-e3293c73dbb01f94b39b/">El Salvador, page 46</a></figcaption>
+      </figure>
+      <figure class="photo wide">
+        <a href="https://tjm.art/products/book-art-a2e53a8418a8d84f3dc5/"><img src="https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp" sizes="(max-width: 700px) 46vw, 340px" width="1000" height="770" alt="El Salvador" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/book-art-a2e53a8418a8d84f3dc5/">El Salvador, page 47</a></figcaption>
+      </figure>
+    </div>
+    <h2>The hostel at the river mouth</h2>
+    <p>On a later stay I took a room at the Punta El Zonte hostel, on the corner where the river meets the beach. That is where I got the sunrises.</p>
+    <p>I painted <em>Sunrise from Punta El Zonte Hostel</em>, <em>El Zonte at Dawn</em>, <em>El Zonte Before Dawn</em> and a large <em>Sunrise in El Zonte</em> at 36 by 48 inches. I also painted <em>Sunset in El Zonte, El Salvador</em> and <em>Sunset in El Tunco, El Salvador</em>. The tropical air makes the light especially luminous, and I tried to keep that in the paper.</p>
+    <div class="painting-row triple">
+      <figure class="photo">
+        <a href="https://tjm.art/products/el-zonte-at-sunrise/"><img src="/display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-960.webp" srcset="/display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-160.webp 160w, /display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-960.webp 960w, /display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp 1219w" sizes="(max-width: 700px) 30vw, 200px" width="1219" height="2400" alt="Sunrise from Punta El Zonte Hostel by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/el-zonte-at-sunrise/">Sunrise from Punta El Zonte Hostel</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/sunrise-in-el-zonte-large/"><img src="/display/sunrise-in-el-zonte-large-673f23d562-960.webp" srcset="/display/sunrise-in-el-zonte-large-673f23d562-160.webp 160w, /display/sunrise-in-el-zonte-large-673f23d562-960.webp 960w, /display/sunrise-in-el-zonte-large-673f23d562-1600.webp 1600w" sizes="(max-width: 700px) 30vw, 200px" width="1600" height="2207" alt="Sunrise in El Zonte (Large) by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/sunrise-in-el-zonte-large/">Sunrise in El Zonte (Large)</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/sunset-in-el-zonte-el-salvador/"><img src="/display/golden-reflection-96abad4e39-290.webp" srcset="/display/golden-reflection-96abad4e39-160.webp 160w, /display/golden-reflection-96abad4e39-290.webp 290w" sizes="(max-width: 700px) 30vw, 200px" width="290" height="592" alt="Sunset in El Zonte, El Salvador by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/sunset-in-el-zonte-el-salvador/">Sunset in El Zonte, El Salvador</a></figcaption>
+      </figure>
+    </div>
+    <div class="painting-row">
+      <figure class="photo wide panorama">
+        <a href="https://tjm.art/products/el-zonte-before-dawn/"><img src="/display/el-zonte-before-dawn-71f9a2ec15-960.webp" srcset="/display/el-zonte-before-dawn-71f9a2ec15-160.webp 160w, /display/el-zonte-before-dawn-71f9a2ec15-960.webp 960w, /display/el-zonte-before-dawn-71f9a2ec15-1600.webp 1600w" sizes="(max-width: 700px) 46vw, 340px" width="1600" height="763" alt="El Zonte Before Dawn by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/el-zonte-before-dawn/">El Zonte Before Dawn</a></figcaption>
+      </figure>
+      <figure class="photo wide panorama">
+        <a href="https://tjm.art/products/sunset-in-el-tunco-el-salvador/"><img src="/display/beach-walk-eb8da794ce-702.webp" srcset="/display/beach-walk-eb8da794ce-160.webp 160w, /display/beach-walk-eb8da794ce-702.webp 702w" sizes="(max-width: 700px) 46vw, 340px" width="702" height="242" alt="Sunset in El Tunco, El Salvador by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/sunset-in-el-tunco-el-salvador/">Sunset in El Tunco, El Salvador</a></figcaption>
+      </figure>
+    </div>
+    <h2>Made by hand</h2>
+    <p>I flew there to take the reference photos myself. Every piece is watercolor pastel on Arches cold press paper, painted by hand in my Seattle studio from the photos I took there. Then I brought the paintings back to El Salvador and exhibited them at the Adopting Bitcoin conference, on two occasions.</p>
+    <h2>What I hope you see</h2>
+    <p>Money exists so people can prosper and enjoy the world. A warm beach at the edge of the day is a good picture of that. The sun coming up over Bitcoin Beach looks to me like the start of something hopeful, a new era where more people have the freedom to build a good life.</p>
+    <p>If you've stood on that beach, you probably already know.</p>
+    <div class="painting-row quad">
+      <figure class="photo">
+        <a href="https://tjm.art/products/painting-insect-garden/"><img src="/display/insect-garden-db278aa68b-578.webp" srcset="/display/insect-garden-db278aa68b-160.webp 160w, /display/insect-garden-db278aa68b-578.webp 578w" sizes="(max-width: 700px) 46vw, 200px" width="578" height="298" alt="El Salvador: Past - Chase Toole Collab by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/painting-insect-garden/">El Salvador: Past</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/painting-emergence/"><img src="/display/emergence-d2e9acf66b-434.webp" srcset="/display/emergence-d2e9acf66b-160.webp 160w, /display/emergence-d2e9acf66b-434.webp 434w" sizes="(max-width: 700px) 46vw, 200px" width="434" height="360" alt="El Salvador: Present - Chase Toole Collab by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/painting-emergence/">El Salvador: Present</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/painting-twin-dragons/"><img src="/display/twin-dragons-8c20e1289c-578.webp" srcset="/display/twin-dragons-8c20e1289c-160.webp 160w, /display/twin-dragons-8c20e1289c-578.webp 578w" sizes="(max-width: 700px) 46vw, 200px" width="578" height="298" alt="El Salvador: Future - Chase Toole Collab by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/painting-twin-dragons/">El Salvador: Future</a></figcaption>
+      </figure>
+      <figure class="photo">
+        <a href="https://tjm.art/products/painting-portrait-in-green/"><img src="/display/portrait-in-green-f8263a9d41-808.webp" sizes="(max-width: 700px) 46vw, 200px" width="808" height="970" alt="Chase Toole by TJ Murphy" loading="lazy" decoding="async"></a>
+        <figcaption><a href="https://tjm.art/products/painting-portrait-in-green/">Chase Toole</a></figcaption>
+      </figure>
+    </div>
+    <p>The <a href="https://tjm.art/exhibitions/el-salvador/">Adopting Bitcoin El Salvador</a> exhibition page has more. Most of these are also in my book, Watercolor Landscapes. <a href="https://tjm.art/play/">Take me to the 3D gallery</a>.</p>
+    <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
+    {{signup}}
+  `,
+  afterFooter: `
+`,
+};

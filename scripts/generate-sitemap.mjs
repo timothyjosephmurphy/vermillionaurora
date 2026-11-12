@@ -58,6 +58,10 @@ async function walk(directory) {
 }
 
 await walk(dist);
+// Production /play/ is proxied from the hex gallery and has no static index.html.
+// The Quake room pages are gone. The entry URL stays in the sitemap.
+const playEntry = `${site}/play/`;
+if (!pages.some((page) => page.url === playEntry)) pages.push({url: playEntry, hash: 'proxied-play-entry'});
 pages.sort((a, b) => a.url.localeCompare(b.url));
 const next = {};
 for (const page of pages) {
