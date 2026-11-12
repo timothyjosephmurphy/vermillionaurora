@@ -9,7 +9,11 @@
 // Messengers unfurl that entry HTML. The share JPEG is a Website file under
 // static/play, so the proxied entry is rewritten onto the current card even
 // while the hex Pages HTML still names an older image.
-export const HEX_PLAY_ORIGIN = 'https://preview-251.tjm-tag-gallery-preview.pages.dev';
+//
+// The origin is the Pages project's production URL (branch main), not a
+// preview alias or a hash-pinned deployment. Gallery updates /play by
+// deploying to main there.
+export const HEX_PLAY_ORIGIN = 'https://tjm-tag-gallery-preview.pages.dev';
 export { PLAY_WORKER_FIRST } from './routes-config.mjs';
 export const PLAY_SHARE_IMAGE = 'https://tjm.art/play/share-start-2026-11-04.jpg';
 export const PLAY_SHARE_ALT = 'TJM Gallery START courtyard: the outdoor hex 3D gallery where visitors begin, with the Cascades beyond church spires and an exhibitions map on the dome';
