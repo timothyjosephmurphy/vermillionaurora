@@ -1,0 +1,105 @@
+export const post = {
+  slug: 'walk-my-paintings-3d-gallery',
+  headMeta: `<title>Walk My 206 Paintings in 3D | TJ Murphy</title>
+  <meta name="description" content="A walkable 3D gallery of all 206 of my current paintings, hung at true size in lit rooms, with courtyards, murals, playful tools, Dad&#x27;s side gallery, and Relay Gate ahead.">
+  <link rel="canonical" href="https://tjm.art/blog/walk-my-paintings-3d-gallery/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TJ Murphy">
+  <meta property="og:title" content="Walk My 206 Paintings in 3D">
+  <meta property="og:description" content="A walkable 3D gallery of all 206 of my current paintings, hung at true size in lit rooms, with courtyards, murals, playful tools, Dad&#x27;s side gallery, and Relay Gate ahead.">
+  <meta property="og:url" content="https://tjm.art/blog/walk-my-paintings-3d-gallery/">
+  <meta property="og:image" content="https://img.tjm.art/social/walk-my-paintings-3d-gallery-1efc2ada62.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Paintings hung at true size on a gallery wall">
+  <meta property="article:published_time" content="2026-11-04">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Walk My 206 Paintings in 3D">
+  <meta name="twitter:description" content="A walkable 3D gallery of all 206 of my current paintings, hung at true size in lit rooms, with courtyards, murals, playful tools, Dad&#x27;s side gallery, and Relay Gate ahead.">
+  <meta name="twitter:image" content="https://img.tjm.art/social/walk-my-paintings-3d-gallery-1efc2ada62.jpg">
+  <meta name="theme-color" content="#fff">
+  <link href="/fonts/fonts.css" rel="stylesheet">
+  `,
+  css: `
+    :root{--paper:#fff;--ink:#2c2924;--muted:#6f685e;--red:#9c3e32;--line:#d8cfc2;--gold:#c5a46d}
+    *{box-sizing:border-box}
+    html{background:var(--paper)}
+    body{margin:0;color:var(--ink);font:16px/1.78 Inter,system-ui,sans-serif;background:#fff}
+    a{color:inherit}
+    .topbar{max-width:1200px;margin:auto;padding:24px clamp(20px,5vw,68px);display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase}
+    .topbar a{text-decoration:none}.brand{font-weight:600;color:var(--red)}
+    .hero{max-width:1000px;margin:auto;padding:clamp(56px,9vw,112px) 24px 56px;text-align:center}
+    h1,h2{font-family:"Cormorant Garamond",Georgia,serif}
+    h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:500;line-height:.98;letter-spacing:-.035em;max-width:900px;margin:0 auto 26px}
+    .byline{color:var(--muted);font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;margin:0}
+    .article{max-width:808px;padding:0 24px 100px;margin:auto}
+    h2{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;font-weight:500;margin:64px 0 22px;letter-spacing:-.02em}
+    p{margin:0 0 1.25em}
+    .article ul{margin:0 0 1.25em;padding-left:1.25em}
+    .article li{margin:0 0 .4em}
+    .article p a{color:var(--red);text-underline-offset:3px}
+    .walk-cta{margin:0 0 28px}
+    .article p.walk-cta a{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;line-height:1.35;padding:12px 18px;border-radius:999px}
+    .article p.walk-cta a:hover{background:#7d3128}
+    .article p.walk-cta a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    figure.photo figcaption{font:italic .95rem/1.4 "Cormorant Garamond",Georgia,serif;color:var(--muted);padding:8px 4px 0;background:var(--paper)}
+    figure.photo{margin:36px 0;background:#e9e0d4}
+    figure.photo img{display:block;width:100%;height:auto}
+    figure.photo video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+    figure.photo.portrait video{width:auto;max-width:min(100%,440px);max-height:82vh;margin-inline:auto;aspect-ratio:9/16}
+    figure.photo iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;background:#000}
+    figure.photo.portrait img{width:auto;max-width:100%;max-height:82vh;margin:auto}
+    footer{border-top:1px solid var(--line);max-width:1200px;margin:auto;padding:28px 24px 42px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:.78rem}
+    @media(max-width:700px){.topbar{padding:17px 20px}.hero{padding:56px 20px 40px}.article{padding:0 19px 66px}.article p.walk-cta a{display:block;text-align:center}figure.photo{margin:28px -19px}footer{padding:22px 20px;flex-direction:column}}
+  `,
+  headRest: `
+`,
+  between: `
+  <header class="hero">
+    <h1>Walk My 206 Paintings in 3D</h1>
+    <p class="byline">By TJ Murphy · <time datetime="2026-11-04">November 4, 2026</time></p>
+  </header>
+  `,
+  main: `
+    <p class="walk-cta"><a href="https://tjm.art/play">Walk the gallery now: tjm.art/play</a></p>
+    <figure class="photo">
+      <img loading="eager" src="/display/walk-206-btc-court-282d150e11-960.webp" srcset="/display/walk-206-btc-court-282d150e11-480.webp 480w, /display/walk-206-btc-court-282d150e11-960.webp 960w, /display/walk-206-btc-court-282d150e11-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="900" alt="Bitcoiner walls in the 3D gallery" fetchpriority="high" decoding="async">
+      <figcaption>Bitcoiner walls in the BTC court. You can pay with Bitcoin.</figcaption>
+    </figure>
+    <figure class="photo"><img src="/display/walk-206-hex-wall-1efc2ada62-960.webp" srcset="/display/walk-206-hex-wall-1efc2ada62-480.webp 480w, /display/walk-206-hex-wall-1efc2ada62-960.webp 960w, /display/walk-206-hex-wall-1efc2ada62-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Paintings hung at true size on a gallery wall" loading="lazy" decoding="async"></figure>
+    <p>I set up a 3D gallery where you can walk around all 206 of my current paintings.</p>
+    <p>They're hung relative to their true size, in brightly lit hexagonal galleries. Outdoor pieces sit in outdoor courtyards.</p>
+    <figure class="photo"><img src="/display/walk-206-courtyard-b6a1b88c65-960.webp" srcset="/display/walk-206-courtyard-b6a1b88c65-480.webp 480w, /display/walk-206-courtyard-b6a1b88c65-960.webp 960w, /display/walk-206-courtyard-b6a1b88c65-1200.webp 1200w" sizes="(max-width: 800px) 100vw, 760px" width="1200" height="630" alt="Outdoor courtyard with steeples and mural" loading="lazy" decoding="async"></figure>
+    <p>Outdoor courtyards for outdoor pieces.</p>
+    <p>Murals open the walls: a Seattle garden, Lillooet in BC, Berlin, El Salvador.</p>
+    <figure class="photo"><img src="/display/walk-206-mural-berlin-es-7ea5db5779-960.webp" srcset="/display/walk-206-mural-berlin-es-7ea5db5779-480.webp 480w, /display/walk-206-mural-berlin-es-7ea5db5779-960.webp 960w, /display/walk-206-mural-berlin-es-7ea5db5779-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Berlin and El Salvador mural in the Bitcoiners court" loading="lazy" decoding="async"></figure>
+    <p>There's a model of the Palace of Culture and Science in Warsaw, for the Bitcoin Film Festival where Gavin's film featuring me, <em>Coined in Watercolor</em>, screened.</p>
+    <figure class="photo"><img src="/display/walk-206-warsaw-palace-d92f0a228e-960.webp" srcset="/display/walk-206-warsaw-palace-d92f0a228e-480.webp 480w, /display/walk-206-warsaw-palace-d92f0a228e-960.webp 960w, /display/walk-206-warsaw-palace-d92f0a228e-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Palace of Culture and Science — Kinoteka plaza" loading="lazy" decoding="async"></figure>
+    <p>You can interact with the art. There's a scanner that lets you purchase it. There's soup you can throw at it. There's a gravity gun that lets you move it around, a glitter cannon that makes a mess, and a leaf blower that blows the mess around.</p>
+    <h2>How you play with it</h2>
+    <p>Point the Buy Scanner and the GuideBot lifts the painting off the wall onto your cart.</p>
+    <figure class="photo"><img src="/display/walk-206-buy-scanner-41a8bb5da9-960.webp" srcset="/display/walk-206-buy-scanner-41a8bb5da9-480.webp 480w, /display/walk-206-buy-scanner-41a8bb5da9-960.webp 960w, /display/walk-206-buy-scanner-41a8bb5da9-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Buy Scanner aimed at a painting" loading="lazy" decoding="async"></figure>
+    <p>When you're ready, walk into the golden light, the pillar of light in the center, and you're at checkout. You can pay with Bitcoin.</p>
+    <figure class="photo"><img src="/display/walk-206-pillar-light-084fd3a6a1-960.webp" srcset="/display/walk-206-pillar-light-084fd3a6a1-480.webp 480w, /display/walk-206-pillar-light-084fd3a6a1-960.webp 960w, /display/walk-206-pillar-light-084fd3a6a1-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Golden pillar of light at checkout" loading="lazy" decoding="async"></figure>
+    <p>Throw soup like a protester and the machine elves clean up after you.</p>
+    <figure class="photo"><img src="/display/walk-206-soup-elves-e6edb5d336-960.webp" srcset="/display/walk-206-soup-elves-e6edb5d336-480.webp 480w, /display/walk-206-soup-elves-e6edb5d336-960.webp 960w, /display/walk-206-soup-elves-e6edb5d336-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="928" alt="Machine elves in the courtyard" loading="lazy" decoding="async"></figure>
+    <p>The gravity gun, Half-Life style, slides hangs on the walls. Glitter cannon for the mess; leaf blower to push it around.</p>
+    <figure class="photo"><img src="/display/walk-206-gravity-glitter-240d333d42-960.webp" srcset="/display/walk-206-gravity-glitter-240d333d42-480.webp 480w, /display/walk-206-gravity-glitter-240d333d42-960.webp 960w, /display/walk-206-gravity-glitter-240d333d42-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Gravity gun and glitter in the gallery" loading="lazy" decoding="async"></figure>
+    <p>Art books sit on plinths. You can flip through them in place.</p>
+    <figure class="photo"><img src="/display/walk-206-art-book-0f30f95448-960.webp" srcset="/display/walk-206-art-book-0f30f95448-480.webp 480w, /display/walk-206-art-book-0f30f95448-960.webp 960w, /display/walk-206-art-book-0f30f95448-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Art book open on a plinth" loading="lazy" decoding="async"></figure>
+    <p>There's a side gallery that showcases my dad's work. Paul's courtyard is its own stop on the walk.</p>
+    <figure class="photo"><img src="/display/walk-206-paul-courtyard-c5695fc7a1-960.webp" srcset="/display/walk-206-paul-courtyard-c5695fc7a1-480.webp 480w, /display/walk-206-paul-courtyard-c5695fc7a1-960.webp 960w, /display/walk-206-paul-courtyard-c5695fc7a1-1280.webp 1280w" sizes="(max-width: 800px) 100vw, 760px" width="1280" height="800" alt="Father Paul Annex courtyard" loading="lazy" decoding="async"></figure>
+    <h2>Why this exists beyond my walls</h2>
+    <p>The larger project is to make it easy for artists to create 3D galleries like this and link them across domains. That's Relay Gate. We're building it as Nostr-native as we can, so galleries can find each other without living inside one company's silo.</p>
+    <p>My gallery is the proof you can walk today. Relay Gate is the door we want other artists to walk through next.</p>
+    <h2>Come walk it</h2>
+    <p>Start at <a href="https://tjm.art/play">tjm.art/play</a>. Cross a courtyard. Stand in front of a mural. Flip a book. Or throw some soup and watch the elves work.</p>
+    <p>Tell me which room you stayed in longest.</p>
+    <p>Thanks for walking with us.</p>
+    <p>TJ</p>
+    <p><em>Vermillion Aurora Productions</em></p>
+    {{signup}}
+  `,
+  afterFooter: `
+`,
+};

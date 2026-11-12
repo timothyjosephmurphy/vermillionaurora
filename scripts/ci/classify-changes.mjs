@@ -13,8 +13,8 @@ const content=[/^catalog\/.*\.json$/,/^gallery-images\//,/^images\//,/^static\//
 // Story publish. Display, social, and display-files.json are shared with the catalog, so they
 // only take this tier when the change set also touches a story, the blog index, or upload assets.
 // Uploader source (worker.mjs, worker-tjm.mjs, wrangler config) is not in this list.
-const blogAllow=[/^static\/blog\//,/^src\/pages\/blog\//,/^static\/display\//,/^static\/social\//,/^scripts\/display-files\.json$/,/^scripts\/blog-media-upload\/assets\//,/^scripts\/blog-media-upload\/publish-assets\//,/^scripts\/blog-media-upload\/manifest\.json$/];
-const blogAnchor=/^(static\/blog\/|src\/pages\/blog\/|scripts\/blog-media-upload\/(?:assets\/|publish-assets\/))/;
+const blogAllow=[/^static\/blog\//,/^src\/pages\/blog\//,/^src\/content\/blog\//,/^static\/display\//,/^static\/social\//,/^scripts\/display-files\.json$/,/^scripts\/blog-media-upload\/assets\//,/^scripts\/blog-media-upload\/publish-assets\//,/^scripts\/blog-media-upload\/manifest\.json$/];
+const blogAnchor=/^(static\/blog\/|src\/pages\/blog\/|src\/content\/blog\/|scripts\/blog-media-upload\/(?:assets\/|publish-assets\/))/;
 // These files change serving behavior, so they need the routing/cache unit tests
 // even though they live alongside ordinary content and images.
 const assetConfig=/^(static|public)\/_(headers|redirects)$/;

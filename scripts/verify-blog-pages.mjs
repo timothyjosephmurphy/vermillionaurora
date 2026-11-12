@@ -7,7 +7,7 @@ const site = 'https://tjm.art';
 const dist = resolve('dist');
 
 export function changedArticleSlugs(files) {
-  return [...new Set(files.map((file) => String(file).trim().match(/^static\/blog\/([a-z0-9-]+)\/index\.html$/)?.[1]).filter(Boolean))];
+  return [...new Set(files.map((file) => String(file).trim().match(/^(?:static\/blog\/|src\/content\/blog\/posts\/)([a-z0-9-]+)(?:\/index\.html|\.mjs)$/)?.[1]).filter(Boolean))];
 }
 
 // Relative photo src values are resolved against the article URL. A trailing-slash

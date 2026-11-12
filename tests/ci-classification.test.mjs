@@ -45,6 +45,7 @@ test('a story publish is the blog tier',()=>{
   assert.equal(classify(layers).tier,'blog');
   assert.equal(classify(['static/blog/photo.webp']).tier,'blog');
   assert.equal(classify(['src/pages/blog/index.astro']).tier,'blog');
+  assert.equal(classify(['src/content/blog/posts/live-looping-guitar.mjs','src/pages/blog/index.astro']).tier,'blog');
   assert.equal(classify(['scripts/blog-media-upload/assets/001.jpg']).tier,'blog');
   assert.equal(classify(layers,true).tier,'full');
 });
