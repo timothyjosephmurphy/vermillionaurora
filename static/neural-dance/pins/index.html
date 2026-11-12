@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Neural Dance Pins: two-iPhone stereo tracking demo | TJ Murphy</title>
+<meta name="description" content="Interactive simulation of Neural Dance RGB blink-code pins, two-iPhone stereo triangulation, and live sprite projection onto Paradise Dystopia.">
+  <script type="module" crossorigin src="./assets/index-DG2LzyDf.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CMG1p7kc.css">
+</head>
+<body>
+<canvas id="gl"></canvas>
+<header id="top">
+  <h1>Neural Dance Pins <span>stereo tracking demo</span></h1>
+  <div id="tele"></div>
+</header>
+<aside id="panel">
+  <button id="panelToggle" aria-expanded="true">Controls</button>
+  <div id="panelBody">
+    <section>
+      <h2>Crowd</h2>
+      <label>Dancers <output id="ndOut">14</output><input id="nd" type="range" min="1" max="25" value="14"></label>
+      <div class="row"><button id="dancing" class="on">Dancing</button><button id="audio">Synth beat</button><button id="mic">Live mic</button></div>
+      <label>BPM <output id="bpmOut">124</output><input id="bpm" type="range" min="80" max="160" value="124"></label>
+      <p class="hint">Drag a dancer across the floor to move them.</p>
+    </section>
+    <section>
+      <h2>iPhone sensors</h2>
+      <label>Shutter <output id="shOut">1/500 s</output><input id="shutter" type="range" min="0" max="5" step="1" value="0"></label>
+      <label>Clock skew B vs A <output id="skOut">0 ms</output><input id="skew" type="range" min="0" max="20" step="1" value="0"></label>
+      <div class="row"><button id="sync" class="on">Timestamp sync + interpolation</button></div>
+      <details><summary>iPhone A mount</summary>
+        <label>Around room <input id="aAz" type="range" min="90" max="270" value="220"></label>
+        <label>Height <input id="aH" type="range" min="12" max="38" value="26"></label>
+        <label>Pitch <input id="aP" type="range" min="-50" max="0" value="-22"></label>
+        <label>Pan <input id="aY" type="range" min="-30" max="30" value="0"></label>
+      </details>
+      <details><summary>iPhone B mount</summary>
+        <label>Around room <input id="bAz" type="range" min="90" max="270" value="140"></label>
+        <label>Height <input id="bH" type="range" min="12" max="38" value="26"></label>
+        <label>Pitch <input id="bP" type="range" min="-50" max="0" value="-22"></label>
+        <label>Pan <input id="bY" type="range" min="-30" max="30" value="0"></label>
+      </details>
+    </section>
+    <section>
+      <h2>Show</h2>
+      <div class="row"><button id="rays" class="on">Stereo rays</button><button id="frustum" class="on">Frustums</button><button id="beam" class="on">Projector beam</button></div>
+      <div class="row"><button id="wave">Crowd Light Wave (Phase 2)</button>
+      <select id="waveKind"><option value="radial">Radial beat ripple</option><option value="sweep">Left-to-right sweep</option><option value="spiral">Spiral vortex</option></select></div>
+      <div class="row"><button id="beacons" class="on">Interleave ID beacons</button></div>
+      <label>3D Dancer Spotlights <select id="movers"><option value="top">Follow Top Movers</option><option value="chase">Beat Chase</option><option value="all">All-Dancer Beams</option><option value="off">Off</option></select></label>
+      <p class="hint">Moving heads aim only at triangulated positions. Lost lock: beam holds 0.6 s, then fades and reassigns.</p>
+    </section>
+    <section>
+      <h2>View</h2>
+      <div class="row" id="views"><button data-v="overview">Room overview</button><button data-v="painting">Painting close-up</button><button data-v="a">iPhone A view</button><button data-v="b">iPhone B view</button><button data-v="floor">Dance floor</button></div>
+    </section>
+  </div>
+</aside>
+<div id="sensors">
+  <figure><canvas id="sensA" width="640" height="360"></canvas><figcaption>iPhone A sensor <span id="capA"></span></figcaption></figure>
+  <figure><canvas id="sensB" width="640" height="360"></canvas><figcaption>iPhone B sensor <span id="capB"></span></figcaption></figure>
+</div>
+</body>
+</html>
