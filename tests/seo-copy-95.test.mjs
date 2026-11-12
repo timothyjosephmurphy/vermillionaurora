@@ -54,15 +54,11 @@ test('home wall-label cards use a painting hero; the page title stays a small mo
   assert.match(landing, /studio wall label/);
 });
 
-test('/play shell title and start-screen H1 use gallery wording', () => {
-  const shell = fs.readFileSync('static/play/index.html', 'utf8');
-  assert.match(shell, /<title>Walk-Through 3D Gallery \| TJ Murphy Paintings<\/title>/);
-  const frame = fs.readFileSync('static/play/g/play/index.html', 'utf8');
-  assert.match(frame, /<h1>TJM Gallery<\/h1>/);
-  assert.doesNotMatch(frame, /<h1>TJM GALLERY<\/h1>/);
-  const manifest = JSON.parse(fs.readFileSync('static/play/manifest.webmanifest', 'utf8'));
-  assert.equal(manifest.name, 'TJM Gallery');
-  assert.equal(manifest.short_name, 'TJM Gallery');
+test('production /play is the hex gallery; frozen Quake shell files are gone', () => {
+  assert.equal(GALLERY_3D_URL, 'https://tjm.art/play/');
+  assert.equal(fs.existsSync('static/play/index.html'), false);
+  assert.equal(fs.existsSync('static/play/g/play/index.html'), false);
+  assert.equal(fs.existsSync('static/play/manifest.webmanifest'), false);
 });
 
 test('dungeon wording is gone from buyer return chips; 3D gallery returns use production /play/', () => {

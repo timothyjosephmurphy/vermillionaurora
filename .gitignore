@@ -14,6 +14,11 @@ static/print-editions/
 /static/print-masters/
 .cache/
 
+# Rendered by scripts/render-blog-pages.mjs before the site build. Do not commit.
+static/blog/*/index.html
+/worker-configuration.d.ts
+/cloudflare/worker-configuration.d.ts
+
 # Deep-zoom wall previews (1920/2880 px) live only in R2 (img.tjm.art); rebuild with scripts/build-paintings-wall-assets.mjs
 static/wall-paintings/*-1920.webp
 static/wall-paintings/*-2880.webp

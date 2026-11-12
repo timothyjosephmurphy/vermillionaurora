@@ -37,10 +37,11 @@ test('blog media keys stay inside display, social, and blog/<slug>/', () => {
 test('changed article slugs come only from static story HTML', () => {
   assert.deepEqual(changedArticleSlugs([
     'static/blog/live-looping-guitar/index.html',
+    'src/content/blog/posts/halloween-doc-holliday.mjs',
     'src/pages/blog/index.astro',
     'static/blog/Live/index.html',
     'static/display/x.webp',
-  ]), ['live-looping-guitar']);
+  ]), ['live-looping-guitar', 'halloween-doc-holliday']);
 });
 
 test('relative blog photos resolve beside the article, not at the site root', () => {

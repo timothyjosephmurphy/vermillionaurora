@@ -4,7 +4,7 @@
   "description": "Static website for Vermillion Aurora Productions, with an art portfolio and commission/contact interface. Neural Dance is https://tjm.art/neural-dance/.",
   "scripts": {
     "dev": "npm run build && astro preview",
-    "build": "node scripts/build-pilot-print-assets.mjs && node scripts/build-edition-print-assets.mjs && node scripts/build-gallery-wall-assets.mjs && node payments/build-print-catalog.mjs && node payments/build-etsy-print-source.mjs && node payments/build-checkout-catalog.mjs && astro build && node scripts/copy-assets.mjs && node scripts/build-catalog-snapshot.mjs && node scripts/responsive-images.mjs && node scripts/enrich-html-seo.mjs && node scripts/r2-image-urls.mjs && node scripts/generate-sitemap.mjs && node scripts/verify-blog-pages.mjs",
+    "build": "node scripts/render-blog-pages.mjs && node scripts/build-pilot-print-assets.mjs && node scripts/build-edition-print-assets.mjs && node scripts/build-gallery-wall-assets.mjs && node payments/build-print-catalog.mjs && node payments/build-etsy-print-source.mjs && node payments/build-checkout-catalog.mjs && astro build && node scripts/copy-assets.mjs && node scripts/build-catalog-snapshot.mjs && node scripts/responsive-images.mjs && node scripts/enrich-html-seo.mjs && node scripts/r2-image-urls.mjs && node scripts/generate-sitemap.mjs && node scripts/verify-blog-pages.mjs",
     "preview": "astro preview",
     "test": "node scripts/run-unit.mjs",
     "test:print": "node scripts/run-print.mjs",
@@ -14,12 +14,11 @@
     "sitemap:lastmod": "node scripts/generate-sitemap.mjs --update",
     "check:tags": "node scripts/check-painting-tags.mjs",
     "test:room": "node -e 0",
-    "typecheck": "tsc -p tsconfig.site.json --noEmit && tsc -p tsconfig.checkout.json --noEmit && node scripts/check-worker-bindings.mjs"
+    "typecheck": "node scripts/generate-worker-types.mjs && tsc -p tsconfig.site.json --noEmit && tsc -p tsconfig.checkout.json --noEmit && node scripts/check-worker-bindings.mjs"
   },
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@babylonjs/core": "9.30.0",
     "astro": "7.3.5"
   },
   "devDependencies": {

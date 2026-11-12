@@ -12,9 +12,9 @@ const full=[/^cloudflare\//,/^payments\//,/^worker\//,/^wrangler\.jsonc$/,/^pack
 const content=[/^catalog\/.*\.json$/,/^gallery-images\//,/^images\//,/^static\//,/^src\/pages\/blog\//,/^src\/content\//,/^public\//,/^docs\//,/\.(jpe?g|png|webp|gif|avif|svg|mp4|webm|md|txt)$/i,/^scripts\/sitemap-lastmod\.json$/,/^src\/data\/testimonials\.json$/];
 // Story publish. Display, social, and display-files.json are shared with the catalog, so they
 // only take this tier when the change set also touches a story, the blog index, or upload assets.
-// Uploader source (worker.mjs, wrangler, scripts/upload-blog-media.mjs) is not in this list.
-const blogAllow=[/^static\/blog\//,/^src\/pages\/blog\//,/^static\/display\//,/^static\/social\//,/^scripts\/display-files\.json$/,/^scripts\/blog-media-upload\/assets\//,/^scripts\/blog-media-upload\/publish-assets\//,/^scripts\/blog-media-upload\/manifest\.json$/];
-const blogAnchor=/^(static\/blog\/|src\/pages\/blog\/|scripts\/blog-media-upload\/(?:assets\/|publish-assets\/))/;
+// Uploader source (worker.mjs, worker-tjm.mjs, wrangler config) is not in this list.
+const blogAllow=[/^static\/blog\//,/^src\/pages\/blog\//,/^src\/content\/blog\//,/^static\/display\//,/^static\/social\//,/^scripts\/display-files\.json$/,/^scripts\/blog-media-upload\/assets\//,/^scripts\/blog-media-upload\/publish-assets\//,/^scripts\/blog-media-upload\/manifest\.json$/];
+const blogAnchor=/^(static\/blog\/|src\/pages\/blog\/|src\/content\/blog\/|scripts\/blog-media-upload\/(?:assets\/|publish-assets\/))/;
 // These files change serving behavior, so they need the routing/cache unit tests
 // even though they live alongside ordinary content and images.
 const assetConfig=/^(static|public)\/_(headers|redirects)$/;

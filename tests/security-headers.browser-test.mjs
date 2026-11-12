@@ -1,6 +1,7 @@
 // Security headers on static HTML, and the pages that must keep loading under them.
-// Report-only CSP must not block /cart/, the /play/ shell (same-origin /play/g frame),
-// or /neural-dance/live/ (wasm, and a policy that still allows camera and microphone).
+// Report-only CSP must not block /cart/ or a story page.
+// Production /play/ is the proxied hex gallery, not a static shell, so this
+// file server has no /play/ document to open.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
@@ -65,7 +66,7 @@ function blocked(failure) {
 }
 
 try {
-  for (const path of ['/cart/', '/play/', '/blog/walk-my-paintings-3d-gallery/', '/products/strawberry-point-11/']) {
+  for (const path of ['/cart/', '/blog/walk-my-paintings-3d-gallery/', '/products/strawberry-point-11/']) {
     const ctx = await browser.newContext();
     const page = await ctx.newPage();
     const refused = [];
@@ -78,9 +79,6 @@ try {
       assert.equal(response.headers()[name.toLowerCase()], value, `${path} ${name}`);
     }
     assert.equal(response.headers()['content-security-policy'], undefined, `${path} must not enforce CSP`);
-    if (path === '/play/') {
-      await page.waitForFunction(() => document.querySelector('iframe.g')?.contentDocument?.documentElement?.lang === 'en', null, { timeout: 60000 });
-    }
     if (path === '/blog/walk-my-paintings-3d-gallery/') {
       const posting = await page.evaluate(() => {
         const nodes = [...document.querySelectorAll('script[type="application/ld+json"]')];

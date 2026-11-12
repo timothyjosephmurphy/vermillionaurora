@@ -90,10 +90,11 @@ Standalone mat variants remain behind their separate layout gate. Amazon frame
 suggestions are retained under "Prefer to buy your own frame?" for unframed
 selections and hidden when a FinerWorks frame is included.
 
-Validation uses `payments/inspect-finerworks-frames.mjs`: all nine frame/size
+Frame and shipping prices were checked once in the sandbox: all nine frame/size
 prices, destination-based shipping, and validation-only preflights for both
-artworks. It never submits a production order. Browser checks exercise the
-product-page selector through cart quoting at desktop and mobile widths.
+artworks. That one-off check is not on main, and it never submitted a production
+order. Browser checks exercise the product-page selector through cart quoting
+at desktop and mobile widths.
 
 Provider references:
 - https://v2.api.finerworks.com/Help/Api/POST-v3-list_collections
