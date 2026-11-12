@@ -97,9 +97,10 @@ test('sync writes the built framed retail into D1 and leaves a later edit until 
   assert.equal(db.meta.get('print_version'), 'next-print-version');
 });
 
-function statusDb(statuses) {
+function statusDb(statuses, paintings = []) {
   const meta = new Map([['rev', '9']]);
   const rows = new Map(statuses.map(row => [row.product_id, { ...row }]));
+  const paintingRows = new Map(paintings.map(row => [row.id, { ...row }]));
   function prepare(sql) {
     const statement = {
       sql,
@@ -113,13 +114,20 @@ function statusDb(statuses) {
     return statement;
   }
   return {
-    meta, rows, prepare,
+    meta, rows, paintingRows, prepare,
     async batch(statements) {
       const out = [];
       for (const statement of statements) {
         const sql = statement.sql;
-        if (sql === 'SELECT * FROM paintings' || sql.startsWith('SELECT product_id') || sql === 'SELECT * FROM editions') out.push({ results: [] });
+        if (sql === 'SELECT * FROM paintings') out.push({ results: [...paintingRows.values()] });
+        else if (sql.startsWith('SELECT product_id') || sql === 'SELECT * FROM editions') out.push({ results: [] });
         else if (sql === 'SELECT * FROM status') out.push({ results: [...rows.values()] });
+        else if (sql.startsWith('UPDATE paintings')) {
+          const [amount, updatedAt, id] = statement.args;
+          const painting = paintingRows.get(id);
+          if (painting) Object.assign(painting, { price_amount: amount, updated_at: updatedAt });
+          out.push({ results: [] });
+        }
         else if (sql.startsWith('UPDATE status')) {
           const [status, note, updatedAt, id, before] = statement.args;
           const row = rows.get(id);
@@ -160,6 +168,15 @@ test('original availability sync follows the built catalog and keeps a noted ove
   assert.equal(db.rows.get('strawberry-point-7').status, 'available');
   assert.equal(db.rows.get('book-art-d78badff7e21472c00b8').status, 'unavailable');
   assert.equal(db.meta.get('catalog_version'), 'catalog-v2');
+  const priced = statusDb(
+    [{ product_id: 'strawberry-point-3', status: 'inquiry', note: 'repo sync' }],
+    [{ id: 'strawberry-point-3', price_amount: null }]
+  );
+  resetCache();
+  const priceSync = await syncBuiltPaintingStatuses(priced, 'catalog-v3', { 'strawberry-point-3': { status: 'available' } }, { 'strawberry-point-3': { amount: '450.00' } });
+  assert.deepEqual(priceSync, { updated: 2, skipped: false });
+  assert.equal(priced.rows.get('strawberry-point-3').status, 'available');
+  assert.equal(priced.paintingRows.get('strawberry-point-3').price_amount, '450.00');
   const again = await syncBuiltPaintingStatuses(db, 'catalog-v2', inventory);
   assert.deepEqual(again, { updated: 0, skipped: true });
 });
