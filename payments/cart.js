@@ -350,7 +350,7 @@
     for(const line of cart){
       const p=meta[line.id],live=capabilities?.products.find(p=>p.id===line.id),isPrint=(live?.type||p?.type)==='print',isDeposit=(live?.type||p?.type)==='deposit',isBook=(live?.type||p?.type)==='book'||isBookId(line.id),details=live||p,amount=live?.amount||p?.amount||p?.listing?.price?.amount;
       if(amount)subtotal+=Number(amount)*line.quantity;
-      const row=node('article',undefined,'cart-line'),link=node('a');link.href=isDeposit?'/commissions/':`/products/${details?.productId||line.id}/`;
+      const row=node('article',undefined,'cart-line');row.dataset.cartLine=line.id;const link=node('a');link.href=isDeposit?'/commissions/':`/products/${details?.productId||line.id}/`;
       if(p?.image||details?.preview){const img=node('img');img.src=(p?.image||details.preview).src;img.alt=p?.title||details.title;link.append(img);}row.append(link);
       const info=node('div'),title=node('h2'),titleLink=node('a',p?.title||live?.title||'Unavailable artwork');titleLink.href=link.href;title.append(titleLink);info.append(title,node('p',isPrint?`Fine-art print · Image ${inches(details.imageSize.width)} × ${inches(details.imageSize.height)} in · Paper ${inches(details.paperSize.width)} × ${inches(details.paperSize.height)} in${details.mat?` · ${details.mat.name} · Mat / frame ${inches(details.mat.outer.width)} × ${inches(details.mat.outer.height)} in`:""}`:isDeposit?(details.commission.stage==='balance'?`Commission balance · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Final payment before the finished work ships${line.requestId?' · Linked to your commission request':''}`:`Commission deposit · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Balance due before the finished work ships${line.requestId?' · Linked to your commission request':''}`):isBook?'Printed book · Made to order':'Original artwork · Quantity 1'),node('p',amount?money(Number(amount)*line.quantity):'Price unavailable','cart-line-price'));
       if(isPrint&&details.frame)info.append(node('p',`${details.frame.name} frame · ${details.frame.glazing.name} acrylic · Assembled by FinerWorks`,'cart-frame-description'));
@@ -379,6 +379,12 @@
     const adjustments=q.quote?.priceAdjustments||[];
     pricesConfirmed=!adjustments.length;
     if(adjustments.length){
+      for(const row of root.querySelectorAll('[data-cart-line]')){
+        const adjustment=adjustments.find(a=>a.id===row.dataset.cartLine);
+        const line=cart.find(item=>item.id===adjustment?.id);
+        const price=row.querySelector('.cart-line-price');
+        if(adjustment&&line&&price)price.textContent=money(Number(adjustment.amount)*line.quantity);
+      }
       const lines=adjustments.map(a=>`${a.title||a.id}: was ${money(a.previousAmount)}, now ${money(a.amount)}`).join('; ');
       quoteFeedback.replaceChildren(node('span',`A print price was updated before checkout (${lines}). Confirm the new total before paying. `));
       const confirm=node('button','Confirm updated prices','cart-text-link');confirm.type='button';
