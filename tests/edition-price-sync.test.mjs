@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { editionAmountChanges, resetCache, syncBuiltEditionPrices } from '../cloudflare/catalog-d1.mjs';
+import { editionAmountChanges, resetCache, syncBuiltEditionPrices, syncBuiltPaintingStatuses } from '../cloudflare/catalog-d1.mjs';
 
 function fakeDb(editions) {
   const meta = new Map([['rev', '1602']]);
@@ -95,6 +95,73 @@ test('sync writes the built framed retail into D1 and leaves a later edit until 
   assert.deepEqual(next, { updated: 1, skipped: false });
   assert.equal(db.rows.get('print-archived-painting-364-medium-frame-white').amount, '136.00');
   assert.equal(db.meta.get('print_version'), 'next-print-version');
+});
+
+function statusDb(statuses) {
+  const meta = new Map([['rev', '9']]);
+  const rows = new Map(statuses.map(row => [row.product_id, { ...row }]));
+  function prepare(sql) {
+    const statement = {
+      sql,
+      bind(...args) { return { sql, args }; },
+      async first() {
+        if (sql.includes("key='rev'")) return { value: meta.get('rev') };
+        if (sql.includes("key='catalog_version'")) return meta.has('catalog_version') ? { value: meta.get('catalog_version') } : null;
+        return null;
+      }
+    };
+    return statement;
+  }
+  return {
+    meta, rows, prepare,
+    async batch(statements) {
+      const out = [];
+      for (const statement of statements) {
+        const sql = statement.sql;
+        if (sql === 'SELECT * FROM paintings' || sql.startsWith('SELECT product_id') || sql === 'SELECT * FROM editions') out.push({ results: [] });
+        else if (sql === 'SELECT * FROM status') out.push({ results: [...rows.values()] });
+        else if (sql.startsWith('UPDATE status')) {
+          const [status, note, updatedAt, id, before] = statement.args;
+          const row = rows.get(id);
+          if (row && row.status === before) Object.assign(row, { status, note, updated_at: updatedAt });
+          out.push({ results: [] });
+        } else if (sql.includes("key='rev'")) {
+          meta.set('rev', String(Number(meta.get('rev') || 0) + 1));
+          out.push({ results: [] });
+        } else if (sql.startsWith('INSERT INTO audit')) out.push({ results: [] });
+        else if (sql.includes("'catalog_version'")) {
+          meta.set('catalog_version', statement.args[0]);
+          out.push({ results: [] });
+        } else throw new Error(`unexpected SQL: ${sql}`);
+      }
+      return out;
+    }
+  };
+}
+
+test('original availability sync follows the built catalog and keeps a noted override', async () => {
+  resetCache();
+  const db = statusDb([
+    { product_id: 'strawberry-point-4', status: 'available', note: 'repo sync' },
+    { product_id: 'strawberry-point-11', status: 'unavailable', note: 'catalog-admin' },
+    { product_id: 'strawberry-point-7', status: 'available', note: 'repo sync' },
+    { product_id: 'book-art-d78badff7e21472c00b8', status: 'unavailable', note: 'Removed: framed duplicate' }
+  ]);
+  const inventory = {
+    'strawberry-point-4': { status: 'unavailable' },
+    'strawberry-point-11': { status: 'available' },
+    'strawberry-point-7': { status: 'available' },
+    'book-art-d78badff7e21472c00b8': { status: 'available' }
+  };
+  const first = await syncBuiltPaintingStatuses(db, 'catalog-v2', inventory);
+  assert.deepEqual(first, { updated: 2, skipped: false });
+  assert.equal(db.rows.get('strawberry-point-4').status, 'unavailable');
+  assert.equal(db.rows.get('strawberry-point-11').status, 'available');
+  assert.equal(db.rows.get('strawberry-point-7').status, 'available');
+  assert.equal(db.rows.get('book-art-d78badff7e21472c00b8').status, 'unavailable');
+  assert.equal(db.meta.get('catalog_version'), 'catalog-v2');
+  const again = await syncBuiltPaintingStatuses(db, 'catalog-v2', inventory);
+  assert.deepEqual(again, { updated: 0, skipped: true });
 });
 
 test('an empty built catalog does not mark the print version as synced', async () => {

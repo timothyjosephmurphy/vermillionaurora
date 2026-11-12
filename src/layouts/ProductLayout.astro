@@ -38,7 +38,7 @@ const structuredData = product.type === 'painting'
       ...((product.year||product.yearDisplay)?{dateCreated:String(product.year||product.yearDisplay)}:{}),
       copyrightHolder: product.artist && product.artist !== 'TJ Murphy' ? { '@type':'Person', name:product.artist } : studio,
       ...(product.dimensions?.width&&product.dimensions?.height?{width:{'@type':'Distance',name:`${product.dimensions.width} ${product.dimensions.unit||'in'}`},height:{'@type':'Distance',name:`${product.dimensions.height} ${product.dimensions.unit||'in'}`}}:{}),
-      ...(product.listing?.price?.amount&&product.listing.status!=='not-for-sale'?{offers:{'@type':'Offer',price:product.listing.price.amount,priceCurrency:product.listing.price.currency||'USD',url:canonical,
+      ...(product.listing?.price?.amount&&product.listing.status!=='not-for-sale'&&product.listing.status!=='unavailable'?{offers:{'@type':'Offer',price:product.listing.price.amount,priceCurrency:product.listing.price.currency||'USD',url:canonical,
         availability:product.listing.status==='available'?'https://schema.org/InStock':product.listing.status==='sold'?'https://schema.org/SoldOut':'https://schema.org/LimitedAvailability',
         seller:studio}}:{}) }
   : product.type === 'book'

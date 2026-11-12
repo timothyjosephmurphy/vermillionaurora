@@ -15,8 +15,8 @@ test('upcoming shows are the known calendar, soonest first, without invented str
   const waa = upcoming[0];
   assert.equal(waa.title, 'WAA Sip & Stroll');
   assert.match(waa.dates, /Deliver November 13, 2026/);
-  assert.match(waa.dates, /pick up November 14, 2026/);
-  assert.equal(waa.end, '2026-11-14');
+  assert.match(waa.dates, /pick up November 15, 2026, 5–6 PM/);
+  assert.equal(waa.end, '2026-11-15');
   assert.match(waa.venue, /The Winemakers Reserve, Woodinville, Washington/);
   assert.match(waa.note, /Woodinville Arts Alliance/);
 

@@ -14,9 +14,9 @@ export {CartOrder} from './cart-order.mjs';
 import { inventoryStatus } from './inventory-api.mjs';
 import { originalStatusApi } from './original-status.mjs';
 import { runOriginalInventorySync } from './etsy-original-sync.mjs';
-import { catalogVersion } from './checkout-catalog.mjs';
+import { catalogVersion, inventory } from './checkout-catalog.mjs';
 import { applyCatalogOverlay, catalogSource } from './catalog-overlay.mjs';
-import { syncBuiltEditionPrices } from './catalog-d1.mjs';
+import { syncBuiltEditionPrices, syncBuiltPaintingStatuses } from './catalog-d1.mjs';
 import { ensurePrintCatalog } from './print-catalog-asset.mjs';
 import { prints } from './print-catalog-store.mjs';
 import { printVersion } from './print-catalog-version.mjs';
@@ -35,13 +35,15 @@ import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestim
 import { handleTestimonialEmail } from './testimonial-reply.mjs';
 import { newsletterApi } from './newsletter.mjs';
 export { NeuralDanceDebugRoom } from './neural-dance-debug-room.mjs';
-async function syncBuiltPrintPrices(env) {
+async function syncBuiltCatalog(env) {
   if (!env.CATALOG_DB) return;
   try {
-    const result = await syncBuiltEditionPrices(env.CATALOG_DB, printVersion, Object.values(prints));
-    if (result?.updated) console.log('Synced built print prices into the live catalog', result.updated);
+    const prices = await syncBuiltEditionPrices(env.CATALOG_DB, printVersion, Object.values(prints));
+    if (prices?.updated) console.log('Synced built print prices into the live catalog', prices.updated);
+    const statuses = await syncBuiltPaintingStatuses(env.CATALOG_DB, catalogVersion, inventory);
+    if (statuses?.updated) console.log('Synced built original availability into the live catalog', statuses.updated);
   } catch (error) {
-    console.error('Built print price sync failed', error instanceof Error ? error.message : error);
+    console.error('Built catalog sync failed', error instanceof Error ? error.message : error);
   }
 }
 export default {
@@ -54,7 +56,7 @@ export default {
     try { await ensurePrintCatalog(env); }
     catch (error) { catalogReady = false; console.error('Print catalog load failed', error); }
     if (catalogReady) {
-      await syncBuiltPrintPrices(env);
+      await syncBuiltCatalog(env);
       await applyCatalogOverlay(env);
     }
     if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
@@ -70,7 +72,7 @@ export default {
     }
     // Copy this print catalog's retail into D1, then overlay D1. A framed quote
     // is refused unless the overlaid amount matches FinerWorks to the cent.
-    await syncBuiltPrintPrices(env);
+    await syncBuiltCatalog(env);
     await applyCatalogOverlay(env);
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);
     if (path === '/newsletter/subscribe' || path === '/newsletter/buttondown-webhook') return newsletterApi(request,env);

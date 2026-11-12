@@ -2,15 +2,17 @@ import manifest from './strawberry-point.json' with {type:'json'};
 import {estimatePaperParcelWeightLb} from './shipping-estimates.mjs';
 // Strawberry Point Backpacking Trip (fall 2026): one page per painting ("Strawberry Point Backpacking Trip #n", numbered across the
 // photos in order, left to right and top to bottom), plus one page for each photo that shows several paintings.
-// Medium is watercolor pastel (TJ, Oct 16 2026); titles are not recorded. Prints for #4–15 never exceed the original size (TJ, Oct 16 2026). Originals #4–14 are for sale (TJ, Oct 16 2026);
-// with no measured size they follow the unmeasured-original rule: priced, Buy goes to inquiry, no invented parcel. #1–3 stay by inquiry.
+// Medium is watercolor pastel (TJ, Oct 16 2026); titles are not recorded. Prints for #4–15 never exceed the original size (TJ, Oct 16 2026).
+// Originals #7–15 are for sale. #1, #2, #4, #5 and #6 are out with shows (not currently available; prints stay). #3 stays by inquiry.
 export const STRAWBERRY_GALLERY='/gallery/strawberry-point/';
 export const strawberryPaintings=manifest.paintings;
 export const strawberryGroups=manifest.groups;
 export const strawberryId=p=>`strawberry-point-${p.index}`;
 export const strawberryTitle=p=>`Strawberry Point Backpacking Trip #${p.index}`;
 // Original prices (TJ, Oct 16 2026). #8–10 default $100; #11–14 (9.75 in) raised to $200.
-export const STRAWBERRY_PRICES={4:75,5:75,6:75,7:75,8:100,9:100,10:100,11:200,12:200,13:200,14:200,15:100};
+// #4–6 left the sale list on Nov 11 2026 (Ghost Gallery Holiday Mini), with #1–2 (WAA Sip & Stroll).
+export const STRAWBERRY_PRICES={7:75,8:100,9:100,10:100,11:200,12:200,13:200,14:200,15:100};
+const STRAWBERRY_SHOWS={1:'WAA Sip & Stroll, Woodinville',2:'WAA Sip & Stroll, Woodinville',4:'Ghost Gallery Holiday Mini',5:'Ghost Gallery Holiday Mini',6:'Ghost Gallery Holiday Mini'};
 // Measured sizes (TJ, Oct 16 2026): #1–3 are 15 × 15 in (38 × 38 cm), not for sale; #4–7 are 5 × 5 in (13 × 13 cm); #8–10 and #15 are 7.5 × 7.5 in (19 × 19 cm); #11–14 are 9.75 × 9.75 in (24 × 24 cm). Measured + priced originals get integrated checkout.
 export const STRAWBERRY_SIZES={1:[15,15,38],2:[15,15,38],3:[15,15,38],15:[7.5,7.5,19],4:[5,5,13],5:[5,5,13],6:[5,5,13],7:[5,5,13],8:[7.5,7.5,19],9:[7.5,7.5,19],10:[7.5,7.5,19],11:[9.75,9.75,24],12:[9.75,9.75,24],13:[9.75,9.75,24],14:[9.75,9.75,24]};
 const sizeOf=p=>{const d=STRAWBERRY_SIZES[p.index];return d?{width:d[0],height:d[1],unit:'in'}:null;};
@@ -23,12 +25,12 @@ export const strawberryGroupTitle=g=>`Strawberry Point Backpacking Trip #${g.mem
 const image=(d,alt,caption)=>({src:`https://tjm.art${d.base}-1600.webp`,fullSrc:`${d.base}-1600.webp`,alt,width:d.sourceWidth,height:d.sourceHeight,caption});
 const common={type:'painting',artist:'TJ Murphy',eyebrow:'Strawberry Point Backpacking Trip',listing:{status:'inquiry',price:null},
   year:2026,dimensions:null,medium:'Watercolor pastel',surface:null,dimensionOrder:'width-height',checkout:{mode:'inquiry'},series:'strawberry-point'};
-const paintings=strawberryPaintings.map(p=>{const g=groupOf(p),title=strawberryTitle(p),price=priceOf(p),dims=sizeOf(p);return {...common,
-  ...(price?{listing:{status:'available',price}}:{}),
+const paintings=strawberryPaintings.map(p=>{const g=groupOf(p),title=strawberryTitle(p),show=STRAWBERRY_SHOWS[p.index],price=show?null:priceOf(p),dims=sizeOf(p);return {...common,
+  ...(show?{listing:{status:'unavailable',price:null},checkout:{mode:'inquiry'}}:price?{listing:{status:'available',price}}:{}),
   ...(dims?{dimensions:dims,...(price?{checkout:{mode:'integrated',shipping:shippingFor(dims)}}:{})}:{}),
   id:strawberryId(p),slug:strawberryId(p),title,
   description:`${title}, a painting by TJ Murphy from his Strawberry Point backpacking trip on the Pacific coast of the Olympic Peninsula.`,
-  facts:[{label:'Series',value:'Strawberry Point Backpacking Trip, painted fall 2026'},{label:'Index',value:`#${p.index}`},...(dims?[{label:'Size',value:`${dims.width} × ${dims.height} in (${cmOf(p)})`}]:[]),{label:'Original',value:price?`Available · $${Number(price.amount)}`:'Not yet for sale · inquire'},...(p.master&&p.index>3?[{label:'Prints',value:'Archival prints on watercolor paper, never larger than the original'}]:[]),
+  facts:[{label:'Series',value:'Strawberry Point Backpacking Trip, painted fall 2026'},{label:'Index',value:`#${p.index}`},...(dims?[{label:'Size',value:`${dims.width} × ${dims.height} in (${cmOf(p)})`}]:[]),{label:'Original',value:show?`Not currently available · ${show}`:price?`Available · $${Number(price.amount)}`:'Not yet for sale · inquire'},...(p.master&&p.index>3?[{label:'Prints',value:'Archival prints on watercolor paper, never larger than the original'}]:[]),
     ...(g?[{label:'Photographed with',value:strawberryGroupTitle(g),href:`/products/${g.id}/`}]:[])],
   story:[],image:image(p.display,`${title}, a painting by TJ Murphy`,title),
   inquiry:{label:'Inquire about this painting',note:''},
