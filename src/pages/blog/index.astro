@@ -11,6 +11,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
     <meta name="description" content="A running journal of paintings, the places behind them, and new work by TJ Murphy." />
     <link rel="canonical" href="https://tjm.art/blog/" />
     <link href="/fonts/fonts.css" rel="stylesheet" />
+    <meta name="theme-color" content="#fff" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/site-header.css" />
   </head>
@@ -205,6 +206,13 @@ import SiteFooter from '../../components/SiteFooter.astro';
   </body>
 </html>
 <style is:global>
+  /* Blog index only. The rest of the site keeps its paper color in styles.css. */
+  html, body { --paper:#fff; --bg:#fff; background:#fff }
+  body .site-header { background:#fff }
+  body .site-footer { background:#fff }
+  @media (max-width: 980px) {
+    body .site-header .main-nav { background:#fafafa }
+  }
   /* Compact story cards for every post, static and Nostr (studio-tracker #217): about three per screen. */
   .journal{max-width:980px;padding-block:24px 64px}
   .journal-heading{max-width:760px;margin:0 auto 16px;text-align:center}
@@ -213,7 +221,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
   .journal-heading>p:last-child{max-width:620px;margin:0 auto;color:var(--muted);line-height:1.7}
   .journal-status{min-height:1.5em;text-align:center;color:var(--muted);font-size:.92rem}
   .journal-entries{display:grid;gap:14px}
-  .journal-entry{display:grid;grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:6px 22px;align-items:start;padding:14px;border:1px solid var(--line,#e3d9cb);border-radius:10px;background:#fffcf6}
+  .journal-entry{display:grid;grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:6px 22px;align-items:start;padding:14px;border:1px solid var(--line,#e3d9cb);border-radius:10px;background:#fafafa}
   .journal-entry>header{grid-column:2;display:grid;gap:2px}
   .journal-entry h2{font:600 1.55rem/1.15 "Cormorant Garamond",serif;margin:0}
   .journal-entry h2 a{text-decoration:none}

@@ -3,7 +3,7 @@
    so it can sit in a post that already styles figure.photo. */
 
 .blog-painting-carousel {
-  --paper: #f5f0e8;
+  --paper: #fff;
   --ink: #2c2924;
   --muted: #6f685e;
   --red: #9c3e32;
@@ -79,7 +79,7 @@
   height: 44px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: var(--paper);
+  background: #fafafa;
   color: var(--ink);
   font: 20px/1 Inter, system-ui, sans-serif;
   cursor: pointer;

@@ -4,7 +4,7 @@ Static posts under `static/blog/` can embed a horizontal painting or product car
 
 These examples are paste-ready for later posts. They are not linked from the blog index. Do not add a new `static/blog/<slug>/index.html` or a card in `src/pages/blog/index.astro` until that post is ready to publish.
 
-Load the assets once per page (the blog font stylesheet is already on each post):
+Load the assets once per page (the blog font stylesheet is already on each post). The host page background is plain white (`--paper: #fff`); this stylesheet uses the same `--paper`, and the previous/next buttons use `#fafafa` so they sit off that white:
 
 ```html
 <link rel="stylesheet" href="/blog/painting-carousel.css">
