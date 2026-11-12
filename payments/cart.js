@@ -10,7 +10,7 @@
   const read=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
   const write=(key,value)=>{try{if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const clean=value=>Array.isArray(value)?[...new Map(value.filter(x=>x&&/^[a-z0-9-]+$/.test(x.id||'')&&Number.isSafeInteger(x.quantity)&&x.quantity>=1&&x.quantity<=(x.id.startsWith('print-')||BOOK_ID.test(x.id)?10:1)).map(x=>[x.id,{id:x.id,quantity:x.quantity,...(/^(deposit|balance)-/.test(x.id)&&REQUEST.test(x.requestId||'')?{requestId:x.requestId}:{})}])).values()].slice(0,MAX):[];
-  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve(),awaitingBitcoinRedirect=false;
+  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve(),awaitingBitcoinRedirect=false,pricesConfirmed=false;
   const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
   const money=value=>`$${Number(value).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
   const api=async(action,body)=>{
@@ -149,7 +149,7 @@
     button.disabled=!quoteAllowed();
   }
   function invalidate(){
-    quoted=null;
+    quoted=null;pricesConfirmed=false;
     if(applyDepositMode())return;
     updateQuoteButton();
     updatePaymentControls(false);
@@ -199,7 +199,7 @@
     }
     box.hidden=!methods.length;
     const help=box.querySelector('[data-cart-payment-help]');
-    if(help)help.textContent=enabled&&depositOnly()&&!quoted?'Pay the deposit by card or Bitcoin. No address or sales tax.':enabled?'Your total is ready. Choose how you would like to pay.':'Calculate shipping and tax to enable payment.';
+    if(help)help.textContent=enabled&&depositOnly()&&!quoted?'Pay the deposit by card or Bitcoin. No address or sales tax.':enabled&&quoted&&!pricesConfirmed&&(quoted.quote?.priceAdjustments||[]).length?'Confirm the updated print prices above before paying.':enabled?'Your total is ready. Choose how you would like to pay.':'Calculate shipping and tax to enable payment.';
   }
   let squareCard=null,squareCardReady=null,squarePaymentsReady=null;
   // One Square Web Payments instance serves the card form and the Apple Pay / Google Pay buttons.
@@ -376,13 +376,25 @@
     quoted=q;root.querySelector('[data-cart-shipping]').textContent=money(q.quote.shipping);root.querySelector('[data-cart-tax]').textContent=money(q.quote.tax);root.querySelector('[data-cart-total]').textContent=money(q.quote.total);
     applyHeldState({heldIds:cart.filter(i=>stockedId(i.id)).map(i=>i.id),expiresAt:q.expiresAt});
     const quoteButton=form.querySelector('[data-cart-quote]');quoteButton.disabled=true;quoteButton.textContent='Shipping & tax calculated';
-    updatePaymentControls(true,q.methods);
+    const adjustments=q.quote?.priceAdjustments||[];
+    pricesConfirmed=!adjustments.length;
+    if(adjustments.length){
+      const lines=adjustments.map(a=>`${a.title||a.id}: was ${money(a.previousAmount)}, now ${money(a.amount)}`).join('; ');
+      quoteFeedback.replaceChildren(node('span',`A print price was updated before checkout (${lines}). Confirm the new total before paying. `));
+      const confirm=node('button','Confirm updated prices','cart-text-link');confirm.type='button';
+      confirm.addEventListener('click',()=>{pricesConfirmed=true;updatePaymentControls(true,q.methods);announce('Updated prices confirmed. Choose a payment method below.');quoteFeedback.textContent='Updated prices confirmed. Choose a payment method below.';});
+      quoteFeedback.append(confirm);
+      announce(`A print price was updated. Confirm the new total before paying.`);
+    }
+    updatePaymentControls(pricesConfirmed,q.methods);
   }
   const credentials=()=>({orderId:current.orderId,key:current.key});
   function remember(q){const value={orderId:q.orderId,key:q.key};if(!write(ATTEMPT,value))throw Error('Your browser could not save this checkout. Enable site storage before continuing.');}
   async function startPayment(method,walletToken){
     if(!quoted&&depositOnly()&&!busy){if(!form.reportValidity())return;await quoteNow?.();if(!quoted)return;}
-    if(busy||!quoted)return;busy=true;setDisabled(true);announce('Checking your items and preparing payment…');
+    if(busy||!quoted)return;
+    if(!pricesConfirmed&&(quoted.quote?.priceAdjustments||[]).length){announce('Confirm the updated print prices before paying.');return;}
+    busy=true;setDisabled(true);announce('Checking your items and preparing payment…');
     try{
       let sourceId;
       if(method==='square'&&walletToken){
@@ -409,7 +421,7 @@
   function setDisabled(value){
     const wallets=root.querySelector('[data-cart-wallets]');if(wallets){wallets.inert=value;wallets.classList.toggle('is-disabled',value);}
     form.querySelectorAll('input,button').forEach(el=>{if(el.matches('[data-cart-quote]'))el.disabled=value||!quoteAllowed();else el.disabled=value;});
-    root.querySelectorAll('[data-cart-methods] button').forEach(el=>el.disabled=value||!quoted||!!(pendingOrder&&pending(pendingOrder)));
+    root.querySelectorAll('[data-cart-methods] button').forEach(el=>el.disabled=value||!quoted||!pricesConfirmed||!!(pendingOrder&&pending(pendingOrder)));
     root.querySelectorAll('[data-cart-items] button, [data-cart-items] input').forEach(el=>el.disabled=value);
   }
   const messages={quoted:['Ready to check out','Enter your delivery details to calculate a fresh total.'],reserving:['Reserving your originals','Please keep this page open while we confirm availability.'],creating:['Preparing your payment','We are checking with the payment provider. Please wait before starting another order.'],pending:['Payment pending','Continue to the secure payment page, or check here after paying.'],capturing:['Confirming your payment','Your originals remain reserved while we confirm payment. Please do not pay again.'],processing:['Bitcoin payment received','Waiting for payment confirmation. Your originals remain reserved.'],settling:['Confirming your order','Your payment has been received. We are updating the inventory.'],paid:['Thank you for collecting my work.','Your payment is confirmed. Prints ship from the print lab, separately from any originals.'],expired:['Checkout expired','Your cart has been kept. Review availability and begin a new checkout when ready.'],cancelled:['Checkout cancelled','Your cart has been kept. No payment was captured through this checkout.'],unavailable:['An original is no longer available','No payment was started. Return to your cart to review availability.'],review:['Your payment needs a closer look','TJ will review this order. Please do not pay again. Contact tj@tjm.art with the order reference below.'],missing:['Order not found','Please contact TJ if you have already paid.']};
@@ -486,7 +498,8 @@
         if(!capabilities?.enabled)throw Error('Checkout is temporarily unavailable. Please try again or contact TJ.');
         await syncHold(cart);
         const unavailable=cart.find(item=>!eligible(item.id));if(unavailable)throw Error('An item is no longer available for checkout. Review the items in your cart.');
-        const identity=holdCredentials(),q=await api('quote',{items:cart,address,email,...(printCode?{code:printCode}:{}),catalogVersion:capabilities.version,holdId:identity.holdId,key:identity.key});showQuote(q);announce('Your total is ready. Choose a payment method below.');quoteFeedback.textContent='Your shipping and tax are calculated. Choose a payment method below.';
+        const identity=holdCredentials(),q=await api('quote',{items:cart,address,email,...(printCode?{code:printCode}:{}),catalogVersion:capabilities.version,holdId:identity.holdId,key:identity.key});showQuote(q);
+        if(!(q.quote?.priceAdjustments||[]).length){announce('Your total is ready. Choose a payment method below.');quoteFeedback.textContent='Your shipping and tax are calculated. Choose a payment method below.';}
       }
       catch(error){announce(error.message);invalidate();quoteFeedback.textContent=error.message;}
       finally{busy=false;setDisabled(false);updateQuoteButton();}

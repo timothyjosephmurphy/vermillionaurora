@@ -55,7 +55,7 @@ export async function fulfillFinerWorks(env,job,persist) {
   if(next.status==='pending') {
     let quote;
     try {quote=await quoteFinerWorksPrints(env,job.items,job.address);}catch(error) {
-      if(/cost changed|needs review/.test(error.message)){await persist({...next,status:'review',reason:'Print cost or material changed after payment. Review before ordering.'});return true;}
+      if(error.code==='PRINT_PRICE_REVIEW'||error.code==='PRINT_PRICE_BLOCKED'||/cost changed|needs review|fresh price/.test(error.message||'')){await persist({...next,status:'review',reason:'Print cost or material changed after payment. Review before ordering.'});return true;}
       throw error;
     }
     // Use the selected delivery service, not a newly cheaper/different service.

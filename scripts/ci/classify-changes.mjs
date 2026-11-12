@@ -31,6 +31,7 @@ const areas=[
   [/wallet|apple-pay|google-pay/i,['tests/cart-wallets.browser-test.mjs']],
 ];
 // Print-master-only: prints.json, master registries, master/edition files and the catalogs generated from them.
+// Those PRs take the offline price-table check (no live FinerWorks quotes).
 const printMaster=[/^catalog\/prints\.json$/,/^catalog\/[a-z-]*print-masters\.json$/,/^catalog\/gallery-wall-layout\.json$/,/^static\/print-(masters|editions)\//,/^cloudflare\/(print-catalog|print-catalog-version|checkout-catalog|etsy-print-source|etsy-sync-source)\.mjs$/,/^cloudflare\/print-assets\/print-catalog\.json$/];
 let tier;
 const printOnly=files.length>0&&files.includes('catalog/prints.json')&&files.every(f=>printMaster.some(r=>r.test(f)));

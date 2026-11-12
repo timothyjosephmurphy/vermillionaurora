@@ -1,8 +1,7 @@
 name: Verify FinerWorks framing in sandbox
+# Manual only. Automatic push/schedule quoting of FinerWorks was removed (studio-tracker #869).
 on:
-  push:
-    branches: [finerworks-framing, portrait-print-layout]
-    paths: ['cloudflare/**', 'catalog/**', 'src/pages/print-test/**', 'payments/inspect-finerworks-frames.mjs', '.github/workflows/verify-finerworks-framing.yml']
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
