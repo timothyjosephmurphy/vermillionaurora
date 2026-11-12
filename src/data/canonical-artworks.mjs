@@ -49,8 +49,28 @@ export const canonicalArtwork = {
   'archived-painting-412': 'painting-studio-figure', // Brekkie Hoisting Orange Calcite B (archive photo) = the catalog page
 };
 // Extra works shown in a book-gallery section (catalog ids or book-art ids).
+// Bitcoiners (TJ, Nov 11 2026): the wall-label gallery folds in here. These sixteen
+// older-work originals were not already in the chapter. Shared book-art ids stay once.
 export const sectionAdditions = {
-  'watercolor-portraits-bitcoiners': ['book-art-2136f2260225dd8ef20a'],
+  'watercolor-portraits-bitcoiners': [
+    'book-art-2136f2260225dd8ef20a',
+    'older-work-bitcoin-voices-original-3',
+    'older-work-bitcoin-voices-original-4',
+    'older-work-bitcoin-voices-original-1',
+    'older-work-bitcoin-voices-original-2',
+    'older-work-yakes-todd-dickerson-original-2',
+    'older-work-yakes-todd-dickerson-original-1',
+    'older-work-yakes-todd-dickerson-original-3',
+    'older-work-rochard-martinez-original-1',
+    'older-work-ammous-livera-original-1',
+    'older-work-ammous-livera-original-2',
+    'older-work-nakamoto-hayek-original-1',
+    'older-work-nakamoto-hayek-original-2',
+    'older-work-fernandez-moran-pysh-original-1',
+    'older-work-fernandez-moran-pysh-original-2',
+    'older-work-fernandez-moran-pysh-original-3',
+    'older-work-rochard-martinez-original-2',
+  ],
 };
 
 // The works a book-gallery section shows: scans resolved to their canonical page, each painting once.
