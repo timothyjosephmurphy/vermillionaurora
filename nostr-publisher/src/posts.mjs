@@ -172,6 +172,15 @@ export const posts = [
     "imageUrl": "https://img.tjm.art/social/gallery-3d-nov-4-2026/02-hex-wall.png",
     "productUrl": "/blog/walk-my-paintings-3d-gallery/",
     "xText": "I set up a 3D gallery where you walk all 206 of my current paintings, hung at true size in lit rooms.\n\nCourtyards. Murals. Dad's side gallery. Buy Scanner, soup thermos, gravity gun, glitter cannon. Pillar of light to check out. Pay with Bitcoin.\n\nhttps://tjm.art/blog/walk-my-paintings-3d-gallery/"
+  },
+  {
+    "id": "campaign-halloween-doc-holliday-2026-11-11",
+    "title": "I Shaved My Beard to Be Doc Holliday",
+    "scheduledAt": "2026-11-11T19:15:00-08:00",
+    "text": "Shaved my beard for Halloween and went as Doc Holliday.\n\nBest part of the night: a blackjack table where you bet treasures, not money. I put up a singing bowl and walked away with a copper water bottle. Also found out gyroscope toys feel like touching a higher dimensional object.\n\nHolsters by Zatcabala Oregon Leathercraft. Photos by Sergey Avdeev (sergeyavdeev.com).\n\nMy paintings and prints are on tjm.art. You can pay with Bitcoin.",
+    "imageUrl": "https://tjm.art/blog/halloween-doc-holliday/media/doc-holliday-tin-cup-closeup.jpg",
+    "productUrl": "/blog/halloween-doc-holliday/",
+    "xText": "Shaved my beard for Halloween and went as Doc Holliday.\n\nBest part of the night: a blackjack table where you bet treasures, not money. I put up a singing bowl and walked away with a copper water bottle.\n\nHolsters by Zatcabala Oregon Leathercraft. Photos by Sergey Avdeev (sergeyavdeev.com). Pay with Bitcoin.\n\nhttps://tjm.art/blog/halloween-doc-holliday/"
   }
 ];
 

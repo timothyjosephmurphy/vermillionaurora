@@ -23,6 +23,7 @@ A Cloudflare Worker (`vermillion-nostr-publisher`) that publishes TJ's art posts
 | Wed Nov 4, 7:05 PM | Walk My 206 Paintings in 3D | scheduled |
 | Thu Nov 5, 6:00 PM | Syrenka commission process | scheduled |
 | Sat Nov 7, 10:00 AM | Berlín, El Salvador sign | scheduled |
+| Wed Nov 11, 7:15 PM | I Shaved My Beard to Be Doc Holliday | scheduled |
 
 `scheduledAt` uses `-07:00` through October and `-08:00` from November 1 (end of daylight saving time). Tests check that every entry lands on the Pacific wall-clock time above.
 
@@ -54,7 +55,7 @@ Deployment preserves dashboard variables with `keep_vars: true`. A missing enabl
 
 ## Status
 
-- Read-only status: https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/status. It reports the number of scheduled posts, each scheduled post's id, time, status, text and image, the enabled state, and the connection-test (`testPost`) receipt.
+- Read-only status: https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/status. It reports the number of scheduled posts, each scheduled post's id, time, status, text, image, and note URL once published, the enabled state, and the connection-test (`testPost`) receipt.
 - `/blog` lists published notes with their note URLs. It feeds https://tjm.art/blog/.
 - Neither endpoint can trigger publishing, and there is no public write endpoint.
 
