@@ -1,5 +1,5 @@
 ---
-// Trust copy from Writer, approved for studio-tracker #93 (verbatim). "What you get" is for originals for sale only;
+// Trust copy from Writer, approved for studio-tracker #93. Originals return window is 30 days (studio-tracker #870). "What you get" is for originals for sale only;
 // Exhibited strip (studio-tracker #99) on TJ's own product pages only, not featured artists'.
 // prints get "About this print" (no signature, certificate or studio-shipping claim). kind: original | print | all | cart.
 const {kind='all',exhibited=false}=Astro.props;
@@ -10,7 +10,7 @@ const showOriginal=kind==='original'||kind==='all',showPrint=kind==='print'||kin
   <li>Signed by me on the front and the back, with details about the painting on the back.</li>
   <li>A paper certificate of authenticity.</li>
   <li>Dispatched in 3–5 business days.</li>
-  <li>14-day returns.</li>
+  <li>30-day returns.</li>
   <li>If it's damaged in transit, I cover it.</li>
 </ul><p><a href="/shipping-returns/">Shipping &amp; returns →</a></p></section>}
 {showPrint&&<section class="trust-block"><h2>About this print</h2><ul>
@@ -20,7 +20,7 @@ const showOriginal=kind==='original'||kind==='all',showPrint=kind==='print'||kin
   <li>If it arrives damaged or wrong, I cover the fix.</li>
 </ul><p><a href="/shipping-returns/">Shipping &amp; returns →</a></p></section>}
 {exhibited&&<p class="trust-exhibited">Exhibited in Cape Town, Warsaw, El Salvador and Seattle. Featured in the documentary <a href="/film/">Coined in Watercolor</a>. <a href="/exhibitions/">Exhibitions →</a></p>}
-{kind==='cart'&&<p class="trust-cart-line">Originals are signed and come with a certificate of authenticity and 14-day returns, and I cover any damage in transit.</p>}
+{kind==='cart'&&<p class="trust-cart-line">Originals are signed and come with a certificate of authenticity and 30-day returns, and I cover any damage in transit.</p>}
 <p><a href="/shipping-returns/">Shipping &amp; returns</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:tj@tjm.art?subject=Order%20help">Ask TJ</a></p>
 </aside>
 <style>.purchase-reassurance{margin:16px 0;font-size:.82rem;line-height:1.6}.purchase-reassurance p{margin:6px 0}.purchase-reassurance a{text-decoration:underline;text-underline-offset:3px}.purchase-reassurance .trust-block h2{font:700 .95rem/1.3 inherit;letter-spacing:0;margin:10px 0 4px}.purchase-reassurance .trust-block ul{margin:4px 0;padding-left:1.2em}</style>
