@@ -40,7 +40,6 @@ exhibitions/studio-601/index.html
 exhibitions/victrola/index.html
 exhibitions/world-map/index.html
 film/index.html
-galleries/bitcoiners/index.html
 galleries/bounty-of-satoshi/index.html
 galleries/father-paul/index.html
 galleries/festival-burning-man/index.html

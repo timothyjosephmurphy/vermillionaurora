@@ -164,8 +164,8 @@
 /galleries/temples/ /galleries/festival-burning-man/ 301
 /galleries/bass-coast-sunrises /galleries/festival-burning-man/ 301
 /galleries/bass-coast-sunrises/ /galleries/festival-burning-man/ 301
-/galleries/attendees /galleries/bitcoiners/ 301
-/galleries/attendees/ /galleries/bitcoiners/ 301
+/galleries/attendees /book-galleries/watercolor-portraits-bitcoiners/ 301
+/galleries/attendees/ /book-galleries/watercolor-portraits-bitcoiners/ 301
 /galleries/renoirs-and-ridges /galleries/small-watercolors/ 301
 /galleries/renoirs-and-ridges/ /galleries/small-watercolors/ 301
 /galleries/forest-triptych /galleries/landscapes-by-size/ 301
@@ -173,3 +173,6 @@
 # Hummingbirds wall label folded into Older Work (studio manager, Oct 28 2026).
 /galleries/hummingbirds /gallery/older-work/ 301
 /galleries/hummingbirds/ /gallery/older-work/ 301
+# Bitcoiners wall label folded into the book chapter (TJ, Nov 11 2026).
+/galleries/bitcoiners /book-galleries/watercolor-portraits-bitcoiners/ 301
+/galleries/bitcoiners/ /book-galleries/watercolor-portraits-bitcoiners/ 301

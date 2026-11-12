@@ -15,7 +15,7 @@ const artworks=ids.map(id=>{
   const product=byId[id];
   const scanId=Object.keys(canonicalArtwork).find(scan=>canonicalArtwork[scan]===id);
   const source=manifest.artworks.find(art=>art.id===(scanId||id));
-  const original=source?.originalProductId?byId[source.originalProductId]:scanId?product:null;
+  const original=source?.originalProductId?byId[source.originalProductId]:scanId?product:product.listing?.price?product:null;
   const options=printOptions(product,config,papers).filter(option=>option.ready);
   const printPrice=options.length?Math.min(...options.map(option=>Number(option.amount))):null;
   const printArea=options.length?Math.max(...options.map(option=>Number(option.image.width)*Number(option.image.height))):null;
