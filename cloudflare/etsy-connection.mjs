@@ -20,12 +20,19 @@ const cookie = (value, age = 600) => `${COOKIE}=${value}; Path=/; Secure; HttpOn
 const redirect = result => new Response(null, { status: 303, headers: { ...headers, Location: `/etsy/connect?result=${result}`, 'Set-Cookie': cookie('', 0) } });
 
 export async function authorized(request, env) {
-  if (!env.COMMISSION_MANAGER_TOKEN) return false;
+  // COMMISSION_MANAGER_TOKEN is the primary owner credential. Optional ETSY_OPS_TOKEN
+  // lets a one-shot listing agent authenticate without rotating the manager token.
+  const tokens = [env.COMMISSION_MANAGER_TOKEN, env.ETSY_OPS_TOKEN].filter(Boolean);
+  if (!tokens.length) return false;
   const actual = new Uint8Array(await digest(request.headers.get('Authorization') || ''));
-  const expected = new Uint8Array(await digest(`Bearer ${env.COMMISSION_MANAGER_TOKEN}`));
-  let difference = 0;
-  for (let i = 0; i < actual.length; i++) difference |= actual[i] ^ expected[i];
-  return difference === 0;
+  for (const token of tokens) {
+    const expected = new Uint8Array(await digest(`Bearer ${token}`));
+    if (actual.length !== expected.length) continue;
+    let difference = 0;
+    for (let i = 0; i < actual.length; i++) difference |= actual[i] ^ expected[i];
+    if (difference === 0) return true;
+  }
+  return false;
 }
 
 // Use existing private R2 storage, with application encryption as an extra boundary.
