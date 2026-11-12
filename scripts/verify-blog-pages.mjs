@@ -10,6 +10,13 @@ export function changedArticleSlugs(files) {
   return [...new Set(files.map((file) => String(file).trim().match(/^static\/blog\/([a-z0-9-]+)\/index\.html$/)?.[1]).filter(Boolean))];
 }
 
+// Relative photo src values are resolved against the article URL. A trailing-slash
+// story page makes media/photo.jpg the file beside that page, not a site-root path.
+export function articleImageUrl(src, page, origin = site) {
+  const base = new URL(page, origin.endsWith('/') ? origin : origin + '/');
+  return new URL(src, base).href;
+}
+
 async function main() {
   const { load } = await import('cheerio');
   const normalize = value => value.replace(/\s+/g, ' ').trim();
@@ -77,10 +84,9 @@ async function main() {
           assert.match(response.headers.get('content-type') || '', /text\/html/);
           assert.deepEqual(parse(await response.text()), article, 'Live article differs from this build: ' + path);
         }
-        const images = [...new Set([...expected.values()].flatMap(article => article.images))];
+        const images = [...new Set([...expected].flatMap(([path, article]) => article.images.map(src => articleImageUrl(src, path))))];
         for (let start = 0; start < images.length; start += 5) {
-          await Promise.all(images.slice(start, start + 5).map(async src => {
-            const url = new URL(src, site).href;
+          await Promise.all(images.slice(start, start + 5).map(async url => {
             const response = await request(url, { method: 'HEAD' });
             assert.match(response.headers.get('content-type') || '', /^image\//, url + ': not an image');
           }));
