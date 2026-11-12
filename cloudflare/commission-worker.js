@@ -14,9 +14,12 @@ export {CartOrder} from './cart-order.mjs';
 import { inventoryStatus } from './inventory-api.mjs';
 import { originalStatusApi } from './original-status.mjs';
 import { runOriginalInventorySync } from './etsy-original-sync.mjs';
-import { catalogVersion } from './checkout-catalog.mjs';
+import checkoutCatalog, { catalogVersion, inventory } from './checkout-catalog.mjs';
 import { applyCatalogOverlay, catalogSource } from './catalog-overlay.mjs';
+import { syncBuiltEditionPrices, syncBuiltPaintingStatuses } from './catalog-d1.mjs';
 import { ensurePrintCatalog } from './print-catalog-asset.mjs';
+import { prints } from './print-catalog-store.mjs';
+import { printVersion } from './print-catalog-version.mjs';
 export { SalesLedger } from './sales-ledger.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
 import { bitcoinCheckout, bitcoinWebhook } from './bitcoin-checkout.mjs';
@@ -32,6 +35,17 @@ import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestim
 import { handleTestimonialEmail } from './testimonial-reply.mjs';
 import { newsletterApi } from './newsletter.mjs';
 export { NeuralDanceDebugRoom } from './neural-dance-debug-room.mjs';
+async function syncBuiltCatalog(env) {
+  if (!env.CATALOG_DB) return;
+  try {
+    const prices = await syncBuiltEditionPrices(env.CATALOG_DB, printVersion, Object.values(prints));
+    if (prices?.updated) console.log('Synced built print prices into the live catalog', prices.updated);
+    const statuses = await syncBuiltPaintingStatuses(env.CATALOG_DB, catalogVersion, inventory, checkoutCatalog);
+    if (statuses?.updated) console.log('Synced built original availability into the live catalog', statuses.updated);
+  } catch (error) {
+    console.error('Built catalog sync failed', error instanceof Error ? error.message : error);
+  }
+}
 export default {
   // Cloudflare Email Routing (stories@reply.tjm.art). Does not run for ordinary HTTP requests.
   async email(message, env, ctx) {
@@ -41,7 +55,10 @@ export default {
     let catalogReady = true;
     try { await ensurePrintCatalog(env); }
     catch (error) { catalogReady = false; console.error('Print catalog load failed', error); }
-    if (catalogReady) await applyCatalogOverlay(env);
+    if (catalogReady) {
+      await syncBuiltCatalog(env);
+      await applyCatalogOverlay(env);
+    }
     if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
     ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); ctx.waitUntil(markAtCostOrders(env).catch(()=>console.error('QuickBooks at-cost marker backfill failed'))); ctx.waitUntil(pollTips(env).catch(()=>console.error('Lightning tip poll failed')));
   },
@@ -53,7 +70,9 @@ export default {
       console.error('Print catalog load failed', error);
       return Response.json({ error: 'Checkout is temporarily unavailable.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
     }
-    // Live catalog (D1) over the built catalog; built values if D1 is unavailable.
+    // Copy this print catalog's retail into D1, then overlay D1. A framed quote
+    // is refused unless the overlaid amount matches FinerWorks to the cent.
+    await syncBuiltCatalog(env);
     await applyCatalogOverlay(env);
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);
     if (path === '/newsletter/subscribe' || path === '/newsletter/buttondown-webhook') return newsletterApi(request,env);

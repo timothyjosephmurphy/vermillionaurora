@@ -9,7 +9,7 @@ export const collections = collectionData;
 export const byId = Object.fromEntries(products.map(p => [p.id, p]));
 export const catalogVersion = createHash('sha256').update(JSON.stringify({products, collections})).digest('hex').slice(0, 20);
 export const urlFor = p => `/products/${p.slug}/`;
-export const statusLabel = p => ({available:'Available', sold:'Sold', 'not-for-sale':'Not for sale', inquiry:'Available by inquiry', retired:'Unavailable'})[p.listing?.status] || '';
+export const statusLabel = p => ({available:'Available', sold:'Sold', 'not-for-sale':'Not for sale', inquiry:'Available by inquiry', unavailable:'Not currently available', retired:'Unavailable'})[p.listing?.status] || '';
 // Visible price text omits the currency (all prices are USD); pass true where the code must be shown.
 export const priceLabel = (p, currency=false) => p.listing?.price ? `${p.listing.price.from ? 'From ' : ''}$${Number(p.listing.price.amount).toLocaleString('en-US', {maximumFractionDigits:2})}${currency ? ` ${p.listing.price.currency}` : ''}` : '';
 export function dimensionLabel(p) {
@@ -58,7 +58,7 @@ export function validateCatalog(items=products, groups=collections) {
       if(!published(v.poster)) fail(p,`missing video poster ${v.poster}`);
     }
     const price=p.listing?.price;
-    if(p.type!=='book' && !['available','sold','not-for-sale','inquiry','retired'].includes(p.listing?.status)) fail(p,'listing status required');
+    if(p.type!=='book' && !['available','sold','not-for-sale','inquiry','unavailable','retired'].includes(p.listing?.status)) fail(p,'listing status required');
     if(price && (!/^\d+\.\d{2}$/.test(price.amount) || Number(price.amount)<=0 || price.currency!=='USD')) fail(p,'positive USD price with two decimal places required');
     if(p.listing?.status==='available' && !price) fail(p,'available artwork needs a price');
     if(p.dimensions && (!['in','cm'].includes(p.dimensions.unit) || !['width','height'].every(k=>Number.isFinite(p.dimensions[k])&&p.dimensions[k]>0))) fail(p,'invalid dimensions');
