@@ -58,8 +58,17 @@ test('framed checkout uses the complete configured code through pricing, shippin
   assert.equal(submission.orders[0].order_items[0].product_sku,sku);assert.equal(submission.orders[0].order_items[0].product_qty,2);
   await assert.rejects(validateFinerWorksPrintOrder(env,[{...item,frame:{...item.frame,id:2}}],address,quote),/Refresh/);
   await assert.rejects(quoteFinerWorksPrints(env,[{...item,frame:{...item.frame,glazing:{id:2}}}],address),/configuration changed/);
-  await assert.rejects(quoteFinerWorksPrints(env,[{...item,amount:'25.00'}],address),/cost changed/);
-  await assert.rejects(quoteFinerWorksPrints(env,[{...item,amount:'140.00'}],address),/cost changed/);
+  // Underwater saved retail: friendly block (never a generic 422 / "cost changed").
+  await assert.rejects(quoteFinerWorksPrints(env,[{...item,amount:'25.00'}],address,{adjustPrices:true}),error=>{
+    assert.equal(error.code,'PRINT_PRICE_BLOCKED');
+    assert.match(error.message,/fresh price/i);
+    return true;
+  });
+  // Higher saved retail with positive margin: correct the price for buyer confirmation.
+  const high={...item,amount:'140.00'},adjusted=await quoteFinerWorksPrints(env,[high],address,{adjustPrices:true});
+  assert.equal(high.amount,'58.00');
+  assert.equal(adjusted.priceAdjustments?.[0]?.previousAmount,'140.00');
+  assert.equal(adjusted.priceAdjustments?.[0]?.amount,'58.00');
   assert.throws(()=>groupPrintProducts([{...item,frame:{...item.frame,size:{width:8,height:10}}}],'test'),/frame/);
   const job=await newFinerWorksJob(env,{id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',mode:'sandbox',quote:{address,printQuote:quote}},[item]);
   assert.equal(job.request.orders[0].order_items[0].product_sku,sku);assert.deepEqual(finerworksFulfillmentRecord(job).items[0].frame,item.frame);

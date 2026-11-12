@@ -1,14 +1,15 @@
 import {destinationError,countryName} from '../catalog/addresses.mjs';
 import {finerworksRequest,finerworksMaterials,finerworksPrices,finerworksEnvironment} from './finerworks-api.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
-import {moneyCents,moneyString,printRetailPrice} from '../catalog/print-pricing.mjs';
-import {framedRetailPrice} from '../catalog/frame-pricing.mjs';
+import {moneyCents,moneyString} from '../catalog/print-pricing.mjs';
+import {PRICE_BLOCK_MESSAGE,reviewLivePrintCost} from '../catalog/print-price-table.mjs';
 import {printAssetUrl,printThumbnailUrl} from './print-asset-policy.mjs';
 import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
 import {quoteFramedSelections} from './finerworks-framing.mjs';
 import {sameFrame} from '../catalog/framing.mjs';
 import {EDITION_LAYOUT,LEGACY_EDITION_LAYOUT,BORDERED_LAYOUT,BORDERED_BORDER_IN} from '../catalog/edition-layout.mjs';
+import {alertFinerWorksPriceMismatch} from './owner-alert.mjs';
 // No order creation, payment, email or Shippo calls. Wholesale totals remain server-side.
 const codePattern=/^(\d+)M(\d+)M(\d+)S(\d+(?:\.\d+)?)X(\d+(?:\.\d+)?)$/;
 const clean=(value,max,required=true)=>{
@@ -92,7 +93,7 @@ async function selectionHash(items,address) {
   const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(selection)));
   return [...new Uint8Array(bytes)].map(n=>n.toString(16).padStart(2,'0')).join('');
 }
-export async function quoteFinerWorksPrints(env,items,address) {
+export async function quoteFinerWorksPrints(env,items,address,{adjustPrices=false}={}) {
   if(env.PRINT_PROVIDER!=='finerworks')throw Error('FinerWorks is not the selected print provider');
   const po=`va-quote-${crypto.randomUUID()}`,products=groupPrintProducts(items,po),recipient=finerworksRecipient(address,po);
   const materials=await finerworksMaterials(env);
@@ -116,9 +117,26 @@ export async function quoteFinerWorksPrints(env,items,address) {
     if(!media||media.productTypeId!==Number(tid)||!style||(borderedItem(item)&&style.borderSize!==BORDERED_BORDER_IN)||finerworksProductCode(media,style,borderedItem(item)?item.printSize:item.paperSize)!==item.sku)throw Error('FinerWorks material or size needs review');
   }
   const units=await finerworksPrices(env,products.map(p=>p.product_sku));
+  const priceAdjustments=[];
   for(const item of items) {
-    const q=units.find(q=>q.code===item.sku);
-    if(!q?.ok||(item.frame?item.amount!==framedRetailPrice(q,item.unframedAmount):moneyCents(item.amount)<moneyCents(printRetailPrice(q.productionCost))))throw Error('Print production cost changed; review the saved retail price before checkout');
+    const q=units.find(row=>row.code===item.sku);
+    const review=reviewLivePrintCost(item,q);
+    if(review.status==='ok')continue;
+    // Never charge a stale catalog price. Log + email (deduped per product code); do not 422 the buyer.
+    await alertFinerWorksPriceMismatch(env,review).catch(()=>{});
+    if(review.status==='block'||!adjustPrices){
+      // Checkout: underwater → friendly block. Fulfillment / non-adjusting callers: hold for review.
+      const error=Error(adjustPrices?(review.message||PRICE_BLOCK_MESSAGE):'Print production cost changed; review the saved retail price before checkout');
+      error.code=adjustPrices?'PRINT_PRICE_BLOCKED':'PRINT_PRICE_REVIEW';
+      error.priceBlock=review;
+      throw error;
+    }
+    // Checkout only: positive margin remains — correct the line for buyer confirmation in the cart UI.
+    item.amount=review.amount;
+    priceAdjustments.push({
+      id:item.id,title:item.title,sku:item.sku,previousAmount:review.storedAmount,amount:review.amount,
+      liveCost:review.liveCost,storedCost:review.storedCost??null,
+    });
   }
   // The shipping endpoint validates the order model, including the image object.
   for(const product of products) {
@@ -135,7 +153,7 @@ export async function quoteFinerWorksPrints(env,items,address) {
   }
   const selected=options[0];
   // unitCosts (dollars per copy by SKU) let at-cost print codes price prints after the retail check above.
-  return {provider:'finerworks',mode:finerworksEnvironment(env),currency:'USD',...selected,selectionHash:await selectionHash(items,address),shippingMarkup:'0.00',options,unitCosts:Object.fromEntries(units.filter(q=>q.ok).map(q=>[q.code,q.productionCost]))};
+  return {provider:'finerworks',mode:finerworksEnvironment(env),currency:'USD',...selected,selectionHash:await selectionHash(items,address),shippingMarkup:'0.00',options,unitCosts:Object.fromEntries(units.filter(q=>q.ok).map(q=>[q.code,q.productionCost])),...(priceAdjustments.length?{priceAdjustments}:{})};
 }
 export async function validateFinerWorksPrintOrder(env,items,address,quote) {
   if(env.CHECKOUT_MODE!=='sandbox'||quote?.provider!=='finerworks'||quote.mode!=='sandbox'||!/^\d+$/.test(quote.shippingMethod||''))throw Error('Order preflight requires a sandbox FinerWorks quote');

@@ -58,8 +58,42 @@ test('complete quote uses verified dimensions and separate shipping, then valida
     throw Error('Unexpected request');
   });
   const q=await quoteFinerWorksPrints(env,[{...item,quantity:2}],a);assert.equal(q.shipping,'8.95');assert.equal(q.shippingMarkup,'0.00');assert.equal(q.productionCost,'14.00');
+  assert.equal(q.priceAdjustments,undefined);
   const validated=await validateFinerWorksPrintOrder(env,[{...item,quantity:2}],a,q);assert.equal(validated.ordersSubmitted,false);
   await assert.rejects(validateFinerWorksPrintOrder(env,[item],a,q));
   await assert.rejects(validateFinerWorksPrintOrder(env,[{...item,quantity:2}],{...a,zip:'98104'},q));
   assert.equal(calls.filter(c=>c.p.endsWith('submit_orders_v2')).length,1);
+});
+test('cost rise with positive margin returns a corrected price instead of failing the quote',async t=>{
+  t.mock.method(globalThis,'fetch',async(url,init)=>{
+    const b=init.body?JSON.parse(init.body):null,p=new URL(url).pathname;
+    if(p.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8]}]);
+    if(p.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0,bleed_amt:0.06}]);
+    if(p.endsWith('get_prices'))return Response.json([{product_code:item.sku,product_qty:1,total_price:8,product_price:8}]);
+    if(p.endsWith('list_shipping_options_multiple')){
+      const data=reply(b.orders[0].order_po,1);
+      data.orders[0].options[0].calculated_total.order_subtotal=8;
+      data.orders[0].options[0].calculated_total.order_grand_total=16.95;
+      data.orders[0].options[0].calculated_total.product_pricing[0].total_price=8;
+      return Response.json(data);
+    }
+    throw Error('Unexpected request');
+  });
+  const line={...item},q=await quoteFinerWorksPrints(env,[line],a,{adjustPrices:true});
+  assert.equal(line.amount,'30.00');
+  assert.deepEqual(q.priceAdjustments,[{id:item.id,title:undefined,sku:item.sku,previousAmount:'25.00',amount:'30.00',liveCost:'8.00',storedCost:null}]);
+});
+test('cost rise that erases margin blocks with PRINT_PRICE_BLOCKED, not a generic failure',async t=>{
+  t.mock.method(globalThis,'fetch',async(url)=>{
+    const p=new URL(url).pathname;
+    if(p.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8]}]);
+    if(p.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0,bleed_amt:0.06}]);
+    if(p.endsWith('get_prices'))return Response.json([{product_code:item.sku,product_qty:1,total_price:30,product_price:30}]);
+    throw Error('Unexpected request');
+  });
+  await assert.rejects(quoteFinerWorksPrints(env,[{...item}],a,{adjustPrices:true}),error=>{
+    assert.equal(error.code,'PRINT_PRICE_BLOCKED');
+    assert.match(error.message,/fresh price/i);
+    return true;
+  });
 });

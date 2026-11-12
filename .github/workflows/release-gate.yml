@@ -4,11 +4,12 @@ name: Release gate
 #   blog     story HTML and that post's display/social files: build + article check. No Playwright.
 #   content  catalog data, images, other static, docs: build + changed pages load.
 #   code     site code: build + unit tests + browser tests for touched areas + smoke.
-#   print-master only prints.json/master files for existing paintings: content + 3 sampled sandbox quotes.
+#   print-master only prints.json/master files for existing paintings: content + offline price-table check.
 #   full     checkout, payments, workers, CI, dependencies, mixed or unknown diffs, or manual runs: the full suite.
 # prepare builds once and uploads dist/. Browser jobs use the Playwright image that matches
 # package-lock.json (browsers and OS libraries are already installed). Checkout is shallow.
-# Testing never takes payment, submits FinerWorks orders, or holds originals.
+# Testing never takes payment, submits FinerWorks orders, holds originals, or
+# calls FinerWorks for sampled quotes (offline price-table check instead).
 on:
   pull_request:
     branches: [main, release]
@@ -370,49 +371,19 @@ jobs:
 
   print-quotes:
     needs: prepare
-    if: needs.prepare.result == 'success' && needs.prepare.outputs.print_quotes == 'true'
+    if: needs.prepare.result == 'success' && (needs.prepare.outputs.print_quotes == 'true' || needs.prepare.outputs.tier == 'full' || needs.prepare.outputs.tier == 'code')
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Fetch the base commit for catalog comparison
-        timeout-minutes: 5
-        run: git fetch --depth=1 origin "${{ github.base_ref }}"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: package-lock.json
-      - name: Install dependencies
-        timeout-minutes: 10
-        env:
-          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-        run: |
-          n=0
-          until npm ci; do
-            n=$((n+1))
-            if [ "$n" -ge 2 ]; then exit 1; fi
-            echo "npm ci failed; retrying once"
-            sleep 8
-          done
-      - name: Deploy sandbox with this catalog
-        timeout-minutes: 10
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
-          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
-          wranglerVersion: '4.143.0'
-          workingDirectory: cloudflare
-          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
-      - name: Three sampled supplier quotes of the changed painting
-        timeout-minutes: 20
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
-          DEPLOYED_SHA: ${{ github.sha }}
-          BASE_REF: origin/${{ github.base_ref }}
-        run: node scripts/ci/sample-print-quotes.mjs
+      - name: Offline catalog price table (no FinerWorks calls)
+        timeout-minutes: 5
+        run: node scripts/ci/check-print-price-table.mjs
 
   gate:
     name: gate

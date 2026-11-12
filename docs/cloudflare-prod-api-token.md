@@ -53,4 +53,4 @@ These were checked against `deploy-production.yml`, `rollback.yml`, and the scri
 
 `scripts/rollback.sh` only starts `rollback.yml`. It does not call Cloudflare.
 
-HTTP checks (`payments/verify-live-print-assets.mjs`, `scripts/verify-blog-pages.mjs`, `scripts/verify-release.mjs`, `payments/verify-sampled-quote.mjs`, and the checkout health poll) call `tjm.art`, `vermillionaurora.com`, or `workers.dev`. They do not use this token.
+HTTP checks (`payments/verify-live-print-assets.mjs`, `scripts/verify-blog-pages.mjs`, `scripts/verify-release.mjs`, and the checkout health poll) call `tjm.art`, `vermillionaurora.com`, or `workers.dev`. They do not use this token. Live FinerWorks quotes are not part of production deploy verification.
