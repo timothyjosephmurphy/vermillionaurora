@@ -38,7 +38,10 @@ function mock(t, {listings = {}} = {}) {
       {shipping_profile_id: 502, title: 'Originals Shipping', profile_type: 'calculated'}
     ]});
     if (target.includes('/readiness-state-definitions')) return Response.json({results: [{readiness_state_id: 22, readiness_state: 'made_to_order', min_processing_days: 3, max_processing_days: 5}]});
-    if (target.endsWith('/production-partners')) return Response.json({results: [{production_partner_id: 33, partner_name: 'A printing and framing shop'}]});
+    if (target.endsWith('/production-partners')) return Response.json({results: [
+      {production_partner_id: 33, partner_name: 'FinerWorks'},
+      {production_partner_id: 44, partner_name: 'RPI Print'}
+    ]});
     if (target.endsWith('/seller-taxonomy/nodes')) return Response.json(taxonomy());
     if (target.endsWith('/policies/return')) return Response.json({results: [{return_policy_id: 77, accepts_returns: true, accepts_exchanges: true, return_deadline: 30}]});
     if (target.endsWith('/shops/42')) return Response.json({shop_id: 42, currency_code: 'USD'});
@@ -93,20 +96,21 @@ test('updates the two existing print drafts and creates only the missing one', a
 
 test('creates original drafts at the site price plus the Etsy uplift and can publish them explicitly', async t => {
   const env = envOf(); await connected(env); const calls = mock(t);
-  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['el-zonte-before-dawn']});
+  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['strawberry-point-4']});
   assert.equal(res.status, 200, await res.clone().text());
   const form = new URLSearchParams(calls.find(call => call.url.includes('/listings?legacy=false')).options.body);
-  assert.equal(form.get('title'), 'El Zonte Before Dawn, Original Watercolor Pastel, 48 x 24 in');
-  assert.equal(form.get('price'), '1100.00');
+  assert.equal(form.get('title'), 'Strawberry Point Backpacking Trip #4, Original Watercolor Pastel, 5 x 5 in');
+  assert.equal(form.get('price'), '82.50');
   const priced = calls.find(call => call.url.includes('/inventory') && call.options.method === 'PUT');
-  assert.equal(JSON.parse(priced.options.body).products[0].offerings[0].price, 1100);
+  assert.equal(JSON.parse(priced.options.body).products[0].offerings[0].price, 82.5);
   assert.equal(JSON.parse(priced.options.body).products[0].offerings[0].quantity, 1);
   assert.equal(form.get('quantity'), '1');
   assert.equal(form.get('who_made'), 'i_did');
   assert.equal(form.get('when_made'), '2020_2026');
   assert.equal(form.get('shipping_profile_id'), '502');
   assert.equal(form.has('production_partner_ids'), false);
-  const activate = await req(env, '/etsy/listings/activate', {kind: 'original', productIds: ['el-zonte-before-dawn']});
+  assert.match(form.get('description'), /shipped flat/);
+  const activate = await req(env, '/etsy/listings/activate', {kind: 'original', productIds: ['strawberry-point-4']});
   assert.equal(activate.status, 200, await activate.clone().text());
   const published = calls.filter(call => call.options.method === 'PATCH');
   assert.equal(published.length, 1);
@@ -134,6 +138,53 @@ test('rejects paintings outside the Etsy sync list', async t => {
   assert.match((await res.json()).error, /sync list/);
 });
 
+test('original sync accepts catalog originals without print variants and prefers recorded parcels', async t => {
+  const env = envOf(); await connected(env); const calls = mock(t);
+  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['warszawska-syrenka', 'strawberry-point-4']});
+  assert.equal(res.status, 200, await res.clone().text());
+  const data = await res.json();
+  assert.equal(data.results.length, 2);
+  assert.equal(data.results.every(item => item.kind === 'original' && item.state === 'draft'), true);
+  const creates = calls.filter(call => call.url.includes('/listings?legacy=false') && call.options.method === 'POST');
+  assert.equal(creates.length, 2);
+  const tube = new URLSearchParams(creates.find(call => new URLSearchParams(call.options.body).get('title').includes('Warszawska')).options.body);
+  const flat = new URLSearchParams(creates.find(call => new URLSearchParams(call.options.body).get('title').includes('Strawberry')).options.body);
+  assert.equal(tube.get('item_length'), '28');
+  assert.equal(tube.get('item_width'), '4');
+  assert.equal(tube.get('item_height'), '4');
+  assert.equal(tube.get('price'), '1320.00');
+  assert.match(tube.get('description'), /rolled in a tube/);
+  assert.equal(flat.get('item_length'), '7');
+  assert.equal(flat.get('item_width'), '7');
+  assert.equal(flat.get('item_height'), '2');
+  assert.equal(flat.get('price'), '82.50');
+  assert.match(flat.get('description'), /shipped flat/);
+  assert.equal(flat.get('shipping_profile_id'), '502');
+  assert.equal(flat.has('production_partner_ids'), false);
+  assert.equal(calls.some(call => /production-partners/.test(call.url)), true);
+});
+
+test('original sync updates the eight existing listing IDs in place', async t => {
+  const env = envOf(); await connected(env); const calls = mock(t, {listings: {
+    4591466297: {state: 'draft', title: 'El Zonte Before Dawn, Original Watercolor Pastel, 48 x 24 in', taxonomy_id: 88, quantity: 1}
+  }});
+  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['el-zonte-before-dawn']});
+  assert.equal(res.status, 200, await res.clone().text());
+  const data = await res.json();
+  assert.equal(data.results[0].listingId, 4591466297);
+  assert.equal(data.results[0].created, false);
+  assert.equal(calls.some(call => call.url.includes('/listings?legacy=false') && call.options.method === 'POST'), false);
+  assert.equal(calls.some(call => call.url.includes('/listings/4591466297') && call.options.method === 'PATCH'), true);
+});
+
+test('print sync still finds FinerWorks when another production partner exists', async t => {
+  const env = envOf(); await connected(env); const calls = mock(t);
+  const res = await req(env, '/etsy/listings/sync', {kind: 'print', productIds: ['el-zonte-before-dawn']});
+  assert.equal(res.status, 200, await res.clone().text());
+  const create = calls.find(call => call.url.includes('/listings?legacy=false') && call.options.method === 'POST');
+  assert.equal(new URLSearchParams(create.options.body).get('production_partner_ids'), '33');
+});
+
 test('Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over the Cascades: titles, copy, tags and prices', async () => {
   const {buildSyncPrintPlan, buildSyncOriginalPlan, workById} = await import('./etsy-sync-plan.mjs');
   const settings = {taxonomyId: 1, shippingProfileId: 2, readinessStateId: 3, partnerId: 4, returnPolicyId: 5};
@@ -145,8 +196,10 @@ test('Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over 
     'hope-the-vermillion-aurora': ['Hope, the Vermillion Aurora, Original Watercolor Pastel, 44 x 22 in', '2200.00', 'watercolor pastel', 'hope and prosperity. Watercolor pastel, 2023.']
   };
   for (const [id, [title, price, medium, ending]] of Object.entries(want)) {
-    const work = workById(id);
+    const work = workById(id, 'original');
     const original = buildSyncOriginalPlan(work, settings).body;
+    assert.equal(original.get('when_made'), '2020_2026');
+    const printWork = workById(id, 'print');
     assert.equal(original.get('title'), title);
     assert.equal(original.get('price'), price);
     assert.equal(original.get('quantity'), '1');
@@ -154,13 +207,13 @@ test('Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over 
     assert.equal(original.get('tags').split(',').at(-1), 'original painting');
     assert.ok(original.get('description').includes(ending), id);
     assert.doesNotMatch(original.get('description'), /\d+\s*×\s*\d+\s*in/);
-    const print = (await buildSyncPrintPlan(work, settings)).body;
-    assert.equal(print.get('title'), work.title + ' Art Print · Framed or Unframed');
+    const print = (await buildSyncPrintPlan(printWork, settings)).body;
+    assert.equal(print.get('title'), printWork.title + ' Art Print · Framed or Unframed');
     assert.equal(print.get('tags').split(',').length, 13);
     assert.equal(print.get('tags').split(',').at(-1), 'art print');
     assert.match(print.get('description'), /printed on Watercolor Bright White fine art paper/);
     assert.doesNotMatch(print.get('description'), /finerworks/i);
-    assert.equal(print.get('price'), String(Math.min(...work.variants.map(v => Number(v.price)))));
-    for (const v of work.variants) assert.ok(print.get('description').includes(`(${v.paperSize.width} × ${v.paperSize.height} in): $${v.price} unframed`), id);
+    assert.equal(print.get('price'), String(Math.min(...printWork.variants.map(v => Number(v.price)))));
+    for (const v of printWork.variants) assert.ok(print.get('description').includes(`(${v.paperSize.width} × ${v.paperSize.height} in): $${v.price} unframed`), id);
   }
 });
