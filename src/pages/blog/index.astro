@@ -10,6 +10,8 @@ import SiteFooter from '../../components/SiteFooter.astro';
     <title>Stories from the Studio | TJ Murphy</title>
     <meta name="description" content="A running journal of paintings, the places behind them, and new work by TJ Murphy." />
     <link rel="canonical" href="https://tjm.art/blog/" />
+    <link rel="alternate" type="application/rss+xml" title="Stories from the Studio" href="/blog/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Stories from the Studio" href="/blog/atom.xml" />
     <link href="/fonts/fonts.css" rel="stylesheet" />
     <meta name="theme-color" content="#fff" />
     <link rel="stylesheet" href="/styles.css" />
@@ -26,6 +28,19 @@ import SiteFooter from '../../components/SiteFooter.astro';
         </header>
         <p id="journal-status" class="journal-status" role="status" aria-live="polite">Loading stories…</p>
         <section id="journal-entries" class="journal-entries" aria-label="Stories">
+        <article class="journal-entry" data-static-story>
+          <header>
+            <h2><a href="/blog/halloween-doc-holliday/">I Shaved My Beard to Be Doc Holliday</a></h2>
+            <time datetime="2026-11-11">November 11, 2026</time>
+          </header>
+          <a class="journal-image-link" href="/blog/halloween-doc-holliday/" aria-label="Read I Shaved My Beard to Be Doc Holliday">
+            <img src="/blog/halloween-doc-holliday/media/doc-holliday-tin-cup-closeup.jpg" alt="TJ Murphy as Doc Holliday in a tan cowboy hat and red bow tie, raising a small metal cup" loading="lazy" decoding="async">
+          </a>
+          <div class="journal-copy">
+            <p>Halloween as Doc Holliday: shaving the beard, a wild carnival party, betting a singing bowl at Treasure Blackjack, and the joy of gyroscope toys.</p>
+            <p><a href="/blog/halloween-doc-holliday/">Read the story →</a></p>
+          </div>
+        </article>
         <article class="journal-entry" data-static-story>
           <header>
             <h2><a href="/blog/chris-flanders-portrait/">Chris Flanders on His Portrait</a></h2>
