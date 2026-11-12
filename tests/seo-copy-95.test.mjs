@@ -91,14 +91,14 @@ test('dungeon wording is gone from buyer return chips; 3D gallery returns use pr
   const header = fs.readFileSync('src/components/SiteHeader.astro', 'utf8');
   assert.ok(header.includes(`href="${GALLERY_3D_URL}">${GALLERY_3D_LABEL}`));
   assert.doesNotMatch(header, /dungeon/i);
-  for (const file of ['src/pages/index.astro', 'src/components/GalleryRoomCard.astro']) {
+  for (const file of ['src/pages/index.astro']) {
     const html = fs.readFileSync(file, 'utf8');
     assert.match(html, /GALLERY_3D_URL/, file);
     assert.match(html, /GALLERY_3D_LABEL/, file);
     assert.doesNotMatch(html, /dungeon/i, file);
     assert.doesNotMatch(html, /href="\/play\/"/, file);
   }
-  for (const post of ['static/blog/my-week-in-art-oct-11-17-2026/index.html', 'static/blog/3d-gallery-to-relay-gate/index.html', 'static/blog/el-salvador-sunrises-sunsets/index.html']) {
+  for (const post of ['src/content/blog/posts/my-week-in-art-oct-11-17-2026.mjs', 'src/content/blog/posts/3d-gallery-to-relay-gate.mjs', 'src/content/blog/posts/el-salvador-sunrises-sunsets.mjs']) {
     const html = fs.readFileSync(post, 'utf8');
     assert.match(html, new RegExp(GALLERY_3D_LABEL), post);
     assert.ok(html.includes(GALLERY_3D_URL), post);
@@ -113,7 +113,7 @@ test('blog index drops placeholder jargon and the week post matches the Older Wo
   assert.match(blog, /Loading stories…/);
   assert.doesNotMatch(blog, /when they go out on Nostr/);
   assert.doesNotMatch(blog, /Checking for the latest story/);
-  const week = fs.readFileSync('static/blog/my-week-in-art-oct-11-17-2026/index.html', 'utf8');
+  const week = fs.readFileSync('src/content/blog/posts/my-week-in-art-oct-11-17-2026.mjs', 'utf8');
   assert.match(week, /with 64 paintings/);
   assert.doesNotMatch(week, /hero carousel/);
   assert.doesNotMatch(week, /with 65 paintings/);

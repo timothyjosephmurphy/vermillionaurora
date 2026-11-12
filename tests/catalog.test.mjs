@@ -368,15 +368,16 @@ test('commissions contact form shows the email with a decorative envelope icon a
  assert.equal(link.find('img').length,0,'icon is inline, no image request');
 });
 
-test('the homepage ends Exhibitions with the gallery room and framed print wall',()=>{
+test('the homepage ends Exhibitions with the framed print wall',()=>{
  const $=load(fs.readFileSync('dist/index.html','utf8'));
- assert.deepEqual($('#exhibitions .ex-track').children().slice(-2).map((i,n)=>$(n).attr('data-gallery-feature')).get(),['gallery-room','print-wall']);
+ assert.deepEqual($('#exhibitions [data-gallery-feature]').map((i,n)=>$(n).attr('data-gallery-feature')).get(),['print-wall']);
+ assert.equal($('#exhibitions .ex-track').children().last().attr('data-gallery-feature'),'print-wall');
  // The one gallery tile in Featured works is Strawberry Point (TJ, Oct 16 2026).
  assert.deepEqual($('.painting-carousel [data-gallery-feature]').map((i,n)=>$(n).attr('data-gallery-feature')).get(),['strawberry-point']);
  // Strawberry Point is the FIRST tile in Featured works (TJ, Oct 16 2026).
  assert.equal($('[data-available-paintings]').children().first().attr('data-gallery-feature'),'strawberry-point');
- assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'https://tjm.art/play/');
- assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .card-buy-row').text().trim(),'Take me to the 3D gallery');
+ assert.equal($('#exhibitions [data-gallery-feature="gallery-room"]').length,0);
+ assert.equal($('#exhibitions a[href="/exhibitions/3d-gallery/"] h3').text().trim(),'Walk-Through 3D Gallery');
  assert.equal($('.hero-room-link').attr('href'),'https://tjm.art/play/');
  assert.equal($('.hero-room-link').text().trim(),'Take me to the 3D gallery');
  assert.equal($('.main-nav a').filter((i,a)=>$(a).text().trim()==='Take me to the 3D gallery').attr('href'),'https://tjm.art/play/');

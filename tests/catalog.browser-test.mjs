@@ -90,7 +90,7 @@ try {
  const collectorPreview=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length;
  // Live availability moves sold available cards into the collectors track; Collector's Items has no item limit.
  assert.equal(await page.locator('.collector-items-carousel [data-product-id]').count(),collectorPreview+availableCount);
- assert.deepEqual(await page.locator('#exhibitions [data-gallery-feature]').evaluateAll(nodes=>nodes.map(n=>n.dataset.galleryFeature)),['gallery-room','print-wall'],'Live inventory preserves the requested order of gallery experiences in Exhibitions');
+ assert.deepEqual(await page.locator('#exhibitions [data-gallery-feature]').evaluateAll(nodes=>nodes.map(n=>n.dataset.galleryFeature)),['print-wall'],'Live inventory keeps the framed print wall and not the retired gallery-room tile');
  assert.equal(await page.locator('.painting-carousel [data-gallery-feature]:not([data-gallery-feature="strawberry-point"])').count(),0,'Painting carousels contain no gallery experiences other than the Strawberry Point tile');
  assert.equal(await page.locator('.collector-archive-link').count(),0);
  assert(await page.locator('.painting-discovery-actions a.button[href="/gallery/"]').count());

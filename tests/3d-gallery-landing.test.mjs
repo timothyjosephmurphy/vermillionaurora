@@ -31,13 +31,14 @@ test('the enter control is a portal into the live gallery and respects reduced m
 });
 
 test('the exhibitions carousel tile opens the landing page with a 16:9 thumbnail', () => {
-  assert.match(home, /aria-label="9 of 11"><a href="\/exhibitions\/3d-gallery\/">/);
+  assert.match(home, /aria-label="9 of 10"><a href="\/exhibitions\/3d-gallery\/">/);
+  assert.doesNotMatch(home, /GalleryRoomCard|The Gallery Room/);
   assert.match(home, /src="\/exhibitions\/3d-gallery\/images\/thumb\.webp" alt="The domed 3D gallery from the lawn, with the courtyard fountain and the Kinoteka tower" loading="lazy"/);
   assert.doesNotMatch(home, /3d-gallery\/images\/thumb\.webp" width=/);
   assert.match(home, /<h3>Walk-Through 3D Gallery<\/h3>/);
-  assert.match(home, /1 \/ 11/);
-  assert.match(fs.readFileSync('src/components/GalleryRoomCard.astro', 'utf8'), /aria-label="10 of 11"/);
-  assert.match(fs.readFileSync('src/components/PrintWallCard.astro', 'utf8'), /aria-label="11 of 11"/);
+  assert.match(home, /1 \/ 10/);
+  assert.equal(fs.existsSync('src/components/GalleryRoomCard.astro'), false);
+  assert.match(fs.readFileSync('src/components/PrintWallCard.astro', 'utf8'), /aria-label="10 of 10"/);
   assert.match(index, /href="\/exhibitions\/3d-gallery\/"/);
 });
 
