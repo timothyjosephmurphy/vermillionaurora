@@ -32,7 +32,8 @@ test('the enter control is a portal into the live gallery and respects reduced m
 
 test('the exhibitions carousel tile opens the landing page with a 16:9 thumbnail', () => {
   assert.match(home, /aria-label="9 of 11"><a href="\/exhibitions\/3d-gallery\/">/);
-  assert.match(home, /src="\/exhibitions\/3d-gallery\/images\/thumb\.webp" width="960" height="540"/);
+  assert.match(home, /src="\/exhibitions\/3d-gallery\/images\/thumb\.webp" alt="The domed 3D gallery from the lawn, with the courtyard fountain and the Kinoteka tower" loading="lazy"/);
+  assert.doesNotMatch(home, /3d-gallery\/images\/thumb\.webp" width=/);
   assert.match(home, /<h3>Walk-Through 3D Gallery<\/h3>/);
   assert.match(home, /1 \/ 11/);
   assert.match(fs.readFileSync('src/components/GalleryRoomCard.astro', 'utf8'), /aria-label="10 of 11"/);
@@ -41,7 +42,9 @@ test('the exhibitions carousel tile opens the landing page with a 16:9 thumbnail
 });
 
 test('gallery stills are WebP files at the exhibition image path', () => {
-  for (const name of ['exterior.webp', 'thumb.webp', 'rotunda.webp', 'portraits.webp', 'kinoteka.webp']) {
+  assert.match(page, /loading="lazy"/);
+  assert.match(page, /alt=\{shot\.alt\}/);
+  for (const name of ['exterior.webp', 'thumb.webp', 'rotunda.webp', 'round-room.webp', 'green-room.webp', 'patio-arch.webp', 'portrait-salon.webp', 'sunset-studies.webp', 'wide-hall.webp', 'kinoteka.webp']) {
     const file = `exhibitions/3d-gallery/images/${name}`;
     const bytes = fs.readFileSync(file);
     assert.ok(bytes.length > 8000, name);

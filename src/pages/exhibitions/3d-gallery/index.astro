@@ -10,7 +10,12 @@ const imageRoot = '/exhibitions/3d-gallery/images/';
 const hero = `${imageRoot}exterior.webp`;
 const shots = [
   { file: 'rotunda.webp', width: 1600, height: 900, alt: 'Inside a domed gallery room, with watercolor landscapes on the walls and the courtyard visible through an arch', caption: 'A domed room, with landscapes on the walls and the courtyard through the arch.' },
-  { file: 'portraits.webp', width: 1600, height: 900, alt: 'Portrait studies and smaller paintings hung on a gallery wall beside a column', caption: 'Portraits and studies on a gallery wall.' },
+  { file: 'round-room.webp', width: 1600, height: 900, alt: 'A round gallery room with portraits and landscapes on white walls beneath a ring of windows', caption: 'A round room of portraits and landscapes under the windows.' },
+  { file: 'green-room.webp', width: 1600, height: 900, alt: 'Four framed figurative paintings on a white wall in a room with a pale green floor, beside a stone arch', caption: 'Figurative paintings in a room with a green floor.' },
+  { file: 'patio-arch.webp', width: 1600, height: 900, alt: 'A stone arch opening from a gallery onto a patio with a landscape painting, and smaller works on the interior wall', caption: 'An arch from the gallery onto a fenced patio.' },
+  { file: 'portrait-salon.webp', width: 1600, height: 900, alt: 'A curved gallery wall of portrait paintings beneath a balcony of windows', caption: 'A salon of portraits under the upper windows.' },
+  { file: 'sunset-studies.webp', width: 1600, height: 900, alt: 'Small sunset paintings arranged on a gallery wall, with an arch opening into another room', caption: 'Sunset studies beside an arch into the next room.' },
+  { file: 'wide-hall.webp', width: 1600, height: 900, alt: 'Three large colorful paintings on a curved gallery wall, with an arch looking into the courtyard', caption: 'A wide hall of large paintings opening onto the courtyard.' },
   { file: 'kinoteka.webp', width: 1600, height: 900, alt: 'The Kinoteka annex, a small cinema with red seats facing a curtained screen', caption: 'The Kinoteka annex, a small cinema inside the gallery.' },
 ];
 const jsonLd = {
@@ -131,6 +136,10 @@ const jsonLd = {
   .portal:hover .portal-ring, .portal:focus-visible .portal-ring { animation-duration: 2.2s; }
   .portal:focus-visible { outline: 3px solid #bd381c; outline-offset: 6px; }
   .gallery-shots { display: grid; gap: 22px; margin-top: 36px; }
+  @media (min-width: 860px) {
+    .gallery-shots { grid-template-columns: 1fr 1fr; }
+    .gallery-shots figure:first-child, .gallery-shots figure:last-child { grid-column: 1 / -1; }
+  }
   .gallery-shots figure { margin: 0; }
   .gallery-shots figcaption { margin-top: 8px; color: var(--muted); font-size: .92rem; line-height: 1.5; }
   .gallery-note { max-width: 68ch; margin: 36px auto 0; font-size: 1.03rem; line-height: 1.75; }
