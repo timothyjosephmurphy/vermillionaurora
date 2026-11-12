@@ -1,6 +1,9 @@
 import {spawnSync} from 'node:child_process';
 import {unitFiles} from './test-manifest.mjs';
 
+const types = spawnSync(process.execPath, ['scripts/generate-worker-types.mjs'], {stdio: 'inherit'});
+if (types.status !== 0) process.exit(types.status || 1);
+
 const files = unitFiles();
 if (!files.length) {
   console.error('No unit tests found');
