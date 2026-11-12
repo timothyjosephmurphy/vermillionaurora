@@ -14,7 +14,7 @@ const EL_ZONTE = 'launch-sunrise-el-zonte-bitcoin-beach-2026-10-08';
 // Pacific wall-clock slots matching the Buffer schedule (Sun Oct 11, then Tue 7 AM / Thu 6 PM / Sat 10 AM, plus the Fri Oct 16 noon testimonial request, Tue Oct 27 10 AM Layers of Sound, and the Wed Nov 4 7:05 PM 3D gallery).
 const SLOTS = ['2026-10-03 23:00', '2026-10-06 07:00', '2026-10-11 10:00', '2026-10-13 07:00', '2026-10-15 18:00', '2026-10-16 12:00', '2026-10-17 10:00',
   '2026-10-20 07:00', '2026-10-22 18:00', '2026-10-24 10:00', '2026-10-27 07:00', '2026-10-27 10:00', '2026-10-29 18:00', '2026-10-31 10:00',
-  '2026-11-03 07:00', '2026-11-05 18:00', '2026-11-07 10:00', '2026-11-04 19:05'];
+  '2026-11-03 07:00', '2026-11-05 18:00', '2026-11-07 10:00', '2026-11-04 19:05', '2026-11-11 19:15'];
 const pacific = (ms) => {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
     .formatToParts(new Date(ms)).map(({ type, value }) => [type, value]));
@@ -108,6 +108,20 @@ test('Walk My 206 Paintings in 3D goes out Wed Nov 4 at 7:05 PM PT with the hex 
   assert.equal(content, `${post.text}\n\nhttps://tjm.art/blog/walk-my-paintings-3d-gallery/\n\n${post.imageUrl}`);
   assert.equal(content.match(/https:\/\/tjm\.art\/blog\/walk-my-paintings-3d-gallery\//g).length, 1);
   assert.equal(content.match(/https:\/\/tjm\.art\/play/g).length, 1);
+});
+
+test('Doc Holliday goes out Wed Nov 11 at 7:15 PM PT with one blog link', () => {
+  const post = posts.find(entry => entry.id === 'campaign-halloween-doc-holliday-2026-11-11');
+  assert.equal(post.scheduledAt, '2026-11-11T19:15:00-08:00');
+  assert.equal(pacific(Date.parse(post.scheduledAt)), '2026-11-11 19:15');
+  assert.equal(post.title, 'I Shaved My Beard to Be Doc Holliday');
+  assert.equal(post.imageUrl, 'https://tjm.art/blog/halloween-doc-holliday/media/doc-holliday-tin-cup-closeup.jpg');
+  assert.equal(post.productUrl, '/blog/halloween-doc-holliday/');
+  assert.equal(post.xText.endsWith('https://tjm.art/blog/halloween-doc-holliday/'), true);
+  const content = eventContent(post);
+  assert.equal(content, `${post.text}\n\nhttps://tjm.art/blog/halloween-doc-holliday/\n\n${post.imageUrl}`);
+  const link = 'https://tjm.art/blog/halloween-doc-holliday/';
+  assert.equal(content.split(/\s+/).filter(word => word.replace(/[.,:;)]+$/, '') === link).length, 1);
 });
 
 test('notes use tjm.art links and images, no X handles, and no duplicated link', () => {
