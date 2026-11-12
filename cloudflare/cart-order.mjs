@@ -80,6 +80,7 @@ export class CartOrder extends DurableObject {
     return {orderId:d.id,status:d.status,expiresAt:d.expiresAt,method:d.method,methods:d.methods,
       ...((['pending','processing'].includes(d.status)||d.method==='bitcoin'&&['settling','paid'].includes(d.status))&&d.url?{url:d.url}:{}),
       ...(d.quote?{quote:{items:d.quote.items.map(publicCartItem),base:d.quote.base,shipping:d.quote.shipping,tax:d.quote.tax,total:d.quote.total,...(d.quote.salesTax?{taxRate:d.quote.salesTax.rate}:{}),
+        ...(d.quote.printQuote?.priceAdjustments?.length?{priceAdjustments:d.quote.printQuote.priceAdjustments.map(a=>({id:a.id,title:a.title,previousAmount:a.previousAmount,amount:a.amount}))}:{}),
         shipments:[...d.quote.shipments.map(s=>({id:s.slug,title:s.title,shipping:s.shipping,carrier:s.carrier,service:s.service})),...(d.quote.printQuote?[{id:'prints',title:'Fine-art prints',shipping:d.quote.printQuote.shipping,carrier:d.quote.printQuote.carrier,service:d.quote.printQuote.service}]:[]),...(d.quote.bookQuote?[{id:'books',title:'Printed books',shipping:d.quote.bookQuote.shipping,carrier:d.quote.bookQuote.carrier,service:d.quote.bookQuote.service}]:[])]},
         }:{}),
       ...(d.heldIds?{heldIds:d.heldIds}:{}),

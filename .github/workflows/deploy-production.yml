@@ -191,5 +191,5 @@ jobs:
         env:
           CHANGED_PRODUCT_SLUGS: ${{ steps.changes.outputs.product_slugs }}
         run: node scripts/verify-release.mjs
-      - name: Quote one print and one framed print (no payment, no order)
-        run: node payments/verify-sampled-quote.mjs
+      # Live FinerWorks quotes are reserved for real checkout. Catalog prices are
+      # checked offline in the release gate (scripts/ci/check-print-price-table.mjs).

@@ -65,6 +65,8 @@ export async function cartCheckout(request,env) {
     if((action==='quote'&&error?.code==='DESTINATION'||action==='start'&&/^International shipping for originals is not open yet\./.test(error?.message||'')))return reply({error:error.message,code:'DESTINATION'},422);
     if(action==='quote'&&error?.code==='TAX_ADDRESS')return reply({error:error.message,code:'TAX_ADDRESS'},422);
     if(action==='quote'&&error?.code==='BOOK_SHIPPING')return reply({error:error.message,code:'BOOK_SHIPPING'},422);
+    // Live FinerWorks cost drifted underwater: friendly block, never a generic 422.
+    if(action==='quote'&&error?.code==='PRINT_PRICE_BLOCKED')return reply({error:error.message,code:'PRINT_PRICE_BLOCKED',priceBlock:error.priceBlock||null},409);
     if(action==='hold'&&error.message==='Checkout has already started.')return reply({error:'Checkout has already started.',code:'CHECKOUT_STARTED'},409);
     const reservationError=/^(Your cart reservation expired|Your cart changed while calculating shipping|An original in your cart is no longer reserved)/.test(error.message||'');
     const bitcoinPermissionError=action==='status'&&/^BTCPay API (401|403)$/.test(error.message||'');
