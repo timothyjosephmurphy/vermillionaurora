@@ -1,0 +1,164 @@
+---
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import { GALLERY_3D_URL } from '../../../data/gallery-entry.mjs';
+
+const title = 'Walk-Through 3D Gallery | TJ Murphy';
+const description = 'Walk TJ Murphy’s 3D gallery: a domed building on the lawn, rooms of original paintings, and the Kinoteka cinema annex. Then enter the gallery in your browser.';
+const pageUrl = 'https://tjm.art/exhibitions/3d-gallery/';
+const imageRoot = '/exhibitions/3d-gallery/images/';
+const hero = `${imageRoot}exterior.webp`;
+const shots = [
+  { file: 'rotunda.webp', width: 1600, height: 900, alt: 'Inside a domed gallery room, with watercolor landscapes on the walls and the courtyard visible through an arch', caption: 'A domed room, with landscapes on the walls and the courtyard through the arch.' },
+  { file: 'round-room.webp', width: 1600, height: 900, alt: 'A round gallery room with portraits and landscapes on white walls beneath a ring of windows', caption: 'A round room of portraits and landscapes under the windows.' },
+  { file: 'green-room.webp', width: 1600, height: 900, alt: 'Four framed figurative paintings on a white wall in a room with a pale green floor, beside a stone arch', caption: 'Figurative paintings in a room with a green floor.' },
+  { file: 'patio-arch.webp', width: 1600, height: 900, alt: 'A stone arch opening from a gallery onto a patio with a landscape painting, and smaller works on the interior wall', caption: 'An arch from the gallery onto a fenced patio.' },
+  { file: 'portrait-salon.webp', width: 1600, height: 900, alt: 'A curved gallery wall of portrait paintings beneath a balcony of windows', caption: 'A salon of portraits under the upper windows.' },
+  { file: 'sunset-studies.webp', width: 1600, height: 900, alt: 'Small sunset paintings arranged on a gallery wall, with an arch opening into another room', caption: 'Sunset studies beside an arch into the next room.' },
+  { file: 'wide-hall.webp', width: 1600, height: 900, alt: 'Three large colorful paintings on a curved gallery wall, with an arch looking into the courtyard', caption: 'A wide hall of large paintings opening onto the courtyard.' },
+  { file: 'kinoteka.webp', width: 1600, height: 900, alt: 'The Kinoteka annex, a small cinema with red seats facing a curtained screen', caption: 'The Kinoteka annex, a small cinema inside the gallery.' },
+];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Walk-Through 3D Gallery',
+  description,
+  url: pageUrl,
+  primaryImageOfPage: `https://tjm.art${hero}`,
+  isPartOf: { '@type': 'WebSite', name: 'TJ Murphy', url: 'https://tjm.art/' },
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:title" content="Walk-Through 3D Gallery" />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={`https://tjm.art${hero}`} />
+    <meta property="og:image:alt" content="The domed 3D gallery from the lawn, with the courtyard fountain and the Kinoteka tower" />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="900" />
+    <link href="/fonts/fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/site-header.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader />
+      <main class="container gallery-landing" id="main-content">
+        <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/exhibitions/">Exhibitions</a></nav>
+        <header class="gallery-landing-heading">
+          <p class="eyebrow dark">A gallery you can walk</p>
+          <h1>Walk-Through 3D Gallery</h1>
+          <p>Domed rooms on a lawn, original paintings on the walls, and a Kinoteka cinema annex. The courtyard looks out toward the mountains.</p>
+        </header>
+        <figure class="gallery-hero">
+          <img src={hero} width="1600" height="900" alt="The domed 3D gallery from the lawn, with the courtyard fountain and the Kinoteka tower" fetchpriority="high" decoding="async" />
+        </figure>
+        <div class="portal-row">
+          <a class="portal" href={GALLERY_3D_URL}>
+            <span class="portal-ring" aria-hidden="true"></span>
+            <span class="portal-core">Enter the gallery</span>
+          </a>
+        </div>
+        <section class="gallery-shots" aria-label="Views inside the 3D gallery">
+          {shots.map((shot) => (
+            <figure>
+              <img src={`${imageRoot}${shot.file}`} width={shot.width} height={shot.height} alt={shot.alt} loading="lazy" decoding="async" />
+              <figcaption>{shot.caption}</figcaption>
+            </figure>
+          ))}
+        </section>
+        <section class="gallery-note">
+          <p>You move through the rooms in the browser, on a phone or a computer. The ring above is the door.</p>
+          <p><a href={GALLERY_3D_URL}>Enter the gallery →</a></p>
+        </section>
+        <nav class="gallery-more" aria-label="More exhibitions"><a href="/exhibitions/">← All exhibitions</a><a href="/#exhibitions">Back to the exhibitions carousel</a></nav>
+      </main>
+      <SiteFooter />
+    </div>
+    <div class="warp" aria-hidden="true"></div>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+    <script is:inline>
+      (function () {
+        const link = document.querySelector('.portal');
+        if (!link) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+        link.addEventListener('click', (event) => {
+          if (reduce.matches || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+          event.preventDefault();
+          document.body.classList.add('is-warping');
+          window.setTimeout(() => { location.href = link.href; }, 680);
+        });
+      })();
+    </script>
+  </body>
+</html>
+<style>
+  .gallery-landing { padding-block: 24px 56px; max-width: 1100px; }
+  .product-breadcrumb { display: flex; gap: 10px; flex-wrap: wrap; font-size: .8rem; }
+  .gallery-landing-heading { margin: 22px 0 18px; }
+  .gallery-landing-heading .eyebrow { margin: 0 0 8px; }
+  .gallery-landing-heading h1 { font: 600 var(--page-title-size)/var(--page-title-leading) "Cormorant Garamond", serif; margin: 0 0 12px; }
+  .gallery-landing-heading p:last-child { max-width: 68ch; margin: 0; color: var(--muted); line-height: 1.7; }
+  .gallery-hero { margin: 22px 0 0; }
+  .gallery-hero img { width: 100%; height: min(46vh, 460px); object-fit: cover; object-position: center 42%; border-radius: 16px; background: #e8dfd3; }
+  .gallery-shots img { width: 100%; height: auto; border-radius: 16px; background: #e8dfd3; }
+  .portal-row { display: flex; justify-content: center; margin-top: -78px; position: relative; z-index: 2; }
+  .portal {
+    position: relative; display: grid; place-items: center; width: min(210px, 62vw); aspect-ratio: 1;
+    color: #fff8ef; text-decoration: none; border-radius: 50%;
+    transition: transform .35s ease;
+  }
+  .portal-ring, .portal-ring::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    background: conic-gradient(from 20deg, transparent 0 10%, #ffd7a8 16%, #d34220 30%, transparent 42%, #9fd4ff 58%, #fff1d6 68%, #d34220 80%, transparent 90% 100%);
+    filter: drop-shadow(0 0 10px rgba(211, 66, 32, .55));
+    animation: portal-spin 9s linear infinite;
+    -webkit-mask: radial-gradient(circle, transparent 0 56%, #000 58% 76%, transparent 79%);
+    mask: radial-gradient(circle, transparent 0 56%, #000 58% 76%, transparent 79%);
+  }
+  .portal-ring::after { inset: 8%; animation-duration: 14s; animation-direction: reverse; opacity: .85; filter: drop-shadow(0 0 14px rgba(255, 196, 120, .7)); }
+  .portal-core {
+    position: relative; z-index: 1; width: 58%; aspect-ratio: 1; border-radius: 50%;
+    display: grid; place-items: center; text-align: center; padding: 14px;
+    background: radial-gradient(circle at 50% 38%, #4a2c22 0%, #1c1210 72%);
+    box-shadow: inset 0 0 28px rgba(255, 186, 120, .45), 0 10px 28px rgba(28, 18, 14, .28);
+    font: 600 .74rem/1.25 Inter, system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase;
+  }
+  .portal:hover, .portal:focus-visible { transform: scale(1.05); }
+  .portal:hover .portal-ring, .portal:focus-visible .portal-ring { animation-duration: 2.2s; }
+  .portal:focus-visible { outline: 3px solid #bd381c; outline-offset: 6px; }
+  .gallery-shots { display: grid; gap: 22px; margin-top: 36px; }
+  @media (min-width: 860px) {
+    .gallery-shots { grid-template-columns: 1fr 1fr; }
+    .gallery-shots figure:first-child, .gallery-shots figure:last-child { grid-column: 1 / -1; }
+  }
+  .gallery-shots figure { margin: 0; }
+  .gallery-shots figcaption { margin-top: 8px; color: var(--muted); font-size: .92rem; line-height: 1.5; }
+  .gallery-note { max-width: 68ch; margin: 36px auto 0; font-size: 1.03rem; line-height: 1.75; }
+  .gallery-note p { margin: 0 0 14px; }
+  .gallery-note a, .gallery-more a { text-decoration: underline; text-underline-offset: 4px; }
+  .gallery-more { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; border-top: 1px solid var(--line); padding-top: 24px; margin-top: 36px; font-size: .9rem; }
+  .warp { position: fixed; inset: 0; z-index: 80; pointer-events: none; opacity: 0; background: radial-gradient(circle at 50% 42%, rgba(255, 236, 214, .15) 0 8%, rgba(88, 36, 18, .35) 18%, rgba(12, 8, 7, .94) 46%); }
+  .is-warping .warp { animation: warp-zoom .68s ease-in forwards; }
+  @keyframes portal-spin { to { transform: rotate(1turn); } }
+  @keyframes warp-zoom { from { opacity: 1; transform: scale(.35); } to { opacity: 1; transform: scale(2.6); } }
+  @media (max-width: 720px) {
+    .gallery-hero img { height: 220px; }
+    .portal-row { margin-top: -58px; }
+    .portal-core { font-size: .66rem; letter-spacing: .1em; }
+    .gallery-shots { gap: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .portal-ring, .portal-ring::after { animation: none; }
+    .portal, .portal:hover, .portal:focus-visible { transform: none; transition: none; }
+    .is-warping .warp { animation: none; opacity: 0; }
+  }
+</style>
