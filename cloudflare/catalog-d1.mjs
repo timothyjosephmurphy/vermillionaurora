@@ -112,3 +112,33 @@ async function syncBuiltEditionPricesOnce(db, printVersion, built) {
   resetCache();
   return { updated: changes.length, skipped: false };
 }
+// Built listing status is what the pages and checkout catalog publish. Copy it onto D1 rows that
+// still say they came from the repo or from a catalog-admin toggle, once per catalog version.
+// A status row with any other note is an intentional override and is left alone.
+let paintingStatusSync = null;
+const REPO_STATUS_NOTES = new Set(['repo sync', 'catalog-admin']);
+export async function syncBuiltPaintingStatuses(db, catalogVersion, inventory) {
+  if (!db || !catalogVersion || !inventory || !Object.keys(inventory).length) return { updated: 0, skipped: true };
+  if (paintingStatusSync) return paintingStatusSync;
+  paintingStatusSync = syncBuiltPaintingStatusesOnce(db, catalogVersion, inventory).finally(() => { paintingStatusSync = null; });
+  return paintingStatusSync;
+}
+async function syncBuiltPaintingStatusesOnce(db, catalogVersion, inventory) {
+  const marked = await db.prepare("SELECT value FROM meta WHERE key='catalog_version'").first();
+  if (marked?.value === catalogVersion) return { updated: 0, skipped: true };
+  const live = await readLive(db, { force: true });
+  const at = now();
+  const update = db.prepare('UPDATE status SET status=?, note=?, updated_at=? WHERE product_id=? AND status=?');
+  const stmts = [];
+  for (const [id, item] of Object.entries(inventory)) {
+    const row = live.status.get(id);
+    if (!row || !item?.status || row.status === item.status) continue;
+    if (row.note && !REPO_STATUS_NOTES.has(row.note)) continue;
+    stmts.push(update.bind(item.status, 'repo sync', at, id, row.status));
+  }
+  for (let i = 0; i < stmts.length; i += 100) await db.batch(stmts.slice(i, i + 100));
+  if (stmts.length) await bumpRev(db, 'painting-status', null, { catalogVersion, updated: stmts.length });
+  await db.batch([db.prepare("INSERT INTO meta (key, value) VALUES ('catalog_version', ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value").bind(catalogVersion)]);
+  resetCache();
+  return { updated: stmts.length, skipped: false };
+}

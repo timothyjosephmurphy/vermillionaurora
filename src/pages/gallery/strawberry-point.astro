@@ -20,7 +20,7 @@ const ESTIMATED_IN=12;
 const product=id=>strawberryProducts.find(x=>x.id===id);
 const cards=ids=>ids.map(n=>{const p=strawberryPaintings.find(x=>x.index===n),pr=product(strawberryId(p)),d=pr.dimensions;
   return {p,pr,inches:d?d.width:ESTIMATED_IN,measured:!!d,size:d?pr.facts.find(f=>f.label==='Size')?.value:'Size not recorded',
-    price:pr.listing.status==='available'&&pr.listing.price?`$${Number(pr.listing.price.amount)}`:'Inquire'};});
+    price:pr.listing.status==='available'&&pr.listing.price?`$${Number(pr.listing.price.amount)}`:pr.listing.status==='unavailable'?'Not currently available':'Inquire'};});
 // Story paragraphs interleaved with the paintings in story order.
 // Tile scale (--in) is capped so #1–3 (15 in) always share one row (TJ, Oct 17 2026).
 // Largest paintings first (TJ, Oct 16 2026): #1–3 (15 in, the largest), 9.75 in, 7.5 in, then 5 in.

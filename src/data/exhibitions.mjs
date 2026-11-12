@@ -33,8 +33,8 @@ export const exhibitions = [
 // Dates are studio calendar items. Street addresses stay out unless a public
 // listing confirms that date at that door.
 export const upcoming = [
-  { id: 'waa-sip-and-stroll', title: 'WAA Sip & Stroll', start: '2026-11-13', end: '2026-11-14',
-    dates: 'Deliver November 13, 2026 · pick up November 14, 2026',
+  { id: 'waa-sip-and-stroll', title: 'WAA Sip & Stroll', start: '2026-11-13', end: '2026-11-15',
+    dates: 'Deliver November 13, 2026 · pick up November 15, 2026, 5–6 PM',
     venue: 'The Winemakers Reserve, Woodinville, Washington',
     note: 'Woodinville Arts Alliance.' },
 ];
