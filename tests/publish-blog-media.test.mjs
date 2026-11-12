@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { contentType, keyAllowed, objectKey, MAX_BYTES } from '../scripts/blog-media-upload/keys.mjs';
-import { changedArticleSlugs } from '../scripts/verify-blog-pages.mjs';
+import { articleImageUrl, changedArticleSlugs } from '../scripts/verify-blog-pages.mjs';
 import { decideUpload, manifestDocument, specsFor } from '../scripts/publish-blog-media.mjs';
 
 test('blog media keys stay inside display, social, and blog/<slug>/', () => {
@@ -41,6 +41,21 @@ test('changed article slugs come only from static story HTML', () => {
     'static/blog/Live/index.html',
     'static/display/x.webp',
   ]), ['live-looping-guitar']);
+});
+
+test('relative blog photos resolve beside the article, not at the site root', () => {
+  assert.equal(
+    articleImageUrl('media/doc-holliday-shave-halfway.jpg', '/blog/halloween-doc-holliday/'),
+    'https://tjm.art/blog/halloween-doc-holliday/media/doc-holliday-shave-halfway.jpg',
+  );
+  assert.equal(
+    articleImageUrl('/display/example.webp', '/blog/finding-a-sound-bass-from-dad/'),
+    'https://tjm.art/display/example.webp',
+  );
+  assert.equal(
+    articleImageUrl('https://img.tjm.art/social/example.jpg', '/blog/finding-a-sound-bass-from-dad/'),
+    'https://img.tjm.art/social/example.jpg',
+  );
 });
 
 test('upload decisions never replace a different public object', () => {
