@@ -102,9 +102,9 @@ test('proxied /play entry HTML advertises the hex START courtyard card; other /p
     assert.equal(html.includes('torch-lit'), false, path);
   }
   assert.deepEqual(seen.map(row => row[0]), [
-    'https://preview-251.tjm-tag-gallery-preview.pages.dev/play?k=1',
-    'https://preview-251.tjm-tag-gallery-preview.pages.dev/play/?k=1',
-    'https://preview-251.tjm-tag-gallery-preview.pages.dev/play/index.html?k=1',
+    'https://tjm-tag-gallery-preview.pages.dev/play?k=1',
+    'https://tjm-tag-gallery-preview.pages.dev/play/?k=1',
+    'https://tjm-tag-gallery-preview.pages.dev/play/index.html?k=1',
   ]);
   const card = await playGallery(new Request('https://tjm.art/play/share-start-2026-11-04.jpg'), env);
   assert.equal(await card.text(), 'jpeg-bytes');
@@ -341,4 +341,18 @@ test('commission form, privacy and inventory APIs are same-origin on tjm.art (no
 test('homepage and commissions forms post to tjm.art, never workers.dev',async()=>{
   const {readFileSync}=await import('node:fs');
   for(const f of ['src/pages/index.astro','src/pages/commissions/index.astro','src/pages/commission-manager/index.astro','script.js','catalog/availability.js'])assert.doesNotMatch(readFileSync(f,'utf8'),/vermillion-commissions[^'"]*workers\.dev/,f);
+});
+
+test('/play proxies the hex gallery production URL, not a preview alias or pinned deployment', async () => {
+  const { HEX_PLAY_ORIGIN } = await import('../worker/play-gallery.mjs');
+  const { protocol, hostname, pathname } = new URL(HEX_PLAY_ORIGIN);
+  assert.equal(protocol, 'https:');
+  assert.equal(pathname, '/');
+  const labels = hostname.split('.');
+  if (hostname.endsWith('.pages.dev')) {
+    // <project>.pages.dev is production. <branch-or-hash>.<project>.pages.dev is a preview.
+    assert.equal(labels.length, 3, `${hostname} is a Pages preview or deployment alias`);
+  }
+  assert.doesNotMatch(labels[0], /^preview-/i);
+  assert.doesNotMatch(labels[0], /^[0-9a-f]{8}$/i);
 });

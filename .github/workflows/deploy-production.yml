@@ -130,7 +130,7 @@ jobs:
     needs: [changes, deploy-checkout]
     if: github.ref == 'refs/heads/main' && needs.changes.outputs.deploy_site == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 70
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN || secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
     steps:
@@ -180,6 +180,7 @@ jobs:
       - name: Wait for Workers Builds to publish this website version, then check sampled print files
         env:
           CHANGED_PRINT_PRODUCTS: ${{ steps.changes.outputs.print_products }}
+          SITE_WAIT_TRIES: '360'
         run: node payments/verify-live-print-assets.mjs
       - name: Verify published blog cards, articles, and photos
         if: steps.changes.outputs.blog == 'true' || steps.changes.outputs.unknown == 'true'

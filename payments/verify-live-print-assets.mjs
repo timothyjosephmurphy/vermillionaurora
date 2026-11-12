@@ -42,7 +42,8 @@ export async function verifyLivePrintAssets() {
 }
 if(process.argv[1]?.endsWith('/verify-live-print-assets.mjs')||process.argv[1]==='payments/verify-live-print-assets.mjs') {
   let ready=false;
-  const tries=Number(process.env.SITE_WAIT_TRIES||120);
+  // Workers Builds has taken about 18 minutes. Poll for 30 minutes before failing the deploy.
+  const tries=Number(process.env.SITE_WAIT_TRIES||360);
   for(let i=0;i<tries;i++)try{await verifyLivePrintAssets();ready=true;break;}catch{console.log(`Waiting for print website release (${i+1}/${tries})`);await new Promise(resolve=>setTimeout(resolve,5000));}
   if(!ready)throw Error('The approved print pages, catalog and images are not deployed');
   console.log(`PASS: public catalog lists all ${prints.length} print variants; sampled print files match their approved hashes.`);
