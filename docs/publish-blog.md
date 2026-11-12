@@ -8,6 +8,10 @@ A pull request that only changes a story uses the **blog** tier of `.github/work
 
 Start from latest `main`. Copy `static/blog/finding-a-sound-bass-from-dad/index.html` to `static/blog/<slug>/index.html`. The slug is lowercase letters, numbers, and hyphens. Keep one `<h1>`, a `<main>`, and at least one photo. Point photos at `/display/<file>.webp`. Point video and its poster at absolute `https://img.tjm.art/blog/<slug>/...` URLs.
 
+Keep the page background plain white. The copied template sets `--paper:#fff`, `theme-color` to `#fff`, and `body { background:#fff }` with no radial gradient. Cards and panels that need to sit off the page use `#fafafa`. Leave that white page in place when you edit the copy. Every story prominently says you can pay with Bitcoin.
+
+The production build writes `sitemap.xml` from every public page, and writes `/blog/feed.xml` (RSS) and `/blog/atom.xml` (Atom) from the static story cards on the blog index. A new card is enough; do not hand-edit those three files.
+
 Add a card at the top of `src/pages/blog/index.astro`, using the same markup as the cards already there (`data-static-story`, then `class="journal-image-link" href="/blog/<slug>/"` and an `<img>`). Give the post its own card image. Site-update posts must not use the Esperanza hero.
 
 Commit the display WebPs under `static/display/` and the 1200×630 share JPEG under `static/social/`. Add each new display **basename** to `scripts/display-files.json` in alphabetical order. Put mp4 and poster files that should be served from `img.tjm.art/blog/<slug>/` in `scripts/blog-media-upload/publish-assets/<slug>/`.

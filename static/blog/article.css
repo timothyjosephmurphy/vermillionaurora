@@ -25,3 +25,12 @@
     padding: 20px 20px 16px;
   }
 }
+
+/* Payment callout on story pages. Panels sit on #fafafa so they stay separate from the white page. */
+.pay-bitcoin,
+.pay-note {
+  margin: 8px 0 28px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--gold, #c5a46d);
+  background: #fafafa;
+}

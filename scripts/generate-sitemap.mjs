@@ -77,3 +77,81 @@ await writeFile(join(dist, 'sitemap.xml'), xml);
 if (update) await writeFile(manifestPath, `${JSON.stringify(next, null, 2)}\n`);
 const changed = pages.filter((page) => manifest[page.url]?.hash !== page.hash).length;
 console.log(`Generated sitemap.xml with ${pages.length} public pages (${changed} with new lastmod ${buildDate}${update ? '; manifest updated' : ''}).`);
+
+const decode = (value) => String(value || '')
+  .replace(/<[^>]+>/g, '')
+  .replace(/&rsquo;|&#8217;|&#x2019;/gi, '’')
+  .replace(/&ldquo;|&#8220;|&#x201C;/gi, '“')
+  .replace(/&rdquo;|&#8221;|&#x201D;/gi, '”')
+  .replace(/&amp;/g, '&')
+  .replace(/&nbsp;/g, ' ')
+  .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+  .replace(/&#(\d+);/g, (_, num) => String.fromCodePoint(Number(num)))
+  .replace(/\s+/g, ' ')
+  .trim();
+const xmlEscape = (value) => decode(value)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;');
+const indexHtml = await readFile(join(dist, 'blog/index.html'), 'utf8').catch(() => '');
+const stories = [];
+for (const block of indexHtml.split('data-static-story').slice(1)) {
+  const href = block.match(/href="(\/blog\/[a-z0-9-]+\/)"/)?.[1];
+  const title = block.match(/<h2>\s*<a\b[^>]*>([\s\S]*?)<\/a>/i)?.[1];
+  const datetime = block.match(/<time\b[^>]*datetime="([^"]+)"/i)?.[1];
+  const summary = block.match(/class="journal-copy"[\s\S]*?<p>([\s\S]*?)<\/p>/i)?.[1];
+  if (!href || !title || !datetime) continue;
+  stories.push({
+    href,
+    title: xmlEscape(title),
+    summary: xmlEscape(summary || title),
+    datetime,
+    rfc822: new Date(`${datetime}T00:00:00Z`).toUTCString(),
+  });
+}
+if (stories.length) {
+  const rss = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<rss version="2.0">',
+    '<channel>',
+    '<title>Stories from the Studio</title>',
+    '<link>https://tjm.art/blog/</link>',
+    '<description>Notes about the paintings, travels and people behind the work of TJ Murphy.</description>',
+    ...stories.map((story) => [
+      '<item>',
+      `<title>${story.title}</title>`,
+      `<link>https://tjm.art${story.href}</link>`,
+      `<guid>https://tjm.art${story.href}</guid>`,
+      `<pubDate>${story.rfc822}</pubDate>`,
+      `<description>${story.summary}</description>`,
+      '</item>',
+    ].join('')),
+    '</channel>',
+    '</rss>',
+    '',
+  ].join('\n');
+  const atom = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<feed xmlns="http://www.w3.org/2005/Atom">',
+    '<title>Stories from the Studio</title>',
+    '<link href="https://tjm.art/blog/" rel="alternate"/>',
+    '<link href="https://tjm.art/blog/atom.xml" rel="self"/>',
+    '<id>https://tjm.art/blog/</id>',
+    `<updated>${stories[0].datetime}T00:00:00Z</updated>`,
+    ...stories.map((story) => [
+      '<entry>',
+      `<title>${story.title}</title>`,
+      `<link href="https://tjm.art${story.href}"/>`,
+      `<id>https://tjm.art${story.href}</id>`,
+      `<updated>${story.datetime}T00:00:00Z</updated>`,
+      `<summary>${story.summary}</summary>`,
+      '</entry>',
+    ].join('')),
+    '</feed>',
+    '',
+  ].join('\n');
+  await writeFile(join(dist, 'blog/feed.xml'), rss);
+  await writeFile(join(dist, 'blog/atom.xml'), atom);
+  console.log(`Generated blog RSS and Atom feeds with ${stories.length} stories.`);
+}

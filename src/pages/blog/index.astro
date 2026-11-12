@@ -10,7 +10,10 @@ import SiteFooter from '../../components/SiteFooter.astro';
     <title>Stories from the Studio | TJ Murphy</title>
     <meta name="description" content="A running journal of paintings, the places behind them, and new work by TJ Murphy." />
     <link rel="canonical" href="https://tjm.art/blog/" />
+    <link rel="alternate" type="application/rss+xml" title="Stories from the Studio" href="/blog/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Stories from the Studio" href="/blog/atom.xml" />
     <link href="/fonts/fonts.css" rel="stylesheet" />
+    <meta name="theme-color" content="#fff" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/site-header.css" />
   </head>
@@ -25,6 +28,19 @@ import SiteFooter from '../../components/SiteFooter.astro';
         </header>
         <p id="journal-status" class="journal-status" role="status" aria-live="polite">Loading stories…</p>
         <section id="journal-entries" class="journal-entries" aria-label="Stories">
+        <article class="journal-entry" data-static-story>
+          <header>
+            <h2><a href="/blog/halloween-doc-holliday/">I Shaved My Beard to Be Doc Holliday</a></h2>
+            <time datetime="2026-11-11">November 11, 2026</time>
+          </header>
+          <a class="journal-image-link" href="/blog/halloween-doc-holliday/" aria-label="Read I Shaved My Beard to Be Doc Holliday">
+            <img src="/blog/halloween-doc-holliday/media/doc-holliday-tin-cup-closeup.jpg" alt="TJ Murphy as Doc Holliday in a tan cowboy hat and red bow tie, raising a small metal cup" loading="lazy" decoding="async">
+          </a>
+          <div class="journal-copy">
+            <p>Halloween as Doc Holliday: shaving the beard, a wild carnival party, betting a singing bowl at Treasure Blackjack, and the joy of gyroscope toys.</p>
+            <p><a href="/blog/halloween-doc-holliday/">Read the story →</a></p>
+          </div>
+        </article>
         <article class="journal-entry" data-static-story>
           <header>
             <h2><a href="/blog/chris-flanders-portrait/">Chris Flanders on His Portrait</a></h2>
@@ -205,6 +221,13 @@ import SiteFooter from '../../components/SiteFooter.astro';
   </body>
 </html>
 <style is:global>
+  /* Blog index only. The rest of the site keeps its paper color in styles.css. */
+  html, body { --paper:#fff; --bg:#fff; background:#fff }
+  body .site-header { background:#fff }
+  body .site-footer { background:#fff }
+  @media (max-width: 980px) {
+    body .site-header .main-nav { background:#fafafa }
+  }
   /* Compact story cards for every post, static and Nostr (studio-tracker #217): about three per screen. */
   .journal{max-width:980px;padding-block:24px 64px}
   .journal-heading{max-width:760px;margin:0 auto 16px;text-align:center}
@@ -213,7 +236,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
   .journal-heading>p:last-child{max-width:620px;margin:0 auto;color:var(--muted);line-height:1.7}
   .journal-status{min-height:1.5em;text-align:center;color:var(--muted);font-size:.92rem}
   .journal-entries{display:grid;gap:14px}
-  .journal-entry{display:grid;grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:6px 22px;align-items:start;padding:14px;border:1px solid var(--line,#e3d9cb);border-radius:10px;background:#fffcf6}
+  .journal-entry{display:grid;grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:6px 22px;align-items:start;padding:14px;border:1px solid var(--line,#e3d9cb);border-radius:10px;background:#fafafa}
   .journal-entry>header{grid-column:2;display:grid;gap:2px}
   .journal-entry h2{font:600 1.55rem/1.15 "Cormorant Garamond",serif;margin:0}
   .journal-entry h2 a{text-decoration:none}

@@ -5,6 +5,7 @@ blog/bitcoin-film-festival/index.html
 blog/brass-plate-etching-friends-club/index.html
 blog/el-salvador-sunrises-sunsets/index.html
 blog/finding-a-sound-bass-from-dad/index.html
+blog/halloween-doc-holliday/index.html
 blog/how-tjm-art-was-built/index.html
 blog/index.html
 blog/live-looping-guitar/index.html
