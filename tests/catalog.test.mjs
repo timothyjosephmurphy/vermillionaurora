@@ -380,7 +380,9 @@ test('the homepage ends Exhibitions with the framed print wall',()=>{
  assert.equal($('#exhibitions a[href="/exhibitions/3d-gallery/"] h3').text().trim(),'Walk-Through 3D Gallery');
  assert.equal($('.hero-room-link').attr('href'),'https://tjm.art/play/');
  assert.equal($('.hero-room-link').text().trim(),'Take me to the 3D gallery');
- assert.equal($('.main-nav a').filter((i,a)=>$(a).text().trim()==='Take me to the 3D gallery').attr('href'),'https://tjm.art/play/');
+ // The 3D gallery left the top nav to keep it on one line (TJ, Nov 12 2026); it stays in the hero and footer.
+ assert.equal($('.main-nav a[href="https://tjm.art/play/"]').length,0);
+ assert.equal($('.site-footer a[href="https://tjm.art/play/"]').length,1);
  const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
  assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/all/');
  assert.equal(tile.attr('data-product-id'),undefined,'A gallery experience is not original-painting inventory');

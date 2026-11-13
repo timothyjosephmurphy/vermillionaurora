@@ -20,7 +20,7 @@ test('main nav has a Shop link to the available paintings, on Astro and legacy p
   for(const f of ['dist/index.html','dist/about/index.html','dist/gallery/index.html']){
     const $=cheerio.load(fs.readFileSync(f,'utf8'));
     const nav=$('.main-nav a').map((i,e)=>$(e).attr('href')).get();
-    assert.equal(nav[nav.indexOf('/gallery/')+1],'/gallery/available/',f);
+    assert.equal(nav[0],'/gallery/available/',f);assert.ok(!nav.includes('/gallery/'),f);
   }
 });
 test('/search and /search/ redirect to the available paintings page',()=>{
