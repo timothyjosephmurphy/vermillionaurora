@@ -14,7 +14,6 @@ import {resolveWallLabelGalleries, wallLabelGalleries} from '../catalog/wall-lab
 
 const ids = [
   'festival-burning-man',
-  'father-paul',
   'bounty-of-satoshi',
   'ukraine',
   'small-watercolors',
@@ -36,11 +35,10 @@ const galleryById = id => manifest.galleries.find(gallery => gallery.id === id);
 test('wall label galleries follow labels354 order, omit reiki, and fold #751', () => {
   assert.deepEqual(manifest.galleries.map(gallery => gallery.id), ids);
   assert.deepEqual(wallLabelGalleries.map(gallery => gallery.id), ids);
-  assert.equal(manifest.omitted.map(entry => entry.id).join(), 'reiki');
+  assert.equal(manifest.omitted.map(entry => entry.id).join(), 'reiki,father-paul');
   assert.equal(manifest.galleries.some(gallery => gallery.id === 'reiki'), false);
   assert.deepEqual(manifest.galleries.map(gallery => [gallery.id, gallery.title, gallery.members.length]), [
     ['festival-burning-man', 'Festivals', 21],
-    ['father-paul', 'Father Paul', 4],
     ['bounty-of-satoshi', 'Bounty of Satoshi', 3],
     ['ukraine', 'Ukraine', 3],
     ['small-watercolors', 'Small Watercolors', 26],
