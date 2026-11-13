@@ -5,6 +5,11 @@
       "id": "reiki",
       "title": "Reiki",
       "reason": "No members in labels354 and no Reiki hang or catalog works; omitted per studio-tracker #394."
+    },
+    {
+      "id": "father-paul",
+      "title": "Father Paul",
+      "reason": "Removed from Selected Galleries per TJ (Nov 12 2026). The painting lives on the My Dad, Paul Murphy page; the wall-label carousel isn't needed."
     }
   ],
   "folded": [
@@ -119,20 +124,6 @@
         "archived-painting-18",
         "archived-painting-20",
         "archived-painting-62"
-      ]
-    },
-    {
-      "id": "father-paul",
-      "title": "Father Paul",
-      "thumb": "/galleries/labels/label-father-paul.desktop.webp",
-      "thumbWidth": 1024,
-      "thumbHeight": 256,
-      "hero": "book-art-82127d1886ae57d5cb6e",
-      "members": [
-        "book-art-0a80f9a5da0d39edc80f",
-        "book-art-82127d1886ae57d5cb6e",
-        "archived-painting-img-1555",
-        "grandpa-howard"
       ]
     },
     {

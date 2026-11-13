@@ -41,7 +41,6 @@ exhibitions/victrola/index.html
 exhibitions/world-map/index.html
 film/index.html
 galleries/bounty-of-satoshi/index.html
-galleries/father-paul/index.html
 galleries/festival-burning-man/index.html
 galleries/index.html
 galleries/landscapes-by-size/index.html
