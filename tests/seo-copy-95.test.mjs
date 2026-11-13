@@ -89,7 +89,9 @@ test('dungeon wording is gone from buyer return chips; 3D gallery returns use pr
   assert.match(cart, /← Back to the gallery/);
   assert.doesNotMatch(cart, /Dungeon/);
   const header = fs.readFileSync('src/components/SiteHeader.astro', 'utf8');
-  assert.ok(header.includes(`href="${GALLERY_3D_URL}">${GALLERY_3D_LABEL}`));
+  // 3D gallery left the top nav (TJ, Nov 12 2026); it lives in the footer and homepage hero.
+  assert.ok(!header.includes(GALLERY_3D_URL));
+  assert.ok(fs.readFileSync('src/components/SiteFooter.astro', 'utf8').includes(`href="${GALLERY_3D_URL}"`));
   assert.doesNotMatch(header, /dungeon/i);
   for (const file of ['src/pages/index.astro']) {
     const html = fs.readFileSync(file, 'utf8');
