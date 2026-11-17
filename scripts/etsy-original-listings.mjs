@@ -130,7 +130,8 @@ function pickSpotCheck() {
   const tube = originals.find(item => item.original.packaging === 'tube' && item.dimensions.width >= 36);
   const tubeMid = originals.find(item => item.original.packaging === 'tube' && item.dimensions.width < 20);
   const flatSmall = originals.find(item => item.original.packaging === 'flat' && item.dimensions.width <= 5);
-  const flatMid = originals.find(item => item.id.startsWith('strawberry-point-1'));
+  const flatMid = originals.find(item => item.id === 'strawberry-point-3')
+    || originals.find(item => item.id.startsWith('strawberry-point-') && item.original.packaging === 'flat');
   const existing = originals.find(item => item.id === 'hope-the-vermillion-aurora');
   return [...new Set([tube?.id, tubeMid?.id, flatSmall?.id, flatMid?.id, existing?.id].filter(Boolean))];
 }

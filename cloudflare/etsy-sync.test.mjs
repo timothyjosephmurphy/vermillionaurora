@@ -96,10 +96,10 @@ test('updates the two existing print drafts and creates only the missing one', a
 
 test('creates original drafts at the site price plus the Etsy uplift and can publish them explicitly', async t => {
   const env = envOf(); await connected(env); const calls = mock(t);
-  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['strawberry-point-4']});
+  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['strawberry-point-7']});
   assert.equal(res.status, 200, await res.clone().text());
   const form = new URLSearchParams(calls.find(call => call.url.includes('/listings?legacy=false')).options.body);
-  assert.equal(form.get('title'), 'Strawberry Point Backpacking Trip #4, Original Watercolor Pastel, 5 x 5 in');
+  assert.equal(form.get('title'), 'Strawberry Point Backpacking Trip #7, Original Watercolor Pastel, 5 x 5 in');
   assert.equal(form.get('price'), '82.50');
   const priced = calls.find(call => call.url.includes('/inventory') && call.options.method === 'PUT');
   assert.equal(JSON.parse(priced.options.body).products[0].offerings[0].price, 82.5);
@@ -110,7 +110,7 @@ test('creates original drafts at the site price plus the Etsy uplift and can pub
   assert.equal(form.get('shipping_profile_id'), '502');
   assert.equal(form.has('production_partner_ids'), false);
   assert.match(form.get('description'), /shipped flat/);
-  const activate = await req(env, '/etsy/listings/activate', {kind: 'original', productIds: ['strawberry-point-4']});
+  const activate = await req(env, '/etsy/listings/activate', {kind: 'original', productIds: ['strawberry-point-7']});
   assert.equal(activate.status, 200, await activate.clone().text());
   const published = calls.filter(call => call.options.method === 'PATCH');
   assert.equal(published.length, 1);
@@ -140,7 +140,7 @@ test('rejects paintings outside the Etsy sync list', async t => {
 
 test('original sync accepts catalog originals without print variants and prefers recorded parcels', async t => {
   const env = envOf(); await connected(env); const calls = mock(t);
-  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['warszawska-syrenka', 'strawberry-point-4']});
+  const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['warszawska-syrenka', 'strawberry-point-7']});
   assert.equal(res.status, 200, await res.clone().text());
   const data = await res.json();
   assert.equal(data.results.length, 2);

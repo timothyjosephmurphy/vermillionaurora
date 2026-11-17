@@ -1,5 +1,5 @@
 // Generated from the catalog for original-only Etsy sync. Do not edit by hand.
-export const originalSourceVersion="98efba7b7ca263591ba8";
+export const originalSourceVersion="5eb8d4abe61c9f204433";
 export default [
   {
     "id": "archived-painting-15",
@@ -4665,20 +4665,20 @@ export default [
     }
   },
   {
-    "id": "strawberry-point-4",
-    "title": "Strawberry Point Backpacking Trip #4",
+    "id": "strawberry-point-3",
+    "title": "Strawberry Point Backpacking Trip #3",
     "artist": "TJ Murphy",
     "year": 2026,
     "medium": "Watercolor pastel",
     "story": [],
     "dimensions": {
-      "width": 5,
-      "height": 5,
+      "width": 15,
+      "height": 15,
       "unit": "in"
     },
     "image": {
-      "src": "https://tjm.art/display/strawberry-point-4-897857fb-1600.webp",
-      "alt": "Strawberry Point Backpacking Trip #4, a painting by TJ Murphy"
+      "src": "https://tjm.art/display/strawberry-point-3-3ad850c1-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #3, a painting by TJ Murphy"
     },
     "subjectTags": [
       "watercolor pastel",
@@ -4687,109 +4687,21 @@ export default [
       "strawberry point",
       "point backpacking",
       "backpacking trip",
-      "trip 4",
+      "trip 3",
       "strawberry",
       "point",
       "backpacking",
       "trip",
-      "mini painting"
+      "small wall art"
     ],
     "original": {
-      "price": "75.00",
+      "price": "450.00",
       "currency": "USD",
       "packaging": "flat",
       "shipping": {
-        "item_weight": 0.3125,
-        "item_length": 7,
-        "item_width": 7,
-        "item_height": 2,
-        "item_weight_unit": "lb",
-        "item_dimensions_unit": "in"
-      }
-    }
-  },
-  {
-    "id": "strawberry-point-5",
-    "title": "Strawberry Point Backpacking Trip #5",
-    "artist": "TJ Murphy",
-    "year": 2026,
-    "medium": "Watercolor pastel",
-    "story": [],
-    "dimensions": {
-      "width": 5,
-      "height": 5,
-      "unit": "in"
-    },
-    "image": {
-      "src": "https://tjm.art/display/strawberry-point-5-7592f1f1-1600.webp",
-      "alt": "Strawberry Point Backpacking Trip #5, a painting by TJ Murphy"
-    },
-    "subjectTags": [
-      "watercolor pastel",
-      "pastel painting",
-      "strawberry point bac",
-      "strawberry point",
-      "point backpacking",
-      "backpacking trip",
-      "trip 5",
-      "strawberry",
-      "point",
-      "backpacking",
-      "trip",
-      "mini painting"
-    ],
-    "original": {
-      "price": "75.00",
-      "currency": "USD",
-      "packaging": "flat",
-      "shipping": {
-        "item_weight": 0.3125,
-        "item_length": 7,
-        "item_width": 7,
-        "item_height": 2,
-        "item_weight_unit": "lb",
-        "item_dimensions_unit": "in"
-      }
-    }
-  },
-  {
-    "id": "strawberry-point-6",
-    "title": "Strawberry Point Backpacking Trip #6",
-    "artist": "TJ Murphy",
-    "year": 2026,
-    "medium": "Watercolor pastel",
-    "story": [],
-    "dimensions": {
-      "width": 5,
-      "height": 5,
-      "unit": "in"
-    },
-    "image": {
-      "src": "https://tjm.art/display/strawberry-point-6-17e3a2c3-1600.webp",
-      "alt": "Strawberry Point Backpacking Trip #6, a painting by TJ Murphy"
-    },
-    "subjectTags": [
-      "watercolor pastel",
-      "pastel painting",
-      "strawberry point bac",
-      "strawberry point",
-      "point backpacking",
-      "backpacking trip",
-      "trip 6",
-      "strawberry",
-      "point",
-      "backpacking",
-      "trip",
-      "mini painting"
-    ],
-    "original": {
-      "price": "75.00",
-      "currency": "USD",
-      "packaging": "flat",
-      "shipping": {
-        "item_weight": 0.3125,
-        "item_length": 7,
-        "item_width": 7,
+        "item_weight": 0.75,
+        "item_length": 17,
+        "item_width": 17,
         "item_height": 2,
         "item_weight_unit": "lb",
         "item_dimensions_unit": "in"
