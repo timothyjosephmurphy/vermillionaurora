@@ -26,6 +26,7 @@ const { manage } = Astro.props;
             <a href="/privacy/">Privacy</a>
             <a href="/terms/">Terms</a>
             <a href="/links/">Social links</a>
+            <a class="footer-health" href="/health/" rel="nofollow">Site health</a>
           </div>
         </div>
         {manage && <div class="container footer-manage"><a href={manage} rel="nofollow" data-manage-link>Manage</a></div>}
@@ -43,6 +44,8 @@ const { manage } = Astro.props;
   .footer-manage { display: flex; justify-content: flex-end; padding-bottom: 10px; }
   .footer-manage a { font-size: 0.68rem; color: var(--muted); opacity: 0.55; text-decoration: none; }
   .footer-manage a:hover, .footer-manage a:focus-visible { opacity: 1; text-decoration: underline; }
+  .footer-links a.footer-health { font-size: 0.68rem; letter-spacing: 0.04em; text-transform: none; opacity: 0.55; }
+  .footer-links a.footer-health:hover, .footer-links a.footer-health:focus-visible { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
   @media (max-width: 700px) {
     .footer-inner { flex-direction: column; align-items: flex-start; padding: 28px 0; }
   }
