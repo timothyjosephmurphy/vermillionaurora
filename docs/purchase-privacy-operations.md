@@ -1,6 +1,6 @@
 # Purchase support and commission privacy
 
-Effective 2026-10-01. Public terms: /shipping-returns/ and /privacy/.
+Effective 2026-11-12. Public terms: /shipping-returns/ and /privacy/.
 
 ## Daily order handling
 
@@ -8,7 +8,7 @@ Effective 2026-10-01. Public terms: /shipping-returns/ and /privacy/.
 - Dispatch originals in 3–5 business days, unframed prints in 3–5, framed/matted prints in 7–12, excluding carrier transit. Check production status and send tracking at dispatch. Original label creation is not proof of dispatch; the seller notification now includes this reminder.
 - Before accepting purchases during travel or a known interruption, update the public lead times in both the policy and PurchaseReassurance component. If needed disable affected purchasing until the notice is live.
 - If dispatch will be late, contact the customer with a revised date and their choice of waiting or cancelling unshipped items for a full refund. Save their response; do not assume silence is consent.
-- For originals, accept return requests within 14 days of delivery and give packing instructions and the correct private return address. Customer ships within 14 days of approval. No restocking fee; change-of-mind return postage is the buyer’s responsibility and original postage is not refunded.
+- For originals, accept a return or exchange within 30 days of delivery and give packing instructions and the correct private return address. Customer ships within 14 days of approval. No restocking fee. The buyer pays tracked, adequately insured return shipping, and any loss in value (agreed in writing) if the work is not returned in its original condition. Original postage is not refunded.
 - Contact the print lab immediately on cancellation requests to establish whether production started. Made-to-order prints are final sale for change of mind once production starts, subject to consumer rights.
 - Handle damage/defect/missing/wrong-item cases directly. Ask for artwork, packaging and label photos; preserve packaging. Do not reject an otherwise valid claim solely because seven days have passed. Submit carrier/print-lab claims promptly; provider deadlines do not replace our customer remedy. Agree replacement, repair or refund; cover remedy costs.
 - Issue approved refunds within five business days of return inspection or damage approval. Use payment-provider refund tools and retain the adjustment. For Bitcoin agree amount and verify destination in writing; never send to an address inferred from an explorer.
