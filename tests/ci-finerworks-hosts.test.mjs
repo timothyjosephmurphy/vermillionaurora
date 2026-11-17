@@ -185,10 +185,12 @@ function readRepo(path) {
 }
 
 test('known quote scripts contact FinerWorks and the offline price check does not', () => {
+  // Scripts that still exist may be run only behind an explicit pilot marker or manually.
   assert.equal(contactsFinerWorks(readRepo('scripts/ci/sample-print-quotes.mjs')), true);
   assert.equal(contactsFinerWorks(readRepo('payments/verify-sampled-quote.mjs')), true);
   assert.equal(contactsFinerWorks(readRepo('payments/verify-print-sandbox.mjs')), true);
-  assert.equal(contactsFinerWorks(readRepo('payments/inspect-finerworks-frames.mjs')), true);
+  // Orphan framing/readiness helpers were removed with the dead-branch workflows (#827).
+  assert.equal(readRepo('payments/inspect-finerworks-frames.mjs'), null);
   for (const path of ['scripts/ci/check-print-price-table.mjs', 'catalog/print-price-table.mjs']) {
     const source = readRepo(path);
     assert.equal(source == null, false, path);
@@ -238,9 +240,8 @@ test('no push, pull request, or scheduled workflow calls a FinerWorks host', () 
   assert.doesNotMatch(byName['release-gate.yml'], /sample-print-quotes\.mjs/);
   assert.doesNotMatch(byName['deploy-production.yml'], /verify-sampled-quote\.mjs/);
   assert.match(byName['deploy-checkout-sandbox.yml'], /\[print-pilot-test\]/);
-  assert.match(byName['verify-finerworks-framing.yml'], /workflow_dispatch:/);
-  assert.doesNotMatch(byName['verify-finerworks-framing.yml'], /\n\s+push:/);
-  assert.doesNotMatch(byName['check-print-readiness.yml'], /\n\s+push:/);
-  assert.doesNotMatch(byName['check-print-readiness.yml'], /\n\s+schedule:/);
+  // Dead-branch framing/readiness workflows were deleted on main (#827); do not resurrect them.
+  assert.equal(byName['verify-finerworks-framing.yml'], undefined);
+  assert.equal(byName['check-print-readiness.yml'], undefined);
   assert.equal(workflows.some(workflow => /\bschedule:/.test(workflow.text) && /prints\/verify|sample-print-quotes|verify-sampled-quote/.test(workflow.text)), false);
 });
