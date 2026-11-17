@@ -4,8 +4,8 @@ import {ETSY_ORIGIN} from './etsy-connection.mjs';
 import {call as etsyApiCall, persist as persistEtsyRecord} from './etsy-listings.mjs';
 import {shippingChoice, shippingPackages, estimateShippingPackages} from './etsy-shipping.mjs';
 import {
-  SYNC_WORKS, EXISTING_PRINT_LISTINGS, PROTECTED_LISTING_IDS, syncSourceVersion,
-  buildSyncPrintPlan, buildSyncOriginalPlan, workById, printTitle, originalTitle
+  SYNC_WORKS, EXISTING_PRINT_LISTINGS, ORIGINAL_LISTINGS, PROTECTED_LISTING_IDS, syncSourceVersion,
+  buildSyncPrintPlan, buildSyncOriginalPlan, workById, worksForKind, printTitle, originalTitle
 } from './etsy-sync-plan.mjs';
 
 const API = 'https://api.etsy.com/v3/application';
@@ -41,7 +41,14 @@ function remember(sync, productId, kind, listingId) {
   return {...sync, listings};
 }
 
-async function shopSetup(env, token) {
+function partnerByName(partners, pattern, label) {
+  const matches = partners.filter(item => pattern.test(item.name));
+  if (!matches.length) throw Error('Expected a ' + label + ' and found none. Shop settings were not changed.');
+  if (matches.length > 1) throw Error('Expected exactly one ' + label + ' and found ' + matches.length + '. Shop settings were not changed.');
+  return matches[0];
+}
+
+async function shopSetup(env, token, kind) {
   const shop = token.shopId;
   const paths = ['/shops/' + shop + '/shipping-profiles', '/shops/' + shop + '/readiness-state-definitions?legacy=false&limit=100&offset=0', '/shops/' + shop + '/production-partners', '/seller-taxonomy/nodes', '/shops/' + shop + '/policies/return', '/shops/' + shop];
   const data = await Promise.all(paths.map(path => etsyApiCall(API + path, env, token, {action: 'loading Etsy shop setup'})));
@@ -50,13 +57,22 @@ async function shopSetup(env, token) {
   const readiness = rows(data[1]).filter(item => item.readiness_state === 'made_to_order' && Number.isSafeInteger(item.readiness_state_id));
   const partners = rows(data[2]).map(item => ({id: Number(item.production_partner_id ?? item.partner_id), name: String(item.partner_name ?? item.name ?? '').trim()})).filter(item => Number.isSafeInteger(item.id) && item.id > 0);
   const policies = rows(data[4]).map(item => ({id: Number(item.return_policy_id), acceptsReturns: item.accepts_returns === true, acceptsExchanges: item.accepts_exchanges === true, returnDeadline: item.return_deadline ?? null})).filter(item => Number.isSafeInteger(item.id) && item.id > 0);
-  return {
-    printsShipping: exactlyOne(shipping.filter(item => /^Prints Shipping\b/i.test(item.name)), 'Prints Shipping profile'),
-    originalsShipping: exactlyOne(shipping.filter(item => /^Originals Shipping\b/i.test(item.name)), 'Originals Shipping profile'),
+  const shared = {
     readinessId: exactlyOne(readiness, 'made-to-order processing profile').readiness_state_id,
-    partnerId: exactlyOne(partners, 'production partner').id,
     returnPolicyId: exactlyOne(policies.filter(item => item.acceptsReturns && item.acceptsExchanges && item.returnDeadline === 30), '30-day return policy').id,
     taxonomy: flatten(data[3]).filter(item => Number.isSafeInteger(item.id) && item.id > 0)
+  };
+  if (kind === 'original') {
+    return {
+      ...shared,
+      originalsShipping: exactlyOne(shipping.filter(item => /^Originals Shipping\b/i.test(item.name)), 'Originals Shipping profile')
+    };
+  }
+  return {
+    ...shared,
+    printsShipping: exactlyOne(shipping.filter(item => /^Prints Shipping\b/i.test(item.name)), 'Prints Shipping profile'),
+    originalsShipping: exactlyOne(shipping.filter(item => /^Originals Shipping\b/i.test(item.name)), 'Originals Shipping profile'),
+    partnerId: partnerByName(partners, /finerworks/i, 'FinerWorks production partner').id
   };
 }
 function originalTaxonomy(nodes) {
@@ -103,19 +119,25 @@ async function writeListing(env, token, listingId, body) {
   }
 }
 
-function requested(input) {
-  const ids = input?.productIds;
-  if (!Array.isArray(ids) || !ids.length || ids.length > SYNC_WORKS.length || new Set(ids).size !== ids.length) throw Error('Choose the paintings to sync.');
-  return ids.map(workById);
-}
 function kindOf(input) {
   if (input?.kind !== 'print' && input?.kind !== 'original') throw Error('Choose print or original.');
   return input.kind;
 }
+function requested(input, kind) {
+  const ids = input?.productIds;
+  const pool = worksForKind(kind);
+  if (!Array.isArray(ids) || !ids.length || ids.length > pool.length || new Set(ids).size !== ids.length) throw Error('Choose the paintings to sync.');
+  return ids.map(id => workById(id, kind));
+}
+function knownListingId(work, kind, sync) {
+  return sync.listings?.[work.id]?.[kind]
+    || (kind === 'print' ? EXISTING_PRINT_LISTINGS[work.id] : ORIGINAL_LISTINGS[work.id])
+    || null;
+}
 
 async function ensureListing(env, token, record, etag, sync, work, kind, setup) {
   const title = kind === 'print' ? printTitle(work) : originalTitle(work);
-  let listingId = sync.listings?.[work.id]?.[kind] || (kind === 'print' ? EXISTING_PRINT_LISTINGS[work.id] : null) || null;
+  let listingId = knownListingId(work, kind, sync);
   let listing = listingId ? await readListing(env, token, owned(listingId)) : null;
   if (!listing) {
     listing = await findByTitle(env, token, title);
@@ -125,7 +147,7 @@ async function ensureListing(env, token, record, etag, sync, work, kind, setup) 
     taxonomyId: kind === 'print' ? printTaxonomy(setup.taxonomy, listing?.taxonomy_id) : originalTaxonomy(setup.taxonomy).id,
     shippingProfileId: kind === 'print' ? setup.printsShipping.id : setup.originalsShipping.id,
     readinessStateId: setup.readinessId,
-    partnerId: setup.partnerId,
+    partnerId: kind === 'print' ? setup.partnerId : undefined,
     returnPolicyId: listing?.return_policy_id || setup.returnPolicyId,
     shippingPackages: kind === 'print' && setup.printsShipping.profileType === 'calculated' ? shippingPackages('calculated', null, SYNC_WORKS) : null
   };
@@ -202,12 +224,12 @@ export async function etsyListingAdmin(request, env, session, now = Date.now()) 
     const {reconcileOriginals} = await import('./etsy-original-sync.mjs');
     return reconcileOriginals(env, token, record, {dryRun: input.dryRun !== false});
   }
-  const works = requested(input);
   const kind = kindOf(input);
+  const works = requested(input, kind);
   if (kind === 'print' && works.some(work => !work.variants?.length)) throw Error('Prints are held until the 1 inch margin has a FinerWorks quote.');
   if (path === '/etsy/listings/verify') return verify(env, token, record, works, input.kind);
   if (path === '/etsy/listings/activate') return activate(env, token, record, works, kind);
-  const setup = await shopSetup(env, token);
+  const setup = await shopSetup(env, token, kind);
   let sync = indexOf(record);
   const results = [];
   for (const work of works) {
@@ -220,11 +242,11 @@ export async function etsyListingAdmin(request, env, session, now = Date.now()) 
 
 async function uploadMedia(request, env, record, etag, token) {
   let form; try { form = await request.formData(); } catch { throw Error('Upload an image or the listing video.'); }
-  const work = workById(String(form.get('productId') || ''));
   const kind = kindOf({kind: String(form.get('kind') || '')});
+  const work = workById(String(form.get('productId') || ''), kind);
   const op = String(form.get('op') || 'image');
   const sync = indexOf(record);
-  const listingId = owned(sync.listings?.[work.id]?.[kind] || (kind === 'print' ? EXISTING_PRINT_LISTINGS[work.id] : null));
+  const listingId = owned(knownListingId(work, kind, sync));
   if (op === 'prune') {
     const images = rows(await etsyApiCall(API + '/listings/' + listingId + '/images', env, token, {action: 'reading listing images'}));
     let removed = 0;
@@ -269,7 +291,7 @@ async function activate(env, token, record, works, kind) {
   const sync = indexOf(record);
   const results = [];
   for (const work of works) {
-    const listingId = owned(sync.listings?.[work.id]?.[kind] || (kind === 'print' ? EXISTING_PRINT_LISTINGS[work.id] : null));
+    const listingId = owned(knownListingId(work, kind, sync));
     const body = new URLSearchParams();
     body.set('state', 'active');
     if (kind === 'original') body.set('quantity', '1');
@@ -291,7 +313,7 @@ async function verify(env, token, record, works, kindFilter) {
   const kinds = kindFilter === 'print' || kindFilter === 'original' ? [kindFilter] : ['print', 'original'];
   const results = [];
   for (const work of works) for (const kind of kinds) {
-    const listingId = sync.listings?.[work.id]?.[kind] || (kind === 'print' ? EXISTING_PRINT_LISTINGS[work.id] : null);
+    const listingId = knownListingId(work, kind, sync);
     if (!listingId) { results.push({id: work.id, kind, listingId: null, state: 'missing'}); continue; }
     owned(listingId);
     const listing = await readListing(env, token, listingId);

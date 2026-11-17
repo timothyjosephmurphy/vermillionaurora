@@ -4,7 +4,7 @@ The production commission Worker serves `/etsy/connect`. This phase saves author
 
 ## Human setup
 
-1. Save encrypted Worker secrets `ETSY_KEYSTRING` and `ETSY_SHARED_SECRET` on `vermillion-commissions`. Keep the existing `COMMISSION_MANAGER_TOKEN`.
+1. Save encrypted Worker secrets `ETSY_KEYSTRING` and `ETSY_SHARED_SECRET` on `vermillion-commissions`. Keep the existing `COMMISSION_MANAGER_TOKEN`. Optional `ETSY_OPS_TOKEN` is also accepted by the owner listing routes so a listing agent can authenticate without rotating the manager token.
 2. In https://www.etsy.com/developers/your-apps, register this exact callback (no trailing slash): `https://vermillion-commissions.timothyjosephmurphy.workers.dev/etsy/callback`.
 3. Open `https://vermillion-commissions.timothyjosephmurphy.workers.dev/etsy/connect`, enter the commission manager token, and choose **Connect Etsy**.
 4. Sign in as the shop owner and approve Etsy access. After returning, enter the manager token again and choose **Check connection** to confirm the shop name/ID and authorization date.

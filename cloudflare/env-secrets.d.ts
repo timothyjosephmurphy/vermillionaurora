@@ -13,6 +13,8 @@ interface CheckoutSecrets {
 	CHECKOUT_AUDIT_TOKEN: string;
 	COMMISSION_MANAGER_TOKEN: string;
 	COMMISSION_NOTIFY_TO: string;
+	// Optional owner credential for listing sync/media/activate without rotating the manager token.
+	ETSY_OPS_TOKEN?: string;
 	ETSY_KEYSTRING: string;
 	ETSY_SHARED_SECRET: string;
 	FINERWORKS_APP_KEY: string;
