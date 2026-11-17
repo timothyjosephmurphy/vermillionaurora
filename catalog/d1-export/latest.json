@@ -1,8 +1,9 @@
 {
  "schema": 1,
  "meta": {
+  "catalog_version": "3fad587cce5d5fb8a663",
   "print_version": "4cb539eb992d897781ab",
-  "rev": "1603"
+  "rev": "1604"
  },
  "paintings": [
   {
@@ -7447,11 +7448,11 @@
    "height": 15,
    "unit": "in",
    "description": "Strawberry Point Backpacking Trip #3, a painting by TJ Murphy from his Strawberry Point backpacking trip on the Pacific coast of the Olympic Peninsula.",
-   "price_amount": null,
+   "price_amount": "450.00",
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-17T00:28:59.000Z"
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "id": "strawberry-point-4",
@@ -46314,9 +46315,9 @@
   },
   {
    "product_id": "strawberry-point-1",
-   "status": "inquiry",
+   "status": "unavailable",
    "note": "repo sync",
-   "updated_at": "2026-10-17T00:28:59.000Z"
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-10",
@@ -46326,21 +46327,21 @@
   },
   {
    "product_id": "strawberry-point-11",
-   "status": "unavailable",
-   "note": "catalog-admin",
-   "updated_at": "2026-10-30T02:35:33.858Z"
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-12",
-   "status": "unavailable",
-   "note": "catalog-admin",
-   "updated_at": "2026-10-30T02:35:34.207Z"
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-13",
-   "status": "unavailable",
-   "note": "catalog-admin",
-   "updated_at": "2026-10-30T02:35:34.597Z"
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-14",
@@ -46356,33 +46357,33 @@
   },
   {
    "product_id": "strawberry-point-2",
-   "status": "inquiry",
+   "status": "unavailable",
    "note": "repo sync",
-   "updated_at": "2026-10-17T00:28:59.000Z"
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-3",
-   "status": "inquiry",
+   "status": "available",
    "note": "repo sync",
-   "updated_at": "2026-10-17T00:28:59.000Z"
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-4",
-   "status": "available",
+   "status": "unavailable",
    "note": "repo sync",
-   "updated_at": "2026-10-30T02:35:28.904Z"
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-5",
-   "status": "available",
+   "status": "unavailable",
    "note": "repo sync",
-   "updated_at": "2026-10-30T02:35:28.904Z"
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-6",
-   "status": "available",
+   "status": "unavailable",
    "note": "repo sync",
-   "updated_at": "2026-10-30T02:35:28.904Z"
+   "updated_at": "2026-11-17T18:30:04.300Z"
   },
   {
    "product_id": "strawberry-point-7",
