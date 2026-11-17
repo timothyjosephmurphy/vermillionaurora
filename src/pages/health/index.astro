@@ -1,0 +1,121 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>Site health | TJ Murphy</title>
+  <meta name="description" content="Latest site health check for tjm.art." />
+  <link href="/fonts/fonts.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/site-header.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <SiteHeader />
+    <main id="main-content" class="container health-page">
+      <p class="eyebrow dark">tjm.art</p>
+      <h1>Site health</h1>
+      <p id="health-checked" class="health-checked" hidden></p>
+      <p id="health-status" class="health-status health-loading" aria-live="polite">Loading the latest check…</p>
+      <p id="health-summary" class="health-summary" hidden></p>
+      <p id="health-error" class="health-error" hidden aria-live="polite"></p>
+      <p id="health-dashboard" class="health-dashboard" hidden><a id="health-dashboard-link" href="" rel="noopener noreferrer" target="_blank">Library dashboard</a></p>
+      <noscript><p class="health-error">The latest health check could not be loaded. This page needs JavaScript.</p></noscript>
+      <section id="health-metrics" class="health-metrics" hidden aria-label="Metrics"></section>
+      <section id="health-areas" hidden>
+        <h2>Areas</h2>
+        <div id="health-area-tiles" class="health-areas"></div>
+      </section>
+      <section id="health-issues" hidden>
+        <h2>Issues</h2>
+        <div class="health-table-wrap">
+          <table class="health-issues-table">
+            <thead>
+              <tr><th scope="col">Severity</th><th scope="col">Area</th><th scope="col">What</th><th scope="col">Fix</th><th scope="col">Tracker</th></tr>
+            </thead>
+            <tbody id="health-issue-rows"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="health-lighthouse" hidden>
+        <h2>Lighthouse</h2>
+        <p id="health-lighthouse-meta" class="health-note" hidden></p>
+        <dl id="health-lighthouse-scores" class="health-defs"></dl>
+        <dl id="health-lighthouse-metrics" class="health-defs"></dl>
+        <p id="health-lighthouse-console" class="health-note" hidden></p>
+      </section>
+      <section id="health-pages" hidden>
+        <h2>Pages checked</h2>
+        <div class="health-table-wrap">
+          <table class="health-pages-table">
+            <thead>
+              <tr><th scope="col">URL</th><th scope="col">Status</th><th scope="col">Time</th><th scope="col">Notes</th></tr>
+            </thead>
+            <tbody id="health-page-rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <SiteFooter />
+  </div>
+  <style is:global>
+    .health-page { max-width: 1100px; padding-top: 28px; padding-bottom: 72px; }
+    .health-page h1 { font: 600 var(--page-title-size)/var(--page-title-leading) "Cormorant Garamond", serif; letter-spacing: -0.01em; margin: 0 0 8px; }
+    .health-page h2 { font: 600 1.8rem/1.2 "Cormorant Garamond", serif; margin: 2rem 0 0.75rem; }
+    .health-page h3 { font: 600 1.15rem/1.3 "Cormorant Garamond", serif; margin: 0 0 6px; }
+    .health-page p { margin: 0; }
+    .health-checked, .health-note { color: var(--muted); font-size: 0.92rem; margin: 0 0 12px; }
+    .health-status { margin: 8px 0; }
+    .health-status.health-loading { color: var(--muted); }
+    .health-status.health-tone { font: 600 1.7rem/1.2 "Cormorant Garamond", serif; }
+    .health-summary { max-width: 72ch; font-size: 1.05rem; line-height: 1.7; margin: 8px 0 16px; }
+    .health-error { margin: 12px 0; color: #9c2f1b; }
+    .health-dashboard { margin: 8px 0 4px; }
+    .health-dashboard a { text-decoration: underline; text-underline-offset: 3px; }
+    .health-metrics, .health-areas { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }
+    .health-metric, .health-tile { border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.45); padding: 14px 16px; }
+    .health-metric { border-top: 3px solid var(--line); }
+    .health-tile { border-top: 3px solid var(--line); }
+    .health-tone.success { --health-tone: #246143; }
+    .health-tone.warning { --health-tone: #8a5a12; }
+    .health-tone.danger, .health-tone.error { --health-tone: #9c2f1b; }
+    .health-tone.info, .health-tone.neutral { --health-tone: var(--muted); }
+    .health-metric.health-tone, .health-tile.health-tone { border-top-color: var(--health-tone, var(--line)); }
+    .health-kicker, td.health-tone { color: var(--health-tone, var(--muted)); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+    .health-status.health-tone { color: var(--health-tone, var(--ink)); }
+    .health-metric-value { font: 600 1.8rem/1 "Cormorant Garamond", serif; margin-bottom: 4px; }
+    .health-metric h3, .health-tile p:last-child { color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+    .health-metric h3 { font-family: Inter, sans-serif; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 4px; }
+    .health-table-wrap { overflow-x: auto; }
+    .health-page table { width: 100%; border-collapse: collapse; }
+    .health-issues-table { min-width: 760px; }
+    .health-pages-table { min-width: 640px; }
+    .health-page th, .health-page td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+    .health-issues-table th:nth-child(1), .health-issues-table td:nth-child(1),
+    .health-issues-table th:nth-child(2), .health-issues-table td:nth-child(2),
+    .health-issues-table th:nth-child(5), .health-issues-table td:nth-child(5),
+    .health-pages-table th:nth-child(2), .health-pages-table td:nth-child(2),
+    .health-pages-table th:nth-child(3), .health-pages-table td:nth-child(3) { white-space: nowrap; width: 1%; }
+    .health-issues-table td:nth-child(3), .health-issues-table td:nth-child(4),
+    .health-pages-table td:nth-child(1), .health-pages-table td:nth-child(4) { overflow-wrap: break-word; }
+    .health-issues-table td:nth-child(3) { min-width: 280px; }
+    .health-issues-table td:nth-child(4) { min-width: 220px; }
+    .health-page th { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .health-page td strong { display: block; }
+    .health-page td p { margin-top: 4px; }
+    .health-page td a { text-decoration: underline; text-underline-offset: 3px; }
+    .health-defs { display: grid; grid-template-columns: minmax(140px, max-content) 1fr; gap: 6px 16px; margin: 0 0 16px; }
+    .health-defs dt { color: var(--muted); }
+    .health-defs dd { margin: 0; }
+  </style>
+  <script>
+    import { loadHealth } from './report.mjs';
+    loadHealth();
+  </script>
+</body>
+</html>
