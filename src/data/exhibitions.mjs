@@ -32,12 +32,7 @@ export const exhibitions = [
 // Upcoming block on /exhibitions/, soonest first.
 // Dates are studio calendar items. Street addresses stay out unless a public
 // listing confirms that date at that door.
-export const upcoming = [
-  { id: 'waa-sip-and-stroll', title: 'WAA Sip & Stroll', start: '2026-11-13', end: '2026-11-15',
-    dates: 'Deliver November 13, 2026 · pick up November 15, 2026, 5–6 PM',
-    venue: 'The Winemakers Reserve, Woodinville, Washington',
-    note: 'Woodinville Arts Alliance.' },
-];
+export const upcoming = [];
 export const featured = [
   { slug: 'paul-murphy', title: 'Paul Murphy', note: 'Featured artist', image: 'https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg', alt: 'Painting by Paul Murphy' },
   { slug: 'chase-toole', title: 'Chase Toole Collab', note: 'Art mentorship since 2017 · Three collaborations with TJ Murphy', image: '/gallery-images/insect-garden.jpg', alt: 'El Salvador: Past — a collaboration by Chase Toole and TJ Murphy' },

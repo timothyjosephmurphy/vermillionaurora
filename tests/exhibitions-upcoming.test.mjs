@@ -7,23 +7,8 @@ import { BUTTONDOWN_USERNAME, newsletterAction } from '../src/data/newsletter.mj
 const page = fs.readFileSync('src/pages/exhibitions/index.astro', 'utf8');
 const signup = fs.readFileSync('src/components/EmailSignup.astro', 'utf8');
 
-test('upcoming shows are the known calendar, soonest first, without invented street addresses', () => {
-  assert.deepEqual(upcoming.map(show => show.id), ['waa-sip-and-stroll']);
-  assert.deepEqual(upcoming.map(show => show.start), ['2026-11-13']);
-  assert.deepEqual(upcoming.map(show => show.title), ['WAA Sip & Stroll']);
-
-  const waa = upcoming[0];
-  assert.equal(waa.title, 'WAA Sip & Stroll');
-  assert.match(waa.dates, /Deliver November 13, 2026/);
-  assert.match(waa.dates, /pick up November 15, 2026, 5–6 PM/);
-  assert.equal(waa.end, '2026-11-15');
-  assert.match(waa.venue, /The Winemakers Reserve, Woodinville, Washington/);
-  assert.match(waa.note, /Woodinville Arts Alliance/);
-
-  for (const show of upcoming) {
-    assert.doesNotMatch(`${show.venue} ${show.note || ''}`, /\d{2,}/, show.id);
-    assert.doesNotMatch(`${show.venue} ${show.note || ''}`, /Sedona|Pine St|Pacific Place|98072/i, show.id);
-  }
+test('no show is listed as upcoming after WAA Sip & Stroll', () => {
+  assert.deepEqual(upcoming, []);
 
   assert.ok(exhibitions.some(show => show.slug === 'bitcoin-film-festival-warsaw'));
   assert.ok(exhibitions.some(show => show.slug === 'victrola'));
@@ -43,23 +28,21 @@ test('homepage Studio 601 card shows the whole flyer', () => {
   assert.equal(studio.contain, undefined);
 });
 
-test('the exhibitions page lists upcoming shows and a Buttondown form above past shows', () => {
-  const upcomingAt = page.indexOf('id="upcoming-heading"');
+test('the exhibitions page lists past shows and a Buttondown form, with no upcoming show', () => {
   const formAt = page.indexOf('id="exhibitions-email"');
   const pastAt = page.indexOf('id="past-shows-heading"');
   const gridAt = page.indexOf('exhibition-index-grid');
-  assert.ok(upcomingAt > 0 && formAt > upcomingAt && pastAt > formAt && gridAt > pastAt);
-  assert.match(page, /upcoming\.map/);
+  assert.ok(formAt > 0 && pastAt > formAt && gridAt > pastAt);
+  assert.match(page, /upcoming\.length>0/);
   assert.match(page, /exhibitions\.map/);
   assert.match(page, /<EmailSignup id="exhibitions-email"/);
-  assert.match(page, /aria-labelledby="upcoming-heading"/);
-  assert.match(page, /<time datetime=\{show\.start\}>/);
   assert.match(signup, /<label for=\{id\}>Email address<\/label>/);
   assert.match(signup, /type="email"/);
   assert.match(signup, /autocomplete="email"/);
   assert.match(signup, /required/);
   assert.match(page, /One print at cost when you join/);
-  assert.match(page, /Woodinville Arts Alliance Sip & Stroll, Bitcoin Film Festival Warsaw, Victrola, and more/);
+  assert.doesNotMatch(page, /Sip & Stroll|pick up November/);
+  assert.match(page, /Bitcoin Film Festival Warsaw, Victrola, and more/);
   assert.doesNotMatch(page, /Ghost Gallery|Carré|carre-dartistes|ghost-gallery-minis/);
   assert.equal(BUTTONDOWN_USERNAME, 'timothyjosephmurphy');
   assert.equal(newsletterAction, '/newsletter/subscribe');
