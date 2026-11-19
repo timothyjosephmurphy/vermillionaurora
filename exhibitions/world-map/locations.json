@@ -127,5 +127,23 @@
         "type": "mural"
       }
     ]
+  },
+  {
+    "id": "falmouth",
+    "number": 7,
+    "city": "Falmouth",
+    "country": "Kentucky, USA",
+    "coordinates": [
+      38.678592,
+      -84.34013
+    ],
+    "exhibitions": [
+      {
+        "name": "Head Start center — School of Athens parody with Jungle Book characters",
+        "href": "/blog/plato-aristotle-baloo/",
+        "date": "2008",
+        "type": "mural"
+      }
+    ]
   }
 ]

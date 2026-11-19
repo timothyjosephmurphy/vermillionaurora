@@ -9,6 +9,7 @@ import {post as howTjmArtWasBuilt} from './how-tjm-art-was-built.mjs';
 import {post as jammingWithRussellLeone} from './jamming-with-russell-leone.mjs';
 import {post as liveLoopingGuitar} from './live-looping-guitar.mjs';
 import {post as myWeekInArtOct11172026} from './my-week-in-art-oct-11-17-2026.mjs';
+import {post as platoAristotleBaloo} from './plato-aristotle-baloo.mjs';
 import {post as siteUpdateOct17182026} from './site-update-oct-17-18-2026.mjs';
 import {post as siteUpdateOct192026} from './site-update-oct-19-2026.mjs';
 import {post as siteUpdateOct4162026} from './site-update-oct-4-16-2026.mjs';
@@ -26,6 +27,7 @@ export const posts = [
   jammingWithRussellLeone,
   liveLoopingGuitar,
   myWeekInArtOct11172026,
+  platoAristotleBaloo,
   siteUpdateOct17182026,
   siteUpdateOct192026,
   siteUpdateOct4162026,
