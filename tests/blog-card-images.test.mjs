@@ -32,8 +32,11 @@ test('site-update posts do not use the default fallback image', () => {
   for (const c of cards.filter((c) => c.slug.startsWith('site-update-'))) {
     if (ALLOW_SHARED.has(c.slug)) continue;
     assert.ok(!FALLBACK.test(c.src), `${c.slug} uses the fallback image`);
-    const page = readFileSync(new URL(`../static/blog/${c.slug}/index.html`, import.meta.url), 'utf8');
-    const og = page.match(/og:image" content="([^"]+)"/)?.[1] || '';
+    // The article HTML is generated at build time and gitignored, so the blog
+    // gate checkout does not have static/blog/<slug>/index.html. The post module
+    // is the source of the og:image.
+    const source = readFileSync(new URL(`../src/content/blog/posts/${c.slug}.mjs`, import.meta.url), 'utf8');
+    const og = source.match(/property="og:image" content="([^"]+)"/)?.[1] || '';
     assert.ok(og && !FALLBACK.test(og), `${c.slug} og:image uses the fallback image`);
   }
 });
