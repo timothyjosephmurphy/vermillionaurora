@@ -38,6 +38,7 @@ test('changed article slugs come only from static story HTML', () => {
   assert.deepEqual(changedArticleSlugs([
     'static/blog/live-looping-guitar/index.html',
     'src/content/blog/posts/halloween-doc-holliday.mjs',
+    'src/content/blog/posts/index.mjs',
     'src/pages/blog/index.astro',
     'static/blog/Live/index.html',
     'static/display/x.webp',

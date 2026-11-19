@@ -7,7 +7,12 @@ const site = 'https://tjm.art';
 const dist = resolve('dist');
 
 export function changedArticleSlugs(files) {
-  return [...new Set(files.map((file) => String(file).trim().match(/^(?:static\/blog\/|src\/content\/blog\/posts\/)([a-z0-9-]+)(?:\/index\.html|\.mjs)$/)?.[1]).filter(Boolean))];
+  return [...new Set(files.map((file) => {
+    const name = String(file).trim();
+    // The registry lists every story. It is not itself a /blog/index/ article.
+    if (name === 'src/content/blog/posts/index.mjs') return '';
+    return name.match(/^(?:static\/blog\/|src\/content\/blog\/posts\/)([a-z0-9-]+)(?:\/index\.html|\.mjs)$/)?.[1] || '';
+  }).filter(Boolean))];
 }
 
 // Relative photo src values are resolved against the article URL. A trailing-slash
