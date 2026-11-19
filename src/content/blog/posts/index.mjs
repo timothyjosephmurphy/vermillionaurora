@@ -5,6 +5,7 @@ import {post as chrisFlandersPortrait} from './chris-flanders-portrait.mjs';
 import {post as elSalvadorSunrisesSunsets} from './el-salvador-sunrises-sunsets.mjs';
 import {post as findingASoundBassFromDad} from './finding-a-sound-bass-from-dad.mjs';
 import {post as halloweenDocHolliday} from './halloween-doc-holliday.mjs';
+import {post as helixInsideAHelix} from './helix-inside-a-helix.mjs';
 import {post as howTjmArtWasBuilt} from './how-tjm-art-was-built.mjs';
 import {post as jammingWithRussellLeone} from './jamming-with-russell-leone.mjs';
 import {post as liveLoopingGuitar} from './live-looping-guitar.mjs';
@@ -23,6 +24,7 @@ export const posts = [
   elSalvadorSunrisesSunsets,
   findingASoundBassFromDad,
   halloweenDocHolliday,
+  helixInsideAHelix,
   howTjmArtWasBuilt,
   jammingWithRussellLeone,
   liveLoopingGuitar,
