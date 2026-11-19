@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { posts } from '../nostr-publisher/src/posts.mjs';
-import { mergeJournalEntries } from '../src/pages/blog/journal-feed.mjs';
+import { journalCardHref, mergeJournalEntries } from '../src/pages/blog/journal-feed.mjs';
 
 const index = readFileSync(new URL('../src/pages/blog/index.astro', import.meta.url), 'utf8');
 const feed = readFileSync(new URL('../src/pages/blog/journal-feed.mjs', import.meta.url), 'utf8');
@@ -25,7 +25,7 @@ function titles(entries) {
   return entries.map(entry => entry.story?.title || entry.post?.title);
 }
 
-test('the 3D gallery story leads with the play link and its index card keeps both links', () => {
+test('the 3D gallery story leads with the play link and its index card opens the story', () => {
   const post = readFileSync(new URL('../static/blog/walk-my-paintings-3d-gallery/index.html', import.meta.url), 'utf8');
   const main = post.slice(post.indexOf('<main class="article">'));
   const cta = main.indexOf('class="walk-cta"');
@@ -41,8 +41,55 @@ test('the 3D gallery story leads with the play link and its index card keeps bot
   assert.match(court, /You can pay with Bitcoin/);
   const card = index.split('<article class="journal-entry" data-static-story>').find(block => block.includes('/blog/walk-my-paintings-3d-gallery/'));
   assert.ok(card);
-  assert.match(card, /href="\/blog\/walk-my-paintings-3d-gallery\/">Read the story →/);
-  assert.match(card, /href="\/play\/">Walk the gallery now →/);
+  assert.match(card, /href="\/blog\/walk-my-paintings-3d-gallery\/">Walk My 206 Paintings in 3D<\/a>/);
+  assert.doesNotMatch(card, /href="\/play\//);
+  assert.doesNotMatch(card, /<a\b[^>]*>[^<]*Walk the gallery/);
+});
+
+test('every static card is one title link to its story', () => {
+  const cards = index.split('<article class="journal-entry" data-static-story>').slice(1).map(block => block.split('</article>')[0]);
+  assert.ok(cards.length >= 5);
+  for (const card of cards) {
+    const links = [...card.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];
+    assert.equal(links.length, 1, card.slice(0, 160));
+    const href = links[0][1].match(/href="([^"]+)"/)?.[1];
+    const text = links[0][2].replace(/<[^>]+>/g, '').trim();
+    const title = card.match(/<h2><a[^>]*>([^<]*)<\/a>/)?.[1];
+    assert.match(href, /^\/blog\/[a-z0-9-]+\/$/);
+    assert.equal(text, title);
+    assert.match(card, /class="journal-card-image"/);
+    assert.doesNotMatch(card, /View this painting|Read the Nostr|journal-image-link|href="\/play\//);
+  }
+  assert.doesNotMatch(feed, /View this painting|Read the Nostr|journal-image-link|noteUrl/);
+  assert.match(index, /h2 a:focus-visible/);
+  assert.match(index, /h2 a::after/);
+});
+
+test('a feed card opens the story when the note has one, and never a Nostr note', () => {
+  assert.equal(journalCardHref({
+    title: 'Walk',
+    productUrl: '/play/',
+    noteUrl: 'https://njump.me/note1abc',
+    text: 'Wrote it up: https://tjm.art/blog/walk-my-paintings-3d-gallery/',
+  }), '/blog/walk-my-paintings-3d-gallery/');
+  assert.equal(journalCardHref({
+    title: 'Syrenka',
+    productUrl: '/products/warszawska-syrenka/',
+    noteUrl: 'https://njump.me/note1abc',
+    text: 'Visit tjm.art.',
+  }), '/products/warszawska-syrenka/');
+  assert.equal(journalCardHref({
+    title: 'Poster',
+    productUrl: '/products/something/',
+    text: 'Poster https://img.tjm.art/blog/live-looping-guitar/live-looping-guitar-poster.jpg',
+  }), '/products/something/');
+  assert.equal(journalCardHref({
+    productUrl: 'https://tjm.art/products/warszawska-syrenka/?ref=nostr',
+  }), '/products/warszawska-syrenka/?ref=nostr');
+  assert.equal(journalCardHref({
+    productUrl: 'https://njump.me/note1abc',
+    noteUrl: 'https://njump.me/note1abc',
+  }), '');
 });
 
 test('the blog index merges the Nostr feed through the dedupe', () => {
