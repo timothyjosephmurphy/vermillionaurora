@@ -73,7 +73,8 @@ try {
     await page.goto(origin+'/exhibitions/world-map/');
     await page.locator('.atlas-toolbar:visible').waitFor();
     assert(await page.locator('.leaflet-image-layer').evaluate(image=>image.complete&&image.naturalWidth>0),'The self-hosted geography loads');
-    assert.equal(await page.locator('.atlas-place').count(), 6);
+    assert.equal(await page.locator('.atlas-place').count(), 7);
+    assert.equal(await page.locator('#map-falmouth a[href="/blog/plato-aristotle-baloo/"]').count(), 1);
     assert.equal(await page.locator('.atlas-place[open]').count(), 0, 'Seattle and all other details start collapsed');
     await checkLayout();
     await page.getByRole('button',{name:'Zoom to Seattle & Lillooet, 2 locations',exact:true}).click();
@@ -121,7 +122,7 @@ try {
   assert(await page.locator('#map-seattle a').first().isVisible(),'Gallery links work if the map library fails');
   await page.goto(origin+'/');
   assert.match(await page.locator('.atlas-compact svg').getAttribute('aria-label'),/Berlín/);
-  assert.equal(await page.locator('.atlas-compact circle').count(),6);
+  assert.equal(await page.locator('.atlas-compact circle').count(),7);
   assert.deepEqual(errors,[]);
   console.log('PASS: accurate pins, separate San Salvador/Berlín locations, click and keyboard details, mural link, no overlap at four widths, and no-library fallback.');
 } finally {await browser.close();}
