@@ -17,13 +17,12 @@ const hiResSrc = hiRes?.src && !/print-masters/i.test(hiRes.src) ? hiRes.src : '
 const mainThumb = (displayImages[shown]?.variants || []).find(v => v.w >= 160)?.src || shown;
 const responsive = displaySrcset(shown);
 const count = gallery.length + 1;
-const hint = hiResSrc ? 'View high-resolution preview' : 'View full screen';
 ---
 <div class="product-media">
 <figure class="product-figure">
   <a class="painting-image-trigger" href={full} aria-label={`View full screen: ${title}`} aria-haspopup="dialog" aria-controls="painting-lightbox" data-hires-src={hiResSrc || undefined} data-hires-width={hiResSrc ? hiRes.width : undefined} data-hires-height={hiResSrc ? hiRes.height : undefined}>
     <ArtworkImage src={responsive?.src || shown} srcset={responsive?.srcset} sizes={responsive ? PRODUCT_SIZES : undefined} alt={image.alt} width={image.width} height={image.height} loading="eager" fetchpriority="high" decoding="async" data-image-src={responsive ? shown : undefined} />
-    <span class="painting-image-hint">{hint} <span aria-hidden="true">⤢</span></span>
+    <span class="painting-image-hint">View full screen <span aria-hidden="true">⤢</span></span>
   </a>
   <figcaption>{image.caption}</figcaption>
 </figure>
