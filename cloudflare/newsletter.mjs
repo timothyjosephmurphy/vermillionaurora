@@ -119,28 +119,40 @@ function errorCodes(data) {
 export async function subscribeButtondown(env, {email, ip}, fetcher = fetch) {
   const key = String(env.BUTTONDOWN_API_KEY || '').trim();
   if (!key) return {ok: false, status: 503, reason: 'notConfigured'};
-  let response;
-  try {
-    response = await fetcher(BUTTONDOWN_SUBSCRIBERS, {
-      method: 'POST',
-      signal: AbortSignal.timeout(15000),
-      headers: {
-        Authorization: `Token ${key}`,
-        'Content-Type': 'application/json',
-        'X-Buttondown-Collision-Behavior': 'add',
-      },
-      body: JSON.stringify({
-        email_address: email,
-        ...(ip ? {ip_address: ip} : {}),
-        metadata: {source: 'tjm.art'},
-      }),
-    });
-  } catch {
-    return {ok: false, status: 502, reason: 'rejected'};
+  const attempt = async withMetadata => {
+    try {
+      const response = await fetcher(BUTTONDOWN_SUBSCRIBERS, {
+        method: 'POST',
+        signal: AbortSignal.timeout(15000),
+        headers: {
+          Authorization: `Token ${key}`,
+          'Content-Type': 'application/json',
+          'X-Buttondown-Collision-Behavior': 'add',
+        },
+        body: JSON.stringify({
+          email_address: email,
+          ...(ip ? {ip_address: ip} : {}),
+          ...(withMetadata ? {metadata: {source: 'tjm.art'}} : {}),
+        }),
+      });
+      return {response, data: await response.json().catch(() => ({}))};
+    } catch {
+      return null;
+    }
+  };
+  let result = await attempt(true);
+  if (!result) return {ok: false, status: 502, reason: 'rejected'};
+  let codes = errorCodes(result.data);
+  // A plan without subscriber metadata answers 403 feature_disabled. The signup matters more than the source tag.
+  if (result.response.status === 403 && codes.includes('feature_disabled')) {
+    console.error('Buttondown refused subscriber metadata; retrying without it');
+    result = await attempt(false);
+    if (!result) return {ok: false, status: 502, reason: 'rejected'};
+    codes = errorCodes(result.data);
   }
-  const data = await response.json().catch(() => ({}));
+  const {response, data} = result;
+  if (!response.ok && !codes.some(c => ALREADY.has(c))) console.error('Buttondown subscribe failed', response.status, codes.join(',') || '-', String(data?.detail || data?.message || '').slice(0, 200));
   if (response.status === 401 || response.status === 403) return {ok: false, status: 503, reason: 'notConfigured'};
-  const codes = errorCodes(data);
   if (response.ok) {
     const type = String(data.type || 'unknown');
     if (TERMINAL.has(type)) return {ok: false, status: 400, reason: 'rejected'};
