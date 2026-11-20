@@ -161,7 +161,7 @@ const count = gallery.length + 1;
   .painting-lightbox::backdrop { background: #0f0d0b; }
   .painting-hires-viewport { min-width: 0; min-height: 0; width: 100%; height: 100%; display: grid; place-items: center; overflow: hidden; touch-action: none; cursor: zoom-in; padding: max(76px, calc(env(safe-area-inset-top) + 64px)) max(20px, env(safe-area-inset-right)) max(72px, calc(env(safe-area-inset-bottom) + 56px)) max(20px, env(safe-area-inset-left)); }
   .painting-lightbox.is-zoomed .painting-hires-viewport { cursor: grab; }
-  .painting-hires-stage { max-width: 100%; max-height: 100%; transform-origin: center center; will-change: transform; }
+  .painting-hires-stage { box-sizing: border-box; width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; transform-origin: center center; will-change: transform; }
   :global(.painting-lightbox img) { width: auto; height: auto; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; object-fit: contain; cursor: inherit; display: block; }
   .painting-lightbox-close { position: absolute; top: max(12px, env(safe-area-inset-top)); right: max(16px, env(safe-area-inset-right)); z-index: 2; display: flex; align-items: center; gap: .65rem; min-height: 44px; padding: .4rem .85rem; border: 1px solid #8d8074; border-radius: 6px; background: #302b27; color: #fff; cursor: pointer; font-size: .875rem; }
   .painting-lightbox-close span { font-size: 1.6rem; line-height: 1; }
