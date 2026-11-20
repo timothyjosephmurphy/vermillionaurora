@@ -145,8 +145,11 @@
   }
   function updateQuoteButton(){
     const button=form?.querySelector('[data-cart-quote]');if(!button)return;
-    button.textContent=quoted?'Shipping & tax calculated':busy?'Calculating…':'Calculate shipping & tax';
-    button.disabled=!quoteAllowed();
+    // Only touch the label when it changes. Replacing the text node under the pointer while the
+    // buyer presses the button (the zip field's change event fires on that press) makes Safari drop the click.
+    const label=quoted?'Shipping & tax calculated':busy?'Calculating…':'Calculate shipping & tax';
+    if(button.textContent!==label)button.textContent=label;
+    const disabled=!quoteAllowed();if(button.disabled!==disabled)button.disabled=disabled;
   }
   function invalidate(){
     quoted=null;pricesConfirmed=false;
