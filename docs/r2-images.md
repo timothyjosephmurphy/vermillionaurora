@@ -72,3 +72,21 @@ instead of deploying a site that dropped the print files.
 
 ## CORS
 A zone Response Header Transform Rule (`img-cors`, id 2ca5aa7cf6364f99afa3d097f770bd15) sets `Access-Control-Allow-Origin: *` on every img.tjm.art response, so WebGL/canvas loads never fail on an edge-cached copy that lacked the per-origin header.
+
+## Watermarked print previews
+
+Buyers on print product pages can open a zoomable high-resolution preview. Those files live in the public
+`tjm-images` bucket under `print-hires/<sha256>-<long>w.webp` (`https://img.tjm.art/print-hires/...`).
+The long edge is capped at 4000 px, and a low-opacity tiled `tjm.art` watermark is baked in. Original
+print masters are never placed in this prefix and are never linked from the product page.
+
+Generate and upload (masters stay local or in `tjm-print-masters`; this does not deploy them):
+
+```
+python3 scripts/build-print-hires.py --masters /path/to/masters --out /path/to/out --write-manifest
+node scripts/sync-print-hires-to-r2.mjs --dir /path/to/out
+```
+
+The product lightbox lazy-loads the preview only when the viewer opens. Sources whose long edge is
+under 3000 px still get a watermarked preview at native size; they are listed in
+`data/print-hires-manifest.json` as `meetsHiResFloor: false`.

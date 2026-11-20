@@ -105,7 +105,14 @@ try {
   const scroll=await page.evaluate(()=>window.scrollY);
   await trigger.click();await dialog.waitFor();
   await page.waitForFunction(()=>{const img=document.querySelector('.painting-lightbox img');return img.complete&&img.naturalWidth>0;});
-  assert.equal(await image.getAttribute('src'),await trigger.getAttribute('href'));
+  const href=await trigger.getAttribute('href');
+  const hires=await dialog.getAttribute('data-hires-src');
+  if(hires){
+    await page.waitForFunction(url=>{const img=document.querySelector('.painting-lightbox img');return img&&img.src===url&&img.complete&&img.naturalWidth>0;},hires);
+    assert.equal(await image.evaluate(img=>img.getAttribute('src')||img.src),hires);
+  }else{
+    assert.equal(await image.getAttribute('src'),href);
+  }
   const bounds=await image.boundingBox(),frame=await dialog.boundingBox();
   assert.equal(frame.y,0);assert.equal(frame.height,900);assert.equal(frame.width,width);
   assert(bounds.x>=19&&bounds.y>=75&&bounds.x+bounds.width<=width-19&&bounds.y+bounds.height<=877,'painting fits the viewport');
