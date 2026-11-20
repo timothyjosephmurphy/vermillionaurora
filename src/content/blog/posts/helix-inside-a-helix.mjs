@@ -109,12 +109,17 @@ export const post = {
     <p>The SketchUp model has been sitting in 3D Warehouse since that October. I&#x27;m bringing it into <a href="https://tjm.art/play/?room=h8">the 3D gallery on tjm.art</a>, so you can walk around it while it turns.</p>
     <figure class="model">
       <model-viewer
-        src="https://img.tjm.art/blog/helix-inside-a-helix/meme-gene-helix.glb"
+        src="https://img.tjm.art/blog/helix-inside-a-helix/helix-gallery-match.glb"
         poster="https://img.tjm.art/blog/helix-inside-a-helix/closeup-on-spiral.jpg"
-        alt="The 2008 Meme-Gene/Body-Soul helix sculpture and its helix setting, rotatable"
+        alt="TJ Murphy's 2008 inner helix sculpture: a vertical aluminum double-helix with ambigram-lettered rungs on a round flagstone dais, rotatable"
         camera-controls
-        touch-action="pan-y"
         auto-rotate
+        camera-orbit="20deg 80deg 8m"
+        camera-target="0m 1.64m 0m"
+        field-of-view="30deg"
+        min-camera-orbit="auto auto 2m"
+        max-camera-orbit="auto auto 10m"
+        touch-action="pan-y"
         shadow-intensity="1"
         loading="lazy"
         style="width:100%;height:480px;background:#111">
