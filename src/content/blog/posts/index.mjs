@@ -14,6 +14,7 @@ import {post as platoAristotleBaloo} from './plato-aristotle-baloo.mjs';
 import {post as siteUpdateOct17182026} from './site-update-oct-17-18-2026.mjs';
 import {post as siteUpdateOct192026} from './site-update-oct-19-2026.mjs';
 import {post as siteUpdateOct4162026} from './site-update-oct-4-16-2026.mjs';
+import {post as teachingMyBotsMyVoice} from './teaching-my-bots-my-voice.mjs';
 import {post as thirdPlaceSipAndStrollGhostGallery} from './third-place-sip-and-stroll-ghost-gallery.mjs';
 import {post as walkMyPaintings3dGallery} from './walk-my-paintings-3d-gallery.mjs';
 
@@ -34,6 +35,7 @@ export const posts = [
   siteUpdateOct17182026,
   siteUpdateOct192026,
   siteUpdateOct4162026,
+  teachingMyBotsMyVoice,
   thirdPlaceSipAndStrollGhostGallery,
   walkMyPaintings3dGallery,
 ];
