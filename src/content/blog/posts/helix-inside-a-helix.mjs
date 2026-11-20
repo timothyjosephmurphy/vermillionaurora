@@ -96,7 +96,6 @@ export const post = {
       <figcaption>The 16-rung foamcore model on a table, held up by a copy of Gödel, Escher, Bach.</figcaption>
     </figure>
     <p>Lindsay later encouraged me to finish something showable, so I made a second foamcore piece, just a half turn, with taut diagonal strings to hold the rungs at the right angle. Each string was at a slightly different tension, and it sounded a scale when you ran a finger down it. I don&#x27;t have a photo of that one.</p>
-    <p>My friend Rick spent a lot of August on the engineering math, and the answer at the time was that it would stand. I also hired a structural engineer. The planned piece was ten feet tall, in quarter-inch stainless steel, on a thick welded steel base. It would have needed a mechanical system to spin. A steel version was never made.</p>
     <figure class="photo">
       <img src="https://img.tjm.art/blog/helix-inside-a-helix/closeup-on-spiral.jpg" width="500" height="500" alt="Podium render of the finished 64-rung helix, with shadows on the floor." class="zoom" data-caption="Podium render of the finished 64-rung helix, with shadows on the floor." loading="lazy" decoding="async">
       <figcaption>Podium render of the finished 64-rung helix, with shadows on the floor.</figcaption>
