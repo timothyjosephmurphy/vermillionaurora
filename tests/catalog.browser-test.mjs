@@ -12,7 +12,8 @@ try {
   const url=new URL(route.request().url());
   if(url.pathname==='/inventory/status'){const ids=url.searchParams.get('ids').split(',');return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,allSold?'sold':['painting-portrait-in-green','painting-moonlit-water','paul-murphy-painting-1'].includes(id)?status:byId[id]?.listing.status||'available']))}});}
   // Display images live on img.tjm.art (R2); serve the same files from the local build.
-  if(url.hostname==='img.tjm.art'){const f='dist'+decodeURIComponent(url.pathname);return fs.existsSync(f)?route.fulfill({body:fs.readFileSync(f),contentType:'image/webp'}):route.fulfill({status:404});}
+  if(url.hostname==='img.tjm.art'){const f='dist'+decodeURIComponent(url.pathname);if(fs.existsSync(f))return route.fulfill({body:fs.readFileSync(f),contentType:'image/webp'});// Watermarked print previews live only on R2, not in the git checkout.
+if(url.pathname.startsWith('/print-hires/'))return route.continue();return route.fulfill({status:404});}
   if(url.hostname!==new URL(origin).hostname)return route.abort();
   // Approved testimonials come from the Worker at request time; the static preview has none.
   if(url.pathname==='/testimonials/api/approved')return route.fulfill({json:{testimonials:[]}});
@@ -105,7 +106,14 @@ try {
   const scroll=await page.evaluate(()=>window.scrollY);
   await trigger.click();await dialog.waitFor();
   await page.waitForFunction(()=>{const img=document.querySelector('.painting-lightbox img');return img.complete&&img.naturalWidth>0;});
-  assert.equal(await image.getAttribute('src'),await trigger.getAttribute('href'));
+  const href=await trigger.getAttribute('href');
+  const hires=await dialog.getAttribute('data-hires-src');
+  if(hires){
+    await page.waitForFunction(url=>{const img=document.querySelector('.painting-lightbox img');return img&&img.src===url&&img.complete&&img.naturalWidth>0;},hires);
+    assert.equal(await image.evaluate(img=>img.getAttribute('src')||img.src),hires);
+  }else{
+    assert.equal(await image.getAttribute('src'),href);
+  }
   const bounds=await image.boundingBox(),frame=await dialog.boundingBox();
   assert.equal(frame.y,0);assert.equal(frame.height,900);assert.equal(frame.width,width);
   assert(bounds.x>=19&&bounds.y>=75&&bounds.x+bounds.width<=width-19&&bounds.y+bounds.height<=877,'painting fits the viewport');

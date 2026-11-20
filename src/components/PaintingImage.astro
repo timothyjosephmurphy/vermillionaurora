@@ -6,19 +6,21 @@ import { publicImageSrc } from '../data/public-image.mjs';
 // gallery: optional extra photos shown as thumbnails after the main painting (e.g. room shots).
 //   [{base, widths, width, height, fallback, alt, caption}] -> `${base}-${w}.avif|webp` and a JPEG fallback.
 // video: optional product video below the photos ({label, caption, poster, width, height, sources:[{src,type,media}]}).
-const { image, title, gallery = [], video = null } = Astro.props;
+// hiRes: optional watermarked preview {src, width, height} served from img.tjm.art/print-hires/.
+const { image, title, gallery = [], video = null, hiRes = null } = Astro.props;
 const PRODUCT_SIZES = '(max-width: 980px) calc(100vw - 48px), 560px';
 const srcset = (g, ext) => g.widths.map(w => `${g.base}-${w}.${ext} ${Math.min(w, g.width)}w`).join(', ');
 const largest = g => `${g.base}-${g.widths.at(-1)}.webp`;
 const shown = publicImageSrc(image) || image.src;
 const full = image.fullSrc && !/print-masters/.test(image.fullSrc) ? image.fullSrc : shown;
+const hiResSrc = hiRes?.src && !/print-masters/i.test(hiRes.src) ? hiRes.src : '';
 const mainThumb = (displayImages[shown]?.variants || []).find(v => v.w >= 160)?.src || shown;
 const responsive = displaySrcset(shown);
 const count = gallery.length + 1;
 ---
 <div class="product-media">
 <figure class="product-figure">
-  <a class="painting-image-trigger" href={full} aria-label={`View full screen: ${title}`} aria-haspopup="dialog" aria-controls="painting-lightbox">
+  <a class="painting-image-trigger" href={full} aria-label={`View full screen: ${title}`} aria-haspopup="dialog" aria-controls="painting-lightbox" data-hires-src={hiResSrc || undefined} data-hires-width={hiResSrc ? hiRes.width : undefined} data-hires-height={hiResSrc ? hiRes.height : undefined}>
     <ArtworkImage src={responsive?.src || shown} srcset={responsive?.srcset} sizes={responsive ? PRODUCT_SIZES : undefined} alt={image.alt} width={image.width} height={image.height} loading="eager" fetchpriority="high" decoding="async" data-image-src={responsive ? shown : undefined} />
     <span class="painting-image-hint">View full screen <span aria-hidden="true">⤢</span></span>
   </a>
@@ -45,10 +47,21 @@ const count = gallery.length + 1;
   {video.caption && <figcaption>{video.caption}</figcaption>}
 </figure>}
 </div>
-<dialog id="painting-lightbox" class="painting-lightbox" aria-label={`${title} — full-screen painting`}>
+<dialog id="painting-lightbox" class="painting-lightbox" aria-label={`${title} — full-screen painting`} data-hires-src={hiResSrc || undefined} data-hires-width={hiResSrc ? hiRes.width : undefined} data-hires-height={hiResSrc ? hiRes.height : undefined}>
   <button class="painting-lightbox-close" type="button" autofocus>Close <span aria-hidden="true">×</span></button>
-  <ArtworkImage src={full} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+  <div class="painting-hires-viewport">
+    <div class="painting-hires-stage">
+      <ArtworkImage src={full} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+    </div>
+  </div>
+  <div class="painting-hires-tools">
+    <button type="button" data-hires-zoom="out" aria-label="Zoom out">−</button>
+    <button type="button" data-hires-zoom="in" aria-label="Zoom in">+</button>
+    <button type="button" data-hires-zoom="reset">Reset</button>
+    <p class="painting-hires-status">{hiResSrc ? 'High-resolution preview loads when you open this view' : 'Scroll or pinch to zoom'}</p>
+  </div>
 </dialog>
+<script is:inline src="/gallery/print-hires-viewer.js" defer></script>
 
 <script define:vars={{ PRODUCT_SIZES }}>
   // Thumbnails swap the main photo (and the full-screen view). The painting itself stays the first, default photo.
@@ -58,9 +71,16 @@ const count = gallery.length + 1;
   const box = document.querySelector('.painting-lightbox img');
   if (list && main) {
     const link = figure.querySelector('.painting-image-trigger'), caption = figure.querySelector('figcaption');
+    const dialog = document.querySelector('.painting-lightbox');
     const keep = el => Object.fromEntries(['src', 'srcset', 'sizes', 'alt', 'width', 'height'].map(a => [a, el?.getAttribute(a)]));
-    const original = { main: keep(main), box: keep(box), href: link.getAttribute('href'), label: link.getAttribute('aria-label'), caption: caption?.textContent || '' };
+    const original = { main: keep(main), box: keep(box), href: link.getAttribute('href'), label: link.getAttribute('aria-label'), caption: caption?.textContent || '', hires: dialog?.getAttribute('data-hires-src'), hiresWidth: dialog?.getAttribute('data-hires-width'), hiresHeight: dialog?.getAttribute('data-hires-height') };
     const set = (el, attrs) => { if (!el) return; for (const [a, v] of Object.entries(attrs)) v == null ? el.removeAttribute(a) : el.setAttribute(a, v); };
+    const setHiRes = (src, width, height) => {
+      if (!dialog) return;
+      src ? dialog.setAttribute('data-hires-src', src) : dialog.removeAttribute('data-hires-src');
+      width ? dialog.setAttribute('data-hires-width', width) : dialog.removeAttribute('data-hires-width');
+      height ? dialog.setAttribute('data-hires-height', height) : dialog.removeAttribute('data-hires-height');
+    };
     list.addEventListener('click', event => {
       const button = event.target.closest('.product-thumb');
       if (!button || button.getAttribute('aria-pressed') === 'true') return;
@@ -69,6 +89,7 @@ const count = gallery.length + 1;
         set(main, original.main); set(box, original.box);
         link.setAttribute('href', original.href); link.setAttribute('aria-label', original.label);
         if (caption) caption.textContent = original.caption;
+        setHiRes(original.hires, original.hiresWidth, original.hiresHeight);
         return;
       }
       const d = button.dataset;
@@ -76,6 +97,7 @@ const count = gallery.length + 1;
       set(box, { srcset: null, sizes: null, src: d.full, alt: d.alt, width: d.width, height: d.height });
       link.setAttribute('href', d.full); link.setAttribute('aria-label', `View full screen: ${d.alt}`);
       if (caption) caption.textContent = d.caption || d.alt;
+      setHiRes(null);
     });
   }
 </script>
@@ -95,13 +117,15 @@ const count = gallery.length + 1;
       document.documentElement.style.setProperty('--painting-viewer-scroll', `-${scrollY}px`);
       document.documentElement.classList.add('painting-viewer-open');
       dialog.showModal();
+      dialog.dispatchEvent(new Event('open-hires-viewer'));
     });
-    dialog.querySelector('button')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('.painting-lightbox-close')?.addEventListener('click', () => dialog.close());
+    const isBackdrop = event => event.target === dialog || (event.target.classList?.contains('painting-hires-viewport') && !dialog.classList.contains('is-zoomed'));
     dialog.addEventListener('pointerdown', event => {
-      startedOnBackdrop = event.target === dialog;
+      startedOnBackdrop = isBackdrop(event);
     });
     dialog.addEventListener('click', event => {
-      if (startedOnBackdrop && event.target === dialog) dialog.close();
+      if (startedOnBackdrop && isBackdrop(event)) dialog.close();
       startedOnBackdrop = false;
     });
     // Native dialog supplies Escape closing, focus containment and an inert page.
@@ -132,14 +156,22 @@ const count = gallery.length + 1;
   .product-video figcaption { margin-top: .6rem; font-size: .875rem; color: var(--muted); }
   @media (max-width: 600px) { .product-thumb { width: 64px; height: 64px; } }
   @media (max-width: 800px) { :global(.painting-image-trigger img) { max-height: 65vh; } }
-  .painting-lightbox { position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh; max-width: none; max-height: none; margin: 0; border: 0; padding: max(76px, calc(env(safe-area-inset-top) + 64px)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); background: rgba(15, 13, 11, .97); color: #fff; overflow: hidden; cursor: zoom-out; }
-  .painting-lightbox[open] { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); place-items: center; }
+  .painting-lightbox { position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh; max-width: none; max-height: none; margin: 0; border: 0; padding: 0; background: rgba(15, 13, 11, .97); color: #fff; overflow: hidden; }
+  .painting-lightbox[open] { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); }
   .painting-lightbox::backdrop { background: #0f0d0b; }
-  :global(.painting-lightbox img) { width: auto; height: auto; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; object-fit: contain; cursor: default; }
-  .painting-lightbox-close { position: absolute; top: max(12px, env(safe-area-inset-top)); right: max(16px, env(safe-area-inset-right)); display: flex; align-items: center; gap: .65rem; min-height: 44px; padding: .4rem .85rem; border: 1px solid #8d8074; border-radius: 6px; background: #302b27; color: #fff; cursor: pointer; font-size: .875rem; }
+  .painting-hires-viewport { min-width: 0; min-height: 0; width: 100%; height: 100%; display: grid; place-items: center; overflow: hidden; touch-action: none; cursor: zoom-in; padding: max(76px, calc(env(safe-area-inset-top) + 64px)) max(20px, env(safe-area-inset-right)) max(72px, calc(env(safe-area-inset-bottom) + 56px)) max(20px, env(safe-area-inset-left)); }
+  .painting-lightbox.is-zoomed .painting-hires-viewport { cursor: grab; }
+  .painting-hires-stage { box-sizing: border-box; width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; transform-origin: center center; will-change: transform; }
+  :global(.painting-lightbox img) { width: auto; height: auto; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; object-fit: contain; cursor: inherit; display: block; }
+  .painting-lightbox-close { position: absolute; top: max(12px, env(safe-area-inset-top)); right: max(16px, env(safe-area-inset-right)); z-index: 2; display: flex; align-items: center; gap: .65rem; min-height: 44px; padding: .4rem .85rem; border: 1px solid #8d8074; border-radius: 6px; background: #302b27; color: #fff; cursor: pointer; font-size: .875rem; }
   .painting-lightbox-close span { font-size: 1.6rem; line-height: 1; }
   .painting-lightbox-close:hover { background: #494139; }
   .painting-lightbox-close:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+  .painting-hires-tools { position: absolute; left: 0; right: 0; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 2; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .5rem 0.75rem; padding: 0 16px; pointer-events: none; }
+  .painting-hires-tools button { pointer-events: auto; min-width: 44px; min-height: 44px; padding: .35rem .8rem; border: 1px solid #8d8074; border-radius: 6px; background: #302b27; color: #fff; cursor: pointer; font-size: 1.1rem; }
+  .painting-hires-tools button:hover { background: #494139; }
+  .painting-hires-tools button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .painting-hires-status { margin: 0; color: #d7cdc3; font-size: .8rem; }
   :global(html.painting-viewer-open) { overflow: hidden; }
   :global(html.painting-viewer-open body) { position: fixed; top: var(--painting-viewer-scroll); width: 100%; overflow: hidden; }
 </style>

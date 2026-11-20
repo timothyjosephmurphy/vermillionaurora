@@ -1,0 +1,2225 @@
+{
+  "version": 1,
+  "bucket": "tjm-images",
+  "prefix": "print-hires",
+  "origin": "https://img.tjm.art",
+  "longEdgeCap": 4000,
+  "hiResFloor": 3000,
+  "watermark": "tjm.art",
+  "format": "webp",
+  "quality": 85,
+  "files": [
+    {
+      "sha256": "020829831bba99f303622a9351e674b4bf0a3794f5995ecf744bdae4179eda33",
+      "artworkIds": [
+        "archived-painting-354"
+      ],
+      "sourceWidthPx": 5341,
+      "sourceHeightPx": 7290,
+      "sourceLongEdge": 7290,
+      "widthPx": 2931,
+      "heightPx": 4000,
+      "key": "print-hires/020829831bba99f303622a9351e674b4bf0a3794f5995ecf744bdae4179eda33-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/020829831bba99f303622a9351e674b4bf0a3794f5995ecf744bdae4179eda33-4000w.webp",
+      "bytes": 1754568,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "05a725ac7c5f8c65d1b11f67ad3533fced0e63f4354f29aba8bd181549c07f98",
+      "artworkIds": [
+        "archived-painting-20"
+      ],
+      "sourceWidthPx": 7399,
+      "sourceHeightPx": 3659,
+      "sourceLongEdge": 7399,
+      "widthPx": 4000,
+      "heightPx": 1978,
+      "key": "print-hires/05a725ac7c5f8c65d1b11f67ad3533fced0e63f4354f29aba8bd181549c07f98-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/05a725ac7c5f8c65d1b11f67ad3533fced0e63f4354f29aba8bd181549c07f98-4000w.webp",
+      "bytes": 517434,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "062ab28f5f678c9bfb0553c710f42785865ec766620e1e51ed79eed96676e661",
+      "artworkIds": [
+        "archived-painting-437"
+      ],
+      "sourceWidthPx": 6318,
+      "sourceHeightPx": 3455,
+      "sourceLongEdge": 6318,
+      "widthPx": 4000,
+      "heightPx": 2187,
+      "key": "print-hires/062ab28f5f678c9bfb0553c710f42785865ec766620e1e51ed79eed96676e661-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/062ab28f5f678c9bfb0553c710f42785865ec766620e1e51ed79eed96676e661-4000w.webp",
+      "bytes": 669650,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+      "artworkIds": [
+        "painting-portrait-with-hat"
+      ],
+      "sourceWidthPx": 7614,
+      "sourceHeightPx": 2130,
+      "sourceLongEdge": 7614,
+      "widthPx": 4000,
+      "heightPx": 1119,
+      "key": "print-hires/06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a-4000w.webp",
+      "bytes": 354530,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "07785165b0addb1498f4fe2d7f1aa388521bd9918a5c4adca2011a7f4dffb4cb",
+      "artworkIds": [
+        "paul-murphy-painting-65"
+      ],
+      "sourceWidthPx": 2770,
+      "sourceHeightPx": 4292,
+      "sourceLongEdge": 4292,
+      "widthPx": 2582,
+      "heightPx": 4000,
+      "key": "print-hires/07785165b0addb1498f4fe2d7f1aa388521bd9918a5c4adca2011a7f4dffb4cb-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/07785165b0addb1498f4fe2d7f1aa388521bd9918a5c4adca2011a7f4dffb4cb-4000w.webp",
+      "bytes": 1776682,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+      "artworkIds": [
+        "el-zonte-before-dawn"
+      ],
+      "sourceWidthPx": 7544,
+      "sourceHeightPx": 3600,
+      "sourceLongEdge": 7544,
+      "widthPx": 4000,
+      "heightPx": 1909,
+      "key": "print-hires/0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559-4000w.webp",
+      "bytes": 713336,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "09b012e1ac23215f0b5d3d63350ef9a0882e5c3d1680802239e0ad603bc2f2af",
+      "artworkIds": [
+        "archived-painting-75"
+      ],
+      "sourceWidthPx": 4071,
+      "sourceHeightPx": 5968,
+      "sourceLongEdge": 5968,
+      "widthPx": 2729,
+      "heightPx": 4000,
+      "key": "print-hires/09b012e1ac23215f0b5d3d63350ef9a0882e5c3d1680802239e0ad603bc2f2af-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/09b012e1ac23215f0b5d3d63350ef9a0882e5c3d1680802239e0ad603bc2f2af-4000w.webp",
+      "bytes": 1255424,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d",
+      "artworkIds": [
+        "strawberry-point-11"
+      ],
+      "sourceWidthPx": 2357,
+      "sourceHeightPx": 2342,
+      "sourceLongEdge": 2357,
+      "widthPx": 2357,
+      "heightPx": 2342,
+      "key": "print-hires/0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d-2357w.webp",
+      "url": "https://img.tjm.art/print-hires/0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d-2357w.webp",
+      "bytes": 319412,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "0adb3354b13717fde1f05575dace2085698d3eb35dca17f0fa5a6d2273d7beee",
+      "artworkIds": [
+        "archived-painting-217"
+      ],
+      "sourceWidthPx": 2296,
+      "sourceHeightPx": 7297,
+      "sourceLongEdge": 7297,
+      "widthPx": 1259,
+      "heightPx": 4000,
+      "key": "print-hires/0adb3354b13717fde1f05575dace2085698d3eb35dca17f0fa5a6d2273d7beee-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/0adb3354b13717fde1f05575dace2085698d3eb35dca17f0fa5a6d2273d7beee-4000w.webp",
+      "bytes": 615562,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
+      "artworkIds": [
+        "archived-painting-301"
+      ],
+      "sourceWidthPx": 5620,
+      "sourceHeightPx": 5978,
+      "sourceLongEdge": 5978,
+      "widthPx": 3760,
+      "heightPx": 4000,
+      "key": "print-hires/0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5-4000w.webp",
+      "bytes": 1058122,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "0d8b905417ca735c995aee98ca4f07a719dfc8b8f4d89a6babf609ae159efa7d",
+      "artworkIds": [
+        "archived-painting-249"
+      ],
+      "sourceWidthPx": 4094,
+      "sourceHeightPx": 7647,
+      "sourceLongEdge": 7647,
+      "widthPx": 2141,
+      "heightPx": 4000,
+      "key": "print-hires/0d8b905417ca735c995aee98ca4f07a719dfc8b8f4d89a6babf609ae159efa7d-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/0d8b905417ca735c995aee98ca4f07a719dfc8b8f4d89a6babf609ae159efa7d-4000w.webp",
+      "bytes": 994286,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "140afceb54fcf91b85e0778adfaff80793eb576d4d1a005b4ca5717e7cf6d0a1",
+      "artworkIds": [
+        "archived-painting-img-1555"
+      ],
+      "sourceWidthPx": 5574,
+      "sourceHeightPx": 4504,
+      "sourceLongEdge": 5574,
+      "widthPx": 4000,
+      "heightPx": 3232,
+      "key": "print-hires/140afceb54fcf91b85e0778adfaff80793eb576d4d1a005b4ca5717e7cf6d0a1-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/140afceb54fcf91b85e0778adfaff80793eb576d4d1a005b4ca5717e7cf6d0a1-4000w.webp",
+      "bytes": 1356110,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+      "artworkIds": [
+        "painting-sunflower-woman"
+      ],
+      "sourceWidthPx": 3317,
+      "sourceHeightPx": 1808,
+      "sourceLongEdge": 3317,
+      "widthPx": 3317,
+      "heightPx": 1808,
+      "key": "print-hires/19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e-3317w.webp",
+      "url": "https://img.tjm.art/print-hires/19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e-3317w.webp",
+      "bytes": 1142830,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "1aa7d0a3b86d956b6fb23786e2288aa0b1f7e46b71e4babeeb461594eab790c4",
+      "artworkIds": [
+        "archived-painting-246"
+      ],
+      "sourceWidthPx": 4263,
+      "sourceHeightPx": 7535,
+      "sourceLongEdge": 7535,
+      "widthPx": 2263,
+      "heightPx": 4000,
+      "key": "print-hires/1aa7d0a3b86d956b6fb23786e2288aa0b1f7e46b71e4babeeb461594eab790c4-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/1aa7d0a3b86d956b6fb23786e2288aa0b1f7e46b71e4babeeb461594eab790c4-4000w.webp",
+      "bytes": 1107506,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "1cfd0cbe9ff70fd834ee72c1134cd9db4914a7bdaf52276c95566de05c8154dc",
+      "artworkIds": [
+        "older-work-ammous-livera"
+      ],
+      "sourceWidthPx": 3314,
+      "sourceHeightPx": 1742,
+      "sourceLongEdge": 3314,
+      "widthPx": 3314,
+      "heightPx": 1742,
+      "key": "print-hires/1cfd0cbe9ff70fd834ee72c1134cd9db4914a7bdaf52276c95566de05c8154dc-3314w.webp",
+      "url": "https://img.tjm.art/print-hires/1cfd0cbe9ff70fd834ee72c1134cd9db4914a7bdaf52276c95566de05c8154dc-3314w.webp",
+      "bytes": 297890,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "1ec8b2463db18955a0caa120355a6a5d8087ceac3e21f11042404d336c499c9b",
+      "artworkIds": [
+        "paul-murphy-painting-11"
+      ],
+      "sourceWidthPx": 3101,
+      "sourceHeightPx": 3497,
+      "sourceLongEdge": 3497,
+      "widthPx": 3101,
+      "heightPx": 3497,
+      "key": "print-hires/1ec8b2463db18955a0caa120355a6a5d8087ceac3e21f11042404d336c499c9b-3497w.webp",
+      "url": "https://img.tjm.art/print-hires/1ec8b2463db18955a0caa120355a6a5d8087ceac3e21f11042404d336c499c9b-3497w.webp",
+      "bytes": 958464,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "20686e5b976babbe2b5e90a7067f631f6bbbdcdf654e83b6985bdbe7431acc6c",
+      "artworkIds": [
+        "archived-painting-133"
+      ],
+      "sourceWidthPx": 4069,
+      "sourceHeightPx": 6834,
+      "sourceLongEdge": 6834,
+      "widthPx": 2382,
+      "heightPx": 4000,
+      "key": "print-hires/20686e5b976babbe2b5e90a7067f631f6bbbdcdf654e83b6985bdbe7431acc6c-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/20686e5b976babbe2b5e90a7067f631f6bbbdcdf654e83b6985bdbe7431acc6c-4000w.webp",
+      "bytes": 1017024,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "207d04adc9f3b67e66c3c38de6c3913199e3fe2b6958c8d986f3e25f180a9250",
+      "artworkIds": [
+        "paul-murphy-painting-45"
+      ],
+      "sourceWidthPx": 3227,
+      "sourceHeightPx": 3181,
+      "sourceLongEdge": 3227,
+      "widthPx": 3227,
+      "heightPx": 3181,
+      "key": "print-hires/207d04adc9f3b67e66c3c38de6c3913199e3fe2b6958c8d986f3e25f180a9250-3227w.webp",
+      "url": "https://img.tjm.art/print-hires/207d04adc9f3b67e66c3c38de6c3913199e3fe2b6958c8d986f3e25f180a9250-3227w.webp",
+      "bytes": 1252216,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "20c766fa5b9e16b2143ba956a2a32e31aba6ef2e34534ca00d7c277c0ae2bf6a",
+      "artworkIds": [
+        "older-work-figen-pnut-swoll"
+      ],
+      "sourceWidthPx": 3418,
+      "sourceHeightPx": 1208,
+      "sourceLongEdge": 3418,
+      "widthPx": 3418,
+      "heightPx": 1208,
+      "key": "print-hires/20c766fa5b9e16b2143ba956a2a32e31aba6ef2e34534ca00d7c277c0ae2bf6a-3418w.webp",
+      "url": "https://img.tjm.art/print-hires/20c766fa5b9e16b2143ba956a2a32e31aba6ef2e34534ca00d7c277c0ae2bf6a-3418w.webp",
+      "bytes": 634530,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "2117481938e7c4297b36e4f93c60c62f8db938c5abd9cb327bfe73d7cab50b3c",
+      "artworkIds": [
+        "paul-murphy-painting-72"
+      ],
+      "sourceWidthPx": 4985,
+      "sourceHeightPx": 3251,
+      "sourceLongEdge": 4985,
+      "widthPx": 4000,
+      "heightPx": 2609,
+      "key": "print-hires/2117481938e7c4297b36e4f93c60c62f8db938c5abd9cb327bfe73d7cab50b3c-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/2117481938e7c4297b36e4f93c60c62f8db938c5abd9cb327bfe73d7cab50b3c-4000w.webp",
+      "bytes": 886902,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
+      "artworkIds": [
+        "archived-painting-308"
+      ],
+      "sourceWidthPx": 4076,
+      "sourceHeightPx": 5375,
+      "sourceLongEdge": 5375,
+      "widthPx": 3033,
+      "heightPx": 4000,
+      "key": "print-hires/23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8-4000w.webp",
+      "bytes": 1215106,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "24abc9e45cfe54f688bf8d520e11b9a8e5122e820aca293cbe46dec5649163ea",
+      "artworkIds": [
+        "paul-murphy-painting-7"
+      ],
+      "sourceWidthPx": 3255,
+      "sourceHeightPx": 3290,
+      "sourceLongEdge": 3290,
+      "widthPx": 3255,
+      "heightPx": 3290,
+      "key": "print-hires/24abc9e45cfe54f688bf8d520e11b9a8e5122e820aca293cbe46dec5649163ea-3290w.webp",
+      "url": "https://img.tjm.art/print-hires/24abc9e45cfe54f688bf8d520e11b9a8e5122e820aca293cbe46dec5649163ea-3290w.webp",
+      "bytes": 841210,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "25f5d751099a10b4518bd5f40f23152f0e97ba4f9f8a14baaa4feaa740b9c28a",
+      "artworkIds": [
+        "paul-murphy-painting-73"
+      ],
+      "sourceWidthPx": 2337,
+      "sourceHeightPx": 3202,
+      "sourceLongEdge": 3202,
+      "widthPx": 2337,
+      "heightPx": 3202,
+      "key": "print-hires/25f5d751099a10b4518bd5f40f23152f0e97ba4f9f8a14baaa4feaa740b9c28a-3202w.webp",
+      "url": "https://img.tjm.art/print-hires/25f5d751099a10b4518bd5f40f23152f0e97ba4f9f8a14baaa4feaa740b9c28a-3202w.webp",
+      "bytes": 877730,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "29138911cd296945e2b2a0a450130c284ef022746891d4e1be39b14ebe1b1b72",
+      "artworkIds": [
+        "paul-murphy-painting-55"
+      ],
+      "sourceWidthPx": 1353,
+      "sourceHeightPx": 1283,
+      "sourceLongEdge": 1353,
+      "widthPx": 1353,
+      "heightPx": 1283,
+      "key": "print-hires/29138911cd296945e2b2a0a450130c284ef022746891d4e1be39b14ebe1b1b72-1353w.webp",
+      "url": "https://img.tjm.art/print-hires/29138911cd296945e2b2a0a450130c284ef022746891d4e1be39b14ebe1b1b72-1353w.webp",
+      "bytes": 271774,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+      "artworkIds": [
+        "older-work-ridge-strips-unindexed"
+      ],
+      "sourceWidthPx": 2576,
+      "sourceHeightPx": 6092,
+      "sourceLongEdge": 6092,
+      "widthPx": 1691,
+      "heightPx": 4000,
+      "key": "print-hires/2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478-4000w.webp",
+      "bytes": 371890,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+      "artworkIds": [
+        "older-work-bitcoin-voices"
+      ],
+      "sourceWidthPx": 5108,
+      "sourceHeightPx": 2155,
+      "sourceLongEdge": 5108,
+      "widthPx": 4000,
+      "heightPx": 1688,
+      "key": "print-hires/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f-4000w.webp",
+      "bytes": 535596,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+      "artworkIds": [
+        "older-work-provibes-sandwiches"
+      ],
+      "sourceWidthPx": 6274,
+      "sourceHeightPx": 2195,
+      "sourceLongEdge": 6274,
+      "widthPx": 4000,
+      "heightPx": 1399,
+      "key": "print-hires/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790-4000w.webp",
+      "bytes": 576642,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "2f86850a9431808e9abbf7882abf72c33f5aa61632855b1088b085b64a0b40da",
+      "artworkIds": [
+        "archived-painting-18"
+      ],
+      "sourceWidthPx": 7352,
+      "sourceHeightPx": 3609,
+      "sourceLongEdge": 7352,
+      "widthPx": 4000,
+      "heightPx": 1964,
+      "key": "print-hires/2f86850a9431808e9abbf7882abf72c33f5aa61632855b1088b085b64a0b40da-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/2f86850a9431808e9abbf7882abf72c33f5aa61632855b1088b085b64a0b40da-4000w.webp",
+      "bytes": 783654,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "30d546d939ec9a4e26f594f42706d2f067312dc19bc5d93ab512d8d860d9b914",
+      "artworkIds": [
+        "archived-painting-386"
+      ],
+      "sourceWidthPx": 3598,
+      "sourceHeightPx": 4906,
+      "sourceLongEdge": 4906,
+      "widthPx": 2934,
+      "heightPx": 4000,
+      "key": "print-hires/30d546d939ec9a4e26f594f42706d2f067312dc19bc5d93ab512d8d860d9b914-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/30d546d939ec9a4e26f594f42706d2f067312dc19bc5d93ab512d8d860d9b914-4000w.webp",
+      "bytes": 751308,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "3257ed9a9ced852baa1fd1bff607d5f98ab2b0d1ffa108b00ca306f886791dd4",
+      "artworkIds": [
+        "paul-murphy-painting-64"
+      ],
+      "sourceWidthPx": 2496,
+      "sourceHeightPx": 3329,
+      "sourceLongEdge": 3329,
+      "widthPx": 2496,
+      "heightPx": 3329,
+      "key": "print-hires/3257ed9a9ced852baa1fd1bff607d5f98ab2b0d1ffa108b00ca306f886791dd4-3329w.webp",
+      "url": "https://img.tjm.art/print-hires/3257ed9a9ced852baa1fd1bff607d5f98ab2b0d1ffa108b00ca306f886791dd4-3329w.webp",
+      "bytes": 431898,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+      "artworkIds": [
+        "painting-moonlit-water"
+      ],
+      "sourceWidthPx": 2832,
+      "sourceHeightPx": 5758,
+      "sourceLongEdge": 5758,
+      "widthPx": 1967,
+      "heightPx": 4000,
+      "key": "print-hires/370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d-4000w.webp",
+      "bytes": 585826,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "37fb5f76e383a5973699d952b83ee162c815fb2c144a105a289451e22af48a62",
+      "artworkIds": [
+        "archived-painting-436"
+      ],
+      "sourceWidthPx": 3345,
+      "sourceHeightPx": 6053,
+      "sourceLongEdge": 6053,
+      "widthPx": 2210,
+      "heightPx": 4000,
+      "key": "print-hires/37fb5f76e383a5973699d952b83ee162c815fb2c144a105a289451e22af48a62-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/37fb5f76e383a5973699d952b83ee162c815fb2c144a105a289451e22af48a62-4000w.webp",
+      "bytes": 661406,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "396a1d43657e04d6a0d6286a394c3cd5b26ec8d6916b2823f87f8eaa516d947a",
+      "artworkIds": [
+        "paul-murphy-painting-41"
+      ],
+      "sourceWidthPx": 3139,
+      "sourceHeightPx": 3265,
+      "sourceLongEdge": 3265,
+      "widthPx": 3139,
+      "heightPx": 3265,
+      "key": "print-hires/396a1d43657e04d6a0d6286a394c3cd5b26ec8d6916b2823f87f8eaa516d947a-3265w.webp",
+      "url": "https://img.tjm.art/print-hires/396a1d43657e04d6a0d6286a394c3cd5b26ec8d6916b2823f87f8eaa516d947a-3265w.webp",
+      "bytes": 1296928,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e",
+      "artworkIds": [
+        "painting-phoenix-rising"
+      ],
+      "sourceWidthPx": 1236,
+      "sourceHeightPx": 2542,
+      "sourceLongEdge": 2542,
+      "widthPx": 1236,
+      "heightPx": 2542,
+      "key": "print-hires/3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e-2542w.webp",
+      "url": "https://img.tjm.art/print-hires/3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e-2542w.webp",
+      "bytes": 740624,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "3b82c491eb2e0d50fc70d1fbb0cfe5581ab1971fcbed338850ca6ed6b7700f55",
+      "artworkIds": [
+        "archived-painting-369"
+      ],
+      "sourceWidthPx": 5072,
+      "sourceHeightPx": 3673,
+      "sourceLongEdge": 5072,
+      "widthPx": 4000,
+      "heightPx": 2897,
+      "key": "print-hires/3b82c491eb2e0d50fc70d1fbb0cfe5581ab1971fcbed338850ca6ed6b7700f55-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/3b82c491eb2e0d50fc70d1fbb0cfe5581ab1971fcbed338850ca6ed6b7700f55-4000w.webp",
+      "bytes": 1005972,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "46554d5969de58ccb45aa2f91a55920cbe49d85f342c8cda7fe49ffadc646818",
+      "artworkIds": [
+        "archived-painting-62"
+      ],
+      "sourceWidthPx": 5626,
+      "sourceHeightPx": 6233,
+      "sourceLongEdge": 6233,
+      "widthPx": 3610,
+      "heightPx": 4000,
+      "key": "print-hires/46554d5969de58ccb45aa2f91a55920cbe49d85f342c8cda7fe49ffadc646818-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/46554d5969de58ccb45aa2f91a55920cbe49d85f342c8cda7fe49ffadc646818-4000w.webp",
+      "bytes": 2793376,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "47ca2a0a1827ab13827782125c748cc64a6642c59bccec1178a74f6d1fd027de",
+      "artworkIds": [
+        "paul-murphy-painting-74"
+      ],
+      "sourceWidthPx": 4989,
+      "sourceHeightPx": 3631,
+      "sourceLongEdge": 4989,
+      "widthPx": 4000,
+      "heightPx": 2911,
+      "key": "print-hires/47ca2a0a1827ab13827782125c748cc64a6642c59bccec1178a74f6d1fd027de-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/47ca2a0a1827ab13827782125c748cc64a6642c59bccec1178a74f6d1fd027de-4000w.webp",
+      "bytes": 1405108,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "49077623a9eebab719aa89b099be7bcf78a21f03cb7ea7e247ac7f55f03293db",
+      "artworkIds": [
+        "archived-painting-412"
+      ],
+      "sourceWidthPx": 5063,
+      "sourceHeightPx": 3662,
+      "sourceLongEdge": 5063,
+      "widthPx": 4000,
+      "heightPx": 2893,
+      "key": "print-hires/49077623a9eebab719aa89b099be7bcf78a21f03cb7ea7e247ac7f55f03293db-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/49077623a9eebab719aa89b099be7bcf78a21f03cb7ea7e247ac7f55f03293db-4000w.webp",
+      "bytes": 921290,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "495def835824cee6f5ddabd2e49dac28b6a11588900c98d69c8294f33fe724ac",
+      "artworkIds": [
+        "archived-painting-362"
+      ],
+      "sourceWidthPx": 5236,
+      "sourceHeightPx": 3733,
+      "sourceLongEdge": 5236,
+      "widthPx": 4000,
+      "heightPx": 2852,
+      "key": "print-hires/495def835824cee6f5ddabd2e49dac28b6a11588900c98d69c8294f33fe724ac-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/495def835824cee6f5ddabd2e49dac28b6a11588900c98d69c8294f33fe724ac-4000w.webp",
+      "bytes": 1421480,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "4a71a5c1fde9aa81bc8026aac30425bca7919bd81db054b9ea13f50b97dcb3ac",
+      "artworkIds": [
+        "paul-murphy-painting-43"
+      ],
+      "sourceWidthPx": 3391,
+      "sourceHeightPx": 3115,
+      "sourceLongEdge": 3391,
+      "widthPx": 3391,
+      "heightPx": 3115,
+      "key": "print-hires/4a71a5c1fde9aa81bc8026aac30425bca7919bd81db054b9ea13f50b97dcb3ac-3391w.webp",
+      "url": "https://img.tjm.art/print-hires/4a71a5c1fde9aa81bc8026aac30425bca7919bd81db054b9ea13f50b97dcb3ac-3391w.webp",
+      "bytes": 1479748,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "4b6a2895e642a6103cba97fdfc26f05f48f0f2121136f3db346f87b90e151445",
+      "artworkIds": [
+        "archived-painting-370"
+      ],
+      "sourceWidthPx": 5389,
+      "sourceHeightPx": 4051,
+      "sourceLongEdge": 5389,
+      "widthPx": 4000,
+      "heightPx": 3007,
+      "key": "print-hires/4b6a2895e642a6103cba97fdfc26f05f48f0f2121136f3db346f87b90e151445-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/4b6a2895e642a6103cba97fdfc26f05f48f0f2121136f3db346f87b90e151445-4000w.webp",
+      "bytes": 1111316,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "4bf6fd5e67133125a7715aa9aa4e67dd313fee4888717a8ff7855fdabc219d13",
+      "artworkIds": [
+        "archived-painting-368"
+      ],
+      "sourceWidthPx": 3674,
+      "sourceHeightPx": 4881,
+      "sourceLongEdge": 4881,
+      "widthPx": 3011,
+      "heightPx": 4000,
+      "key": "print-hires/4bf6fd5e67133125a7715aa9aa4e67dd313fee4888717a8ff7855fdabc219d13-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/4bf6fd5e67133125a7715aa9aa4e67dd313fee4888717a8ff7855fdabc219d13-4000w.webp",
+      "bytes": 1088102,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec",
+      "artworkIds": [
+        "older-work-rochard-martinez"
+      ],
+      "sourceWidthPx": 3404,
+      "sourceHeightPx": 1203,
+      "sourceLongEdge": 3404,
+      "widthPx": 3404,
+      "heightPx": 1203,
+      "key": "print-hires/4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec-3404w.webp",
+      "url": "https://img.tjm.art/print-hires/4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec-3404w.webp",
+      "bytes": 510390,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "4ebc6957267aa6b13ea390e61097e675c0247dea922e662657e293f789cb3995",
+      "artworkIds": [
+        "paul-murphy-painting-39"
+      ],
+      "sourceWidthPx": 2825,
+      "sourceHeightPx": 2765,
+      "sourceLongEdge": 2825,
+      "widthPx": 2825,
+      "heightPx": 2765,
+      "key": "print-hires/4ebc6957267aa6b13ea390e61097e675c0247dea922e662657e293f789cb3995-2825w.webp",
+      "url": "https://img.tjm.art/print-hires/4ebc6957267aa6b13ea390e61097e675c0247dea922e662657e293f789cb3995-2825w.webp",
+      "bytes": 1404270,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
+      "artworkIds": [
+        "older-work-hayek-stark-gomez-el-bawab"
+      ],
+      "sourceWidthPx": 6035,
+      "sourceHeightPx": 1836,
+      "sourceLongEdge": 6035,
+      "widthPx": 4000,
+      "heightPx": 1217,
+      "key": "print-hires/4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49-4000w.webp",
+      "bytes": 531458,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "4f4e46fed913aa62a63682b4e515349b4eaa6979d921b8df25dabd9d9392e0f5",
+      "artworkIds": [
+        "paul-murphy-painting-51"
+      ],
+      "sourceWidthPx": 2400,
+      "sourceHeightPx": 3198,
+      "sourceLongEdge": 3198,
+      "widthPx": 2400,
+      "heightPx": 3198,
+      "key": "print-hires/4f4e46fed913aa62a63682b4e515349b4eaa6979d921b8df25dabd9d9392e0f5-3198w.webp",
+      "url": "https://img.tjm.art/print-hires/4f4e46fed913aa62a63682b4e515349b4eaa6979d921b8df25dabd9d9392e0f5-3198w.webp",
+      "bytes": 902954,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "5030c993aeaef08722c6dd789360a6bfcf46cd82ce48612ef2444a140c3e6d30",
+      "artworkIds": [
+        "archived-painting-390"
+      ],
+      "sourceWidthPx": 3543,
+      "sourceHeightPx": 4950,
+      "sourceLongEdge": 4950,
+      "widthPx": 2863,
+      "heightPx": 4000,
+      "key": "print-hires/5030c993aeaef08722c6dd789360a6bfcf46cd82ce48612ef2444a140c3e6d30-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/5030c993aeaef08722c6dd789360a6bfcf46cd82ce48612ef2444a140c3e6d30-4000w.webp",
+      "bytes": 736190,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "51f462f3a96a1a6da5485b16a847912d453b17ea5afba5ada4624619ff5287a3",
+      "artworkIds": [
+        "archived-painting-66"
+      ],
+      "sourceWidthPx": 6285,
+      "sourceHeightPx": 5173,
+      "sourceLongEdge": 6285,
+      "widthPx": 4000,
+      "heightPx": 3292,
+      "key": "print-hires/51f462f3a96a1a6da5485b16a847912d453b17ea5afba5ada4624619ff5287a3-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/51f462f3a96a1a6da5485b16a847912d453b17ea5afba5ada4624619ff5287a3-4000w.webp",
+      "bytes": 1256390,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "54badbbce49163e3ca93aca80c47020c18890e0f44c6a03d53fd6298770e1ccd",
+      "artworkIds": [
+        "paul-murphy-painting-56"
+      ],
+      "sourceWidthPx": 3471,
+      "sourceHeightPx": 3724,
+      "sourceLongEdge": 3724,
+      "widthPx": 3471,
+      "heightPx": 3724,
+      "key": "print-hires/54badbbce49163e3ca93aca80c47020c18890e0f44c6a03d53fd6298770e1ccd-3724w.webp",
+      "url": "https://img.tjm.art/print-hires/54badbbce49163e3ca93aca80c47020c18890e0f44c6a03d53fd6298770e1ccd-3724w.webp",
+      "bytes": 1403668,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+      "artworkIds": [
+        "older-work-legend-of-billy-buff"
+      ],
+      "sourceWidthPx": 5836,
+      "sourceHeightPx": 4042,
+      "sourceLongEdge": 5836,
+      "widthPx": 4000,
+      "heightPx": 2770,
+      "key": "print-hires/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421-4000w.webp",
+      "bytes": 1025728,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "58877194b4cb1a4caa6f655c50e29aa546c154fb9fb58223b09220a613d1727e",
+      "artworkIds": [
+        "archived-painting-226"
+      ],
+      "sourceWidthPx": 7232,
+      "sourceHeightPx": 5083,
+      "sourceLongEdge": 7232,
+      "widthPx": 4000,
+      "heightPx": 2811,
+      "key": "print-hires/58877194b4cb1a4caa6f655c50e29aa546c154fb9fb58223b09220a613d1727e-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/58877194b4cb1a4caa6f655c50e29aa546c154fb9fb58223b09220a613d1727e-4000w.webp",
+      "bytes": 1105746,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "591018dfc57c11e4b4e24b9c8022035b53c52a309c228d33dc52b0b0a9b25a7f",
+      "artworkIds": [
+        "paul-murphy-painting-3"
+      ],
+      "sourceWidthPx": 4859,
+      "sourceHeightPx": 3478,
+      "sourceLongEdge": 4859,
+      "widthPx": 4000,
+      "heightPx": 2863,
+      "key": "print-hires/591018dfc57c11e4b4e24b9c8022035b53c52a309c228d33dc52b0b0a9b25a7f-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/591018dfc57c11e4b4e24b9c8022035b53c52a309c228d33dc52b0b0a9b25a7f-4000w.webp",
+      "bytes": 913948,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04",
+      "artworkIds": [
+        "painting-festival-portrait"
+      ],
+      "sourceWidthPx": 1265,
+      "sourceHeightPx": 2571,
+      "sourceLongEdge": 2571,
+      "widthPx": 1265,
+      "heightPx": 2571,
+      "key": "print-hires/5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04-2571w.webp",
+      "url": "https://img.tjm.art/print-hires/5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04-2571w.webp",
+      "bytes": 746408,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "5dd3b58b33c4d9ad789bb6374beaca56d1f2df60015cdc7041a96bdbd6acd375",
+      "artworkIds": [
+        "paul-murphy-painting-27"
+      ],
+      "sourceWidthPx": 3569,
+      "sourceHeightPx": 2986,
+      "sourceLongEdge": 3569,
+      "widthPx": 3569,
+      "heightPx": 2986,
+      "key": "print-hires/5dd3b58b33c4d9ad789bb6374beaca56d1f2df60015cdc7041a96bdbd6acd375-3569w.webp",
+      "url": "https://img.tjm.art/print-hires/5dd3b58b33c4d9ad789bb6374beaca56d1f2df60015cdc7041a96bdbd6acd375-3569w.webp",
+      "bytes": 1057250,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "60587be399ebb54467b35dd1414bdc00a97d7d79f49c000921cec6cbeddfc8e6",
+      "artworkIds": [
+        "strawberry-point-9"
+      ],
+      "sourceWidthPx": 1972,
+      "sourceHeightPx": 1963,
+      "sourceLongEdge": 1972,
+      "widthPx": 1972,
+      "heightPx": 1963,
+      "key": "print-hires/60587be399ebb54467b35dd1414bdc00a97d7d79f49c000921cec6cbeddfc8e6-1972w.webp",
+      "url": "https://img.tjm.art/print-hires/60587be399ebb54467b35dd1414bdc00a97d7d79f49c000921cec6cbeddfc8e6-1972w.webp",
+      "bytes": 390446,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+      "artworkIds": [
+        "older-work-nakamoto-hayek"
+      ],
+      "sourceWidthPx": 3454,
+      "sourceHeightPx": 1876,
+      "sourceLongEdge": 3454,
+      "widthPx": 3454,
+      "heightPx": 1876,
+      "key": "print-hires/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541-3454w.webp",
+      "url": "https://img.tjm.art/print-hires/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541-3454w.webp",
+      "bytes": 751688,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "618d9f9bda1d5f9e9362a3745a541a4c5605f76742a7b53f9002efd023251bad",
+      "artworkIds": [
+        "strawberry-point-8"
+      ],
+      "sourceWidthPx": 2010,
+      "sourceHeightPx": 2038,
+      "sourceLongEdge": 2038,
+      "widthPx": 2010,
+      "heightPx": 2038,
+      "key": "print-hires/618d9f9bda1d5f9e9362a3745a541a4c5605f76742a7b53f9002efd023251bad-2038w.webp",
+      "url": "https://img.tjm.art/print-hires/618d9f9bda1d5f9e9362a3745a541a4c5605f76742a7b53f9002efd023251bad-2038w.webp",
+      "bytes": 226508,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "6283a204051b60f2530563d776d2802131b5cd90768b166149eddf69f46aa3f2",
+      "artworkIds": [
+        "paul-murphy-painting-38"
+      ],
+      "sourceWidthPx": 2966,
+      "sourceHeightPx": 3091,
+      "sourceLongEdge": 3091,
+      "widthPx": 2966,
+      "heightPx": 3091,
+      "key": "print-hires/6283a204051b60f2530563d776d2802131b5cd90768b166149eddf69f46aa3f2-3091w.webp",
+      "url": "https://img.tjm.art/print-hires/6283a204051b60f2530563d776d2802131b5cd90768b166149eddf69f46aa3f2-3091w.webp",
+      "bytes": 1419988,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb",
+      "artworkIds": [
+        "hope-the-vermillion-aurora"
+      ],
+      "sourceWidthPx": 6740,
+      "sourceHeightPx": 3370,
+      "sourceLongEdge": 6740,
+      "widthPx": 4000,
+      "heightPx": 2000,
+      "key": "print-hires/62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb-4000w.webp",
+      "bytes": 538282,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+      "artworkIds": [
+        "painting-shoreline-at-dusk"
+      ],
+      "sourceWidthPx": 7645,
+      "sourceHeightPx": 3615,
+      "sourceLongEdge": 7645,
+      "widthPx": 4000,
+      "heightPx": 1891,
+      "key": "print-hires/63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a-4000w.webp",
+      "bytes": 1157542,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "64b732c7f9f637d54873d5dc1656279ee18adcf4d17ba5389298e61d6890895e",
+      "artworkIds": [
+        "archived-painting-76"
+      ],
+      "sourceWidthPx": 4232,
+      "sourceHeightPx": 5794,
+      "sourceLongEdge": 5794,
+      "widthPx": 2922,
+      "heightPx": 4000,
+      "key": "print-hires/64b732c7f9f637d54873d5dc1656279ee18adcf4d17ba5389298e61d6890895e-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/64b732c7f9f637d54873d5dc1656279ee18adcf4d17ba5389298e61d6890895e-4000w.webp",
+      "bytes": 1129188,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "64e27601d760271561cd6a29135a46e368d669d2d9dfa7360337d561aa2ad8f8",
+      "artworkIds": [
+        "archived-painting-367"
+      ],
+      "sourceWidthPx": 3605,
+      "sourceHeightPx": 4955,
+      "sourceLongEdge": 4955,
+      "widthPx": 2910,
+      "heightPx": 4000,
+      "key": "print-hires/64e27601d760271561cd6a29135a46e368d669d2d9dfa7360337d561aa2ad8f8-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/64e27601d760271561cd6a29135a46e368d669d2d9dfa7360337d561aa2ad8f8-4000w.webp",
+      "bytes": 827314,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "6513241ed3567e338ad8c13af762f5f7ea072ebcf90d75eb9dff29e589c5f628",
+      "artworkIds": [
+        "strawberry-point-15"
+      ],
+      "sourceWidthPx": 2583,
+      "sourceHeightPx": 2720,
+      "sourceLongEdge": 2720,
+      "widthPx": 2583,
+      "heightPx": 2720,
+      "key": "print-hires/6513241ed3567e338ad8c13af762f5f7ea072ebcf90d75eb9dff29e589c5f628-2720w.webp",
+      "url": "https://img.tjm.art/print-hires/6513241ed3567e338ad8c13af762f5f7ea072ebcf90d75eb9dff29e589c5f628-2720w.webp",
+      "bytes": 588434,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "693dc2228133ae222643c2c2a6f67d0d02ad9162a93004965239e95a2155268f",
+      "artworkIds": [
+        "strawberry-point-5"
+      ],
+      "sourceWidthPx": 1273,
+      "sourceHeightPx": 1290,
+      "sourceLongEdge": 1290,
+      "widthPx": 1273,
+      "heightPx": 1290,
+      "key": "print-hires/693dc2228133ae222643c2c2a6f67d0d02ad9162a93004965239e95a2155268f-1290w.webp",
+      "url": "https://img.tjm.art/print-hires/693dc2228133ae222643c2c2a6f67d0d02ad9162a93004965239e95a2155268f-1290w.webp",
+      "bytes": 148026,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+      "artworkIds": [
+        "older-work-yakes-todd-dickerson"
+      ],
+      "sourceWidthPx": 6508,
+      "sourceHeightPx": 2673,
+      "sourceLongEdge": 6508,
+      "widthPx": 4000,
+      "heightPx": 1643,
+      "key": "print-hires/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536-4000w.webp",
+      "bytes": 656744,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+      "artworkIds": [
+        "el-zonte-at-sunrise"
+      ],
+      "sourceWidthPx": 3598,
+      "sourceHeightPx": 7082,
+      "sourceLongEdge": 7082,
+      "widthPx": 2032,
+      "heightPx": 4000,
+      "key": "print-hires/6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8-4000w.webp",
+      "bytes": 832558,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "6e037122c56177197ba12817fa36682ab1a74b1ded40830c99a02432f3b3ea99",
+      "artworkIds": [
+        "archived-painting-385"
+      ],
+      "sourceWidthPx": 3518,
+      "sourceHeightPx": 4802,
+      "sourceLongEdge": 4802,
+      "widthPx": 2930,
+      "heightPx": 4000,
+      "key": "print-hires/6e037122c56177197ba12817fa36682ab1a74b1ded40830c99a02432f3b3ea99-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/6e037122c56177197ba12817fa36682ab1a74b1ded40830c99a02432f3b3ea99-4000w.webp",
+      "bytes": 859954,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
+      "artworkIds": [
+        "warszawska-syrenka"
+      ],
+      "sourceWidthPx": 4984,
+      "sourceHeightPx": 7120,
+      "sourceLongEdge": 7120,
+      "widthPx": 2800,
+      "heightPx": 4000,
+      "key": "print-hires/6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718-4000w.webp",
+      "bytes": 1625290,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1",
+      "artworkIds": [
+        "strawberry-point-10"
+      ],
+      "sourceWidthPx": 1993,
+      "sourceHeightPx": 2078,
+      "sourceLongEdge": 2078,
+      "widthPx": 1993,
+      "heightPx": 2078,
+      "key": "print-hires/6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1-2078w.webp",
+      "url": "https://img.tjm.art/print-hires/6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1-2078w.webp",
+      "bytes": 272498,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+      "artworkIds": [
+        "older-work-forest-triptych"
+      ],
+      "sourceWidthPx": 4184,
+      "sourceHeightPx": 6048,
+      "sourceLongEdge": 6048,
+      "widthPx": 2767,
+      "heightPx": 4000,
+      "key": "print-hires/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4-4000w.webp",
+      "bytes": 980684,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "7112103318fcb79bfaae9e8fb67b3a2badc1b9bc3313084870aaa9df993f6c13",
+      "artworkIds": [
+        "archived-painting-15"
+      ],
+      "sourceWidthPx": 7112,
+      "sourceHeightPx": 3383,
+      "sourceLongEdge": 7112,
+      "widthPx": 4000,
+      "heightPx": 1903,
+      "key": "print-hires/7112103318fcb79bfaae9e8fb67b3a2badc1b9bc3313084870aaa9df993f6c13-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/7112103318fcb79bfaae9e8fb67b3a2badc1b9bc3313084870aaa9df993f6c13-4000w.webp",
+      "bytes": 752834,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "73624bb4c2211042e2e50e91fbbc6de8795cf5765c54181f41f643ca4cabe292",
+      "artworkIds": [
+        "archived-painting-375"
+      ],
+      "sourceWidthPx": 3825,
+      "sourceHeightPx": 5076,
+      "sourceLongEdge": 5076,
+      "widthPx": 3014,
+      "heightPx": 4000,
+      "key": "print-hires/73624bb4c2211042e2e50e91fbbc6de8795cf5765c54181f41f643ca4cabe292-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/73624bb4c2211042e2e50e91fbbc6de8795cf5765c54181f41f643ca4cabe292-4000w.webp",
+      "bytes": 741400,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "73ae0f9353d8e6952c0f74268dfd91fe5d3be1e7912e838e621676425f6f65f6",
+      "artworkIds": [
+        "archived-painting-19"
+      ],
+      "sourceWidthPx": 7436,
+      "sourceHeightPx": 3660,
+      "sourceLongEdge": 7436,
+      "widthPx": 4000,
+      "heightPx": 1969,
+      "key": "print-hires/73ae0f9353d8e6952c0f74268dfd91fe5d3be1e7912e838e621676425f6f65f6-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/73ae0f9353d8e6952c0f74268dfd91fe5d3be1e7912e838e621676425f6f65f6-4000w.webp",
+      "bytes": 796002,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "7401a29fec30c8f5333f5830871d8efb867cf0ad3418fd92e1740f65d66f03c1",
+      "artworkIds": [
+        "archived-painting-img-1608"
+      ],
+      "sourceWidthPx": 3610,
+      "sourceHeightPx": 6441,
+      "sourceLongEdge": 6441,
+      "widthPx": 2242,
+      "heightPx": 4000,
+      "key": "print-hires/7401a29fec30c8f5333f5830871d8efb867cf0ad3418fd92e1740f65d66f03c1-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/7401a29fec30c8f5333f5830871d8efb867cf0ad3418fd92e1740f65d66f03c1-4000w.webp",
+      "bytes": 921410,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "74b889871f4a2aacebfea38f8b5ae1be8ce5f1f03c9c820e0172d25114e138b9",
+      "artworkIds": [
+        "archived-painting-307"
+      ],
+      "sourceWidthPx": 6833,
+      "sourceHeightPx": 5116,
+      "sourceLongEdge": 6833,
+      "widthPx": 4000,
+      "heightPx": 2995,
+      "key": "print-hires/74b889871f4a2aacebfea38f8b5ae1be8ce5f1f03c9c820e0172d25114e138b9-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/74b889871f4a2aacebfea38f8b5ae1be8ce5f1f03c9c820e0172d25114e138b9-4000w.webp",
+      "bytes": 1398726,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91",
+      "artworkIds": [
+        "painting-sunset-silhouette"
+      ],
+      "sourceWidthPx": 1545,
+      "sourceHeightPx": 863,
+      "sourceLongEdge": 1545,
+      "widthPx": 1545,
+      "heightPx": 863,
+      "key": "print-hires/75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91-1545w.webp",
+      "url": "https://img.tjm.art/print-hires/75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91-1545w.webp",
+      "bytes": 154114,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2",
+      "artworkIds": [
+        "strawberry-point-7"
+      ],
+      "sourceWidthPx": 1282,
+      "sourceHeightPx": 1353,
+      "sourceLongEdge": 1353,
+      "widthPx": 1282,
+      "heightPx": 1353,
+      "key": "print-hires/785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2-1353w.webp",
+      "url": "https://img.tjm.art/print-hires/785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2-1353w.webp",
+      "bytes": 110830,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "796b885fc82f1e6350caac80b710b1f6f9e7f6be6e4fbb7638f7015d740e6eef",
+      "artworkIds": [
+        "paul-murphy-painting-44"
+      ],
+      "sourceWidthPx": 3434,
+      "sourceHeightPx": 3402,
+      "sourceLongEdge": 3434,
+      "widthPx": 3434,
+      "heightPx": 3402,
+      "key": "print-hires/796b885fc82f1e6350caac80b710b1f6f9e7f6be6e4fbb7638f7015d740e6eef-3434w.webp",
+      "url": "https://img.tjm.art/print-hires/796b885fc82f1e6350caac80b710b1f6f9e7f6be6e4fbb7638f7015d740e6eef-3434w.webp",
+      "bytes": 1651834,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "7b31e9134c311dd8c49a16428df99db5934e05e0bc9753c051ac30586898ad47",
+      "artworkIds": [
+        "archived-painting-438"
+      ],
+      "sourceWidthPx": 6404,
+      "sourceHeightPx": 3578,
+      "sourceLongEdge": 6404,
+      "widthPx": 4000,
+      "heightPx": 2235,
+      "key": "print-hires/7b31e9134c311dd8c49a16428df99db5934e05e0bc9753c051ac30586898ad47-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/7b31e9134c311dd8c49a16428df99db5934e05e0bc9753c051ac30586898ad47-4000w.webp",
+      "bytes": 797642,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "7cdf58a1170ff5aab8593f1323334eeef3a7413ef134b47f76a675a9dc181282",
+      "artworkIds": [
+        "paul-murphy-painting-6"
+      ],
+      "sourceWidthPx": 4396,
+      "sourceHeightPx": 3710,
+      "sourceLongEdge": 4396,
+      "widthPx": 4000,
+      "heightPx": 3376,
+      "key": "print-hires/7cdf58a1170ff5aab8593f1323334eeef3a7413ef134b47f76a675a9dc181282-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/7cdf58a1170ff5aab8593f1323334eeef3a7413ef134b47f76a675a9dc181282-4000w.webp",
+      "bytes": 1556288,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "7de3fb10255a3a4a23e8811d134fdea64e00d451701a9fa47150af800bc9c4ae",
+      "artworkIds": [
+        "paul-murphy-painting-28"
+      ],
+      "sourceWidthPx": 3651,
+      "sourceHeightPx": 2852,
+      "sourceLongEdge": 3651,
+      "widthPx": 3651,
+      "heightPx": 2852,
+      "key": "print-hires/7de3fb10255a3a4a23e8811d134fdea64e00d451701a9fa47150af800bc9c4ae-3651w.webp",
+      "url": "https://img.tjm.art/print-hires/7de3fb10255a3a4a23e8811d134fdea64e00d451701a9fa47150af800bc9c4ae-3651w.webp",
+      "bytes": 869442,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+      "artworkIds": [
+        "meditation-at-denny-blaine"
+      ],
+      "sourceWidthPx": 4816,
+      "sourceHeightPx": 6716,
+      "sourceLongEdge": 6716,
+      "widthPx": 2868,
+      "heightPx": 4000,
+      "key": "print-hires/80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3-4000w.webp",
+      "bytes": 508308,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "82dce5605cb36a0d8c1fc15de07dfd2d539291a947ee3c425ae29485633359ac",
+      "artworkIds": [
+        "archived-painting-241"
+      ],
+      "sourceWidthPx": 7370,
+      "sourceHeightPx": 5613,
+      "sourceLongEdge": 7370,
+      "widthPx": 4000,
+      "heightPx": 3046,
+      "key": "print-hires/82dce5605cb36a0d8c1fc15de07dfd2d539291a947ee3c425ae29485633359ac-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/82dce5605cb36a0d8c1fc15de07dfd2d539291a947ee3c425ae29485633359ac-4000w.webp",
+      "bytes": 1893540,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "82f798d1d4455607884aad492a53d6021ba4fc187eb662312ef9b2e83b5953b1",
+      "artworkIds": [
+        "older-work-mountain-layers"
+      ],
+      "sourceWidthPx": 4427,
+      "sourceHeightPx": 750,
+      "sourceLongEdge": 4427,
+      "widthPx": 4000,
+      "heightPx": 678,
+      "key": "print-hires/82f798d1d4455607884aad492a53d6021ba4fc187eb662312ef9b2e83b5953b1-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/82f798d1d4455607884aad492a53d6021ba4fc187eb662312ef9b2e83b5953b1-4000w.webp",
+      "bytes": 495278,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+      "artworkIds": [
+        "sunrise-in-el-zonte-large"
+      ],
+      "sourceWidthPx": 4935,
+      "sourceHeightPx": 6808,
+      "sourceLongEdge": 6808,
+      "widthPx": 2900,
+      "heightPx": 4000,
+      "key": "print-hires/85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488-4000w.webp",
+      "bytes": 897960,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "87527b58728cf28060a68f48e18eae901515e1b70666c19cdb2ee6fbbaf05626",
+      "artworkIds": [
+        "paul-murphy-painting-8"
+      ],
+      "sourceWidthPx": 3450,
+      "sourceHeightPx": 3192,
+      "sourceLongEdge": 3450,
+      "widthPx": 3450,
+      "heightPx": 3192,
+      "key": "print-hires/87527b58728cf28060a68f48e18eae901515e1b70666c19cdb2ee6fbbaf05626-3450w.webp",
+      "url": "https://img.tjm.art/print-hires/87527b58728cf28060a68f48e18eae901515e1b70666c19cdb2ee6fbbaf05626-3450w.webp",
+      "bytes": 1201016,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "8bf2e4be17af62dd9bccf1e9d2f9aff40bac6ea178e0d5b0ef8610702d55c3c9",
+      "artworkIds": [
+        "archived-painting-389"
+      ],
+      "sourceWidthPx": 3609,
+      "sourceHeightPx": 4846,
+      "sourceLongEdge": 4846,
+      "widthPx": 2979,
+      "heightPx": 4000,
+      "key": "print-hires/8bf2e4be17af62dd9bccf1e9d2f9aff40bac6ea178e0d5b0ef8610702d55c3c9-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/8bf2e4be17af62dd9bccf1e9d2f9aff40bac6ea178e0d5b0ef8610702d55c3c9-4000w.webp",
+      "bytes": 585304,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "8e56018c2db5e540065be7e917fe4166cb04d8ad782c8ef2e79a8e464be3cc91",
+      "artworkIds": [
+        "strawberry-point-6"
+      ],
+      "sourceWidthPx": 1269,
+      "sourceHeightPx": 1307,
+      "sourceLongEdge": 1307,
+      "widthPx": 1269,
+      "heightPx": 1307,
+      "key": "print-hires/8e56018c2db5e540065be7e917fe4166cb04d8ad782c8ef2e79a8e464be3cc91-1307w.webp",
+      "url": "https://img.tjm.art/print-hires/8e56018c2db5e540065be7e917fe4166cb04d8ad782c8ef2e79a8e464be3cc91-1307w.webp",
+      "bytes": 154242,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "8f5bce1fe764fb3da73fc454074109637d10742d1e49042356d0e01527de7d2e",
+      "artworkIds": [
+        "paul-murphy-painting-23"
+      ],
+      "sourceWidthPx": 3377,
+      "sourceHeightPx": 4629,
+      "sourceLongEdge": 4629,
+      "widthPx": 2918,
+      "heightPx": 4000,
+      "key": "print-hires/8f5bce1fe764fb3da73fc454074109637d10742d1e49042356d0e01527de7d2e-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/8f5bce1fe764fb3da73fc454074109637d10742d1e49042356d0e01527de7d2e-4000w.webp",
+      "bytes": 1521894,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+      "artworkIds": [
+        "older-work-shore-figures"
+      ],
+      "sourceWidthPx": 7040,
+      "sourceHeightPx": 2100,
+      "sourceLongEdge": 7040,
+      "widthPx": 4000,
+      "heightPx": 1193,
+      "key": "print-hires/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f-4000w.webp",
+      "bytes": 404628,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "9064d4cf43de15de8bb99b0913e242f8473d59e03f39eb6224c0dc7ab1018920",
+      "artworkIds": [
+        "archived-painting-247"
+      ],
+      "sourceWidthPx": 4764,
+      "sourceHeightPx": 7346,
+      "sourceLongEdge": 7346,
+      "widthPx": 2594,
+      "heightPx": 4000,
+      "key": "print-hires/9064d4cf43de15de8bb99b0913e242f8473d59e03f39eb6224c0dc7ab1018920-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/9064d4cf43de15de8bb99b0913e242f8473d59e03f39eb6224c0dc7ab1018920-4000w.webp",
+      "bytes": 910878,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "948e24ef3b50a6e393af2988c65693315393dc307b0cdbb0a38fed634c4c553f",
+      "artworkIds": [
+        "paul-murphy-painting-62"
+      ],
+      "sourceWidthPx": 3614,
+      "sourceHeightPx": 2837,
+      "sourceLongEdge": 3614,
+      "widthPx": 3614,
+      "heightPx": 2837,
+      "key": "print-hires/948e24ef3b50a6e393af2988c65693315393dc307b0cdbb0a38fed634c4c553f-3614w.webp",
+      "url": "https://img.tjm.art/print-hires/948e24ef3b50a6e393af2988c65693315393dc307b0cdbb0a38fed634c4c553f-3614w.webp",
+      "bytes": 555726,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "965e2cd522b60c56862c2a514448279a8888d162a5edcf12d135e380d248be31",
+      "artworkIds": [
+        "paul-murphy-painting-25"
+      ],
+      "sourceWidthPx": 3303,
+      "sourceHeightPx": 2994,
+      "sourceLongEdge": 3303,
+      "widthPx": 3303,
+      "heightPx": 2994,
+      "key": "print-hires/965e2cd522b60c56862c2a514448279a8888d162a5edcf12d135e380d248be31-3303w.webp",
+      "url": "https://img.tjm.art/print-hires/965e2cd522b60c56862c2a514448279a8888d162a5edcf12d135e380d248be31-3303w.webp",
+      "bytes": 1285754,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "981d0c5996edd475baf3a832ba85d6c8f9fc079e46fe41c5a6dc4e0a624a22e4",
+      "artworkIds": [
+        "strawberry-point-14"
+      ],
+      "sourceWidthPx": 2327,
+      "sourceHeightPx": 2404,
+      "sourceLongEdge": 2404,
+      "widthPx": 2327,
+      "heightPx": 2404,
+      "key": "print-hires/981d0c5996edd475baf3a832ba85d6c8f9fc079e46fe41c5a6dc4e0a624a22e4-2404w.webp",
+      "url": "https://img.tjm.art/print-hires/981d0c5996edd475baf3a832ba85d6c8f9fc079e46fe41c5a6dc4e0a624a22e4-2404w.webp",
+      "bytes": 402374,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "992f895182682e7172da1054d9e7d1172877e138d3f8b537f49c430b4bece967",
+      "artworkIds": [
+        "archived-painting-4"
+      ],
+      "sourceWidthPx": 4129,
+      "sourceHeightPx": 953,
+      "sourceLongEdge": 4129,
+      "widthPx": 4000,
+      "heightPx": 923,
+      "key": "print-hires/992f895182682e7172da1054d9e7d1172877e138d3f8b537f49c430b4bece967-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/992f895182682e7172da1054d9e7d1172877e138d3f8b537f49c430b4bece967-4000w.webp",
+      "bytes": 133320,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+      "artworkIds": [
+        "older-work-beach-sunsets"
+      ],
+      "sourceWidthPx": 2266,
+      "sourceHeightPx": 5110,
+      "sourceLongEdge": 5110,
+      "widthPx": 1774,
+      "heightPx": 4000,
+      "key": "print-hires/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3-4000w.webp",
+      "bytes": 709144,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
+      "artworkIds": [
+        "painting-portrait-in-green"
+      ],
+      "sourceWidthPx": 2765,
+      "sourceHeightPx": 3317,
+      "sourceLongEdge": 3317,
+      "widthPx": 2765,
+      "heightPx": 3317,
+      "key": "print-hires/9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8-3317w.webp",
+      "url": "https://img.tjm.art/print-hires/9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8-3317w.webp",
+      "bytes": 1401746,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
+      "artworkIds": [
+        "archived-painting-53"
+      ],
+      "sourceWidthPx": 4001,
+      "sourceHeightPx": 7675,
+      "sourceLongEdge": 7675,
+      "widthPx": 2085,
+      "heightPx": 4000,
+      "key": "print-hires/9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb-4000w.webp",
+      "bytes": 832146,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1",
+      "artworkIds": [
+        "painting-golden-coast"
+      ],
+      "sourceWidthPx": 1480,
+      "sourceHeightPx": 2765,
+      "sourceLongEdge": 2765,
+      "widthPx": 1480,
+      "heightPx": 2765,
+      "key": "print-hires/9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1-2765w.webp",
+      "url": "https://img.tjm.art/print-hires/9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1-2765w.webp",
+      "bytes": 565016,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "a162cfb27e01580ab91fcb783c9c9b81fe68a0e4f572c73e902855b0eb09365a",
+      "artworkIds": [
+        "archived-painting-22"
+      ],
+      "sourceWidthPx": 6882,
+      "sourceHeightPx": 3303,
+      "sourceLongEdge": 6882,
+      "widthPx": 4000,
+      "heightPx": 1920,
+      "key": "print-hires/a162cfb27e01580ab91fcb783c9c9b81fe68a0e4f572c73e902855b0eb09365a-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/a162cfb27e01580ab91fcb783c9c9b81fe68a0e4f572c73e902855b0eb09365a-4000w.webp",
+      "bytes": 686236,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "a5cfc0849615388546a9ec9772b91a5d485057f77ec3de9c2503385fc3893b36",
+      "artworkIds": [
+        "archived-painting-233"
+      ],
+      "sourceWidthPx": 3413,
+      "sourceHeightPx": 4801,
+      "sourceLongEdge": 4801,
+      "widthPx": 2844,
+      "heightPx": 4000,
+      "key": "print-hires/a5cfc0849615388546a9ec9772b91a5d485057f77ec3de9c2503385fc3893b36-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/a5cfc0849615388546a9ec9772b91a5d485057f77ec3de9c2503385fc3893b36-4000w.webp",
+      "bytes": 871628,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "a616e8fe5d34df6ce9ddba9e9c389ffee6a97974faea046237220f94c7710e30",
+      "artworkIds": [
+        "archived-painting-416"
+      ],
+      "sourceWidthPx": 6361,
+      "sourceHeightPx": 3513,
+      "sourceLongEdge": 6361,
+      "widthPx": 4000,
+      "heightPx": 2209,
+      "key": "print-hires/a616e8fe5d34df6ce9ddba9e9c389ffee6a97974faea046237220f94c7710e30-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/a616e8fe5d34df6ce9ddba9e9c389ffee6a97974faea046237220f94c7710e30-4000w.webp",
+      "bytes": 874046,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "a61c7d05304367255920c205fc0c44f96cad0076bbbfb4bf957f114b40dc083d",
+      "artworkIds": [
+        "paul-murphy-painting-15"
+      ],
+      "sourceWidthPx": 3497,
+      "sourceHeightPx": 4806,
+      "sourceLongEdge": 4806,
+      "widthPx": 2911,
+      "heightPx": 4000,
+      "key": "print-hires/a61c7d05304367255920c205fc0c44f96cad0076bbbfb4bf957f114b40dc083d-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/a61c7d05304367255920c205fc0c44f96cad0076bbbfb4bf957f114b40dc083d-4000w.webp",
+      "bytes": 1622906,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
+      "artworkIds": [
+        "cormorant-presiding-over-sunset-on-puget-sound"
+      ],
+      "sourceWidthPx": 6783,
+      "sourceHeightPx": 4522,
+      "sourceLongEdge": 6783,
+      "widthPx": 4000,
+      "heightPx": 2667,
+      "key": "print-hires/a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a-4000w.webp",
+      "bytes": 559564,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "a8fcd9d460f65b388fec13e2fc23805d818fec7ed96dd62de57380d5a21e0304",
+      "artworkIds": [
+        "paul-murphy-painting-85"
+      ],
+      "sourceWidthPx": 3729,
+      "sourceHeightPx": 3003,
+      "sourceLongEdge": 3729,
+      "widthPx": 3729,
+      "heightPx": 3003,
+      "key": "print-hires/a8fcd9d460f65b388fec13e2fc23805d818fec7ed96dd62de57380d5a21e0304-3729w.webp",
+      "url": "https://img.tjm.art/print-hires/a8fcd9d460f65b388fec13e2fc23805d818fec7ed96dd62de57380d5a21e0304-3729w.webp",
+      "bytes": 1992412,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa",
+      "artworkIds": [
+        "painting-figures-in-wheatfield"
+      ],
+      "sourceWidthPx": 1060,
+      "sourceHeightPx": 1962,
+      "sourceLongEdge": 1962,
+      "widthPx": 1060,
+      "heightPx": 1962,
+      "key": "print-hires/a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa-1962w.webp",
+      "url": "https://img.tjm.art/print-hires/a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa-1962w.webp",
+      "bytes": 431640,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "a9c8c100a6c454d56c2e307fd5b1fcda39784e9f74d28df8b0498a686b3261ff",
+      "artworkIds": [
+        "paul-murphy-painting-1"
+      ],
+      "sourceWidthPx": 3825,
+      "sourceHeightPx": 4861,
+      "sourceLongEdge": 4861,
+      "widthPx": 3148,
+      "heightPx": 4000,
+      "key": "print-hires/a9c8c100a6c454d56c2e307fd5b1fcda39784e9f74d28df8b0498a686b3261ff-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/a9c8c100a6c454d56c2e307fd5b1fcda39784e9f74d28df8b0498a686b3261ff-4000w.webp",
+      "bytes": 1473684,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "a9dca425f741f6cfe87bf90971d9eedc2271b6209c7983e683c1fe237032da7d",
+      "artworkIds": [
+        "paul-murphy-painting-2"
+      ],
+      "sourceWidthPx": 3910,
+      "sourceHeightPx": 5052,
+      "sourceLongEdge": 5052,
+      "widthPx": 3096,
+      "heightPx": 4000,
+      "key": "print-hires/a9dca425f741f6cfe87bf90971d9eedc2271b6209c7983e683c1fe237032da7d-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/a9dca425f741f6cfe87bf90971d9eedc2271b6209c7983e683c1fe237032da7d-4000w.webp",
+      "bytes": 2292626,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "aeb9c6621442e41a7670b8de9d31b17b2bae4cb8f40e8c9e2dd849f2bbeaca0c",
+      "artworkIds": [
+        "archived-painting-373"
+      ],
+      "sourceWidthPx": 3581,
+      "sourceHeightPx": 4940,
+      "sourceLongEdge": 4940,
+      "widthPx": 2900,
+      "heightPx": 4000,
+      "key": "print-hires/aeb9c6621442e41a7670b8de9d31b17b2bae4cb8f40e8c9e2dd849f2bbeaca0c-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/aeb9c6621442e41a7670b8de9d31b17b2bae4cb8f40e8c9e2dd849f2bbeaca0c-4000w.webp",
+      "bytes": 922556,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "af6a02da0c2f187d56579b54248a6c5c739f5c824d6308d5e2aefe9f665ffbdc",
+      "artworkIds": [
+        "paul-murphy-painting-57"
+      ],
+      "sourceWidthPx": 3507,
+      "sourceHeightPx": 4410,
+      "sourceLongEdge": 4410,
+      "widthPx": 3181,
+      "heightPx": 4000,
+      "key": "print-hires/af6a02da0c2f187d56579b54248a6c5c739f5c824d6308d5e2aefe9f665ffbdc-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/af6a02da0c2f187d56579b54248a6c5c739f5c824d6308d5e2aefe9f665ffbdc-4000w.webp",
+      "bytes": 1906474,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "b29e07d3045e85d048b268939aa32ca68a492f7a88b694408491e4969250181a",
+      "artworkIds": [
+        "archived-painting-364"
+      ],
+      "sourceWidthPx": 4930,
+      "sourceHeightPx": 3624,
+      "sourceLongEdge": 4930,
+      "widthPx": 4000,
+      "heightPx": 2940,
+      "key": "print-hires/b29e07d3045e85d048b268939aa32ca68a492f7a88b694408491e4969250181a-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/b29e07d3045e85d048b268939aa32ca68a492f7a88b694408491e4969250181a-4000w.webp",
+      "bytes": 1757598,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "b359eb147108c36e50c722a17f3d45a1ebd0f0cbaf58e8dfaaecc5bd1c6bd33d",
+      "artworkIds": [
+        "archived-painting-193"
+      ],
+      "sourceWidthPx": 5329,
+      "sourceHeightPx": 5825,
+      "sourceLongEdge": 5825,
+      "widthPx": 3659,
+      "heightPx": 4000,
+      "key": "print-hires/b359eb147108c36e50c722a17f3d45a1ebd0f0cbaf58e8dfaaecc5bd1c6bd33d-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/b359eb147108c36e50c722a17f3d45a1ebd0f0cbaf58e8dfaaecc5bd1c6bd33d-4000w.webp",
+      "bytes": 779638,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257",
+      "artworkIds": [
+        "honeybadger-and-cub-with-genesis-block"
+      ],
+      "sourceWidthPx": 4683,
+      "sourceHeightPx": 7338,
+      "sourceLongEdge": 7338,
+      "widthPx": 2553,
+      "heightPx": 4000,
+      "key": "print-hires/b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/b5e3cc51f4c79a45a79438011150c1548c5ff821ed6948251d1792c5d6f27257-4000w.webp",
+      "bytes": 876666,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "bd73fc32ab7017cae44b2a933f475d3944f4e0f019dce356ec80a733bfebdee9",
+      "artworkIds": [
+        "paul-murphy-painting-63"
+      ],
+      "sourceWidthPx": 2483,
+      "sourceHeightPx": 3254,
+      "sourceLongEdge": 3254,
+      "widthPx": 2483,
+      "heightPx": 3254,
+      "key": "print-hires/bd73fc32ab7017cae44b2a933f475d3944f4e0f019dce356ec80a733bfebdee9-3254w.webp",
+      "url": "https://img.tjm.art/print-hires/bd73fc32ab7017cae44b2a933f475d3944f4e0f019dce356ec80a733bfebdee9-3254w.webp",
+      "bytes": 357582,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "bed01d34b2e9fc2fd8a5040aa704ceb89a168c4346c283bc0e1116527b5d90bf",
+      "artworkIds": [
+        "paul-murphy-painting-34"
+      ],
+      "sourceWidthPx": 3104,
+      "sourceHeightPx": 3158,
+      "sourceLongEdge": 3158,
+      "widthPx": 3104,
+      "heightPx": 3158,
+      "key": "print-hires/bed01d34b2e9fc2fd8a5040aa704ceb89a168c4346c283bc0e1116527b5d90bf-3158w.webp",
+      "url": "https://img.tjm.art/print-hires/bed01d34b2e9fc2fd8a5040aa704ceb89a168c4346c283bc0e1116527b5d90bf-3158w.webp",
+      "bytes": 1867614,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "bf4b84462ce67cc695928cbd248151989dd56cdcf69f7d0a56d3d0945b64a65f",
+      "artworkIds": [
+        "paul-murphy-painting-84"
+      ],
+      "sourceWidthPx": 4127,
+      "sourceHeightPx": 3098,
+      "sourceLongEdge": 4127,
+      "widthPx": 4000,
+      "heightPx": 3003,
+      "key": "print-hires/bf4b84462ce67cc695928cbd248151989dd56cdcf69f7d0a56d3d0945b64a65f-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/bf4b84462ce67cc695928cbd248151989dd56cdcf69f7d0a56d3d0945b64a65f-4000w.webp",
+      "bytes": 1633990,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "c0436ee7e503922435d19062a877a660c2d4d1fd21d412725010fa4cbf21899e",
+      "artworkIds": [
+        "archived-painting-366"
+      ],
+      "sourceWidthPx": 3648,
+      "sourceHeightPx": 5114,
+      "sourceLongEdge": 5114,
+      "widthPx": 2853,
+      "heightPx": 4000,
+      "key": "print-hires/c0436ee7e503922435d19062a877a660c2d4d1fd21d412725010fa4cbf21899e-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/c0436ee7e503922435d19062a877a660c2d4d1fd21d412725010fa4cbf21899e-4000w.webp",
+      "bytes": 1107020,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "c22a2fde103c8c65575e5b871116318b6e87c6d8ac914177b3373cb84a673711",
+      "artworkIds": [
+        "archived-painting-371"
+      ],
+      "sourceWidthPx": 4815,
+      "sourceHeightPx": 3533,
+      "sourceLongEdge": 4815,
+      "widthPx": 4000,
+      "heightPx": 2935,
+      "key": "print-hires/c22a2fde103c8c65575e5b871116318b6e87c6d8ac914177b3373cb84a673711-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/c22a2fde103c8c65575e5b871116318b6e87c6d8ac914177b3373cb84a673711-4000w.webp",
+      "bytes": 901150,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "c395c1c2a73621f0eba699af365ff267e7e04b4d7af6d133ec931f03a98938d0",
+      "artworkIds": [
+        "archived-painting-363"
+      ],
+      "sourceWidthPx": 3589,
+      "sourceHeightPx": 4899,
+      "sourceLongEdge": 4899,
+      "widthPx": 2930,
+      "heightPx": 4000,
+      "key": "print-hires/c395c1c2a73621f0eba699af365ff267e7e04b4d7af6d133ec931f03a98938d0-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/c395c1c2a73621f0eba699af365ff267e7e04b4d7af6d133ec931f03a98938d0-4000w.webp",
+      "bytes": 1418796,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "c44c79066fed0dabbeb12dceb00ee05987cf25873ff87737694ea920b0f0f486",
+      "artworkIds": [
+        "paul-murphy-painting-83"
+      ],
+      "sourceWidthPx": 2669,
+      "sourceHeightPx": 3400,
+      "sourceLongEdge": 3400,
+      "widthPx": 2669,
+      "heightPx": 3400,
+      "key": "print-hires/c44c79066fed0dabbeb12dceb00ee05987cf25873ff87737694ea920b0f0f486-3400w.webp",
+      "url": "https://img.tjm.art/print-hires/c44c79066fed0dabbeb12dceb00ee05987cf25873ff87737694ea920b0f0f486-3400w.webp",
+      "bytes": 1485796,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "c71729a7dd293429c92a72b9f62d00fcf0fd280b8f3a4a0c82f2c22e634c7372",
+      "artworkIds": [
+        "paul-murphy-painting-14"
+      ],
+      "sourceWidthPx": 4397,
+      "sourceHeightPx": 3306,
+      "sourceLongEdge": 4397,
+      "widthPx": 4000,
+      "heightPx": 3008,
+      "key": "print-hires/c71729a7dd293429c92a72b9f62d00fcf0fd280b8f3a4a0c82f2c22e634c7372-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/c71729a7dd293429c92a72b9f62d00fcf0fd280b8f3a4a0c82f2c22e634c7372-4000w.webp",
+      "bytes": 1377672,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "c987f826bbffc0e4dea91ece695bcfab8181cb008757b2e5c9b97c130088b6e1",
+      "artworkIds": [
+        "archived-painting-img-1612"
+      ],
+      "sourceWidthPx": 3476,
+      "sourceHeightPx": 6231,
+      "sourceLongEdge": 6231,
+      "widthPx": 2231,
+      "heightPx": 4000,
+      "key": "print-hires/c987f826bbffc0e4dea91ece695bcfab8181cb008757b2e5c9b97c130088b6e1-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/c987f826bbffc0e4dea91ece695bcfab8181cb008757b2e5c9b97c130088b6e1-4000w.webp",
+      "bytes": 1288620,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "c9bbb3f33ff4f860e9846a7479cb19550c230739149e5bbb3275ef7e4cb0f847",
+      "artworkIds": [
+        "archived-painting-387"
+      ],
+      "sourceWidthPx": 3471,
+      "sourceHeightPx": 4702,
+      "sourceLongEdge": 4702,
+      "widthPx": 2953,
+      "heightPx": 4000,
+      "key": "print-hires/c9bbb3f33ff4f860e9846a7479cb19550c230739149e5bbb3275ef7e4cb0f847-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/c9bbb3f33ff4f860e9846a7479cb19550c230739149e5bbb3275ef7e4cb0f847-4000w.webp",
+      "bytes": 755794,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+      "artworkIds": [
+        "older-work-sunset-ridge-strips"
+      ],
+      "sourceWidthPx": 2908,
+      "sourceHeightPx": 6078,
+      "sourceLongEdge": 6078,
+      "widthPx": 1914,
+      "heightPx": 4000,
+      "key": "print-hires/cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20-4000w.webp",
+      "bytes": 291456,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "ce548dec7454c6a31c49a759c41152114abd14e1731fc91f48c9c1e206c2d32c",
+      "artworkIds": [
+        "archived-painting-73"
+      ],
+      "sourceWidthPx": 4372,
+      "sourceHeightPx": 7007,
+      "sourceLongEdge": 7007,
+      "widthPx": 2496,
+      "heightPx": 4000,
+      "key": "print-hires/ce548dec7454c6a31c49a759c41152114abd14e1731fc91f48c9c1e206c2d32c-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/ce548dec7454c6a31c49a759c41152114abd14e1731fc91f48c9c1e206c2d32c-4000w.webp",
+      "bytes": 1132038,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819",
+      "artworkIds": [
+        "older-work-hummingbird-feeder-190"
+      ],
+      "sourceWidthPx": 1235,
+      "sourceHeightPx": 1736,
+      "sourceLongEdge": 1736,
+      "widthPx": 1235,
+      "heightPx": 1736,
+      "key": "print-hires/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819-1736w.webp",
+      "url": "https://img.tjm.art/print-hires/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819-1736w.webp",
+      "bytes": 143740,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6",
+      "artworkIds": [
+        "strawberry-point-4"
+      ],
+      "sourceWidthPx": 1284,
+      "sourceHeightPx": 1360,
+      "sourceLongEdge": 1360,
+      "widthPx": 1284,
+      "heightPx": 1360,
+      "key": "print-hires/d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6-1360w.webp",
+      "url": "https://img.tjm.art/print-hires/d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6-1360w.webp",
+      "bytes": 76802,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "d444d5892a8f556cf83218ca41a096112f34f9fc96a30cf646c7d7e042018a3d",
+      "artworkIds": [
+        "archived-painting-433"
+      ],
+      "sourceWidthPx": 6329,
+      "sourceHeightPx": 3423,
+      "sourceLongEdge": 6329,
+      "widthPx": 4000,
+      "heightPx": 2163,
+      "key": "print-hires/d444d5892a8f556cf83218ca41a096112f34f9fc96a30cf646c7d7e042018a3d-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/d444d5892a8f556cf83218ca41a096112f34f9fc96a30cf646c7d7e042018a3d-4000w.webp",
+      "bytes": 688848,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "d4f58b40349797dab162a0becbd8848551653cba455b2a00a2687772021027f4",
+      "artworkIds": [
+        "paul-murphy-painting-86"
+      ],
+      "sourceWidthPx": 3683,
+      "sourceHeightPx": 4765,
+      "sourceLongEdge": 4765,
+      "widthPx": 3092,
+      "heightPx": 4000,
+      "key": "print-hires/d4f58b40349797dab162a0becbd8848551653cba455b2a00a2687772021027f4-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/d4f58b40349797dab162a0becbd8848551653cba455b2a00a2687772021027f4-4000w.webp",
+      "bytes": 2267690,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "d8e9bee2644bcc4c7a529cf61050c753222d2184626cc67580d08d28063d7e6d",
+      "artworkIds": [
+        "strawberry-point-12"
+      ],
+      "sourceWidthPx": 2368,
+      "sourceHeightPx": 2339,
+      "sourceLongEdge": 2368,
+      "widthPx": 2368,
+      "heightPx": 2339,
+      "key": "print-hires/d8e9bee2644bcc4c7a529cf61050c753222d2184626cc67580d08d28063d7e6d-2368w.webp",
+      "url": "https://img.tjm.art/print-hires/d8e9bee2644bcc4c7a529cf61050c753222d2184626cc67580d08d28063d7e6d-2368w.webp",
+      "bytes": 455570,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652",
+      "artworkIds": [
+        "archived-painting-248"
+      ],
+      "sourceWidthPx": 4567,
+      "sourceHeightPx": 7660,
+      "sourceLongEdge": 7660,
+      "widthPx": 2385,
+      "heightPx": 4000,
+      "key": "print-hires/daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/daa4334b9927e18d378b382c6301b09025e8713d6aac6e8dd050015275dd1652-4000w.webp",
+      "bytes": 991912,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+      "artworkIds": [
+        "painting-guitarist"
+      ],
+      "sourceWidthPx": 2652,
+      "sourceHeightPx": 3045,
+      "sourceLongEdge": 3045,
+      "widthPx": 2652,
+      "heightPx": 3045,
+      "key": "print-hires/df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18-3045w.webp",
+      "url": "https://img.tjm.art/print-hires/df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18-3045w.webp",
+      "bytes": 1583252,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "e06de5ea894eace340b82f42f7f96cd304322bc6458534ac5875d95a3e3c5e1e",
+      "artworkIds": [
+        "paul-murphy-painting-35"
+      ],
+      "sourceWidthPx": 3398,
+      "sourceHeightPx": 3040,
+      "sourceLongEdge": 3398,
+      "widthPx": 3398,
+      "heightPx": 3040,
+      "key": "print-hires/e06de5ea894eace340b82f42f7f96cd304322bc6458534ac5875d95a3e3c5e1e-3398w.webp",
+      "url": "https://img.tjm.art/print-hires/e06de5ea894eace340b82f42f7f96cd304322bc6458534ac5875d95a3e3c5e1e-3398w.webp",
+      "bytes": 1556184,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "e5a096aa07730c339d3f1aff1a7f20ee553cb7e057a8988ced271377c72304cb",
+      "artworkIds": [
+        "strawberry-point-13"
+      ],
+      "sourceWidthPx": 2334,
+      "sourceHeightPx": 2406,
+      "sourceLongEdge": 2406,
+      "widthPx": 2334,
+      "heightPx": 2406,
+      "key": "print-hires/e5a096aa07730c339d3f1aff1a7f20ee553cb7e057a8988ced271377c72304cb-2406w.webp",
+      "url": "https://img.tjm.art/print-hires/e5a096aa07730c339d3f1aff1a7f20ee553cb7e057a8988ced271377c72304cb-2406w.webp",
+      "bytes": 450810,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "e661e119f7f15ccbe7c71c081b858bca38b1a7a837ff5acf7e60c77f7938ac31",
+      "artworkIds": [
+        "archived-painting-2"
+      ],
+      "sourceWidthPx": 4191,
+      "sourceHeightPx": 1069,
+      "sourceLongEdge": 4191,
+      "widthPx": 4000,
+      "heightPx": 1020,
+      "key": "print-hires/e661e119f7f15ccbe7c71c081b858bca38b1a7a837ff5acf7e60c77f7938ac31-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/e661e119f7f15ccbe7c71c081b858bca38b1a7a837ff5acf7e60c77f7938ac31-4000w.webp",
+      "bytes": 300308,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "e8928d87dc4d93a2ae56ae7bb350d3af430df1492eacdff14c1d4ba950997efe",
+      "artworkIds": [
+        "paul-murphy-painting-24"
+      ],
+      "sourceWidthPx": 2690,
+      "sourceHeightPx": 5026,
+      "sourceLongEdge": 5026,
+      "widthPx": 2141,
+      "heightPx": 4000,
+      "key": "print-hires/e8928d87dc4d93a2ae56ae7bb350d3af430df1492eacdff14c1d4ba950997efe-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/e8928d87dc4d93a2ae56ae7bb350d3af430df1492eacdff14c1d4ba950997efe-4000w.webp",
+      "bytes": 1050482,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+      "artworkIds": [
+        "older-work-pitchers"
+      ],
+      "sourceWidthPx": 5604,
+      "sourceHeightPx": 2480,
+      "sourceLongEdge": 5604,
+      "widthPx": 4000,
+      "heightPx": 1770,
+      "key": "print-hires/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343-4000w.webp",
+      "bytes": 405028,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "e9876274627a9afe2ddb371681be76c5343f6d079f465440a2179049cbfa7669",
+      "artworkIds": [
+        "archived-painting-1"
+      ],
+      "sourceWidthPx": 4190,
+      "sourceHeightPx": 1012,
+      "sourceLongEdge": 4190,
+      "widthPx": 4000,
+      "heightPx": 966,
+      "key": "print-hires/e9876274627a9afe2ddb371681be76c5343f6d079f465440a2179049cbfa7669-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/e9876274627a9afe2ddb371681be76c5343f6d079f465440a2179049cbfa7669-4000w.webp",
+      "bytes": 127168,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67",
+      "artworkIds": [
+        "older-work-lake-hillside-color-wheel"
+      ],
+      "sourceWidthPx": 6167,
+      "sourceHeightPx": 1458,
+      "sourceLongEdge": 6167,
+      "widthPx": 4000,
+      "heightPx": 946,
+      "key": "print-hires/eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67-4000w.webp",
+      "bytes": 521076,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+      "artworkIds": [
+        "older-work-portraits-319-329"
+      ],
+      "sourceWidthPx": 6432,
+      "sourceHeightPx": 1924,
+      "sourceLongEdge": 6432,
+      "widthPx": 4000,
+      "heightPx": 1197,
+      "key": "print-hires/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6-4000w.webp",
+      "bytes": 656544,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+      "artworkIds": [
+        "painting-portrait-in-gold"
+      ],
+      "sourceWidthPx": 2440,
+      "sourceHeightPx": 2635,
+      "sourceLongEdge": 2635,
+      "widthPx": 2440,
+      "heightPx": 2635,
+      "key": "print-hires/edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34-2635w.webp",
+      "url": "https://img.tjm.art/print-hires/edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34-2635w.webp",
+      "bytes": 1202056,
+      "meetsHiResFloor": false
+    },
+    {
+      "sha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+      "artworkIds": [
+        "painting-couple-in-color"
+      ],
+      "sourceWidthPx": 4157,
+      "sourceHeightPx": 2736,
+      "sourceLongEdge": 4157,
+      "widthPx": 4000,
+      "heightPx": 2633,
+      "key": "print-hires/f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36-4000w.webp",
+      "bytes": 1114646,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "f6db547eb862365633ec100625f5e6c7b689ed9a02586c5106383e4d4123ec6a",
+      "artworkIds": [
+        "paul-murphy-painting-40"
+      ],
+      "sourceWidthPx": 3002,
+      "sourceHeightPx": 3240,
+      "sourceLongEdge": 3240,
+      "widthPx": 3002,
+      "heightPx": 3240,
+      "key": "print-hires/f6db547eb862365633ec100625f5e6c7b689ed9a02586c5106383e4d4123ec6a-3240w.webp",
+      "url": "https://img.tjm.art/print-hires/f6db547eb862365633ec100625f5e6c7b689ed9a02586c5106383e4d4123ec6a-3240w.webp",
+      "bytes": 1276954,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc",
+      "artworkIds": [
+        "painting-red-horizon"
+      ],
+      "sourceWidthPx": 3715,
+      "sourceHeightPx": 7107,
+      "sourceLongEdge": 7107,
+      "widthPx": 2091,
+      "heightPx": 4000,
+      "key": "print-hires/f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc-4000w.webp",
+      "bytes": 901858,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+      "artworkIds": [
+        "painting-portrait-in-blue-light"
+      ],
+      "sourceWidthPx": 3748,
+      "sourceHeightPx": 4249,
+      "sourceLongEdge": 4249,
+      "widthPx": 3528,
+      "heightPx": 4000,
+      "key": "print-hires/f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53-4000w.webp",
+      "bytes": 1731264,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "f974178c8dcf4970e390b3e3de23cf2ab8bbd96ac649906636195c7395c7d162",
+      "artworkIds": [
+        "archived-painting-90"
+      ],
+      "sourceWidthPx": 3548,
+      "sourceHeightPx": 6217,
+      "sourceLongEdge": 6217,
+      "widthPx": 2283,
+      "heightPx": 4000,
+      "key": "print-hires/f974178c8dcf4970e390b3e3de23cf2ab8bbd96ac649906636195c7395c7d162-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/f974178c8dcf4970e390b3e3de23cf2ab8bbd96ac649906636195c7395c7d162-4000w.webp",
+      "bytes": 1075392,
+      "meetsHiResFloor": true
+    },
+    {
+      "sha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+      "artworkIds": [
+        "older-work-fernandez-moran-pysh"
+      ],
+      "sourceWidthPx": 4948,
+      "sourceHeightPx": 1692,
+      "sourceLongEdge": 4948,
+      "widthPx": 4000,
+      "heightPx": 1368,
+      "key": "print-hires/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2-4000w.webp",
+      "url": "https://img.tjm.art/print-hires/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2-4000w.webp",
+      "bytes": 366938,
+      "meetsHiResFloor": true
+    }
+  ],
+  "coverage": {
+    "printArtworks": 147,
+    "derivatives": 147,
+    "meetsHiResFloor": 126,
+    "belowHiResFloor": 21,
+    "missingSources": []
+  }
+}

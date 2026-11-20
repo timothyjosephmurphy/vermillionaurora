@@ -16,6 +16,7 @@ import {printOptions,config,papers} from '../../../../catalog/prints.mjs';
 import {stickerOffer} from '../../../../catalog/printful-stickers.mjs';
 import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../catalog/catalog.mjs';
 import { productCrumb } from '../../../data/product-crumb.mjs';
+import { printHiRes } from '../../../data/print-hires.mjs';
 export function getStaticPaths() { return products.map(product=>({params:{slug:product.slug},props:{product}})); }
 const {product:source}=Astro.props;
 // Book-gallery artworks whose section is not published (e.g. forewords) link back to their book instead of a missing gallery.
@@ -29,6 +30,7 @@ const relatedSource=manifest.artworks.find(art=>(art.id===p.id&&art.originalProd
 const relatedProduct=relatedSource?byId[relatedSource.id===p.id?relatedSource.originalProductId:relatedSource.id]:null;
 const relatedPrints=relatedProduct?printOptions(relatedProduct,config,papers).some(option=>option.ready&&!option.testOnly):false;
 const availablePrints=painting?printOptions(p,config,papers).filter(o=>o.ready&&!o.testOnly):[];
+const hiRes=availablePrints.length?printHiRes(p.id):null;
 const sticker=painting?stickerOffer(p.id):null;
 const olderOriginals=p.olderWork&&p.olderWork.members.length>1?p.olderWork.members.filter(m=>m.originalId&&byId[m.originalId]).map(m=>({...m,product:byId[m.originalId],status:byId[m.originalId].listing.status})):[];
 const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
@@ -91,7 +93,7 @@ const crumb = productCrumb(p);
   <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={crumb.href}>{crumb.name}</a><span>/</span><span aria-current="page">{p.title}</span></nav>
   {p.examples?.length>0 && <section class="commission-gallery"><div class="section-heading"><h2>Portrait gallery</h2><p>{p.galleryDescription}</p></div><div class="exhibition-grid">{p.examples.map(img=><a class="ex-photo" href={img.src}><img {...img} loading="lazy" decoding="async" /></a>)}</div></section>}
   <article class:list={['product-layout',{'product-layout-text':!painting}]}>
-    {painting && <PaintingImage image={p.image} title={p.title} gallery={p.gallery} video={p.video} />}
+    {painting && <PaintingImage image={p.image} title={p.title} gallery={p.gallery} video={p.video} hiRes={hiRes} />}
     <div class="product-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1>{p.title}</h1>{p.artist==="Paul Murphy" && <p class="product-artist-byline">by <a href="/exhibitions/paul-murphy/">Paul Murphy</a>, featured artist</p>}
   {painting && (p.listing.status==='available' || availablePrints.length>0 || sticker) && <section class="product-purchase-actions" aria-label="Purchase options">
     {p.listing.status==='available' && <div data-original-purchase>
