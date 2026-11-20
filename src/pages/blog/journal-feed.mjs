@@ -80,48 +80,72 @@ export function mergeJournalEntries(staticStories, nostrPosts) {
   ].sort((a, b) => b.time - a.time);
 }
 
+const NOSTR_HOST = /(^|\.)(?:njump\.me|primal\.net|nostr\.band|snort\.social)$/;
+
+function storyHref(post) {
+  for (const field of [post.productUrl, post.link, post.url]) {
+    const slug = blogSlugFromUrl(field);
+    if (slug) return `/blog/${slug}/`;
+  }
+  for (const field of [post.text, post.content, post.xText, post.facebookText, post.instagramText]) {
+    const slug = blogSlugsInText(field)[0];
+    if (slug) return `/blog/${slug}/`;
+  }
+  return '';
+}
+
+// One destination for a feed card: the story when the note points at one,
+// otherwise the on-site page. Nostr note URLs are not card links.
+export function journalCardHref(post) {
+  const story = storyHref(post || {});
+  if (story) return story;
+  const product = String(post?.productUrl || '').trim();
+  if (!product) return '';
+  let url;
+  try {
+    url = new URL(product, 'https://tjm.art');
+  } catch {
+    return product.startsWith('/') ? product : '';
+  }
+  const host = url.hostname.replace(/^www\./, '').toLowerCase();
+  if (url.protocol === 'nostr:' || NOSTR_HOST.test(host)) return '';
+  if (product.startsWith('/') || BLOG_HOSTS.has(host)) return `${url.pathname}${url.search}${url.hash}`;
+  return '';
+}
+
 function makeEntry(post) {
   const article = document.createElement('article');
   article.className = 'journal-entry';
   const header = document.createElement('header');
   const title = document.createElement('h2');
-  title.textContent = post.title;
+  const href = journalCardHref(post);
+  if (href) {
+    const titleLink = document.createElement('a');
+    titleLink.href = href;
+    titleLink.textContent = post.title;
+    title.append(titleLink);
+  } else {
+    title.textContent = post.title;
+  }
   const date = document.createElement('time');
   date.dateTime = post.publishedAt;
   date.textContent = new Intl.DateTimeFormat(undefined, { dateStyle: 'long' }).format(new Date(post.publishedAt));
   header.append(title, date);
-  const imageLink = document.createElement('a');
-  imageLink.className = 'journal-image-link';
-  imageLink.href = post.productUrl || post.imageUrl;
-  imageLink.setAttribute('aria-label', 'View ' + post.title);
+  const imageWrap = document.createElement('div');
+  imageWrap.className = 'journal-card-image';
   const image = document.createElement('img');
   image.src = post.imageUrl;
   image.alt = post.title;
   image.loading = 'lazy';
   image.decoding = 'async';
-  imageLink.append(image);
+  imageWrap.append(image);
   const story = document.createElement('div');
   story.className = 'journal-copy';
-  // Compact card: a short description only; the full text lives on the painting page / Nostr note.
-  const firstParagraph = (post.text.split(/\n\s*\n/).find(Boolean) || '').trim();
+  const firstParagraph = (String(post.text || '').split(/\n\s*\n/).find(Boolean) || '').trim();
   const summary = document.createElement('p');
   summary.textContent = firstParagraph.length > 180 ? firstParagraph.slice(0, 177).replace(/\s+\S*$/, '') + '…' : firstParagraph;
   story.append(summary);
-  const links = document.createElement('div');
-  links.className = 'journal-links';
-  const product = document.createElement('a');
-  product.href = post.productUrl;
-  product.textContent = 'View this painting →';
-  links.append(product);
-  if (post.noteUrl) {
-    const note = document.createElement('a');
-    note.href = post.noteUrl;
-    note.target = '_blank';
-    note.rel = 'noopener noreferrer';
-    note.textContent = 'Read the Nostr post ↗';
-    links.append(note);
-  }
-  article.append(header, imageLink, story, links);
+  article.append(header, imageWrap, story);
   return article;
 }
 

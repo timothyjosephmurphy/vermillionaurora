@@ -14,8 +14,12 @@ const ALLOW_SHARED = new Set([
 ]);
 
 const html = readFileSync(new URL('../src/pages/blog/index.astro', import.meta.url), 'utf8');
-const cards = [...html.matchAll(/class="journal-image-link" href="\/blog\/([^/"]+)\/"[^>]*>\s*<img src="([^"]+)"/g)]
-  .map(([, slug, src]) => ({ slug, src, key: src.replace(/^https?:\/\/[^/]+/, '').replace(/-\d+\.(webp|jpg|png)$/, '') }));
+const cards = html.split('<article class="journal-entry" data-static-story>').slice(1).map(block => {
+  const chunk = block.split('</article>')[0];
+  const slug = chunk.match(/href="\/blog\/([^/"]+)\//)?.[1] || '';
+  const src = chunk.match(/<img src="([^"]+)"/)?.[1] || '';
+  return { slug, src, key: src.replace(/^https?:\/\/[^/]+/, '').replace(/-\d+\.(webp|jpg|png)$/, '') };
+}).filter(card => card.slug && card.src);
 
 test('blog index has cards', () => assert.ok(cards.length >= 5));
 
