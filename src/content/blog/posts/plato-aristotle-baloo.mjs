@@ -101,7 +101,7 @@ export const post = {
     <p>It still makes me laugh. And it&#x27;s one of the earliest walls where I got to decide what went on it.</p>
     <p>You can find this wall on my <a href="/exhibitions/world-map/">exhibitions and murals map</a>.</p>
     <p>-TJ</p>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     {{signup}}
   `,
   afterFooter: `

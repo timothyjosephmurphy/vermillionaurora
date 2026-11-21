@@ -90,7 +90,7 @@ export const post = {
     <p>Before this one I made two others. One is an eagle flying over the water, from my painting of an eagle catching a fish at sunrise on Rainier. The other has a QR code and now hangs on the fence at Brian and Marco's. Brian says that whenever he sits outside, people stop to ask about it, and he tells them to scan it.</p>
     <p>You can see more of my work at <a href="https://tjm.art">tjm.art</a>.</p>
     <p>If you'd like a plate like this for your place or your event, <a href="https://tjm.art/contact">get in touch</a>.</p>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
     {{signup}}
   `,

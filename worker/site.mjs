@@ -2,7 +2,7 @@
 // static/_redirects and 404s are served by the Cloudflare assets layer WITHOUT invoking this Worker
 // (and without counting toward the Workers request limit). Only the routes listed there reach this code: the
 // QuickBooks API, the testimonials API and the original-inventory API (forwarded to the checkout Worker),
-// the testimonials page (approved quotes inlined for crawlers), newsletter signup (Buttondown plus one
+// the testimonials page (approved quotes inlined for crawlers), newsletter signup (own storage plus one
 // at-cost print code, forwarded to the checkout Worker) and the
 // Apple Pay merchant-id file, and /play (hex gallery proxy; Quake files that still exist stay on assets).
 // Route constants live in worker/routes-config.mjs. scripts/sync-worker-routes.mjs copies them into
@@ -56,7 +56,7 @@ export const QUICKBOOKS_API = new Set(QUICKBOOKS_PATHS);
 
 // Testimonial submission, the approved list, approved photos and the owner moderation API also live in the checkout
 // Worker (private R2 storage); forwarding keeps them same-origin with /testimonials/ and /testimonial-manager/.
-// Email-list signup and the optional Buttondown webhook. The checkout Worker holds the Buttondown API key,
+// Email-list signup, unsubscribe and the owner CSV export. The checkout Worker holds the list (private R2),
 // print-code storage and the Gmail identity. Same-origin on tjm.art, like the testimonials API.
 
 // Owner original-status page posts here; the checkout Worker holds stock and the Etsy token.

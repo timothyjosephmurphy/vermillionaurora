@@ -108,7 +108,7 @@ export const post = {
     <p>Have you ever had that with someone, where you both land on the same change without planning it? I&#x27;d love to hear about it.</p>
     <p>Hear more from Color Cult: watch the official video for <a href="https://www.youtube.com/watch?v=X-KVMEJYNYc" target="_blank" rel="noopener">&ldquo;Invisible Monster (The Exorcist Song)&rdquo;</a>, released June 21, 2019 on Admirable Traits Records in Buffalo, and find more on <a href="https://www.youtube.com/@colorcult3095" target="_blank" rel="noopener">Color Cult&#x27;s YouTube channel</a>. Read <a href="https://buffablog.com/tonight-color-cult/" target="_blank" rel="noopener">buffaBLOG&#x27;s preview of the single&#x27;s release</a> and <a href="https://rockthepigeon.com/2019/07/18/dark-lyrics-upbeat-music-introducing-color-cult/" target="_blank" rel="noopener">Rock the Pigeon&#x27;s introduction to Color Cult</a>.</p>
     <p>If you&#x27;d like to support what I&#x27;m making, my available paintings and prints are at <a href="https://tjm.art/gallery/available/">tjm.art</a>.</p>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     {{signup}}
   `,
   afterFooter: `

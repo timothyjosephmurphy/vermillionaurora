@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { exhibitions, upcoming } from '../src/data/exhibitions.mjs';
-import { BUTTONDOWN_USERNAME, newsletterAction } from '../src/data/newsletter.mjs';
+import { NEWSLETTER_ENABLED, newsletterAction } from '../src/data/newsletter.mjs';
 
 const page = fs.readFileSync('src/pages/exhibitions/index.astro', 'utf8');
 const signup = fs.readFileSync('src/components/EmailSignup.astro', 'utf8');
@@ -28,7 +28,7 @@ test('homepage Studio 601 card shows the whole flyer', () => {
   assert.equal(studio.contain, undefined);
 });
 
-test('the exhibitions page lists past shows and a Buttondown form, with no upcoming show', () => {
+test('the exhibitions page lists past shows and an email signup form, with no upcoming show', () => {
   const formAt = page.indexOf('id="exhibitions-email"');
   const pastAt = page.indexOf('id="past-shows-heading"');
   const gridAt = page.indexOf('exhibition-index-grid');
@@ -44,7 +44,7 @@ test('the exhibitions page lists past shows and a Buttondown form, with no upcom
   assert.doesNotMatch(page, /Sip & Stroll|pick up November/);
   assert.match(page, /Bitcoin Film Festival Warsaw, Victrola, and more/);
   assert.doesNotMatch(page, /Ghost Gallery|Carré|carre-dartistes|ghost-gallery-minis/);
-  assert.equal(BUTTONDOWN_USERNAME, 'timothyjosephmurphy');
+  assert.equal(NEWSLETTER_ENABLED, true);
   assert.equal(newsletterAction, '/newsletter/subscribe');
   assert.match(signup, /action=\{newsletterAction\}/);
   assert.doesNotMatch(signup, /name="embed"/);
