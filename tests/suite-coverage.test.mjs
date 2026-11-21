@@ -63,6 +63,13 @@ test('browser shards partition the suite and a bare run lists every file', () =>
   assert.equal(webkit.engine, 'webkit');
   assert.ok(webkit.files.includes('tests/paintings-wall.browser-test.mjs'));
   assert.equal(webkit.files.includes('tests/smoke.browser-test.mjs'), false);
+  // Key buyer flows must run on every engine so a Safari- or Firefox-only regression fails the gate (#844).
+  assert.ok(webkit.files.includes('tests/cross-browser-flows.browser-test.mjs'));
+  assert.ok(webkit.files.includes('tests/home-carousel-availability.browser-test.mjs'));
+  const firefox = parseBrowserArgs(['--engine=firefox']);
+  assert.equal(firefox.engine, 'firefox');
+  assert.ok(firefox.files.includes('tests/cross-browser-flows.browser-test.mjs'));
+  assert.equal(firefox.files.includes('tests/smoke.browser-test.mjs'), false);
   assert.throws(() => parseBrowserArgs(['--shard=0/2']), /Invalid shard/);
   assert.throws(() => parseBrowserArgs(['--shard=3/2']), /Invalid shard/);
 });

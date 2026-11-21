@@ -2,11 +2,12 @@
 // --shard=i/n keeps a stable round-robin slice (shard 1/2 and 2/2 together cover the suite).
 // --engine=chromium runs every selected file with PW_ENGINE=chromium.
 // --engine=webkit runs only the files that launch WebKit, with PW_ENGINE=webkit.
+// --engine=firefox runs only the files that launch Firefox, with PW_ENGINE=firefox.
 import {spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
-import {browserFiles, root, shardFiles, webkitBrowserFiles} from '../scripts/test-manifest.mjs';
+import {browserFiles, firefoxBrowserFiles, root, shardFiles, webkitBrowserFiles} from '../scripts/test-manifest.mjs';
 
 export function parseBrowserArgs(argv, discovered = browserFiles()) {
   let shard = null;
@@ -25,16 +26,16 @@ export function parseBrowserArgs(argv, discovered = browserFiles()) {
     }
     if (arg === '--engine' || arg.startsWith('--engine=')) {
       engine = arg === '--engine' ? argv[++i] : arg.slice('--engine='.length);
-      if (engine !== 'chromium' && engine !== 'webkit') throw new Error(`Unknown --engine: ${engine}`);
+      if (engine !== 'chromium' && engine !== 'webkit' && engine !== 'firefox') throw new Error(`Unknown --engine: ${engine}`);
       continue;
     }
     if (arg.startsWith('-')) throw new Error(`Unknown argument: ${arg}`);
     only.push(arg);
   }
   let files = only.length ? [...new Set(only)] : [...discovered];
-  if (engine === 'webkit') {
-    const webkit = new Set(webkitBrowserFiles());
-    files = files.filter(file => webkit.has(file));
+  if (engine === 'webkit' || engine === 'firefox') {
+    const supported = new Set(engine === 'webkit' ? webkitBrowserFiles() : firefoxBrowserFiles());
+    files = files.filter(file => supported.has(file));
   }
   files.sort();
   for (const file of files) {

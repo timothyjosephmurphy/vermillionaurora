@@ -69,7 +69,14 @@ export function browserFiles() {
 export function webkitBrowserFiles() {
   return browserFiles().filter(file => {
     const source = fs.readFileSync(path.join(root, file), 'utf8');
-    return /\bwebkit\s*\.\s*launch\b|\[\s*chromium\s*,\s*webkit\s*\]/.test(source);
+    return /\bwebkit\s*\.\s*launch\b|\[\s*chromium\s*,\s*webkit\s*\]|\btype\s*:\s*webkit\b|\[\s*'webkit'\s*,\s*webkit\b/.test(source);
+  });
+}
+
+export function firefoxBrowserFiles() {
+  return browserFiles().filter(file => {
+    const source = fs.readFileSync(path.join(root, file), 'utf8');
+    return /\bfirefox\s*\.\s*launch\b|\btype\s*:\s*firefox\b/.test(source);
   });
 }
 
