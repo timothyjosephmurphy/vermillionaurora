@@ -18,13 +18,7 @@ declined, redeemed when payment completes. A claimed code cannot be used in a se
 
 ## Newsletter signup
 
-Joining the list on the site (`POST /newsletter/subscribe`) subscribes that address with the Buttondown API and emails one collector code. The note is `Newsletter signup YYYY-MM-DD`. The same address does not get a second newsletter code. A testimonial code for that address stays separate.
-
-The checkout Worker (`vermillion-commissions`) needs secret `BUTTONDOWN_API_KEY` (Buttondown → Settings → API). Without it the form says the list isn’t accepting signups and does not issue a code. This secret is not on the Worker yet.
-
-Optional: secret `BUTTONDOWN_WEBHOOK_SECRET` and a Buttondown webhook for `subscriber.created` and `subscriber.confirmed` aimed at `https://tjm.art/newsletter/buttondown-webhook`. The signature is `X-Buttondown-Signature: sha256=` plus the HMAC-SHA256 hex of the raw body. If the event only includes a subscriber id, the handler loads the address with `BUTTONDOWN_API_KEY`. No webhook is configured yet.
-
-Verify without adding a stranger to the list: `node --test cloudflare/newsletter.test.mjs` mocks Buttondown and Gmail. After the API key is saved and this is deployed, sign up with an address you control. One code email should arrive from tj@tjm.art. Submitting that address again should not send a second code.
+Joining the list on the site (`POST /newsletter/subscribe`) stores the address in TJ's own storage and issues one collector code, shown on the confirmation page (no email to the subscriber). The note is `Newsletter signup YYYY-MM-DD`. The same address never gets a second newsletter code, including after unsubscribing and rejoining. A testimonial code for that address stays separate. `@example.com` test addresses get a placeholder, not a real code. See `docs/newsletter.md`.
 
 ## Owner code (TJ, unlimited)
 Stored only as a SHA-256 hash in `cloudflare/print-codes.mjs`. Prints at production cost; originals at $0 plus shipping

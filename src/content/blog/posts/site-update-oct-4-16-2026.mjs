@@ -46,7 +46,7 @@ export const post = {
       <li><strong>Oct 15.</strong> Strawberry Point Hiking Trip gallery. One painting wall replaced the older print wall. Framed prints re-quoted at current FinerWorks costs. A 3D gallery walkthrough with themed rooms, and tjm.art/play, a gallery dungeon you can walk through.</li>
       <li><strong>Oct 16.</strong> Strawberry Point Backpacking Trip originals and prints. No print is larger than its original. Site emails now come from tj@tjm.art. A dedicated Exhibitions page. In the 3D gallery: video holograms of me in each room, a mute button, and my art books on lecterns you can read.</li>
     </ul>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
     {{signup}}
   `,

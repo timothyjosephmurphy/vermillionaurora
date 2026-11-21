@@ -36,7 +36,7 @@ export const post = {
       <li><strong>Oct 17.</strong> Sales tax at checkout now uses the Washington Department of Revenue rate lookup, and a failed lookup never blocks payment. Unframed prints get a half-inch border. Product pages show live sold or unavailable status. Published "My Week in Art (Oct 11–17)." Added a photo beside my bio on the About page. In tjm.art/play: a share card, a notice for in-app browsers, new tools, easter eggs, a Buy Scanner, sprinting and footsteps.</li>
       <li><strong>Oct 18.</strong> Cleared a batch of audit fixes: faster Buy buttons, lighter share images on product pages, internal catalog notes hidden, no Buy buttons on sold or not-for-sale work, and redirects for /shop and /checkout. Bitcoin checkout turned on for all available work. Homepage hero copy says originals and prints are for sale. Updated my education on About to match LinkedIn. In tjm.art/play: gate rooms between the museums, smoother transitions, holograms playing again, and more detailed models.</li>
     </ul>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
     {{signup}}
   `,

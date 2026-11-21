@@ -139,7 +139,9 @@ test('newsletter signup on tjm.art is forwarded and fails closed without the che
   const seen=[];const env={...off,ASSETS:{fetch:()=>new Response('asset')},CHECKOUT:{fetch:r=>{seen.push([r.method,new URL(r.url).pathname]);return Response.json({ok:true});}}};
   assert.equal((await worker.fetch(new Request('https://tjm.art/newsletter/subscribe',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'email=a@b.co'}),env)).status,200);
   assert.deepEqual(seen,[['POST','/newsletter/subscribe']]);
-  assert.equal((await worker.fetch(new Request('https://tjm.art/newsletter/buttondown-webhook',{method:'POST',body:'{}'}),env)).status,200);
+  assert.equal((await worker.fetch(new Request('https://tjm.art/newsletter/unsubscribe?e=a%40b.co&t=x'),env)).status,200);
+  assert.equal((await worker.fetch(new Request('https://tjm.art/newsletter/export.csv'),env)).status,200);
+  assert.deepEqual(seen.map(x=>x[1]),['/newsletter/subscribe','/newsletter/unsubscribe','/newsletter/export.csv']);
   assert.equal((await worker.fetch(new Request('https://tjm.art/newsletter/subscribe',{method:'POST'}),{...env,CHECKOUT:undefined})).status,503);
   assert.equal(await (await worker.fetch(new Request('https://vermillionaurora.com/newsletter/subscribe',{method:'POST'}),env)).text(),'asset');
 });
