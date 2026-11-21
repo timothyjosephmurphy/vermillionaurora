@@ -90,8 +90,11 @@ const subjectList = [...subjectOptions].sort((a, b) => a[1].localeCompare(b[1]))
       var list=sec.querySelector('.painting-list'),items=[].slice.call(list.children);
       items.sort(function(a,b){return (sorts[sort]||sorts['price-desc'])(a,b)||home.get(a)-home.get(b);});
       var vis=0;
+      // Re-append only when the order changed. Search commits a change event when the field blurs, which is
+      // usually the press on a result; moving the pressed card out of the DOM there makes browsers drop the click.
+      var moved=items.some(function(r,i){return list.children[i]!==r;});
       items.forEach(function(r){
-        list.appendChild(r);
+        if(moved)list.appendChild(r);
         var ok=(!q||q.split(/\s+/).every(function(w){return r.dataset.search.indexOf(w)>-1;}))&&(!pr||r.dataset.priceBand===pr)&&(!sz||r.dataset.sizeBand===sz)&&(!sub||(' '+r.dataset.subjects+' ').indexOf(' '+sub+' ')>-1);
         r.hidden=!ok;if(ok)vis++;
       });
@@ -108,7 +111,7 @@ const subjectList = [...subjectOptions].sort((a, b) => a[1].localeCompare(b[1]))
   var init=new URLSearchParams(location.search);
   ['q','price','size','subject','sort'].forEach(function(n){var v=init.get(n);if(v!==null&&f(n)){f(n).value=v;if(f(n).value!==v)f(n).value=n==='sort'?'price-desc':'';}});
   form.hidden=false;
-  form.addEventListener('input',function(){apply();});form.addEventListener('change',function(){apply();});
+  form.addEventListener('input',function(){apply();});form.addEventListener('change',function(e){if(e.target&&e.target.name==='q')return;apply();});
   document.querySelectorAll('[data-avail-reset]').forEach(function(b){b.addEventListener('click',function(){form.reset();apply();});});
   apply(false);
 })();

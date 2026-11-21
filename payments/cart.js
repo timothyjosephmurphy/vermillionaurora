@@ -347,6 +347,11 @@
     fin.addEventListener('change',()=>{const f=finishes(base).find(x=>x.key===fin.value);apply(f&&f.id);});
     sizeL.append(size);finL.append(fin);wrap.append(sizeL,finL);info.append(wrap);
   }
+  function refreshSubtotal(){
+    let subtotal=0;
+    for(const line of cart){const p=meta[line.id],live=capabilities?.products.find(p=>p.id===line.id),amount=live?.amount||p?.amount||p?.listing?.price?.amount;if(amount)subtotal+=Number(amount)*line.quantity;}
+    root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
+  }
   function render(){
     const list=root.querySelector('[data-cart-items]');list.replaceChildren();
     let subtotal=0,invalid=false;
@@ -359,7 +364,9 @@
       if(isPrint&&details.frame)info.append(node('p',`${details.frame.name} frame · ${details.frame.glazing.name} acrylic · Assembled by FinerWorks`,'cart-frame-description'));
       if(!eligible(line.id)){invalid=true;info.append(node('p',live?.status==='sold'?'Sold':live?.status==='reserved'?'Temporarily reserved':'Checkout unavailable — please inquire','cart-line-unavailable'));}
       if(details?.sampleOnly)info.append(node('p','Low-resolution sample · Real printed order · One copy','cart-footnote'));
-      if(isPrint&&!details.sampleOnly)printChoices(info,line);if((isPrint&&!details.sampleOnly)||isBook){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart().catch(error=>announce(error.message));invalidate();render();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart().catch(error=>announce(`The item was removed here, but its reservation could not be updated yet: ${error.message}`));invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
+      if(isPrint&&!details.sampleOnly)printChoices(info,line);if((isPrint&&!details.sampleOnly)||isBook){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart().catch(error=>announce(error.message));invalidate();// Update this line in place. The change event fires when the field blurs, which is often the press on Remove or another cart control;
+      // re-rendering the list there replaces the pressed button and every browser drops that click.
+      const price=row.querySelector('.cart-line-price');if(price)price.textContent=amount?money(Number(amount)*n):'Price unavailable';refreshSubtotal();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart().catch(error=>announce(`The item was removed here, but its reservation could not be updated yet: ${error.message}`));invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
     }
     root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
     // The 15-minute hold applies to originals only; prints and deposits are not held.

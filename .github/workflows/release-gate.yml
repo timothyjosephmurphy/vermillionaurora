@@ -288,7 +288,7 @@ jobs:
           if [ "$TIER" = "full" ]; then
             node tests/run-browser.mjs --shard="${SHARD}/${SHARD_TOTAL}" --engine=chromium
           else
-            node tests/run-browser.mjs -- tests/smoke.browser-test.mjs $BROWSER_TESTS
+            node tests/run-browser.mjs --engine=chromium -- tests/smoke.browser-test.mjs tests/cross-browser-flows.browser-test.mjs $BROWSER_TESTS
           fi
       - name: Save browser previews
         if: always()
@@ -303,9 +303,12 @@ jobs:
           if-no-files-found: ignore
           retention-days: 1
 
+  # Safari (WebKit desktop + iPhone) and Firefox. Code changes run the key buyer flows on both
+  # engines; full runs add every WebKit- or Firefox-capable browser test. A Safari-only checkout
+  # bug went unnoticed for weeks while only Chromium ran on code changes (#844).
   browser-webkit:
     needs: prepare
-    if: needs.prepare.result == 'success' && needs.prepare.outputs.tier == 'full'
+    if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
     runs-on: ubuntu-latest
     timeout-minutes: 45
     container:
@@ -355,7 +358,29 @@ jobs:
         timeout-minutes: 20
         env:
           CHANGED_FILES: ${{ needs.prepare.outputs.files }}
-        run: node tests/run-browser.mjs --engine=webkit
+          TIER: ${{ needs.prepare.outputs.tier }}
+          BROWSER_TESTS: ${{ needs.prepare.outputs.browser_tests }}
+        run: |
+          set -euo pipefail
+          if [ "$TIER" = "full" ]; then
+            node tests/run-browser.mjs --engine=webkit
+          else
+            node tests/run-browser.mjs --engine=webkit -- tests/cross-browser-flows.browser-test.mjs $BROWSER_TESTS
+          fi
+      - name: Run Firefox browser tests
+        if: ${{ !cancelled() }}
+        timeout-minutes: 15
+        env:
+          CHANGED_FILES: ${{ needs.prepare.outputs.files }}
+          TIER: ${{ needs.prepare.outputs.tier }}
+          BROWSER_TESTS: ${{ needs.prepare.outputs.browser_tests }}
+        run: |
+          set -euo pipefail
+          if [ "$TIER" = "full" ]; then
+            node tests/run-browser.mjs --engine=firefox
+          else
+            node tests/run-browser.mjs --engine=firefox -- tests/cross-browser-flows.browser-test.mjs $BROWSER_TESTS
+          fi
       - name: Save browser previews
         if: always()
         timeout-minutes: 5
