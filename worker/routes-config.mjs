@@ -27,6 +27,8 @@ export const SHOP_REDIRECTS = {
   '/shop/': '/gallery/available/',
   '/store': '/gallery/available/',
   '/store/': '/gallery/available/',
+  '/available': '/gallery/available/',
+  '/available/': '/gallery/available/',
   '/checkout': '/cart/',
   '/checkout/': '/cart/',
 };
