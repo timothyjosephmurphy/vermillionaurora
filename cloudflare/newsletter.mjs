@@ -142,7 +142,7 @@ export function signupNotice(record) {
 async function notifyOwner(env, record) {
   const token = await sellerMailToken(env);
   const {subject, text, html} = signupNotice(record);
-  const raw = noteMime({from: siteSender(env), to: env.NEWSLETTER_NOTIFY_TO || NEWSLETTER_NOTIFY_TO, subject, text, html,
+  const raw = noteMime({from: siteSender(env), to: NEWSLETTER_NOTIFY_TO, subject, text, html,
     messageId: `<newsletter-signup-${record.hash}-${Date.parse(record.subscribedAt) || 0}@tjm.art>`});
   const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
     method: 'POST', signal: AbortSignal.timeout(20000),
