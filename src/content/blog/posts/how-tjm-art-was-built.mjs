@@ -47,7 +47,7 @@ export const post = {
       <li><strong>Oct 4.</strong> First blog post: "Coined in Watercolor: Warsaw, Kraków, and Prague."</li>
     </ul>
     <p>tjm.art became the main domain a few days later, on Oct 7.</p>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
     {{signup}}
   `,

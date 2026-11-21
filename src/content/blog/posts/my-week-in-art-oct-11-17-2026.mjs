@@ -135,7 +135,7 @@ export const post = {
       <p>Thanks for following along. See you next week.</p>
       <p class="endmark">— TJ</p>
     </div>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
     {{signup}}
   `,

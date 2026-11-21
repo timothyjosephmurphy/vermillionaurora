@@ -113,7 +113,7 @@ export const post = {
     <h2>Come see the paintings</h2>
     <p>If you want a higher dimensional object of your own, the closest I can get you is a painting. My original paintings and prints are on <a href="https://tjm.art/gallery/available/">tjm.art</a>.</p>
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin for any original painting or print on <a href="https://tjm.art/gallery/available/">tjm.art</a>.</strong></p>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     {{signup}}
   `,
   afterFooter: `

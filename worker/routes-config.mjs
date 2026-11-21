@@ -13,7 +13,7 @@ export const TESTIMONIALS_API = '/testimonials/api/';
 export const TESTIMONIALS_API_PATTERN = `${TESTIMONIALS_API}*`;
 export const TESTIMONIALS_PAGE = ['/testimonials', '/testimonials/'];
 
-export const NEWSLETTER_PATHS = ['/newsletter/subscribe', '/newsletter/buttondown-webhook'];
+export const NEWSLETTER_PATHS = ['/newsletter/subscribe', '/newsletter/unsubscribe', '/newsletter/export.csv'];
 
 export const ORIGINALS_API = '/inventory/originals';
 
