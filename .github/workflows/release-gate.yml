@@ -371,6 +371,8 @@ jobs:
         if: ${{ !cancelled() }}
         timeout-minutes: 15
         env:
+          # Firefox refuses to start as root when $HOME belongs to another user (the Playwright image's pwuser).
+          HOME: /root
           CHANGED_FILES: ${{ needs.prepare.outputs.files }}
           TIER: ${{ needs.prepare.outputs.tier }}
           BROWSER_TESTS: ${{ needs.prepare.outputs.browser_tests }}
