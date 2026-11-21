@@ -35,7 +35,7 @@ export const post = {
     <ul class="timeline">
       <li><strong>Oct 19.</strong> Commission balance checkout, so a client can pay the rest after the deposit. tj@tjm.art works as a Nostr address and a Lightning address. Bitcoin payments moved to pay.tjm.art. The commissions form takes an invoice or order reference. In tjm.art/play: phone controls, a simpler start screen, tool tips, cart and guide bot polish, and every gallery of mine in one app under /play/. Older work in the galleries is marked for sale. Published "How I Etched a Brass Plate with a Silhouette Cameo and Ferric Chloride" and "Finding a Sound, and a Bass from My Dad."</li>
     </ul>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
     {{signup}}
   `,

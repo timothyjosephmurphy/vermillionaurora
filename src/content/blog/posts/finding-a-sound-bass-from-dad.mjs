@@ -68,7 +68,7 @@ export const post = {
     <p>He's right. It feels good to play it.</p>
     <p>I'm going to start playing this out, beginning with an open mic next week.</p>
     <p>If you want to see where this goes, follow along at <a href="https://tjm.art">tjm.art</a>.</p>
-    <!-- Studio notes signup (studio-tracker #89); same Buttondown form as /about/ -->
+    <!-- Studio notes signup (studio-tracker #89); same signup form as /about/ -->
     <p class="pay-bitcoin"><strong>You can pay with Bitcoin.</strong></p>
     {{signup}}
   `,

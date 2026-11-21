@@ -75,7 +75,7 @@ export default {
     await syncBuiltCatalog(env);
     await applyCatalogOverlay(env);
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);
-    if (path === '/newsletter/subscribe' || path === '/newsletter/buttondown-webhook') return newsletterApi(request,env);
+    if (path === '/newsletter/subscribe' || path === '/newsletter/unsubscribe' || path === '/newsletter/export.csv') return newsletterApi(request,env,Date.now(),ctx);
     if (path.startsWith('/buffer/')) return bufferApi(request,env);
     if (path.startsWith('/etsy/listings/')) return etsyListings(request,env);
     if (path.startsWith('/etsy/')) return etsyConnection(request,env);
