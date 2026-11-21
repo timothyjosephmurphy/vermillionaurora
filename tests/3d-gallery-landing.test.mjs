@@ -42,6 +42,18 @@ test('the exhibitions carousel tile opens the landing page with a 16:9 thumbnail
   assert.match(index, /href="\/exhibitions\/3d-gallery\/"/);
 });
 
+test('each still has a caption and the page keeps the public stories and the pay line', () => {
+  assert.match(page, /You can walk this gallery in a browser/);
+  assert.match(page, /class="shot-caption"/);
+  assert.match(page, /href="\/products\/sunrise-on-rainier-from-denny-blaine\/"/);
+  assert.match(page, /href="\/products\/honeybadger-and-cub-with-genesis-block\/"/);
+  assert.match(page, /href="\/products\/painting-insect-garden\/"/);
+  assert.match(page, /href="\/neural-dance\/"/);
+  assert.match(page, /\$\{GALLERY_3D_URL\}\?room=neural-dance/);
+  assert.match(page, /Pay with Bitcoin \/ Lightning \(BTCPay\) or card\./);
+  assert.doesNotMatch(page, /\$\d/);
+});
+
 test('gallery stills are WebP files at the exhibition image path', () => {
   assert.match(page, /loading="lazy"/);
   assert.match(page, /alt=\{shot\.alt\}/);

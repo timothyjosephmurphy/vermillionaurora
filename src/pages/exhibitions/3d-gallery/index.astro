@@ -8,15 +8,56 @@ const description = 'Walk TJ Murphy’s 3D gallery: a domed building on the lawn
 const pageUrl = 'https://tjm.art/exhibitions/3d-gallery/';
 const imageRoot = '/exhibitions/3d-gallery/images/';
 const hero = `${imageRoot}exterior.webp`;
+const neuralRoom = `${GALLERY_3D_URL}?room=neural-dance`;
 const shots = [
-  { file: 'rotunda.webp', width: 1600, height: 900, alt: 'Inside a domed gallery room, with watercolor landscapes on the walls and the courtyard visible through an arch', caption: 'A domed room, with landscapes on the walls and the courtyard through the arch.' },
-  { file: 'round-room.webp', width: 1600, height: 900, alt: 'A round gallery room with portraits and landscapes on white walls beneath a ring of windows', caption: 'A round room of portraits and landscapes under the windows.' },
-  { file: 'green-room.webp', width: 1600, height: 900, alt: 'Four framed figurative paintings on a white wall in a room with a pale green floor, beside a stone arch', caption: 'Figurative paintings in a room with a green floor.' },
-  { file: 'patio-arch.webp', width: 1600, height: 900, alt: 'A stone arch opening from a gallery onto a patio with a landscape painting, and smaller works on the interior wall', caption: 'An arch from the gallery onto a fenced patio.' },
-  { file: 'portrait-salon.webp', width: 1600, height: 900, alt: 'A curved gallery wall of portrait paintings beneath a balcony of windows', caption: 'A salon of portraits under the upper windows.' },
-  { file: 'sunset-studies.webp', width: 1600, height: 900, alt: 'Small sunset paintings arranged on a gallery wall, with an arch opening into another room', caption: 'Sunset studies beside an arch into the next room.' },
-  { file: 'wide-hall.webp', width: 1600, height: 900, alt: 'Three large colorful paintings on a curved gallery wall, with an arch looking into the courtyard', caption: 'A wide hall of large paintings opening onto the courtyard.' },
-  { file: 'kinoteka.webp', width: 1600, height: 900, alt: 'The Kinoteka annex, a small cinema with red seats facing a curtained screen', caption: 'The Kinoteka annex, a small cinema inside the gallery.' },
+  {
+    file: 'rotunda.webp', width: 1600, height: 900,
+    alt: 'Inside a domed gallery room, with watercolor landscapes on the walls and the courtyard visible through an arch',
+    caption: 'Rainier at dawn, from Denny Blaine.',
+    story: `<p>The two wide paintings on the left are the same beach: Denny Blaine, near where I live in Seattle. <a href="/products/sunrise-on-rainier-from-denny-blaine/">Sunrise on Rainier from Denny Blaine</a> is the close view, a rainbow sky and my meditation blanket on the rocks. I went down at dawn the day my friend Lisa was climbing Rainier.</p><p><a href="/products/sunrise-on-tahoma-from-denny-blaine/">Sunrise on Tahoma from Denny Blaine</a> is the farther view, below it. That's me on the rock at the left, wrapped in the blanket.</p>`,
+  },
+  {
+    file: 'round-room.webp', width: 1600, height: 900,
+    alt: 'A round gallery room with portraits and landscapes on white walls beneath a ring of windows',
+    caption: 'Bass Coast portraits, and smaller landscapes between them.',
+    story: `<p>The scratchy portraits are from Bass Coast. The fan is <a href="/products/book-art-f367882aaeb0e32471eb/">Jennica at Bass Coast</a>. With her: <a href="/products/book-art-54ff45104a57a68d4beb/">Neil</a>, <a href="/products/book-art-614d5b68dbe5052e302a/">Devo</a>, and <a href="/products/book-art-4350a257e5a6a5e75a31/">Michael</a>. I painted portraits of the crew over a few years at Bass Coast, the Eclipse in Austin, and Black Rock City, and gave them as gifts.</p><p>The smaller landscapes along the far side of the room include the <a href="/products/archived-painting-433/">Bass Coast sunrise studies</a>.</p>`,
+  },
+  {
+    file: 'green-room.webp', width: 1600, height: 900,
+    alt: 'Four framed figurative paintings on a white wall in a room with a pale green floor, beside a stone arch',
+    caption: 'Three paintings for the Bitcoin Film Festival.',
+    story: `<p>The wall on the green floor is the set I made for the <a href="/exhibitions/bitcoin-film-festival-warsaw/">Bitcoin Film Festival in Warsaw</a>. <a href="/products/honeybadger-and-cub-with-genesis-block/">Honeybadger and Cub with Genesis Block</a> is the mascot protecting its cub. I wrote the Genesis block in clear wax first, so the watercolor would resist it.</p><p><a href="/products/coined-in-watercolor-film-poster/">Coined in Watercolor</a> is the poster for Gavin Robertson's documentary. I painted it from a frame of me meditating on Table Mountain in Cape Town, and I gave the painting to the festival organizer. <a href="/products/warszawska-syrenka/">Warszawska Syrenka</a> is Warsaw's protector spirit, with hussar wings and a Bitcoin shield. Tomek at the festival suggested the siren, and that the B belongs on the shield.</p><p>On the wall to the left is <a href="/products/book-art-ec22daff29e72f16eb76/">Tomer Strolight</a>, hat and sunglasses, microphone up. The page has the painting. I haven't written a longer note there.</p>`,
+  },
+  {
+    file: 'patio-arch.webp', width: 1600, height: 900,
+    alt: 'A stone arch opening from a gallery onto a patio with a landscape painting, and smaller works on the interior wall',
+    caption: 'The cormorant mural, out on the patio.',
+    story: `<p>The painting on the fence is <a href="/products/cormorant-presiding-over-sunset-on-puget-sound/">Cormorant Presiding over Sunset on Puget Sound</a>. A cormorant dries its wings on an old piling while orange clouds sit over the sound, a strip of turquoise sky between them, and two sailboats below the mountains. The original is a mural in a private garden. Prints are made from a photograph of it.</p><p>Outdoor pieces sit past the stone arches. More on the rooms is in <a href="/blog/walk-my-paintings-3d-gallery/">Walk My 206 Paintings in 3D</a>.</p>`,
+  },
+  {
+    file: 'portrait-salon.webp', width: 1600, height: 900,
+    alt: 'A curved gallery wall of portrait paintings beneath a balcony of windows',
+    caption: 'Loree, and the portraits hung with her.',
+    story: `<p>The close portrait with the flower crown is <a href="/products/book-art-64cfd389b3dbb5cde532/">Loree</a>. <a href="/products/book-art-a627c7b7d19ace6b3e51/">John</a> hangs next to her. The pages have the paintings. I haven't written a longer note for either one.</p>`,
+  },
+  {
+    file: 'sunset-studies.webp', width: 1600, height: 900,
+    alt: 'Small sunset paintings arranged on a gallery wall, with an arch opening into another room',
+    caption: 'Sunset strips, and the paintings beside them.',
+    story: `<p>The long row of small horizontal panels is the sunset ridge strips, from the <a href="/gallery/older-work/">older work</a>. One of them is <a href="/products/older-work-sunset-ridge-strips-original-1/">Sunset Ridge Strip 174</a>. I don't have a longer story for the set on the site.</p><p>On the same wall: <a href="/products/painting-moonlit-water/">Moonrise Over the Cascades</a>, a full moon over a lake in the North Cascades, painted in Seattle; <a href="/products/painting-sunflower-woman/">Vision of Ukraine at Peace</a>; <a href="/products/painting-figures-in-wheatfield/">The Mother of Kiev</a>; and <a href="/products/girl-wearing-flower-crown/">Girl Wearing Flower Crown</a>.</p>`,
+  },
+  {
+    file: 'wide-hall.webp', width: 1600, height: 900,
+    alt: 'Three large colorful paintings on a curved gallery wall, with an arch looking into the courtyard',
+    caption: 'El Salvador, with Chase Toole.',
+    story: `<p>These three are a collaboration with Chase Toole: <a href="/products/painting-insect-garden/">El Salvador: Past</a>, <a href="/products/painting-emergence/">Present</a>, and <a href="/products/painting-twin-dragons/">Future</a>. I flew to El Zonte for the reference photos and painted them by hand in Seattle, then brought work back for <a href="/exhibitions/el-salvador/">Adopting Bitcoin in El Salvador</a>.</p><p>The doorway out of this room is marked El Salvador. The longer note is <a href="/blog/el-salvador-sunrises-sunsets/">Sunrise and Sunset at Bitcoin Beach</a>.</p>`,
+  },
+  {
+    file: 'kinoteka.webp', width: 1600, height: 900,
+    alt: 'The Kinoteka annex, a small cinema with red seats facing a curtained screen',
+    caption: 'The Kinoteka annex.',
+    story: `<p>Kinoteka is the cinema inside Warsaw's Palace of Culture and Science. Gavin Robertson's documentary <a href="/film/">Coined in Watercolor</a> premiered there on June 5, 2026, at the Bitcoin Film Festival. This room is that theater: red seats facing a screen.</p><p>The same annex runs <a href="/neural-dance/">Neural Dance</a>, the interactive mural projection, inside the gallery. <a href="${neuralRoom}">Open the Neural Dance annex</a>.</p>`,
+  },
 ];
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -56,7 +97,7 @@ const jsonLd = {
         <header class="gallery-landing-heading">
           <p class="eyebrow dark">A gallery you can walk</p>
           <h1>Walk-Through 3D Gallery</h1>
-          <p>Domed rooms on a lawn, original paintings on the walls, and a Kinoteka cinema annex. The courtyard looks out toward the mountains.</p>
+          <p>You can walk this gallery in a browser, on a phone or a computer. I hung the paintings at their real size in domed rooms, with a courtyard in the middle and the Kinoteka cinema off to one side. The pictures below are a few of the stops. The ring is the door.</p>
         </header>
         <figure class="gallery-hero">
           <img src={hero} width="1600" height="900" alt="The domed 3D gallery from the lawn, with the courtyard fountain and the Kinoteka tower" fetchpriority="high" decoding="async" />
@@ -71,12 +112,16 @@ const jsonLd = {
           {shots.map((shot) => (
             <figure>
               <img src={`${imageRoot}${shot.file}`} width={shot.width} height={shot.height} alt={shot.alt} loading="lazy" decoding="async" />
-              <figcaption>{shot.caption}</figcaption>
+              <figcaption>
+                <p class="shot-caption">{shot.caption}</p>
+                <div class="shot-story" set:html={shot.story}></div>
+              </figcaption>
             </figure>
           ))}
         </section>
         <section class="gallery-note">
-          <p>You move through the rooms in the browser, on a phone or a computer. The ring above is the door.</p>
+          <p>You move through the rooms in the browser. The plaque beside a painting opens its page.</p>
+          <p class="gallery-pay">Pay with Bitcoin / Lightning (BTCPay) or card.</p>
           <p><a href={GALLERY_3D_URL}>Enter the gallery →</a></p>
         </section>
         <nav class="gallery-more" aria-label="More exhibitions"><a href="/exhibitions/">← All exhibitions</a><a href="/#exhibitions">Back to the exhibitions carousel</a></nav>
@@ -141,10 +186,15 @@ const jsonLd = {
     .gallery-shots figure:first-child, .gallery-shots figure:last-child { grid-column: 1 / -1; }
   }
   .gallery-shots figure { margin: 0; }
-  .gallery-shots figcaption { margin-top: 8px; color: var(--muted); font-size: .92rem; line-height: 1.5; }
+  .gallery-shots figcaption { margin-top: 8px; }
+  .shot-caption { margin: 0 0 6px; color: var(--ink, #2c2924); font-size: 1rem; line-height: 1.4; }
+  .shot-story { max-width: 68ch; color: var(--ink, #2c2924); font-size: .95rem; line-height: 1.6; }
+  .shot-story p { margin: 0 0 10px; }
+  .shot-story a, .gallery-note a, .gallery-more a { text-decoration: underline; text-underline-offset: 3px; }
+  .gallery-pay { font-weight: 600; }
   .gallery-note { max-width: 68ch; margin: 36px auto 0; font-size: 1.03rem; line-height: 1.75; }
   .gallery-note p { margin: 0 0 14px; }
-  .gallery-note a, .gallery-more a { text-decoration: underline; text-underline-offset: 4px; }
+  .gallery-more a { text-decoration: underline; text-underline-offset: 4px; }
   .gallery-more { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; border-top: 1px solid var(--line); padding-top: 24px; margin-top: 36px; font-size: .9rem; }
   .warp { position: fixed; inset: 0; z-index: 80; pointer-events: none; opacity: 0; background: radial-gradient(circle at 50% 42%, rgba(255, 236, 214, .15) 0 8%, rgba(88, 36, 18, .35) 18%, rgba(12, 8, 7, .94) 46%); }
   .is-warping .warp { animation: warp-zoom .68s ease-in forwards; }
@@ -154,7 +204,8 @@ const jsonLd = {
     .gallery-hero img { height: 220px; }
     .portal-row { margin-top: -58px; }
     .portal-core { font-size: .66rem; letter-spacing: .1em; }
-    .gallery-shots { gap: 16px; }
+    .gallery-shots { gap: 28px; }
+    .shot-story { font-size: .92rem; line-height: 1.55; }
   }
   @media (prefers-reduced-motion: reduce) {
     .portal-ring, .portal-ring::after { animation: none; }
