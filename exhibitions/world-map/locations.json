@@ -11,6 +11,11 @@
     "region": "northwest",
     "exhibitions": [
       {
+        "name": "20th Annual Holiday Mini Art Exhibit, Ghost Gallery",
+        "slug": "ghost-gallery-holiday-mini",
+        "date": "Nov 2026–Jan 2027"
+      },
+      {
         "name": "Intiman Theater Seattle Auction",
         "slug": "intiman-auction",
         "date": "2023"
@@ -143,6 +148,24 @@
         "href": "/blog/plato-aristotle-baloo/",
         "date": "2008",
         "type": "mural"
+      }
+    ]
+  },
+  {
+    "id": "woodinville",
+    "number": 8,
+    "city": "Woodinville",
+    "country": "Washington, USA",
+    "coordinates": [
+      47.74281,
+      -122.15563
+    ],
+    "region": "northwest",
+    "exhibitions": [
+      {
+        "name": "Woodinville Arts Alliance 2026 Sip & Stroll",
+        "slug": "woodinville-sip-and-stroll",
+        "date": "Nov 13–15, 2026"
       }
     ]
   }

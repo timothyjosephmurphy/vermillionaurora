@@ -30,7 +30,7 @@ try {
 
   await page.goto(origin + '/');
   await page.locator('.atlas-compact [data-pin="exhibition"]').first().waitFor();
-  assert.equal(await page.locator('.atlas-compact [data-pin="exhibition"]').count(), 7, 'build-time exhibition dots stay when the approved list fails');
+  assert.equal(await page.locator('.atlas-compact [data-pin="exhibition"]').count(), 8, 'build-time exhibition dots stay when the approved list fails');
   assert.equal(await page.locator('.atlas-compact [data-pin="testimonial"]').count(), 0);
   assert.equal(await page.locator('.atlas-compact-note').isHidden(), true);
   assert.equal(await page.locator('.atlas-compact').evaluate(el => el.closest('a')?.getAttribute('href')), '/exhibitions/world-map/');
@@ -43,7 +43,7 @@ try {
   }));
   await page.goto(origin + '/');
   await page.locator('.atlas-compact [data-pin="testimonial"]').nth(1).waitFor();
-  assert.equal(await page.locator('.atlas-compact [data-pin="exhibition"]').count(), 7);
+  assert.equal(await page.locator('.atlas-compact [data-pin="exhibition"]').count(), 8);
   const dots = await page.locator('.atlas-compact [data-pin="testimonial"]').evaluateAll(nodes => nodes.map(node => ({
     cx: Number(node.getAttribute('cx')),
     cy: Number(node.getAttribute('cy')),
