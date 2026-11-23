@@ -73,16 +73,20 @@ try {
     await page.goto(origin+'/exhibitions/world-map/');
     await page.locator('.atlas-toolbar:visible').waitFor();
     assert(await page.locator('.leaflet-image-layer').evaluate(image=>image.complete&&image.naturalWidth>0),'The self-hosted geography loads');
-    assert.equal(await page.locator('.atlas-place').count(), 7);
+    assert.equal(await page.locator('.atlas-place').count(), 8);
     assert.equal(await page.locator('#map-falmouth a[href="/blog/plato-aristotle-baloo/"]').count(), 1);
     assert.equal(await page.locator('.atlas-place[open]').count(), 0, 'Seattle and all other details start collapsed');
     await checkLayout();
-    await page.getByRole('button',{name:'Zoom to Seattle & Lillooet, 2 locations',exact:true}).click();
+    await page.getByRole('button',{name:'Zoom to Seattle & Lillooet & Woodinville, 3 locations',exact:true}).click();
     await checkPin('lillooet',[50.693611,-121.933611]);
+    const closer = page.getByRole('button',{name:'Zoom to Seattle & Woodinville, 2 locations',exact:true});
+    if (await closer.count()) await closer.click();
     await checkPin('seattle',[47.6062,-122.3321]);
+    await checkPin('woodinville',[47.74281,-122.15563]);
     await checkLayout();
     await page.locator('[data-map-place="seattle"]').click();
-    assert.equal(await page.locator('#map-seattle[open] a').count(),5);
+    assert.equal(await page.locator('#map-seattle[open] a').count(),6);
+    assert(await page.locator('#map-seattle a[href="/exhibitions/ghost-gallery-holiday-mini/"]').isVisible());
     assert(await page.locator('#map-seattle a[href="/murals/#garden-mural"]').isVisible());
     // Markers are redrawn on zoomend, so a pan/zoom still settling after the Seattle click can replace the
     // focused pin (seen on slower CI runners). Retry the keyboard activation on the current pin element.
@@ -122,7 +126,7 @@ try {
   assert(await page.locator('#map-seattle a').first().isVisible(),'Gallery links work if the map library fails');
   await page.goto(origin+'/');
   assert.match(await page.locator('.atlas-compact svg').getAttribute('aria-label'),/Berlín/);
-  assert.equal(await page.locator('.atlas-compact circle').count(),7);
+  assert.equal(await page.locator('.atlas-compact circle').count(),8);
   assert.deepEqual(errors,[]);
   console.log('PASS: accurate pins, separate San Salvador/Berlín locations, click and keyboard details, mural link, no overlap at four widths, and no-library fallback.');
 } finally {await browser.close();}

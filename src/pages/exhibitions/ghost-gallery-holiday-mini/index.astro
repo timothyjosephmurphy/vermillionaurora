@@ -1,0 +1,51 @@
+---
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+const works = [
+  { href: '/products/strawberry-point-4/', src: '/display/strawberry-point-4-897857fb.jpg', alt: 'Strawberry Point Backpacking Trip #4 by TJ Murphy' },
+  { href: '/products/strawberry-point-5/', src: '/display/strawberry-point-5-7592f1f1.jpg', alt: 'Strawberry Point Backpacking Trip #5 by TJ Murphy' },
+  { href: '/products/strawberry-point-6/', src: '/display/strawberry-point-6-17e3a2c3.jpg', alt: 'Strawberry Point Backpacking Trip #6 by TJ Murphy' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20th Annual Holiday Mini Art Exhibit, Ghost Gallery | TJ Murphy</title>
+    <meta
+      name="description"
+      content="Strawberry Point Backpacking Trip #4, #5, and #6 in Ghost Gallery’s 20th Annual Holiday Mini Art Exhibit at Pacific Place, Seattle, November 2026 through early January 2027."
+    />
+    <link rel="canonical" href="https://tjm.art/exhibitions/ghost-gallery-holiday-mini/" />
+    <link
+      href="/fonts/fonts.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/exhibitions/viewer.css" /><link rel="stylesheet" href="/site-header.css">
+<link rel="stylesheet" href="/exhibitions/locations.css">
+</head>
+<body><div class="page-shell">      <SiteHeader />
+
+<main class="container exhibition-page">
+ <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/exhibitions/">Exhibitions</a><span>/ 20th Annual Holiday Mini Art Exhibit</span></nav>
+ <p class="eyebrow dark">Exhibition · group show</p><h1>20th Annual Holiday Mini Art Exhibit</h1><p class="eyebrow dark exhibition-date"><time datetime="2026-11">Nov 2026–Jan 2027</time></p>
+ <img class="exhibition-hero" src={works[0].src} alt={works[0].alt} fetchpriority="high">
+ <div class="section-heading"><h2>Works in the show</h2><p>Ghost Gallery, Pacific Place, Seattle. Opened November 13, 2026, and runs through early January 2027.</p></div>
+ <div class="exhibition-grid">{works.map(work => <a class="ex-photo" href={work.href}><img src={work.src} alt={work.alt} loading="lazy" decoding="async"></a>)}</div>
+ <p><a href="https://ghostgallery.org/collections/20th-annual-holiday-mini-art-exhibit-opening-nov-13th" target="_blank" rel="noopener noreferrer">Ghost Gallery: 20th Annual Holiday Mini Art Exhibit ↗</a></p>
+ <section class="exhibition-location" aria-labelledby="venue-heading">
+  <div class="exhibition-location-copy">
+   <p class="eyebrow dark">Exhibition location</p>
+   <h2 id="venue-heading">Ghost Gallery, Pacific Place</h2>
+   <p>Second floor, Suite 253</p>
+   <address>600 Pine St, Suite 253<br>Seattle, WA 98101</address>
+   <a class="button button-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Ghost+Gallery%2C+600+Pine+St+Suite+253%2C+Seattle%2C+WA+98101" target="_blank" rel="noopener noreferrer">Open map &amp; directions ↗</a>
+  </div>
+  <iframe class="exhibition-location-map" src="https://www.google.com/maps?q=Ghost+Gallery%2C+600+Pine+St+Suite+253%2C+Seattle%2C+WA+98101&amp;z=16&amp;output=embed" title="Map showing Ghost Gallery at 600 Pine St, Suite 253, Seattle, WA 98101" width="960" height="360" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ </section>
+ <nav class="exhibition-nav" aria-label="More exhibitions"><a href="/exhibitions/woodinville-sip-and-stroll/">Woodinville Arts Alliance 2026 Sip &amp; Stroll</a><a href="/exhibitions/bitcoin-film-festival-warsaw/">Bitcoin Film Festival</a><a href="/exhibitions/">All exhibitions</a></nav></main>      <SiteFooter />
+    </div>
+</body>
+</html>

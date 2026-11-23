@@ -1,0 +1,46 @@
+---
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+const work = { href: '/products/strawberry-point-2/', src: '/display/strawberry-point-2-d1401313.jpg', alt: 'Strawberry Point Backpacking Trip #2 by TJ Murphy, Third Place Overall at the Woodinville Sip & Stroll' };
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Woodinville Arts Alliance 2026 Sip &amp; Stroll | TJ Murphy</title>
+    <meta
+      name="description"
+      content="Strawberry Point Backpacking Trip #2 received Third Place Overall at the Woodinville Arts Alliance 2026 Sip & Stroll, The Winemakers Reserve, November 13–15, 2026."
+    />
+    <link rel="canonical" href="https://tjm.art/exhibitions/woodinville-sip-and-stroll/" />
+    <link
+      href="/fonts/fonts.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/exhibitions/viewer.css" /><link rel="stylesheet" href="/site-header.css">
+<link rel="stylesheet" href="/exhibitions/locations.css">
+</head>
+<body><div class="page-shell">      <SiteHeader />
+
+<main class="container exhibition-page">
+ <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/exhibitions/">Exhibitions</a><span>/ Woodinville Arts Alliance 2026 Sip &amp; Stroll</span></nav>
+ <p class="eyebrow dark">Exhibition · group show</p><h1>Woodinville Arts Alliance 2026 Sip &amp; Stroll</h1><p class="eyebrow dark exhibition-date"><time datetime="2026-11-13">Nov 13–15, 2026</time></p>
+ <img class="exhibition-hero" src={work.src} alt={work.alt} fetchpriority="high">
+ <div class="section-heading"><h2>Third Place Overall</h2><p>The Winemakers Reserve, Woodinville, Washington, November 13–15, 2026. <a href={work.href}>Strawberry Point Backpacking Trip #2</a> received Third Place Overall.</p></div>
+ <div class="exhibition-grid"><a class="ex-photo" href={work.href}><img src={work.src} alt={work.alt} loading="lazy" decoding="async"></a></div>
+ <section class="exhibition-location" aria-labelledby="venue-heading">
+  <div class="exhibition-location-copy">
+   <p class="eyebrow dark">Exhibition location</p>
+   <h2 id="venue-heading">The Winemakers Reserve</h2>
+   <p>Woodinville Arts Alliance 2026 Sip &amp; Stroll</p>
+   <address>15902 Woodinville-Redmond Rd NE, Suite D<br>Woodinville, WA 98072</address>
+   <a class="button button-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=The+Winemakers+Reserve%2C+15902+Woodinville-Redmond+Rd+NE+Suite+D%2C+Woodinville%2C+WA+98072" target="_blank" rel="noopener noreferrer">Open map &amp; directions ↗</a>
+  </div>
+  <iframe class="exhibition-location-map" src="https://www.google.com/maps?q=47.74281%2C-122.15563&amp;z=16&amp;output=embed" title="Map showing The Winemakers Reserve at 15902 Woodinville-Redmond Rd NE, Suite D, Woodinville, WA 98072" width="960" height="360" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ </section>
+ <nav class="exhibition-nav" aria-label="More exhibitions"><a href="/exhibitions/ghost-gallery-holiday-mini/">20th Annual Holiday Mini Art Exhibit</a><a href="/exhibitions/bitcoin-film-festival-warsaw/">Bitcoin Film Festival</a><a href="/exhibitions/">All exhibitions</a></nav></main>      <SiteFooter />
+    </div>
+</body>
+</html>

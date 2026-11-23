@@ -1,6 +1,22 @@
 // Exhibition list for /exhibitions/. Sourced only from existing site content: the About page
 // CV (year, venue, show type) and each exhibition page's own location block. Newest first.
 export const exhibitions = [
+  { slug: 'ghost-gallery-holiday-mini', title: '20th Annual Holiday Mini Art Exhibit', year: 'Nov 2026–Jan 2027', type: 'Group show',
+    venue: 'Ghost Gallery, Pacific Place', location: 'Seattle, Washington',
+    image: '/display/strawberry-point-4-897857fb.jpg', alt: 'Strawberry Point Backpacking Trip #4, in Ghost Gallery’s Holiday Mini Art Exhibit',
+    contain: true,
+    related: [
+      { href: '/products/strawberry-point-4/', label: 'Strawberry Point Backpacking Trip #4' },
+      { href: '/products/strawberry-point-5/', label: 'Strawberry Point Backpacking Trip #5' },
+      { href: '/products/strawberry-point-6/', label: 'Strawberry Point Backpacking Trip #6' },
+    ] },
+  { slug: 'woodinville-sip-and-stroll', title: 'Woodinville Arts Alliance 2026 Sip & Stroll', year: 'Nov 13–15, 2026', type: 'Group show',
+    venue: 'The Winemakers Reserve', location: 'Woodinville, Washington',
+    image: '/display/strawberry-point-2-d1401313.jpg', alt: 'Strawberry Point Backpacking Trip #2, Third Place Overall at the Woodinville Sip & Stroll',
+    contain: true,
+    related: [
+      { href: '/products/strawberry-point-2/', label: 'Strawberry Point Backpacking Trip #2 · Third Place Overall' },
+    ] },
   { slug: 'bitcoin-film-festival-warsaw', title: 'Bitcoin Film Festival', year: '2026', type: 'Group show',
     venue: 'Kinoteka · Palace of Culture and Science', location: 'Warsaw, Poland',
     image: '/exhibitions/bitcoin-film-festival-warsaw/images/display-at-kinoteka.jpeg', alt: 'Three paintings displayed outside the Kinoteka theater for Bitcoin Film Festival',
