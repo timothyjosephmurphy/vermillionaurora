@@ -4,6 +4,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
 import EmailSignup from '../../components/EmailSignup.astro';
 import { exhibitions, featured, upcoming } from '../../data/exhibitions.mjs';
 const description = 'Exhibitions by Seattle watercolor painter TJ Murphy, including Bitcoin Film Festival Warsaw, Victrola, and more.';
+const pastShows = exhibitions.filter(ex => !upcoming.some(show => show.slug === ex.slug));
 ---
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
@@ -20,7 +21,7 @@ const description = 'Exhibitions by Seattle watercolor painter TJ Murphy, includ
 <div class="section-heading"><p class="eyebrow dark">Art &amp; community</p><h1>Exhibitions</h1><p>Past solo and group shows are listed newest first, with photographs and videos from each one. The <a href="/about/#cv">Selected CV</a> on the About page lists them too. The <a href="/exhibitions/3d-gallery/">walk-through 3D gallery</a> is a separate room you can enter in the browser.</p><p><a class="button button-solid" href="/exhibitions/world-map/">Explore the world map →</a></p></div>
 {upcoming.length>0 && <section class="upcoming-shows" aria-labelledby="upcoming-heading"><h2 id="upcoming-heading" class="section-title">Upcoming</h2>
 <ul class="upcoming-list">{upcoming.map(show=>(
-<li><h3>{show.title}</h3>
+<li><h3><a class="product-title-link" href={`/exhibitions/${show.slug}/`}>{show.title}</a></h3>
 <p class="exhibition-meta"><time datetime={show.start}>{show.dates}</time></p>
 <p class="exhibition-meta">{show.venue}</p>
 {show.note && <p class="upcoming-note">{show.note}</p>}
@@ -29,7 +30,7 @@ const description = 'Exhibitions by Seattle watercolor painter TJ Murphy, includ
 </section>}
 <EmailSignup id="exhibitions-email" heading="Show notes by email" text="Show notes and new work, a few times a year. One print at cost when you join. Unsubscribe anytime." />
 <h2 id="past-shows-heading" class="section-title">Past shows</h2>
-<div class="exhibition-index-grid">{exhibitions.map(ex=>(
+<div class="exhibition-index-grid">{pastShows.map(ex=>(
 <article class="product-card"><a class="exhibition-index-image" href={`/exhibitions/${ex.slug}/`}><img src={ex.image} alt={ex.alt} loading="lazy" style={ex.contain?'object-fit:contain;background:#e8dfd3':undefined}></a><div class="product-info"><h2><a class="product-title-link" href={`/exhibitions/${ex.slug}/`}>{ex.title}</a></h2>
 <p class="exhibition-meta"><strong class="exhibition-date"><time datetime={/^\d/.test(ex.year)?ex.year:undefined}>{ex.year}</time></strong> · {ex.type}</p>
 <p class="exhibition-meta">{ex.venue}</p><p class="exhibition-meta">{ex.location}</p>
