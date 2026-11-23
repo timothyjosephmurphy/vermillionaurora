@@ -1,7 +1,7 @@
 name: Release gate
 
 # Tiered PR gate. The required status check is the final job named "gate".
-#   blog     story HTML and that post's display/social files: build + article check. No Playwright.
+#   blog     story HTML and that post's display/social files: build + article check + changed-image R2 check, all in prepare. No Playwright, no dist upload, no unit-and-print.
 #   content  catalog data, images, other static, docs: build + changed pages load.
 #   code     site code: build + unit tests + browser tests for touched areas + smoke.
 #   print-master only prints.json/master files for existing paintings: content + offline price-table check.
@@ -124,7 +124,17 @@ jobs:
             throw new Error('Unexpected production Worker configuration');
           }
           NODE
+      - name: Confirm changed blog articles and new images
+        if: steps.changes.outputs.tier == 'blog'
+        timeout-minutes: 5
+        env:
+          CHANGED_FILES: ${{ steps.changes.outputs.files }}
+        run: |
+          node scripts/verify-blog-pages.mjs --changed
+          node --test tests/blog-card-images.test.mjs
+          node scripts/ci/check-changed-r2-images.mjs
       - name: Upload the built site
+        if: steps.changes.outputs.tier != 'blog'
         timeout-minutes: 10
         uses: actions/upload-artifact@v4
         with:
@@ -135,7 +145,7 @@ jobs:
 
   unit-and-print:
     needs: prepare
-    if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'blog' || needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
+    if: needs.prepare.result == 'success' && (needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full')
     runs-on: ubuntu-latest
     # dist/ is about 5 GB, and print tests also need the gitignored files the
     # build writes under static/print-editions and static/print-samples.
@@ -185,14 +195,6 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: Confirm changed blog articles are on the index
-        if: needs.prepare.outputs.tier == 'blog'
-        timeout-minutes: 5
-        env:
-          CHANGED_FILES: ${{ needs.prepare.outputs.files }}
-        run: |
-          node scripts/verify-blog-pages.mjs --changed
-          node --test tests/blog-card-images.test.mjs
       - name: Run application tests
         if: needs.prepare.outputs.tier == 'code' || needs.prepare.outputs.tier == 'full'
         timeout-minutes: 15
