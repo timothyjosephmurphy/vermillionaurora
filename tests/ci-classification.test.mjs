@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import {readFileSync} from 'node:fs';
+import {r2KeysFromChangedFiles} from '../scripts/ci/check-changed-r2-images.mjs';
 
 function classify(files, forceFull=false) {
   const result=spawnSync(process.execPath,['scripts/ci/classify-changes.mjs'],{
@@ -47,6 +48,7 @@ test('a story publish is the blog tier',()=>{
   assert.equal(classify(['src/pages/blog/index.astro']).tier,'blog');
   assert.equal(classify(['src/content/blog/posts/live-looping-guitar.mjs','src/pages/blog/index.astro']).tier,'blog');
   assert.equal(classify(['scripts/blog-media-upload/assets/001.jpg']).tier,'blog');
+  assert.equal(classify(['src/content/blog/posts/teaching-my-bots-my-voice.mjs','src/pages/blog/index.astro','tests/blog-card-images.test.mjs']).tier,'blog');
   assert.equal(classify(layers,true).tier,'full');
 });
 
@@ -73,6 +75,81 @@ test('blog files mixed with catalog, checkout, workers, or CI leave the blog tie
   assert.equal(classify([...story,'.github/workflows/publish-blog.yml']).tier,'full');
   assert.equal(classify([...story,'scripts/ci/classify-changes.mjs']).tier,'full');
   assert.equal(classify([...story,'src/pages/cart/index.astro']).tier,'full');
+});
+
+
+test('a blog-only change does not deploy the checkout Worker',()=>{
+  const teaching=[
+    'src/content/blog/posts/index.mjs',
+    'src/content/blog/posts/teaching-my-bots-my-voice.mjs',
+    'src/pages/blog/index.astro',
+  ];
+  const blog=classify(teaching);
+  assert.equal(blog.tier,'blog');
+  assert.equal(blog.deploy_checkout,'false');
+  assert.equal(blog.deploy_site,'true');
+  const typo=classify(['src/content/blog/posts/helix-inside-a-helix.mjs']);
+  assert.equal(typo.tier,'blog');
+  assert.equal(typo.deploy_checkout,'false');
+});
+
+test('code and full diffs still deploy the checkout Worker',()=>{
+  const code=classify(['static/_headers']);
+  assert.equal(code.tier,'code');
+  assert.equal(code.deploy_checkout,'true');
+  const full=classify(['worker/site.mjs']);
+  assert.equal(full.tier,'full');
+  assert.equal(full.deploy_checkout,'true');
+  const mixed=classify(['src/pages/blog/index.astro','worker/site.mjs']);
+  assert.equal(mixed.tier,'full');
+  assert.equal(mixed.deploy_checkout,'true');
+});
+
+test('changed R2 image keys come only from this change set',()=>{
+  assert.deepEqual(r2KeysFromChangedFiles([
+    'src/pages/blog/index.astro',
+    'src/content/blog/posts/teaching-my-bots-my-voice.mjs',
+  ]),[]);
+  assert.deepEqual(r2KeysFromChangedFiles([
+    'static/display/example-960.webp',
+    'static/social/example.jpg',
+    'scripts/blog-media-upload/publish-assets/live-looping-guitar/clip.mp4',
+    'static/blog/live-looping-guitar/index.html',
+    'docs/publish-blog.md',
+  ]),[
+    'display/example-960.webp',
+    'social/example.jpg',
+    'blog/live-looping-guitar/clip.mp4',
+  ]);
+});
+
+test('the blog gate keeps checks in prepare and skips unit-and-print and dist upload',()=>{
+  const yml=readFileSync(new URL('../.github/workflows/release-gate.yml',import.meta.url),'utf8');
+  const headers=[...yml.matchAll(/^  ([a-z0-9-]+):\s*$/gm)].map(match=>({name:match[1],index:match.index}));
+  const start=headers.find(header=>header.name==='prepare');
+  const next=headers.find(header=>header.index>start.index);
+  const prepare=yml.slice(start.index,next?next.index:yml.length);
+  assert.match(prepare,/Confirm changed blog articles and new images/);
+  assert.match(prepare,/scripts\/verify-blog-pages\.mjs --changed/);
+  assert.match(prepare,/tests\/blog-card-images\.test\.mjs/);
+  assert.match(prepare,/scripts\/ci\/check-changed-r2-images\.mjs/);
+  assert.match(prepare,/if: steps\.changes\.outputs\.tier != 'blog'/);
+  const unitStart=headers.find(header=>header.name==='unit-and-print');
+  const unitNext=headers.find(header=>header.index>unitStart.index);
+  const unit=yml.slice(unitStart.index,unitNext?unitNext.index:yml.length);
+  assert.match(unit,/needs\.prepare\.outputs\.tier == 'code'/);
+  assert.equal(unit.includes("'blog'"),false);
+});
+
+test('a blog-only production push verifies the site without redeploying checkout',()=>{
+  const yml=readFileSync(new URL('../.github/workflows/deploy-production.yml',import.meta.url),'utf8');
+  const siteStart=yml.indexOf('  verify-site:');
+  const site=yml.slice(siteStart);
+  assert.match(site,/needs: \[changes, deploy-checkout\]/);
+  assert.match(site,/always\(\)/);
+  assert.match(site,/needs\.deploy-checkout\.result == 'skipped'/);
+  assert.match(site,/if: needs\.changes\.outputs\.tier != 'blog'/);
+  assert.match(site,/if: needs\.changes\.outputs\.tier == 'blog' \|\| steps\.changes\.outputs\.blog == 'true'/);
 });
 
 test('the blog gate does not install or run Playwright',()=>{

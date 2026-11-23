@@ -1,5 +1,6 @@
 // Classifies changed files (one per line on stdin) into a PR gate tier and writes GitHub outputs.
 //   blog     - a story publish only: build + the new article is on the index. No Playwright.
+//             Production skips the checkout Worker deploy (deploy_checkout=false).
 //   content  - catalog data, images, other static assets, docs: build + changed pages load.
 //   code     - site code: unit tests + browser tests for touched areas + smoke.
 //   full     - checkout/payments/worker/CI/dependency changes, manual runs, unknown diffs: the full suite.
@@ -13,7 +14,7 @@ const content=[/^catalog\/.*\.json$/,/^gallery-images\//,/^images\//,/^static\//
 // Story publish. Display, social, and display-files.json are shared with the catalog, so they
 // only take this tier when the change set also touches a story, the blog index, or upload assets.
 // Uploader source (worker.mjs, worker-tjm.mjs, wrangler config) is not in this list.
-const blogAllow=[/^static\/blog\//,/^src\/pages\/blog\//,/^src\/content\/blog\//,/^static\/display\//,/^static\/social\//,/^scripts\/display-files\.json$/,/^scripts\/blog-media-upload\/assets\//,/^scripts\/blog-media-upload\/publish-assets\//,/^scripts\/blog-media-upload\/manifest\.json$/];
+const blogAllow=[/^static\/blog\//,/^src\/pages\/blog\//,/^src\/content\/blog\//,/^static\/display\//,/^static\/social\//,/^scripts\/display-files\.json$/,/^scripts\/blog-media-upload\/assets\//,/^scripts\/blog-media-upload\/publish-assets\//,/^scripts\/blog-media-upload\/manifest\.json$/,/^tests\/blog-.*\.test\.mjs$/];
 const blogAnchor=/^(static\/blog\/|src\/pages\/blog\/|src\/content\/blog\/|scripts\/blog-media-upload\/(?:assets\/|publish-assets\/))/;
 // These files change serving behavior, so they need the routing/cache unit tests
 // even though they live alongside ordinary content and images.
@@ -49,7 +50,7 @@ for(const f of files){
   for(const [r,tests] of areas)if(r.test(f))for(const t of tests){if(t==='ROOM')room=true;else if(fs.existsSync(t))browser.add(t);}
 }
 const blog=files.some(f=>/(^|\/)blog(\/|-)/.test(f));
-const out={tier,print_quotes:String(tier==='content'&&printOnly),browser_tests:[...browser].join(' '),room:String(room),blog:String(blog),count:String(files.length),deploy_checkout:'true',deploy_site:'true'};
+const out={tier,print_quotes:String(tier==='content'&&printOnly),browser_tests:[...browser].join(' '),room:String(room),blog:String(blog),count:String(files.length),deploy_checkout:String(tier!=='blog'),deploy_site:'true'};
 return out;
 }
 

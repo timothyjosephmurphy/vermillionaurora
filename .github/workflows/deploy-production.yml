@@ -3,6 +3,8 @@ name: Deploy production from main
 # (vermillion-commissions) as soon as the run starts, in parallel with Cloudflare Workers Builds,
 # which deploys the website Worker (vermillionaurora) from main. Verification starts only after
 # checkout /checkout/health reports this commit, then waits for Workers Builds and checks both.
+# A blog-only push skips the checkout deploy and the catalog/payment verifies, and starts the
+# live article check immediately. Rollback a blog publish with: -f target=site
 # Neural Dance is served by vermillion-neural-dance, not by this workflow.
 # Pull request preview URLs stay on Workers Builds: this workflow does not deploy vermillionaurora
 # and does not run on pull_request.
@@ -36,6 +38,7 @@ jobs:
       tier: ${{ steps.changes.outputs.tier }}
       deploy_checkout: ${{ steps.changes.outputs.deploy_checkout }}
       deploy_site: ${{ steps.changes.outputs.deploy_site }}
+      blog: ${{ steps.changes.outputs.blog }}
       files: ${{ steps.changes.outputs.files }}
       before: ${{ steps.changes.outputs.before }}
     steps:
@@ -81,6 +84,7 @@ jobs:
         with:
           node-version: '22'
       - name: Show which Cloudflare API token is in use
+        if: needs.changes.outputs.tier != 'blog'
         env:
           PROD_TOKEN_SET: ${{ secrets.CLOUDFLARE_PROD_API_TOKEN != '' }}
         run: |
@@ -128,7 +132,8 @@ jobs:
   verify-site:
     name: Verify website release
     needs: [changes, deploy-checkout]
-    if: github.ref == 'refs/heads/main' && needs.changes.outputs.deploy_site == 'true'
+    # always() plus an explicit checkout result so a skipped checkout (blog-only) still verifies the site.
+    if: always() && github.ref == 'refs/heads/main' && needs.changes.result == 'success' && needs.changes.outputs.deploy_site == 'true' && (needs.deploy-checkout.result == 'success' || needs.deploy-checkout.result == 'skipped')
     runs-on: ubuntu-latest
     timeout-minutes: 70
     env:
@@ -152,7 +157,9 @@ jobs:
             sleep 8
           done
       - run: npm run build
+        if: needs.changes.outputs.tier != 'blog'
       - name: Verify generated catalogs and production checkout config
+        if: needs.changes.outputs.tier != 'blog'
         run: |
           git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs cloudflare/print-catalog-version.mjs cloudflare/print-assets/print-catalog.json
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.CHECKOUT_MODE!=='live')process.exit(1)"
@@ -166,6 +173,7 @@ jobs:
             echo "Cloudflare API token source: fallback CLOUDFLARE_SANDBOX_API_TOKEN (CLOUDFLARE_PROD_API_TOKEN is empty). Create it with the permissions in docs/cloudflare-prod-api-token.md."
           fi
       - name: Work out what changed in this push
+        if: needs.changes.outputs.tier != 'blog'
         id: changes
         env:
           GH_TOKEN: ${{ github.token }}
@@ -178,16 +186,19 @@ jobs:
           fi
           node scripts/ci/changed-products.mjs < /tmp/changed.txt
       - name: Wait for Workers Builds to publish this website version, then check sampled print files
+        if: needs.changes.outputs.tier != 'blog'
         env:
           CHANGED_PRINT_PRODUCTS: ${{ steps.changes.outputs.print_products }}
           SITE_WAIT_TRIES: '360'
         run: node payments/verify-live-print-assets.mjs
       - name: Verify published blog cards, articles, and photos
-        if: steps.changes.outputs.blog == 'true' || steps.changes.outputs.unknown == 'true'
+        if: needs.changes.outputs.tier == 'blog' || steps.changes.outputs.blog == 'true' || steps.changes.outputs.unknown == 'true'
         run: node scripts/verify-blog-pages.mjs --live
       - name: Verify live providers without taking payment
+        if: needs.changes.outputs.tier != 'blog'
         run: node payments/verify-production.mjs
       - name: Verify website and API catalog versions agree
+        if: needs.changes.outputs.tier != 'blog'
         env:
           CHANGED_PRODUCT_SLUGS: ${{ steps.changes.outputs.product_slugs }}
         run: node scripts/verify-release.mjs

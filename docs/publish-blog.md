@@ -1,8 +1,8 @@
 # Publish a Stories from the Studio post
 
-`main` is production. The ruleset **Protected releases** blocks a direct push and requires a pull request whose **`gate`** check is green on an up-to-date branch. Squash-merge is the publish step. Cloudflare Workers Builds then deploys the website Worker from `main`. `.github/workflows/deploy-production.yml` deploys the checkout Worker first, waits for that website version, and checks the live article when the push touches the blog.
+`main` is production. The ruleset **Protected releases** blocks a direct push and requires a pull request whose **`gate`** check is green on an up-to-date branch. Squash-merge is the publish step. Cloudflare Workers Builds then deploys the website Worker from `main`. For a blog-only merge, `.github/workflows/deploy-production.yml` does not deploy the checkout Worker. It starts the live article check as soon as the run begins and skips the site rebuild, sampled print files, payment-provider checks, and catalog-version checks. Rollback a blog publish with `gh workflow run rollback.yml -f target=site` (not `checkout` or `both`).
 
-A pull request that only changes a story uses the **blog** tier of `.github/workflows/release-gate.yml`. That job runs `npm ci` without downloading browsers, `npm run build`, the catalog drift check, and a check that each new `static/blog/<slug>/index.html` is linked from the blog index. It does not install Chromium or WebKit and it does not run Playwright. Checkout, worker, catalog code, and other site changes keep their existing tiers.
+A pull request that only changes a story uses the **blog** tier of `.github/workflows/release-gate.yml`. That job runs `npm ci` without downloading browsers, `npm run build`, the catalog drift check, a check that each new story is linked from the blog index, and a HEAD check that any new or changed display, social, or `publish-assets` files are already on `img.tjm.art`. It does not install Chromium or WebKit, does not run Playwright, does not upload the built `dist`, and does not typecheck the checkout Worker. Checkout, worker, catalog code, and other site changes keep their existing tiers.
 
 ## 1. Write the post
 
@@ -16,7 +16,7 @@ Add a card at the top of `src/pages/blog/index.astro`, using the same markup as 
 
 Commit the display WebPs under `static/display/` and the 1200×630 share JPEG under `static/social/`. Add each new display **basename** to `scripts/display-files.json` in alphabetical order. Put mp4 and poster files that should be served from `img.tjm.art/blog/<slug>/` in `scripts/blog-media-upload/publish-assets/<slug>/`.
 
-Do not also commit catalog JSON, `cloudflare/`, `payments/`, `worker/`, `package.json`, `.github/`, `scripts/ci/`, `static/_headers`, `static/_redirects`, docs, or the uploader source (`worker.mjs`, `worker-tjm.mjs`, wrangler config). Any of those moves the pull request off the blog tier and the gate installs Playwright again.
+`tests/blog-*.test.mjs` may ship with the story (so a card-image test update does not leave the blog path). Do not also commit catalog JSON, `cloudflare/`, `payments/`, `worker/`, `package.json`, `.github/`, `scripts/ci/`, `static/_headers`, `static/_redirects`, docs, or the uploader source (`worker.mjs`, `worker-tjm.mjs`, wrangler config). Any of those moves the pull request off the blog tier and the gate installs Playwright again.
 
 ## 2. Upload media
 
@@ -39,16 +39,23 @@ If the token cannot bind `tjm-images`, upload display and social with `node scri
 
 ```bash
 git checkout -b <branch>
-git add static/blog/<slug> src/pages/blog/index.astro static/display/<files> static/social/<file> scripts/display-files.json
+git add static/blog/<slug> src/content/blog/posts/<slug>.mjs src/content/blog/posts/index.mjs src/pages/blog/index.astro static/display/<files> static/social/<file> scripts/display-files.json
 # plus scripts/blog-media-upload/publish-assets/<slug>/ when the post has video
 git commit
+```
+
+You can finish by hand:
+
+```bash
 git push -u origin <branch>
 gh pr create --base main --title "Publish <title>"
 ```
 
-Wait until **`gate`** is green. On a blog-only diff the job installs dependencies without browsers, runs `npm run build`, checks catalog drift, and checks the new article. It does not install Chromium or run the browser smoke. The ruleset requires the branch to be current with `main`; use Update branch if GitHub says it is behind. Squash-merge. Do not use `--admin`. There is no separate Playwright check to wait for.
+Or run `node scripts/publish-blog.mjs` from the story branch after the commit. It pushes the branch, starts `publish-blog.yml` when display, social, or `publish-assets` files changed, and opens the pull request. It never merges, never force-pushes, and never uses `--admin`.
 
-Merging to `main` is what puts the post on tjm.art. Workers Builds deploys the site. The production workflow then opens the live article and checks its photos.
+Wait until **`gate`** is green. On a blog-only diff the job installs dependencies without browsers, runs `npm run build`, checks catalog drift, checks the new article, and checks that new images are on `img.tjm.art`. It does not install Chromium or run the browser smoke. The ruleset requires the branch to be current with `main`; use Update branch if GitHub says it is behind. Squash-merge. Do not use `--admin`. There is no separate Playwright check to wait for.
+
+Merging to `main` is what puts the post on tjm.art. Workers Builds deploys the site. The production workflow then opens the live article and checks its photos. It does not redeploy checkout.
 
 ## Layers of Sound (pull request 728)
 
