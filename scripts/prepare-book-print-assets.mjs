@@ -7,6 +7,8 @@ import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {editionLayouts,EDITION_LAYOUT} from '../catalog/edition-layout.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
+// Rights exclusions (studio-tracker #901). These stay in the book gallery but are never offered as prints.
+const PRINT_EXCLUSIONS=new Set(['book-art-3a9cba708a8045364e82']); // Dawn and her father Pete at Burning Man (TJ, Nov 22 2026)
 const work=process.argv[2],digest=b=>createHash('sha256').update(b).digest('hex'),artworks={},uploads=[];
 await mkdir(path.join(work,'prints'),{recursive:true});
 const stock=papers.find(p=>p.paper===config.defaultPaper);
@@ -16,7 +18,7 @@ for(const e of manifest.artworks){
  for(const ext of ['jpg','webp']){const filename=e.key+'.'+ext,data=await readFile(path.join(work,'media',filename));uploads.push({file:path.join('media',filename),key:'images/book-galleries/v1/'+filename,sha256:digest(data),size:data.length,contentType:ext==='jpg'?'image/jpeg':'image/webp'});}
  // Corrected display photos are uploaded by upload-book-photo-corrections.yml; print sheets would need their own corrected source.
  if(e.photoCorrection&&e.printCandidate)throw Error('Corrected display photo has no print source: '+e.id);
- if(!e.printCandidate)continue;
+ if(!e.printCandidate||PRINT_EXCLUSIONS.has(e.id))continue;
  const source={url:e.masterUrl,widthPx:e.widthPx,heightPx:e.heightPx,sha256:e.masterSha256};
  const variants={};
  for(const c of editionLayouts(source,null,300)){
