@@ -124,7 +124,6 @@ print-preview/book-art-2136f2260225dd8ef20a/index.html
 print-preview/book-art-27fee33e69f262ecfacb/index.html
 print-preview/book-art-28bec44600b36ed0766f/index.html
 print-preview/book-art-29b3572972c367d351d1/index.html
-print-preview/book-art-3a9cba708a8045364e82/index.html
 print-preview/book-art-44161b6b117af79e3df4/index.html
 print-preview/book-art-466dc684227286c40502/index.html
 print-preview/book-art-471daf14a8bb7883f114/index.html
