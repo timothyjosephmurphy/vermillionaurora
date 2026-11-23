@@ -1,5 +1,6 @@
 // Exhibition list for /exhibitions/. Sourced only from existing site content: the About page
 // CV (year, venue, show type) and each exhibition page's own location block. Newest first.
+// A slug listed in `upcoming` is the current show and is left out of the past-show grid.
 export const exhibitions = [
   { slug: 'ghost-gallery-holiday-mini', title: '20th Annual Holiday Mini Art Exhibit', year: 'Nov 2026–Jan 2027', type: 'Group show',
     venue: 'Ghost Gallery, Pacific Place', location: 'Seattle, Washington',
@@ -15,7 +16,8 @@ export const exhibitions = [
     image: '/display/strawberry-point-2-d1401313.jpg', alt: 'Strawberry Point Backpacking Trip #2, Third Place Overall at the Woodinville Sip & Stroll',
     contain: true,
     related: [
-      { href: '/products/strawberry-point-2/', label: 'Strawberry Point Backpacking Trip #2 · Third Place Overall' },
+      { href: '/products/strawberry-point-2/', label: 'Third Place Overall for the watercolor Strawberry Point Backpacking Trip #2' },
+      { href: '/blog/third-place-sip-and-stroll-ghost-gallery/', label: 'Third Place at the Sip & Stroll' },
     ] },
   { slug: 'bitcoin-film-festival-warsaw', title: 'Bitcoin Film Festival', year: '2026', type: 'Group show',
     venue: 'Kinoteka · Palace of Culture and Science', location: 'Warsaw, Poland',
@@ -45,10 +47,15 @@ export const exhibitions = [
     venue: 'Home studio', location: 'Seattle, Washington',
     image: '/exhibitions/living-room/images/three-landscapes-in-living-room.jpg', alt: 'Three framed watercolor landscapes hanging side by side in a living room', contain: true },
 ];
-// Upcoming block on /exhibitions/, soonest first.
+// Upcoming block on /exhibitions/, soonest first. Each item uses an exhibitions slug
+// so the index links to that show's page instead of adding a second card.
 // Dates are studio calendar items. Street addresses stay out unless a public
 // listing confirms that date at that door.
-export const upcoming = [];
+export const upcoming = [
+  { slug: 'ghost-gallery-holiday-mini', title: 'Ghost Gallery Holiday Mini Show', start: '2026-11-27',
+    dates: 'Reception Friday, November 27, 2026, 5–8 PM PT',
+    venue: 'Ghost Gallery, 600 Pine St, Suite 253 (second floor of Pacific Place), Seattle' },
+];
 export const featured = [
   { slug: 'paul-murphy', title: 'Paul Murphy', note: 'Featured artist', image: 'https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg', alt: 'Painting by Paul Murphy' },
   { slug: 'chase-toole', title: 'Chase Toole Collab', note: 'Art mentorship since 2017 · Three collaborations with TJ Murphy', image: '/gallery-images/insect-garden.jpg', alt: 'El Salvador: Past — a collaboration by Chase Toole and TJ Murphy' },
