@@ -138,8 +138,9 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
 });
 
 test('book print files preserve native resolution and use content-addressed R2 assets',()=>{
-  assert.equal(Object.keys(bookPrints).length,54); // +1: Sunrise on Rainier from Denny Blaine carries the book-art-9ae2… prints (Oct 20 2026)
-  assert.equal(Object.values(bookPrints).reduce((count,art)=>count+Object.keys(art.variants).length,0),162);
+  assert.equal(Object.keys(bookPrints).length,53); // 54 before studio-tracker #901 removed Dawn and her father Pete at Burning Man
+  assert.equal(Object.values(bookPrints).reduce((count,art)=>count+Object.keys(art.variants).length,0),159);
+  assert(!bookPrints['book-art-3a9cba708a8045364e82']);
   assert(Object.values(bookPrints).every(art=>art.enabled===true));
   for(const product of bookProducts){
     const art=bookPrints[product.id];
