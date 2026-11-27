@@ -59,7 +59,7 @@ export default {
       await syncBuiltCatalog(env);
       await applyCatalogOverlay(env);
     }
-    if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
+    if (event?.cron === '*/15 * * * *' || event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
     ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); ctx.waitUntil(markAtCostOrders(env).catch(()=>console.error('QuickBooks at-cost marker backfill failed'))); ctx.waitUntil(pollTips(env).catch(()=>console.error('Lightning tip poll failed')));
   },
   async fetch(request, env, ctx) {
