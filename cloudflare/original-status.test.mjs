@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {displayedStatus, etsyOriginalPrice, ETSY_ORIGINAL_UPLIFT, nextManualRow, nextEtsySale, stockStatus} from './original-availability.mjs';
-import {originalsInReceipt, reconcileAction, listingMap, reconcileOriginals, pollEtsyReceipts, deactivateOriginal} from './etsy-original-sync.mjs';
+import {originalsInReceipt, reconcileAction, listingMap, reconcileOriginals, pollEtsyReceipts, deactivateOriginal, runOriginalInventorySync, retryAfterSeconds, rememberRateLimit} from './etsy-original-sync.mjs';
 import {originalStatusApi} from './original-status.mjs';
 import {ETSY_ORIGIN, write} from './etsy-connection.mjs';
 import {EXISTING_PRINT_LISTINGS, PROTECTED_LISTING_IDS} from './etsy-sync-plan.mjs';
@@ -171,4 +171,87 @@ test('the Kihei and Hope originals are in the inventory sync mapping', () => {
   const map = Object.fromEntries(listingMap({}).map(item => [item.productId, item.listingId]));
   assert.equal(map['painting-red-horizon'], 4591572797);
   assert.equal(map['hope-the-vermillion-aurora'], 4591572815);
+});
+
+test('a 429 waits out Retry-After, emails once, then sends a recovery note', async t => {
+  const bucket = new Bucket();
+  const env = {ETSY_KEYSTRING: 'test-key', ETSY_SHARED_SECRET: 'test-secret', COMMISSION_MANAGER_TOKEN: 'manager', COMMISSION_UPLOADS: bucket, PAINTING_STOCK: stock(), GOOGLE_CLIENT_ID: 'id', GOOGLE_CLIENT_SECRET: 'secret', GOOGLE_REFRESH_TOKEN: 'refresh'};
+  await write(env, {connection: {shopId: 42, shopName: 'VermillionAurora', userId: '123', accessToken: '123.access', refreshToken: '123.refresh', expiresAt: now + 3600000, scopes: ['listings_w', 'transactions_r']}}, null);
+  const calls = [];
+  let receiptsOk = false;
+  t.mock.method(globalThis, 'fetch', async (url, options = {}) => {
+    const target = String(url); calls.push({url: target, method: options.method || 'GET'});
+    if (target.includes('/receipts?')) {
+      if (!receiptsOk) return new Response(JSON.stringify({error: 'too many requests'}), {status: 429, headers: {'retry-after': '13456', 'content-type': 'application/json'}});
+      return Response.json({results: []});
+    }
+    if (target.includes('/listings/') && (!options.method || options.method === 'GET')) {
+      const id = Number(target.match(/\/listings\/(\d+)/)[1]);
+      return Response.json({listing_id: id, state: 'inactive', quantity: 0});
+    }
+    if (target.includes('oauth2.googleapis.com')) return Response.json({access_token: 'mail'});
+    if (target.includes('gmail.googleapis.com')) return Response.json({id: 'mail'});
+    throw Error('unexpected ' + target);
+  });
+  const {connection} = await import('./etsy-listings.mjs');
+  const loaded = await connection(env, now);
+  const first = await pollEtsyReceipts(env, loaded.token, loaded.record, {now});
+  assert.equal(first.ok, false);
+  assert.equal(first.blockedUntil, new Date(now + 13456 * 1000).toISOString());
+  assert.equal(calls.filter(call => call.url.includes('/receipts?')).length, 1);
+  assert.equal(calls.filter(call => call.url.includes('gmail.googleapis.com')).length, 1);
+
+  const during = await runOriginalInventorySync(env, now + 60_000);
+  assert.equal(during.skipped, 'rate-limited');
+  assert.equal(calls.filter(call => call.url.includes('/receipts?')).length, 1);
+  assert.equal(calls.filter(call => call.url.includes('gmail.googleapis.com')).length, 1);
+
+  receiptsOk = true;
+  const recovered = await pollEtsyReceipts(env, loaded.token, loaded.record, {now: now + 13456 * 1000 + 1000});
+  assert.equal(recovered.ok, true);
+  assert.equal(calls.filter(call => call.url.includes('/receipts?')).length, 2);
+  assert.equal(calls.filter(call => call.url.includes('gmail.googleapis.com')).length, 2);
+  const subjects = calls.filter(call => call.url.includes('gmail.googleapis.com')).length;
+  assert.equal(subjects, 2);
+
+  const later = await pollEtsyReceipts(env, loaded.token, loaded.record, {now: now + 13456 * 1000 + 2000});
+  assert.equal(later.ok, true);
+  assert.equal(calls.filter(call => call.url.includes('gmail.googleapis.com')).length, 2);
+});
+
+test('scheduled reconcile reads only sold or unavailable originals and defers the rest of the hour', async t => {
+  const bucket = new Bucket();
+  const books = stock();
+  books.rows.set('el-zonte-before-dawn', {state: 'sold', capture_id: 'etsy:77'});
+  const env = {ETSY_KEYSTRING: 'test-key', ETSY_SHARED_SECRET: 'test-secret', COMMISSION_MANAGER_TOKEN: 'manager', COMMISSION_UPLOADS: bucket, PAINTING_STOCK: books, GOOGLE_CLIENT_ID: 'id', GOOGLE_CLIENT_SECRET: 'secret', GOOGLE_REFRESH_TOKEN: 'refresh'};
+  await write(env, {connection: {shopId: 42, shopName: 'VermillionAurora', userId: '123', accessToken: '123.access', refreshToken: '123.refresh', expiresAt: now + 3600000, scopes: ['listings_w', 'transactions_r']}}, null);
+  const calls = [];
+  t.mock.method(globalThis, 'fetch', async (url, options = {}) => {
+    const target = String(url); calls.push({url: target, method: options.method || 'GET'});
+    if (target.includes('/receipts?')) return Response.json({results: []});
+    const listing = target.match(/\/listings\/(\d+)$/);
+    if (listing && (!options.method || options.method === 'GET')) {
+      return Response.json({listing_id: Number(listing[1]), state: 'inactive', quantity: 0});
+    }
+    if (options.method === 'PATCH') return Response.json({state: 'inactive'});
+    throw Error('unexpected ' + target);
+  });
+  const first = await runOriginalInventorySync(env, now);
+  assert.equal(first.polled.ok, true);
+  const listingGets = () => calls.filter(call => /\/listings\/\d+$/.test(call.url) && call.method === 'GET');
+  const firstReads = listingGets().map(call => call.url);
+  assert.equal(firstReads.some(url => url.endsWith('/listings/4591466297')), true);
+  assert.equal(firstReads.every(url => url.endsWith('/listings/4591466297')), true);
+  const second = await runOriginalInventorySync(env, now + 5 * 60 * 1000);
+  assert.equal(second.reconciled.skipped, 'deferred');
+  assert.equal(listingGets().length, firstReads.length);
+});
+
+test('retryAfterSeconds reads the header value and 429 is remembered', () => {
+  assert.equal(retryAfterSeconds({etsyStatus: 429, etsyRetryAfter: 13456}), 13456);
+  assert.equal(retryAfterSeconds({etsyStatus: 429, message: 'Etsy returned HTTP 429 during reading Etsy receipts. Wait at least 13456 seconds before retrying.'}), 13456);
+  assert.equal(retryAfterSeconds({etsyStatus: 500}), null);
+  const state = {};
+  assert.equal(rememberRateLimit(state, {etsyStatus: 429, etsyRetryAfter: 13456}, now), true);
+  assert.equal(state.blockedUntil, new Date(now + 13456 * 1000).toISOString());
 });
