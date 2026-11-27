@@ -131,6 +131,8 @@ async function saveState(env, state, etag) {
   return ok.etag || etag;
 }
 
+export {loadState as loadOriginalSyncState, saveState as saveOriginalSyncState};
+
 export function appendLog(state, entry) {
   state.log.push(entry);
   state.log = state.log.slice(-200);
@@ -274,10 +276,37 @@ export async function reconcileOriginals(env, token, record, {dryRun = true, sit
   return {dryRun: !!dryRun, uplift: etsyOriginalPrice(1000), results, drift: results.some(item => item.drift)};
 }
 
+
+export async function applyEtsyOriginalSale(env, token, record, {receiptId, productId, listingId, now = Date.now(), note} = {}) {
+  if (!receiptId || !productId || !listingId) throw Error('Etsy sale is missing an order, painting, or listing id.');
+  const map = listingMap(record);
+  const match = map.find(item => item.productId === productId && Number(item.listingId) === Number(listingId));
+  if (!match) throw Error('Refusing to mark an unmapped listing as sold.');
+  if (PROTECTED_LISTING_IDS.has(Number(listingId)) || PRINT_LISTING_IDS.has(Number(listingId))) throw Error('Refusing to mark a print or protected listing as sold.');
+  const {state, etag} = await loadState(env);
+  const key = String(receiptId) + ':' + productId;
+  if (state.processedReceiptIds.includes(key)) return {ok: true, duplicate: true, productId, listingId, receiptId};
+  const stub = env.PAINTING_STOCK.getByName(productId);
+  const marked = await stub.recordEtsySale(String(receiptId), new Date(now).toISOString());
+  if (marked.conflict) {
+    await alertOriginalSync(env, 'Etsy sale conflicts with site stock for ' + productId, 'Etsy order ' + receiptId + ' sold ' + productId + ', but tjm.art already has a different sale or a payment in progress. The site was not overwritten. Listing ' + listingId + ' will be deactivated if it is still active.', state);
+  }
+  if (!marked.duplicate) {
+    state.processedReceiptIds.push(key);
+    appendLog(state, {at: new Date(now).toISOString(), productId, status: 'sold', note: note || ('Etsy receipt ' + receiptId), source: 'etsy'});
+  }
+  try { await deactivateOriginal(env, token, listingId); }
+  catch (error) {
+    await alertOriginalSync(env, 'Etsy original sync failed for ' + productId, 'Etsy order ' + receiptId + ' sold ' + productId + ', and the listing could not be deactivated.\n\n' + (error.message || 'Etsy rejected the update.'), state);
+  }
+  try { await saveState(env, state, etag); } catch { /* the next run is idempotent */ }
+  return {ok: true, ...marked, productId, listingId, receiptId};
+}
+
 async function alertRateLimited(env, error, state, now) {
   if (state.rateLimitAlertedAt) return {sent: false, throttled: true};
   const until = state.blockedUntil ? ' Later checks will wait until ' + state.blockedUntil + ' and will not email again until the shop can be read.' : ' Later checks will wait out the limit and will not email again until the shop can be read.';
-  const result = await alertOriginalSync(env, 'Etsy receipt check failed', 'The five-minute Etsy receipt check could not read the shop.\n\n' + (error.message || 'Etsy could not be reached.') + '\n\nNo listing was reactivated.' + until, state);
+  const result = await alertOriginalSync(env, 'Etsy receipt check failed', 'The daily Etsy receipt safety check could not read the shop.\n\n' + (error.message || 'Etsy could not be reached.') + '\n\nNo listing was reactivated.' + until, state);
   state.rateLimitAlertedAt = new Date(now).toISOString();
   return result;
 }
@@ -305,7 +334,7 @@ export async function pollEtsyReceipts(env, token, record, {dryRun = false, now 
     const limited = rememberRateLimit(state, error, now);
     if (!dryRun) {
       if (limited) await alertRateLimited(env, error, state, now);
-      else await alertOriginalSync(env, 'Etsy receipt check failed', 'The five-minute Etsy receipt check could not read the shop.\n\n' + (error.message || 'Etsy could not be reached.') + '\n\nNo listing was reactivated.', state);
+      else await alertOriginalSync(env, 'Etsy receipt check failed', 'The daily Etsy receipt safety check could not read the shop.\n\n' + (error.message || 'Etsy could not be reached.') + '\n\nNo listing was reactivated.', state);
     }
     try { await saveState(env, state, etag); } catch { /* logged */ }
     return {ok: false, error: error.message || 'receipts failed', blockedUntil: state.blockedUntil || null, results: []};
