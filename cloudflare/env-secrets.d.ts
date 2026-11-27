@@ -14,6 +14,8 @@ interface CheckoutSecrets {
 	COMMISSION_NOTIFY_TO: string;
 	// Optional owner credential for listing sync/media/activate without rotating the manager token.
 	ETSY_OPS_TOKEN?: string;
+	// Optional override of etsy-sales@reply.tjm.art; also set in wrangler vars.
+	ETSY_SALE_EMAIL?: string;
 	ETSY_KEYSTRING: string;
 	ETSY_SHARED_SECRET: string;
 	FINERWORKS_APP_KEY: string;

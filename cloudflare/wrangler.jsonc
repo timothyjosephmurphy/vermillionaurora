@@ -35,7 +35,8 @@
     "QBO_ENVIRONMENT": "production",
     "QBO_SYNC_ENABLED": "true",
     "QBO_COST_SYNC_ENABLED": "true",
-    "QBO_TIP_SYNC_ENABLED": "true"
+    "QBO_TIP_SYNC_ENABLED": "true",
+    "ETSY_SALE_EMAIL": "etsy-sales@reply.tjm.art"
   },
   "d1_databases": [
     {
