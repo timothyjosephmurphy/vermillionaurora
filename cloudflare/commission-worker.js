@@ -33,6 +33,7 @@ import { quickbooksApi } from './quickbooks-api.mjs';
 import { pollTips } from './btcpay-tips.mjs';
 import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestimonialVideos } from './testimonials.mjs';
 import { handleTestimonialEmail } from './testimonial-reply.mjs';
+import { handleEtsySaleEmail, isEtsySaleRecipient } from './etsy-sale-email.mjs';
 import { newsletterApi } from './newsletter.mjs';
 export { NeuralDanceDebugRoom } from './neural-dance-debug-room.mjs';
 async function syncBuiltCatalog(env) {
@@ -47,8 +48,9 @@ async function syncBuiltCatalog(env) {
   }
 }
 export default {
-  // Cloudflare Email Routing (stories@reply.tjm.art). Does not run for ordinary HTTP requests.
+  // Cloudflare Email Routing (stories@ and etsy-sales@ on reply.tjm.art). Does not run for ordinary HTTP requests.
   async email(message, env, ctx) {
+    if (isEtsySaleRecipient(message.to, env)) { await handleEtsySaleEmail(message, env, ctx); return; }
     await handleTestimonialEmail(message, env, ctx);
   },
   async scheduled(event,env,ctx) {
@@ -59,7 +61,9 @@ export default {
       await syncBuiltCatalog(env);
       await applyCatalogOverlay(env);
     }
-    if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
+    // Daily safety net only (16:15 UTC). Sale emails mark originals sold; do not poll Etsy on the hourly cron.
+    if (event?.cron === '15 16 * * *') ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed')));
+    if (event?.cron === '*/5 * * * *' || event?.cron === '*/15 * * * *') return;
     ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); ctx.waitUntil(markAtCostOrders(env).catch(()=>console.error('QuickBooks at-cost marker backfill failed'))); ctx.waitUntil(pollTips(env).catch(()=>console.error('Lightning tip poll failed')));
   },
   async fetch(request, env, ctx) {
