@@ -23,9 +23,7 @@
     }
   ],
   "triggers": {
-    "crons": [
-      "*/5 * * * *"
-    ]
+    "crons": []
   },
   "observability": {
     "logs": {
