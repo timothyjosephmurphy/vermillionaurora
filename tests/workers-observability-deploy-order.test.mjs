@@ -25,7 +25,7 @@ test('both production Workers enable logs and traces (#810)', () => {
     assert.equal(config.observability.traces.enabled, true);
     assert.equal(config.observability.traces.head_sampling_rate, rate);
   }
-  assert.match(checkout.triggers.crons.join(' '), /\*\/5 \* \* \* \*/);
+  assert.deepEqual(checkout.triggers.crons, ['0 * * * *', '15 16 * * *']);
 });
 
 test('production deploy publishes checkout before the website wait and prefers the prod token (#811)', () => {

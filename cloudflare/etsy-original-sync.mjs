@@ -7,6 +7,32 @@ const API = 'https://api.etsy.com/v3/application';
 const STATE_KEY = 'etsy/original-inventory.json';
 const PRINT_LISTING_IDS = new Set(Object.values(EXISTING_PRINT_LISTINGS));
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const RECONCILE_EVERY_MS = 60 * 60 * 1000;
+const DEFAULT_RETRY_AFTER_SEC = 15 * 60;
+const MAX_RETRY_AFTER_SEC = 24 * 60 * 60;
+
+export function retryAfterSeconds(error) {
+  const fromField = Number(error?.etsyRetryAfter);
+  if (Number.isFinite(fromField) && fromField > 0) return Math.ceil(fromField);
+  const match = String(error?.message || '').match(/Wait at least (\d+) seconds/i);
+  if (match) return Number(match[1]);
+  if (error?.etsyStatus === 429) return DEFAULT_RETRY_AFTER_SEC;
+  return null;
+}
+
+export function blockedUntilMs(state, now) {
+  const until = state?.blockedUntil ? Date.parse(state.blockedUntil) : NaN;
+  return Number.isFinite(until) && until > now ? until : 0;
+}
+
+export function rememberRateLimit(state, error, now) {
+  const seconds = retryAfterSeconds(error);
+  if (seconds == null) return false;
+  const until = now + Math.min(Math.max(seconds, 1), MAX_RETRY_AFTER_SEC) * 1000;
+  const existing = state.blockedUntil ? Date.parse(state.blockedUntil) : 0;
+  if (!Number.isFinite(existing) || until > existing) state.blockedUntil = new Date(until).toISOString();
+  return true;
+}
 
 export function listingMap(record) {
   const saved = record?.etsyListingSync?.listings || {};
@@ -95,12 +121,17 @@ async function saveState(env, state, etag) {
     processedReceiptIds: state.processedReceiptIds.slice(-400),
     log: state.log.slice(-200),
     alerts: state.alerts,
-    lastPollAt: state.lastPollAt || null
+    lastPollAt: state.lastPollAt || null,
+    lastReconcileAt: state.lastReconcileAt || null,
+    blockedUntil: state.blockedUntil || null,
+    rateLimitAlertedAt: state.rateLimitAlertedAt || null
   });
   const ok = await env.COMMISSION_UPLOADS.put(STATE_KEY, body, {onlyIf: etag ? {etagMatches: etag} : {etagDoesNotMatch: '*'}, httpMetadata: {contentType: 'application/json'}});
   if (!ok) throw Error('Original sync state changed. Retry.');
   return ok.etag || etag;
 }
+
+export {loadState as loadOriginalSyncState, saveState as saveOriginalSyncState};
 
 export function appendLog(state, entry) {
   state.log.push(entry);
@@ -113,7 +144,7 @@ async function withRetry(fn) {
     try { return await fn(); }
     catch (error) {
       last = error;
-      if ([400, 401, 403, 404].includes(error.etsyStatus)) break;
+      if ([400, 401, 403, 404, 429].includes(error.etsyStatus) || retryAfterSeconds(error) != null) break;
       await sleep(200 * (attempt + 1));
     }
   }
@@ -189,7 +220,7 @@ async function siteRow(env, productId) {
   return null;
 }
 
-export async function reconcileOriginals(env, token, record, {dryRun = true, siteStatusFor} = {}) {
+export async function reconcileOriginals(env, token, record, {dryRun = true, siteStatusFor, onlyIfSoldOrUnavailable = false} = {}) {
   const {inventory} = await import('./checkout-catalog.mjs');
   const {displayedStatus} = await import('./original-availability.mjs');
   const map = listingMap(record);
@@ -197,9 +228,25 @@ export async function reconcileOriginals(env, token, record, {dryRun = true, sit
   for (const item of map) {
     const row = siteStatusFor ? null : await siteRow(env, item.productId);
     const siteStatus = siteStatusFor ? siteStatusFor(item.productId) : displayedStatus(inventory[item.productId]?.status || 'available', row);
-    let listing = null, error = null;
+    if (onlyIfSoldOrUnavailable && siteStatus !== 'sold' && siteStatus !== 'unavailable') {
+      results.push({
+        productId: item.productId, listingId: item.listingId, siteStatus, etsyState: 'unchecked', price: null, quantity: null,
+        url: null, drift: false, action: 'none', error: null
+      });
+      continue;
+    }
+    let listing = null, error = null, limited = false;
     try { listing = await readListing(env, token, item.listingId); }
-    catch (err) { error = err.message || 'read failed'; }
+    catch (err) {
+      error = err.message || 'read failed';
+      limited = retryAfterSeconds(err) != null;
+      if (limited) {
+        const loaded = await loadState(env);
+        rememberRateLimit(loaded.state, err, Date.now());
+        if (!dryRun) await alertRateLimited(env, err, loaded.state, Date.now());
+        try { await saveState(env, loaded.state, loaded.etag); } catch { /* logged */ }
+      }
+    }
     const etsyState = listing?.state || (error ? 'error' : 'missing');
     const action = error ? 'none' : reconcileAction(siteStatus, etsyState);
     let applied = null;
@@ -207,8 +254,14 @@ export async function reconcileOriginals(env, token, record, {dryRun = true, sit
       try { applied = await deactivateOriginal(env, token, item.listingId); }
       catch (err) {
         error = err.message || 'deactivate failed';
+        limited = retryAfterSeconds(err) != null;
         const loaded = await loadState(env);
-        await alertOriginalSync(env, 'Etsy original sync failed for ' + item.productId, item.productId + ' is ' + siteStatus + ' on tjm.art, but Etsy listing ' + item.listingId + ' could not be deactivated.\n\n' + error, loaded.state);
+        if (limited) {
+          rememberRateLimit(loaded.state, err, Date.now());
+          await alertRateLimited(env, err, loaded.state, Date.now());
+        } else {
+          await alertOriginalSync(env, 'Etsy original sync failed for ' + item.productId, item.productId + ' is ' + siteStatus + ' on tjm.art, but Etsy listing ' + item.listingId + ' could not be deactivated.\n\n' + error, loaded.state);
+        }
         try { await saveState(env, loaded.state, loaded.etag); } catch { /* logged */ }
       }
     }
@@ -218,23 +271,75 @@ export async function reconcileOriginals(env, token, record, {dryRun = true, sit
       url: listing?.url || (listing ? 'https://www.etsy.com/listing/' + item.listingId : null),
       drift: action === 'deactivate', action: dryRun ? action : (applied ? 'deactivated' : action), error
     });
+    if (limited) break;
   }
   return {dryRun: !!dryRun, uplift: etsyOriginalPrice(1000), results, drift: results.some(item => item.drift)};
+}
+
+
+export async function applyEtsyOriginalSale(env, token, record, {receiptId, productId, listingId, now = Date.now(), note} = {}) {
+  if (!receiptId || !productId || !listingId) throw Error('Etsy sale is missing an order, painting, or listing id.');
+  const map = listingMap(record);
+  const match = map.find(item => item.productId === productId && Number(item.listingId) === Number(listingId));
+  if (!match) throw Error('Refusing to mark an unmapped listing as sold.');
+  if (PROTECTED_LISTING_IDS.has(Number(listingId)) || PRINT_LISTING_IDS.has(Number(listingId))) throw Error('Refusing to mark a print or protected listing as sold.');
+  const {state, etag} = await loadState(env);
+  const key = String(receiptId) + ':' + productId;
+  if (state.processedReceiptIds.includes(key)) return {ok: true, duplicate: true, productId, listingId, receiptId};
+  const stub = env.PAINTING_STOCK.getByName(productId);
+  const marked = await stub.recordEtsySale(String(receiptId), new Date(now).toISOString());
+  if (marked.conflict) {
+    await alertOriginalSync(env, 'Etsy sale conflicts with site stock for ' + productId, 'Etsy order ' + receiptId + ' sold ' + productId + ', but tjm.art already has a different sale or a payment in progress. The site was not overwritten. Listing ' + listingId + ' will be deactivated if it is still active.', state);
+  }
+  if (!marked.duplicate) {
+    state.processedReceiptIds.push(key);
+    appendLog(state, {at: new Date(now).toISOString(), productId, status: 'sold', note: note || ('Etsy receipt ' + receiptId), source: 'etsy'});
+  }
+  try { await deactivateOriginal(env, token, listingId); }
+  catch (error) {
+    await alertOriginalSync(env, 'Etsy original sync failed for ' + productId, 'Etsy order ' + receiptId + ' sold ' + productId + ', and the listing could not be deactivated.\n\n' + (error.message || 'Etsy rejected the update.'), state);
+  }
+  try { await saveState(env, state, etag); } catch { /* the next run is idempotent */ }
+  return {ok: true, ...marked, productId, listingId, receiptId};
+}
+
+async function alertRateLimited(env, error, state, now) {
+  if (state.rateLimitAlertedAt) return {sent: false, throttled: true};
+  const until = state.blockedUntil ? ' Later checks will wait until ' + state.blockedUntil + ' and will not email again until the shop can be read.' : ' Later checks will wait out the limit and will not email again until the shop can be read.';
+  const result = await alertOriginalSync(env, 'Etsy receipt check failed', 'The daily Etsy receipt safety check could not read the shop.\n\n' + (error.message || 'Etsy could not be reached.') + '\n\nNo listing was reactivated.' + until, state);
+  state.rateLimitAlertedAt = new Date(now).toISOString();
+  return result;
+}
+
+async function alertRecovered(env, state) {
+  if (!state.rateLimitAlertedAt) return {sent: false};
+  const result = await alertOriginalSync(env, 'Etsy receipt check recovered', 'The Etsy receipt check is reading the shop again. The earlier rate-limit wait has ended.\n\nNo listing was reactivated.', state);
+  state.rateLimitAlertedAt = null;
+  state.blockedUntil = null;
+  return result;
 }
 
 export async function pollEtsyReceipts(env, token, record, {dryRun = false, now = Date.now()} = {}) {
   const {call} = await etsyApi();
   const {state, etag} = await loadState(env);
+  if (blockedUntilMs(state, now)) {
+    return {ok: false, skipped: 'rate-limited', blockedUntil: state.blockedUntil, results: []};
+  }
   const since = state.lastPollAt ? Math.floor(Date.parse(state.lastPollAt) / 1000) - 600 : Math.floor(now / 1000) - 86400;
   let receipts = [];
   try {
     const data = await call(API + '/shops/' + token.shopId + '/receipts?limit=100&was_paid=true&min_created=' + since, env, token, {action: 'reading Etsy receipts'});
     receipts = rows(data);
   } catch (error) {
-    if (!dryRun) await alertOriginalSync(env, 'Etsy receipt check failed', 'The five-minute Etsy receipt check could not read the shop.\n\n' + (error.message || 'Etsy could not be reached.') + '\n\nNo listing was reactivated.', state);
+    const limited = rememberRateLimit(state, error, now);
+    if (!dryRun) {
+      if (limited) await alertRateLimited(env, error, state, now);
+      else await alertOriginalSync(env, 'Etsy receipt check failed', 'The daily Etsy receipt safety check could not read the shop.\n\n' + (error.message || 'Etsy could not be reached.') + '\n\nNo listing was reactivated.', state);
+    }
     try { await saveState(env, state, etag); } catch { /* logged */ }
-    return {ok: false, error: error.message || 'receipts failed', results: []};
+    return {ok: false, error: error.message || 'receipts failed', blockedUntil: state.blockedUntil || null, results: []};
   }
+  if (!dryRun) await alertRecovered(env, state);
   const map = byListingId(listingMap(record));
   const seen = new Set(state.processedReceiptIds);
   const results = [];
@@ -263,10 +368,30 @@ export async function pollEtsyReceipts(env, token, record, {dryRun = false, now 
 
 export async function runOriginalInventorySync(env, now = Date.now()) {
   if (!env?.ETSY_KEYSTRING || !env.COMMISSION_UPLOADS || !env.PAINTING_STOCK) return {skipped: 'unconfigured'};
+  const started = await loadState(env);
+  if (blockedUntilMs(started.state, now)) return {skipped: 'rate-limited', blockedUntil: started.state.blockedUntil};
   const {connection} = await etsyApi();
-  const loaded = await connection(env);
+  let loaded;
+  try { loaded = await connection(env, now); }
+  catch (error) {
+    if (rememberRateLimit(started.state, error, now)) {
+      await alertRateLimited(env, error, started.state, now);
+      try { await saveState(env, started.state, started.etag); } catch { /* logged */ }
+      return {ok: false, skipped: 'rate-limited', error: error.message || 'connection failed', blockedUntil: started.state.blockedUntil};
+    }
+    throw error;
+  }
   const polled = await pollEtsyReceipts(env, loaded.token, loaded.record, {now});
-  const reconciled = await reconcileOriginals(env, loaded.token, loaded.record, {dryRun: false});
+  if (!polled.ok) return {polled};
+  const afterPoll = await loadState(env);
+  const last = afterPoll.state.lastReconcileAt ? Date.parse(afterPoll.state.lastReconcileAt) : 0;
+  if (Number.isFinite(last) && last > 0 && now - last < RECONCILE_EVERY_MS) {
+    return {polled, reconciled: {skipped: 'deferred', lastReconcileAt: afterPoll.state.lastReconcileAt}};
+  }
+  const reconciled = await reconcileOriginals(env, loaded.token, loaded.record, {dryRun: false, onlyIfSoldOrUnavailable: true});
+  const latest = await loadState(env);
+  latest.state.lastReconcileAt = new Date(now).toISOString();
+  try { await saveState(env, latest.state, latest.etag); } catch { /* the next hourly window will retry */ }
   return {polled, reconciled};
 }
 
