@@ -47,7 +47,7 @@ export async function call(url,env,token,options={}){
   const detail=[400,422].includes(res.status)?validationDetail(data,env,token):'';
   const retryAfter=Number(res.headers.get('retry-after'));
   const retry=res.status===429&&Number.isFinite(retryAfter)&&retryAfter>0?' Wait at least '+Math.ceil(retryAfter)+' seconds before retrying.':'';
-  throw Object.assign(Error('Etsy returned HTTP '+res.status+' during '+(action||'the request')+'.'+(detail?' '+detail:'')+retry),{etsyStatus:res.status});
+  throw Object.assign(Error('Etsy returned HTTP '+res.status+' during '+(action||'the request')+'.'+(detail?' '+detail:'')+retry),{etsyStatus:res.status,etsyRetryAfter:res.status===429&&Number.isFinite(retryAfter)&&retryAfter>0?retryAfter:undefined});
  }
  return data;
 }
